@@ -1,0 +1,26 @@
+[data-ui-label] {
+  display: flex;
+}
+
+[data-ui-control-box] {
+  border: 2px solid rgb(226, 232, 240);
+  border-radius: 2px;
+  height: 12px;
+  width: 12px;
+  transition: all 120ms ease;
+}
+
+[data-ui-checked="true"] {
+  background-color: rgb(49, 130, 206);
+}
+
+[data-ui-visually-hidden] {
+  border: 0px;
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  width: 1px;
+  padding: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+}
