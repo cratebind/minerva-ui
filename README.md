@@ -1,6 +1,6 @@
 # Minerva UI
 
-### Features:
+### Goals:
 - Highly Composable
 - Largely Declarative
 - Includes optional minimal styles
