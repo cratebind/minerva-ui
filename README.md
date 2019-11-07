@@ -9,6 +9,16 @@
 
 [Ryan Florence "Reach UI" Guidelines](https://gist.github.com/ryanflorence/e5c794e6093d16a69fa88d2112a292f7)
 
+### Getting Started
+
+WIP
+
+### Development
+
+1. Clone Repo
+2. Run `yarn install`
+3. Run `yarn storybook` to open a local storybook server for development
+
 ## Commands
 
 TSDX scaffolds your new library inside `/src`, and also sets up a [Parcel-based](https://parceljs.org) playground for it inside `/example`.

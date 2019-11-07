@@ -23,7 +23,7 @@ export const Checkbox = (props: CheckboxProps) => {
 
   return (
     <label data-ui-label>
-      <div data-ui-control-box data-ui-checked={checked} />
+      <div data-ui-control-box data-ui-checked={checked} tabIndex={0} />
       <input role="checkbox" type="checkbox" onChange={onChange} data-ui-visually-hidden {...rest} />
       {children}
     </label>
