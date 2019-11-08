@@ -1,19 +1,35 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { Checkbox } from '../src/Checkbox';
 
 <Meta title="Components|Checkbox" component={Checkbox} />
 
 # Checkbox
 
-With `MDX` we can define a story for `Checkbox` right in the middle of our
-markdown documentation.
+Generic wrapper for a style-able checkbox input
 
 ```js
 import { Checkbox } from 'minerva-ui'
 ```
 
-<Preview isExpanded={true}>
-  <Story name="all checkboxes" isExpanded={true}>
+```jsx
+() => {
+  const [checked, setChecked] = React.useState(false);
+  return (
+    <Checkbox
+      checked={checked}
+      onChange={() => setChecked(!checked)}
+    >
+      Stay Logged In
+    </Checkbox>
+  )
+}
+```
+
+<Props of={Checkbox} />
+
+
+<!-- <Preview>
+  <Story name="all checkboxes">
     <form>
       <Checkbox
         checked={true}
@@ -27,4 +43,4 @@ import { Checkbox } from 'minerva-ui'
       </Checkbox>
     </form>
   </Story>
-</Preview>
+</Preview> -->
