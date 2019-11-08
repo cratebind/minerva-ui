@@ -1,15 +1,39 @@
 # Minerva UI
 
-## [Documentation](https://minerva-ui.netlify.com)
+# [View Components](https://minerva-ui.netlify.com)
 
-# Get started
+## Getting started
 
 Minerva UI is a reusable component library to help build UIs faster. This library aims to be highly composable, declarative and accessible.
 
-## Install
+### Install
 `npm install --save minerva-ui`
 or
 `yarn add minerva-ui`
+
+### **Use**
+
+Import components you want into your UI:
+
+```js
+import { Checkbox } from ‘minerva-ui’;
+```
+
+And use them like so:
+
+```jsx
+() => {
+  const [checked, setChecked] = React.useState(false);
+  return (
+    <Checkbox
+      checked={checked}
+      onChange={() => setChecked(!checked)}
+    >
+      Stay Logged In
+    </Checkbox>
+  )
+}
+```
 
 ### Goals:
 - Highly Composable
