@@ -3,6 +3,7 @@
   "version": "0.1.5",
   "license": "MIT",
   "author": "Cratebind",
+  "description": "Composable, Simple React Base Components",
   "repository": "https://github.com/cratebind/minerva-ui",
   "main": "dist/index.js",
   "module": "dist/minerva-ui.esm.js",
