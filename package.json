@@ -1,6 +1,6 @@
 {
   "name": "minerva-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "Matt Wood",
   "main": "dist/index.js",
@@ -9,9 +9,6 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
