@@ -2,6 +2,15 @@
 
 ## [Documentation](https://minerva-ui.netlify.com)
 
+# Get started
+
+Minerva UI is a reusable component library to help build UIs faster. This library aims to be highly composable, declarative and accessible.
+
+## Install
+`npm install --save minerva-ui`
+or
+`yarn add minerva-ui`
+
 ### Goals:
 - Highly Composable
 - Largely Declarative
@@ -10,10 +19,6 @@
 ### Inspiration:
 
 [Ryan Florence "Reach UI" Guidelines](https://gist.github.com/ryanflorence/e5c794e6093d16a69fa88d2112a292f7)
-
-### Getting Started
-
-WIP
 
 ### Development
 
