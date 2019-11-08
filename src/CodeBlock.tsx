@@ -18,13 +18,25 @@ import * as Minerva from './index';
 
 export const liveEditorStyle = {
   fontSize: 14,
-  marginBottom: 32,
-  marginTop: 32,
   // overflowX: "auto",
   fontFamily: "Menlo,monospace",
   borderRadius: 10,
-  padding: 20,
+  // padding: 20,
 };
+
+const wrapperStyles = {
+  backgroundColor: 'rgb(1, 22, 39)',
+  borderRadius: 10,
+  padding: 20,
+  marginBottom: 32,
+  marginTop: 32,
+}
+
+const Wrapper = ({ children }) => (
+  <div style={wrapperStyles}>
+    {children}
+  </div>
+)
 
 // const highlightStyle = {
 //   padding: 20,
@@ -43,7 +55,7 @@ export const liveErrorStyle = {
   backgroundColor: "red",
 };
 
-const Box = ({ children, style }: any) => <div style={style}>{children}</div>
+// const Box = ({ children, style }: any) => <div style={style}>{children}</div>
 
 const previewStyles = {
   fontFamily: 'body',
@@ -100,20 +112,20 @@ const LiveCodePreview = (props: any) => (
 //   );
 // };
 
-const StarIcon = (props: any) => {
-  return (
-    <Box
-      m="2px"
-      as="svg"
-      fill="current"
-      size="3"
-      viewBox="0 0 24 24"
-      {...props}
-    >
-      <path d="M23.555 8.729a1.505 1.505 0 0 0-1.406-.98h-6.087a.5.5 0 0 1-.472-.334l-2.185-6.193a1.5 1.5 0 0 0-2.81 0l-.005.016-2.18 6.177a.5.5 0 0 1-.471.334H1.85A1.5 1.5 0 0 0 .887 10.4l5.184 4.3a.5.5 0 0 1 .155.543l-2.178 6.531a1.5 1.5 0 0 0 2.31 1.684l5.346-3.92a.5.5 0 0 1 .591 0l5.344 3.919a1.5 1.5 0 0 0 2.312-1.683l-2.178-6.535a.5.5 0 0 1 .155-.543l5.194-4.306a1.5 1.5 0 0 0 .433-1.661z"></path>
-    </Box>
-  );
-};
+// const StarIcon = (props: any) => {
+//   return (
+//     <Box
+//       m="2px"
+//       as="svg"
+//       fill="current"
+//       size="3"
+//       viewBox="0 0 24 24"
+//       {...props}
+//     >
+//       <path d="M23.555 8.729a1.505 1.505 0 0 0-1.406-.98h-6.087a.5.5 0 0 1-.472-.334l-2.185-6.193a1.5 1.5 0 0 0-2.81 0l-.005.016-2.18 6.177a.5.5 0 0 1-.471.334H1.85A1.5 1.5 0 0 0 .887 10.4l5.184 4.3a.5.5 0 0 1 .155.543l-2.178 6.531a1.5 1.5 0 0 0 2.31 1.684l5.346-3.92a.5.5 0 0 1 .591 0l5.344 3.919a1.5 1.5 0 0 0 2.312-1.683l-2.178-6.535a.5.5 0 0 1 .155-.543l5.194-4.306a1.5 1.5 0 0 0 .433-1.661z"></path>
+//     </Box>
+//   );
+// };
 
 const CodeBlock = ({
   className,
@@ -143,7 +155,7 @@ const CodeBlock = ({
       // ...ReactIcons,
       ...Minerva,
       mdx,
-      StarIcon,
+      // StarIcon,
       // FocusLock,
       // ChakraPortal,
     },
@@ -157,17 +169,16 @@ const CodeBlock = ({
     return (
       <LiveProvider {...liveProviderProps}>
         <LiveCodePreview />
-        <Box>
+        <Wrapper>
           <LiveEditor
             onChange={handleCodeChange}
-            // padding={20}
             style={liveEditorStyle}
           />
           {/* <CopyButton onClick={onCopy}>
             {hasCopied ? "copied" : "copy"}
           </CopyButton> */}
           {/* <EditableNotice /> */}
-        </Box>
+        </Wrapper>
         <LiveError style={liveErrorStyle} />
       </LiveProvider>
     );
@@ -185,13 +196,13 @@ const CodeBlock = ({
 
   return (
     <LiveProvider disabled {...liveProviderProps}>
-      <Box position="relative">
+      <Wrapper>
         <LiveEditor style={liveEditorStyle} />
 
         {/* <CopyButton top="1.25em" onClick={onCopy}>
           {hasCopied ? "copied" : "copy"}
         </CopyButton> */}
-      </Box>
+      </Wrapper>
     </LiveProvider>
   );
 
