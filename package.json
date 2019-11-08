@@ -9,11 +9,15 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
     "lint": "tsdx lint",
+    "release": "np",
     "storybook": "start-storybook -p 6006 --docs",
     "build-storybook": "build-storybook --docs"
   },
@@ -44,6 +48,7 @@
     "@types/react-dom": "^16.9.4",
     "babel-loader": "^8.0.6",
     "husky": "^3.0.9",
+    "np": "^5.1.2",
     "prism-react-renderer": "^1.0.2",
     "react": "^16.11.0",
     "react-docgen-typescript-loader": "^3.3.0",
