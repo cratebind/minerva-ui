@@ -1,0 +1,30 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Checkbox } from '../src/Checkbox';
+
+<Meta title="Components|Checkbox" component={Checkbox} />
+
+# Checkbox
+
+With `MDX` we can define a story for `Checkbox` right in the middle of our
+markdown documentation.
+
+```js
+import { Checkbox } from 'minerva-ui'
+```
+
+<Preview isExpanded={true}>
+  <Story name="all checkboxes" isExpanded={true}>
+    <form>
+      <Checkbox
+        checked={true}
+      >
+        Stay Logged In
+      </Checkbox>
+      <Checkbox
+        checked={false}
+      >
+        Stay Logged In
+      </Checkbox>
+    </form>
+  </Story>
+</Preview>

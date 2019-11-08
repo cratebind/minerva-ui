@@ -14,8 +14,8 @@
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
     "lint": "tsdx lint",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006 --docs",
+    "build-storybook": "build-storybook --docs"
   },
   "peerDependencies": {
     "react": ">=16"
