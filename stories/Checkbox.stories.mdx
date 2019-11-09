@@ -1,5 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { Checkbox } from '../src/Checkbox';
+import Checkbox from '../src/Checkbox';
+import { ThemeProvider } from '../src/ThemeProvider';
 
 <Meta title="Components|Checkbox" component={Checkbox} />
 
@@ -15,12 +16,14 @@ import { Checkbox } from 'minerva-ui'
 () => {
   const [checked, setChecked] = React.useState(false);
   return (
-    <Checkbox
-      checked={checked}
-      onChange={() => setChecked(!checked)}
-    >
-      Stay Logged In
-    </Checkbox>
+    <ThemeProvider>
+      <Checkbox
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+      >
+        Stay Logged In
+      </Checkbox>
+    </ThemeProvider>
   )
 }
 ```

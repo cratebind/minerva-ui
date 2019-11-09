@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ThemeProvider from '../ThemeProvider';
 
 /**
  * TODO:
@@ -17,14 +18,16 @@ export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElemen
   style?: any
 }
 
-export const Checkbox = (props: CheckboxProps) => {
+export default function Checkbox(props: CheckboxProps) {
   const { children, checked = false, onChange, ...rest } = props;
 
   return (
-    <label data-ui-label>
-      <div data-ui-control-box data-ui-checked={checked} tabIndex={0} />
-      <input role="checkbox" type="checkbox" onChange={onChange} data-ui-visually-hidden {...rest} />
-      {children}
-    </label>
+    <ThemeProvider>
+      <label data-ui-label>
+        <div data-ui-control-box data-ui-checked={checked} tabIndex={0} />
+        <input role="checkbox" type="checkbox" onChange={onChange} data-ui-visually-hidden {...rest} />
+        {children}
+      </label>
+    </ThemeProvider>
   )
 }

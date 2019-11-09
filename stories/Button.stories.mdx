@@ -1,0 +1,54 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Button from '../src/Button';
+import { ThemeProvider } from '../src/ThemeProvider';
+
+<Meta title="Components|Button" component={Button} />
+
+# Button
+
+Generic wrapper for a style-able checkbox input
+
+```js
+import { Button } from 'minerva-ui'
+```
+
+```jsx
+() => {
+  return (
+    <Button>
+      Button
+    </Button>
+  )
+}
+```
+
+<Props of={Button} />
+
+# Variants
+<br />
+
+### Disabled Button
+```jsx
+<Button disabled>
+  Disabled Button
+</Button>
+```
+
+
+
+<!-- <Preview>
+  <Story name="all checkboxes">
+    <form>
+      <Button
+        checked={true}
+      >
+        Stay Logged In
+      </Button>
+      <Button
+        checked={false}
+      >
+        Stay Logged In
+      </Button>
+    </form>
+  </Story>
+</Preview> -->
