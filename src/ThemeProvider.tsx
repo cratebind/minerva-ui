@@ -3,14 +3,14 @@ import { jsx, ThemeContext } from "@emotion/core";
 import { ThemeProvider as EmotionThemeProvider } from "emotion-theming";
 import { useContext } from "react";
 // import theme from "../theme";
-const theme = {}
+const defaultTheme = {}
 
-const ThemeProvider = ({ theme, children }) => (
-  <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>
+const ThemeProvider = ({ theme = {}, children }) => (
+  <EmotionThemeProvider theme={{ ...defaultTheme, ...theme}}>{children}</EmotionThemeProvider>
 );
 
 ThemeProvider.defaultProps = {
-  theme,
+  theme: {},
 };
 
 const useTheme = () => {

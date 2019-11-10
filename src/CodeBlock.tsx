@@ -58,7 +58,7 @@ export const liveErrorStyle = {
 // const Box = ({ children, style }: any) => <div style={style}>{children}</div>
 
 const previewStyles = {
-  fontFamily: 'body',
+  fontFamily: '-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif',
   border: '1px solid rgb(226, 232, 240)',
   borderRadius: 4,
   padding: 20,

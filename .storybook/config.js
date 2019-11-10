@@ -12,7 +12,7 @@ addParameters({
 
 // automatically import all files ending in *.stories.js and *.stories.mdx
 configure([
-  require.context('../stories', true, /\.stories\.js$/),
-  require.context('../stories', true, /\.stories\.mdx$/),
+  require.context('../src', true, /\.stories\.js$/),
+  require.context('../src', true, /\.stories\.mdx$/),
 ], module);
 

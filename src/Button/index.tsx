@@ -27,11 +27,14 @@ const StyledButton = styled.button({
   padding: '0 16px',
   backgroundColor: 'rgb(56, 161, 105)',
   cursor: 'pointer',
+  ':hover': {
+    boxShadow: 'inset 0 0 0 9999px rgba(0, 0, 0, 0.2)'
+  },
   ':disabled': {
     opacity: 0.4,
     cursor: 'not-allowed',
     boxShadow: 'none'
-  }
+  },
 });
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -39,7 +42,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   disabled?: boolean
 }
 
-export default function Button({ children, disabled, ...props }) {
+export default function Button({ children, disabled = false, ...props }: ButtonProps) {
   return (
     <StyledButton disabled={disabled} {...props}>{children}</StyledButton>
   )
