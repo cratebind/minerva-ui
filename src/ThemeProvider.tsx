@@ -39,7 +39,7 @@ const exportedTheme = {
   Text: {
     fontSize: 16,
     lineHeight: '19px',
-    opacity: 1,
+    // opacity: 1,
     color: 'rgb(148, 148, 148)',
   },
 };
