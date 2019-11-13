@@ -17,31 +17,31 @@ const defaultTheme = {
 };
 
 const exportedTheme = {
-  Button: {
-    container: {
-      backgroundColor: 'rgb(49, 151, 149)',
-      borderRadius: 4,
-      height: 34,
-    },
-    text: {
-      fontSize: 16,
-      letterSpacing: {
-        unit: 'PERCENT',
-        value: 0,
-      },
-      lineHeight: {
-        unit: 'AUTO',
-      },
-      fontFamily: 'Roboto',
-      fontWeight: 'regular',
-    },
-  },
-  Text: {
-    fontSize: 16,
-    lineHeight: '19px',
-    // opacity: 1,
-    color: 'rgb(148, 148, 148)',
-  },
+  // Button: {
+  //   container: {
+  //     backgroundColor: 'rgb(49, 151, 149)',
+  //     borderRadius: 4,
+  //     height: 34,
+  //   },
+  //   text: {
+  //     fontSize: 16,
+  //     letterSpacing: {
+  //       unit: 'PERCENT',
+  //       value: 0,
+  //     },
+  //     lineHeight: {
+  //       unit: 'AUTO',
+  //     },
+  //     fontFamily: 'Roboto',
+  //     fontWeight: 'regular',
+  //   },
+  // },
+  // Text: {
+  //   fontSize: 16,
+  //   lineHeight: '19px',
+  //   // opacity: 1,
+  //   color: 'rgb(148, 148, 148)',
+  // },
 };
 
 const ThemeProvider = ({ theme = exportedTheme, children }) => {
