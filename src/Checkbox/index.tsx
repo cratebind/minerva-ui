@@ -1,4 +1,7 @@
 import * as React from 'react';
+/** @jsx jsx */
+import styled from '@emotion/styled';
+import ThemeProvider from '../ThemeProvider';
 
 /**
  * TODO:
@@ -6,25 +9,72 @@ import * as React from 'react';
  * - Add sizes
  */
 
+const CheckboxContainer = styled.label({
+  display: 'flex',
+  alignItems: 'center',
+  cursor: 'pointer',
+});
+
+export type ControlBoxProps = {
+  checked: boolean;
+};
+
+const ControlBox = styled('div')<ControlBoxProps>(
+  {
+    border: '2px solid rgb(226, 232, 240)',
+    borderRadius: '2px',
+    height: '12px',
+    width: '12px',
+    transition: 'all 120ms ease',
+    marginRight: '5px',
+  },
+  props => ({
+    backgroundColor: props.checked ? 'rgb(49, 130, 206)' : 'transparent',
+  })
+);
+
+const VisuallyHidden = styled.div`
+  border: 0px;
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  width: 1px;
+  padding: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+`;
+
 // extend the native HTML attributes for nicer autocompletion
-export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface CheckboxProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   // define the custom props we're going to be using
-  children?: React.ReactNode
+  children?: React.ReactNode;
   // add a question mark to make it an optional prop
-  disabled?: boolean
-  checked?: boolean
-  onChange?: () => any
-  style?: any
+  disabled?: boolean;
+  checked?: boolean;
+  onChange?: () => any;
+  style?: any;
 }
 
-export const Checkbox = (props: CheckboxProps) => {
+export default function Checkbox(props: CheckboxProps) {
   const { children, checked = false, onChange, ...rest } = props;
 
   return (
-    <label data-ui-label>
-      <div data-ui-control-box data-ui-checked={checked} tabIndex={0} />
-      <input role="checkbox" type="checkbox" onChange={onChange} data-ui-visually-hidden {...rest} />
-      {children}
-    </label>
-  )
+    <ThemeProvider>
+      <CheckboxContainer>
+        <ControlBox checked={checked} />
+        <div data-ui-control-box data-ui-checked={checked} tabIndex={0} />
+        <VisuallyHidden>
+          <input
+            role="checkbox"
+            type="checkbox"
+            onChange={onChange}
+            data-ui-visually-hidden
+            {...rest}
+          />
+        </VisuallyHidden>
+        {children}s
+      </CheckboxContainer>
+    </ThemeProvider>
+  );
 }

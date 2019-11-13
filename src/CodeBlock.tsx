@@ -1,11 +1,11 @@
 /* tslint:disable */
 
-import React, { useState } from "react";
-import lightTheme from "prism-react-renderer/themes/nightOwlLight";
-import darkTheme from "prism-react-renderer/themes/nightOwl";
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+import React, { useState } from 'react';
+import lightTheme from 'prism-react-renderer/themes/nightOwlLight';
+import darkTheme from 'prism-react-renderer/themes/nightOwl';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 // import Highlight, { defaultProps } from "prism-react-renderer";
-import { mdx } from "@mdx-js/react";
+import { mdx } from '@mdx-js/react';
 import * as Minerva from './index';
 // import * as Chakra from "@chakra-ui/core";
 // import * as Formik from "formik";
@@ -19,7 +19,7 @@ import * as Minerva from './index';
 export const liveEditorStyle = {
   fontSize: 14,
   // overflowX: "auto",
-  fontFamily: "Menlo,monospace",
+  fontFamily: 'Menlo,monospace',
   borderRadius: 10,
   // padding: 20,
 };
@@ -30,13 +30,9 @@ const wrapperStyles = {
   padding: 20,
   marginBottom: 32,
   marginTop: 32,
-}
+};
 
-const Wrapper = ({ children }) => (
-  <div style={wrapperStyles}>
-    {children}
-  </div>
-)
+const Wrapper = ({ children }) => <div style={wrapperStyles}>{children}</div>;
 
 // const highlightStyle = {
 //   padding: 20,
@@ -47,22 +43,23 @@ const Wrapper = ({ children }) => (
 // };
 
 export const liveErrorStyle = {
-  fontFamily: "Menlo, monospace",
+  fontFamily: 'Menlo, monospace',
   fontSize: 14,
-  padding: "1em",
+  padding: '1em',
   // overflowX: "auto",
-  color: "white",
-  backgroundColor: "red",
+  color: 'white',
+  backgroundColor: 'red',
 };
 
 // const Box = ({ children, style }: any) => <div style={style}>{children}</div>
 
 const previewStyles = {
-  fontFamily: 'body',
+  fontFamily:
+    '-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif',
   border: '1px solid rgb(226, 232, 240)',
   borderRadius: 4,
   padding: 20,
-}
+};
 
 const LiveCodePreview = (props: any) => (
   <div style={previewStyles}>
@@ -137,14 +134,12 @@ const CodeBlock = ({
 }: any) => {
   const [editorCode, setEditorCode] = useState(children.trim());
 
-  const language = className && className.replace(/language-/, "");
+  const language = className && className.replace(/language-/, '');
   // const { onCopy, hasCopied } = useClipboard(editorCode);
 
   // const { colorMode } = useColorMode();
   const themes = { light: lightTheme, dark: darkTheme };
-  const theme = themes["dark"];
-
-  console.log({ editorCode });
+  const theme = themes['dark'];
 
   const liveProviderProps = {
     theme,
@@ -165,15 +160,12 @@ const CodeBlock = ({
 
   const handleCodeChange = (newCode: any) => setEditorCode(newCode.trim());
 
-  if (language === "jsx" && live === true) {
+  if (language === 'jsx' && live === true) {
     return (
       <LiveProvider {...liveProviderProps}>
         <LiveCodePreview />
         <Wrapper>
-          <LiveEditor
-            onChange={handleCodeChange}
-            style={liveEditorStyle}
-          />
+          <LiveEditor onChange={handleCodeChange} style={liveEditorStyle} />
           {/* <CopyButton onClick={onCopy}>
             {hasCopied ? "copied" : "copy"}
           </CopyButton> */}
@@ -186,7 +178,7 @@ const CodeBlock = ({
 
   if (render) {
     return (
-      <div style={{ marginTop: "40px" }}>
+      <div style={{ marginTop: '40px' }}>
         <LiveProvider {...liveProviderProps}>
           <LiveCodePreview />
         </LiveProvider>
