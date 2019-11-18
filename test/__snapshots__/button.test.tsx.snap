@@ -54,6 +54,8 @@ exports[`<Button /> should render 1`] = `
   <button
     class="emotion-0"
     role="button"
-  />
+  >
+    Test
+  </button>
 </div>
 `;
