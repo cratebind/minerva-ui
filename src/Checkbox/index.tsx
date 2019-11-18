@@ -1,5 +1,6 @@
-import * as React from 'react';
 /** @jsx jsx */
+import { jsx } from '@emotion/core';
+// import * as React from 'react';
 import styled from '@emotion/styled';
 import ThemeProvider from '../ThemeProvider';
 
@@ -66,14 +67,13 @@ export default function Checkbox(props: CheckboxProps) {
         <div data-ui-control-box data-ui-checked={checked} tabIndex={0} />
         <VisuallyHidden>
           <input
-            role="checkbox"
             type="checkbox"
             onChange={onChange}
             data-ui-visually-hidden
             {...rest}
           />
         </VisuallyHidden>
-        {children}s
+        {children}
       </CheckboxContainer>
     </ThemeProvider>
   );

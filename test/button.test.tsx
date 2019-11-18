@@ -10,7 +10,7 @@ describe('<Button />', () => {
   it('should render', () => {
     const { container } = render(
       <ThemeProvider>
-        <Button />
+        <Button>Test</Button>
       </ThemeProvider>
     );
     expect(container).toMatchSnapshot();
@@ -30,7 +30,7 @@ describe('<Button />', () => {
   it('should show default background color', () => {
     const { getByRole } = render(
       <ThemeProvider>
-        <Button />
+        <Button>Test</Button>
       </ThemeProvider>
     );
 
@@ -50,7 +50,7 @@ describe('<Button />', () => {
     };
     const { getByRole } = render(
       <ThemeProvider theme={theme}>
-        <Button />
+        <Button>Test</Button>
       </ThemeProvider>
     );
 
