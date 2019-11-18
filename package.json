@@ -5,6 +5,9 @@
   "author": "Cratebind",
   "description": "Composable, Simple React Base Components",
   "repository": "https://github.com/cratebind/minerva-ui",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "main": "dist/index.js",
   "module": "dist/minerva-ui.esm.js",
   "typings": "dist/index.d.ts",
