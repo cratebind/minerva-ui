@@ -44,13 +44,20 @@ const exportedTheme = {
   // },
 };
 
-const ThemeProvider = ({ theme = exportedTheme, children }) => {
+export interface ProviderProps {
+  /** theme config object to style components */
+  theme?: object;
+  /** array of a type! */
+  children?: React.ReactNode;
+}
+
+function ThemeProvider({ theme = exportedTheme, children }: ProviderProps) {
   return (
     <EmotionThemeProvider theme={{ ...defaultTheme, ...theme }}>
       {children}
     </EmotionThemeProvider>
   );
-};
+}
 
 const useTheme = () => {
   const theme = useContext(ThemeContext);

@@ -35,16 +35,21 @@ const StyledButton = styled('button')<any>(
       boxShadow: 'none',
     },
   },
-  props => ({
-    ...props.theme.Button.container,
-    ...props.theme.Button.text,
-  })
+  props =>
+    props.theme && props.theme.Button
+      ? {
+          ...props.theme.Button.container,
+          ...props.theme.Button.text,
+        }
+      : {}
 );
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   disabled?: boolean;
+  /** If `true`, button will show a spinner. */
+  isLoading?: boolean;
 }
 
 export default function Button({
