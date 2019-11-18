@@ -4,7 +4,7 @@
   "license": "MIT",
   "author": "Cratebind",
   "description": "Composable, Simple React Base Components",
-  "repository": "https://github.com/cratebind/minerva-ui",
+  "repository": "git://github.com/cratebind/minerva-ui.git",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
