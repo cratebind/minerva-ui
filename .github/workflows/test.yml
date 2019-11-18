@@ -1,4 +1,4 @@
-name: CI
+name: Test
 
 on: [push]
 
@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a multi-line script
+    - name: Install and Run Tests
       run: |
         yarn install
         yarn test

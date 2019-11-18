@@ -5,6 +5,9 @@
   "author": "Cratebind",
   "description": "Composable, Simple React Base Components",
   "repository": "https://github.com/cratebind/minerva-ui",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "main": "dist/index.js",
   "module": "dist/minerva-ui.esm.js",
   "typings": "dist/index.d.ts",
@@ -48,6 +51,7 @@
     "@types/react-dom": "^16.9.4",
     "babel-loader": "^8.0.6",
     "husky": "^3.0.9",
+    "jest-emotion": "^10.0.17",
     "np": "^5.1.2",
     "prism-react-renderer": "^1.0.2",
     "react": "^16.11.0",
@@ -62,6 +66,16 @@
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
+    "@testing-library/jest-dom": "^4.2.3",
+    "@testing-library/react": "^9.3.2",
     "emotion-theming": "^10.0.19"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ],
+    "snapshotSerializers": [
+      "jest-emotion"
+    ]
   }
 }

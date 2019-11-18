@@ -53,7 +53,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   return (
-    <StyledButton disabled={disabled} {...props}>
+    <StyledButton disabled={disabled} role="button" {...props}>
       {children}
     </StyledButton>
   );
