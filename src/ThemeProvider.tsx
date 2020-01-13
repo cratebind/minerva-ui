@@ -49,7 +49,6 @@ export interface ProviderProps {
 }
 
 function ThemeProvider({ theme = exportedTheme, children }: ProviderProps) {
-  console.log({ theme });
   return (
     <EmotionThemeProvider theme={{ ...defaultTheme, ...theme }}>
       {children}

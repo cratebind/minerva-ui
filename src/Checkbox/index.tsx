@@ -28,9 +28,15 @@ const ControlBox = styled('div')<ControlBoxProps>(
     width: '12px',
     transition: 'all 120ms ease',
     marginRight: '5px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   props => ({
     backgroundColor: props.checked ? 'rgb(49, 130, 206)' : 'transparent',
+    border: props.checked
+      ? '2px solid rgb(49, 130, 206)'
+      : '2px solid rgb(226, 232, 240)',
   })
 );
 
@@ -57,13 +63,29 @@ export interface CheckboxProps
   style?: any;
 }
 
+function Checkmark({ size = 10, color = '#fff' }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill={color}
+    >
+      <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" />
+    </svg>
+  );
+}
+
 export default function Checkbox(props: CheckboxProps) {
   const { children, checked = false, onChange, ...rest } = props;
 
   return (
     <ThemeProvider>
       <CheckboxContainer>
-        <ControlBox checked={checked} />
+        <ControlBox checked={checked}>
+          <Checkmark />
+        </ControlBox>
         <div data-ui-control-box data-ui-checked={checked} tabIndex={0} />
         <VisuallyHidden>
           <input
