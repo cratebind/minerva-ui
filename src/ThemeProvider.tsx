@@ -6,10 +6,7 @@ import { useContext } from 'react';
 // const defaultTheme = {};
 
 const defaultTheme = {
-  Button: {
-    container: {},
-    text: {},
-  },
+  Button: {},
   Text: {
     // fontSize: 16,
     lineHeight: '19px',
@@ -52,6 +49,7 @@ export interface ProviderProps {
 }
 
 function ThemeProvider({ theme = exportedTheme, children }: ProviderProps) {
+  console.log({ theme });
   return (
     <EmotionThemeProvider theme={{ ...defaultTheme, ...theme }}>
       {children}

@@ -35,13 +35,16 @@ const StyledButton = styled('button')<any>(
       boxShadow: 'none',
     },
   },
-  props =>
-    props.theme && props.theme.Button
+  props => {
+    console.log({ props });
+    return props.theme && props.theme.Button
       ? {
-          ...props.theme.Button.container,
-          ...props.theme.Button.text,
+          ...props.theme.Button,
+          // ...props.theme.Button.container,
+          // ...props.theme.Button.text,
         }
-      : {}
+      : {};
+  }
 );
 
 export interface ButtonProps

@@ -16,14 +16,12 @@ import { Checkbox } from 'minerva-ui'
 () => {
   const [checked, setChecked] = React.useState(false);
   return (
-    <ThemeProvider>
-      <Checkbox
-        checked={checked}
-        onChange={() => setChecked(!checked)}
-      >
-        Stay Logged In
-      </Checkbox>
-    </ThemeProvider>
+    <Checkbox
+      checked={checked}
+      onChange={() => setChecked(!checked)}
+    >
+      Stay Logged In
+    </Checkbox>
   )
 }
 ```

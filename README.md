@@ -16,7 +16,7 @@ or
 Import components you want into your UI:
 
 ```js
-import { Checkbox } from ‘minerva-ui’;
+import { Checkbox } from 'minerva-ui';
 ```
 
 And use them like so:

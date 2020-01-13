@@ -26,4 +26,7 @@ declare const CodeBlock: {
     props: {};
   };
 };
+
+declare module '@mdx-js/react';
+
 export default CodeBlock;

@@ -124,6 +124,12 @@ const LiveCodePreview = (props: any) => (
 //   );
 // };
 
+const Provider = ({ children, ...props }) => (
+  <Minerva.ThemeProvider>
+    <LiveProvider {...props}>{children}</LiveProvider>
+  </Minerva.ThemeProvider>
+);
+
 const CodeBlock = ({
   className,
   live = true,
@@ -162,7 +168,7 @@ const CodeBlock = ({
 
   if (language === 'jsx' && live === true) {
     return (
-      <LiveProvider {...liveProviderProps}>
+      <Provider {...liveProviderProps}>
         <LiveCodePreview />
         <Wrapper>
           <LiveEditor onChange={handleCodeChange} style={liveEditorStyle} />
@@ -172,22 +178,22 @@ const CodeBlock = ({
           {/* <EditableNotice /> */}
         </Wrapper>
         <LiveError style={liveErrorStyle} />
-      </LiveProvider>
+      </Provider>
     );
   }
 
   if (render) {
     return (
       <div style={{ marginTop: '40px' }}>
-        <LiveProvider {...liveProviderProps}>
+        <Provider {...liveProviderProps}>
           <LiveCodePreview />
-        </LiveProvider>
+        </Provider>
       </div>
     );
   }
 
   return (
-    <LiveProvider disabled {...liveProviderProps}>
+    <Provider disabled {...liveProviderProps}>
       <Wrapper>
         <LiveEditor style={liveEditorStyle} />
 
@@ -195,7 +201,7 @@ const CodeBlock = ({
           {hasCopied ? "copied" : "copy"}
         </CopyButton> */}
       </Wrapper>
-    </LiveProvider>
+    </Provider>
   );
 
   // return (
