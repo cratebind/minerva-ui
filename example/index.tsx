@@ -67,7 +67,7 @@ function toWords(string) {
 const App = () => {
   const [styles, setStyles] = useState(initialStyles);
 
-  console.log({ styles });
+  // console.log({ styles });
   return (
     <ThemeProvider theme={styles}>
       <Flex style={{ height: '100vh' }}>

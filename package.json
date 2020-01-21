@@ -69,7 +69,10 @@
     "@mdx-js/react": "^1.5.1",
     "@testing-library/jest-dom": "^4.2.3",
     "@testing-library/react": "^9.3.2",
-    "emotion-theming": "^10.0.19"
+    "@types/styled-components": "^4.4.2",
+    "emotion-theming": "^10.0.19",
+    "styled-components": "^5.0.0",
+    "styled-system": "^5.1.4"
   },
   "jest": {
     "setupFilesAfterEnv": [

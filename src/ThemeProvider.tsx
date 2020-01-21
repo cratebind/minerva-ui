@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx, ThemeContext } from '@emotion/core';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+
 import { useContext } from 'react';
 // import theme from "../theme";
 // const defaultTheme = {};
@@ -39,6 +41,9 @@ const exportedTheme = {
   //   // opacity: 1,
   //   color: 'rgb(148, 148, 148)',
   // },
+  colors: {
+    primary: '#6979F8',
+  },
 };
 
 export interface ProviderProps {
@@ -51,9 +56,11 @@ export interface ProviderProps {
 function ThemeProvider({ theme = exportedTheme, children }: ProviderProps) {
   console.log({ theme });
   return (
-    <EmotionThemeProvider theme={{ ...defaultTheme, ...theme }}>
-      {children}
-    </EmotionThemeProvider>
+    <StyledThemeProvider theme={theme}>
+      <EmotionThemeProvider theme={{ ...defaultTheme, ...theme }}>
+        {children}
+      </EmotionThemeProvider>
+    </StyledThemeProvider>
   );
 }
 
