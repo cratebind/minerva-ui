@@ -1,58 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Button /> should render 1`] = `
-.emotion-0 {
-  border-radius: 4px;
-  font-weight: 500;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-transition: all 250ms;
-  transition: all 250ms;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: relative;
-  white-space: nowrap;
-  vertical-align: middle;
-  line-height: 1.2;
-  outline: none;
-  min-width: 10px;
-  font-size: 16px;
-  color: white;
-  height: 40px;
-  padding: 0 16px;
-  background-color: rgb(56,161,105);
-  cursor: pointer;
-}
-
-.emotion-0:hover {
-  box-shadow: inset 0 0 0 9999px rgba(0,0,0,0.2);
-}
-
-.emotion-0:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
 <div>
   <button
-    class="emotion-0"
+    class="sc-AykKC jOcHbA"
     role="button"
   >
     Test

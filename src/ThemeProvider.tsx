@@ -1,9 +1,6 @@
-/** @jsx jsx */
-import { jsx, ThemeContext } from '@emotion/core';
-// import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
+import React from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
-import { useContext } from 'react';
 const exportedTheme = {
   Button: {
     container: {
@@ -47,22 +44,16 @@ export interface ProviderProps {
 
 function ThemeProvider({ theme = exportedTheme, children }: ProviderProps) {
   console.log({ theme });
-  return (
-    <StyledThemeProvider theme={theme}>
-      {/* <EmotionThemeProvider theme={{ ...defaultTheme, ...theme }}> */}
-      {children}
-      {/* </EmotionThemeProvider> */}
-    </StyledThemeProvider>
-  );
+  return <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>;
 }
 
-const useTheme = () => {
-  const theme = useContext(ThemeContext);
-  if (theme === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return theme;
-};
+// const useTheme = () => {
+//   const theme = useContext(ThemeContext);
+//   if (theme === undefined) {
+//     throw new Error('useTheme must be used within a ThemeProvider');
+//   }
+//   return theme;
+// };
 
 export default ThemeProvider;
-export { useTheme };
+// export { useTheme };

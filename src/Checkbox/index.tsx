@@ -1,8 +1,5 @@
 import React from 'react';
-// import ThemeProvider from '../ThemeProvider';
-
 import styled from 'styled-components';
-// import { color } from 'styled-system';
 
 /**
  * TODO:
