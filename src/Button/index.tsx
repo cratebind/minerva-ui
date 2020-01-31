@@ -2,10 +2,21 @@ import React from 'react';
 // import styled from '@emotion/styled';
 
 import styled from 'styled-components';
-import { color } from 'styled-system';
+import {
+  background,
+  border,
+  color,
+  flexbox,
+  grid,
+  layout,
+  position,
+  shadow,
+  space,
+  typography,
+} from 'styled-system';
 import ThemeProvider from '../ThemeProvider';
 
-const StyledButton = styled.button(
+const StyledButton = styled('button')(
   props => ({
     backgroundColor: 'rgb(56, 161, 105)',
     fontWeight: '600',
@@ -33,7 +44,16 @@ const StyledButton = styled.button(
     ...props.theme.Button.container,
     ...props.theme.Button.text,
   }),
-  color
+  color,
+  space,
+  flexbox,
+  grid,
+  layout,
+  position,
+  shadow,
+  background,
+  border,
+  typography
 );
 
 export interface ButtonProps
@@ -54,7 +74,6 @@ export default function Button({
   variant = 'primary',
   ...props
 }: ButtonProps) {
-  console.log(props);
   return (
     <ThemeProvider>
       <StyledButton disabled={disabled} role="button" bg={variant} {...props}>
