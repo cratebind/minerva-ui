@@ -35,11 +35,11 @@ And use them like so:
 }
 ```
 
-### Styling
+<!-- ### Styling
 To include base styling, you can import the styles for the corresponding component:
 ```
 import 'minerva-ui/checkbox.css'
-```
+``` -->
 
 ### Goals:
 - Highly Composable

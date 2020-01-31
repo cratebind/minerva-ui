@@ -12,7 +12,6 @@ import {
   space,
   typography,
 } from 'styled-system';
-import ThemeProvider from '../ThemeProvider';
 
 const StyledButton = styled('button')(
   props => ({
@@ -73,10 +72,8 @@ export default function Button({
   ...props
 }: ButtonProps) {
   return (
-    <ThemeProvider>
-      <StyledButton disabled={disabled} role="button" bg={variant} {...props}>
-        {children}
-      </StyledButton>
-    </ThemeProvider>
+    <StyledButton disabled={disabled} role="button" bg={variant} {...props}>
+      {children}
+    </StyledButton>
   );
 }
