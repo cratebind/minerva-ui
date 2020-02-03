@@ -43,7 +43,7 @@ export interface ProviderProps {
 }
 
 function ThemeProvider({ theme = exportedTheme, children }: ProviderProps) {
-  console.log({ theme });
+  // console.log({ theme });
   return <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>;
 }
 

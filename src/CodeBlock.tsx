@@ -48,7 +48,7 @@ export const liveErrorStyle = {
   padding: '1em',
   // overflowX: "auto",
   color: 'white',
-  backgroundColor: 'red',
+  // backgroundColor: 'red',
 };
 
 // const Box = ({ children, style }: any) => <div style={style}>{children}</div>
@@ -63,7 +63,10 @@ const previewStyles = {
 
 const LiveCodePreview = (props: any) => (
   <div style={previewStyles}>
-    <LivePreview {...props} />
+    <Minerva.ThemeProvider>
+      <Minerva.GlobalStyles />
+      <LivePreview {...props} />
+    </Minerva.ThemeProvider>
   </div>
 );
 
