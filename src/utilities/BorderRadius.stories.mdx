@@ -1,0 +1,41 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import baseTheme from '../theme';
+
+<Meta title="Utilities|Border Radius" />
+
+## Prop
+```jsx
+() => (
+  <Flex
+    backgroundColor="#edf2f7"
+    padding="10px"
+    justifyContent="space-between"
+  >
+    <Button bg="teal.700" borderRadius="none">none</Button>
+    <Button borderRadius="sm">sm</Button>
+    <Button borderRadius="default">default</Button>
+    <Button borderRadius="md">md</Button>
+    <Button borderRadius="lg">lg</Button>
+    <Button borderRadius="full">full</Button>
+  </Flex>
+)
+```
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(baseTheme.radii).map(([name, value]) => (
+      <tr>
+        <td>{name}</td>
+        <td>
+          <span>{value}</span>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>

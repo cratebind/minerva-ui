@@ -14,10 +14,10 @@ or
 Import components you want into your UI:
 
 ```js
-import { Checkbox } from ‘minerva-ui’;
+import { Checkbox } from 'minerva-ui';
 ```
 
-And use them like so:
+And use them:
 
 ```jsx
 () => {
@@ -33,8 +33,25 @@ And use them like so:
 }
 ```
 
-### Styling
+### Utility Props
+
+Utility props are provided as aliases for most components, in a style influenced heavily by [Tailwind CSS](https://tailwindcss.com/docs/font-size).
+
+For example:
+
+```jsx
+() => (
+  <>
+    {/* enter a custom pixel value */}
+    <Button fontSize="12px">Save</Button>
+    {/* or enter the value named "sm" in the theme, which is .875rem by default */}
+    <Button fontSize="lg">Save</Button>
+  </>
+)
+```
+
+<!-- ### Styling
 To include base styling, you can import the styles for the corresponding component:
 ```
 import 'minerva-ui/checkbox.css'
-```
+``` -->

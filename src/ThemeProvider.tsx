@@ -1,45 +1,8 @@
-/** @jsx jsx */
-import { jsx, ThemeContext } from '@emotion/core';
-import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
-import { useContext } from 'react';
-// import theme from "../theme";
-// const defaultTheme = {};
+import React from 'react';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import baseTheme from './theme';
 
-const defaultTheme = {
-  Button: {},
-  Text: {
-    // fontSize: 16,
-    lineHeight: '19px',
-  },
-};
-
-const exportedTheme = {
-  // Button: {
-  //   container: {
-  //     backgroundColor: 'rgb(49, 151, 149)',
-  //     borderRadius: 4,
-  //     height: 34,
-  //   },
-  //   text: {
-  //     fontSize: 16,
-  //     letterSpacing: {
-  //       unit: 'PERCENT',
-  //       value: 0,
-  //     },
-  //     lineHeight: {
-  //       unit: 'AUTO',
-  //     },
-  //     fontFamily: 'Roboto',
-  //     fontWeight: 'regular',
-  //   },
-  // },
-  // Text: {
-  //   fontSize: 16,
-  //   lineHeight: '19px',
-  //   // opacity: 1,
-  //   color: 'rgb(148, 148, 148)',
-  // },
-};
+const defaultTheme = {};
 
 export interface ProviderProps {
   /** theme config object to style components */
@@ -48,21 +11,22 @@ export interface ProviderProps {
   children?: React.ReactNode;
 }
 
-function ThemeProvider({ theme = exportedTheme, children }: ProviderProps) {
+function ThemeProvider({ theme = baseTheme, children }: ProviderProps) {
+  // console.log({ theme });
   return (
-    <EmotionThemeProvider theme={{ ...defaultTheme, ...theme }}>
+    <StyledThemeProvider theme={{ ...defaultTheme, ...theme }}>
       {children}
-    </EmotionThemeProvider>
+    </StyledThemeProvider>
   );
 }
 
-const useTheme = () => {
-  const theme = useContext(ThemeContext);
-  if (theme === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return theme;
-};
+// const useTheme = () => {
+//   const theme = useContext(ThemeContext);
+//   if (theme === undefined) {
+//     throw new Error('useTheme must be used within a ThemeProvider');
+//   }
+//   return theme;
+// };
 
 export default ThemeProvider;
-export { useTheme };
+// export { useTheme };

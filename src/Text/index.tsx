@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-import styled from '@emotion/styled';
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledText = styled('p')<any>(
   {
