@@ -1,6 +1,6 @@
 import React from 'react';
-// import { matchers } from 'jest-emotion';
 import { render } from '@testing-library/react';
+import 'jest-styled-components';
 import { Button } from '../src';
 import { ThemeProvider } from '../src';
 
@@ -34,6 +34,9 @@ describe('<Button />', () => {
 
   //   const button = getByRole('button');
 
+  //   console.log(button);
+
+  // @TODO: Figure out this typescript issue
   //   expect(button).toHaveStyleRule('background-color', 'rgb(56,161,105)');
   // });
 
