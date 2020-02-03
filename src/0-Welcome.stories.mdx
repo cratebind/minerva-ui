@@ -38,7 +38,6 @@ And use them:
 Utility props are provided as aliases for most components, in a style influenced heavily by [Tailwind CSS](https://tailwindcss.com/docs/font-size).
 
 For example:
-
 ```jsx
 () => (
   <>
@@ -50,6 +49,39 @@ For example:
 )
 ```
 
+Here's the ["Card" example](https://tailwindcss.com/components/cards) by Tailwind recreated using this API:
+
+```jsx
+() => (
+  <Flex
+    flexDirection="column"
+    boxShadow="lg"
+    borderRadius="md"
+    maxWidth="24rem"
+    overflow="hidden"
+  >
+    <img
+      src="https://tailwindcss.com/img/card-top.jpg"
+      alt="Sunset in the mountains"
+    />
+    <Flex flexDirection="column" px={6} py={4}>
+      <Text fontWeight="bold" fontSize="xl" mb={2} color="gray.700">The Coldest Sunset</Text>
+      <Text color="gray.700" lineHeight="normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</Text>
+    </Flex>
+    <Flex px={6} py={4}>
+      <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1} mr={2}>
+        #photography
+      </Block>
+      <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1} mr={2}>
+        #travel
+      </Block>
+      <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1}>
+        #winter
+      </Block>
+    </Flex>
+  </Flex>
+)
+```
 <!-- ### Styling
 To include base styling, you can import the styles for the corresponding component:
 ```
