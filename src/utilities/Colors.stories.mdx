@@ -1,0 +1,38 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import baseTheme from '../theme';
+
+<Meta title="Utilities|Colors" />
+
+## Prop
+```jsx
+() => (
+  <Flex
+    backgroundColor="#edf2f7"
+    padding="10px"
+    justifyContent="space-between"
+  >
+    {/* TO DO */}
+  </Flex>
+)
+```
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(baseTheme.colors).map(([color, values]) => (
+      <tr>
+        <td>{color}</td>
+        <td>
+          {typeof values === 'string' ? values : Object.entries(values).map(([number, code]) => (
+            <div>{number}: {code}</div>
+          ))}
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
