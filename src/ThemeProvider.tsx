@@ -1,6 +1,8 @@
 import React from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
+const defaultTheme = {};
+
 const exportedTheme = {
   Button: {
     container: {
@@ -56,7 +58,11 @@ export interface ProviderProps {
 
 function ThemeProvider({ theme = exportedTheme, children }: ProviderProps) {
   // console.log({ theme });
-  return <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>;
+  return (
+    <StyledThemeProvider theme={{ ...defaultTheme, ...theme }}>
+      {children}
+    </StyledThemeProvider>
+  );
 }
 
 // const useTheme = () => {
