@@ -1,8 +1,10 @@
+import React from 'react';
 import {
-  addParameters
+  addParameters,
+  addDecorator
 } from '@storybook/react';
 import CodeBlock from '../src/CodeBlock';
-// import ThemeProvider from '../src/ThemeProvider';
+import ThemeProvider from '../src/ThemeProvider';
 // import GlobalStyles from '../src/GlobalStyles';
 
 addParameters({
@@ -14,4 +16,4 @@ addParameters({
 });
 
 
-// addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>);
+addDecorator(storyFn => <ThemeProvider>{storyFn()}</ThemeProvider>);

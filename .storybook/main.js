@@ -4,6 +4,7 @@ module.exports = {
     '@storybook/addon-actions/register',
     '@storybook/addon-links/register',
     '@storybook/addon-docs/react/preset',
-    "@storybook/preset-typescript"
+    '@storybook/preset-typescript',
+    // './register',
   ]
 }
