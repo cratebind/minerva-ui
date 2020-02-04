@@ -2966,6 +2966,13 @@
     "@types/react-native" "*"
     csstype "^2.2.0"
 
+"@types/styled-system@^5.1.6":
+  version "5.1.6"
+  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-5.1.6.tgz#4f45612df1f0987a05465dd280b16818e3e27c73"
+  integrity sha512-npB/Fdqc1TH6UwyB9CtsTXkg3zb8jg/WG4LUEQ85cY6oSRgRbytxfsgbgdG+YWQFtbznp3J/4BAdkPB+WsHheA==
+  dependencies:
+    csstype "^2.6.4"
+
 "@types/testing-library__dom@*", "@types/testing-library__dom@^6.0.0":
   version "6.10.0"
   resolved "https://registry.yarnpkg.com/@types/testing-library__dom/-/testing-library__dom-6.10.0.tgz#590d76e3875a7c536dc744eb530cbf51b6483404"
@@ -5422,6 +5429,11 @@ csstype@^2.2.0, csstype@^2.5.7:
   version "2.6.7"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.7.tgz#20b0024c20b6718f4eda3853a1f5a1cce7f5e4a5"
   integrity sha512-9Mcn9sFbGBAdmimWb2gLVDtFJzeKtDGIr76TUqmjZrw9LFXBMSU70lcs+C0/7fyCd6iBDqmksUcCOUIkisPHsQ==
+
+csstype@^2.6.4:
+  version "2.6.8"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.8.tgz#0fb6fc2417ffd2816a418c9336da74d7f07db431"
+  integrity sha512-msVS9qTuMT5zwAGCVm4mxfrZ18BNc6Csd0oJAtiFMZ1FAx1CCvy2+5MDmYoix63LM/6NDbNtodCiGYGmFgO0dA==
 
 currently-unhandled@^0.4.1:
   version "0.4.1"

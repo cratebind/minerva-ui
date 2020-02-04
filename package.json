@@ -68,6 +68,7 @@
     "@testing-library/jest-dom": "^4.2.3",
     "@testing-library/react": "^9.3.2",
     "@types/styled-components": "^4.4.2",
+    "@types/styled-system": "^5.1.6",
     "styled-components": "^5.0.0",
     "styled-system": "^5.1.4"
   },

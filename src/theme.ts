@@ -1,4 +1,12 @@
-const baseTheme = {
+// import { Theme } from '@types/styled-system';
+import { Theme } from 'styled-system';
+
+export interface MinervaTheme extends Theme {
+  Button?: any;
+  Text?: any;
+}
+
+const baseTheme: MinervaTheme = {
   Button: {
     container: {
       // backgroundColor: 'rgb(49, 151, 149)',
