@@ -2,24 +2,43 @@
 
 # [View Components](https://minerva-ui.netlify.com)
 
-## Getting started
+# Minerva UI
+
+## Get started
 
 Minerva UI is a reusable component library to help build UIs faster. This library aims to be highly composable, declarative and accessible.
 
-### Install
+## Install
 `npm install --save minerva-ui`
 or
 `yarn add minerva-ui`
 
-### **Use**
+### Goals:
+- Highly Composable
+- Easy to customize
 
-Import components you want into your UI:
+## Usage
+
+First add the `<ThemeProvider />` and `<GlobalStyles />` to the root of your app:
+
+GlobalStyles is optional but highly recommended, it includes the CSS reset and styles from [Tailwind CSS.](https://tailwindcss.com/docs/preflight)
+
+```jsx live=false
+const App = () => (
+  <ThemeProvider>
+    {/* optional but recommended */}
+    <GlobalStyles />
+  </ThemeProvider>
+)
+```
+
+Then import components you want into your UI:
 
 ```js
 import { Checkbox } from 'minerva-ui';
 ```
 
-And use them like so:
+And use them:
 
 ```jsx
 () => {
@@ -35,183 +54,92 @@ And use them like so:
 }
 ```
 
-<!-- ### Styling
-To include base styling, you can import the styles for the corresponding component:
+## Utility Props
+
+Utility props are provided as aliases for most components. The style is heavily influenced by [Tailwind CSS](https://tailwindcss.com/docs/font-size).
+
+For example:
+```jsx
+() => (
+  <>
+    {/* enter a custom pixel value */}
+    <Button fontSize="12px">Save</Button>
+    {/* or enter the value named "sm" in the theme, which is .875rem by default */}
+    <Button fontSize="lg">Save</Button>
+  </>
+)
 ```
-import 'minerva-ui/checkbox.css'
-``` -->
 
-### Goals:
-- Highly Composable
-- Largely Declarative
-- Includes optional minimal styles
+## Styling Props Example
 
-### Inspiration:
+Here's the ["Card" example](https://tailwindcss.com/components/cards) by Tailwind recreated using this API:
 
-[Ryan Florence "Reach UI" Guidelines](https://gist.github.com/ryanflorence/e5c794e6093d16a69fa88d2112a292f7)
+```jsx
+() => (
+  <Flex
+    flexDirection="column"
+    boxShadow="lg"
+    borderRadius="md"
+    maxWidth="24rem"
+    overflow="hidden"
+  >
+    <img
+      src="https://tailwindcss.com/img/card-top.jpg"
+      alt="Sunset in the mountains"
+    />
+    <Flex flexDirection="column" px={6} py={4}>
+      <Text fontWeight="bold" fontSize="xl" mb={2} color="gray.700">The Coldest Sunset</Text>
+      <Text color="gray.700" lineHeight="normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</Text>
+    </Flex>
+    <Flex px={6} py={4}>
+      <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1} mr={2}>
+        #photography
+      </Block>
+      <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1} mr={2}>
+        #travel
+      </Block>
+      <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1}>
+        #winter
+      </Block>
+    </Flex>
+  </Flex>
+)
+```
 
-### Development
+Once you've settled on your styles, you can then easily extract components into your own custom components without sacrificing control:
+
+```jsx isManual=true
+// make sure to pass children and "forward" all props to your component
+const Tag = ({ children, ...props }) => (
+  <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1} {...props}>
+    {children}
+  </Block>
+)
+
+render(
+  <Flex>
+    <Tag>High Priority</Tag>
+    {/* by passing props down we can still style our custom component */}
+    <Tag bg="indigo.600" color="#fff" ml={2}>Customized Tag</Tag>
+  </Flex>
+);
+```
+
+### Local Development
 
 1. Clone Repo
 2. Run `yarn install`
 3. Run `yarn storybook` to open a local storybook server for development
 
-## Commands
+### Influences:
 
-TSDX scaffolds your new library inside `/src`, and also sets up a [Parcel-based](https://parceljs.org) playground for it inside `/example`.
+[Ryan Florence "Reach UI" Guidelines](https://gist.github.com/ryanflorence/e5c794e6093d16a69fa88d2112a292f7) - Great guidelines for making composable / declarative React APIs
+[Tailwind CSS](https://tailwindcss.com/) - Utility-based CSS framework without pre-packaged styles
+[Chakra UI](https://chakra-ui.com/) - Batteries-included React Component library
 
-The recommended workflow is to run TSDX in one terminal:
-
-```
-npm start # or yarn start
-```
-
-This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
-
-Then run the example inside another:
-
-```
-cd example
-npm i # or yarn to install dependencies
-npm start # or yarn start
-```
-
-The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**, [we use Parcel's aliasing](https://github.com/palmerhq/tsdx/pull/88/files).
-
-To do a one-off build, use `npm run build` or `yarn build`.
-
-To run tests, use `npm test` or `yarn test`.
-
-## Configuration
-
-Code quality is [set up for you](https://github.com/palmerhq/tsdx/pull/45/files) with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
-
-### Jest
-
-Jest tests are set up to run with `npm test` or `yarn test`. This runs the test watcher (Jest) in an interactive mode. By default, runs tests related to files changed since the last commit.
-
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```
-/example
-  index.html
-  index.tsx       # test your component here in a demo app
-  package.json
-  tsconfig.json
-/src
-  index.tsx       # EDIT THIS
-/test
-  blah.test.tsx   # EDIT THIS
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
-```
-
-#### React Testing Library
-
-We do not set up `react-testing-library` for you yet, we welcome contributions and documentation on this.
-
-### Rollup
-
-TSDX uses [Rollup v1.x](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
-
-### TypeScript
-
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
-
-## Continuous Integration
-
-### Travis
-
-_to be completed_
-
-### Circle
-
-_to be completed_
-
-## Optimizations
-
-Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
-
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
-
-// inside your code...
-if (__DEV__) {
-  console.log('foo');
-}
-```
-
-You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
-
-## Module Formats
-
-CJS, ESModules, and UMD module formats are supported.
-
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
-
-## Using the Playground
-
-```
-cd example
-npm i # or yarn to install dependencies
-npm start # or yarn start
-```
-
-The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**!
-
-## Deploying the Playground
-
-The Playground is just a simple [Parcel](https://parceljs.org) app, you can deploy it anywhere you would normally deploy that. Here are some guidelines for **manually** deploying with the Netlify CLI (`npm i -g netlify-cli`):
-
-```bash
-cd example # if not already in the example folder
-npm run build # builds to dist
-netlify deploy # deploy the dist folder
-```
-
-Alternatively, if you already have a git repo connected, you can set up continuous deployment with Netlify:
-
-```bash
-netlify init
-# build command: yarn build && cd example && yarn && yarn build
-# directory to deploy: example/dist
-# pick yes for netlify.toml
-```
-
-## Named Exports
-
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
-
-## Including Styles
-
-There are many ways to ship styles, including with CSS-in-JS. TSDX has no opinion on this, configure how you like.
-
-For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
-
-## Publishing to NPM
-
-We recommend using https://github.com/sindresorhus/np.
-
-## Usage with Lerna
-
-When creating a new package with TSDX within a project set up with Lerna, you might encounter a `Cannot resolve dependency` error when trying to run the `example` project. To fix that you will need to make changes to the `package.json` file _inside the `example` directory_.
-
-The problem is that due to the nature of how dependencies are installed in Lerna projects, the aliases in the example project's `package.json` might not point to the right place, as those dependencies might have been installed in the root of your Lerna project.
-
-Change the `alias` to point to where those packages are actually installed. This depends on the directory structure of your Lerna project, so the actual path might be different from the diff below.
-
-```diff
-   "alias": {
--    "react": "../node_modules/react",
--    "react-dom": "../node_modules/react-dom"
-+    "react": "../../../node_modules/react",
-+    "react-dom": "../../../node_modules/react-dom"
-   },
-```
-
-An alternative to fixing this problem would be to remove aliases altogether and define the dependencies referenced as aliases as dev dependencies instead. [However, that might cause other problems.](https://github.com/palmerhq/tsdx/issues/64)
+### Tools:
+[Styled Components](https://styled-components.com/)
+[Styled System](https://styled-system.com/)
+[Jest](https://jestjs.io/)
+[Typescript](https://www.typescriptlang.org/)
+[TSDX](https://github.com/jaredpalmer/tsdx)

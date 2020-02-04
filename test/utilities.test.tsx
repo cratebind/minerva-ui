@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-import { Block } from '../src/layout';
+import { Block } from '../src';
 import { ThemeProvider } from '../src';
 
 const ThemedBlock = ({ children = 'Default Text', ...props }) => (
