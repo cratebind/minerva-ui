@@ -68,7 +68,7 @@ export interface ButtonProps
 export default function Button({
   children,
   disabled = false,
-  variant = 'primary',
+  variant,
   ...props
 }: ButtonProps) {
   return (

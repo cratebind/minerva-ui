@@ -38,7 +38,6 @@ exports[`<Button /> should render 1`] = `
   transition: all 250ms ease 0s;
   outline: none;
   border-width: 0;
-  background-color: #6979F8;
 }
 
 <div>
