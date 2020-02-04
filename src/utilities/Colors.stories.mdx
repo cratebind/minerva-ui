@@ -30,7 +30,7 @@ import baseTheme from '../theme';
         <td>{color}</td>
         <td>
           {typeof values === 'string' ? values : Object.entries(values).map(([number, code]) => (
-            <div>{number}: {code}</div>
+            <div style={{ backgroundColor: code, padding: '4px 8px', borderRadius: '4px', color: number > 500 ? '#fff' : '#000', margin: '4px' }}>{number}: {code}</div>
           ))}
         </td>
       </tr>
