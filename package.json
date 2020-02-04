@@ -1,6 +1,6 @@
 {
   "name": "minerva-ui",
-  "version": "0.1.9",
+  "version": "0.0.0-development",
   "license": "MIT",
   "author": "Cratebind",
   "description": "Composable, Simple React Base Components",
@@ -22,7 +22,8 @@
     "lint": "tsdx lint",
     "release": "np",
     "storybook": "start-storybook -p 6006 --docs",
-    "build-storybook": "build-storybook --docs"
+    "build-storybook": "build-storybook --docs",
+    "semantic-release": "semantic-release"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -58,6 +59,7 @@
     "react-docgen-typescript-loader": "^3.3.0",
     "react-dom": "^16.11.0",
     "react-live": "^2.2.1",
+    "semantic-release": "^17.0.2",
     "ts-loader": "^6.2.1",
     "tsdx": "^0.11.0",
     "tslib": "^1.10.0",
