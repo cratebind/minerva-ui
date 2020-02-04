@@ -1,6 +1,8 @@
 // import { Theme } from '@types/styled-system';
 import { Theme } from 'styled-system';
 
+const logoColor = '#551A8B';
+
 export interface MinervaTheme extends Theme {
   Button?: any;
   Text?: any;
@@ -38,6 +40,7 @@ const baseTheme: MinervaTheme = {
   colors: {
     // custom colors
     primary: '#6979F8',
+    logoColor,
 
     // Tailwind default colors
     transparent: 'transparent',
