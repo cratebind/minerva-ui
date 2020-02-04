@@ -10,14 +10,9 @@ import StyledSystem, {
   shadow,
   space,
   typography,
-  // StylesProps,
 } from 'styled-system';
 
-// interface MinervaProps extends StylesProps {
-//   bg?: string;
-//   'data-testid'?: string;
-// }
-
+// combine all styled system shorthand types
 type StyledSystemProps = StyledSystem.LayoutProps &
   StyledSystem.ColorProps &
   StyledSystem.SpaceProps &
@@ -50,7 +45,7 @@ export const Block = styled('div')<MinervaProps>(
   typography
 );
 
-export const Flex = styled('div')(
+export const Flex = styled('div')<MinervaProps>(
   () => ({
     display: 'flex',
   }),
