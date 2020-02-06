@@ -34,7 +34,7 @@ describe('<Button />', () => {
 
     const button = getByRole('button');
 
-    expect(button).toHaveStyleRule('background-color', 'rgb(56,161,105)');
+    expect(button).toHaveStyleRule('background-color', '#525252');
   });
 
   it('should show new background color if provided in theme', () => {

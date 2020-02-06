@@ -2,8 +2,8 @@
 
 exports[`<Button /> should render 1`] = `
 .c0 {
-  background-color: rgb(56,161,105);
-  font-weight: 600;
+  background-color: #525252;
+  font-weight: 500;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -26,14 +26,13 @@ exports[`<Button /> should render 1`] = `
   position: relative;
   white-space: nowrap;
   vertical-align: middle;
-  line-height: 1.2;
-  height: 3rem;
-  min-width: 3rem;
-  font-size: 17px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  font-size: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
   color: rgb(255,255,255);
-  border-radius: 0.25rem;
+  border-radius: 5px;
   -webkit-transition: all 250ms ease 0s;
   transition: all 250ms ease 0s;
   outline: none;

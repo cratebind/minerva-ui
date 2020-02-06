@@ -15,7 +15,7 @@ import {
 
 const StyledButton = styled('button')(
   props => ({
-    backgroundColor: 'rgb(56, 161, 105)',
+    backgroundColor: '#525252',
     fontWeight: '500',
     display: 'inline-flex',
     WebkitAppearance: 'none',
@@ -27,9 +27,6 @@ const StyledButton = styled('button')(
     position: 'relative',
     whiteSpace: 'nowrap',
     verticalAlign: 'middle',
-    // lineHeight: '1.2',
-    // height: '3rem',
-    // minWidth: '3rem',
     fontSize: '15px',
     paddingTop: '10px',
     paddingBottom: '10px',
@@ -40,6 +37,7 @@ const StyledButton = styled('button')(
     transition: 'all 250ms ease 0s',
     outline: 'none',
     borderWidth: '0',
+    // backgroundColor: props.theme.colors.primary || 'rgb(56, 161, 105)',
     ...props.theme.Button.container,
     ...props.theme.Button.text,
   }),
@@ -70,7 +68,7 @@ export interface ButtonProps
 export default function Button({
   children,
   disabled = false,
-  variant = 'primary',
+  variant,
   ...props
 }: ButtonProps) {
   return (
