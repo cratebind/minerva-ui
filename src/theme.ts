@@ -39,7 +39,8 @@ const baseTheme: MinervaTheme = {
   },
   colors: {
     // custom colors
-    primary: '#6979F8',
+    // primary: '#6979F8',
+    primary: '#525252',
     logoColor,
 
     // Tailwind default colors

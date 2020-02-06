@@ -16,7 +16,7 @@ import {
 const StyledButton = styled('button')(
   props => ({
     backgroundColor: 'rgb(56, 161, 105)',
-    fontWeight: '600',
+    fontWeight: '500',
     display: 'inline-flex',
     WebkitAppearance: 'none',
     WebkitBoxAlign: 'center',
@@ -27,14 +27,16 @@ const StyledButton = styled('button')(
     position: 'relative',
     whiteSpace: 'nowrap',
     verticalAlign: 'middle',
-    lineHeight: '1.2',
-    height: '3rem',
-    minWidth: '3rem',
-    fontSize: '17px',
-    paddingLeft: '1rem',
-    paddingRight: '1rem',
+    // lineHeight: '1.2',
+    // height: '3rem',
+    // minWidth: '3rem',
+    fontSize: '15px',
+    paddingTop: '10px',
+    paddingBottom: '10px',
+    paddingLeft: '30px',
+    paddingRight: '30px',
     color: 'rgb(255, 255, 255)',
-    borderRadius: '0.25rem',
+    borderRadius: '5px',
     transition: 'all 250ms ease 0s',
     outline: 'none',
     borderWidth: '0',
@@ -68,7 +70,7 @@ export interface ButtonProps
 export default function Button({
   children,
   disabled = false,
-  variant,
+  variant = 'primary',
   ...props
 }: ButtonProps) {
   return (
