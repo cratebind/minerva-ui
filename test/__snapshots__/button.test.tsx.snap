@@ -39,6 +39,12 @@ exports[`<Button /> should render 1`] = `
   border-width: 0;
 }
 
+.c0:disabled {
+  background-color: #EAEAEA;
+  color: #8F8F8F;
+  cursor: not-allowed;
+}
+
 <div>
   <button
     class="c0"
