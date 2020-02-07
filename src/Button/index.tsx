@@ -37,6 +37,11 @@ const StyledButton = styled('button')(
     transition: 'all 250ms ease 0s',
     outline: 'none',
     borderWidth: '0',
+    ':disabled': {
+      backgroundColor: '#EAEAEA',
+      color: '#8F8F8F',
+      cursor: 'not-allowed',
+    },
     // backgroundColor: props.theme.colors.primary || 'rgb(56, 161, 105)',
     ...props.theme.Button.container,
     ...props.theme.Button.text,
