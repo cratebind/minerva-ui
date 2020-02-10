@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Text /> should render 1`] = `
+.c0 {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+<div>
+  <p
+    class="c0"
+  >
+    Test
+  </p>
+</div>
+`;

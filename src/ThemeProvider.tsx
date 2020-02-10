@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import baseTheme from './theme';
 
-const defaultTheme = {};
+// const defaultTheme = {};
 
 export interface ProviderProps {
   /** theme config object to style components */
@@ -14,7 +14,7 @@ export interface ProviderProps {
 function ThemeProvider({ theme = baseTheme, children }: ProviderProps) {
   // console.log({ theme });
   return (
-    <StyledThemeProvider theme={{ ...defaultTheme, ...theme }}>
+    <StyledThemeProvider theme={{ ...baseTheme, ...theme }}>
       {children}
     </StyledThemeProvider>
   );

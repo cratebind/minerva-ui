@@ -1,5 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import baseTheme from '../theme';
+import ColorTag from '../../utils/ColorTag';
 
 <Meta title="Utilities|Colors" />
 
@@ -12,7 +13,16 @@ import baseTheme from '../theme';
     padding="10px"
     justifyContent="space-between"
   >
-    {/* TO DO */}
+    <Button bg="teal.500">teal.500</Button>
+    <Button bg="purple.800">purple.800</Button>
+    <Button bg="red.900">red.900</Button>
+    <Button bg="indigo.400">indigo.400</Button>
+    <Button bg="gray.600">gray.600</Button>
+    <Button
+      bg="transparent"
+      borderWidth="1px"
+      color="gray.600"
+    >transparent</Button>
   </Flex>
 )
 ```
@@ -25,12 +35,12 @@ import baseTheme from '../theme';
     </tr>
   </thead>
   <tbody>
-    {Object.entries(baseTheme.colors).map(([color, values]) => (
+    {Object.entries(baseTheme.colors).map(([color, value]) => (
       <tr>
-        <td>{color}</td>
+        <td><pre>{color}</pre></td>
         <td>
-          {typeof values === 'string' ? values : Object.entries(values).map(([number, code]) => (
-            <div style={{ backgroundColor: code, padding: '4px 8px', borderRadius: '4px', color: number > 500 ? '#fff' : '#000', margin: '4px' }}>{number}: {code}</div>
+          {typeof value === 'string' ? <ColorTag color={['transparent', '#fff'].includes(value) ? '#000' : '#fff'} code={value}>{value}</ColorTag> : Object.entries(value).map(([number, code]) => (
+            <ColorTag number={number} code={code}>{number}: {code}</ColorTag>
           ))}
         </td>
       </tr>

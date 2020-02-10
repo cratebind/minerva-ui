@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-import { Block } from '../src';
+import { Block, Flex } from '../src';
 import { ThemeProvider } from '../src';
 
 const ThemedBlock = ({ children = 'Default Text', ...props }) => (
@@ -11,6 +11,26 @@ const ThemedBlock = ({ children = 'Default Text', ...props }) => (
     </Block>
   </ThemeProvider>
 );
+
+describe('Layout Components', () => {
+  it('should render <Flex />', () => {
+    const text = 'Flex component text';
+    const { getByTestId } = render(<Flex data-testid="flex">{text}</Flex>);
+
+    const element = getByTestId('flex');
+    expect(element).toHaveTextContent(text);
+    expect(element).toHaveStyleRule('display', 'flex');
+  });
+
+  it('should render <Block />', () => {
+    const text = 'Block component text';
+    const { getByTestId } = render(<Block data-testid="block">{text}</Block>);
+
+    const element = getByTestId('block');
+    expect(element).toHaveTextContent(text);
+    expect(element).toHaveStyleRule('display', 'block');
+  });
+});
 
 describe('Border Radius', () => {
   it('should render', () => {

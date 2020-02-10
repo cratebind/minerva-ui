@@ -5,9 +5,6 @@
   "author": "Cratebind",
   "description": "Composable, Simple React Base Components",
   "repository": "git://github.com/cratebind/minerva-ui.git",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "main": "dist/index.js",
   "module": "dist/minerva-ui.esm.js",
   "typings": "dist/index.d.ts",
@@ -23,6 +20,7 @@
     "release": "np",
     "storybook": "start-storybook -p 6006 --docs",
     "build-storybook": "build-storybook --docs",
+    "sb": "yarn storybook",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
@@ -51,6 +49,8 @@
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "babel-loader": "^8.0.6",
+    "cz-conventional-changelog": "3.1.0",
+    "cz-customizable": "^6.2.0",
     "husky": "^3.0.9",
     "jest-styled-components": "^7.0.0",
     "np": "^5.1.2",
@@ -78,6 +78,27 @@
   "jest": {
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/src/CodeBlock.*",
+      "(.d.ts)$"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
