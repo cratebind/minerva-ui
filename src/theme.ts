@@ -6,6 +6,7 @@ const logoColor = '#551A8B';
 export interface MinervaTheme extends Theme {
   Button?: any;
   Text?: any;
+  Input?: any;
   defaultBorderColor?: string;
 }
 
@@ -38,6 +39,7 @@ const baseTheme: MinervaTheme = {
     // opacity: 1,
     // color: 'rgb(148, 148, 148)',
   },
+  Input: {},
   defaultBorderColor: '#e2e8f0',
   colors: {
     // custom colors
