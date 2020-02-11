@@ -34,3 +34,28 @@ const App = () => {
   )
 }
 ```
+
+## Component Theming
+
+Theme styles for specific components can be provided in your `theme` object:
+
+```jsx
+() => {
+  const theme = {
+    Button: {
+      container: {
+        backgroundColor: 'midnightblue'
+      },
+      text: {
+        color: '#fff'
+      }
+    }
+  }
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Button>Custom Button Styles</Button>
+    </ThemeProvider>
+  )
+}
+```
