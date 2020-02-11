@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input /> should render 1`] = `
+.c0 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
+  border-width: 1px;
+  border-radius: 4px;
+  -webkit-transition: all 250ms ease 0s;
+  transition: all 250ms ease 0s;
+  outline: none;
+  width: 100%;
+}
+
+.c0:focus {
+  box-shadow: #3FA2F7 0px 0px 0px 1px;
+}
+
+.c0:disabled {
+  background-color: #EAEAEA;
+  color: #8F8F8F;
+  cursor: not-allowed;
+}
+
+<div>
+  <label
+    for="input-field"
+  >
+    Name
+    <input
+      class="c0"
+      id="input-field"
+      value=""
+    />
+  </label>
+</div>
+`;

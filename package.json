@@ -81,12 +81,13 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 80,
+        "branches": 40,
         "functions": 80,
         "lines": 80,
         "statements": -10
       }
     },
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}"
     ],
