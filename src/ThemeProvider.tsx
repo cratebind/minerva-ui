@@ -12,7 +12,6 @@ export interface ProviderProps {
 }
 
 function ThemeProvider({ theme = baseTheme, children }: ProviderProps) {
-  // console.log({ theme });
   return (
     <StyledThemeProvider theme={{ ...baseTheme, ...theme }}>
       {children}

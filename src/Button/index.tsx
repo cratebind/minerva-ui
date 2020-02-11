@@ -77,7 +77,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   return (
-    <StyledButton disabled={disabled} role="button" bg={variant} {...props}>
+    <StyledButton disabled={disabled} role="button" {...props}>
       {children}
     </StyledButton>
   );
