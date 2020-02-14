@@ -4,6 +4,8 @@
 
 Utility props are provided as aliases for most components. The style is heavily influenced by [Tailwind CSS](https://tailwindcss.com/docs/font-size).
 
+They also allow you to use the shorthand methods from [Styled System](https://styled-system.com/api)
+
 For example:
 ```jsx
 () => (
@@ -11,7 +13,12 @@ For example:
     {/* enter a custom pixel value */}
     <Button fontSize="12px">Save</Button>
     {/* or enter the value named "sm" in the theme, which is .875rem by default */}
-    <Button fontSize="lg">Save</Button>
+    <Button
+      fontSize="lg"
+      ml="10px" // translates to 'margin-left' using styled-system's shorthand properties
+    >
+      Save
+    </Button>
   </>
 )
 ```
