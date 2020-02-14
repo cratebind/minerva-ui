@@ -58,7 +58,7 @@ const StyledButton = styled('button')(
   typography
 );
 
-export interface ButtonProps
+export interface CustomButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   /** Toggles disabled pseudo class */
@@ -69,6 +69,8 @@ export interface ButtonProps
   isLoading?: boolean;
   bg?: string;
 }
+
+export type ButtonProps = CustomButtonProps;
 
 export default function Button({
   children,
