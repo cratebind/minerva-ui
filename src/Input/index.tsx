@@ -17,8 +17,8 @@ const StyledInput = styled('input')(
   props => ({
     paddingTop: '10px',
     paddingBottom: '10px',
-    paddingLeft: '14px',
-    paddingRight: '14px',
+    paddingLeft: '16px',
+    paddingRight: '32px',
     borderWidth: '1px',
     borderRadius: '4px',
     transition: 'all 250ms ease 0s',

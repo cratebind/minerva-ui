@@ -1,4 +1,3 @@
-// import { Theme } from '@types/styled-system';
 import { Theme } from 'styled-system';
 
 const logoColor = '#551A8B';
