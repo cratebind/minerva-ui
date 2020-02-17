@@ -14,6 +14,19 @@ describe('<Button />', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('should change style if disabled', () => {
+    const { container, getByRole } = render(
+      <ThemeProvider>
+        <Button disabled={true}>Disabled Button</Button>
+      </ThemeProvider>
+    );
+
+    expect(container).toMatchSnapshot();
+    expect(getByRole('button')).toHaveStyleRule('background-color', '#EAEAEA', {
+      modifier: ':disabled',
+    });
+  });
+
   it('should display text', () => {
     const content = 'Hello';
     const { container } = render(

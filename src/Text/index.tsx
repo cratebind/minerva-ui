@@ -38,12 +38,12 @@ export interface TextProps {
   props?: any;
 }
 
-const Text = ({ children, lineHeight = 'normal', ...props }: TextProps) => {
-  return (
-    <StyledText lineHeight={lineHeight} {...props}>
-      {children}
-    </StyledText>
-  );
+const Text = ({ children, ...props }: TextProps) => {
+  return <StyledText {...props}>{children}</StyledText>;
+};
+
+Text.defaultProps = {
+  lineHeight: 'normal',
 };
 
 export default Text;
