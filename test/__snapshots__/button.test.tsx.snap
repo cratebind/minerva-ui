@@ -1,5 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Button /> should change style if disabled 1`] = `
+.c0 {
+  background-color: #525252;
+  font-weight: 500;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-appearance: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: rgb(255,255,255);
+  border-radius: 5px;
+  -webkit-transition: all 250ms ease 0s;
+  transition: all 250ms ease 0s;
+  outline: none;
+  border-width: 0;
+}
+
+.c0:disabled {
+  background-color: #EAEAEA;
+  color: #8F8F8F;
+  cursor: not-allowed;
+}
+
+<div>
+  <button
+    class="c0"
+    disabled=""
+    role="button"
+  >
+    Disabled Button
+  </button>
+</div>
+`;
+
 exports[`<Button /> should render 1`] = `
 .c0 {
   background-color: #525252;
