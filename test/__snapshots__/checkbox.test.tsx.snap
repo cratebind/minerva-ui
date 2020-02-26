@@ -1,16 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox shows checkbox when checked 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  bg: primary;
+  margin-right: 8px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  border-color: #fff;
+  background-color: #525252;
+  box-shadow: 0px 7px 20px rgba(0,0,0,0.07);
+}
+
+.c1 {
+  border: 0px;
+  -webkit-clip: rect(0px,0px,0px,0px);
+  clip: rect(0px,0px,0px,0px);
+  height: 1px;
+  width: 1px;
+  padding: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+}
+
 <div>
   <label
-    class="sc-AykKG kbyDOX"
+    class="c0"
   >
     <span
       data-reach-custom-checkbox-container=""
       data-state="checked"
     >
       <div
-        class="sc-AykKI gCICTa"
+        class="c1"
       >
         <input
           aria-checked="true"
@@ -20,7 +71,7 @@ exports[`Checkbox shows checkbox when checked 1`] = `
         />
       </div>
       <div
-        class="sc-AykKH bgsVgf"
+        class="c2"
       >
         <svg
           fill="none"
