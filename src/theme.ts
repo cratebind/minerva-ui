@@ -6,6 +6,7 @@ export interface MinervaTheme extends Theme {
   Button?: any;
   Text?: any;
   Input?: any;
+  Link?: any;
   defaultBorderColor?: string;
 }
 
@@ -39,6 +40,7 @@ const baseTheme: MinervaTheme = {
     // color: 'rgb(148, 148, 148)',
   },
   Input: {},
+  Link: {},
   defaultBorderColor: '#e2e8f0',
   colors: {
     // custom colors
