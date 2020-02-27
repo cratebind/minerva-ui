@@ -1,0 +1,42 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+<Meta title="Overview|Layout" />
+
+# Layout
+
+Layout components help replace common patterns when building a UI.
+
+For example, `<Flex />` saves you the time of having to write `<div style={{ display: 'flex' }} />` or `<Block display="flex" />`.
+
+## Flex
+
+Renders a `div` with `display: flex` set by default.
+
+```jsx
+() => (
+  <Flex
+    backgroundColor="#edf2f7"
+    justifyContent="space-between"
+    maxWidth="300px"
+  >
+    <Button>Left</Button>
+    <Button>Right</Button>
+  </Flex>
+)
+```
+
+## Block
+
+Renders a `div` with `display: block` set by default.
+
+```jsx
+() => (
+  <Block
+    backgroundColor="#edf2f7"
+    maxWidth="300px"
+  >
+    <Button>First</Button>
+    <Button>Second</Button>
+  </Block>
+)
+```
