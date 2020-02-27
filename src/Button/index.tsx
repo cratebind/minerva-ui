@@ -15,7 +15,10 @@ import {
 
 const StyledButton = styled('button')(
   props => ({
-    backgroundColor: '#525252',
+    // backgroundColor: '#525252',
+    backgroundColor: '#fff',
+    borderWidth: '1px',
+    color: '#374151',
     fontWeight: '500',
     display: 'inline-flex',
     WebkitAppearance: 'none',
@@ -27,16 +30,23 @@ const StyledButton = styled('button')(
     position: 'relative',
     whiteSpace: 'nowrap',
     verticalAlign: 'middle',
-    fontSize: '15px',
-    paddingTop: '10px',
-    paddingBottom: '10px',
-    paddingLeft: '30px',
-    paddingRight: '30px',
-    color: 'rgb(255, 255, 255)',
+    fontSize: '14px',
+    lineHeight: '20px',
+    paddingTop: '8px',
+    paddingBottom: '8px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
     borderRadius: '5px',
-    transition: 'all 250ms ease 0s',
+    transition: 'all 150ms ease 0s',
     outline: 'none',
-    borderWidth: '0',
+    ':hover': {
+      backgroundColor: '#f9fafb',
+    },
+    ':focus': {
+      borderColor: '#a4cafe',
+      boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
+      outline: 0,
+    },
     ':disabled': {
       backgroundColor: '#EAEAEA',
       color: '#8F8F8F',

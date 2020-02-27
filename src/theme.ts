@@ -41,7 +41,7 @@ const baseTheme: MinervaTheme = {
   },
   Input: {},
   Link: {},
-  defaultBorderColor: '#e2e8f0',
+  defaultBorderColor: '#d2d6dc',
   colors: {
     // custom colors
     // primary: '#6979F8',

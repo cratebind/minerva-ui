@@ -15,9 +15,9 @@ import {
 
 const StyledInput = styled('input')(
   props => ({
-    paddingTop: '10px',
-    paddingBottom: '10px',
-    paddingLeft: '16px',
+    paddingTop: '8px',
+    paddingBottom: '8px',
+    paddingLeft: '12px',
     paddingRight: '32px',
     borderWidth: '1px',
     borderRadius: '4px',
@@ -25,8 +25,8 @@ const StyledInput = styled('input')(
     outline: 'none',
     width: '100%',
     ':focus': {
-      // borderColor: '#3FA2F7',
-      boxShadow: '#3FA2F7 0px 0px 0px 1px',
+      borderColor: '#a4cafe',
+      boxShadow: '0 0 0 3px rgba(164,202,254,.45)',
     },
     ':disabled': {
       backgroundColor: '#EAEAEA',

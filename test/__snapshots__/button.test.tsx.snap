@@ -2,7 +2,9 @@
 
 exports[`<Button /> should change style if disabled 1`] = `
 .c0 {
-  background-color: #525252;
+  background-color: #fff;
+  border-width: 1px;
+  color: #374151;
   font-weight: 500;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -26,17 +28,26 @@ exports[`<Button /> should change style if disabled 1`] = `
   position: relative;
   white-space: nowrap;
   vertical-align: middle;
-  font-size: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  color: rgb(255,255,255);
+  font-size: 14px;
+  line-height: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   border-radius: 5px;
-  -webkit-transition: all 250ms ease 0s;
-  transition: all 250ms ease 0s;
+  -webkit-transition: all 150ms ease 0s;
+  transition: all 150ms ease 0s;
   outline: none;
-  border-width: 0;
+}
+
+.c0:hover {
+  background-color: #f9fafb;
+}
+
+.c0:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
 }
 
 .c0:disabled {
@@ -58,7 +69,9 @@ exports[`<Button /> should change style if disabled 1`] = `
 
 exports[`<Button /> should render 1`] = `
 .c0 {
-  background-color: #525252;
+  background-color: #fff;
+  border-width: 1px;
+  color: #374151;
   font-weight: 500;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -82,17 +95,26 @@ exports[`<Button /> should render 1`] = `
   position: relative;
   white-space: nowrap;
   vertical-align: middle;
-  font-size: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  color: rgb(255,255,255);
+  font-size: 14px;
+  line-height: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
   border-radius: 5px;
-  -webkit-transition: all 250ms ease 0s;
-  transition: all 250ms ease 0s;
+  -webkit-transition: all 150ms ease 0s;
+  transition: all 150ms ease 0s;
   outline: none;
-  border-width: 0;
+}
+
+.c0:hover {
+  background-color: #f9fafb;
+}
+
+.c0:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
 }
 
 .c0:disabled {

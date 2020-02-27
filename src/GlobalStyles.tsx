@@ -6,6 +6,13 @@ import { MinervaTheme } from './theme';
  * https://tailwindcss.com/docs/adding-base-styles/#app
  */
 const GlobalStyles = createGlobalStyle`
+/**
+Skip including Reach UI styles since we're inlining them
+https://reacttraining.com/reach-ui/styling/#skip-including-styles
+ */
+:root {
+  --reach-checkbox: 1;
+}
 /* Document
    ========================================================================== */
 
@@ -457,7 +464,7 @@ html {
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
   border-color: ${(p: { theme: MinervaTheme }) =>
-    (p.theme && p.theme.defaultBorderColor) || '#e2e8f0'}; /* 2 */
+    (p.theme && p.theme.defaultBorderColor) || '#d2d6dc'}; /* 2 */
 }
 
 /*
