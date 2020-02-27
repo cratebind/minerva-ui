@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
 Skip including Reach UI styles since we're inlining them
 https://reacttraining.com/reach-ui/styling/#skip-including-styles
  */
+
 :root {
   --reach-checkbox: 1;
 }
