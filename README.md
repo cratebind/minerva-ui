@@ -1,8 +1,10 @@
-# Minerva UI
+<h1 align="center">
+  🦉 Minerva UI
+</h1>
+
+![npm](https://img.shields.io/npm/v/minerva-ui) ![size](https://badgen.net/bundlephobia/minzip/minerva-ui) ![license](https://img.shields.io/github/license/cratebind/minerva-ui)
 
 # [View Components](https://minerva-ui.netlify.com)
-
-# Minerva UI
 
 ## Get started
 
