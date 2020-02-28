@@ -7,6 +7,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 // import Highlight, { defaultProps } from "prism-react-renderer";
 import { mdx } from '@mdx-js/react';
 import * as Minerva from './index';
+import useClipboard from './hooks/useClipboard';
 // import * as Chakra from "@chakra-ui/core";
 // import * as Formik from "formik";
 // import * as ReactIcons from "react-icons/md";
@@ -15,6 +16,7 @@ import * as Minerva from './index';
 // import Lorem from "react-lorem-component";
 
 // const { Box, Button, useClipboard, useColorMode } = Chakra;
+const { Block } = Minerva;
 
 export const liveEditorStyle = {
   fontSize: 14,
@@ -26,13 +28,18 @@ export const liveEditorStyle = {
 
 const wrapperStyles = {
   backgroundColor: 'rgb(1, 22, 39)',
-  borderRadius: 10,
-  padding: 20,
-  marginBottom: 32,
-  marginTop: 32,
+  borderRadius: '10px',
+  padding: '20px',
+  marginBottom: '32px',
+  marginTop: '32px',
 };
 
-const Wrapper = ({ children }) => <div style={wrapperStyles}>{children}</div>;
+// @TODO: Figure out why "position: relative" causes TS error
+const Wrapper = ({ children }) => (
+  <Block {...wrapperStyles} style={{ position: 'relative' }}>
+    {children}
+  </Block>
+);
 
 // const highlightStyle = {
 //   padding: 20,
@@ -70,20 +77,23 @@ const LiveCodePreview = (props: any) => (
   </div>
 );
 
-// const CopyButton = (props: any) => (
-//   <Button
-//     size="sm"
-//     position="absolute"
-//     textTransform="uppercase"
-//     variantColor="teal"
-//     fontSize="xs"
-//     height="24px"
-//     top={0}
-//     zIndex="1"
-//     right="1.25em"
-//     {...props}
-//   />
-// );
+const CopyButton = (props: any) => (
+  <Minerva.Button
+    position="absolute"
+    fontWeight="600"
+    fontSize="12px"
+    top="15px"
+    padding="0 12px"
+    textTransform="uppercase"
+    fontFamily={`-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";`}
+    zIndex="1"
+    right="1.25em"
+    style={{
+      textTransform: 'uppercase',
+    }}
+    {...props}
+  />
+);
 
 // const EditableNotice = (props: any) => {
 //   // const { colorMode } = useColorMode();
@@ -129,6 +139,7 @@ const LiveCodePreview = (props: any) => (
 
 const Provider = ({ children, ...props }) => (
   <Minerva.ThemeProvider>
+    {/* <Minerva.GlobalStyles /> */}
     <LiveProvider {...props}>{children}</LiveProvider>
   </Minerva.ThemeProvider>
 );
@@ -144,7 +155,7 @@ const CodeBlock = ({
   const [editorCode, setEditorCode] = useState(children.trim());
 
   const language = className && className.replace(/language-/, '');
-  // const { onCopy, hasCopied } = useClipboard(editorCode);
+  const { onCopy, hasCopied } = useClipboard(editorCode);
 
   // const { colorMode } = useColorMode();
   const themes = { light: lightTheme, dark: darkTheme };
@@ -175,9 +186,9 @@ const CodeBlock = ({
         <LiveCodePreview />
         <Wrapper>
           <LiveEditor onChange={handleCodeChange} style={liveEditorStyle} />
-          {/* <CopyButton onClick={onCopy}>
-            {hasCopied ? "copied" : "copy"}
-          </CopyButton> */}
+          <CopyButton onClick={onCopy}>
+            {hasCopied ? 'copied' : 'copy'}
+          </CopyButton>
           {/* <EditableNotice /> */}
         </Wrapper>
         <LiveError style={liveErrorStyle} />
@@ -200,9 +211,9 @@ const CodeBlock = ({
       <Wrapper>
         <LiveEditor style={liveEditorStyle} />
 
-        {/* <CopyButton top="1.25em" onClick={onCopy}>
-          {hasCopied ? "copied" : "copy"}
-        </CopyButton> */}
+        <CopyButton top="1.25em" onClick={onCopy}>
+          {hasCopied ? 'copied' : 'copy'}
+        </CopyButton>
       </Wrapper>
     </Provider>
   );
