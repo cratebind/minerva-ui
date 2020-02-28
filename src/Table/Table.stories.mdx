@@ -1,0 +1,51 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Table } from '../index';
+
+<Meta title="Elements|Table" component={Table} />
+
+# Table
+
+Basic styled table component
+
+```js
+import { Table } from 'minerva-ui'
+
+// you can optionally destructure the nested components
+const { Header, Row, HeaderCell, Cell, Body } = Table;
+```
+
+```jsx
+<Table>
+  <Table.Header>
+    <Table.Row>
+      <Table.HeaderCell>Name</Table.HeaderCell>
+      <Table.HeaderCell>Job</Table.HeaderCell>
+      <Table.HeaderCell>Status</Table.HeaderCell>
+      <Table.HeaderCell>Role</Table.HeaderCell>
+      <Table.HeaderCell />
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>Test</Table.Cell>
+      <Table.Cell>Tester</Table.Cell>
+      <Table.Cell>Testing</Table.Cell>
+      <Table.Cell>Test Master</Table.Cell>
+      <Table.Cell>
+        <Link>Edit</Link>
+      </Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>Test</Table.Cell>
+      <Table.Cell>Tester</Table.Cell>
+      <Table.Cell>Testing</Table.Cell>
+      <Table.Cell>Test Master</Table.Cell>
+      <Table.Cell>
+        <Link>Edit</Link>
+      </Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>
+```
+
+<Props of={Table} />
