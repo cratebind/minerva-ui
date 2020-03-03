@@ -12,6 +12,8 @@ import {
   space,
   typography,
 } from 'styled-system';
+import { MinervaProps } from 'layout';
+import Spinner from '../Spinner';
 
 const StyledButton = styled('button')(
   props => ({
@@ -77,20 +79,20 @@ export interface CustomButtonProps
   variant?: 'primary' | 'secondary' | 'tertiary';
   /** If `true`, button will show a spinner. */
   isLoading?: boolean;
-  bg?: string;
 }
 
-export type ButtonProps = CustomButtonProps;
+export type ButtonProps = CustomButtonProps & MinervaProps;
 
 export default function Button({
   children,
   disabled = false,
+  isLoading = false,
   variant,
   ...props
 }: ButtonProps) {
   return (
-    <StyledButton disabled={disabled} role="button" {...props}>
-      {children}
+    <StyledButton disabled={disabled || isLoading} role="button" {...props}>
+      {isLoading ? <Spinner /> : children}
     </StyledButton>
   );
 }

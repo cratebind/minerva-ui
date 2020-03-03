@@ -1,0 +1,97 @@
+import React, { forwardRef } from 'react';
+import styled, { css, keyframes } from 'styled-components';
+import { Block } from '../layout';
+
+const spin = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
+export interface SpinnerProps {
+  /**
+   * The size of the spinner
+   */
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | string;
+  /**
+   * The color of the empty area in the spinner
+   */
+  emptyColor?: string;
+  /**
+   * The color of the spinner
+   */
+  color?: string;
+  /**
+   * The thickness of the spinner
+   * @example
+   * ```jsx
+   * <Spinner thickness="4px"/>
+   * ```
+   */
+  thickness?: string;
+  /**
+   * The speed of the spinner.
+   * @example
+   * ```jsx
+   * <Spinner speed="0.2s"/>
+   * ```
+   */
+  speed?: string;
+  /**
+   * For accessibility, it's important to add a fallback loading text.
+   * This text will be visible to screen readers.
+   */
+  label?: string;
+}
+
+const StyledSpinner = styled(Block)(
+  (): any => ({
+    display: 'inline-block',
+    borderBottomColor: 'transparent',
+    borderLeftColor: 'transparent',
+    borderRightColor: 'currentColor',
+    borderTopColor: 'currentColor',
+    borderRadius: '9999px',
+    color: '#1a202c',
+    borderStyle: 'solid',
+    height: '20px',
+    width: '20px',
+    borderWidth: '2px',
+    margin: '2px',
+  }),
+  css`
+    animation: ${spin} 0.45s linear infinite;
+  `
+);
+
+/* const animation = css`
+  ${spin} 0.45s linear infinite
+`; */
+
+const Spinner = forwardRef(({ /* speed = '0.45s', */
+  color, thickness = '2px', label, size = '20px' }: SpinnerProps, ref) => {
+  console.log({ spin, color, thickness, label, ref, size });
+  return (
+    // <Block
+    //   // ref={ref}
+    //   borderWidth={thickness}
+    //   display="inline-block"
+    //   borderBottomColor="transparent"
+    //   borderLeftColor="transparent"
+    //   borderStyle="solid"
+    //   borderColor="currentColor"
+    //   color={color}
+    //   borderRadius="full"
+    //   height={size}
+    //   width={size}
+    // >
+    //   {label}
+    // </Block>
+    <StyledSpinner />
+  );
+});
+
+export default Spinner;
