@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import {
   background,
@@ -59,6 +59,14 @@ export type InputProps = CustomInputProps &
   React.InputHTMLAttributes<HTMLInputElement> &
   MinervaProps;
 
-export default function Input({ children, ...props }: InputProps) {
-  return <StyledInput {...props}>{children}</StyledInput>;
-}
+export type Ref = HTMLInputElement;
+
+const Input = forwardRef<Ref, InputProps>(({ children, ...props }, ref) => {
+  return (
+    <StyledInput ref={ref} {...props}>
+      {children}
+    </StyledInput>
+  );
+});
+
+export default Input;
