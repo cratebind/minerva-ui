@@ -71,10 +71,16 @@ const StyledSpinner = styled(Block)(
   ${spin} 0.45s linear infinite
 `; */
 
-const Spinner = forwardRef(({ /* speed = '0.45s', */
-  color = '#777', thickness = '2px', label, size = '20px' }: SpinnerProps, ref) => {
-  console.log({ spin, color, thickness, label, ref, size });
-  return <StyledSpinner color={color} />;
+export type Ref = HTMLDivElement;
+
+const Spinner = forwardRef<Ref, SpinnerProps>((
+  { color = '#777' },
+  /* thickness = '2px', */
+  /* label, */
+  /* size = '20px' */
+  ref
+) => {
+  return <StyledSpinner ref={ref} color={color} />;
 });
 
 export default Spinner;

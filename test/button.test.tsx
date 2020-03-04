@@ -17,14 +17,25 @@ describe('<Button />', () => {
   it('should change style if disabled', () => {
     const { container, getByRole } = render(
       <ThemeProvider>
-        <Button disabled={true}>Disabled Button</Button>
+        <Button disabled>Disabled Button</Button>
       </ThemeProvider>
     );
 
     expect(container).toMatchSnapshot();
-    expect(getByRole('button')).toHaveStyleRule('background-color', '#EAEAEA', {
+    expect(getByRole('button')).toHaveStyleRule('opacity', '0.4', {
       modifier: ':disabled',
     });
+  });
+
+  it('should contain spinner with `isLoading` prop', () => {
+    const { container, getByRole } = render(
+      <ThemeProvider>
+        <Button isLoading>Loading Button</Button>
+      </ThemeProvider>
+    );
+
+    expect(container).toMatchSnapshot();
+    expect(getByRole('button')).not.toHaveTextContent('Loading Button');
   });
 
   it('should display text', () => {

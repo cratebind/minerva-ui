@@ -51,18 +51,105 @@ exports[`<Button /> should change style if disabled 1`] = `
 }
 
 .c0:disabled {
-  background-color: #EAEAEA;
-  color: #8F8F8F;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 <div>
   <button
-    class="c0"
+    class="sc-AykKE c0"
     disabled=""
     role="button"
   >
     Disabled Button
+  </button>
+</div>
+`;
+
+exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
+.c1 {
+  display: block;
+  color: #777;
+  display: inline-block;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: currentColor;
+  border-top-color: currentColor;
+  border-radius: 9999px;
+  color: #777;
+  border-style: solid;
+  height: 20px;
+  width: 20px;
+  border-width: 2px;
+  margin: 2px;
+  -webkit-animation: qOXMj 0.45s linear infinite;
+  animation: qOXMj 0.45s linear infinite;
+}
+
+.c0 {
+  background-color: #fff;
+  border-width: 1px;
+  color: #374151;
+  font-weight: 500;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-appearance: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 5px;
+  -webkit-transition: all 150ms ease 0s;
+  transition: all 150ms ease 0s;
+  outline: none;
+}
+
+.c0:hover {
+  background-color: #f9fafb;
+}
+
+.c0:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
+}
+
+.c0:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+<div>
+  <button
+    class="sc-AykKE c0"
+    disabled=""
+    role="button"
+  >
+    <div
+      class="sc-AykKF c1"
+      color="#777"
+    />
   </button>
 </div>
 `;
@@ -118,14 +205,13 @@ exports[`<Button /> should render 1`] = `
 }
 
 .c0:disabled {
-  background-color: #EAEAEA;
-  color: #8F8F8F;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 <div>
   <button
-    class="c0"
+    class="sc-AykKE c0"
     role="button"
   >
     Test

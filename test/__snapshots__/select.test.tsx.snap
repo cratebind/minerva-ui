@@ -10,23 +10,53 @@ exports[`<Select /> should change style if disabled 1`] = `
   -webkit-appearance: none;
   -webkit-box-align: center;
   -webkit-writing-mode: horizontal-tb;
-  position: relative;
-  height: 40px;
-  padding-left: 12px;
-  padding-right: 20px;
-  border-width: 1px;
-  border-color: #d3d3d3;
-  font-size: 16px;
-  border-radius: 6px;
-  -webkit-transition: all 250ms ease 0s;
-  transition: all 250ms ease 0s;
-  background-color: #fff;
-  outline: none;
   width: 100%;
+  background-color: #fff;
+  border-width: 1px;
+  color: #374151;
+  font-weight: 500;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-appearance: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 5px;
+  -webkit-transition: all 150ms ease 0s;
+  transition: all 150ms ease 0s;
+  outline: none;
+}
+
+.c1:hover {
+  background-color: #f9fafb;
 }
 
 .c1:focus {
-  box-shadow: #3FA2F7 0px 0px 0px 1px;
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
 }
 
 .c1:disabled {
@@ -76,7 +106,6 @@ exports[`<Select /> should change style if disabled 1`] = `
   >
     <select
       class="c1"
-      disabled=""
       id="select-input"
     >
       <option
@@ -119,23 +148,53 @@ exports[`<Select /> should render 1`] = `
   -webkit-appearance: none;
   -webkit-box-align: center;
   -webkit-writing-mode: horizontal-tb;
-  position: relative;
-  height: 40px;
-  padding-left: 12px;
-  padding-right: 20px;
-  border-width: 1px;
-  border-color: #d3d3d3;
-  font-size: 16px;
-  border-radius: 6px;
-  -webkit-transition: all 250ms ease 0s;
-  transition: all 250ms ease 0s;
-  background-color: #fff;
-  outline: none;
   width: 100%;
+  background-color: #fff;
+  border-width: 1px;
+  color: #374151;
+  font-weight: 500;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-appearance: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 5px;
+  -webkit-transition: all 150ms ease 0s;
+  transition: all 150ms ease 0s;
+  outline: none;
+}
+
+.c1:hover {
+  background-color: #f9fafb;
 }
 
 .c1:focus {
-  box-shadow: #3FA2F7 0px 0px 0px 1px;
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
 }
 
 .c1:disabled {
