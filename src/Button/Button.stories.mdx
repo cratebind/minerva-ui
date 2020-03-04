@@ -1,5 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Button from '../Button';
+import { Box } from '../layout'
 
 <Meta title="Elements|Button" component={Button} />
 
@@ -20,6 +21,14 @@ import { Button } from 'minerva-ui'
 <Props of={Button} />
 
 # Variants
+
+### Loading Button
+
+```jsx
+<Button isLoading>
+  Loading Button
+</Button>
+```
 
 ### Disabled Button
 ```jsx

@@ -13,27 +13,44 @@ import {
   typography,
 } from 'styled-system';
 import { Block } from '../layout';
+import Input from '../Input';
 
-const StyledSelect = styled('select')(
-  props => ({
+const StyledSelect = styled(Input)(
+  (props): any => ({
     '-webkit-appearance': 'none',
     '-webkit-box-align': 'center',
     '-webkit-writing-mode': 'horizontal-tb',
-    position: 'relative',
-    height: '40px',
-    paddingLeft: '12px',
-    paddingRight: '20px',
-    borderWidth: '1px',
-    borderColor: '#d3d3d3',
-    fontSize: '16px',
-    borderRadius: '6px',
-    transition: 'all 250ms ease 0s',
-    backgroundColor: '#fff',
-    outline: 'none',
     width: '100%',
+    backgroundColor: '#fff',
+    borderWidth: '1px',
+    color: '#374151',
+    fontWeight: '500',
+    display: 'inline-flex',
+    WebkitAppearance: 'none',
+    WebkitBoxAlign: 'center',
+    alignItems: 'center',
+    WebkitBoxPack: 'center',
+    justifyContent: 'center',
+    userSelect: 'none',
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    verticalAlign: 'middle',
+    fontSize: '14px',
+    lineHeight: '20px',
+    paddingTop: '8px',
+    paddingBottom: '8px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
+    borderRadius: '5px',
+    transition: 'all 150ms ease 0s',
+    outline: 'none',
+    ':hover': {
+      backgroundColor: '#f9fafb',
+    },
     ':focus': {
-      // borderColor: '#3FA2F7',
-      boxShadow: '#3FA2F7 0px 0px 0px 1px',
+      borderColor: '#a4cafe',
+      boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
+      outline: 0,
     },
     ':disabled': {
       backgroundColor: '#EAEAEA',
@@ -108,12 +125,10 @@ const SelectIcon = () => (
   </IconContainer>
 );
 
-export interface CustomSelectProps
-  extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export interface CustomSelectProps {
   children?: React.ReactNode;
   /** Toggles disabled pseudo class */
   disabled?: boolean;
-  bg?: string;
 }
 
 export type SelectProps = CustomSelectProps;
@@ -125,9 +140,14 @@ export default function Select({
 }: SelectProps) {
   return (
     <Block position="relative">
-      <StyledSelect disabled={disabled} {...props}>
+      <StyledSelect as="select" {...props}>
         {children}
       </StyledSelect>
+
+      {/* <Input as="select" disabled={disabled} {...props}>
+        {children}
+      </Input>
+      <Input /> */}
       <SelectIcon />
     </Block>
   );

@@ -12,8 +12,12 @@ import {
   space,
   typography,
 } from 'styled-system';
+// import { MinervaProps } from 'layout';
+import Spinner from '../Spinner';
+// import { MinervaProps } from '../layout';
+import { MinervaProps, Box } from '../layout';
 
-const StyledButton = styled('button')(
+const StyledButton = styled(Box)(
   props => ({
     // backgroundColor: '#525252',
     backgroundColor: '#fff',
@@ -48,8 +52,8 @@ const StyledButton = styled('button')(
       outline: 0,
     },
     ':disabled': {
-      backgroundColor: '#EAEAEA',
-      color: '#8F8F8F',
+      opacity: 0.4,
+      // color: '#8F8F8F',
       cursor: 'not-allowed',
     },
     // backgroundColor: props.theme.colors.primary || 'rgb(56, 161, 105)',
@@ -68,29 +72,34 @@ const StyledButton = styled('button')(
   typography
 );
 
-export interface CustomButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends MinervaProps {
   children?: React.ReactNode;
   /** Toggles disabled pseudo class */
   disabled?: boolean;
-  /** One of several defined button styles (primary by default) */
-  variant?: 'primary' | 'secondary' | 'tertiary';
   /** If `true`, button will show a spinner. */
   isLoading?: boolean;
-  bg?: string;
+  /** One of several defined button styles (primary by default) */
+  variant?: 'primary' | 'secondary' | 'tertiary';
 }
 
-export type ButtonProps = CustomButtonProps;
+// export type ButtonProps = CustomButtonProps & MinervaProps;
 
 export default function Button({
   children,
   disabled = false,
+  as: Comp = 'button',
+  isLoading = false,
   variant,
   ...props
 }: ButtonProps) {
   return (
-    <StyledButton disabled={disabled} role="button" {...props}>
-      {children}
+    <StyledButton
+      as={Comp}
+      disabled={disabled || isLoading}
+      role="button"
+      {...props}
+    >
+      {isLoading ? <Spinner /> : children}
     </StyledButton>
   );
 }
