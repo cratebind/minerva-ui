@@ -12,7 +12,6 @@ import {
   space,
   typography,
 } from 'styled-system';
-import { MinervaProps } from 'layout';
 
 const StyledInput = styled('input')(
   props => ({
@@ -49,24 +48,23 @@ const StyledInput = styled('input')(
   typography
 );
 
-export interface CustomInputProps {
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   children?: React.ReactNode;
   /** Toggles disabled pseudo class */
   disabled?: boolean;
 }
 
-export type InputProps = CustomInputProps &
-  React.InputHTMLAttributes<HTMLInputElement> &
-  MinervaProps;
+// export type InputProps = CustomInputProps &
+//   React.InputHTMLAttributes<HTMLInputElement> &
+//   MinervaProps;
 
 export type Ref = HTMLInputElement;
 
-const Input = forwardRef<Ref, InputProps>(({ children, ...props }, ref) => {
-  return (
-    <StyledInput ref={ref} {...props}>
-      {children}
-    </StyledInput>
-  );
-});
+const Input = forwardRef<Ref, InputProps>(
+  ({ children, ...props }: InputProps, ref) => {
+    return <StyledInput ref={ref} {...props} />;
+  }
+);
 
 export default Input;

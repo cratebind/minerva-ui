@@ -10,7 +10,21 @@ import StyledSystem, {
   shadow,
   space,
   typography,
+  compose,
 } from 'styled-system';
+
+export const systemProps = compose(
+  layout,
+  color,
+  space,
+  background,
+  border,
+  grid,
+  position,
+  shadow,
+  typography,
+  flexbox
+);
 
 type CSS = React.CSSProperties;
 
@@ -201,34 +215,18 @@ export type MinervaProps = StyledSystemProps &
   React.HTMLAttributes<any> &
   React.RefAttributes<any>;
 
+export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
+
 export const Block = styled('div')<MinervaProps>(
   () => ({
     display: 'block',
   }),
-  color,
-  space,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  background,
-  border,
-  typography
+  systemProps
 );
 
 export const Flex = styled('div')<MinervaProps>(
   () => ({
     display: 'flex',
   }),
-  color,
-  space,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  background,
-  border,
-  typography
+  systemProps
 );

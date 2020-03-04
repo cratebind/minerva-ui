@@ -48,14 +48,14 @@ export interface SpinnerProps {
 }
 
 const StyledSpinner = styled(Block)(
-  (): any => ({
+  (props): any => ({
     display: 'inline-block',
     borderBottomColor: 'transparent',
     borderLeftColor: 'transparent',
     borderRightColor: 'currentColor',
     borderTopColor: 'currentColor',
     borderRadius: '9999px',
-    color: '#1a202c',
+    color: props.color,
     borderStyle: 'solid',
     height: '20px',
     width: '20px',
@@ -72,26 +72,9 @@ const StyledSpinner = styled(Block)(
 `; */
 
 const Spinner = forwardRef(({ /* speed = '0.45s', */
-  color, thickness = '2px', label, size = '20px' }: SpinnerProps, ref) => {
+  color = '#777', thickness = '2px', label, size = '20px' }: SpinnerProps, ref) => {
   console.log({ spin, color, thickness, label, ref, size });
-  return (
-    // <Block
-    //   // ref={ref}
-    //   borderWidth={thickness}
-    //   display="inline-block"
-    //   borderBottomColor="transparent"
-    //   borderLeftColor="transparent"
-    //   borderStyle="solid"
-    //   borderColor="currentColor"
-    //   color={color}
-    //   borderRadius="full"
-    //   height={size}
-    //   width={size}
-    // >
-    //   {label}
-    // </Block>
-    <StyledSpinner />
-  );
+  return <StyledSpinner color={color} />;
 });
 
 export default Spinner;

@@ -16,7 +16,7 @@ export { default as Link } from './Link';
 /**
  * Layout
  */
-export { Block, Flex } from './layout';
+export { Box, Block, Flex } from './layout';
 
 /**
  * Inputs

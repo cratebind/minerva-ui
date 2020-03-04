@@ -15,61 +15,61 @@ import {
 import { Block } from '../layout';
 import Input from '../Input';
 
-// const StyledSelect = styled(Input)(
-//   props => ({
-//     '-webkit-appearance': 'none',
-//     '-webkit-box-align': 'center',
-//     '-webkit-writing-mode': 'horizontal-tb',
-//     width: '100%',
-//     backgroundColor: '#fff',
-//     borderWidth: '1px',
-//     color: '#374151',
-//     fontWeight: '500',
-//     display: 'inline-flex',
-//     WebkitAppearance: 'none',
-//     WebkitBoxAlign: 'center',
-//     alignItems: 'center',
-//     WebkitBoxPack: 'center',
-//     justifyContent: 'center',
-//     userSelect: 'none',
-//     position: 'relative',
-//     whiteSpace: 'nowrap',
-//     verticalAlign: 'middle',
-//     fontSize: '14px',
-//     lineHeight: '20px',
-//     paddingTop: '8px',
-//     paddingBottom: '8px',
-//     paddingLeft: '16px',
-//     paddingRight: '16px',
-//     borderRadius: '5px',
-//     transition: 'all 150ms ease 0s',
-//     outline: 'none',
-//     ':hover': {
-//       backgroundColor: '#f9fafb',
-//     },
-//     ':focus': {
-//       borderColor: '#a4cafe',
-//       boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
-//       outline: 0,
-//     },
-//     ':disabled': {
-//       backgroundColor: '#EAEAEA',
-//       color: '#8F8F8F',
-//       cursor: 'not-allowed',
-//     },
-//     ...props.theme.Input,
-//   }),
-//   color,
-//   space,
-//   flexbox,
-//   grid,
-//   layout,
-//   position,
-//   shadow,
-//   background,
-//   border,
-//   typography
-// );
+const StyledSelect = styled(Input)(
+  (props): any => ({
+    '-webkit-appearance': 'none',
+    '-webkit-box-align': 'center',
+    '-webkit-writing-mode': 'horizontal-tb',
+    width: '100%',
+    backgroundColor: '#fff',
+    borderWidth: '1px',
+    color: '#374151',
+    fontWeight: '500',
+    display: 'inline-flex',
+    WebkitAppearance: 'none',
+    WebkitBoxAlign: 'center',
+    alignItems: 'center',
+    WebkitBoxPack: 'center',
+    justifyContent: 'center',
+    userSelect: 'none',
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    verticalAlign: 'middle',
+    fontSize: '14px',
+    lineHeight: '20px',
+    paddingTop: '8px',
+    paddingBottom: '8px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
+    borderRadius: '5px',
+    transition: 'all 150ms ease 0s',
+    outline: 'none',
+    ':hover': {
+      backgroundColor: '#f9fafb',
+    },
+    ':focus': {
+      borderColor: '#a4cafe',
+      boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
+      outline: 0,
+    },
+    ':disabled': {
+      backgroundColor: '#EAEAEA',
+      color: '#8F8F8F',
+      cursor: 'not-allowed',
+    },
+    ...props.theme.Input,
+  }),
+  color,
+  space,
+  flexbox,
+  grid,
+  layout,
+  position,
+  shadow,
+  background,
+  border,
+  typography
+);
 
 const SVG = styled('svg')(
   () => ({
@@ -140,9 +140,14 @@ export default function Select({
 }: SelectProps) {
   return (
     <Block position="relative">
-      <Input as="select" disabled={disabled} {...props}>
+      <StyledSelect as="select" {...props}>
+        {children}
+      </StyledSelect>
+
+      {/* <Input as="select" disabled={disabled} {...props}>
         {children}
       </Input>
+      <Input /> */}
       <SelectIcon />
     </Block>
   );
