@@ -1,12 +1,12 @@
 /* tslint:disable */
 
 import React, { useState } from 'react';
-import lightTheme from 'prism-react-renderer/themes/nightOwlLight';
+// import lightTheme from 'prism-react-renderer/themes/nightOwlLight';
 import darkTheme from 'prism-react-renderer/themes/nightOwl';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 // import Highlight, { defaultProps } from "prism-react-renderer";
 import { mdx } from '@mdx-js/react';
-import * as Minerva from './index';
+import * as Minerva from '.';
 import useClipboard from './hooks/useClipboard';
 // import * as Chakra from "@chakra-ui/core";
 // import * as Formik from "formik";
@@ -158,7 +158,10 @@ const CodeBlock = ({
   const { onCopy, hasCopied } = useClipboard(editorCode);
 
   // const { colorMode } = useColorMode();
-  const themes = { light: lightTheme, dark: darkTheme };
+  const themes = {
+    // light: lightTheme,
+    dark: darkTheme,
+  };
   const theme = themes['dark'];
 
   const liveProviderProps = {
