@@ -74,7 +74,6 @@ export interface CustomTableProps
 }
 
 function Table({ children, ...props }: CustomTableProps) {
-  console.log({ children });
   return (
     <TableContainer>
       <StyledTable {...props}>{children}</StyledTable>
