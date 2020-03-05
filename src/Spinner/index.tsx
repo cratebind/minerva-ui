@@ -83,4 +83,6 @@ const Spinner = forwardRef<Ref, SpinnerProps>((
   return <StyledSpinner ref={ref} color={color} />;
 });
 
+Spinner.displayName = 'Spinner';
+
 export default Spinner;
