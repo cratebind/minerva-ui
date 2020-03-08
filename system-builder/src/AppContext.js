@@ -2,9 +2,7 @@ import React, { useState, useContext, useMemo } from 'react';
 
 const initialState = {
   activeComponent: 'Button',
-  // modalOpen: false,
-  // @fixme: revert to false
-  modalOpen: true,
+  modalOpen: false,
   Button: {
     children: 'Button',
     margin: 0,
