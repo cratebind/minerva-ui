@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Table /> should render 1`] = `
+.c0 {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);
+}
+
+.c1 {
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+.c2 {
+  padding: 12px 24px;
+  color: #6b7280;
+  background-color: #f9fafb;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.c3 {
+  padding: 16px 24px;
+  color: #161e2e;
+  background-color: #fff;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <table
+      class="sc-AykKE c1"
+    >
+      <thead
+        class=""
+      >
+        <tr
+          class=""
+        >
+          <th
+            class="c2"
+          >
+            Name
+          </th>
+          <th
+            class="c2"
+          >
+            Job
+          </th>
+          <th
+            class="c2"
+          >
+            Status
+          </th>
+          <th
+            class="c2"
+          >
+            Role
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class=""
+      >
+        <tr
+          class=""
+        >
+          <td
+            class="c3"
+          >
+            Test
+          </td>
+          <td
+            class="c3"
+          >
+            Tester
+          </td>
+          <td
+            class="c3"
+          >
+            Testing
+          </td>
+          <td
+            class="c3"
+          >
+            Test Master
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`<Table /> should render 2`] = `
+.c0 {
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);
+}
+
+.c1 {
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+.c2 {
+  padding: 12px 24px;
+  color: #6b7280;
+  background-color: #f9fafb;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  -webkit-letter-spacing: 0.6px;
+  -moz-letter-spacing: 0.6px;
+  -ms-letter-spacing: 0.6px;
+  letter-spacing: 0.6px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.c3 {
+  padding: 16px 24px;
+  color: #161e2e;
+  background-color: #fff;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <table
+      class="sc-AykKE c1"
+    >
+      <thead
+        class=""
+      >
+        <tr
+          class=""
+        >
+          <th
+            class="c2"
+          >
+            Name
+          </th>
+          <th
+            class="c2"
+          >
+            Job
+          </th>
+          <th
+            class="c2"
+          >
+            Status
+          </th>
+          <th
+            class="c2"
+          >
+            Role
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class=""
+      >
+        <tr
+          class=""
+        >
+          <td
+            class="c3"
+          >
+            Test
+          </td>
+          <td
+            class="c3"
+          >
+            Tester
+          </td>
+          <td
+            class="c3"
+          >
+            Testing
+          </td>
+          <td
+            class="c3"
+          >
+            Test Master
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

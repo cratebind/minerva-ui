@@ -59,7 +59,7 @@ const Link = ({
     <StyledLink
       href={href}
       isDisabled={isDisabled}
-      onClick={isDisabled ? event => event.preventDefault() : onClick}
+      // onClick={isDisabled ? event => event.preventDefault() : onClick}
       {...externalProps}
       {...props}
     >

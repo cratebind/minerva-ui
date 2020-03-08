@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { styledSystemUtilities } from '../utils';
+import { Box } from '../layout';
 
 const TableContainer = styled.div`
   /* border: 1px solid #e5e7eb; */
   border-radius: 8px;
-  overflow: hidden;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 `;
 
-const StyledTable = styled('table')(
+const StyledTable = styled(Box)(
   {
     // backgroundColor: '#525252',
 
@@ -73,19 +73,35 @@ export interface CustomTableProps
   children?: React.ReactNode;
 }
 
-function Table({ children, ...props }: CustomTableProps) {
-  return (
-    <TableContainer>
-      <StyledTable {...props}>{children}</StyledTable>
-    </TableContainer>
-  );
-}
+export type Ref = HTMLTableElement;
 
-Table.Body = TableBody;
-Table.Cell = TableCell;
-Table.Footer = TableFooter;
-Table.Header = TableHeader;
-Table.HeaderCell = TableHeaderCell;
-Table.Row = TableRow;
+const Table = forwardRef<Ref, CustomTableProps>(
+  ({ children, ...props }, ref) => {
+    return (
+      <TableContainer>
+        <StyledTable as="table" ref={ref} {...props}>
+          {children}
+        </StyledTable>
+      </TableContainer>
+    );
+  }
+);
+
+Table.displayName = 'Table';
+
+// Table.Body = TableBody;
+// Table.Cell = TableCell;
+// Table.Footer = TableFooter;
+// Table.Header = TableHeader;
+// Table.HeaderCell = TableHeaderCell;
+// Table.Row = TableRow;
 
 export default Table;
+// export {
+//   TableBody,
+//   TableCell,
+//   TableFooter,
+//   TableHeader,
+//   TableHeaderCell,
+//   TableRow,
+// };

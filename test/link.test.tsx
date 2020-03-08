@@ -41,7 +41,7 @@ describe('<Link />', () => {
 
   it('should change styles when `isDisabled` prop is passed', () => {
     const content = 'Hello';
-    const { debug, getByText } = render(
+    const { getByText } = render(
       <ThemeProvider>
         <Link isDisabled>{content}</Link>
       </ThemeProvider>
@@ -49,29 +49,6 @@ describe('<Link />', () => {
 
     const element = getByText(content);
 
-    debug(element);
-
     expect(element).toHaveStyleRule('cursor', 'not-allowed');
   });
-
-  // it('should show new background color if provided in theme', () => {
-  //   const newColor = 'green';
-  //   const theme = {
-  //     Link: {
-  //       container: {
-  //         backgroundColor: newColor,
-  //       },
-  //     },
-  //   };
-
-  //   const { getByText } = render(
-  //     <ThemeProvider theme={theme}>
-  //       <Link>Test</Link>
-  //     </ThemeProvider>
-  //   );
-
-  //   const button = getByText('Test');
-
-  //   expect(button).toHaveStyleRule('background-color', newColor);
-  // });
 });
