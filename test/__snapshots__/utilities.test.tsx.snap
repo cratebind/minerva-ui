@@ -3,12 +3,15 @@
 exports[`Border Radius should render 1`] = `
 .c0 {
   border-radius: 0.125rem;
+}
+
+.c1 {
   display: block;
 }
 
 <div>
   <div
-    class="sc-AykKE c0"
+    class="c0 c1"
     data-testid="block"
   >
     Default Text
@@ -19,12 +22,15 @@ exports[`Border Radius should render 1`] = `
 exports[`Colors should render 1`] = `
 .c0 {
   background-color: #38b2ac;
+}
+
+.c1 {
   display: block;
 }
 
 <div>
   <div
-    class="sc-AykKE c0"
+    class="c0 c1"
     data-testid="block"
   >
     Default Text
