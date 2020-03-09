@@ -2,6 +2,9 @@
 
 exports[`<Button /> should change style if disabled 1`] = `
 .c0 {
+  -webkit-transition: all 150ms ease 0s;
+  transition: all 150ms ease 0s;
+  outline: none;
   background-color: #fff;
   border-width: 1px;
   color: #374151;
@@ -35,9 +38,6 @@ exports[`<Button /> should change style if disabled 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 5px;
-  -webkit-transition: all 150ms ease 0s;
-  transition: all 150ms ease 0s;
-  outline: none;
 }
 
 .c0:hover {
@@ -57,7 +57,7 @@ exports[`<Button /> should change style if disabled 1`] = `
 
 <div>
   <button
-    class="sc-AykKE c0"
+    class="sc-AykKE sc-AykKH c0"
     disabled=""
     role="button"
   >
@@ -68,8 +68,8 @@ exports[`<Button /> should change style if disabled 1`] = `
 
 exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
 .c1 {
-  display: block;
   color: #777;
+  display: block;
   display: inline-block;
   border-bottom-color: transparent;
   border-left-color: transparent;
@@ -87,6 +87,9 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
 }
 
 .c0 {
+  -webkit-transition: all 150ms ease 0s;
+  transition: all 150ms ease 0s;
+  outline: none;
   background-color: #fff;
   border-width: 1px;
   color: #374151;
@@ -120,9 +123,6 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 5px;
-  -webkit-transition: all 150ms ease 0s;
-  transition: all 150ms ease 0s;
-  outline: none;
 }
 
 .c0:hover {
@@ -142,12 +142,12 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
 
 <div>
   <button
-    class="sc-AykKE c0"
+    class="sc-AykKE sc-AykKH c0"
     disabled=""
     role="button"
   >
     <div
-      class="sc-AykKF c1"
+      class="sc-AykKE sc-AykKF c1"
       color="#777"
     />
   </button>
@@ -156,6 +156,9 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
 
 exports[`<Button /> should render 1`] = `
 .c0 {
+  -webkit-transition: all 150ms ease 0s;
+  transition: all 150ms ease 0s;
+  outline: none;
   background-color: #fff;
   border-width: 1px;
   color: #374151;
@@ -189,9 +192,6 @@ exports[`<Button /> should render 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 5px;
-  -webkit-transition: all 150ms ease 0s;
-  transition: all 150ms ease 0s;
-  outline: none;
 }
 
 .c0:hover {
@@ -211,7 +211,7 @@ exports[`<Button /> should render 1`] = `
 
 <div>
   <button
-    class="sc-AykKE c0"
+    class="sc-AykKE sc-AykKH c0"
     role="button"
   >
     Test
