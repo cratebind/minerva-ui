@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import styled, { css, CSSObject } from 'styled-components';
 import { MinervaProps, Box } from '../layout';
 

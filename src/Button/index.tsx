@@ -6,29 +6,29 @@ import Spinner from '../Spinner';
 import { MinervaProps, systemProps } from '../layout';
 import PseudoBox from '../PseudoBox';
 
-export const buttonThemeProps = {
-  backgroundColor: '#fff',
-  borderWidth: '1px',
-  color: '#374151',
-  fontWeight: '500',
-  display: 'inline-flex',
-  WebkitAppearance: 'none',
-  WebkitBoxAlign: 'center',
-  alignItems: 'center',
-  WebkitBoxPack: 'center',
-  justifyContent: 'center',
-  userSelect: 'none',
-  position: 'relative',
-  whiteSpace: 'nowrap',
-  verticalAlign: 'middle',
-  fontSize: '14px',
-  lineHeight: '20px',
-  paddingTop: '8px',
-  paddingBottom: '8px',
-  paddingLeft: '16px',
-  paddingRight: '16px',
-  borderRadius: '5px',
-};
+// export const buttonThemeProps = {
+//   backgroundColor: '#fff',
+//   borderWidth: '1px',
+//   color: '#374151',
+//   fontWeight: '500',
+//   display: 'inline-flex',
+//   WebkitAppearance: 'none',
+//   WebkitBoxAlign: 'center',
+//   alignItems: 'center',
+//   WebkitBoxPack: 'center',
+//   justifyContent: 'center',
+//   userSelect: 'none',
+//   position: 'relative',
+//   whiteSpace: 'nowrap',
+//   verticalAlign: 'middle',
+//   fontSize: '14px',
+//   lineHeight: '20px',
+//   paddingTop: '8px',
+//   paddingBottom: '8px',
+//   paddingLeft: '16px',
+//   paddingRight: '16px',
+//   borderRadius: '5px',
+// };
 
 const StyledButton = styled(PseudoBox)(
   props => ({
