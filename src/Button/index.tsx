@@ -30,7 +30,7 @@ export const buttonThemeProps = {
   borderRadius: '5px',
 };
 
-const StyledButton = styled(PseudoBox)(() => ({
+const StyledButton = styled(PseudoBox)(props => ({
   // backgroundColor: '#525252',
   // ...buttonThemeProps,
   transition: 'all 150ms ease 0s',
@@ -48,7 +48,7 @@ const StyledButton = styled(PseudoBox)(() => ({
     // color: '#8F8F8F',
     cursor: 'not-allowed',
   },
-  // ...props.theme.Button,
+  ...props.theme.Button,
   // backgroundColor: props.theme.colors.primary || 'rgb(56, 161, 105)',
   // ...props.theme.Button.container,
   // ...props.theme.Button.text,
