@@ -14,6 +14,37 @@ describe('<Button />', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('should pass basic style props ', () => {
+    const backgroundColor = 'red';
+    const { getByRole } = render(
+      <ThemeProvider>
+        <Button backgroundColor={backgroundColor}>Disabled Button</Button>
+      </ThemeProvider>
+    );
+
+    expect(getByRole('button')).toHaveStyleRule(
+      'background-color',
+      backgroundColor
+    );
+  });
+
+  it('should pass shorthand props ', () => {
+    const backgroundColor = 'red';
+    const { getByRole, debug } = render(
+      <ThemeProvider>
+        <Button bg={backgroundColor}>Disabled Button</Button>
+      </ThemeProvider>
+    );
+
+    const button = getByRole('button');
+    debug(button);
+
+    expect(getByRole('button')).toHaveStyleRule(
+      'background-color',
+      backgroundColor
+    );
+  });
+
   it('should change style if disabled', () => {
     const { container, getByRole } = render(
       <ThemeProvider>
