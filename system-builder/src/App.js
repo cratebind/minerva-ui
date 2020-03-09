@@ -12,6 +12,7 @@ import {
   Table,
   Text,
   styled,
+  defaultTheme,
 } from 'minerva-ui';
 import Editor from './components/Editor';
 import { useAppContext } from './AppContext';
@@ -63,14 +64,8 @@ function App() {
             Export Theme
           </Button>
         </Flex>
-        <Flex>
-          <Flex
-            flexDirection="column"
-            padding={4}
-            width="15rem"
-            bg="#3b4c67"
-            height={`calc(100vh - ${HEADER_HEIGHT})`}
-          >
+        <Flex height={`calc(100vh - ${HEADER_HEIGHT})`}>
+          <Flex flexDirection="column" padding={4} width="15rem" bg="#3b4c67">
             {Object.keys(Components).map(componentName => (
               <ComponentButton
                 key={componentName}
@@ -80,9 +75,21 @@ function App() {
               </ComponentButton>
             ))}
           </Flex>
-          <Editor />
-
-          <Inspector />
+          {/* editor has its own theme provider separate from rest of app */}
+          <ThemeProvider
+            theme={{
+              ...defaultTheme,
+              Button: {
+                container: {
+                  ...defaultTheme.Button.container,
+                  ...state.Button,
+                },
+              },
+            }}
+          >
+            <Editor />
+            <Inspector />
+          </ThemeProvider>
         </Flex>
         <ThemeModal />
       </Box>

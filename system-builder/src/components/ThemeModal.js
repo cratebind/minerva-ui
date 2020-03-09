@@ -34,7 +34,11 @@ export default function ThemeModal(props) {
   const url = window.URL.createObjectURL(data);
 
   return (
-    <StyledDialog isOpen={modalOpen} onDismiss={close}>
+    <StyledDialog
+      isOpen={modalOpen}
+      onDismiss={close}
+      aria-labelledby="theme_dialog"
+    >
       <Button
         position="absolute"
         right="10px"

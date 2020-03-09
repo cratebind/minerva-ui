@@ -33,26 +33,6 @@ const baseTheme: MinervaTheme = {
     paddingLeft: '16px',
     paddingRight: '16px',
     borderRadius: '5px',
-    // container: {
-    //   // backgroundColor: 'rgb(49, 151, 149)',
-    //   // borderRadius: 4,
-    //   // height: 33,
-    //   // paddingTop: 7,
-    //   // paddingBottom: 7,
-    //   // paddingLeft: 14,
-    //   // paddingRight: 14,
-    // },
-    // text: {
-    //   // fontSize: 16,
-    //   // letterSpacing: {
-    //   //   unit: 'PERCENT',
-    //   //   value: 0,
-    //   // },
-    //   // lineHeight: {
-    //   //   unit: 'AUTO',
-    //   // },
-    //   // fontWeight: 'regular',
-    // },
   },
   Text: {
     // fontSize: 16,
@@ -62,6 +42,7 @@ const baseTheme: MinervaTheme = {
   },
   Input: {},
   Link: {},
+  Select: {},
   defaultBorderColor: '#d2d6dc',
   colors: {
     // custom colors

@@ -18,11 +18,7 @@ export default function Editor() {
 
   const Component = activeComponent ? Components[activeComponent] : null;
 
-  console.log(Component.componentStyle);
-
   const props = state[activeComponent];
-
-  console.log(props);
 
   return (
     <Container>
