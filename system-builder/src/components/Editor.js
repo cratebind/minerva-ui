@@ -12,17 +12,17 @@ const Container = styled(Box)`
 `;
 
 export default function Editor() {
-  const { state, setContext } = useAppContext();
+  const { state } = useAppContext();
 
   const activeComponent = state?.activeComponent;
 
   const Component = activeComponent ? Components[activeComponent] : null;
 
-  const props = state[activeComponent];
+  const { customProps, ...props } = state[activeComponent];
 
   return (
     <Container>
-      <Component {...props} />
+      <Component {...customProps} {...props} />
     </Container>
   );
 }

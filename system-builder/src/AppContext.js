@@ -4,7 +4,9 @@ const initialState = {
   activeComponent: 'Button',
   modalOpen: false,
   Button: {
-    children: 'Button',
+    customProps: {
+      children: 'Button',
+    },
     backgroundColor: '#fff',
     borderWidth: '1px',
     color: '#374151',

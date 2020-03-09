@@ -57,8 +57,8 @@ const DropdownArrow = ({ active }) => (
   </Box>
 );
 
-export default function Inspector() {
-  const { state } = useAppContext();
+const Inspector = React.memo(function Inspector() {
+  const { state, setContext } = useAppContext();
   const themeContext = useContext(ThemeContext);
   const [activeSections, setActiveSections] = useState(
     Object.keys(fieldSections).map((_, index) => index)
@@ -76,12 +76,7 @@ export default function Inspector() {
 
   const activeComponent = state?.activeComponent;
 
-  // const Component = activeComponent ? Components[activeComponent] : null;
-
   const componentProps = state[activeComponent];
-  // const componentStyles =
-
-  console.log({ themeContext });
 
   return (
     <Flex
@@ -92,29 +87,62 @@ export default function Inspector() {
       height="100%"
     >
       <Title>{activeComponent}</Title>
-      <Accordion
-        collapsible
-        multiple
-        // defaultIndex={Object.keys(fieldSections).map((_, index) => index)}
-        index={activeSections}
-        onChange={toggleItem}
-      >
+      <Accordion index={activeSections} onChange={toggleItem}>
+        <AccordionItem>
+          <FieldHeading as={AccordionButton}>
+            Custom Properties
+            <DropdownArrow active={activeSections.includes(0)} />
+          </FieldHeading>
+          <AccordionPanel>
+            <InnerContainer>
+              {Object.entries(state[activeComponent].customProps).map(
+                ([key, value]) => (
+                  <InspectorField
+                    key={key}
+                    name={key}
+                    value={value}
+                    componentProps={componentProps}
+                    activeComponent={activeComponent}
+                    onChange={e =>
+                      setContext({
+                        [activeComponent]: {
+                          ...componentProps,
+                          customProps: {
+                            [key]: e.target.value,
+                          },
+                        },
+                      })
+                    }
+                  />
+                )
+              )}
+            </InnerContainer>
+          </AccordionPanel>
+        </AccordionItem>
+
         {Object.entries(fieldSections).map(([section, fields], index) => (
           <AccordionItem>
             <FieldHeading as={AccordionButton}>
               {toTitleCase(section)}
-              <DropdownArrow active={activeSections.includes(index)} />
+              <DropdownArrow active={activeSections.includes(index + 1)} />
             </FieldHeading>
-            {/* <AccordionButton>Step 1: Do a thing</AccordionButton> */}
             <AccordionPanel>
               {fields.map(({ name, type }) => (
                 <InnerContainer>
                   <InspectorField
                     key={name}
                     name={name}
-                    value={themeContext.Button.container[name]}
+                    value={themeContext[activeComponent][name]}
                     componentProps={componentProps}
                     activeComponent={activeComponent}
+                    onChange={e =>
+                      setContext({
+                        [activeComponent]: {
+                          ...componentProps,
+                          [name]: e.target.value,
+                        },
+                      })
+                    }
                   />
                 </InnerContainer>
               ))}
@@ -122,53 +150,23 @@ export default function Inspector() {
           </AccordionItem>
         ))}
       </Accordion>
-      {/* {dimensions.map(({ name, type }) => (
-        <>
-          <InnerContainer>
-            <InspectorField
-              key={name}
-              name={name}
-              value={themeContext.Button.container[name]}
-              componentProps={componentProps}
-              activeComponent={activeComponent}
-            />
-          </InnerContainer>
-        </>
-      ))} */}
-      {/* {Object.entries(themeContext.Button.container).map(([key, value]) => (
-          <InspectorField
-            key={key}
-            name={key}
-            value={value}
-            componentProps={componentProps}
-            activeComponent={activeComponent}
-          />
-        ))} */}
     </Flex>
   );
-}
+});
 
-function InspectorField({ name, value, componentProps, activeComponent }) {
-  const { state, setContext } = useAppContext();
+function InspectorField({ name, value, onChange }) {
   return (
     <Flex
       alignItems="center"
       // as="form"
-      mb="12px" // onSubmit={e => {
-      //   e.preventDefault();
-      // }}
+      mb="12px"
     >
       <Box as="label" width="100%" textTransform="capitalize">
         {toTitleCase(name)}
       </Box>
-      <Input
-        value={value}
-        onChange={e =>
-          setContext({
-            [activeComponent]: { ...componentProps, [name]: e.target.value },
-          })
-        }
-      />
+      <Input value={value} onChange={onChange} />
     </Flex>
   );
 }
+
+export default Inspector;

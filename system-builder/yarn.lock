@@ -4922,7 +4922,7 @@ eslint-ast-utils@^1.1.0:
     lodash.get "^4.4.2"
     lodash.zip "^4.2.0"
 
-eslint-config-cratebind@^3.0.8:
+eslint-config-cratebind@^3.0.7, eslint-config-cratebind@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/eslint-config-cratebind/-/eslint-config-cratebind-3.0.8.tgz#bfaad2ba804cb99b737db82c7eb1afbce9988d7e"
   integrity sha512-KVUymh8l8L9cf3xbvAQRQIvkRiGFkmgO2UsUNQhq0Q8PiTJbyjbqhX0/r6V6F+fUaZU13s7RkZiONODqoI7JHQ==
@@ -7912,10 +7912,10 @@ min-indent@^1.0.0:
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
   integrity sha1-z8RcN+nsDY8KDsPdTvf3w6vjklY=
 
-minerva-ui@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/minerva-ui/-/minerva-ui-1.2.1.tgz#35feb97bab91bc9039fb8d8aeaa2077344158855"
-  integrity sha512-+6Ku17QbpPBGdf4jdGPE/16CEnw01MXyI0p6p1kH28ESIor2fYp9plUHmDSVLVsQ+SjwwnzVOi5gCzZlMQkBDQ==
+minerva-ui@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/minerva-ui/-/minerva-ui-2.0.0.tgz#2a4907c10100daccb6277b4d712c608fc64b6bcd"
+  integrity sha512-YjUoAyBEj74VrU2oZEISBUa8p/Txe/CKx+N3imsbnxOgH1ZmPD6BQBGzGt9lasbKAtNXLTW7e1q7dkfMOOJW9w==
   dependencies:
     "@mdx-js/react" "^1.5.1"
     "@reach/checkbox" "^0.8.1"
@@ -7924,6 +7924,7 @@ minerva-ui@^1.2.1:
     "@types/styled-components" "^5.0.1"
     "@types/styled-system" "^5.1.7"
     copy-to-clipboard "^3.3.1"
+    eslint-config-cratebind "^3.0.7"
     styled-components "^5.0.0"
     styled-system "^5.1.4"
 

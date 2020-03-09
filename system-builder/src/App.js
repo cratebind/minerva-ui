@@ -46,6 +46,8 @@ const HEADER_HEIGHT = '48px';
 function App() {
   const { state, setContext } = useAppContext();
 
+  const { customProps, ...buttonStyles } = state.Button;
+
   return (
     <ThemeProvider>
       <GlobalStyles />
@@ -80,10 +82,8 @@ function App() {
             theme={{
               ...defaultTheme,
               Button: {
-                container: {
-                  ...defaultTheme.Button.container,
-                  ...state.Button,
-                },
+                ...defaultTheme.Button,
+                ...buttonStyles,
               },
             }}
           >
