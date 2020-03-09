@@ -20,7 +20,8 @@
     "storybook": "start-storybook -p 6006 --docs",
     "build-storybook": "build-storybook --docs",
     "sb": "yarn storybook",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "tb:build": "yarn --cwd theme-builder install && yarn --cwd theme-builder build"
   },
   "peerDependencies": {
     "react": ">=16"
