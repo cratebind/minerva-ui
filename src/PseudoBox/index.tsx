@@ -1,6 +1,6 @@
-import { Box } from '..';
-import { MinervaProps } from '../layout';
+import React from 'react';
 import styled, { css, CSSObject } from 'styled-components';
+import { MinervaProps, Box } from '../layout';
 
 interface PseudoBoxProps {
   /**

@@ -215,7 +215,7 @@ export type MinervaProps = StyledSystemProps &
   React.HTMLAttributes<any> &
   React.RefAttributes<any>;
 
-export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
+export const Box = styled('div')<MinervaProps>({}, systemProps);
 
 // export const PseudoBox = styled(Box)(
 //   ({

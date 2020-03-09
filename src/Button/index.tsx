@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // import { MinervaProps } from 'layout';
 import Spinner from '../Spinner';
 // import { MinervaProps } from '../layout';
-import { MinervaProps } from '../layout';
+import { MinervaProps, systemProps } from '../layout';
 import PseudoBox from '../PseudoBox';
 
 export const buttonThemeProps = {
@@ -30,29 +30,32 @@ export const buttonThemeProps = {
   borderRadius: '5px',
 };
 
-const StyledButton = styled(PseudoBox)(props => ({
-  // backgroundColor: '#525252',
-  // ...buttonThemeProps,
-  transition: 'all 150ms ease 0s',
-  outline: 'none',
-  ':hover': {
-    backgroundColor: '#f9fafb',
-  },
-  ':focus': {
-    borderColor: '#a4cafe',
-    boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
-    outline: 0,
-  },
-  ':disabled': {
-    opacity: 0.4,
-    // color: '#8F8F8F',
-    cursor: 'not-allowed',
-  },
-  ...props.theme.Button,
-  // backgroundColor: props.theme.colors.primary || 'rgb(56, 161, 105)',
-  // ...props.theme.Button.container,
-  // ...props.theme.Button.text,
-}));
+const StyledButton = styled(PseudoBox)(
+  props => ({
+    // backgroundColor: '#525252',
+    // ...buttonThemeProps,
+    transition: 'all 150ms ease 0s',
+    outline: 'none',
+    ':hover': {
+      backgroundColor: '#f9fafb',
+    },
+    ':focus': {
+      borderColor: '#a4cafe',
+      boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
+      outline: 0,
+    },
+    ':disabled': {
+      opacity: 0.4,
+      // color: '#8F8F8F',
+      cursor: 'not-allowed',
+    },
+    ...props.theme.Button,
+    // backgroundColor: props.theme.colors.primary || 'rgb(56, 161, 105)',
+    // ...props.theme.Button.container,
+    // ...props.theme.Button.text,
+  }),
+  systemProps
+);
 
 export interface ButtonProps extends MinervaProps {
   children?: React.ReactNode;
