@@ -88,9 +88,6 @@ const CopyButton = (props: any) => (
     fontFamily={`-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";`}
     zIndex="1"
     right="1.25em"
-    style={{
-      textTransform: 'uppercase',
-    }}
     {...props}
   />
 );

@@ -3,10 +3,13 @@
 exports[`<Select /> should change style if disabled 1`] = `
 .c0 {
   position: relative;
-  display: block;
 }
 
 .c1 {
+  display: block;
+}
+
+.c2 {
   -webkit-appearance: none;
   -webkit-box-align: center;
   -webkit-writing-mode: horizontal-tb;
@@ -49,28 +52,28 @@ exports[`<Select /> should change style if disabled 1`] = `
   outline: none;
 }
 
-.c1:hover {
+.c2:hover {
   background-color: #f9fafb;
 }
 
-.c1:focus {
+.c2:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c1:disabled {
+.c2:disabled {
   background-color: #EAEAEA;
   color: #8F8F8F;
   cursor: not-allowed;
 }
 
-.c3 {
+.c4 {
   height: 1.25rem;
   width: 1.25rem;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -102,10 +105,10 @@ exports[`<Select /> should change style if disabled 1`] = `
     Name
   </label>
   <div
-    class="sc-AykKF c0"
+    class="c0 c1"
   >
     <select
-      class="c1"
+      class="c2"
       id="select-input"
     >
       <option
@@ -120,10 +123,10 @@ exports[`<Select /> should change style if disabled 1`] = `
       </option>
     </select>
     <div
-      class="c2"
+      class="c3"
     >
       <svg
-        class="c3"
+        class="c4"
         focusable="false"
         role="presentation"
         viewBox="0 0 24 24"
@@ -141,10 +144,13 @@ exports[`<Select /> should change style if disabled 1`] = `
 exports[`<Select /> should render 1`] = `
 .c0 {
   position: relative;
-  display: block;
 }
 
 .c1 {
+  display: block;
+}
+
+.c2 {
   -webkit-appearance: none;
   -webkit-box-align: center;
   -webkit-writing-mode: horizontal-tb;
@@ -187,28 +193,28 @@ exports[`<Select /> should render 1`] = `
   outline: none;
 }
 
-.c1:hover {
+.c2:hover {
   background-color: #f9fafb;
 }
 
-.c1:focus {
+.c2:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c1:disabled {
+.c2:disabled {
   background-color: #EAEAEA;
   color: #8F8F8F;
   cursor: not-allowed;
 }
 
-.c3 {
+.c4 {
   height: 1.25rem;
   width: 1.25rem;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -240,10 +246,10 @@ exports[`<Select /> should render 1`] = `
     Name
   </label>
   <div
-    class="sc-AykKF c0"
+    class="c0 c1"
   >
     <select
-      class="c1"
+      class="c2"
       id="select-input"
     >
       <option
@@ -258,10 +264,10 @@ exports[`<Select /> should render 1`] = `
       </option>
     </select>
     <div
-      class="c2"
+      class="c3"
     >
       <svg
-        class="c3"
+        class="c4"
         focusable="false"
         role="presentation"
         viewBox="0 0 24 24"
