@@ -1,8 +1,8 @@
-import { Box } from '..';
-import { MinervaProps } from '../layout';
+// import React from 'react';
 import styled, { css, CSSObject } from 'styled-components';
+import { MinervaProps, Box, systemProps } from '../layout';
 
-interface PseudoBoxProps {
+export interface PseudoBoxProps {
   /**
    * Styles for CSS selector `&:after`
    *
@@ -212,64 +212,8 @@ const PseudoBox = styled(Box)<PseudoProps>(
       '&:focus-within': _focusWithin,
       '&::placeholder': _placeholder,
     });
-  }
+  },
+  systemProps
 );
-
-// function PseudoBox2({
-//   _after,
-//   _focus,
-//   _selected,
-//   _focusWithin,
-//   _hover,
-//   _invalid,
-//   _active,
-//   _disabled,
-//   _grabbed,
-//   _pressed,
-//   _expanded,
-//   _visited,
-//   _before,
-//   _readOnly,
-//   _first,
-//   _notFirst,
-//   _notLast,
-//   _last,
-//   _placeholder,
-//   _checked,
-//   _groupHover,
-//   _mixed,
-//   _odd,
-//   _even,
-//   ...props
-// }: PseudoBoxProps) {
-//   const pseudoStyles = {
-//     [hover]: _hover,
-//     [focus]: _focus,
-//     [active]: _active,
-//     [visited]: _visited,
-//     [disabled]: _disabled,
-//     [selected]: _selected,
-//     [invalid]: _invalid,
-//     [expanded]: _expanded,
-//     [grabbed]: _grabbed,
-//     [readOnly]: _readOnly,
-//     [first]: _first,
-//     [notFirst]: _notFirst,
-//     [notLast]: _notLast,
-//     [last]: _last,
-//     [odd]: _odd,
-//     [even]: _even,
-//     [mixed]: _mixed,
-//     [checked]: _checked,
-//     [pressed]: _pressed,
-//     [groupHover]: _groupHover,
-//     '&:before': _before,
-//     '&:after': _after,
-//     '&:focus-within': _focusWithin,
-//     '&::placeholder': _placeholder,
-//   };
-
-//   return <Box {...pseudoStyles} {...props} />;
-// }
 
 export default PseudoBox;
