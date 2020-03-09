@@ -11,9 +11,18 @@ import StyledSystem, {
   space,
   typography,
   compose,
+  // system,
 } from 'styled-system';
 
+// const customProps = system({
+//   textDecoration: true,
+//   textTransform: true,
+//   transform: true,
+//   lineHeight: true,
+// });
+
 export const systemProps = compose(
+  // customProps,
   layout,
   color,
   space,

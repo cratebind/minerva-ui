@@ -58,7 +58,7 @@ function App() {
           bg="#252f3f"
         >
           <Text fontSize="20px" fontWeight={800} color="#fff">
-            System Builder
+            Theme Builder
           </Text>
           <Button border="0" onClick={() => setContext({ modalOpen: true })}>
             Export Theme
