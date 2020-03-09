@@ -1,0 +1,30 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Heading from '../Heading'; 
+
+<Meta title="Elements|Heading" component={Heading} />
+
+# Heading 
+
+Basic heading component, replaces `<h1> <h2> <h3> <h4>`
+
+```js
+import { Heading } from 'minerva-ui'
+```
+
+```jsx
+<Heading>
+  Heading
+</Heading>
+```
+
+# Variants
+
+### Small h4 Heading
+```jsx
+<Heading as="h4" size="sm">
+  Heading
+</Heading>
+```
+
+
+<Props of={Heading} />
