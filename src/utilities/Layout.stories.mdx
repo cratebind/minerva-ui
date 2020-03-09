@@ -1,4 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import PseudoBox from '../PseudoBox';
 
 <Meta title="Overview|Layout" />
 
@@ -7,6 +8,23 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 Layout components help replace common patterns when building a UI.
 
 For example, `<Flex />` saves you the time of having to write `<div style={{ display: 'flex' }} />` or `<Block display="flex" />`.
+
+## Box
+
+Basic `div` element with no defaults
+
+```jsx
+() => (
+  <Box
+    backgroundColor="#edf2f7"
+    justifyContent="space-between"
+    maxWidth="300px"
+  >
+    <Button>Left</Button>
+    <Button>Right</Button>
+  </Box>
+)
+```
 
 ## Flex
 

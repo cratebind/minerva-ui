@@ -38,19 +38,11 @@ const StyledLink = styled('a')<any>(
 export interface LinkProps {
   children?: React.ReactNode;
   href?: string;
-  isDisabled?: boolean;
   isExternal?: boolean;
-  onClick?: Function;
+  // isDisabled?: boolean;
 }
 
-const Link = ({
-  children,
-  href,
-  isDisabled = false,
-  isExternal,
-  onClick,
-  ...props
-}: LinkProps) => {
+const Link = ({ children, href, isExternal, ...props }: LinkProps) => {
   const externalProps = isExternal
     ? { target: '_blank', rel: 'noopener noreferrer' }
     : null;
@@ -58,7 +50,8 @@ const Link = ({
   return (
     <StyledLink
       href={href}
-      isDisabled={isDisabled}
+      // @TODO: Rethink this due to possible accessibility issues
+      // isDisabled={isDisabled}
       // onClick={isDisabled ? event => event.preventDefault() : onClick}
       {...externalProps}
       {...props}

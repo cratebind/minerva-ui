@@ -217,16 +217,64 @@ export type MinervaProps = StyledSystemProps &
 
 export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
 
-export const Block = styled('div')<MinervaProps>(
-  () => ({
-    display: 'block',
-  }),
-  systemProps
-);
+// export const PseudoBox = styled(Box)(
+//   ({
+//     _after,
+//     _focus,
+//     _selected,
+//     _focusWithin,
+//     _hover,
+//     _invalid,
+//     _active,
+//     _disabled,
+//     _grabbed,
+//     _pressed,
+//     _expanded,
+//     _visited,
+//     _before,
+//     _readOnly,
+//     _first,
+//     _notFirst,
+//     _notLast,
+//     _last,
+//     _placeholder,
+//     _checked,
+//     _groupHover,
+//     _mixed,
+//     _odd,
+//     _even,
+//   }: PseudoBoxProps) => ({
+//     [hover]: _hover,
+//     [focus]: _focus,
+//     [active]: _active,
+//     [visited]: _visited,
+//     [disabled]: _disabled,
+//     [selected]: _selected,
+//     [invalid]: _invalid,
+//     [expanded]: _expanded,
+//     [grabbed]: _grabbed,
+//     [readOnly]: _readOnly,
+//     [first]: _first,
+//     [notFirst]: _notFirst,
+//     [notLast]: _notLast,
+//     [last]: _last,
+//     [odd]: _odd,
+//     [even]: _even,
+//     [mixed]: _mixed,
+//     [checked]: _checked,
+//     [pressed]: _pressed,
+//     [groupHover]: _groupHover,
+//     '&:before': _before,
+//     '&:after': _after,
+//     '&:focus-within': _focusWithin,
+//     '&::placeholder': _placeholder,
+//   })
+// );
 
-export const Flex = styled('div')<MinervaProps>(
-  () => ({
-    display: 'flex',
-  }),
-  systemProps
-);
+export const Block = styled(Box)(() => ({
+  display: 'block',
+}));
+
+export const Flex = styled(Box)(() => ({
+  display: 'flex',
+}));

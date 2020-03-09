@@ -17,6 +17,7 @@ export { default as Link } from './Link';
  * Layout
  */
 export { Box, Block, Flex } from './layout';
+export { default as PseudoBox } from './PseudoBox';
 
 /**
  * Inputs

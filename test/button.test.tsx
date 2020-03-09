@@ -65,9 +65,7 @@ describe('<Button />', () => {
     const newColor = 'green';
     const theme = {
       Button: {
-        container: {
-          backgroundColor: newColor,
-        },
+        backgroundColor: newColor,
       },
     };
 

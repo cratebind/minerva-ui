@@ -38,17 +38,4 @@ describe('<Link />', () => {
     expect(element.getAttribute('rel')).toEqual('noopener noreferrer');
     expect(element.getAttribute('target')).toEqual('_blank');
   });
-
-  it('should change styles when `isDisabled` prop is passed', () => {
-    const content = 'Hello';
-    const { getByText } = render(
-      <ThemeProvider>
-        <Link isDisabled>{content}</Link>
-      </ThemeProvider>
-    );
-
-    const element = getByText(content);
-
-    expect(element).toHaveStyleRule('cursor', 'not-allowed');
-  });
 });

@@ -3,35 +3,56 @@ import { Theme } from 'styled-system';
 const logoColor = '#551A8B';
 
 export interface MinervaTheme extends Theme {
-  Button?: any;
-  Text?: any;
-  Input?: any;
-  Link?: any;
+  Button?: React.CSSProperties;
+  Text?: React.CSSProperties;
+  Input?: React.CSSProperties;
+  Link?: React.CSSProperties;
   defaultBorderColor?: string;
 }
 
 const baseTheme: MinervaTheme = {
   Button: {
-    container: {
-      // backgroundColor: 'rgb(49, 151, 149)',
-      // borderRadius: 4,
-      // height: 33,
-      // paddingTop: 7,
-      // paddingBottom: 7,
-      // paddingLeft: 14,
-      // paddingRight: 14,
-    },
-    text: {
-      // fontSize: 16,
-      // letterSpacing: {
-      //   unit: 'PERCENT',
-      //   value: 0,
-      // },
-      // lineHeight: {
-      //   unit: 'AUTO',
-      // },
-      // fontWeight: 'regular',
-    },
+    backgroundColor: '#fff',
+    borderWidth: '1px',
+    color: '#374151',
+    fontWeight: 500,
+    display: 'inline-flex',
+    WebkitAppearance: 'none',
+    WebkitBoxAlign: 'center',
+    alignItems: 'center',
+    WebkitBoxPack: 'center',
+    justifyContent: 'center',
+    userSelect: 'none',
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    verticalAlign: 'middle',
+    fontSize: '14px',
+    lineHeight: '20px',
+    paddingTop: '8px',
+    paddingBottom: '8px',
+    paddingLeft: '16px',
+    paddingRight: '16px',
+    borderRadius: '5px',
+    // container: {
+    //   // backgroundColor: 'rgb(49, 151, 149)',
+    //   // borderRadius: 4,
+    //   // height: 33,
+    //   // paddingTop: 7,
+    //   // paddingBottom: 7,
+    //   // paddingLeft: 14,
+    //   // paddingRight: 14,
+    // },
+    // text: {
+    //   // fontSize: 16,
+    //   // letterSpacing: {
+    //   //   unit: 'PERCENT',
+    //   //   value: 0,
+    //   // },
+    //   // lineHeight: {
+    //   //   unit: 'AUTO',
+    //   // },
+    //   // fontWeight: 'regular',
+    // },
   },
   Text: {
     // fontSize: 16,
