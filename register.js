@@ -9,7 +9,6 @@ const PANEL_ID = `${ADDON_ID}/panel`;
 
 const MyPanel = () => {
   const value = useParameter(PARAM_KEY, null);
-  console.log({ value });
 
   return <div>{value}</div>;
 };

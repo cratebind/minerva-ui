@@ -9,8 +9,7 @@
   "module": "dist/minerva-ui.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist",
-    "checkbox.css"
+    "dist"
   ],
   "scripts": {
     "start": "tsdx watch",

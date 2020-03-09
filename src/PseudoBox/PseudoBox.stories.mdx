@@ -1,0 +1,26 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import PseudoBox from '../PseudoBox';
+
+<Meta title="Elements|PseudoBox" />
+
+# PseudoBox
+
+Basic `div` component with additional props for CSS pseudo selectors.
+
+```jsx
+<PseudoBox
+  as="input"
+  placeholder="Focus me"
+  py={2}
+  px={4}
+  bg="gray.200"
+  color="gray.900"
+  borderColor="transparent"
+  borderWidth="2px"
+  rounded="md"
+  outline="none"
+  _focus={{ backgroundColor: '#fff', borderColor: 'purple' }}
+/>
+```
+
+<Props of={PseudoBox} />

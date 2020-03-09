@@ -15,32 +15,37 @@ import {
 // import { MinervaProps } from 'layout';
 import Spinner from '../Spinner';
 // import { MinervaProps } from '../layout';
-import { MinervaProps, Box } from '../layout';
+import { MinervaProps } from '../layout';
+import PseudoBox from '../PseudoBox';
 
-const StyledButton = styled(Box)(
+export const buttonThemeProps = {
+  backgroundColor: '#fff',
+  borderWidth: '1px',
+  color: '#374151',
+  fontWeight: '500',
+  display: 'inline-flex',
+  WebkitAppearance: 'none',
+  WebkitBoxAlign: 'center',
+  alignItems: 'center',
+  WebkitBoxPack: 'center',
+  justifyContent: 'center',
+  userSelect: 'none',
+  position: 'relative',
+  whiteSpace: 'nowrap',
+  verticalAlign: 'middle',
+  fontSize: '14px',
+  lineHeight: '20px',
+  paddingTop: '8px',
+  paddingBottom: '8px',
+  paddingLeft: '16px',
+  paddingRight: '16px',
+  borderRadius: '5px',
+};
+
+const StyledButton = styled(PseudoBox)(
   props => ({
     // backgroundColor: '#525252',
-    backgroundColor: '#fff',
-    borderWidth: '1px',
-    color: '#374151',
-    fontWeight: '500',
-    display: 'inline-flex',
-    WebkitAppearance: 'none',
-    WebkitBoxAlign: 'center',
-    alignItems: 'center',
-    WebkitBoxPack: 'center',
-    justifyContent: 'center',
-    userSelect: 'none',
-    position: 'relative',
-    whiteSpace: 'nowrap',
-    verticalAlign: 'middle',
-    fontSize: '14px',
-    lineHeight: '20px',
-    paddingTop: '8px',
-    paddingBottom: '8px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
-    borderRadius: '5px',
+    // ...buttonThemeProps,
     transition: 'all 150ms ease 0s',
     outline: 'none',
     ':hover': {
@@ -56,9 +61,10 @@ const StyledButton = styled(Box)(
       // color: '#8F8F8F',
       cursor: 'not-allowed',
     },
+    ...props.theme.Button,
     // backgroundColor: props.theme.colors.primary || 'rgb(56, 161, 105)',
-    ...props.theme.Button.container,
-    ...props.theme.Button.text,
+    // ...props.theme.Button.container,
+    // ...props.theme.Button.text,
   }),
   color,
   space,

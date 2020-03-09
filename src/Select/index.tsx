@@ -57,7 +57,7 @@ const StyledSelect = styled(Input)(
       color: '#8F8F8F',
       cursor: 'not-allowed',
     },
-    ...props.theme.Input,
+    ...props.theme.Select,
   }),
   color,
   space,
