@@ -1,0 +1,98 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import InputField from '../InputField';
+import Input from '../Input';
+
+<Meta title="Elements|InputField" component={InputField} />
+
+# Input Field
+
+### Basic Input Field component
+
+```js
+import { InputField, Input } from 'minerva-ui';
+```
+
+```jsx
+() => {
+  const [name, setName] = React.useState('');
+  const [error, setError] = React.useState('');
+
+  return (
+    <InputField label="Label" errorMsg={error}>
+      <Input
+        placeholder="Basic Input"
+        value={name}
+        onBlur={!name ? () => setError('This field cannot be empty') : null}
+        onChange={e => {
+          setError('');
+          setName(e.target.value);
+        }}
+      ></Input>
+    </InputField>
+  );
+};
+```
+
+# Variants
+
+### Input Field with custom error message styles
+
+```jsx
+() => {
+  const [name, setName] = React.useState('');
+  const [error, setError] = React.useState('');
+
+  return (
+    <InputField
+      label="Label"
+      htmlFor="basicInput"
+      errorMsg={error}
+      errorStyles={{ color: '#FF8247', size: '16px' }}
+    >
+      <Input
+        id="basicInput"
+        placeholder="Basic Input"
+        value={name}
+        onBlur={!name ? () => setError('This field cannot be empty') : null}
+        onChange={e => {
+          setError('');
+          setName(e.target.value);
+        }}
+      ></Input>
+    </InputField>
+  );
+};
+```
+
+### Required Input Field
+
+```jsx
+() => {
+  const [name, setName] = React.useState('');
+  const [error, setError] = React.useState('');
+
+  return (
+    <InputField
+      label="Label"
+      htmlFor="basicInput"
+      isRequired
+      requiredMarkerColor="#FF6347"
+      errorMsg={error}
+    >
+      <Input
+        id="basicInput"
+        placeholder="Basic Input"
+        value={name}
+        onBlur={!name ? () => setError('This field cannot be empty') : null}
+        onChange={e => {
+          setError('');
+          setName(e.target.value);
+        }}
+      ></Input>
+    </InputField>
+  );
+};
+```
+
+<Props of={Input} />
