@@ -4,43 +4,50 @@ import 'jest-styled-components';
 import {
   Button,
   Checkbox,
-  // Heading,
-  // Input,
-  // Link,
-  // PseudoBox,
-  // Table,
-  // Text,
-  // Box,
-  // Select,
-  // Flex,
-  // Block,
+  Heading,
+  Input,
+  Link,
+  PseudoBox,
+  Block,
+  Flex,
+  Box,
+  Text,
+  Table,
+  Select,
 } from '../src';
 import { ThemeProvider } from '../src';
 
-const components = {
+const basicComponents = {
   Button,
   Checkbox,
-  // Heading,
-  // Input,
-  // Link,
-  // PseudoBox,
+  Heading,
+  Input,
+  Link,
+  PseudoBox,
+  Block,
+  Flex,
+  Box,
+  Text,
   // Table,
   // Select,
-  // Text,
-  // Box,
-  // Flex,
-  // Block,
 };
 
+const childrenValidationComponents = {
+  Table,
+  Select,
+};
+
+const allComponents = { ...basicComponents, ...childrenValidationComponents };
+
 /**
- * All basic components should be able to pass down styles properly
+ * All basic basicComponents should be able to pass down styles properly
  */
-Object.entries(components).forEach(([name, Component]) => {
+Object.entries(allComponents).forEach(([name, Component]) => {
   describe(`<${name} />`, () => {
     it('should render', () => {
       const { container } = render(
         <ThemeProvider>
-          <Component>Test</Component>
+          <Component />
         </ThemeProvider>
       );
       expect(container).toMatchSnapshot();
@@ -50,9 +57,7 @@ Object.entries(components).forEach(([name, Component]) => {
       const color = '#e3e3e3';
       const { getByTestId } = render(
         <ThemeProvider>
-          <Component data-testid={name} color={color}>
-            Grey Text Component
-          </Component>
+          <Component data-testid={name} color={color} />
         </ThemeProvider>
       );
 
@@ -76,9 +81,7 @@ Object.entries(components).forEach(([name, Component]) => {
 
         return (
           <ThemeProvider>
-            <Component ref={ref} id={refId} data-testid={name}>
-              {refId}
-            </Component>
+            <Component ref={ref} id={refId} data-testid={name} />
             <div data-testid="ref-content">{id}</div>
           </ThemeProvider>
         );
@@ -93,9 +96,7 @@ Object.entries(components).forEach(([name, Component]) => {
       const backgroundColor = '#e3e3e3';
       const { getByTestId } = render(
         <ThemeProvider>
-          <Component data-testid={name} bg={backgroundColor}>
-            Disabled Component
-          </Component>
+          <Component data-testid={name} bg={backgroundColor} />
         </ThemeProvider>
       );
 

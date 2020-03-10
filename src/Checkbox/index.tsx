@@ -99,10 +99,10 @@ const Checkbox = forwardRef(function Checkbox(props: CheckboxProps, ref: any) {
   const { children, checked = false, onChange, ...rest } = props;
 
   return (
-    <CheckboxContainer {...rest}>
+    <CheckboxContainer ref={ref} {...rest}>
       <CustomCheckboxContainer checked={checked} onChange={onChange}>
         <VisuallyHidden>
-          <CustomCheckboxInput ref={ref} />
+          <CustomCheckboxInput />
         </VisuallyHidden>
         <ControlBox tabIndex={0} checked={checked} />
       </CustomCheckboxContainer>

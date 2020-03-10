@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import {
   background,
@@ -12,7 +12,7 @@ import {
   space,
   typography,
 } from 'styled-system';
-import { Block } from '../layout';
+import { Block, MinervaProps } from '../layout';
 import Input from '../Input';
 
 const StyledSelect = styled(Input)(
@@ -131,16 +131,15 @@ export interface CustomSelectProps {
   disabled?: boolean;
 }
 
-export type SelectProps = CustomSelectProps;
+export type SelectProps = CustomSelectProps & MinervaProps;
 
-export default function Select({
-  children,
-  disabled = false,
-  ...props
-}: SelectProps) {
+const Select = forwardRef(function Select(
+  { children, disabled = false, ...props }: SelectProps,
+  ref
+) {
   return (
     <Block position="relative">
-      <StyledSelect as="select" {...props}>
+      <StyledSelect as="select" ref={ref} {...props}>
         {children}
       </StyledSelect>
 
@@ -151,4 +150,6 @@ export default function Select({
       <SelectIcon />
     </Block>
   );
-}
+});
+
+export default Select;

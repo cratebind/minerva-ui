@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import {
   background,
@@ -46,9 +46,16 @@ export interface HeadingProps {
   props?: any;
 }
 
-const Heading = ({ children, ...props }: HeadingProps) => {
-  return <StyledHeading {...props}>{children}</StyledHeading>;
-};
+const Heading = forwardRef(function Heading(
+  { children, ...props }: HeadingProps,
+  ref
+) {
+  return (
+    <StyledHeading ref={ref} {...props}>
+      {children}
+    </StyledHeading>
+  );
+});
 
 Heading.defaultProps = {
   size: 'xl',

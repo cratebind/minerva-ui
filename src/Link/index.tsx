@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import {
   background,
@@ -16,11 +16,11 @@ import {
 const StyledLink = styled('a')<any>(
   { fontSize: 16 },
   props => ({
-    ':hover': {
-      textDecoration: props.isDisabled ? 'none' : 'underline',
-    },
-    color: props.isDisabled ? '#8F8F8F' : '#333333',
-    cursor: props.isDisabled ? 'not-allowed' : 'pointer',
+    // ':hover': {
+    //   textDecoration: props.isDisabled ? 'none' : 'underline',
+    // },
+    // color: props.isDisabled ? '#8F8F8F' : '#333333',
+    // cursor: props.isDisabled ? 'not-allowed' : 'pointer',
     ...props.theme.Link,
   }),
   color,
@@ -42,7 +42,10 @@ export interface LinkProps {
   // isDisabled?: boolean;
 }
 
-const Link = ({ children, href, isExternal, ...props }: LinkProps) => {
+const Link = forwardRef(function Link(
+  { children, href, isExternal, ...props }: LinkProps,
+  ref
+) {
   const externalProps = isExternal
     ? { target: '_blank', rel: 'noopener noreferrer' }
     : null;
@@ -50,6 +53,7 @@ const Link = ({ children, href, isExternal, ...props }: LinkProps) => {
   return (
     <StyledLink
       href={href}
+      ref={ref}
       // @TODO: Rethink this due to possible accessibility issues
       // isDisabled={isDisabled}
       // onClick={isDisabled ? event => event.preventDefault() : onClick}
@@ -59,6 +63,6 @@ const Link = ({ children, href, isExternal, ...props }: LinkProps) => {
       {children}
     </StyledLink>
   );
-};
+});
 
 export default Link;
