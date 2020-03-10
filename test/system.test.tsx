@@ -45,12 +45,13 @@ const allComponents = { ...basicComponents, ...childrenValidationComponents };
 Object.entries(allComponents).forEach(([name, Component]) => {
   describe(`<${name} />`, () => {
     it('should render', () => {
-      const { container } = render(
+      const testId = `component-${name}`;
+      const { getByTestId } = render(
         <ThemeProvider>
-          <Component />
+          <Component data-testid={testId} />
         </ThemeProvider>
       );
-      expect(container).toMatchSnapshot();
+      expect(getByTestId(testId)).toBeInTheDocument();
     });
 
     it('should pass basic style props', () => {

@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-import { Block, Flex } from '../src';
-import { ThemeProvider } from '../src';
+import { ThemeProvider, Block, Flex, Spinner } from '../src';
 
 const ThemedBlock = ({ children = 'Default Text', ...props }) => (
   <ThemeProvider>
@@ -29,6 +28,18 @@ describe('Layout Components', () => {
     const element = getByTestId('block');
     expect(element).toHaveTextContent(text);
     expect(element).toHaveStyleRule('display', 'block');
+  });
+});
+
+describe('Helper Components', () => {
+  it('should render <Spinner />', () => {
+    const color = '#e3e3e3';
+    const { getByTestId } = render(
+      <Spinner color={color} data-testid="spinner" />
+    );
+
+    const element = getByTestId('spinner');
+    expect(element).toHaveStyleRule('color', color);
   });
 });
 

@@ -1,21 +1,10 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import {
-  background,
-  border,
-  color,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  space,
-  typography,
-} from 'styled-system';
+import { systemProps } from '../layout';
 
 const StyledLink = styled('a')<any>(
-  { fontSize: 16 },
   props => ({
+    fontSize: 16,
     // ':hover': {
     //   textDecoration: props.isDisabled ? 'none' : 'underline',
     // },
@@ -23,16 +12,7 @@ const StyledLink = styled('a')<any>(
     // cursor: props.isDisabled ? 'not-allowed' : 'pointer',
     ...props.theme.Link,
   }),
-  color,
-  space,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  background,
-  border,
-  typography
+  systemProps
 );
 
 export interface LinkProps {
