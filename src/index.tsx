@@ -33,3 +33,8 @@ export { default as Select } from './Select';
  */
 export { default as Table } from './Table';
 export * from './Table';
+
+/**
+ * Helpers
+ */
+export { default as Spinner } from './Spinner';
