@@ -4,18 +4,10 @@ import React, { useState } from 'react';
 // import lightTheme from 'prism-react-renderer/themes/nightOwlLight';
 import darkTheme from 'prism-react-renderer/themes/nightOwl';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-// import Highlight, { defaultProps } from "prism-react-renderer";
 import { mdx } from '@mdx-js/react';
 import * as Minerva from '.';
 import useClipboard from './hooks/useClipboard';
-// import * as Chakra from "@chakra-ui/core";
-// import * as Formik from "formik";
-// import * as ReactIcons from "react-icons/md";
-// import FocusLock from "react-focus-lock";
-// import ChakraPortal from "./Portal";
-// import Lorem from "react-lorem-component";
 
-// const { Box, Button, useClipboard, useColorMode } = Chakra;
 const { Block } = Minerva;
 
 export const liveEditorStyle = {
@@ -30,7 +22,7 @@ const wrapperStyles = {
   backgroundColor: 'rgb(1, 22, 39)',
   borderRadius: '10px',
   padding: '20px',
-  marginBottom: '32px',
+  // marginBottom: '32px',
   marginTop: '32px',
 };
 
@@ -54,7 +46,10 @@ export const liveErrorStyle = {
   fontSize: 14,
   padding: '1em',
   // overflowX: "auto",
-  color: 'white',
+  color: 'rgb(220, 53, 69)',
+  backgroundColor: 'rgb(1,22,39)',
+  borderRadius: 10,
+  marginTop: '10px',
   // backgroundColor: 'red',
 };
 
@@ -94,48 +89,6 @@ const CopyButton = (props: any) => (
     {...props}
   />
 );
-
-// const EditableNotice = (props: any) => {
-//   // const { colorMode } = useColorMode();
-//   const bg = { light: "#fbfbfb", dark: "#011627" };
-
-//   return (
-//     <Box
-//       position="absolute"
-//       width="full"
-//       top="-1.25em"
-//       roundedTop="10px"
-//       bg={bg["dark"]}
-//       py="2"
-//       zIndex="0"
-//       letterSpacing="wide"
-//       color="gray.400"
-//       fontSize="xs"
-//       fontWeight="semibold"
-//       textAlign="center"
-//       textTransform="uppercase"
-//       pointerEvents="none"
-//       {...props}
-//     >
-//       Editable Example
-//     </Box>
-//   );
-// };
-
-// const StarIcon = (props: any) => {
-//   return (
-//     <Box
-//       m="2px"
-//       as="svg"
-//       fill="current"
-//       size="3"
-//       viewBox="0 0 24 24"
-//       {...props}
-//     >
-//       <path d="M23.555 8.729a1.505 1.505 0 0 0-1.406-.98h-6.087a.5.5 0 0 1-.472-.334l-2.185-6.193a1.5 1.5 0 0 0-2.81 0l-.005.016-2.18 6.177a.5.5 0 0 1-.471.334H1.85A1.5 1.5 0 0 0 .887 10.4l5.184 4.3a.5.5 0 0 1 .155.543l-2.178 6.531a1.5 1.5 0 0 0 2.31 1.684l5.346-3.92a.5.5 0 0 1 .591 0l5.344 3.919a1.5 1.5 0 0 0 2.312-1.683l-2.178-6.535a.5.5 0 0 1 .155-.543l5.194-4.306a1.5 1.5 0 0 0 .433-1.661z"></path>
-//     </Box>
-//   );
-// };
 
 const Provider = ({ children, ...props }) => (
   <Minerva.ThemeProvider>
@@ -220,27 +173,6 @@ const CodeBlock = ({
       </Wrapper>
     </Provider>
   );
-
-  // return (
-  //   <Highlight
-  //     {...defaultProps}
-  //     theme={theme}
-  //     code={children.trim()}
-  //     language={language}
-  //   >
-  //     {({ className, style, tokens, getLineProps, getTokenProps }) => (
-  //       <pre className={className} style={{ ...style, ...highlightStyle }}>
-  //         {tokens.map((line, i) => (
-  //           <div key={i} {...getLineProps({ line, key: i })}>
-  //             {line.map((token, key) => (
-  //               <span key={key} {...getTokenProps({ token, key })} />
-  //             ))}
-  //           </div>
-  //         ))}
-  //       </pre>
-  //     )}
-  //   </Highlight>
-  // );
 };
 
 CodeBlock.defaultProps = {

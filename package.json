@@ -20,7 +20,8 @@
     "storybook": "start-storybook -p 6006 --docs",
     "build-storybook": "build-storybook --docs",
     "sb": "yarn storybook",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "tb:build": "yarn --cwd theme-builder install && yarn --cwd theme-builder build"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -38,46 +39,47 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
-    "@storybook/addon-actions": "^5.3.10",
-    "@storybook/addon-docs": "^5.3.10",
-    "@storybook/addon-links": "^5.3.10",
-    "@storybook/addons": "^5.3.10",
-    "@storybook/preset-typescript": "^1.1.0",
-    "@storybook/react": "^5.3.10",
-    "@types/jest": "^25.1.1",
-    "@types/react": "^16.9.19",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-docs": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/addons": "^5.3.14",
+    "@storybook/preset-typescript": "^2.1.0",
+    "@storybook/react": "^5.3.14",
+    "@types/jest": "^25.1.4",
+    "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "babel-loader": "^8.0.6",
     "cz-conventional-changelog": "3.1.0",
     "cz-customizable": "^6.2.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "fork-ts-checker-webpack-plugin": "^4.0.5",
     "husky": "^3.0.9",
     "jest-styled-components": "^7.0.0",
     "np": "^5.1.2",
     "prettier-eslint": "^9.0.1",
     "prism-react-renderer": "^1.0.2",
-    "react": "^16.11.0",
-    "react-docgen-typescript-loader": "^3.3.0",
-    "react-dom": "^16.11.0",
-    "react-live": "^2.2.1",
+    "react": "^16.13.0",
+    "react-docgen-typescript-loader": "^3.7.0",
+    "react-dom": "^16.13.0",
+    "react-live": "^2.2.2",
     "semantic-release": "^17.0.2",
     "ts-loader": "^6.2.1",
     "tsdx": "^0.11.0",
     "tslib": "^1.10.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "@mdx-js/react": "^1.5.1",
-    "@reach/checkbox": "^0.8.1",
+    "@reach/checkbox": "^0.8.6",
     "@testing-library/jest-dom": "^4.2.3",
-    "@testing-library/react": "^9.3.2",
-    "@types/styled-components": "^5.0.1",
-    "@types/styled-system": "^5.1.7",
+    "@testing-library/react": "^9.5.0",
+    "@types/styled-components": "^5.0.0",
+    "@types/styled-system": "^5.1.9",
     "copy-to-clipboard": "^3.3.1",
     "eslint-config-cratebind": "^3.0.7",
     "styled-components": "^5.0.0",
-    "styled-system": "^5.1.4"
+    "styled-system": "^5.1.5"
   },
   "jest": {
     "setupFilesAfterEnv": [
@@ -109,5 +111,17 @@
     "cz-customizable": {
       "config": ".cz-config.js"
     }
-  }
+  },
+  "keywords": [
+    "react",
+    "component-library",
+    "ui",
+    "design-system",
+    "react-components",
+    "uikit",
+    "accessible",
+    "components",
+    "styled-components",
+    "library"
+  ]
 }

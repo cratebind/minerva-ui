@@ -1,30 +1,22 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import {
-  background,
-  border,
-  color,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  space,
-  typography,
-} from 'styled-system';
 import { CustomCheckboxContainer, CustomCheckboxInput } from '@reach/checkbox';
+import { MinervaProps, Box, systemProps } from '../layout';
 
 /**
  * TODO:
  * - Add sizes
  */
 
-const CheckboxContainer = styled.label({
-  display: 'flex',
-  alignItems: 'center',
-  cursor: 'pointer',
-  fontSize: '14px',
-});
+const CheckboxContainer = styled(Box)(
+  {
+    display: 'flex',
+    alignItems: 'center',
+    cursor: 'pointer',
+    fontSize: '14px',
+  },
+  systemProps
+);
 
 export type ControlBoxProps = {
   checked?: boolean;
@@ -59,16 +51,7 @@ const ControlBox = styled('div')<ControlBoxProps>(
       outline: 0,
     },
   }),
-  color,
-  space,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  background,
-  border,
-  typography
+  systemProps
 );
 
 // const CheckboxIcon = ({ checked = false, fill = '#fff' }) => {
@@ -99,9 +82,10 @@ const VisuallyHidden = styled.div`
   position: absolute;
 `;
 
+type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
+
 // extend the native HTML attributes for nicer autocompletion
-export interface CheckboxProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface CheckboxProps extends BaseProps {
   // define the custom props we're going to be using
   children?: React.ReactNode;
   // add a question mark to make it an optional prop
@@ -111,20 +95,20 @@ export interface CheckboxProps
   style?: any;
 }
 
-export default function Checkbox(props: CheckboxProps) {
+const Checkbox = forwardRef(function Checkbox(props: CheckboxProps, ref: any) {
   const { children, checked = false, onChange, ...rest } = props;
 
   return (
-    <CheckboxContainer>
+    <CheckboxContainer ref={ref} {...rest}>
       <CustomCheckboxContainer checked={checked} onChange={onChange}>
         <VisuallyHidden>
-          <CustomCheckboxInput {...rest} />
+          <CustomCheckboxInput />
         </VisuallyHidden>
         <ControlBox tabIndex={0} checked={checked} />
-        {/* <CheckboxIcon checked={checked} /> */}
-        {/* </ControlBox> */}
       </CustomCheckboxContainer>
       {children}
     </CheckboxContainer>
   );
-}
+});
+
+export default Checkbox;

@@ -19,6 +19,16 @@ export default function ThemeModal(props) {
   const { modalOpen, activeComponent, ...styles } = state;
   const close = () => setContext({ modalOpen: false });
 
+  const filteredStyles = Object.entries(styles).reduce(
+    (result, [key, value]) => {
+      // filter out custom props key
+      const { customProps, ...rest } = value;
+      result[key] = { ...rest };
+      return result;
+    },
+    {}
+  );
+
   const copyStyle = () => {
     if (inputRef && inputRef.current) {
       inputRef.current.select();
@@ -26,7 +36,7 @@ export default function ThemeModal(props) {
     }
   };
 
-  const data = new Blob([JSON.stringify(styles)], {
+  const data = new Blob([JSON.stringify(filteredStyles)], {
     type: 'text/plain;charset=utf-8',
   });
 
@@ -80,7 +90,7 @@ export default function ThemeModal(props) {
         <Input
           ref={inputRef}
           as="textarea"
-          value={JSON.stringify(styles, null, 2)}
+          value={JSON.stringify(filteredStyles, null, 2)}
           rows="6"
         />
       </Box>

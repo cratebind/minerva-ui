@@ -3,13 +3,6 @@
 exports[`<Link /> should render 1`] = `
 .c0 {
   font-size: 16px;
-  color: #333333;
-  cursor: pointer;
-}
-
-.c0:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
 }
 
 <div>

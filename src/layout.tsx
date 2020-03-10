@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import StyledSystem, {
   background,
@@ -11,9 +12,18 @@ import StyledSystem, {
   space,
   typography,
   compose,
+  // system,
 } from 'styled-system';
 
+// const customProps = system({
+//   textDecoration: true,
+//   textTransform: true,
+//   transform: true,
+//   lineHeight: true,
+// });
+
 export const systemProps = compose(
+  // customProps,
   layout,
   color,
   space,
@@ -215,7 +225,25 @@ export type MinervaProps = StyledSystemProps &
   React.HTMLAttributes<any> &
   React.RefAttributes<any>;
 
-export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
+// export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
+
+export const Box = styled.div<MinervaProps>(
+  {},
+  layout,
+  color,
+  space,
+  background,
+  border,
+  grid,
+  position,
+  shadow,
+  typography,
+  flexbox
+);
+
+// export const Box = forwardRef(function Box(props, ref) {
+//   return <BaseBox ref={ref} {...props} />;
+// });
 
 // export const PseudoBox = styled(Box)(
 //   ({
@@ -271,10 +299,16 @@ export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
 //   })
 // );
 
-export const Block = styled(Box)(() => ({
-  display: 'block',
-}));
+export const Block = styled(Box)(
+  {
+    display: 'block',
+  },
+  systemProps
+);
 
-export const Flex = styled(Box)(() => ({
-  display: 'flex',
-}));
+export const Flex = styled(Box)(
+  {
+    display: 'flex',
+  },
+  systemProps
+);

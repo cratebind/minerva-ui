@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import {
   background,
@@ -39,9 +39,15 @@ export interface TextProps extends MinervaProps {
   props?: any;
 }
 
-const Text = ({ children, ...props }: TextProps) => {
-  return <StyledText {...props}>{children}</StyledText>;
-};
+const Text = forwardRef(({ children, ...props }: TextProps, ref) => {
+  return (
+    <StyledText ref={ref} {...props}>
+      {children}
+    </StyledText>
+  );
+});
+
+Text.displayName = 'Text';
 
 Text.defaultProps = {
   lineHeight: 'normal',
