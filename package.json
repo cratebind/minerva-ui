@@ -111,5 +111,17 @@
     "cz-customizable": {
       "config": ".cz-config.js"
     }
-  }
+  },
+  "keywords": [
+    "react",
+    "component-library",
+    "ui",
+    "design-system",
+    "react-components",
+    "uikit",
+    "accessible",
+    "components",
+    "styled-components",
+    "library"
+  ]
 }
