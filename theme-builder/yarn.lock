@@ -1875,7 +1875,7 @@
     "@reach/utils" "^0.8.6"
     tslib "^1.10.0"
 
-"@reach/checkbox@^0.8.1":
+"@reach/checkbox@^0.8.6":
   version "0.8.6"
   resolved "https://registry.yarnpkg.com/@reach/checkbox/-/checkbox-0.8.6.tgz#c25e8e0dfbabbf7ee31f5879cb8ce59493469258"
   integrity sha512-tAyn2CQu3CNJkG2F2+zOE4FMb1oWCC+pdE2+shiqsZWH5A7GSrq+lb5wrrMdtDRUdLQDa41HSgPY/UpTVIpTHA==
@@ -2157,7 +2157,7 @@
     pretty-format "^24.0.0"
     redent "^3.0.0"
 
-"@testing-library/react@^9.3.2":
+"@testing-library/react@^9.3.2", "@testing-library/react@^9.5.0":
   version "9.5.0"
   resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-9.5.0.tgz#71531655a7890b61e77a1b39452fbedf0472ca5e"
   integrity sha512-di1b+D0p+rfeboHO5W7gTVeZDIK5+maEgstrZbWZSSvxDyfDRkkyBE1AJR5Psd6doNldluXlCWqXriUfqu/9Qg==
@@ -2318,7 +2318,7 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha512-l42BggppR6zLmpfU6fq9HEa2oGPEI8yrSPL3GITjfRInppYFahObbIQOQK3UGxEnyQpltZLaPe75046NOZQikw==
 
-"@types/styled-components@^5.0.1":
+"@types/styled-components@^5.0.0":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.0.1.tgz#44d210b0a0218a70df998d1a8e1f69c82d9cc68b"
   integrity sha512-1yRYO1dAE2MGEuYKF1yQFeMdoyerIQn6ZDnFFkxZamcs3rn8RQVn98edPsTROAxbTz81tqnVN4BJ3Qs1cm/tKg==
@@ -2328,10 +2328,10 @@
     "@types/react-native" "*"
     csstype "^2.2.0"
 
-"@types/styled-system@^5.1.7":
-  version "5.1.8"
-  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-5.1.8.tgz#cdf9ecccdc987bff6eb51ce6d74cc961fd1f348a"
-  integrity sha512-g+BH1EDonyoPVu2K3tnQ/mzFgxK2zmIftULRn8BXFbwQRJEOHWrsT2y6HU1SDtz2lEaZnGtL6gt80cxGxytKrw==
+"@types/styled-system@^5.1.9":
+  version "5.1.9"
+  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-5.1.9.tgz#8baac8f6eca9e0bd5768c175ca5ce1f2d6f61ade"
+  integrity sha512-QlWv6tmQV8dqk8s+LSLb9QAtmuQEnfv4f8lKKZkMgDqRFVmxJDBwEw0u4zhpxp56u0hdR+TCIk9dGfOw3TkCoQ==
   dependencies:
     csstype "^2.6.9"
 
@@ -4903,7 +4903,7 @@ eslint-ast-utils@^1.1.0:
     lodash.get "^4.4.2"
     lodash.zip "^4.2.0"
 
-eslint-config-cratebind@^3.0.8:
+eslint-config-cratebind@^3.0.7, eslint-config-cratebind@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/eslint-config-cratebind/-/eslint-config-cratebind-3.0.8.tgz#bfaad2ba804cb99b737db82c7eb1afbce9988d7e"
   integrity sha512-KVUymh8l8L9cf3xbvAQRQIvkRiGFkmgO2UsUNQhq0Q8PiTJbyjbqhX0/r6V6F+fUaZU13s7RkZiONODqoI7JHQ==
@@ -7893,20 +7893,21 @@ min-indent@^1.0.0:
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
   integrity sha1-z8RcN+nsDY8KDsPdTvf3w6vjklY=
 
-minerva-ui@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/minerva-ui/-/minerva-ui-1.2.1.tgz#35feb97bab91bc9039fb8d8aeaa2077344158855"
-  integrity sha512-+6Ku17QbpPBGdf4jdGPE/16CEnw01MXyI0p6p1kH28ESIor2fYp9plUHmDSVLVsQ+SjwwnzVOi5gCzZlMQkBDQ==
+minerva-ui@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/minerva-ui/-/minerva-ui-2.0.1.tgz#6b3ecb965c18209389fbe4d0cb54ef9e2e830377"
+  integrity sha512-sA11qAP4jd22Rom+/XPiea8od8yZnZ1E9CNeL8X+qhpb7KdHog0K/nES8C5Sd9oINZLzbQj6wYbd9k3hiNCT4g==
   dependencies:
     "@mdx-js/react" "^1.5.1"
-    "@reach/checkbox" "^0.8.1"
+    "@reach/checkbox" "^0.8.6"
     "@testing-library/jest-dom" "^4.2.3"
-    "@testing-library/react" "^9.3.2"
-    "@types/styled-components" "^5.0.1"
-    "@types/styled-system" "^5.1.7"
+    "@testing-library/react" "^9.5.0"
+    "@types/styled-components" "^5.0.0"
+    "@types/styled-system" "^5.1.9"
     copy-to-clipboard "^3.3.1"
+    eslint-config-cratebind "^3.0.7"
     styled-components "^5.0.0"
-    styled-system "^5.1.4"
+    styled-system "^5.1.5"
 
 mini-css-extract-plugin@0.9.0:
   version "0.9.0"
@@ -11318,7 +11319,7 @@ styled-components@^5.0.0:
     shallowequal "^1.1.0"
     supports-color "^5.5.0"
 
-styled-system@^5.1.4:
+styled-system@^5.1.5:
   version "5.1.5"
   resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-5.1.5.tgz#e362d73e1dbb5641a2fd749a6eba1263dc85075e"
   integrity sha512-7VoD0o2R3RKzOzPK0jYrVnS8iJdfkKsQJNiLRDjikOpQVqQHns/DXWaPZOH4tIKkhAT7I6wIsy9FWTWh2X3q+A==

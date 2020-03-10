@@ -218,7 +218,7 @@ export type MinervaProps = StyledSystemProps &
 
 // export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
 
-export const BaseBox = styled.div(
+export const Box = styled.div<MinervaProps>(
   {},
   layout,
   color,
@@ -232,9 +232,9 @@ export const BaseBox = styled.div(
   flexbox
 );
 
-export function Box(props) {
-  return <BaseBox {...props} />;
-}
+// export const Box = forwardRef(function Box(props, ref) {
+//   return <BaseBox ref={ref} {...props} />;
+// });
 
 // export const PseudoBox = styled(Box)(
 //   ({

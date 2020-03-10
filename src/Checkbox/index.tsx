@@ -13,6 +13,7 @@ import {
   typography,
 } from 'styled-system';
 import { CustomCheckboxContainer, CustomCheckboxInput } from '@reach/checkbox';
+import { MinervaProps } from '../layout';
 
 /**
  * TODO:
@@ -99,9 +100,10 @@ const VisuallyHidden = styled.div`
   position: absolute;
 `;
 
+type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
+
 // extend the native HTML attributes for nicer autocompletion
-export interface CheckboxProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface CheckboxProps extends BaseProps {
   // define the custom props we're going to be using
   children?: React.ReactNode;
   // add a question mark to make it an optional prop
