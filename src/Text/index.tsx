@@ -12,6 +12,7 @@ import {
   space,
   typography,
 } from 'styled-system';
+import { MinervaProps } from '../layout';
 
 const StyledText = styled('p')<any>(
   {
@@ -32,7 +33,7 @@ const StyledText = styled('p')<any>(
   typography
 );
 
-export interface TextProps {
+export interface TextProps extends MinervaProps {
   children?: React.ReactNode;
   lineHeight?: string;
   props?: any;
