@@ -13,7 +13,7 @@ exports[`<Text /> should render 1`] = `
   <h1
     class="c0"
   >
-    Heading
+    Test
   </h1>
 </div>
 `;
