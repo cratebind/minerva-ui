@@ -1,31 +1,22 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import {
-  background,
-  border,
-  color,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  space,
-  typography,
-} from 'styled-system';
 import { CustomCheckboxContainer, CustomCheckboxInput } from '@reach/checkbox';
-import { MinervaProps } from '../layout';
+import { MinervaProps, Box, systemProps } from '../layout';
 
 /**
  * TODO:
  * - Add sizes
  */
 
-const CheckboxContainer = styled.label({
-  display: 'flex',
-  alignItems: 'center',
-  cursor: 'pointer',
-  fontSize: '14px',
-});
+const CheckboxContainer = styled(Box)(
+  {
+    display: 'flex',
+    alignItems: 'center',
+    cursor: 'pointer',
+    fontSize: '14px',
+  },
+  systemProps
+);
 
 export type ControlBoxProps = {
   checked?: boolean;
@@ -60,16 +51,7 @@ const ControlBox = styled('div')<ControlBoxProps>(
       outline: 0,
     },
   }),
-  color,
-  space,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  background,
-  border,
-  typography
+  systemProps
 );
 
 // const CheckboxIcon = ({ checked = false, fill = '#fff' }) => {
@@ -113,20 +95,20 @@ export interface CheckboxProps extends BaseProps {
   style?: any;
 }
 
-export default function Checkbox(props: CheckboxProps) {
+const Checkbox = forwardRef(function Checkbox(props: CheckboxProps, ref: any) {
   const { children, checked = false, onChange, ...rest } = props;
 
   return (
-    <CheckboxContainer>
+    <CheckboxContainer {...rest}>
       <CustomCheckboxContainer checked={checked} onChange={onChange}>
         <VisuallyHidden>
-          <CustomCheckboxInput {...rest} />
+          <CustomCheckboxInput ref={ref} />
         </VisuallyHidden>
         <ControlBox tabIndex={0} checked={checked} />
-        {/* <CheckboxIcon checked={checked} /> */}
-        {/* </ControlBox> */}
       </CustomCheckboxContainer>
       {children}
     </CheckboxContainer>
   );
-}
+});
+
+export default Checkbox;

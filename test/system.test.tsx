@@ -61,32 +61,32 @@ Object.entries(components).forEach(([name, Component]) => {
 
     it('should forward ref', () => {
       // console.log(`COMPONENT: ${name}`);
-      const refContent = 'Ref Content';
+      const refId = 'ref-id';
       const RefComp = () => {
-        const [text, setText] = useState('');
+        const [id, setId] = useState('');
         const ref = useRef<any | null>();
 
         useEffect(() => {
           if (ref && ref.current) {
-            setText(ref.current.textContent);
+            setId(ref.current.id);
           }
-          // setText
+          // setId
           // console.log(ref);
         }, [ref]);
 
         return (
           <ThemeProvider>
-            <Component ref={ref} data-testid={name}>
-              {refContent}
+            <Component ref={ref} id={refId} data-testid={name}>
+              {refId}
             </Component>
-            <div data-testid="ref-content">{text}</div>
+            <div data-testid="ref-content">{id}</div>
           </ThemeProvider>
         );
       };
 
       const { getByTestId } = render(<RefComp />);
 
-      expect(getByTestId('ref-content')).toHaveTextContent(refContent);
+      expect(getByTestId('ref-content')).toHaveTextContent(refId);
     });
 
     it('should pass shorthand props', () => {
@@ -99,9 +99,9 @@ Object.entries(components).forEach(([name, Component]) => {
         </ThemeProvider>
       );
 
-      const button = getByTestId(name);
+      const component = getByTestId(name);
 
-      expect(button).toHaveStyleRule('background-color', backgroundColor);
+      expect(component).toHaveStyleRule('background-color', backgroundColor);
     });
 
     // it('should pass shorthand pseudo props', () => {
