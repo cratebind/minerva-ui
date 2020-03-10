@@ -39,7 +39,7 @@ export interface TextProps extends MinervaProps {
   props?: any;
 }
 
-const Text = forwardRef(({ children, ...props }: TextProps, ref) => {
+export const Text = forwardRef(({ children, ...props }: TextProps, ref) => {
   return (
     <StyledText ref={ref} {...props}>
       {children}

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { systemProps } from '../layout';
 
@@ -26,16 +26,12 @@ export interface HeadingProps {
   props?: any;
 }
 
-const Heading = forwardRef(function Heading(
+export const Heading = function Heading(
   { children, ...props }: HeadingProps,
   ref
 ) {
-  return (
-    <StyledHeading ref={ref} {...props}>
-      {children}
-    </StyledHeading>
-  );
-});
+  return <StyledHeading {...props}>{children}</StyledHeading>;
+};
 
 Heading.defaultProps = {
   size: 'xl',

@@ -57,7 +57,7 @@ export interface InputProps extends BaseProps {
   disabled?: boolean;
 }
 
-const Input = forwardRef(({ children, ...props }: InputProps, ref) => {
+export const Input = forwardRef(({ children, ...props }: InputProps, ref) => {
   return <StyledInput ref={ref} {...props} />;
 });
 

@@ -95,7 +95,10 @@ export interface CheckboxProps extends BaseProps {
   style?: any;
 }
 
-const Checkbox = forwardRef(function Checkbox(props: CheckboxProps, ref: any) {
+export const Checkbox = forwardRef(function Checkbox(
+  props: CheckboxProps,
+  ref: any
+) {
   const { children, checked = false, onChange, ...rest } = props;
 
   return (
