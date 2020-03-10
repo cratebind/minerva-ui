@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Box, styled } from 'minerva-ui';
 import { useAppContext } from '../AppContext';
 import { Components } from '../App';
@@ -11,18 +11,20 @@ const Container = styled(Box)`
   background-size: 20px 20px;
 `;
 
-export default function Editor() {
-  const { state, setContext } = useAppContext();
+function Editor() {
+  const { state } = useAppContext();
 
   const activeComponent = state?.activeComponent;
 
   const Component = activeComponent ? Components[activeComponent] : null;
 
-  const props = state[activeComponent];
+  const { customProps, ...props } = state[activeComponent];
 
   return (
     <Container>
-      <Component {...props} />
+      <Component {...customProps} {...props} />
     </Container>
   );
 }
+
+export default memo(Editor);

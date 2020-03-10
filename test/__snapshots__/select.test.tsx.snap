@@ -4,6 +4,7 @@ exports[`<Select /> should change style if disabled 1`] = `
 .c0 {
   position: relative;
   display: block;
+  position: relative;
 }
 
 .c1 {
@@ -142,6 +143,7 @@ exports[`<Select /> should render 1`] = `
 .c0 {
   position: relative;
   display: block;
+  position: relative;
 }
 
 .c1 {

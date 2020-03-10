@@ -13,6 +13,7 @@ import {
   Text,
   styled,
   defaultTheme,
+  // Heading,
 } from 'minerva-ui';
 import Editor from './components/Editor';
 import { useAppContext } from './AppContext';
@@ -46,6 +47,8 @@ const HEADER_HEIGHT = '48px';
 function App() {
   const { state, setContext } = useAppContext();
 
+  const { customProps, ...buttonStyles } = state.Button;
+
   return (
     <ThemeProvider>
       <GlobalStyles />
@@ -58,7 +61,7 @@ function App() {
           bg="#252f3f"
         >
           <Text fontSize="20px" fontWeight={800} color="#fff">
-            System Builder
+            Theme Builder
           </Text>
           <Button border="0" onClick={() => setContext({ modalOpen: true })}>
             Export Theme
@@ -66,6 +69,9 @@ function App() {
         </Flex>
         <Flex height={`calc(100vh - ${HEADER_HEIGHT})`}>
           <Flex flexDirection="column" padding={4} width="15rem" bg="#3b4c67">
+            {/* <Heading as="h4" size="sm">
+              ELEMENTS
+            </Heading> */}
             {Object.keys(Components).map(componentName => (
               <ComponentButton
                 key={componentName}
@@ -80,10 +86,8 @@ function App() {
             theme={{
               ...defaultTheme,
               Button: {
-                container: {
-                  ...defaultTheme.Button.container,
-                  ...state.Button,
-                },
+                ...defaultTheme.Button,
+                ...buttonStyles,
               },
             }}
           >

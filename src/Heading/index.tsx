@@ -47,7 +47,7 @@ export interface HeadingProps {
 }
 
 const Heading = ({ children, ...props }: HeadingProps) => {
-  return <StyledHeading {...props}>Heading</StyledHeading>;
+  return <StyledHeading {...props}>{children}</StyledHeading>;
 };
 
 Heading.defaultProps = {

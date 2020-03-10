@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reach/accordion": "^0.8.6",
     "@reach/dialog": "^0.8.6",
     "@reach/visually-hidden": "^0.8.6",
     "@testing-library/jest-dom": "^4.2.4",
@@ -10,7 +11,9 @@
     "@testing-library/user-event": "^7.1.2",
     "minerva-ui": "^2.0.1",
     "react": "^16.13.0",
+    "react-color": "^2.18.0",
     "react-dom": "^16.13.0",
+    "react-feather": "^2.0.3",
     "react-scripts": "3.4.0"
   },
   "scripts": {

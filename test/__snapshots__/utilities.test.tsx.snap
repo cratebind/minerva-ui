@@ -4,6 +4,7 @@ exports[`Border Radius should render 1`] = `
 .c0 {
   border-radius: 0.125rem;
   display: block;
+  border-radius: 0.125rem;
 }
 
 <div>
@@ -20,6 +21,7 @@ exports[`Colors should render 1`] = `
 .c0 {
   background-color: #38b2ac;
   display: block;
+  background-color: #38b2ac;
 }
 
 <div>
