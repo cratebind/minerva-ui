@@ -8,36 +8,27 @@ import {
   AccordionPanel,
 } from '@reach/accordion';
 import { ChevronDown } from 'react-feather';
+import { BlockPicker } from 'react-color';
+
+// import 'react-color-picker/index.css';
 
 import { useAppContext } from '../AppContext';
 import { toTitleCase } from '../utils';
 
 import '@reach/accordion/styles.css';
 
-const InnerContainer = props => <Box padding="10px" {...props} />;
+const InnerContainer = props => <Box px="10px" {...props} />;
 
 const Title = props => (
   <Box fontSize="18px" fontWeight={600} p="10px" {...props} />
 );
 
-const fieldSections = {
-  dimensions: [
-    { name: 'width', type: 'text' },
-    { name: 'height', type: 'text' },
-    { name: 'borderRadius', type: 'text ' },
-  ],
-  layout: [
-    { name: 'paddingTop', type: 'text' },
-    { name: 'paddingRight', type: 'text' },
-    { name: 'paddingBottom', type: 'text ' },
-    { name: 'paddingLeft', type: 'text ' },
-  ],
-};
-
 const FieldHeading = props => (
-  <Flex
+  <Box
+    display="flex"
     px="12px"
     py="8px"
+    mb="10px"
     bg="rgb(247, 250, 252)"
     width="100%"
     textAlign="left"
@@ -45,6 +36,25 @@ const FieldHeading = props => (
     {...props}
   />
 );
+
+const fieldSections = {
+  dimensions: [
+    { name: 'width', type: 'text' },
+    { name: 'height', type: 'text' },
+    { name: 'borderRadius', type: 'text' },
+  ],
+  layout: [
+    { name: 'fontFamily', type: 'text' },
+    { name: 'paddingTop', type: 'text' },
+    { name: 'paddingRight', type: 'text' },
+    { name: 'paddingBottom', type: 'text' },
+    { name: 'paddingLeft', type: 'text' },
+  ],
+  colors: [
+    { name: 'backgroundColor', type: 'color' },
+    { name: 'color', type: 'color' },
+  ],
+};
 
 const DropdownArrow = ({ active }) => (
   <Box
@@ -57,12 +67,14 @@ const DropdownArrow = ({ active }) => (
   </Box>
 );
 
+const fieldSectionCount = Object.keys(fieldSections).length + 1;
+
 const Inspector = React.memo(function Inspector() {
   const { state, setContext } = useAppContext();
   const themeContext = useContext(ThemeContext);
-  const [activeSections, setActiveSections] = useState(
-    Object.keys(fieldSections).map((_, index) => index)
-  );
+  const [activeSections, setActiveSections] = useState([
+    ...new Array(fieldSectionCount).fill().map((_, index) => index),
+  ]);
 
   function toggleItem(toggledIndex) {
     if (activeSections.includes(toggledIndex)) {
@@ -80,7 +92,7 @@ const Inspector = React.memo(function Inspector() {
 
   return (
     <Flex
-      flex="0 0 20rem"
+      flex="0 0 25rem"
       flexDirection="column"
       borderLeft="1px solid #cad5de"
       overflow="auto"
@@ -101,6 +113,7 @@ const Inspector = React.memo(function Inspector() {
                     key={key}
                     name={key}
                     value={value}
+                    type="text"
                     componentProps={componentProps}
                     activeComponent={activeComponent}
                     onChange={e =>
@@ -108,6 +121,7 @@ const Inspector = React.memo(function Inspector() {
                         [activeComponent]: {
                           ...componentProps,
                           customProps: {
+                            ...state[activeComponent].customProps,
                             [key]: e.target.value,
                           },
                         },
@@ -121,7 +135,7 @@ const Inspector = React.memo(function Inspector() {
         </AccordionItem>
 
         {Object.entries(fieldSections).map(([section, fields], index) => (
-          <AccordionItem>
+          <AccordionItem key={section}>
             <FieldHeading as={AccordionButton}>
               {toTitleCase(section)}
               <DropdownArrow active={activeSections.includes(index + 1)} />
@@ -132,6 +146,7 @@ const Inspector = React.memo(function Inspector() {
                   <InspectorField
                     key={name}
                     name={name}
+                    type={type}
                     value={themeContext[activeComponent][name]}
                     componentProps={componentProps}
                     activeComponent={activeComponent}
@@ -154,7 +169,16 @@ const Inspector = React.memo(function Inspector() {
   );
 });
 
-function InspectorField({ name, value, onChange }) {
+// map some prop names to more user-friendly labels
+const fieldNameOverrides = {
+  children: 'Text',
+  backgroundColor: 'Fill Color',
+  color: 'Text Color',
+};
+
+function InspectorField({ name, value, onChange, type }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <Flex
       alignItems="center"
@@ -162,9 +186,51 @@ function InspectorField({ name, value, onChange }) {
       mb="12px"
     >
       <Box as="label" width="100%" textTransform="capitalize">
-        {toTitleCase(name)}
+        {toTitleCase(fieldNameOverrides[name] ?? name)}
       </Box>
-      <Input value={value} onChange={onChange} />
+      {type === 'color' && (
+        <Box position="relative" style={{ width: '100%' }}>
+          <Input
+            value={value}
+            onChange={onChange}
+            onClick={() => setOpen(true)}
+          />
+          {open && (
+            <>
+              <Box
+                position="fixed"
+                top="0px"
+                right="0px"
+                bottom="0px"
+                left="0px"
+                onClick={() => setOpen(false)}
+              />
+              <Box
+                position="absolute"
+                borderWidth="1px"
+                zIndex="50"
+                borderRadius="6px"
+                // top="0px"
+                left="0px"
+                style={{
+                  transform: 'translateX(8px) translateY(calc(-122%))',
+                }}
+              >
+                <BlockPicker
+                  triangle="hide"
+                  color={value}
+                  onChangeComplete={color => {
+                    console.log({ color });
+                    onChange({ target: { value: color.hex } });
+                    setOpen(false);
+                  }}
+                />
+              </Box>
+            </>
+          )}
+        </Box>
+      )}
+      {type === 'text' && <Input value={value} onChange={onChange} />}
     </Flex>
   );
 }

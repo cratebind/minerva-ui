@@ -6,6 +6,7 @@ const initialState = {
   Button: {
     customProps: {
       children: 'Button',
+      isLoading: false,
     },
     backgroundColor: '#fff',
     borderWidth: '1px',

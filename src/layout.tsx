@@ -280,10 +280,16 @@ export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
 //   })
 // );
 
-export const Block = styled(Box)(() => ({
-  display: 'block',
-}));
+export const Block = styled(Box)(
+  {
+    display: 'block',
+  },
+  systemProps
+);
 
-export const Flex = styled(Box)(() => ({
-  display: 'flex',
-}));
+export const Flex = styled(Box)(
+  {
+    display: 'flex',
+  },
+  systemProps
+);
