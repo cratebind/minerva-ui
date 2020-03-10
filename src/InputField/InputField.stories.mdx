@@ -7,7 +7,7 @@ import Input from '../Input';
 
 # Input Field
 
-Basic Input Field component
+### Basic Input Field component
 
 ```js
 import { InputField } from 'minerva-ui';
@@ -22,7 +22,6 @@ import { Input } from 'minerva-ui"
   return (<InputField
             label="Label"
             errorMsg={error}
-            errorStyles={{ color: '#ff0000', size: '12px' }}
             >
             <Input
                 placeholder="Basic Input"
@@ -39,6 +38,34 @@ import { Input } from 'minerva-ui"
 
 # Variants
 
+
+### Input Field with custom error message styles 
+
+```jsx
+() => {
+  const [name, setName] = React.useState('')
+  const [error, setError] = React.useState('')
+
+  return (<InputField
+            label="Label"
+            htmlFor="basicInput"
+            errorMsg={error}
+            errorStyles={{ color: '#FF8247', size: '16px' }}
+            >
+            <Input
+                id="basicInput"
+                placeholder="Basic Input"
+                value={name}
+                onBlur={!name ? () => setError('This field cannot be empty') : null}
+                onChange={e => {
+                setError('');
+                setName(e.target.value);
+                }}
+            ></Input>
+        </InputField>)
+}
+```
+
 ### Required Input Field
 
 ```jsx
@@ -50,11 +77,11 @@ import { Input } from 'minerva-ui"
             label="Label"
             htmlFor="basicInput"
             isRequired
-            requiredMarkerColor="tomato"
+            requiredMarkerColor="#FF6347"
             errorMsg={error}
-            errorStyles={{ color: '#ff0000', size: '12px' }}
             >
             <Input
+                id="basicInput"
                 placeholder="Basic Input"
                 value={name}
                 onBlur={!name ? () => setError('This field cannot be empty') : null}

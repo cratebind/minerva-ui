@@ -72,13 +72,16 @@ const InputField = ({
 }: InputFieldProps) => {
   return (
     <StyledInputField {...props}>
-      <label htmlFor={htmlFor}>{label}</label>
+      <label htmlFor={htmlFor} data-testid="label">
+        {label}
+      </label>
       {isRequired && <RequiredMarker color={requiredMarkerColor} />}
       {children}
       {errorMsg && (
         <Text
           fontSize={errorStyles ? errorStyles.size : '14px'}
           color={errorStyles ? errorStyles.color : '#ff0000'}
+          data-testid="error"
         >
           {errorMsg}
         </Text>
