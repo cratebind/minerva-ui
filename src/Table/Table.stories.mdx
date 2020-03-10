@@ -1,5 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { Table } from '../index';
+import { Table, TableHeader, TableRow, TableHeaderCell, TableBody, Link } from '../index';
 
 <Meta title="Elements|Table" component={Table} />
 
@@ -16,35 +16,35 @@ const { Header, Row, HeaderCell, Cell, Body } = Table;
 
 ```jsx
 <Table>
-  <Table.Header>
-    <Table.Row>
-      <Table.HeaderCell>Name</Table.HeaderCell>
-      <Table.HeaderCell>Job</Table.HeaderCell>
-      <Table.HeaderCell>Status</Table.HeaderCell>
-      <Table.HeaderCell>Role</Table.HeaderCell>
-      <Table.HeaderCell />
-    </Table.Row>
-  </Table.Header>
-  <Table.Body>
-    <Table.Row>
-      <Table.Cell>Test</Table.Cell>
-      <Table.Cell>Tester</Table.Cell>
-      <Table.Cell>Testing</Table.Cell>
-      <Table.Cell>Test Master</Table.Cell>
-      <Table.Cell>
+  <TableHeader>
+    <TableRow>
+      <TableHeaderCell>Name</TableHeaderCell>
+      <TableHeaderCell>Job</TableHeaderCell>
+      <TableHeaderCell>Status</TableHeaderCell>
+      <TableHeaderCell>Role</TableHeaderCell>
+      <TableHeaderCell />
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Test</TableCell>
+      <TableCell>Tester</TableCell>
+      <TableCell>Testing</TableCell>
+      <TableCell>Test Master</TableCell>
+      <TableCell>
         <Link>Edit</Link>
-      </Table.Cell>
-    </Table.Row>
-    <Table.Row>
-      <Table.Cell>Test</Table.Cell>
-      <Table.Cell>Tester</Table.Cell>
-      <Table.Cell>Testing</Table.Cell>
-      <Table.Cell>Test Master</Table.Cell>
-      <Table.Cell>
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Test</TableCell>
+      <TableCell>Tester</TableCell>
+      <TableCell>Testing</TableCell>
+      <TableCell>Test Master</TableCell>
+      <TableCell>
         <Link>Edit</Link>
-      </Table.Cell>
-    </Table.Row>
-  </Table.Body>
+      </TableCell>
+    </TableRow>
+  </TableBody>
 </Table>
 ```
 

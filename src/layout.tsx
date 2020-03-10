@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import StyledSystem, {
   background,
@@ -224,7 +225,25 @@ export type MinervaProps = StyledSystemProps &
   React.HTMLAttributes<any> &
   React.RefAttributes<any>;
 
-export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
+// export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
+
+export const BaseBox = styled.div(
+  {},
+  layout,
+  color,
+  space,
+  background,
+  border,
+  grid,
+  position,
+  shadow,
+  typography,
+  flexbox
+);
+
+export function Box(props) {
+  return <BaseBox {...props} />;
+}
 
 // export const PseudoBox = styled(Box)(
 //   ({

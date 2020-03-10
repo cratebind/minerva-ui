@@ -13,7 +13,7 @@ import {
   Text,
   styled,
   defaultTheme,
-  Heading,
+  // Heading,
 } from 'minerva-ui';
 import Editor from './components/Editor';
 import { useAppContext } from './AppContext';
@@ -69,9 +69,9 @@ function App() {
         </Flex>
         <Flex height={`calc(100vh - ${HEADER_HEIGHT})`}>
           <Flex flexDirection="column" padding={4} width="15rem" bg="#3b4c67">
-            <Heading as="h4" size="sm">
+            {/* <Heading as="h4" size="sm">
               ELEMENTS
-            </Heading>
+            </Heading> */}
             {Object.keys(Components).map(componentName => (
               <ComponentButton
                 key={componentName}
