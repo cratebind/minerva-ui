@@ -131,7 +131,9 @@ export interface CustomSelectProps {
   disabled?: boolean;
 }
 
-export type SelectProps = CustomSelectProps & MinervaProps;
+export type SelectProps = CustomSelectProps &
+  MinervaProps &
+  React.InputHTMLAttributes<HTMLSelectElement>;
 
 const Select = forwardRef(function Select(
   { children, disabled = false, ...props }: SelectProps,
