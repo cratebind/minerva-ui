@@ -1,17 +1,6 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import {
-  background,
-  border,
-  color,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  space,
-  typography,
-} from 'styled-system';
+import { systemProps } from '../layout';
 
 const sizes = {
   xl: '40px',
@@ -27,16 +16,7 @@ const StyledHeading = styled('h1')<any>(
     fontSize: sizes[props.size],
     lineHeight: props.lineHeight,
   }),
-  color,
-  space,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  background,
-  border,
-  typography
+  systemProps
 );
 
 export interface HeadingProps {
@@ -46,9 +26,16 @@ export interface HeadingProps {
   props?: any;
 }
 
-const Heading = ({ children, ...props }: HeadingProps) => {
-  return <StyledHeading {...props}>{children}</StyledHeading>;
-};
+const Heading = forwardRef(function Heading(
+  { children, ...props }: HeadingProps,
+  ref
+) {
+  return (
+    <StyledHeading ref={ref} {...props}>
+      {children}
+    </StyledHeading>
+  );
+});
 
 Heading.defaultProps = {
   size: 'xl',

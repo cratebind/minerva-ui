@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
@@ -33,15 +33,19 @@ export interface ButtonProps extends MinervaProps, PseudoBoxProps {
   isLoading?: boolean;
 }
 
-export default function Button({
-  children,
-  disabled = false,
-  as: Comp = 'button',
-  isLoading = false,
-  ...props
-}: ButtonProps) {
+const Button = forwardRef(function Button(
+  {
+    children,
+    disabled = false,
+    as: Comp = 'button',
+    isLoading = false,
+    ...props
+  }: ButtonProps,
+  ref
+) {
   return (
     <StyledButton
+      ref={ref}
       as={Comp}
       disabled={disabled || isLoading}
       role="button"
@@ -50,4 +54,6 @@ export default function Button({
       {isLoading ? <Spinner /> : children}
     </StyledButton>
   );
-}
+});
+
+export default Button;

@@ -12,6 +12,9 @@ const ExampleSelect = props => {
     <ThemeProvider>
       <label htmlFor="select-input">{inputLabel}</label>
       <Select
+        // onChange={({ target }: { target: HTMLSelectElement }) =>
+        //   setState(target.value)
+        // }
         onChange={e => setState(e.target.value)}
         value={state}
         id="select-input"

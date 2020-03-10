@@ -39,7 +39,7 @@ exports[`<Table /> should render 1`] = `
     class="c0"
   >
     <table
-      class="c1"
+      class="sc-AxirZ c1"
     >
       <thead
         class=""
@@ -141,7 +141,7 @@ exports[`<Table /> should render 2`] = `
     class="c0"
   >
     <table
-      class="c1"
+      class="sc-AxirZ c1"
     >
       <thead
         class=""

@@ -1,7 +1,6 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { styledSystemUtilities } from '../utils';
-import { Box } from '../layout';
+import { Box, systemProps } from '../layout';
 
 const TableContainer = styled.div`
   /* border: 1px solid #e5e7eb; */
@@ -16,28 +15,28 @@ const StyledTable = styled(Box)(
     minWidth: '100%',
     borderCollapse: 'collapse',
   },
-  ...styledSystemUtilities
+  systemProps
 );
 
 export const TableHeader = styled('thead')(
   {
     // backgroundColor: '#6b7280',
   },
-  ...styledSystemUtilities
+  systemProps
 );
 
 export const TableFooter = styled('thead')(
   {
     // backgroundColor: '#6b7280',
   },
-  ...styledSystemUtilities
+  systemProps
 );
 
 export const TableBody = styled('tbody')(
   {
     // backgroundColor: '#6b7280',
   },
-  ...styledSystemUtilities
+  systemProps
 );
 
 export const TableHeaderCell = styled('th')(
@@ -52,7 +51,7 @@ export const TableHeaderCell = styled('th')(
     textAlign: 'left',
     borderBottom: '1px solid #e5e7eb',
   },
-  ...styledSystemUtilities
+  systemProps
 );
 
 export const TableCell = styled('td')(
@@ -63,10 +62,10 @@ export const TableCell = styled('td')(
     fontSize: '14px',
     borderBottom: '1px solid #e5e7eb',
   },
-  ...styledSystemUtilities
+  systemProps
 );
 
-export const TableRow = styled('tr')({}, ...styledSystemUtilities);
+export const TableRow = styled('tr')({}, systemProps);
 
 export interface CustomTableProps
   extends React.ButtonHTMLAttributes<HTMLTableElement> {
@@ -89,19 +88,4 @@ const Table = forwardRef<Ref, CustomTableProps>(
 
 Table.displayName = 'Table';
 
-// Table.Body = TableBody;
-// Table.Cell = TableCell;
-// Table.Footer = TableFooter;
-// Table.Header = TableHeader;
-// Table.HeaderCell = TableHeaderCell;
-// Table.Row = TableRow;
-
 export default Table;
-// export {
-//   TableBody,
-//   TableCell,
-//   TableFooter,
-//   TableHeader,
-//   TableHeaderCell,
-//   TableRow,
-// };

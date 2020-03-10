@@ -74,13 +74,13 @@ const StyledSpinner = styled(Block)(
 export type Ref = HTMLDivElement;
 
 const Spinner = forwardRef<Ref, SpinnerProps>((
-  { color = '#777' },
+  { color = '#777', ...rest },
   /* thickness = '2px', */
   /* label, */
   /* size = '20px' */
   ref
 ) => {
-  return <StyledSpinner ref={ref} color={color} />;
+  return <StyledSpinner ref={ref} color={color} {...rest} />;
 });
 
 Spinner.displayName = 'Spinner';
