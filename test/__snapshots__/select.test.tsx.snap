@@ -103,7 +103,7 @@ exports[`<Select /> should change style if disabled 1`] = `
     Name
   </label>
   <div
-    class="sc-AxirZ c0"
+    class="sc-AykKD c0"
   >
     <select
       class="c1"
@@ -242,7 +242,7 @@ exports[`<Select /> should render 1`] = `
     Name
   </label>
   <div
-    class="sc-AxirZ c0"
+    class="sc-AykKD c0"
   >
     <select
       class="c1"

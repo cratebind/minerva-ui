@@ -57,7 +57,7 @@ exports[`<Button /> should change style if disabled 1`] = `
 
 <div>
   <button
-    class="sc-AxirZ sc-AxheI c0"
+    class="sc-AykKD sc-AykKI c0"
     disabled=""
     role="button"
   >
@@ -83,8 +83,8 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
   width: 20px;
   border-width: 2px;
   margin: 2px;
-  -webkit-animation: cilQsd 0.45s linear infinite;
-  animation: cilQsd 0.45s linear infinite;
+  -webkit-animation: qOXMj 0.45s linear infinite;
+  animation: qOXMj 0.45s linear infinite;
 }
 
 .c0 {
@@ -143,12 +143,12 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
 
 <div>
   <button
-    class="sc-AxirZ sc-AxheI c0"
+    class="sc-AykKD sc-AykKI c0"
     disabled=""
     role="button"
   >
     <div
-      class="sc-AxirZ sc-AxiKw c1"
+      class="sc-AykKD sc-AykKE c1"
       color="#777"
     />
   </button>
@@ -212,7 +212,7 @@ exports[`<Button /> should render 1`] = `
 
 <div>
   <button
-    class="sc-AxirZ sc-AxheI c0"
+    class="sc-AykKD sc-AykKI c0"
     role="button"
   >
     Test

@@ -4,7 +4,7 @@ import 'jest-styled-components';
 import {
   Button,
   Checkbox,
-  Heading,
+  // Heading,
   Input,
   Link,
   PseudoBox,
@@ -20,7 +20,7 @@ import { ThemeProvider } from '../src';
 const basicComponents = {
   Button,
   Checkbox,
-  Heading,
+  // Heading,
   Input,
   Link,
   PseudoBox,
