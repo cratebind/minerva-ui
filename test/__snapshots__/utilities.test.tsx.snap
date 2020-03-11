@@ -9,7 +9,7 @@ exports[`Border Radius should render 1`] = `
 
 <div>
   <div
-    class="sc-AykKD c0"
+    class="sc-AxirZ c0"
     data-testid="block"
   >
     Default Text
@@ -26,7 +26,7 @@ exports[`Colors should render 1`] = `
 
 <div>
   <div
-    class="sc-AykKD c0"
+    class="sc-AxirZ c0"
     data-testid="block"
   >
     Default Text
