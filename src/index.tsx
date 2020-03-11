@@ -23,7 +23,7 @@ export { default as PseudoBox } from './PseudoBox';
 /**
  * Inputs
  */
-export { Button } from './Button';
+export { default as Button } from './Button';
 export { default as Checkbox } from './Checkbox';
 export { default as Input } from './Input';
 export { default as InputField } from './InputField';
