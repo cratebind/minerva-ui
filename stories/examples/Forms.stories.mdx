@@ -1,0 +1,77 @@
+<Meta title="Examples|Forms" />
+
+# Forms
+
+```jsx
+() => {
+  const [username, setUsername] = React.useState('');
+  const [usernameError, setUsernameError] = React.useState('');
+
+  const [password, setPassword] = React.useState('');
+  const [passwordError, setPasswordError] = React.useState('');
+
+  return (
+   <PseudoBox as="form" bg="gray.200" py={10} px={10} height="300px">
+      <Flex
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="space-around"
+        height="70%"
+      >
+        <InputField label="Username" errorMsg={usernameError}>
+          <Input
+            placeholder="Username"
+            value={username}
+            onChange={e => {
+              setUsernameError('');
+              setUsername(e.target.value);
+            }}
+            onBlur={
+              !username
+                ? () => setUsernameError('Please enter a username.')
+                : null
+            }
+          ></Input>
+        </InputField>
+        <InputField label="Password" errorMsg={passwordError}>
+          <Input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={e => {
+              setPasswordError('');
+              setPassword(e.target.value);
+            }}
+            onBlur={
+              !password
+                ? () => setPasswordError('Please enter a password.')
+                : null
+            }
+          ></Input>
+        </InputField>
+      </Flex>
+       <Flex
+        alignItems="center"
+        justifyContent="space-around"
+        width="48%"
+        margin="0 auto"
+      >
+        <Button
+        background="#551A8B"
+        color="#fff"
+          _hover={{
+            backgroundColor: '#fff',
+            color: '#551A8B',
+            borderColor: '#551A8B',
+          }}
+          onClick={(e) => e.preventDefault()}
+        >
+          Sign In
+        </Button>
+        <Link color="#551A8B">Forgot Password?</Link>
+      </Flex>
+    </PseudoBox>
+      
+  );
+};
+```

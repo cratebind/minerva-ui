@@ -60,6 +60,11 @@ export const RequiredMarker = ({ color }) => {
     </StyledRequiredMarker>
   );
 };
+
+const Label = styled.label`
+  position: relative;
+  bottom: 5px;
+`;
 const InputField = ({
   children,
   label,
@@ -72,9 +77,9 @@ const InputField = ({
 }: InputFieldProps) => {
   return (
     <StyledInputField {...props}>
-      <label htmlFor={htmlFor} data-testid="label">
+      <Label htmlFor={htmlFor} data-testid="label">
         {label}
-      </label>
+      </Label>
       {isRequired && <RequiredMarker color={requiredMarkerColor} />}
       {children}
       {errorMsg && (
