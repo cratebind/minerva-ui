@@ -1,4 +1,6 @@
 import { Theme } from 'styled-system';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 const logoColor = '#551A8B';
 
@@ -233,5 +235,9 @@ const baseTheme: MinervaTheme = {
     loose: '2',
   },
 };
+
+export function useTheme(): MinervaTheme {
+  return useContext(ThemeContext);
+}
 
 export default baseTheme;

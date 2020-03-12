@@ -12,15 +12,28 @@ import StyledSystem, {
   space,
   typography,
   compose,
-  // system,
+  system,
 } from 'styled-system';
 
-// const customProps = system({
-//   textDecoration: true,
-//   textTransform: true,
-//   transform: true,
-//   lineHeight: true,
-// });
+const customProps = system({
+  textDecoration: true,
+  textTransform: true,
+  transform: true,
+  lineHeight: true,
+  transition: true,
+  radiusLeft: {
+    properties: ['borderTopLeftRadius', 'borderBottomLeftRadius'],
+  },
+  radiusRight: {
+    properties: ['borderTopRightRadius', 'borderBottomRightRadius'],
+  },
+  radiusTop: {
+    properties: ['borderTopLeftRadius', 'borderTopRightRadius'],
+  },
+  radiusBottom: {
+    properties: ['borderBottomLeftRadius', 'borderBottomRightRadius'],
+  },
+});
 
 export const systemProps = compose(
   // customProps,
@@ -33,7 +46,8 @@ export const systemProps = compose(
   position,
   shadow,
   typography,
-  flexbox
+  flexbox,
+  customProps
 );
 
 type CSS = React.CSSProperties;
@@ -227,19 +241,7 @@ export type MinervaProps = StyledSystemProps &
 
 // export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
 
-export const Box = styled.div<MinervaProps>(
-  {},
-  layout,
-  color,
-  space,
-  background,
-  border,
-  grid,
-  position,
-  shadow,
-  typography,
-  flexbox
-);
+export const Box = styled.div<MinervaProps>({}, systemProps);
 
 // export const Box = forwardRef(function Box(props, ref) {
 //   return <BaseBox ref={ref} {...props} />;
