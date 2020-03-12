@@ -185,6 +185,7 @@ const PseudoBox = styled(Box)<PseudoProps>(
     _mixed,
     _odd,
     _even,
+    ...props
   }: PseudoBoxProps) => {
     return css({
       [hover]: _hover,
@@ -211,6 +212,7 @@ const PseudoBox = styled(Box)<PseudoProps>(
       '&:after': _after,
       '&:focus-within': _focusWithin,
       '&::placeholder': _placeholder,
+      // ...props,
     });
   },
   systemProps
