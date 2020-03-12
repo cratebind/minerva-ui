@@ -1,18 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  background,
-  border,
-  color,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  space,
-  typography,
-} from 'styled-system';
-import { MinervaProps } from '../layout';
+import { MinervaProps, systemProps } from '../layout';
 
 const StyledTag = styled('div')<any>(
   props => ({
@@ -22,16 +10,7 @@ const StyledTag = styled('div')<any>(
     padding: '8px 10px',
     ...props.theme.Tag,
   }),
-  color,
-  space,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  background,
-  border,
-  typography
+  systemProps
 );
 
 const TagLabel = styled.p``;
