@@ -135,7 +135,7 @@ export type SelectProps = CustomSelectProps &
   MinervaProps &
   React.InputHTMLAttributes<HTMLSelectElement>;
 
-const Select = forwardRef(function Select(
+export const Select = forwardRef(function Select(
   { children, disabled = false, ...props }: SelectProps,
   ref
 ) {

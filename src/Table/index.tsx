@@ -74,7 +74,7 @@ export interface CustomTableProps
 
 export type Ref = HTMLTableElement;
 
-const Table = forwardRef<Ref, CustomTableProps>(
+export const Table = forwardRef<Ref, CustomTableProps>(
   ({ children, ...props }, ref) => {
     return (
       <TableContainer>

@@ -73,7 +73,7 @@ const StyledSpinner = styled(Block)(
 
 export type Ref = HTMLDivElement;
 
-const Spinner = forwardRef<Ref, SpinnerProps>((
+export const Spinner = forwardRef<Ref, SpinnerProps>((
   { color = '#777', ...rest },
   /* thickness = '2px', */
   /* label, */

@@ -65,19 +65,19 @@
     "react-live": "^2.2.2",
     "semantic-release": "^17.0.2",
     "ts-loader": "^6.2.1",
-    "tsdx": "^0.11.0",
-    "tslib": "^1.10.0",
+    "tsdx": "^0.12.3",
+    "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   },
   "dependencies": {
     "@mdx-js/react": "^1.5.1",
     "@reach/checkbox": "^0.8.6",
-    "@testing-library/jest-dom": "^4.2.3",
+    "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.5.0",
     "@types/styled-components": "^5.0.0",
     "@types/styled-system": "^5.1.9",
     "copy-to-clipboard": "^3.3.1",
-    "eslint-config-cratebind": "^3.0.7",
+    "eslint-config-cratebind": "^3.0.8",
     "styled-components": "^5.0.0",
     "styled-system": "^5.1.5"
   },
