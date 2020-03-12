@@ -33,6 +33,7 @@ const StyledInputField = styled('div')(
 
 type ErrorStyles = {
   size?: string;
+  weight?: string;
   color?: string;
 };
 
@@ -85,6 +86,7 @@ const InputField = ({
       {errorMsg && (
         <Text
           fontSize={errorStyles ? errorStyles.size : '14px'}
+          fontWeight={errorStyles ? errorStyles.weight : '400'}
           color={errorStyles ? errorStyles.color : '#ff0000'}
           data-testid="error"
         >
