@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { MinervaProps, systemProps } from '../layout';
+import { MinervaProps, systemProps, Box } from '../layout';
 
-const StyledTag = styled('div')<any>(
+const StyledTag = styled(Box)<MinervaProps>(
   props => ({
     display: 'inline-block',
     backgroundColor: '#EDF2F7',
@@ -17,15 +17,17 @@ const TagLabel = styled.p``;
 
 export interface TagProps extends MinervaProps {
   children?: React.ReactNode;
-  props?: any;
 }
 
-export const Tag = ({ children, ...props }: TagProps) => {
+export const Tag = forwardRef(function Tag(
+  { children, ...props }: TagProps,
+  ref
+) {
   return (
-    <StyledTag {...props}>
+    <StyledTag ref={ref} {...props}>
       <TagLabel>{children}</TagLabel>
     </StyledTag>
   );
-};
+});
 
 export default Tag;
