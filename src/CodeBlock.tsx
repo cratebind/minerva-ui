@@ -22,7 +22,7 @@ const wrapperStyles = {
   backgroundColor: 'rgb(1, 22, 39)',
   borderRadius: '10px',
   padding: '20px',
-  // marginBottom: '32px',
+  marginBottom: '32px',
   marginTop: '32px',
 };
 

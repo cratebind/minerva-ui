@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { systemProps } from '../layout';
+import { MinervaProps, systemProps } from '../layout';
 
 const sizes = {
   xl: '40px',
@@ -19,19 +19,23 @@ const StyledHeading = styled('h1')<any>(
   systemProps
 );
 
-export interface HeadingProps {
+export interface HeadingProps extends MinervaProps {
   children?: React.ReactNode;
   size?: string;
   lineHeight?: string;
   props?: any;
 }
 
-export const Heading = function Heading(
+export const Heading = forwardRef(function Heading(
   { children, ...props }: HeadingProps,
   ref
 ) {
-  return <StyledHeading {...props}>{children}</StyledHeading>;
-};
+  return (
+    <StyledHeading ref={ref} {...props}>
+      {children}
+    </StyledHeading>
+  );
+});
 
 Heading.defaultProps = {
   size: 'xl',
