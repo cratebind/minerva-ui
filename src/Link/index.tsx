@@ -22,7 +22,7 @@ export interface LinkProps {
   // isDisabled?: boolean;
 }
 
-const Link = forwardRef(function Link(
+export const Link = forwardRef(function Link(
   { children, href, isExternal, ...props }: LinkProps,
   ref
 ) {

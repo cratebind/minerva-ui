@@ -57,7 +57,7 @@ exports[`<Button /> should change style if disabled 1`] = `
 
 <div>
   <button
-    class="sc-AxirZ sc-AxheI c0"
+    class="sc-AxirZ sc-AxmLO c0"
     disabled=""
     role="button"
   >
@@ -143,7 +143,7 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
 
 <div>
   <button
-    class="sc-AxirZ sc-AxheI c0"
+    class="sc-AxirZ sc-AxmLO c0"
     disabled=""
     role="button"
   >
@@ -212,7 +212,7 @@ exports[`<Button /> should render 1`] = `
 
 <div>
   <button
-    class="sc-AxirZ sc-AxheI c0"
+    class="sc-AxirZ sc-AxmLO c0"
     role="button"
   >
     Test

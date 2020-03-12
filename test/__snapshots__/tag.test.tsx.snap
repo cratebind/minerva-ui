@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tag /> should render 1`] = `
+.c0 {
+  display: inline-block;
+  background-color: #EDF2F7;
+  border-radius: 5px;
+  padding: 8px 10px;
+}
+
+<div>
+  <div
+    class="sc-AxirZ c0"
+  >
+    <p
+      class=""
+    >
+      Test
+    </p>
+  </div>
+</div>
+`;
