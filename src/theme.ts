@@ -6,9 +6,11 @@ export interface MinervaTheme extends Theme {
   Button?: React.CSSProperties;
   Text?: React.CSSProperties;
   Input?: React.CSSProperties;
+  InputField?: React.CSSProperties;
   Link?: React.CSSProperties;
   Checkbox?: React.CSSProperties;
   Select?: React.CSSProperties;
+  Tag?: React.CSSProperties;
   defaultBorderColor?: string;
 }
 
@@ -43,9 +45,11 @@ const baseTheme: MinervaTheme = {
     // color: 'rgb(148, 148, 148)',
   },
   Input: {},
+  InputField: {},
   Link: {},
   Checkbox: {},
   Select: {},
+  Tag: {},
   defaultBorderColor: '#d2d6dc',
   colors: {
     // custom colors
