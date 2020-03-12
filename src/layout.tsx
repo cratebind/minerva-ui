@@ -304,13 +304,13 @@ export const Box = styled.div<MinervaProps>({}, systemProps);
 export const Block = styled(Box)(
   {
     display: 'block',
-  },
-  systemProps
+  }
+  // systemProps
 );
 
 export const Flex = styled(Box)(
   {
     display: 'flex',
-  },
-  systemProps
+  }
+  // systemProps
 );
