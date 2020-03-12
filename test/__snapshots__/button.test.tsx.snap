@@ -78,7 +78,6 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
 .c1 {
   color: #777;
   display: block;
-  color: #777;
   display: inline-block;
   border-bottom-color: transparent;
   border-left-color: transparent;
