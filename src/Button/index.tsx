@@ -12,7 +12,7 @@ export interface ButtonProps extends MinervaProps, PseudoBoxProps {
   isLoading?: boolean;
 }
 
-const Button = forwardRef(function Button(
+export const Button = forwardRef(function Button(
   {
     children,
     disabled = false,

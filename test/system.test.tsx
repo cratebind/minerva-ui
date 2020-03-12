@@ -14,6 +14,7 @@ import {
   Text,
   Table,
   Select,
+  Tag,
 } from '../src';
 import { ThemeProvider } from '../src';
 
@@ -28,6 +29,7 @@ const basicComponents = {
   Flex,
   Box,
   Text,
+  Tag,
   // Table,
   // Select,
 };
