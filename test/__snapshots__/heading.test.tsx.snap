@@ -6,7 +6,7 @@ exports[`<Text /> should render 1`] = `
   line-height: normal;
   width: xl;
   height: xl;
-  line-height: 1.5;
+  line-height: normal;
 }
 
 <div>
