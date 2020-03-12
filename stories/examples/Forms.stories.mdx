@@ -9,16 +9,19 @@
 
   const [password, setPassword] = React.useState('');
   const [passwordError, setPasswordError] = React.useState('');
+// box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important;
+// }
 
   return (
-   <PseudoBox as="form" bg="gray.200" py={10} px={10} height="300px">
+   <PseudoBox as="form" bg="gray.200" py={10} px={10} m="0 auto" width="320px" height="305px" boxShadow="lg">
       <Flex
         flexDirection="column"
         alignItems="center"
         justifyContent="space-around"
         height="70%"
+        mb="24px"
       >
-        <InputField label="Username" errorMsg={usernameError}>
+        <InputField label="Username" boxShadow="lg" errorMsg={usernameError}>
           <Input
             placeholder="Username"
             value={username}
@@ -33,7 +36,7 @@
             }
           ></Input>
         </InputField>
-        <InputField label="Password" errorMsg={passwordError}>
+        <InputField label="Password" boxShadow="lg" errorMsg={passwordError}>
           <Input
             type="password"
             placeholder="Password"
@@ -52,9 +55,7 @@
       </Flex>
        <Flex
         alignItems="center"
-        justifyContent="space-around"
-        width="48%"
-        margin="0 auto"
+        justifyContent="space-between"
       >
         <Button
         background="#551A8B"
@@ -64,11 +65,14 @@
             color: '#551A8B',
             borderColor: '#551A8B',
           }}
+          p="8px 16px"
+          fontWeight="700"
+          fontSize="16px"
           onClick={(e) => e.preventDefault()}
         >
           Sign In
         </Button>
-        <Link color="#551A8B">Forgot Password?</Link>
+        <Link color="#551A8B" fontWeight="700">Forgot Password?</Link>
       </Flex>
     </PseudoBox>
       
