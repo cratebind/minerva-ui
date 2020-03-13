@@ -1,0 +1,31 @@
+<Meta title="Examples|Buttons" />
+
+# Buttons
+
+
+### Button Group
+```jsx isManual=true
+const CustomButton = (props) => (
+  <Button bg="gray.300" borderWidth={0} {...props} />
+);
+
+render(
+  <Flex>
+    <CustomButton radiusRight={0}>Button 1</CustomButton>
+    <CustomButton radiusLeft={0}>Button 2</CustomButton>
+  </Flex>
+)
+```
+
+### Button Hover Styles
+```jsx
+<Button
+  _hover={{
+    backgroundColor: '#551A8B',
+    color: '#fff',
+    borderColor: '#551A8B'
+  }}
+>
+  Hover Button
+</Button>
+```
