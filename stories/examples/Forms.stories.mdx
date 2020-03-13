@@ -11,7 +11,7 @@
   const [passwordError, setPasswordError] = React.useState('');
 
   return (
-    <Flex bg="gray.200" py="40px" px="12px" justifyContent="center" alignItems="center">
+    <Flex bg="gray.200" py="40px" justifyContent="center" alignItems="center">
       <PseudoBox
         as="form"
         bg="#fff"
@@ -42,8 +42,6 @@
                 ? () => setUsernameError('Please enter a username.')
                 : null
             }
-            boxShadow="base"
-            mb="8px"
           />
         </InputField>
         <InputField
@@ -67,14 +65,12 @@
                 ? () => setPasswordError('Please enter a password.')
                 : null
             }
-            boxShadow="base"
-            mb="8px"
+            mb={3}
           />
         </InputField>
         <Flex alignItems="center" justifyContent="space-between">
           <Button
             color="#fff"
-            p="8px 16px"
             lineHeight="1.7"
             fontWeight="700"
             fontSize="16px"
