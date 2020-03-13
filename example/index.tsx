@@ -2,7 +2,7 @@ import 'react-app-polyfill/ie11';
 import React, { useState } from 'react';
 import * as ReactDOM from 'react-dom';
 import styled, { createGlobalStyle } from 'styled-components';
-import { Button, ThemeProvider } from '../.';
+import { Button, ThemeProvider, defaultTheme } from '../src';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -30,6 +30,7 @@ const SidebarContent = styled.div`
 `;
 
 const initialStyles = {
+  ...defaultTheme,
   Button: {
     backgroundColor: 'rgb(49, 151, 149)',
     borderRadius: 4,
@@ -113,4 +114,4 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.querySelector('#root'));

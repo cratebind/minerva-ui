@@ -55,6 +55,23 @@ describe('<Button />', () => {
     });
   });
 
+  it('should allow theme variables to be used in pseudo props', () => {
+    const backgroundColor = 'purple.500';
+    const { getByRole } = render(
+      <ThemeProvider>
+        <Button _disabled={{ backgroundColor }} disabled>
+          Disabled Button
+        </Button>
+      </ThemeProvider>
+    );
+
+    const button = getByRole('button');
+
+    expect(button).toHaveStyleRule('background-color', '#9f7aea', {
+      modifier: ':disabled',
+    });
+  });
+
   it('should handle "as" prop', () => {
     const { getByRole } = render(
       <ThemeProvider>
@@ -83,6 +100,31 @@ describe('<Button />', () => {
     });
   });
 
+  // @TODO: Figure out how to test media queries more consistently
+  // it('should change style for media queries', () => {
+  //   const mobileColor = '#fff';
+  //   const desktopColor = '#000';
+  //   const { container, getByRole } = render(
+  //     <ThemeProvider>
+  //       <Button backgroundColor={[mobileColor, desktopColor]}>
+  //         Responsive Button
+  //       </Button>
+  //     </ThemeProvider>
+  //   );
+
+  //   expect(container).toMatchSnapshot();
+
+  //   const button = getByRole('button');
+
+  //   // expect(button).toHaveStyleRule('backgroundColor', mobileColor, {
+  //   //   media: 'screen and (min-width:60em)',
+  //   // });
+  //   expect(button).toHaveStyleRule('backgroundColor', desktopColor, {
+  //     media: '(min-width:40em)',
+  //   });
+  // });
+
+  // @TODO: Figure out how to simulate hover styles?
   // it('should change style if hovered', () => {
   //   const { getByRole } = render(
   //     <ThemeProvider>

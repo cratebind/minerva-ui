@@ -1,38 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  background,
-  border,
-  color,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  space,
-  typography,
-} from 'styled-system';
-
 import Text from '../Text';
+import { systemProps } from '../layout';
 
 const StyledInputField = styled('div')(
   props => ({
     ...props.theme.InputField,
   }),
-  color,
-  space,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  background,
-  border,
-  typography
+  systemProps
 );
 
 type ErrorStyles = {
   size?: string;
+  weight?: string;
   color?: string;
 };
 
@@ -60,6 +40,14 @@ export const RequiredMarker = ({ color }) => {
     </StyledRequiredMarker>
   );
 };
+
+const Label = styled.label`
+  display: block;
+  position: relative;
+  margin-bottom: 8px;
+  line-height: 1.5;
+`;
+
 const InputField = ({
   children,
   label,
@@ -72,14 +60,15 @@ const InputField = ({
 }: InputFieldProps) => {
   return (
     <StyledInputField {...props}>
-      <label htmlFor={htmlFor} data-testid="label">
+      <Label htmlFor={htmlFor} data-testid="label">
         {label}
-      </label>
+      </Label>
       {isRequired && <RequiredMarker color={requiredMarkerColor} />}
       {children}
       {errorMsg && (
         <Text
           fontSize={errorStyles ? errorStyles.size : '14px'}
+          fontWeight={errorStyles ? errorStyles.weight : '400'}
           color={errorStyles ? errorStyles.color : '#ff0000'}
           data-testid="error"
         >

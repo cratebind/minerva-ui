@@ -1,6 +1,8 @@
 // import React from 'react';
-import styled, { css, CSSObject } from 'styled-components';
+import styled, { CSSObject } from 'styled-components';
+import css from '@styled-system/css';
 import { MinervaProps, Box, systemProps } from '../layout';
+import { transformAliasProps } from '../utils';
 
 export interface PseudoBoxProps {
   /**
@@ -186,31 +188,33 @@ const PseudoBox = styled(Box)<PseudoProps>(
     _odd,
     _even,
   }: PseudoBoxProps) => {
+    // console.log(transformAliasProps(_hover));
     return css({
-      [hover]: _hover,
-      [focus]: _focus,
-      [active]: _active,
-      [visited]: _visited,
-      [disabled]: _disabled,
-      [selected]: _selected,
-      [invalid]: _invalid,
-      [expanded]: _expanded,
-      [grabbed]: _grabbed,
-      [readOnly]: _readOnly,
-      [first]: _first,
-      [notFirst]: _notFirst,
-      [notLast]: _notLast,
-      [last]: _last,
-      [odd]: _odd,
-      [even]: _even,
-      [mixed]: _mixed,
-      [checked]: _checked,
-      [pressed]: _pressed,
-      [groupHover]: _groupHover,
-      '&:before': _before,
-      '&:after': _after,
-      '&:focus-within': _focusWithin,
-      '&::placeholder': _placeholder,
+      [hover]: transformAliasProps(_hover),
+      [focus]: transformAliasProps(_focus),
+      [active]: transformAliasProps(_active),
+      [visited]: transformAliasProps(_visited),
+      [disabled]: transformAliasProps(_disabled),
+      [selected]: transformAliasProps(_selected),
+      [invalid]: transformAliasProps(_invalid),
+      [expanded]: transformAliasProps(_expanded),
+      [grabbed]: transformAliasProps(_grabbed),
+      [readOnly]: transformAliasProps(_readOnly),
+      [first]: transformAliasProps(_first),
+      [notFirst]: transformAliasProps(_notFirst),
+      [notLast]: transformAliasProps(_notLast),
+      [last]: transformAliasProps(_last),
+      [odd]: transformAliasProps(_odd),
+      [even]: transformAliasProps(_even),
+      [mixed]: transformAliasProps(_mixed),
+      [checked]: transformAliasProps(_checked),
+      [pressed]: transformAliasProps(_pressed),
+      [groupHover]: transformAliasProps(_groupHover),
+      '&:before': transformAliasProps(_before),
+      '&:after': transformAliasProps(_after),
+      '&:focus-within': transformAliasProps(_focusWithin),
+      '&::placeholder': transformAliasProps(_placeholder),
+      // ...props,
     });
   },
   systemProps
