@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { systemProps } from '../layout';
+import PseudoBox from '../PseudoBox';
 
-const StyledLink = styled('a')<any>(
+const StyledLink = styled(PseudoBox)<any>(
   props => ({
     fontSize: 16,
     // ':hover': {
@@ -32,6 +33,7 @@ export const Link = forwardRef(function Link(
 
   return (
     <StyledLink
+      as="a"
       href={href}
       ref={ref}
       // @TODO: Rethink this due to possible accessibility issues

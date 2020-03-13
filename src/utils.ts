@@ -1,95 +1,180 @@
-// import {
-//   background,
-//   border,
-//   color,
-//   flexbox,
-//   grid,
-//   layout,
-//   position,
-//   shadow,
-//   space,
-//   typography,
-// } from 'styled-system';
+import { system, get } from 'styled-system';
 
-// export const styledSystemUtilities = [
-//   color,
-//   space,
-//   flexbox,
-//   grid,
-//   layout,
-//   position,
-//   shadow,
-//   background,
-//   border,
-//   typography,
-// ];
+const isNumber = n => typeof n === 'number' && !isNaN(n);
+const getWidth = (n, scale) =>
+  get(scale, n, !isNumber(n) || n > 1 ? n : n * 100 + '%');
 
-// export function hexToHSL(H) {
-//   // Convert hex to RGB first
-//   let r = 0;
-//   let g = 0;
-//   let b = 0;
-//   // if (H.length == 4) {
-//   //   r = '0x' + H[1] + H[1];
-//   //   g = '0x' + H[2] + H[2];
-//   //   b = '0x' + H[3] + H[3];
-//   // } else if (H.length == 7) {
-//   //   r = '0x' + H[1] + H[2];
-//   //   g = '0x' + H[3] + H[4];
-//   //   b = '0x' + H[5] + H[6];
-//   // }
-//   // Then to HSL
-//   r /= 255;
-//   g /= 255;
-//   b /= 255;
-//   let cmin = Math.min(r, g, b),
-//     cmax = Math.max(r, g, b),
-//     delta = cmax - cmin,
-//     h = 0,
-//     s = 0,
-//     l = 0;
+export const config: any = {
+  roundedTop: {
+    properties: ['borderTopLeftRadius', 'borderTopRightRadius'],
+    scale: 'radii',
+  },
+  roundedBottom: {
+    properties: ['borderBottomLeftRadius', 'borderBottomRightRadius'],
+    scale: 'radii',
+  },
+  roundedLeft: {
+    properties: ['borderTopLeftRadius', 'borderBottomLeftRadius'],
+    scale: 'radii',
+  },
+  roundedRight: {
+    properties: ['borderTopRightRadius', 'borderBottomRightRadius'],
+    scale: 'radii',
+  },
+  roundedTopRight: {
+    property: 'borderTopRightRadius',
+    scale: 'radii',
+  },
+  roundedTopLeft: {
+    property: 'borderTopLeftRadius',
+    scale: 'radii',
+  },
+  roundedBottomRight: {
+    property: 'borderBottomRightRadius',
+    scale: 'radii',
+  },
+  roundedBottomLeft: {
+    property: 'borderBottomLeftRadius',
+    scale: 'radii',
+  },
+  rounded: {
+    property: 'borderRadius',
+    scale: 'radii',
+  },
+  d: {
+    property: 'display',
+  },
+  w: {
+    property: 'width',
+    scale: 'sizes',
+    transform: getWidth,
+  },
+  minW: {
+    property: 'minWidth',
+    scale: 'sizes',
+  },
+  maxW: {
+    property: 'maxWidth',
+    scale: 'sizes',
+  },
+  h: {
+    property: 'height',
+    scale: 'sizes',
+  },
+  minH: {
+    property: 'minHeight',
+    scale: 'sizes',
+  },
+  maxH: {
+    property: 'maxHeight',
+    scale: 'sizes',
+  },
+  bgImg: {
+    property: 'backgroundImage',
+  },
+  bgImage: {
+    property: 'backgroundImage',
+  },
+  bgSize: {
+    property: 'backgroundSize',
+  },
+  bgPos: {
+    property: 'backgroundPosition',
+  },
+  bgRepeat: {
+    property: 'backgroundRepeat',
+  },
+  pos: {
+    property: 'position',
+  },
+  flexDir: {
+    property: 'flexDirection',
+  },
+  shadow: {
+    property: 'boxShadow',
+    scale: 'shadows',
+  },
+  textDecoration: { property: 'textDecoration' },
+  overflowX: true,
+  overflowY: true,
+  textTransform: true,
+  animation: true,
+  appearance: true,
+  transform: true,
+  transformOrigin: true,
+  visibility: true,
+  whiteSpace: true,
+  userSelect: true,
+  pointerEvents: true,
+  wordBreak: true,
+  overflowWrap: true,
+  textOverflow: true,
+  boxSizing: true,
+  cursor: true,
+  resize: true,
+  transition: true,
+  listStyleType: true,
+  listStylePosition: true,
+  listStyleImage: true,
+  fill: {
+    property: 'fill',
+    scale: 'colors',
+  },
+  stroke: {
+    property: 'stroke',
+    scale: 'colors',
+  },
+  objectFit: true,
+  objectPosition: true,
+  backgroundAttachment: {
+    property: 'backgroundAttachment',
+  },
+  outline: true,
+  float: true,
+  willChange: true,
+};
 
-//   if (delta == 0) h = 0;
-//   else if (cmax == r) h = ((g - b) / delta) % 6;
-//   else if (cmax == g) h = (b - r) / delta + 2;
-//   else h = (r - g) / delta + 4;
+config.bgAttachment = config.backgroundAttachment;
+config.textDecor = config.textDecoration;
+config.listStylePos = config.listStylePosition;
+config.listStyleImg = config.listStyleImage;
 
-//   h = Math.round(h * 60);
+const extraConfig = system(config);
 
-//   if (h < 0) h += 360;
+export default extraConfig;
 
-//   l = (cmax + cmin) / 2;
-//   s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
-//   s = +(s * 100).toFixed(1);
-//   l = +(l * 100).toFixed(1);
+// Create an issue on @styled-system/css to allow custom alias to be passed to the `css` function
 
-//   return 'hsl(' + h + ',' + s + '%,' + l + '%)';
-// }
+// Transform the custom alias to a format that styled-system CSS supports
+const transformAlias = (prop, propValue) => {
+  const configKeys = Object.keys(config);
+  let result = {};
 
-// export function LightenDarkenColor(col, amt) {
-//   var usePound = false;
+  if (configKeys.includes(prop)) {
+    const { properties, property } = config[prop];
+    if (properties) {
+      properties.forEach(_cssProp => (result[_cssProp] = propValue));
+    }
+    if (property) {
+      result[property] = propValue;
+    }
+    if (config[prop] === true) {
+      result[prop] = propValue;
+    }
+  } else {
+    result[prop] = propValue;
+  }
+  return result;
+};
 
-//   if (col[0] === '#') {
-//     col = col.slice(1);
-//     usePound = true;
-//   }
-
-//   var num = parseInt(col, 16);
-
-//   var r = (num >> 16) + amt;
-
-//   if (r > 255) r = 255;
-//   else if (r < 0) r = 0;
-
-//   var b = ((num >> 8) & 0x00ff) + amt;
-
-//   if (b > 255) b = 255;
-//   else if (b < 0) b = 0;
-
-//   var g = (num & 0x0000ff) + amt;
-
-//   if (g > 255) g = 255;
-//   else if (g < 0) g = 0;
-
-//   return (usePound ? '#' : '') + (g | (b << 8) | (r << 16)).toString(16);
-// }
+export const transformAliasProps = props => {
+  let result = {};
+  for (let prop in props) {
+    if (typeof props[prop] === 'object' && !Array.isArray(props[prop])) {
+      result = { ...result, [prop]: transformAliasProps(props[prop]) };
+    } else {
+      result = { ...result, ...transformAlias(prop, props[prop]) };
+    }
+  }
+  return result;
+};

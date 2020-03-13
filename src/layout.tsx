@@ -14,6 +14,7 @@ import StyledSystem, {
   compose,
   system,
 } from 'styled-system';
+import extraConfig from './utils';
 
 const customProps = system({
   textDecoration: true,
@@ -47,7 +48,8 @@ export const systemProps = compose(
   shadow,
   typography,
   flexbox,
-  customProps
+  customProps,
+  extraConfig
 );
 
 type CSS = React.CSSProperties;

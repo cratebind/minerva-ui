@@ -11,22 +11,16 @@
   const [passwordError, setPasswordError] = React.useState('');
 
   return (
-    <PseudoBox
-      as="form"
-      bg="gray.200"
-      py={10}
-      px={10}
-      m="0 auto"
-      width="320px"
-      height="305px"
-      boxShadow="lg"
-    >
-      <Flex
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="space-around"
-        height="70%"
-        mb="24px"
+    <Flex bg="gray.200" py="40px" px="12px" justifyContent="center" alignItems="center">
+      <PseudoBox
+        as="form"
+        bg="#fff"
+        p="32px"
+        pt="24px"
+        width="100%"
+        maxWidth="20rem"
+        boxShadow="base"
+        borderRadius="md"
       >
         <InputField
           label="Username"
@@ -34,6 +28,7 @@
           fontWeight="700"
           fontSize="14px"
           color="gray.700"
+          mb={4}
         >
           <Input
             placeholder="Username"
@@ -47,9 +42,9 @@
                 ? () => setUsernameError('Please enter a username.')
                 : null
             }
-            boxShadow="lg"
+            boxShadow="base"
             mb="8px"
-          ></Input>
+          />
         </InputField>
         <InputField
           label="Password"
@@ -57,6 +52,7 @@
           fontWeight="700"
           fontSize="14px"
           color="gray.700"
+          mb={6}
         >
           <Input
             type="password"
@@ -71,37 +67,39 @@
                 ? () => setPasswordError('Please enter a password.')
                 : null
             }
-            boxShadow="lg"
+            boxShadow="base"
             mb="8px"
-          ></Input>
+          />
         </InputField>
-      </Flex>
-      <Flex alignItems="center" justifyContent="space-between">
-        <Button
-          background="#551A8B"
-          color="#fff"
-          _hover={{
-            backgroundColor: '#fff',
-            color: '#551A8B',
-            borderColor: '#551A8B',
-          }}
-          p="8px 16px"
-          lineHeight="1.7"
-          fontWeight="700"
-          fontSize="16px"
-          onClick={e => e.preventDefault()}
-        >
-          Sign In
-        </Button>
-        <Link
-          href="#"
-          color="#551A8B"
-          fontWeight="700"
-        >
-          Forgot Password?
-        </Link>
-      </Flex>
-    </PseudoBox>
+        <Flex alignItems="center" justifyContent="space-between">
+          <Button
+            color="#fff"
+            p="8px 16px"
+            lineHeight="1.7"
+            fontWeight="700"
+            fontSize="16px"
+            onClick={e => e.preventDefault()}
+            backgroundColor="purple.600"
+            borderWidth={0}
+            _hover={{
+              backgroundColor: 'purple.800',
+            }}
+          >
+            Sign In
+          </Button>
+          <Link
+            href="#"
+            color="purple.600"
+            fontWeight="700"
+            _hover={{
+              color: 'purple.800'
+            }}
+          >
+            Forgot Password?
+          </Link>
+        </Flex>
+      </PseudoBox>
+    </Flex>
   );
 };
 ```

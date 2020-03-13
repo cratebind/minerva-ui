@@ -26,8 +26,10 @@ exports[`<InputField> should render 1`] = `
 }
 
 .c0 {
+  display: block;
   position: relative;
-  bottom: 5px;
+  margin-bottom: 8px;
+  line-height: 1.5;
 }
 
 <div>
