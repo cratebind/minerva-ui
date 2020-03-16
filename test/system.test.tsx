@@ -15,6 +15,7 @@ import {
   Table,
   Select,
   Tag,
+  Image,
 } from '../src';
 import { ThemeProvider } from '../src';
 
@@ -30,6 +31,7 @@ const basicComponents = {
   Box,
   Text,
   Tag,
+  Image,
   // Table,
   // Select,
 };
