@@ -1,6 +1,6 @@
 <Meta title="Examples|Cards" />
 
-# Cards
+# Content Card
 
 ```jsx
 () => (
@@ -32,4 +32,44 @@
     </Flex>
   </Flex>
 )
+```
+
+# Horizontal Card
+```jsx
+() => (
+  <Flex flexDirection={['column', 'row']}>
+    <Block backgroundImage="url('https://tailwindcss.com/img/card-top.jpg')" backgroundSize="cover" width={['100%', '30rem']} backgroundRepeat="no-repeat" />
+    <Block borderWidth={1} radiusRight="4px" p="16px">
+      <Flex flexDirection="column" borderColor="gray.400" borderLeft="0" class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 justify-between leading-normal">
+        <Block mb={8}>
+          <Flex fontSize="sm" color="gray.600" alignItems="center">
+            <Box width="12px" mr={2}>
+              <svg class="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style={{ fill: 'currentColor' }}>
+                <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
+              </svg>
+            </Box>
+            Members only
+          </Flex>
+          <Text color="gray.900" fontWeight="bold" fontSize="xl" mb={2}>Can coffee make you a better developer?</Text>
+          <Text color="gray.700" fontSize="base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</Text>
+        </Block>
+        <Flex alignItems="center">
+          <Block
+            as="img"
+            size={10}
+            borderRadius="full"
+            mr={4}
+            src="https://tailwindcss.com/img/jonathan.jpg"
+            alt="Avatar of Jonathan Reinink"
+          />
+          <Block fontSize="sm">
+            <Text color="gray.900">Jonathan Reinink</Text>
+            <Text color="gray.600">Aug 18</Text>
+          </Block>
+        </Flex>
+      </Flex>
+    </Block>
+  </Flex>
+)
+
 ```

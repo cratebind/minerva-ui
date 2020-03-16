@@ -1,18 +1,6 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import {
-  background,
-  border,
-  color,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  space,
-  typography,
-} from 'styled-system';
-import { MinervaProps } from '../layout';
+import { MinervaProps, systemProps } from '../layout';
 
 const StyledInput = styled('input')(
   props => ({
@@ -37,16 +25,7 @@ const StyledInput = styled('input')(
     // backgroundColor: props.theme.colors.primary || 'rgb(56, 161, 105)',
     ...props.theme.Input,
   }),
-  color,
-  space,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  background,
-  border,
-  typography
+  systemProps
 );
 
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;

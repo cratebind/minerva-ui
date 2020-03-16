@@ -24,7 +24,6 @@ const StyledSelect = styled(Input)(
     backgroundColor: '#fff',
     borderWidth: '1px',
     color: '#374151',
-    fontWeight: '500',
     display: 'inline-flex',
     WebkitAppearance: 'none',
     WebkitBoxAlign: 'center',

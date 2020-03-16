@@ -33,6 +33,7 @@ export { default as Select } from './Select';
 /**
  * Elements
  */
+export { default as Image } from './Image';
 export { default as Table } from './Table';
 export * from './Table';
 
