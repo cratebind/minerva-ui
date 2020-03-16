@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import StyledSystem, {
   background,
   border,
@@ -14,6 +15,7 @@ import StyledSystem, {
   compose,
   system,
 } from 'styled-system';
+import systemPropTypes from '@styled-system/prop-types';
 import extraConfig from './utils';
 
 const customProps = system({
@@ -35,6 +37,27 @@ const customProps = system({
     properties: ['borderBottomLeftRadius', 'borderBottomRightRadius'],
   },
 });
+
+export const minervaPropTypes = {
+  ...systemPropTypes.space,
+  ...systemPropTypes.color,
+  ...systemPropTypes.layout,
+  ...systemPropTypes.typography,
+  ...systemPropTypes.flexbox,
+  ...systemPropTypes.border,
+  ...systemPropTypes.background,
+  ...systemPropTypes.position,
+  ...systemPropTypes.grid,
+  textDecoration: PropTypes.any,
+  textTransform: PropTypes.any,
+  transform: PropTypes.any,
+  lineHeight: PropTypes.any,
+  transition: PropTypes.any,
+  radiusLeft: PropTypes.any,
+  radiusRight: PropTypes.any,
+  radiusTop: PropTypes.any,
+  radiusBottom: PropTypes.any,
+};
 
 export const systemProps = compose(
   // customProps,

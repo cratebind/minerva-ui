@@ -1,7 +1,9 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
+import exact from 'prop-types-exact';
 import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
-import { MinervaProps, systemProps } from '../layout';
+import { MinervaProps, systemProps, minervaPropTypes } from '../layout';
 // import { useTheme } from '../theme';
 import styled from 'styled-components';
 
@@ -30,8 +32,6 @@ export const Button = forwardRef(function Button(
   }: ButtonProps,
   ref
 ) {
-  // const theme = useTheme();
-
   return (
     <StyledButton
       ref={ref}
@@ -59,5 +59,16 @@ export const Button = forwardRef(function Button(
     </StyledButton>
   );
 });
+
+if (process.env.NODE_ENV !== 'production') {
+  Button.propTypes = exact({
+    ...minervaPropTypes,
+    children: PropTypes.node,
+    disabled: PropTypes.bool,
+    isLoading: PropTypes.bool,
+    onClick: PropTypes.func,
+    style: PropTypes.object,
+  });
+}
 
 export default Button;
