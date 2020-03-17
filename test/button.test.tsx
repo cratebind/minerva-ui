@@ -67,7 +67,7 @@ describe('<Button />', () => {
 
     const button = getByRole('button');
 
-    expect(button).toHaveStyleRule('background-color', '#9f7aea', {
+    expect(button).toHaveStyleRule('background-color', '#9061f9', {
       modifier: ':disabled',
     });
   });

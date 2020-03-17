@@ -99,7 +99,7 @@ describe('Colors', () => {
 
     const block = getByTestId('block');
 
-    expect(block).toHaveStyleRule('background-color', '#38b2ac');
+    expect(block).toHaveStyleRule('background-color', '#0694a2');
   });
 
   it('should allow custom theme colors', () => {
