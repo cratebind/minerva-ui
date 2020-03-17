@@ -103,7 +103,11 @@ export const Checkbox = forwardRef(function Checkbox(
 
   return (
     <CheckboxContainer as="label" ref={ref} {...rest}>
-      <CustomCheckboxContainer checked={checked} onChange={onChange}>
+      <CustomCheckboxContainer
+        data-testid="checkbox-container"
+        checked={checked}
+        onChange={onChange}
+      >
         <VisuallyHidden>
           <CustomCheckboxInput />
         </VisuallyHidden>
