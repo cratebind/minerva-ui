@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
 import * as ReactDOM from 'react-dom';
