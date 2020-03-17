@@ -8,6 +8,7 @@ const StyledAlert = styled(Box)<MinervaProps>(
     display: 'flex',
     padding: '16px 8px',
     backgroundColor: '#f8b4b4',
+    // TODO change background color based on status
   }),
   systemProps
 );
@@ -21,6 +22,8 @@ const StyledAlertTitle = styled('p')(
 );
 
 const StyledAlertDescription = styled.p``;
+
+// TODO add icon and change based on status
 
 export interface AlertProps extends MinervaProps {
   children?: React.ReactNode;
