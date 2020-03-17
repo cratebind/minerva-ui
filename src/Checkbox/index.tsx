@@ -23,7 +23,7 @@ export type ControlBoxProps = {
   theme?: any;
 };
 
-const ControlBox = styled('div')<ControlBoxProps>(
+const ControlBox = styled(Box)<ControlBoxProps>(
   (props: ControlBoxProps) => ({
     display: 'flex',
     alignItems: 'center',
@@ -53,7 +53,7 @@ const ControlBox = styled('div')<ControlBoxProps>(
   }),
   systemProps
 );
-
+//
 // const CheckboxIcon = ({ checked = false, fill = '#fff' }) => {
 //   return (
 //     <svg

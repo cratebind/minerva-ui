@@ -11,27 +11,7 @@ describe('Checkbox', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  // it('shows checkbox when checked', () => {
-  //   const div = document.createElement('div');
-  //   ReactDOM.render(<Checkbox checked />, div);
-  //   ReactDOM.unmountComponentAtNode(div);
-  // });
-
-  it('shows checkbox when checked', () => {
-    const labelText = 'Checked Checkbox';
-    const { container, getByLabelText } = render(
-      <ThemeProvider>
-        <Checkbox checked>{labelText}</Checkbox>
-      </ThemeProvider>
-    );
-    expect(container).toMatchSnapshot();
-
-    const checkbox = getByLabelText(labelText);
-
-    expect(checkbox).toHaveStyleRule('backgroundColor', '#5850ec');
-  });
-
-  it('shows checkbox when checked', () => {
+  it('shows white background when not checked', () => {
     const labelText = 'Checked Checkbox';
     const { getByTestId } = render(
       <ThemeProvider>
@@ -39,10 +19,34 @@ describe('Checkbox', () => {
       </ThemeProvider>
     );
     const checkbox = getByTestId('control-box');
-    expect(checkbox).toHaveStyleRule('backgroundColor', '#fff');
+
+    expect(checkbox).toHaveStyleRule('background-color', '#fff');
+  });
+
+  it('shows checkbox when checked', () => {
+    const labelText = 'Checked Checkbox';
+    const { getByTestId } = render(
+      <ThemeProvider>
+        <Checkbox checked>{labelText}</Checkbox>
+      </ThemeProvider>
+    );
+    const checkbox = getByTestId('control-box');
+
+    expect(checkbox).toHaveStyleRule('background-color', '#5850ec');
+  });
+
+  it('changes styles when checked', () => {
+    const labelText = 'Checked Checkbox';
+    const { getByTestId } = render(
+      <ThemeProvider>
+        <Checkbox>{labelText}</Checkbox>
+      </ThemeProvider>
+    );
+    const checkbox = getByTestId('control-box');
+    expect(checkbox).toHaveStyleRule('background-color', '#fff');
 
     fireEvent.click(checkbox);
 
-    expect(checkbox).toHaveStyleRule('backgroundColor', '#5850ec');
+    expect(checkbox).toHaveStyleRule('background-color', '#5850ec');
   });
 });

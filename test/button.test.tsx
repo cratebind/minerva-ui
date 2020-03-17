@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-import { Button } from '../src';
-import { ThemeProvider } from '../src';
+import { Button, ThemeProvider } from '../src';
 
 describe('<Button />', () => {
   it('should render', () => {
