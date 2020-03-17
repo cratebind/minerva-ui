@@ -18,7 +18,7 @@ exports[`Border Radius should render 1`] = `
 
 exports[`Colors should render 1`] = `
 .c0 {
-  background-color: #38b2ac;
+  background-color: #0694a2;
   display: block;
 }
 
