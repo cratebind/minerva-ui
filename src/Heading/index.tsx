@@ -38,8 +38,8 @@ export const Heading = forwardRef(function Heading(
 });
 
 Heading.defaultProps = {
-  size: 'xl',
-  lineHeight: 'normal',
+  // size: 'xl',
+  // lineHeight: 'normal',
 };
 
 export default Heading;
