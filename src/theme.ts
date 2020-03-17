@@ -13,6 +13,7 @@ export interface MinervaTheme extends Theme {
   Checkbox?: React.CSSProperties;
   Select?: React.CSSProperties;
   Tag?: React.CSSProperties;
+  Alert?: React.CSSProperties;
   defaultBorderColor?: string;
 }
 
@@ -52,6 +53,7 @@ const baseTheme: MinervaTheme = {
   Checkbox: {},
   Select: {},
   Tag: {},
+  Alert: {},
   defaultBorderColor: '#d2d6dc',
   colors: {
     // custom colors

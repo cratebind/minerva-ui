@@ -1,0 +1,34 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Alert from '../Alert';
+
+<Meta title="Elements|Alert" component={Alert} />
+
+# Alert
+
+Basic Alert component.
+
+```js
+import { Alert } from 'minerva-ui'
+```
+
+```jsx
+<Alert status="error" title="Whoa!" description="Something not great is happening." />
+```
+
+<Props of={Alert} />
+
+# Variants
+
+```jsx
+<Alert status="success" title="Congrats!" description="Something great is happening!" />
+```
+
+```jsx
+<Alert status="warning" description="Something is happening that isn't bad yet, but might be soon." />
+```
+
+```jsx
+<Alert status="info" title="Attention:" description="Something is happening and you should know about it." />
+```
+
+<Props of={Alert} />
