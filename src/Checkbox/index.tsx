@@ -35,7 +35,7 @@ const ControlBox = styled('div')<ControlBoxProps>(
     height: '16px',
     bg: 'primary',
     marginRight: '8px',
-    transition: 'all 200ms ease',
+    transition: 'background-color 120ms ease 0s, box-shadow 250ms ease 0s',
     borderColor: props.checked ? '#fff' : '#ecebed',
     backgroundImage: `url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E")`,
     // backgroundColor: props.checked
@@ -102,12 +102,12 @@ export const Checkbox = forwardRef(function Checkbox(
   const { children, checked = false, onChange, ...rest } = props;
 
   return (
-    <CheckboxContainer ref={ref} {...rest}>
+    <CheckboxContainer as="label" ref={ref} {...rest}>
       <CustomCheckboxContainer checked={checked} onChange={onChange}>
         <VisuallyHidden>
           <CustomCheckboxInput />
         </VisuallyHidden>
-        <ControlBox tabIndex={0} checked={checked} />
+        <ControlBox data-testid="control-box" tabIndex={0} checked={checked} />
       </CustomCheckboxContainer>
       {children}
     </CheckboxContainer>
