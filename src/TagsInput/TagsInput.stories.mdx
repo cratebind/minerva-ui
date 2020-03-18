@@ -1,0 +1,29 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import TagsInput from '../TagsInput';
+
+<Meta title="Elements|TagsInput" component={TagsInput} />
+
+# TagsInput
+
+```js
+import { TagsInput } from 'minerva-ui';
+```
+
+```jsx
+() => {
+  const [tags, setTags] = React.useState([]);
+
+  const addTag = e => {
+    const newTag = e.target.value;
+    if (e.key === 'Enter' && newTag) {
+    setTags(previousTags => [...previousTags, newTag ])
+    }
+  };
+
+  return <TagsInput tags={tags} onKeyDown={addTag} />;
+};
+```
+
+<Props of={TagsInput} />
+
