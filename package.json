@@ -82,6 +82,7 @@
     "@types/styled-system": "^5.1.9",
     "copy-to-clipboard": "^3.3.1",
     "eslint-config-cratebind": "^3.0.8",
+    "react-feather": "^2.0.3",
     "styled-components": "^5.0.0",
     "styled-system": "^5.1.5"
   },

@@ -16,6 +16,7 @@ import {
   Select,
   Tag,
   Image,
+  Icon,
 } from '../src';
 import { ThemeProvider } from '../src';
 
@@ -32,6 +33,7 @@ const basicComponents = {
   Text,
   Tag,
   Image,
+  // Icon,
   // Table,
   // Select,
 };
@@ -130,5 +132,60 @@ Object.entries(allComponents).forEach(([name, Component]) => {
     //     modifier: ':disabled',
     //   });
     // });
+  });
+});
+
+describe(`<Icon />`, () => {
+  it('should render', () => {
+    const testId = `component-icon`;
+    const { getByTestId } = render(
+      <ThemeProvider>
+        <Icon name="plus" data-testid={testId} />
+      </ThemeProvider>
+    );
+    expect(getByTestId(testId)).toBeInTheDocument();
+  });
+
+  it('should pass basic style props', () => {
+    const color = '#e3e3e3';
+    const { getByTestId } = render(
+      <ThemeProvider>
+        <Icon name="plus" data-testid="icon" size="36px" color={color} />
+      </ThemeProvider>
+    );
+
+    expect(getByTestId('icon')).toHaveStyleRule('color', color);
+    expect(getByTestId('icon')).toHaveStyleRule('height', '36px');
+  });
+
+  it('should return null and warn when passing an invalid name', () => {
+    // Silence output when errors / warnings are expected
+    console.warn = jest.fn();
+    const spy = jest.spyOn(global.console, 'warn');
+    const iconName = 'invalid-icon-name';
+
+    const { queryByTestId } = render(
+      <ThemeProvider>
+        <Icon name="invalid-icon-name" data-testid="icon" />
+      </ThemeProvider>
+    );
+
+    expect(queryByTestId('icon')).not.toBeInTheDocument();
+    expect(spy).toHaveBeenCalledWith(
+      `Could not find icon in theme with name of ${iconName}`
+    );
+  });
+
+  it('should pass shorthand props', () => {
+    const backgroundColor = '#e3e3e3';
+    const { getByTestId } = render(
+      <ThemeProvider>
+        <Icon name="plus" data-testid="icon" bg={backgroundColor} />
+      </ThemeProvider>
+    );
+
+    const component = getByTestId('icon');
+
+    expect(component).toHaveStyleRule('background-color', backgroundColor);
   });
 });
