@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { systemProps } from '../layout';
 import Input, { InputProps } from '../Input';
 import Tag from '../Tag';
 
