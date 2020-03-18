@@ -30,12 +30,42 @@ const initialState = {
     paddingRight: '16px',
     borderRadius: '5px',
   },
-  Input: { children: 'Input' },
-  Checkbox: { children: 'Checkbox' },
-  Link: { children: 'Link' },
-  Select: { children: 'Select' },
-  Table: { children: 'Table' },
-  Text: { children: 'Text' },
+  Input: {
+    customProps: {
+      value: '',
+    },
+  },
+  Checkbox: {
+    customProps: {
+      children: 'Checkbox',
+    },
+  },
+  Link: {
+    customProps: {
+      children: 'Link',
+    },
+  },
+  Select: {
+    customProps: {
+      value: 'option-1',
+      children: (
+        <>
+          <option value="option-1">Option 1</option>
+          <option value="option-2">Option 2</option>
+        </>
+      ),
+    },
+  },
+  Table: {
+    customProps: {
+      children: 'Table',
+    },
+  },
+  Text: {
+    customProps: {
+      children: 'Text',
+    },
+  },
 };
 
 const AppContext = React.createContext({

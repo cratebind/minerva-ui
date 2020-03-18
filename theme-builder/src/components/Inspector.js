@@ -179,6 +179,12 @@ const fieldNameOverrides = {
 function InspectorField({ name, value, onChange, type }) {
   const [open, setOpen] = useState(false);
 
+  // @TODO: Figure out how to main editable child components?
+  // For now, don't show JSX in children field because it'll display as [Object object]
+  if (name === 'children' && typeof value !== 'string') {
+    return null;
+  }
+
   return (
     <Flex
       alignItems="center"
