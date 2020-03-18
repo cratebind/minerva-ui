@@ -1,8 +1,20 @@
 import { Theme } from 'styled-system';
+import * as Icon from 'react-feather';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+
 // import { useContext } from 'react';
 // import { ThemeContext } from 'styled-components';
 
 const logoColor = '#551A8B';
+
+// https://gist.github.com/thevangelist/8ff91bac947018c9f3bfaad6487fa149
+function toKebabCase(string) {
+  return string
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/\s+/g, '-')
+    .toLowerCase();
+}
 
 export interface MinervaTheme extends Theme {
   Button?: React.CSSProperties;
@@ -13,10 +25,11 @@ export interface MinervaTheme extends Theme {
   Checkbox?: React.CSSProperties;
   Select?: React.CSSProperties;
   Tag?: React.CSSProperties;
+  icons: any;
   defaultBorderColor?: string;
 }
 
-const baseTheme: MinervaTheme = {
+const defaultTheme: MinervaTheme = {
   Button: {
     backgroundColor: '#fff',
     borderWidth: '1px',
@@ -53,6 +66,10 @@ const baseTheme: MinervaTheme = {
   Select: {},
   Tag: {},
   defaultBorderColor: '#d2d6dc',
+  icons: Object.keys(Icon).reduce((result, iconName) => {
+    result[toKebabCase(iconName)] = Icon[iconName];
+    return result;
+  }, {}),
   colors: {
     // custom colors
     // primary: '#6979F8',
@@ -437,8 +454,8 @@ const baseTheme: MinervaTheme = {
   },
 };
 
-// export function useTheme(): MinervaTheme {
-//   return useContext(ThemeContext);
-// }
+export function useTheme(): MinervaTheme {
+  return useContext(ThemeContext);
+}
 
-export default baseTheme;
+export default defaultTheme;

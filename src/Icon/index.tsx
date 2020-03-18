@@ -1,19 +1,46 @@
 import React, { forwardRef } from 'react';
 import { MinervaProps, Box } from '../layout';
-// import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
-
-// type BaseProps = MinervaProps &
-//   React.ImgHTMLAttributes<HTMLImageElement> ;
+import { useTheme } from '../theme';
 
 export interface IconProps extends MinervaProps {
   /**
-   * Path or URL to image source
+   * Name of icon
    */
-  // src?: string;
+  name: string;
+  /**
+   * Height and width of icon (in pixels)
+   */
+  size?: number | string;
+  /**
+   * Icon color
+   */
+  color?: string;
 }
 
-export const Icon = forwardRef(function Icon({ ...props }: IconProps, ref) {
-  return <Box as="svg" ref={ref} {...props} />;
+export const Icon = forwardRef(function Icon(
+  { size = '32px', name, color = '#000', ...props }: IconProps,
+  ref
+) {
+  const { icons } = useTheme();
+
+  if (!icons[name]) {
+    console.warn(`Could not find icon in theme with name of ${name}`);
+    return null;
+  }
+
+  const IconComponent = icons[name] || null;
+
+  return (
+    <Box
+      as={IconComponent}
+      width={size}
+      height={size}
+      stroke="currentColor"
+      color={color}
+      ref={ref}
+      {...props}
+    />
+  );
 });
 
 export default Icon;
