@@ -28,6 +28,7 @@
   },
   "husky": {
     "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --no-verify --hook",
       "pre-commit": "tsdx lint"
     }
   },
@@ -39,6 +40,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@storybook/addon-actions": "^5.3.14",
     "@storybook/addon-docs": "^5.3.14",
     "@storybook/addon-links": "^5.3.14",
@@ -79,6 +82,7 @@
     "@types/styled-system": "^5.1.9",
     "copy-to-clipboard": "^3.3.1",
     "eslint-config-cratebind": "^3.0.8",
+    "react-feather": "^2.0.3",
     "styled-components": "^5.0.0",
     "styled-system": "^5.1.5"
   },

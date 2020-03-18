@@ -1,0 +1,36 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Icon from '../Icon';
+
+<Meta title="Elements|Icon" component={Icon} />
+
+# Icon
+
+Basic icon component. SVGs can be added to the `icons` prop in your theme.
+
+The default theme includes [Feather Icons](https://feathericons.com/).
+
+```js
+import { Icon } from 'minerva-ui'
+```
+
+```jsx
+<Icon name="activity" />
+```
+
+## Color
+```jsx
+<>
+  <Icon name="plus" color="blue.600" />
+  <Icon name="activity" color="purple.500" />
+</>
+```
+
+## Size
+```jsx
+<>
+  <Icon name="plus" size="16px"  />
+  <Icon name="activity" size="32px"  />
+</>
+```
+
+<Props of={Icon} />
