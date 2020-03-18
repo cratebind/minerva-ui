@@ -18,21 +18,47 @@ import extraConfig from './utils';
 
 const customProps = system({
   textDecoration: true,
-  textTransform: true,
-  transform: true,
   lineHeight: true,
   transition: true,
+  overflowX: true,
+  overflowY: true,
+  textTransform: true,
+  animation: true,
+  appearance: true,
+  transform: true,
+  transformOrigin: true,
+  visibility: true,
+  whiteSpace: true,
+  userSelect: true,
+  pointerEvents: true,
+  wordBreak: true,
+  overflowWrap: true,
+  textOverflow: true,
+  boxSizing: true,
+  cursor: true,
+  resize: true,
+  listStyleType: true,
+  listStylePosition: true,
+  listStyleImage: true,
+  shadow: {
+    property: 'boxShadow',
+    scale: 'shadows',
+  },
   radiusLeft: {
     properties: ['borderTopLeftRadius', 'borderBottomLeftRadius'],
+    scale: 'radii',
   },
   radiusRight: {
     properties: ['borderTopRightRadius', 'borderBottomRightRadius'],
+    scale: 'radii',
   },
   radiusTop: {
     properties: ['borderTopLeftRadius', 'borderTopRightRadius'],
+    scale: 'radii',
   },
   radiusBottom: {
     properties: ['borderBottomLeftRadius', 'borderBottomRightRadius'],
+    scale: 'radii',
   },
 });
 
@@ -313,6 +339,6 @@ export const Block = styled(Box)(
 export const Flex = styled(Box)(
   {
     display: 'flex',
-  }
-  // systemProps
+  },
+  systemProps
 );

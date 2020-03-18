@@ -340,6 +340,18 @@ const defaultTheme: MinervaTheme = {
     '5xl': '3rem',
     '6xl': '4rem',
   },
+  breakpoints: ['640px', '768px', '1024px', '1280px'],
+  fonts: {
+    sans:
+      'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+    serif: 'Georgia,Cambria,"Times New Roman",Times,serif',
+    mono: 'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
+    body:
+      'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+    heading: 'inherit',
+    monospace:
+      'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace',
+  },
   shadows: {
     base: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
     sm: '0 1px 2px 0 rgba(0,0,0,.05)',
