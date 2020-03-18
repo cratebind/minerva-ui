@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { getByText } from '@testing-library/dom';
 import 'jest-styled-components';
 import { Tag } from '../src';
 import { ThemeProvider } from '../src';
@@ -17,44 +16,48 @@ describe('<Tag />', () => {
 
   it('should pass basic style props ', () => {
     const color = '#8B008B';
-    const { container } = render(
+    const { getByTestId } = render(
       <ThemeProvider>
-        <Tag color={color}>Magenta</Tag>
+        <Tag color={color} data-testid="tag">
+          Magenta
+        </Tag>
       </ThemeProvider>
     );
-    const tag = getByText(container, /magenta/i).closest('div');
+    const tag = getByTestId('tag');
     expect(tag).toHaveStyleRule('color', color);
   });
 
   it('should pass shorthand props', () => {
     const backgroundColor = '#008080';
-    const { container } = render(
+    const { getByTestId } = render(
       <ThemeProvider>
-        <Tag bg={backgroundColor}>Teal Tag</Tag>
+        <Tag bg={backgroundColor} data-testid="tag">
+          Teal Tag
+        </Tag>
       </ThemeProvider>
     );
-    const tag = getByText(container, /teal tag/i).closest('div');
+    const tag = getByTestId('tag');
     expect(tag).toHaveStyleRule('background-color', backgroundColor);
   });
 
   it('should display text', () => {
     const content = 'I AM A TAG';
-    const { container } = render(
+    const { getByTestId } = render(
       <ThemeProvider>
-        <Tag>{content}</Tag>
+        <Tag data-testid="tag">{content}</Tag>
       </ThemeProvider>
     );
-    const tag = getByText(container, /i am a tag/i);
+    const tag = getByTestId('tag');
     expect(tag).toHaveTextContent(content);
   });
 
   it('should show default background color', () => {
-    const { container } = render(
+    const { getByTestId } = render(
       <ThemeProvider>
-        <Tag>Test</Tag>
+        <Tag data-testid="tag">Test</Tag>
       </ThemeProvider>
     );
-    const tag = getByText(container, /test/i).closest('div');
+    const tag = getByTestId('tag');
     expect(tag).toHaveStyle('background-color: #EDF2F7');
   });
 
@@ -66,12 +69,12 @@ describe('<Tag />', () => {
       },
     };
 
-    const { container } = render(
+    const { getByTestId } = render(
       <ThemeProvider theme={theme}>
-        <Tag>Test</Tag>
+        <Tag data-testid="tag">Test</Tag>
       </ThemeProvider>
     );
-    const tag = getByText(container, /test/i).closest('div');
+    const tag = getByTestId('tag');
     expect(tag).toHaveStyle(`background-color: ${newColor}`);
   });
 });
