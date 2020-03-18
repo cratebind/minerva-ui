@@ -39,8 +39,19 @@ const App = () => {
 
 Theme styles for specific components can be provided in your `theme` object:
 
+### Extend Default Theme
 ```jsx
 () => {
+  // this theme builds on the existing default styles
+  const extendedTheme = {
+    Button: {
+      ...defaultTheme.Button
+      backgroundColor: 'midnightblue',
+      color: '#fff'
+    }
+  }
+
+  // this theme creates a new component style from scratch
   const theme = {
     Button: {
       backgroundColor: 'midnightblue',
@@ -49,9 +60,14 @@ Theme styles for specific components can be provided in your `theme` object:
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Button>Custom Button Styles</Button>
-    </ThemeProvider>
+    <>
+      <ThemeProvider theme={extendedTheme}>
+        <Button>Extended Button</Button>
+      </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <Button>Overridden Button</Button>
+      </ThemeProvider>
+    </>
   )
 }
 ```
