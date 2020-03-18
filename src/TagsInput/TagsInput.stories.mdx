@@ -4,7 +4,7 @@ import TagsInput from '../TagsInput';
 
 <Meta title="Elements|TagsInput" component={TagsInput} />
 
-# TagsInput
+# Tags Input
 
 ```js
 import { TagsInput } from 'minerva-ui';
@@ -13,17 +13,35 @@ import { TagsInput } from 'minerva-ui';
 ```jsx
 () => {
   const [tags, setTags] = React.useState([]);
+  const [inputVal, setInputVal] = React.useState('');
 
   const addTag = e => {
-    const newTag = e.target.value;
-    if (e.key === 'Enter' && newTag) {
-    setTags(previousTags => [...previousTags, newTag ])
-    }
+    setTags(previousTags => [...previousTags, inputVal]);
+    setInputVal('');
   };
 
-  return <TagsInput tags={tags} onKeyDown={addTag} />;
+  const removeTag = index => {
+    const updatedTags = tags.filter((_, i) => i !== index);
+    setTags(updatedTags);
+  };
+
+  return (
+    <TagsInput
+      value={inputVal}
+      tags={tags}
+      onKeyDown={e => {
+        if (e.key === 'Enter' && inputVal) {
+          addTag();
+        }
+        if (e.key === 'Backspace') {
+            removeTag(tags.length - 1)
+        }
+      }}
+      onChange={e => setInputVal(e.target.value)}
+      onClickIcon={removeTag}
+    />
+  );
 };
 ```
 
 <Props of={TagsInput} />
-

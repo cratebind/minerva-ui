@@ -1,6 +1,14 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { MinervaProps, systemProps, Box } from '../layout';
+import Icon from '../Icon';
+
+const IconContainer = styled('div')`
+  margin-left: 5px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 const StyledTag = styled(Box)<MinervaProps>(
   props => ({
@@ -13,19 +21,34 @@ const StyledTag = styled(Box)<MinervaProps>(
   systemProps
 );
 
+const TagContent = styled('div')`
+  display: flex;
+  align-items: center;
+`;
+
 const TagLabel = styled.p``;
 
 export interface TagProps extends MinervaProps {
   children?: React.ReactNode;
+  showIcon?: boolean;
+  icon?: string;
+  onClickIcon?: (event: any) => void;
 }
 
 export const Tag = forwardRef(function Tag(
-  { children, ...props }: TagProps,
+  { children, showIcon, icon, onClickIcon, ...props }: TagProps,
   ref
 ) {
   return (
     <StyledTag ref={ref} {...props}>
-      <TagLabel>{children}</TagLabel>
+      <TagContent>
+        <TagLabel>{children}</TagLabel>
+        {showIcon && (
+          <IconContainer onClick={onClickIcon}>
+            <Icon name={icon || 'x'} size="14px" />
+          </IconContainer>
+        )}
+      </TagContent>
     </StyledTag>
   );
 });
