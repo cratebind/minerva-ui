@@ -176,34 +176,6 @@ describe(`<Icon />`, () => {
     );
   });
 
-  // it('should forward ref', () => {
-  //   // console.log(`COMPONENT: ${name}`);
-  //   const refId = 'ref-id';
-  //   const RefComp = () => {
-  //     const [id, setId] = useState('');
-  //     const ref = useRef<any | null>();
-
-  //     useEffect(() => {
-  //       if (ref && ref.current) {
-  //         setId(ref.current.id);
-  //       }
-  //       // setId
-  //       // console.log(ref);
-  //     }, [ref]);
-
-  //     return (
-  //       <ThemeProvider>
-  //         <Icon name="plus" ref={ref} id={refId} data-testid="icon" />
-  //         <div data-testid="ref-content">{id}</div>
-  //       </ThemeProvider>
-  //     );
-  //   };
-
-  //   const { getByTestId } = render(<RefComp />);
-
-  //   expect(getByTestId('ref-content')).toHaveTextContent(refId);
-  // });
-
   it('should pass shorthand props', () => {
     const backgroundColor = '#e3e3e3';
     const { getByTestId } = render(
@@ -216,25 +188,4 @@ describe(`<Icon />`, () => {
 
     expect(component).toHaveStyleRule('background-color', backgroundColor);
   });
-
-  // it('should pass shorthand pseudo props', () => {
-  //   const backgroundColor = '#e3e3e3';
-  //   const { getByTestId } = render(
-  //     <ThemeProvider>
-  //       <Component
-  //         data-testid={name}
-  //         _disabled={{ backgroundColor }}
-  //         disabled
-  //       >
-  //         Disabled Component
-  //       </Component>
-  //     </ThemeProvider>
-  //   );
-
-  //   const button = getByTestId(name);
-
-  //   expect(button).toHaveStyleRule('background-color', backgroundColor, {
-  //     modifier: ':disabled',
-  //   });
-  // });
 });
