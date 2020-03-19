@@ -39,7 +39,7 @@ const ControlBox = styled(Box)<ControlBoxProps>(
     borderColor: props.checked ? '#fff' : '#ecebed',
     backgroundImage: `url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E")`,
     // backgroundColor: props.checked
-    //   ? .logoColor
+    //   ? props.theme.colors.logoColor
     //   : '0px 7px 20px rgba(0, 0, 0, 0.00)',
     backgroundColor: props.checked ? '#5850ec' : '#fff',
     // boxShadow: props.checked
