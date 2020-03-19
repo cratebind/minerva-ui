@@ -5,6 +5,8 @@ import baseTheme from '../theme';
 
 # Border Radius
 
+## Aliases
+
 ```jsx
 () => (
   <Flex
@@ -40,3 +42,21 @@ import baseTheme from '../theme';
     ))}
   </tbody>
 </table>
+
+## Custom Props
+```jsx isManual=true
+const Card = (props) => <Flex p={5} bg="white" borderWidth="1px" alignItems="center" justifyContent="center" {...props} />
+
+render(
+  <Flex
+    backgroundColor="#edf2f7"
+    padding="10px"
+    justifyContent="space-between"
+  >
+    <Card radiusLeft="4px">Radius Left: 4px</Card>
+    <Card radiusRight="md">Radius Right: 'md'</Card>
+    <Card radiusTop="md">Radius Top: 'md'</Card>
+    <Card radiusBottom="md">Radius Bottom: 'md'</Card>
+  </Flex>
+)
+```
