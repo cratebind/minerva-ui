@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import 'jest-styled-components';
-import { Input, Tag, ThemeProvider } from '../src';
+import { ThemeProvider, TagsInput } from '../src';
 
 const ExampleTagInput = props => {
   const initialState: string[] = [];
@@ -20,8 +20,9 @@ const ExampleTagInput = props => {
 
   return (
     <ThemeProvider>
-      <ul
-        data-testid="container"
+      <TagsInput
+        value={inputVal}
+        tags={tags}
         onKeyDown={e => {
           if (e.key === 'Enter' && inputVal) {
             addTag(e);
@@ -30,30 +31,9 @@ const ExampleTagInput = props => {
             removeTag(tags.length - 1);
           }
         }}
-      >
-        {tags &&
-          tags.map((tag, i) => (
-            <li key={tag + i}>
-              <Tag
-                data-testid="tag"
-                showIcon={true}
-                onClickIcon={e => {
-                  e.preventDefault();
-                  removeTag('initial tag');
-                }}
-              >
-                {tag}
-              </Tag>
-            </li>
-          ))}
-        <li>
-          <Input
-            data-testid="input"
-            value={inputVal}
-            onChange={e => setInputVal(e.target.value)}
-          />
-        </li>
-      </ul>
+        onChange={e => setInputVal(e.target.value)}
+        onClickIcon={removeTag}
+      />
     </ThemeProvider>
   );
 };

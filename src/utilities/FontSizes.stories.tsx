@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Block } from '..';
 import defaultTheme from '../theme';
 
-const { fontSizes } = defaultTheme;
+const { fontSizes }: any = defaultTheme;
 
 export default {
   title: 'Utilities|FontSizes',
