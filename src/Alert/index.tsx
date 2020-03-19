@@ -69,6 +69,4 @@ export const Alert = forwardRef(function Alert(
   );
 });
 
-Alert.defaultProps = {};
-
 export default Alert;
