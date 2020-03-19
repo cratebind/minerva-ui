@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Input, { InputProps } from '../Input';
 import Tag from '../Tag';
@@ -39,9 +39,11 @@ export const TagsInput = function TagsInput({
   onClickIcon,
   ...props
 }: TagsInput) {
-  const inputRef: React.RefObject<HTMLInputElement> = createRef();
+  const inputRef = React.createRef<HTMLInputElement>();
   return (
-    <StyledTagsInput onClick={() => inputRef.current.focus()}>
+    <StyledTagsInput
+      onClick={() => inputRef && inputRef.current && inputRef.current.focus()}
+    >
       {tags &&
         tags.map((tag, i) => (
           <li key={tag + i}>
