@@ -106,7 +106,8 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "<rootDir>/src/CodeBlock.*",
-      "(.d.ts)$"
+      "(.d.ts)$",
+      ".stories.tsx$"
     ]
   },
   "config": {
