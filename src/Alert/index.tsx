@@ -6,6 +6,7 @@ import Icon from '../Icon';
 const StyledAlert = styled(Flex)(
   props => ({
     padding: '16px',
+    borderRadius: '5px',
   }),
   systemProps
 );
@@ -22,7 +23,7 @@ const StyledAlertDescription = styled.p``;
 
 export interface AlertProps extends MinervaProps {
   children?: React.ReactNode;
-  status?: string;
+  status?: 'error' | 'success' | 'warning' | 'info';
   title?: string;
   description?: string;
   color?: string;
@@ -30,39 +31,48 @@ export interface AlertProps extends MinervaProps {
   props?: any;
 }
 
+// @TODO: Move these to the theme so they can be customized
+const alertTypes = {
+  error: {
+    statusColor: '#f8b4b4',
+    statusIcon: 'alert-circle',
+  },
+  success: {
+    statusColor: '#bcf0da',
+    statusIcon: 'check-circle',
+  },
+  warning: {
+    statusColor: '#fdf6b2',
+    statusIcon: 'alert-triangle',
+  },
+  info: {
+    statusColor: '#c3ddfd',
+    statusIcon: 'info',
+  },
+};
+
 export const Alert = forwardRef(function Alert(
   { title, description, status, color, icon, ...props }: AlertProps,
   ref
 ) {
-  var statusColor;
-  var iconName;
-  switch (status) {
-    case 'error':
-      statusColor = '#f8b4b4';
-      iconName = 'alert-circle';
-      break;
-    case 'success':
-      statusColor = '#bcf0da';
-      iconName = 'check-circle';
-      break;
-    case 'warning':
-      statusColor = '#fdf6b2';
-      iconName = 'alert-triangle';
-      break;
-    case 'info':
-      statusColor = '#c3ddfd';
-      iconName = 'info';
-      break;
-    default:
-      statusColor = '#e5e7eb';
-  }
+  const { statusColor, statusIcon } =
+    // if status is provided and is a provided alertType, return it
+    status && Object.keys(alertTypes).includes(status)
+      ? alertTypes[status]
+      : {
+          statusColor: '#e5e7eb',
+          statusIcon: null,
+        };
+
+  const alertIcon = icon || statusIcon;
+
   return (
     <StyledAlert
       ref={ref}
-      {...props}
       backgroundColor={color ? color : statusColor}
+      {...props}
     >
-      <Icon name={icon ? icon : iconName} size="20px" />
+      {alertIcon && <Icon name={alertIcon} size="20px" />}
       <StyledAlertTitle>{title}</StyledAlertTitle>
       <StyledAlertDescription>{description}</StyledAlertDescription>
     </StyledAlert>
