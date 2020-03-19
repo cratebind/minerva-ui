@@ -45,6 +45,7 @@ export const TagsInput = function TagsInput({
         tags.map((tag, i) => (
           <li key={tag + i}>
             <Tag
+              data-testid="tag"
               showIcon={true}
               onClickIcon={e => {
                 e.preventDefault();
@@ -55,8 +56,8 @@ export const TagsInput = function TagsInput({
             </Tag>
           </li>
         ))}
-      <li data-testid="input">
-        <StyledInput {...props} />
+      <li>
+        <StyledInput data-testid="input" {...props} />
       </li>
     </StyledTagsInput>
   );

@@ -51,11 +51,12 @@ describe('<TagsInput />', () => {
     });
     expect(input).toHaveValue(content);
   });
-  it('should contain a value tag and a cleared input upon pressing Enter key', () => {
+
+  it('should display a tag and clear the input upon pressing the Enter key', async () => {
     const content = 'test';
     const { getByTestId } = render(<ExampleTagInput />);
     const input = getByTestId('input');
-    const container = getByTestId('container');
+
     fireEvent.change(input, {
       target: {
         value: content,
@@ -63,19 +64,19 @@ describe('<TagsInput />', () => {
     });
     expect(input).toHaveValue(content);
 
-    fireEvent.keyDown(container, {
+    fireEvent.keyDown(input, {
       key: 'Enter',
     });
+
     expect(input).toHaveValue('');
     const tag = getByTestId('tag');
     expect(tag).toBeInTheDocument();
   });
 
-  it('should remove the value tag upon pressing Backspace key', () => {
+  it('should remove the value tag upon pressing the Backspace key', () => {
     const content = 'test';
     const { getByTestId } = render(<ExampleTagInput />);
     const input = getByTestId('input');
-    const container = getByTestId('container');
 
     fireEvent.change(input, {
       target: {
@@ -83,16 +84,17 @@ describe('<TagsInput />', () => {
       },
     });
 
-    fireEvent.keyDown(container, {
+    fireEvent.keyDown(input, {
       key: 'Enter',
     });
 
     const tag = getByTestId('tag');
     expect(tag).toBeInTheDocument();
 
-    fireEvent.keyDown(container, {
+    fireEvent.keyDown(input, {
       key: 'Backspace',
     });
+
     expect(tag).not.toBeInTheDocument();
   });
 });
