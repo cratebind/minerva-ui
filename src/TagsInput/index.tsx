@@ -39,7 +39,7 @@ export const TagsInput = function TagsInput({
   onClickIcon,
   ...props
 }: TagsInput) {
-  const inputRef: React.RefObject<HTMLInputElement> = React.createRef();
+  const inputRef: React.RefObject<HTMLInputElement> = createRef();
   return (
     <StyledTagsInput onClick={() => inputRef.current.focus()}>
       {tags &&
