@@ -60,7 +60,6 @@ exports[`<TagsInput /> should render 1`] = `
 <div>
   <ul
     class="c0"
-    data-testid="input-tags-container"
   >
     <li>
       <input
