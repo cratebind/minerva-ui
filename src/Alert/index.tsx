@@ -7,6 +7,7 @@ const StyledAlert = styled(Flex)(
   props => ({
     padding: '16px',
     borderRadius: '5px',
+    alignItems: 'center',
   }),
   systemProps
 );
@@ -14,7 +15,7 @@ const StyledAlert = styled(Flex)(
 const StyledAlertTitle = styled('p')(
   {
     fontWeight: 'bold',
-    margin: '0 5px 0 8px',
+    marginRight: '5px',
   },
   systemProps
 );
@@ -25,7 +26,6 @@ export interface AlertProps extends MinervaProps {
   children?: React.ReactNode;
   status?: 'error' | 'success' | 'warning' | 'info';
   title?: string;
-  description?: string;
   color?: string;
   icon?: string;
   props?: any;
@@ -52,7 +52,7 @@ const alertTypes = {
 };
 
 export const Alert = forwardRef(function Alert(
-  { title, description, status, color, icon, ...props }: AlertProps,
+  { title, children, status, color, icon, ...props }: AlertProps,
   ref
 ) {
   const { statusColor, statusIcon } =
@@ -72,9 +72,9 @@ export const Alert = forwardRef(function Alert(
       backgroundColor={color ? color : statusColor}
       {...props}
     >
-      {alertIcon && <Icon name={alertIcon} size="20px" />}
-      <StyledAlertTitle>{title}</StyledAlertTitle>
-      <StyledAlertDescription>{description}</StyledAlertDescription>
+      {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
+      {title && <StyledAlertTitle>{title}</StyledAlertTitle>}
+      <StyledAlertDescription>{children}</StyledAlertDescription>
     </StyledAlert>
   );
 });
