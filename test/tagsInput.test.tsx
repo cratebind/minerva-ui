@@ -27,7 +27,7 @@ const ExampleTagInput = props => {
           if (e.key === 'Enter' && inputVal) {
             addTag(e);
           }
-          if (e.key === 'Backspace') {
+          if (e.key === 'Backspace' && !inputVal) {
             removeTag(tags.length - 1);
           }
         }}
