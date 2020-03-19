@@ -44,7 +44,7 @@ export const Tag = forwardRef(function Tag(
       <TagContent>
         <TagLabel>{children}</TagLabel>
         {showIcon && (
-          <IconContainer onClick={onClickIcon}>
+          <IconContainer data-testid="input-tag-icon" onClick={onClickIcon}>
             <Icon name={icon || 'x'} size="14px" />
           </IconContainer>
         )}
