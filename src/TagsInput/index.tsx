@@ -55,7 +55,7 @@ export const TagsInput = function TagsInput({
             </Tag>
           </li>
         ))}
-      <li>
+      <li data-testid="input">
         <StyledInput {...props} />
       </li>
     </StyledTagsInput>
