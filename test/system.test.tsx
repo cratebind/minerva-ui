@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
 import {
+  Alert,
   Button,
   Checkbox,
   Heading,
@@ -21,6 +22,7 @@ import {
 import { ThemeProvider } from '../src';
 
 const basicComponents = {
+  Alert,
   Button,
   Checkbox,
   Heading,
