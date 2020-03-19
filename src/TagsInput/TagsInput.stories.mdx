@@ -16,7 +16,7 @@ import { TagsInput } from 'minerva-ui';
   const [inputVal, setInputVal] = React.useState('');
 
   const addTag = e => {
-    setTags(previousTags => [...previousTags, inputVal]);
+    setTags([...tags, inputVal]);
     setInputVal('');
   };
 
