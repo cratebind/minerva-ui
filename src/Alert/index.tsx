@@ -4,9 +4,9 @@ import { MinervaProps, systemProps, Flex } from '../layout';
 import Icon from '../Icon';
 
 const StyledAlert = styled(Flex)(
-  props => ({
+  {
     padding: '16px',
-  }),
+  },
   systemProps
 );
 
@@ -25,13 +25,13 @@ export interface AlertProps extends MinervaProps {
   status?: string;
   title?: string;
   description?: string;
-  color?: string;
+  alertBackground?: string;
   icon?: string;
   props?: any;
 }
 
 export const Alert = forwardRef(function Alert(
-  { title, description, status, color, icon, ...props }: AlertProps,
+  { title, description, status, alertBackground, icon, ...props }: AlertProps,
   ref
 ) {
   var statusColor;
@@ -60,7 +60,7 @@ export const Alert = forwardRef(function Alert(
     <StyledAlert
       ref={ref}
       {...props}
-      backgroundColor={color ? color : statusColor}
+      backgroundColor={alertBackground ? alertBackground : statusColor}
     >
       <Icon name={icon ? icon : iconName} size="20px" />
       <StyledAlertTitle>{title}</StyledAlertTitle>
