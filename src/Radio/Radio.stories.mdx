@@ -12,7 +12,7 @@ import { RadioGroup, Radio } from 'minerva-ui';
 
 ```jsx
 () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState('test');
   return (
     <RadioGroup onChange={e => setValue(e.target.value)} selectedValue={value}>
       <Radio value={'test'}>test</Radio>
@@ -23,4 +23,8 @@ import { RadioGroup, Radio } from 'minerva-ui';
 };
 ```
 
-<Props of={Radio} />;
+#### RadioGroup Props
+<Props of={RadioGroup} />
+
+#### Radio Props
+<Props of={Radio} />
