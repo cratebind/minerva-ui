@@ -1,12 +1,12 @@
-<Meta title="Examples|Navigation" />
-
-# Navigation
+---
+title: 'Navigation'
+---
 
 ## Header
 
-```jsx
+```jsx live
 <Flex bg="indigo.800" color="#fff" p={6} justifyContent="space-between" alignItems="center">
-  <Text fontWeight="bold" fontSize="xl" mr={6}>Minerva UI</Text>
+  <Text fontWeight="bold" color="#fff" m={0} fontSize="xl" mr={6}>Minerva UI</Text>
   <Flex justifyContent="flex-start" flexGrow={1}>
     <Link href="#" color="indigo.200" _hover={{ color: '#fff' }} mr={4}>Docs</Link>
     <Link href="#" color="indigo.200" _hover={{ color: '#fff' }} mr={4}>Examples</Link>
@@ -17,7 +17,11 @@
       href="#"
       px={4}
       py={2}
+      color="white"
+      borderColor="white"
+      borderStyle="solid"
       borderWidth="1px"
+      textDecoration="none"
       borderRadius="md"
       _hover={{ color: 'indigo.800', backgroundColor: '#fff'}}
     >
