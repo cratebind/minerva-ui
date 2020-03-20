@@ -31,15 +31,11 @@ const StyledInput = styled('input')(
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
 
 export interface InputProps extends BaseProps {
-  children?: React.ReactNode;
   /** Toggles disabled pseudo class */
   disabled?: boolean;
 }
 
-export const Input = forwardRef(function Input(
-  { children, ...props }: InputProps,
-  ref
-) {
+export const Input = forwardRef(function Input({ ...props }: InputProps, ref) {
   return <StyledInput ref={ref} {...props} />;
 });
 

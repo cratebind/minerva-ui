@@ -30,6 +30,7 @@ export { default as Input } from './Input';
 export { RadioGroup, Radio } from './Radio';
 export { default as InputField } from './InputField';
 export { default as Select } from './Select';
+export { default as TagsInput } from './TagsInput';
 
 /**
  * Elements

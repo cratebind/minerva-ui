@@ -8,15 +8,30 @@ exports[`<Tag /> should render 1`] = `
   padding: 8px 10px;
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 <div>
   <div
     class="sc-AxirZ c0"
   >
-    <p
-      class=""
+    <div
+      class="c1"
     >
-      Test
-    </p>
+      <p
+        class=""
+      >
+        Test
+      </p>
+    </div>
   </div>
 </div>
 `;
