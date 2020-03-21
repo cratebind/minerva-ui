@@ -7,6 +7,8 @@ import { useAppContext } from './AppContext';
 import '@reach/dialog/styles.css';
 import { useRef } from 'react';
 
+const isBrowser = typeof window !== `undefined`;
+
 const StyledDialog = styled(Dialog)`
   position: relative;
   padding: 20px;
@@ -36,12 +38,14 @@ export default function ThemeModal(props) {
     }
   };
 
-  const data = new Blob([JSON.stringify(filteredStyles)], {
-    type: 'text/plain;charset=utf-8',
-  });
+  const data = isBrowser
+    ? new Blob([JSON.stringify(filteredStyles)], {
+        type: 'text/plain;charset=utf-8',
+      })
+    : {};
 
   // create ObjectURL to use for downloading
-  const url = window.URL.createObjectURL(data);
+  const url = isBrowser ? window.URL.createObjectURL(data) : '';
 
   return (
     <StyledDialog

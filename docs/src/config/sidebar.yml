@@ -1,21 +1,22 @@
 # Sidebar navigation
 
-- label: 'Introduction'
+- label: 'Getting Started'
   link: '/'
-- label: 'Getting started'
-  link: '/getting-started'
 - label: 'Theming'
   link: '/theming'
 - label: 'Utilities'
   link: '/utilities'
 - label: 'Theme Builder ⚠️'
   link: '/theme-editor'
-- label: Elements
-  items:
-    - label: 'Button'
-      link: '/elements/Button'
-    - label: 'Checkbox'
-      link: '/elements/Checkbox'
+  external: true
+# - label: Elements
+#   items:
+#     - label: 'Button'
+#       link: '/elements/Button'
+#     - label: 'Checkbox'
+#       link: '/elements/Checkbox'
+#     - label: 'Heading'
+#       link: '/elements/Heading'
 - label: Examples
   items:
     - label: 'Buttons'
