@@ -7,6 +7,7 @@ exports[`<TagsInput /> should render 1`] = `
   padding-left: 12px;
   padding-right: 32px;
   border-width: 1px;
+  font-size: 16px;
   border-radius: 4px;
   -webkit-transition: all 250ms ease 0s;
   transition: all 250ms ease 0s;

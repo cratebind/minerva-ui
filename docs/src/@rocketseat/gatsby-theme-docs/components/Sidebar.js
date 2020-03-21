@@ -30,12 +30,29 @@ export default function Sidebar({ isMenuOpen }) {
     site: {
       siteMetadata: { footer, basePath },
     },
+    allMdx,
   } = useStaticQuery(graphql`
     {
       site {
         siteMetadata {
           footer
           basePath
+        }
+      }
+      allMdx(
+        filter: { fields: { slug: { regex: "/(elements)/" } } }
+        sort: { fields: [frontmatter___title], order: ASC }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
+          }
         }
       }
     }
@@ -79,6 +96,19 @@ export default function Sidebar({ isMenuOpen }) {
 
             return <Item key={id}>{renderLink(link, label)}</Item>;
           })}
+          <ListWithSubItems text="Elements">
+            {allMdx.edges.map(({ node: { id, fields, frontmatter } }) => {
+              if (!frontmatter.title) {
+                console.warn(`Missing title for file at ${fields.slug}`);
+              }
+
+              return (
+                <Item key={id}>
+                  {renderLink(fields.slug, frontmatter.title)}
+                </Item>
+              );
+            })}
+          </ListWithSubItems>
         </List>
       </nav>
       <footer>

@@ -1,0 +1,45 @@
+---
+title: 'Table'
+---
+
+import { Table, TableHeader, TableRow, TableHeaderCell, TableBody, Link } from 'minerva-ui';
+
+Basic styled table component
+
+```js
+import { Table } from 'minerva-ui'
+```
+
+```jsx live
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHeaderCell>Name</TableHeaderCell>
+      <TableHeaderCell>Job</TableHeaderCell>
+      <TableHeaderCell>Status</TableHeaderCell>
+      <TableHeaderCell>Role</TableHeaderCell>
+      <TableHeaderCell />
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Test</TableCell>
+      <TableCell>Tester</TableCell>
+      <TableCell>Testing</TableCell>
+      <TableCell>Test Master</TableCell>
+      <TableCell>
+        <Link>Edit</Link>
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Test</TableCell>
+      <TableCell>Tester</TableCell>
+      <TableCell>Testing</TableCell>
+      <TableCell>Test Master</TableCell>
+      <TableCell>
+        <Link>Edit</Link>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```

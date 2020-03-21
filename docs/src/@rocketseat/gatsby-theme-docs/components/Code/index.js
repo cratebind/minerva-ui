@@ -50,7 +50,19 @@ export default function CodeHighlight({
 
   if (live) {
     return (
-      <Minerva.ThemeProvider>
+      <Minerva.ThemeProvider
+        theme={{
+          ...Minerva.defaultTheme,
+          Input: {
+            borderStyle: 'solid',
+            borderColor: '#d2d6dc',
+          },
+          Link: {
+            fontWeight: 400,
+            textDecoration: 'none',
+          },
+        }}
+      >
         <LiveProvider
           code={codeString}
           noInline={noInline}

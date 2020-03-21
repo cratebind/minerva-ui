@@ -9,6 +9,7 @@ const StyledInput = styled('input')(
     paddingLeft: '12px',
     paddingRight: '32px',
     borderWidth: '1px',
+    fontSize: '16px',
     borderRadius: '4px',
     transition: 'all 250ms ease 0s',
     outline: 'none',
