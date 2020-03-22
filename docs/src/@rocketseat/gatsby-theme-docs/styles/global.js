@@ -9,14 +9,13 @@ export default function GlobalStyle() {
   return (
     <Global
       styles={css`
-        @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
         *,
         *::after,
         *::before {
           margin: 0;
           padding: 0;
           box-sizing: border-box;
+          border-color: #d2d6dc;
         }
 
         *::selection {
@@ -35,26 +34,24 @@ export default function GlobalStyle() {
         }
 
         h1 {
-          font-size: 32px;
-          color: #333;
+          font-size: 36px;
           font-weight: 700;
           margin-bottom: 24px;
         }
 
         h2 {
-          font-size: 24px;
-          padding-bottom: 8px;
+          font-size: 30px;
           font-weight: 600;
-          color: #333;
+          /* color: #333; */
           /* border-bottom: 1px solid #eee; */
         }
 
         h3 {
-          font-size: 18px;
+          font-size: 24px;
         }
 
         h4 {
-          font-size: 16px;
+          font-size: 20px;
         }
 
         h2,
@@ -62,9 +59,10 @@ export default function GlobalStyle() {
         h4,
         h5,
         h6 {
-          color: #737380;
-          margin: 24px 0 16px 0;
-          font-weight: normal;
+          /* color: #212121; */
+          color: #161e2e;
+          /* margin: 24px 0 16px 0; */
+          margin: 24px 0;
         }
 
         p {
@@ -94,9 +92,9 @@ export default function GlobalStyle() {
           font-weight: bold;
 
           &:hover {
-            color: ${theme.colors.primary}!important;
+            /* color: ${theme.colors.primary}!important; */
             transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
-            opacity: 1 !important;
+            /* opacity: 1 !important; */
           }
         }
 
@@ -139,6 +137,7 @@ export default function GlobalStyle() {
 
         ul,
         ol {
+          list-style: none;
           color: #737380;
           padding-left: 15px;
           margin-bottom: 16px;

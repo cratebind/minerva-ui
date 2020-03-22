@@ -40,7 +40,7 @@ export default function Sidebar({ isMenuOpen }) {
         }
       }
       allMdx(
-        filter: { fields: { slug: { regex: "/(elements)/" } } }
+        filter: { fields: { slug: { regex: "/(components)/" } } }
         sort: { fields: [frontmatter___title], order: ASC }
       ) {
         edges {
@@ -61,10 +61,19 @@ export default function Sidebar({ isMenuOpen }) {
   const data = useSidebar();
 
   function renderLink(link, label) {
-    return isExternalUrl(link) ? (
-      <ExternalLink link={link} label={label} />
+    const isThemeBuilder = link.includes('theme-builder')
+    return isExternalUrl(link) || isThemeBuilder ? (
+      <ExternalLink
+        style={{ paddingLeft: '10px !important' }}
+        link={link}
+        label={label}
+      />
     ) : (
-      <InternalLink link={link} label={label} />
+      <InternalLink
+        style={{ paddingLeft: '10px !important' }}
+        link={link}
+        label={label}
+      />
     );
   }
 
@@ -96,7 +105,7 @@ export default function Sidebar({ isMenuOpen }) {
 
             return <Item key={id}>{renderLink(link, label)}</Item>;
           })}
-          <ListWithSubItems text="Elements">
+          <ListWithSubItems text="Components">
             {allMdx.edges.map(({ node: { id, fields, frontmatter } }) => {
               if (!frontmatter.title) {
                 console.warn(`Missing title for file at ${fields.slug}`);

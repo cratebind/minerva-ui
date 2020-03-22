@@ -7,20 +7,19 @@ Utility props are provided as aliases for most components. The style is heavily 
 They also allow you to use the shorthand methods from [Styled System](https://styled-system.com/api)
 
 For example:
-```jsx
-() => (
-  <>
-    {/* enter a custom pixel value */}
-    <Button fontSize="12px">Save</Button>
-    {/* or enter the value named "sm" in the theme, which is .875rem by default */}
-    <Button
-      fontSize="lg"
-      ml="10px" // translates to 'margin-left' using styled-system's shorthand properties
-    >
-      Save
-    </Button>
-  </>
-)
+```jsx live
+<>
+  {/* enter a custom pixel value */}
+  <Button fontSize="12px">Save</Button>
+  {/* or enter the value named "sm" in the theme, which is .875rem by default */}
+  {/* `ml` translates to 'margin-left' using styled-system's shorthand properties */}
+  <Button
+    fontSize="lg"
+    ml="10px"
+  >
+    Save
+  </Button>
+</>
 ```
 
 ## Styling Props Example
@@ -28,42 +27,40 @@ For example:
 Here's the ["Card" example](https://tailwindcss.com/components/cards) by Tailwind recreated using this API:
 
 ```jsx live
-() => (
-  <Flex
-    flexDirection="column"
-    boxShadow="lg"
-    borderRadius="md"
-    maxWidth="24rem"
-    overflow="hidden"
-  >
-    <Image
-      w="100%"
-      height="auto"
-      src="https://tailwindcss.com/img/card-top.jpg"
-      alt="Sunset in the mountains"
-    />
-    <Flex flexDirection="column" px={6} py={4}>
-      <Text fontWeight="bold" fontSize="xl" mb={2} color="gray.700">The Coldest Sunset</Text>
-      <Text color="gray.700" lineHeight="normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</Text>
-    </Flex>
-    <Flex px={6} py={4}>
-      <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1} mr={2}>
-        #photography
-      </Block>
-      <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1} mr={2}>
-        #travel
-      </Block>
-      <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1}>
-        #winter
-      </Block>
-    </Flex>
+<Flex
+  flexDirection="column"
+  boxShadow="lg"
+  borderRadius="md"
+  maxWidth="24rem"
+  overflow="hidden"
+>
+  <Image
+    w="100%"
+    height="auto"
+    src="https://tailwindcss.com/img/card-top.jpg"
+    alt="Sunset in the mountains"
+  />
+  <Flex flexDirection="column" px={6} py={4}>
+    <Text fontWeight="bold" fontSize="xl" mb={2} color="gray.700">The Coldest Sunset</Text>
+    <Text color="gray.700" lineHeight="normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</Text>
   </Flex>
-)
+  <Flex px={6} py={4}>
+    <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1} mr={2}>
+      #photography
+    </Block>
+    <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1} mr={2}>
+      #travel
+    </Block>
+    <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1}>
+      #winter
+    </Block>
+  </Flex>
+</Flex>
 ```
 
 Once you've settled on your styles, you can then easily extract components into your own custom components without sacrificing control:
 
-```jsx isManual=true
+```jsx live noInline
 // make sure to pass children and "forward" all props to your component
 const Tag = ({ children, ...props }) => (
   <Block color="gray.700" bg="gray.200" borderRadius="full" px={3} py={1} {...props}>

@@ -3,6 +3,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import PropTypes from 'prop-types';
 import theme from 'prism-react-renderer/themes/dracula';
 import { LiveProvider, LiveEditor } from 'react-live';
+import styled from '@emotion/styled';
 import { mdx } from '@mdx-js/react';
 import * as Minerva from 'minerva-ui';
 
@@ -31,6 +32,13 @@ const CustomCopyCode = ({ style, ...props }) => (
   />
 );
 
+const CustomStyledEditor = styled(StyledEditor)`
+  textarea,
+  pre {
+    white-space: pre !important;
+  }
+`;
+
 export default function CodeHighlight({
   children,
   className,
@@ -53,7 +61,11 @@ export default function CodeHighlight({
       <Minerva.ThemeProvider
         theme={{
           ...Minerva.defaultTheme,
+          Text: {
+            margin: 0,
+          },
           Input: {
+            '-webkit-appearance': 'none',
             borderStyle: 'solid',
             borderColor: '#d2d6dc',
           },
@@ -63,6 +75,7 @@ export default function CodeHighlight({
           },
         }}
       >
+        {/* <Minerva.GlobalStyles /> */}
         <LiveProvider
           code={codeString}
           noInline={noInline}
@@ -92,7 +105,7 @@ export default function CodeHighlight({
                 whiteSpace: 'normal',
               }}
             />
-            <StyledEditor
+            <CustomStyledEditor
               style={{
                 height: 'auto',
                 width: '100%',
@@ -106,8 +119,10 @@ export default function CodeHighlight({
               <CustomCopyCode onClick={handleClick}>
                 {copied ? 'Copied!' : 'Copy'}
               </CustomCopyCode>
-              <LiveEditor style={{ overflow: 'auto', height: 'auto' }} />
-            </StyledEditor>
+              <LiveEditor
+                style={{ overflow: 'auto', height: 'auto', whiteSpace: 'pre' }}
+              />
+            </CustomStyledEditor>
           </LiveWrapper>
 
           <LiveError />
@@ -133,7 +148,11 @@ export default function CodeHighlight({
             getLineProps,
             getTokenProps,
           }) => (
-            <Pre className={blockClassName} style={style} hasTitle={title}>
+            <Pre
+              className={blockClassName}
+              style={{ ...style, whiteSpace: 'pre' }}
+              hasTitle={title}
+            >
               <CustomCopyCode onClick={handleClick}>
                 {copied ? 'Copied!' : 'Copy'}
               </CustomCopyCode>

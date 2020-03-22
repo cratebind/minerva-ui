@@ -7,7 +7,7 @@
 - label: 'Utilities'
   link: '/utilities'
 - label: 'Theme Builder ⚠️'
-  link: '/theme-editor'
+  link: '/theme-builder'
   external: true
 # - label: Elements
 #   items:

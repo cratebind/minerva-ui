@@ -43,10 +43,12 @@ render(
 
 Theme styles for specific components can be provided in your `theme` object:
 
-```jsx
+```jsx live
 () => {
   const theme = {
+    ...defaultTheme,
     Button: {
+      ...defaultTheme.Button,
       backgroundColor: 'midnightblue',
       color: '#fff'
     }
