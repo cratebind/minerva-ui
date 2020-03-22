@@ -13,6 +13,7 @@ exports[`<Input /> should render 1`] = `
   transition: all 250ms ease 0s;
   outline: none;
   width: 100%;
+  -webkit-appearance: none;
 }
 
 .c0:focus {

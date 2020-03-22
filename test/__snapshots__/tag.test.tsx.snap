@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Tag /> should render 1`] = `
+.c2 {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 .c0 {
   display: inline-block;
   background-color: #EDF2F7;
@@ -27,7 +32,7 @@ exports[`<Tag /> should render 1`] = `
       class="c1"
     >
       <p
-        class=""
+        class="c2 "
       >
         Test
       </p>

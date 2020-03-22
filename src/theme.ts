@@ -60,8 +60,7 @@ const defaultTheme: MinervaTheme = {
     // color: 'rgb(148, 148, 148)',
   },
   Input: {
-    '-webkit-box-align': 'center',
-    '-webkit-appearance': 'none',
+    WebkitAppearance: 'none',
     fontSize: '16px',
   },
   InputField: {},
