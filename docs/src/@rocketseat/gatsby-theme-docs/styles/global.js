@@ -45,6 +45,7 @@ export default function GlobalStyle() {
           font-size: 24px;
           padding-bottom: 8px;
           font-weight: 600;
+          color: #333;
           /* border-bottom: 1px solid #eee; */
         }
 
