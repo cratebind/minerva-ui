@@ -1,0 +1,25 @@
+---
+title: 'Checkbox'
+---
+
+import { Checkbox } from 'minerva-ui';
+
+Extends `<input type="checkbox" />`, allows styling input
+
+```js
+import { Checkbox } from 'minerva-ui'
+```
+
+```jsx live
+() => {
+  const [checked, setChecked] = React.useState(false);
+  return (
+    <Checkbox
+      checked={checked}
+      onChange={() => setChecked(!checked)}
+    >
+      Stay Logged In
+    </Checkbox>
+  )
+}
+```
