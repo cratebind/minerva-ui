@@ -65,13 +65,12 @@ export default function GlobalStyle() {
           margin: 24px 0;
         }
 
-        p {
+        /* p {
           color: #737380;
           font-size: 16px;
           line-height: 28px;
-          margin-bottom: 16px;
           font-weight: 400;
-        }
+        } */
 
         code.inline-code {
           display: inline-block;

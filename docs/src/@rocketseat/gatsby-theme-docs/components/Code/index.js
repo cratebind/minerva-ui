@@ -58,76 +58,57 @@ export default function CodeHighlight({
 
   if (live) {
     return (
-      <Minerva.ThemeProvider
-        theme={{
-          ...Minerva.defaultTheme,
-          Text: {
-            margin: 0,
-          },
-          Input: {
-            '-webkit-appearance': 'none',
-            borderStyle: 'solid',
-            borderColor: '#d2d6dc',
-          },
-          Link: {
-            fontWeight: 400,
-            textDecoration: 'none',
-          },
+      <LiveProvider
+        code={codeString}
+        noInline={noInline}
+        theme={theme}
+        transformCode={code => `/** @jsx mdx */${code}`}
+        scope={{
+          mdx,
+          ...Minerva,
         }}
       >
-        {/* <Minerva.GlobalStyles /> */}
-        <LiveProvider
-          code={codeString}
-          noInline={noInline}
-          theme={theme}
-          transformCode={code => `/** @jsx mdx */${code}`}
-          scope={{
-            mdx,
-            ...Minerva,
+        <LiveWrapper
+          style={{
+            flexDirection: 'column',
+            boxShadow: 'none',
+            margin: '32px 0',
           }}
         >
-          <LiveWrapper
+          <LivePreview
             style={{
-              flexDirection: 'column',
-              boxShadow: 'none',
-              margin: '32px 0',
+              padding: '12px',
+              border: '1px solid rgb(226, 232, 240)',
+              borderRadius: '4px',
+              width: '100%',
+              maxWidth: '100%',
+              fontFamily:
+                '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+              whiteSpace: 'normal',
+            }}
+          />
+          <CustomStyledEditor
+            style={{
+              height: 'auto',
+              width: '100%',
+              maxWidth: '100%',
+              maxHeight: '600px',
+              marginTop: '16px',
+              borderRadius: '4px',
+              position: 'relative',
             }}
           >
-            <LivePreview
-              style={{
-                padding: '12px',
-                border: '1px solid rgb(226, 232, 240)',
-                borderRadius: '4px',
-                width: '100%',
-                maxWidth: '100%',
-                fontFamily:
-                  '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-                whiteSpace: 'normal',
-              }}
+            <CustomCopyCode onClick={handleClick}>
+              {copied ? 'Copied!' : 'Copy'}
+            </CustomCopyCode>
+            <LiveEditor
+              style={{ overflow: 'auto', height: 'auto', whiteSpace: 'pre' }}
             />
-            <CustomStyledEditor
-              style={{
-                height: 'auto',
-                width: '100%',
-                maxWidth: '100%',
-                maxHeight: '600px',
-                marginTop: '16px',
-                borderRadius: '4px',
-                position: 'relative',
-              }}
-            >
-              <CustomCopyCode onClick={handleClick}>
-                {copied ? 'Copied!' : 'Copy'}
-              </CustomCopyCode>
-              <LiveEditor
-                style={{ overflow: 'auto', height: 'auto', whiteSpace: 'pre' }}
-              />
-            </CustomStyledEditor>
-          </LiveWrapper>
+          </CustomStyledEditor>
+        </LiveWrapper>
 
-          <LiveError />
-        </LiveProvider>
-      </Minerva.ThemeProvider>
+        <LiveError />
+      </LiveProvider>
     );
   }
 

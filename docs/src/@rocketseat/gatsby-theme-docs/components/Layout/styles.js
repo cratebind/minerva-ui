@@ -29,6 +29,9 @@ export const Children = styled.div`
 
   @media (min-width: 1200px) {
     max-width: ${({ disableTOC }) => (!disableTOC ? '75%' : '100%')};
+  }
+
+  @media (min-width: 780px) {
     ${({ hasTitle }) => !hasTitle && 'padding-top: 40px'};
   }
 `;
