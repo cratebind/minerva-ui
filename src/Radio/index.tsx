@@ -25,7 +25,9 @@ const ControlBox = styled(Box)<ControlBoxProps>((props: ControlBoxProps) => ({
   marginRight: '8px',
   backgroundClip: 'content-box',
   border: props.checked
-    ? `${parseInt(props.radioSize) / 3}px solid ${props.radioColor}`
+    ? `${(parseInt(props.radioSize) / 3).toFixed(2)}px solid ${
+        props.radioColor
+      }`
     : '2px solid #ecebed',
   borderRadius: '50%',
 }));
@@ -73,7 +75,11 @@ export const RadioGroup = ({
     <SelectedValueContext.Provider
       value={{ selectedValue, radioColor, radioSize }}
     >
-      <RadioGroupContainer role="radiogroup" {...props}>
+      <RadioGroupContainer
+        data-testid="radio-group"
+        role="radiogroup"
+        {...props}
+      >
         {children}
       </RadioGroupContainer>
     </SelectedValueContext.Provider>
@@ -92,7 +98,14 @@ export const Radio = ({
     SelectedValueContext
   );
   return (
-    <RadioContainer htmlFor={value} as="label" {...props}>
+    <RadioContainer
+      data-testid="radio"
+      htmlFor={value}
+      as="label"
+      aria-label={value}
+      role="label"
+      {...props}
+    >
       <Box display="inline-flex">
         <VisuallyHidden
           as="input"
@@ -114,7 +127,7 @@ export const Radio = ({
           radioSize={radioSize || '16px'}
         ></ControlBox>
       </Box>
-      {children && <Box>{children}</Box>}
+      {children && <Box data-testid="label">{children}</Box>}
     </RadioContainer>
   );
 };
