@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+
 import { Button, ThemeProvider } from '../src';
 
 describe('<Button />', () => {
@@ -13,13 +14,27 @@ describe('<Button />', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('should not have duplicate styles', () => {
+    const { getByRole } = render(
+      <ThemeProvider>
+        <Button>Grey Text Button</Button>
+      </ThemeProvider>
+    );
+
+    const button = getByRole('button');
+    const style = window.getComputedStyle(button);
+    console.log(style);
+  });
+
   it('should pass basic style props ', () => {
     const color = '#e3e3e3';
-    const { getByRole } = render(
+    const { container, getByRole } = render(
       <ThemeProvider>
         <Button color={color}>Grey Text Button</Button>
       </ThemeProvider>
     );
+
+    // console.log(container.firstChild);
 
     expect(getByRole('button')).toHaveStyleRule('color', color);
   });
