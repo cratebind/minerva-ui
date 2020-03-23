@@ -4,7 +4,7 @@ import css from '@styled-system/css';
 import { MinervaProps, Box } from '../layout';
 // import { transformAliasProps } from '../utils';
 
-export interface PseudoBoxProps extends MinervaProps {
+export interface PseudoBoxProps {
   /**
    * Styles for CSS selector `&:after`
    *
