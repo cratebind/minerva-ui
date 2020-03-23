@@ -11,7 +11,7 @@ const RadioContainer = styled(Box)`
   align-items: center;
   margin: 0 10px 10px 0;
 
-  input[type='radio']:focus + [role='radio'] {
+  input[type='radio']:focus + [data-minerva='control-box'] {
     box-shadow: 0 0 0 3px rgba(118, 169, 250, 0.45);
   }
   ${systemProps}
@@ -21,22 +21,26 @@ const ControlBox = styled(Box)<ControlBoxProps>((props: ControlBoxProps) => ({
   display: 'inline-block',
   width: props.radioSize,
   height: props.radioSize,
-  padding: '0.1em',
+  padding: '2px',
   marginRight: '8px',
   backgroundClip: 'content-box',
-  border: props.checked
-    ? `${(parseInt(props.radioSize) / 3).toFixed(2)}px solid ${
-        props.radioColor
-      }`
-    : '2px solid #ecebed',
+  transition: 'all 120ms ease',
+  // backgroundColor: props.checked ? props.radioColor : '#fff',
+  border: '2px solid #ecebed',
+  // border: props.checked
+  //   ? `${(parseInt(props.radioSize) / 3).toFixed(2)}px solid ${
+  //       props.radioColor
+  //     }`
+  //   : '2px solid #ecebed',
   borderRadius: '50%',
 }));
 
 export interface RadioGroupProps {
   children?: React.ReactNode;
-  selectedValue?: string;
+  value?: string;
   radioColor?: string;
   radioSize?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export type ControlBoxProps = {
@@ -56,6 +60,7 @@ type ContextValue = {
   selectedValue: string | undefined;
   radioSize: string | undefined;
   radioColor: string | undefined;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const SelectedValueContext = React.createContext<ContextValue>({
@@ -66,14 +71,15 @@ const SelectedValueContext = React.createContext<ContextValue>({
 
 export const RadioGroup = ({
   children,
-  selectedValue,
-  radioSize,
-  radioColor,
+  value: selectedValue,
+  radioSize = '16px',
+  radioColor = '#5850ec',
+  onChange,
   ...props
 }: RadioGroupProps) => {
   return (
     <SelectedValueContext.Provider
-      value={{ selectedValue, radioColor, radioSize }}
+      value={{ selectedValue, radioColor, radioSize, onChange }}
     >
       <RadioGroupContainer
         data-testid="radio-group"
@@ -94,16 +100,21 @@ export const Radio = ({
   children,
   ...props
 }: RadioProps) => {
-  const { selectedValue, radioColor, radioSize } = useContext(
+  const { selectedValue, radioColor, radioSize, onChange } = useContext(
     SelectedValueContext
   );
+
+  const checked = value === selectedValue;
+
+  // only accept defaultChecked if no onChange handler is passed
+  const checkedProps = !onChange ? { defaultChecked: checked } : { checked };
+
   return (
     <RadioContainer
       data-testid="radio"
       htmlFor={value}
       as="label"
       aria-label={value}
-      role="label"
       {...props}
     >
       <Box display="inline-flex">
@@ -113,19 +124,30 @@ export const Radio = ({
           aria-label={value}
           id={value}
           value={value}
-          checked={value === selectedValue}
-          aria-checked={value === selectedValue}
+          onChange={onChange}
+          aria-checked={checked}
           disabled={isDisabled}
-        ></VisuallyHidden>
+          {...checkedProps}
+        />
 
         <ControlBox
           data-testid="control-box"
           as="span"
-          role="radio"
-          checked={value === selectedValue}
-          radioColor={radioColor || '#5850ec'}
-          radioSize={radioSize || '16px'}
-        ></ControlBox>
+          aria-hidden
+          data-minerva="control-box"
+          checked={checked}
+          radioColor={radioColor}
+          radioSize={radioSize}
+        >
+          <Box
+            borderRadius="50%"
+            width="100%"
+            height="100%"
+            backgroundColor={radioColor}
+            transition="all 180ms ease"
+            transform={checked ? 'scale(1)' : 'scale(0)'}
+          />
+        </ControlBox>
       </Box>
       {children && <Box data-testid="label">{children}</Box>}
     </RadioContainer>
