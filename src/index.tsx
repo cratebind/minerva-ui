@@ -28,6 +28,7 @@ export { default as PseudoBox } from './PseudoBox';
 export { default as Button } from './Button';
 export { default as Checkbox } from './Checkbox';
 export { default as Input } from './Input';
+export { RadioGroup, Radio } from './Radio';
 export { default as InputField } from './InputField';
 export { default as Select } from './Select';
 export { default as TagsInput } from './TagsInput';

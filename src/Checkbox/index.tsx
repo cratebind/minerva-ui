@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { CustomCheckboxContainer, CustomCheckboxInput } from '@reach/checkbox';
 import { MinervaProps, Box, systemProps } from '../layout';
+import VisuallyHidden from '../VisuallyHidden';
 
 /**
  * TODO:
@@ -71,16 +72,16 @@ const ControlBox = styled(Box)<ControlBoxProps>(
 //   );
 // };
 
-const VisuallyHidden = styled.div`
-  border: 0px;
-  clip: rect(0px, 0px, 0px, 0px);
-  height: 1px;
-  width: 1px;
-  padding: 0px;
-  overflow: hidden;
-  white-space: nowrap;
-  position: absolute;
-`;
+// const VisuallyHidden = styled.div`
+//   border: 0px;
+//   clip: rect(0px, 0px, 0px, 0px);
+//   height: 1px;
+//   width: 1px;
+//   padding: 0px;
+//   overflow: hidden;
+//   white-space: nowrap;
+//   position: absolute;
+// `;
 
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
 
