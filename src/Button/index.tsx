@@ -1,16 +1,16 @@
 import React, { forwardRef } from 'react';
 import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
-import { MinervaProps, systemProps } from '../layout';
-// import { useTheme } from '../theme';
-import styled from 'styled-components';
+import { MinervaProps } from '../layout';
+import { useTheme } from '../theme';
+// import styled from 'styled-components';
 
-const StyledButton = styled(PseudoBox)(
-  props => ({
-    ...props.theme.Button,
-  }),
-  systemProps
-);
+// const StyledButton = styled(PseudoBox)(
+//   props => ({
+//     ...props.theme.Button,
+//   }),
+//   systemProps
+// );
 
 export interface ButtonProps extends MinervaProps, PseudoBoxProps {
   children?: React.ReactNode;
@@ -30,10 +30,10 @@ export const Button = forwardRef(function Button(
   }: ButtonProps,
   ref
 ) {
-  // const theme = useTheme();
+  const theme = useTheme();
 
   return (
-    <StyledButton
+    <PseudoBox
       ref={ref}
       as={Comp}
       disabled={disabled || isLoading}
@@ -42,6 +42,7 @@ export const Button = forwardRef(function Button(
       outline="none"
       _hover={{
         backgroundColor: '#f9fafb',
+        cursor: 'pointer',
       }}
       _focus={{
         borderColor: '#a4cafe',
@@ -52,11 +53,11 @@ export const Button = forwardRef(function Button(
         opacity: 0.4,
         cursor: 'not-allowed',
       }}
-      // {...theme.Button}
+      {...theme.Button}
       {...props}
     >
       {isLoading ? <Spinner /> : children}
-    </StyledButton>
+    </PseudoBox>
   );
 });
 

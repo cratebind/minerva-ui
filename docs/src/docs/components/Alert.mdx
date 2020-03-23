@@ -1,0 +1,47 @@
+---
+title: 'Alert'
+---
+
+import { Alert } from 'minerva-ui';
+
+Basic Alert component with predefined status codes and customizable color and icon.
+
+```js
+import { Alert } from 'minerva-ui'
+```
+
+If status codes are supplied, the component will supply predefined colors and icons.
+
+```jsx live
+<>
+  <Alert status="error" title="Whoa!">
+    Something not great is happening
+  </Alert>
+  <br />
+  <Alert status="success" title="Congrats!">
+    Something great is happening!
+  </Alert>
+  <br />
+  <Alert status="warning">
+    Something is happening that isn't bad yet, but might be soon.
+  </Alert>
+  <br />
+  <Alert status="info" title="Attention:">
+    Something is happening and you should know about it.
+  </Alert>
+</>
+```
+
+# Variants
+
+You can also supply your own colors and icons. The default theme includes [Feather Icons](https://feathericons.com/).
+
+```jsx live
+<>
+  <Alert icon="arrow-right-circle" bg="orange.200" title="Alert!!!" />
+  <br />
+  <Alert icon="circle" bg="green.100">
+    Here is some information.
+  </Alert>
+</>
+```
