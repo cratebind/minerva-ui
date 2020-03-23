@@ -26,7 +26,7 @@ export interface AlertProps extends MinervaProps {
   children?: React.ReactNode;
   status?: 'error' | 'success' | 'warning' | 'info';
   title?: string;
-  alertBackground?: string;
+  bg?: string;
   icon?: string;
   props?: any;
 }
@@ -52,7 +52,7 @@ const alertTypes = {
 };
 
 export const Alert = forwardRef(function Alert(
-  { title, children, status, alertBackground, icon, ...props }: AlertProps,
+  { title, children, status, bg, icon, ...props }: AlertProps,
   ref
 ) {
   const { statusColor, statusIcon } =
@@ -67,11 +67,7 @@ export const Alert = forwardRef(function Alert(
   const alertIcon = icon || statusIcon;
 
   return (
-    <StyledAlert
-      ref={ref}
-      backgroundColor={alertBackground ? alertBackground : statusColor}
-      {...props}
-    >
+    <StyledAlert ref={ref} backgroundColor={bg ? bg : statusColor} {...props}>
       {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
       {title && <StyledAlertTitle>{title}</StyledAlertTitle>}
       <StyledAlertDescription>{children}</StyledAlertDescription>
