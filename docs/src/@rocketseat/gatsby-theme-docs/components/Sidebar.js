@@ -16,6 +16,8 @@ import ExternalLink from '@rocketseat/gatsby-theme-docs/src/components/Sidebar/E
 import InternalLink from '@rocketseat/gatsby-theme-docs/src/components/Sidebar/InternalLink';
 import Logo from '@rocketseat/gatsby-theme-docs/src/components/Logo';
 
+const CustomItem = props => <Item style={{ lineHeight: '28px' }} {...props} />;
+
 function ListWithSubItems({ children, text }) {
   return (
     <>
@@ -61,7 +63,7 @@ export default function Sidebar({ isMenuOpen }) {
   const data = useSidebar();
 
   function renderLink(link, label) {
-    const isThemeBuilder = link.includes('theme-builder')
+    const isThemeBuilder = link.includes('theme-builder');
     return isExternalUrl(link) || isThemeBuilder ? (
       <ExternalLink
         style={{ paddingLeft: '10px !important' }}
@@ -90,9 +92,9 @@ export default function Sidebar({ isMenuOpen }) {
             if (Array.isArray(items)) {
               const subitems = items.map(item => {
                 return (
-                  <Item key={item.link}>
+                  <CustomItem key={item.link}>
                     {renderLink(item.link, item.label)}
-                  </Item>
+                  </CustomItem>
                 );
               });
 
@@ -103,7 +105,7 @@ export default function Sidebar({ isMenuOpen }) {
               );
             }
 
-            return <Item key={id}>{renderLink(link, label)}</Item>;
+            return <CustomItem key={id}>{renderLink(link, label)}</CustomItem>;
           })}
           <ListWithSubItems text="Components">
             {allMdx.edges.map(({ node: { id, fields, frontmatter } }) => {
@@ -112,9 +114,9 @@ export default function Sidebar({ isMenuOpen }) {
               }
 
               return (
-                <Item key={id}>
+                <CustomItem key={id}>
                   {renderLink(fields.slug, frontmatter.title)}
-                </Item>
+                </CustomItem>
               );
             })}
           </ListWithSubItems>

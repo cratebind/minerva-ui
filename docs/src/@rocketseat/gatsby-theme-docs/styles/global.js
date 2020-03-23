@@ -72,6 +72,17 @@ export default function GlobalStyle() {
           font-weight: 400;
         } */
 
+        ol,
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        nav > ul > li {
+          line-height: 28px;
+        }
+
         code.inline-code {
           display: inline-block;
           vertical-align: middle;
@@ -91,13 +102,13 @@ export default function GlobalStyle() {
           font-weight: bold;
 
           &:hover {
-            /* color: ${theme.colors.primary}!important; */
+            color: ${theme.colors.primary}!important;
             transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
-            /* opacity: 1 !important; */
+            opacity: 1 !important;
           }
         }
 
-        blockquote {
+        /* blockquote {
           border-left: 4px solid #e7e7e7;
           padding: 0 2rem;
 
@@ -106,15 +117,15 @@ export default function GlobalStyle() {
             font-size: 0.88em !important;
             line-height: 28px;
           }
-        }
+        } */
 
-        table {
+        /* table {
           border-collapse: collapse;
           border-spacing: 0;
           width: 100%;
           margin-bottom: 16px;
           color: #444;
-        }
+        } */
 
         th,
         td {
@@ -134,7 +145,7 @@ export default function GlobalStyle() {
           margin-bottom: 16px;
         }
 
-        ul,
+        /* ul,
         ol {
           list-style: none;
           color: #737380;
@@ -144,7 +155,7 @@ export default function GlobalStyle() {
           li {
             line-height: 28px;
           }
-        }
+        } */
 
         .gatsby-highlight {
           position: relative;
