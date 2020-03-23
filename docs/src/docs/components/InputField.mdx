@@ -1,0 +1,93 @@
+---
+title: 'InputField'
+---
+
+import { Input, InputField } from 'minerva-ui';
+
+### Basic Input Field component
+
+```js
+import { InputField, Input } from 'minerva-ui';
+```
+
+```jsx live
+() => {
+  const [name, setName] = React.useState('');
+  const [error, setError] = React.useState('');
+
+  return (
+    <InputField label="Label" errorMsg={error}>
+      <Input
+        placeholder="Basic Input"
+        value={name}
+        onBlur={!name ? () => setError('This field cannot be empty') : null}
+        onChange={e => {
+          setError('');
+          setName(e.target.value);
+        }}
+      ></Input>
+    </InputField>
+  );
+};
+```
+
+# Variants
+
+### Input Field with custom error message styles
+
+```jsx live
+() => {
+  const [name, setName] = React.useState('');
+  const [error, setError] = React.useState('');
+
+  return (
+    <InputField
+      label="Label"
+      htmlFor="basicInput"
+      errorMsg={error}
+      errorStyles={{ color: '#FF8247', size: '16px' }}
+    >
+      <Input
+        id="basicInput"
+        placeholder="Basic Input"
+        value={name}
+        onBlur={!name ? () => setError('This field cannot be empty') : null}
+        onChange={e => {
+          setError('');
+          setName(e.target.value);
+        }}
+      ></Input>
+    </InputField>
+  );
+};
+```
+
+### Required Input Field
+
+```jsx live
+() => {
+  const [name, setName] = React.useState('');
+  const [error, setError] = React.useState('');
+
+  return (
+    <InputField
+      label="Label"
+      htmlFor="basicInput"
+      isRequired
+      requiredMarkerColor="#FF6347"
+      errorMsg={error}
+    >
+      <Input
+        id="basicInput"
+        placeholder="Basic Input"
+        value={name}
+        onBlur={!name ? () => setError('This field cannot be empty') : null}
+        onChange={e => {
+          setError('');
+          setName(e.target.value);
+        }}
+      ></Input>
+    </InputField>
+  );
+};
+```

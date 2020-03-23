@@ -67,7 +67,7 @@ const InputField = ({
       {children}
       {errorMsg && (
         <Text
-          fontSize={errorStyles ? errorStyles.size : '14px'}
+          fontSize={errorStyles ? errorStyles.size : '12px'}
           fontWeight={errorStyles ? errorStyles.weight : '400'}
           color={errorStyles ? errorStyles.color : '#ff0000'}
           data-testid="error"

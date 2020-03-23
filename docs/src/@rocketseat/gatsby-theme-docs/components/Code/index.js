@@ -3,6 +3,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import PropTypes from 'prop-types';
 import theme from 'prism-react-renderer/themes/dracula';
 import { LiveProvider, LiveEditor } from 'react-live';
+import styled from '@emotion/styled';
 import { mdx } from '@mdx-js/react';
 import * as Minerva from 'minerva-ui';
 
@@ -31,6 +32,13 @@ const CustomCopyCode = ({ style, ...props }) => (
   />
 );
 
+const CustomStyledEditor = styled(StyledEditor)`
+  textarea,
+  pre {
+    white-space: pre !important;
+  }
+`;
+
 export default function CodeHighlight({
   children,
   className,
@@ -50,57 +58,57 @@ export default function CodeHighlight({
 
   if (live) {
     return (
-      <Minerva.ThemeProvider>
-        <LiveProvider
-          code={codeString}
-          noInline={noInline}
-          theme={theme}
-          transformCode={code => `/** @jsx mdx */${code}`}
-          scope={{
-            mdx,
-            ...Minerva,
+      <LiveProvider
+        code={codeString}
+        noInline={noInline}
+        theme={theme}
+        transformCode={code => `/** @jsx mdx */${code}`}
+        scope={{
+          mdx,
+          ...Minerva,
+        }}
+      >
+        <LiveWrapper
+          style={{
+            flexDirection: 'column',
+            boxShadow: 'none',
+            margin: '32px 0',
           }}
         >
-          <LiveWrapper
+          <LivePreview
             style={{
-              flexDirection: 'column',
-              boxShadow: 'none',
-              margin: '32px 0',
+              padding: '12px',
+              border: '1px solid rgb(226, 232, 240)',
+              borderRadius: '4px',
+              width: '100%',
+              maxWidth: '100%',
+              fontFamily:
+                '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+              whiteSpace: 'normal',
+            }}
+          />
+          <CustomStyledEditor
+            style={{
+              height: 'auto',
+              width: '100%',
+              maxWidth: '100%',
+              maxHeight: '600px',
+              marginTop: '16px',
+              borderRadius: '4px',
+              position: 'relative',
             }}
           >
-            <LivePreview
-              style={{
-                padding: '12px',
-                border: '1px solid rgb(226, 232, 240)',
-                borderRadius: '4px',
-                width: '100%',
-                maxWidth: '100%',
-                fontFamily:
-                  '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-                whiteSpace: 'normal',
-              }}
+            <CustomCopyCode onClick={handleClick}>
+              {copied ? 'Copied!' : 'Copy'}
+            </CustomCopyCode>
+            <LiveEditor
+              style={{ overflow: 'auto', height: 'auto', whiteSpace: 'pre' }}
             />
-            <StyledEditor
-              style={{
-                height: 'auto',
-                width: '100%',
-                maxWidth: '100%',
-                maxHeight: '600px',
-                marginTop: '16px',
-                borderRadius: '4px',
-                position: 'relative',
-              }}
-            >
-              <CustomCopyCode onClick={handleClick}>
-                {copied ? 'Copied!' : 'Copy'}
-              </CustomCopyCode>
-              <LiveEditor style={{ overflow: 'auto', height: 'auto' }} />
-            </StyledEditor>
-          </LiveWrapper>
+          </CustomStyledEditor>
+        </LiveWrapper>
 
-          <LiveError />
-        </LiveProvider>
-      </Minerva.ThemeProvider>
+        <LiveError />
+      </LiveProvider>
     );
   }
 
@@ -121,7 +129,11 @@ export default function CodeHighlight({
             getLineProps,
             getTokenProps,
           }) => (
-            <Pre className={blockClassName} style={style} hasTitle={title}>
+            <Pre
+              className={blockClassName}
+              style={{ ...style, whiteSpace: 'pre' }}
+              hasTitle={title}
+            >
               <CustomCopyCode onClick={handleClick}>
                 {copied ? 'Copied!' : 'Copy'}
               </CustomCopyCode>

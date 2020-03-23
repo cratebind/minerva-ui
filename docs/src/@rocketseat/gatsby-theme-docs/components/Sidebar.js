@@ -16,6 +16,8 @@ import ExternalLink from '@rocketseat/gatsby-theme-docs/src/components/Sidebar/E
 import InternalLink from '@rocketseat/gatsby-theme-docs/src/components/Sidebar/InternalLink';
 import Logo from '@rocketseat/gatsby-theme-docs/src/components/Logo';
 
+const CustomItem = props => <Item style={{ lineHeight: '28px' }} {...props} />;
+
 function ListWithSubItems({ children, text }) {
   return (
     <>
@@ -30,6 +32,7 @@ export default function Sidebar({ isMenuOpen }) {
     site: {
       siteMetadata: { footer, basePath },
     },
+    allMdx,
   } = useStaticQuery(graphql`
     {
       site {
@@ -38,16 +41,41 @@ export default function Sidebar({ isMenuOpen }) {
           basePath
         }
       }
+      allMdx(
+        filter: { fields: { slug: { regex: "/(components)/" } } }
+        sort: { fields: [frontmatter___title], order: ASC }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
     }
   `);
 
   const data = useSidebar();
 
   function renderLink(link, label) {
-    return isExternalUrl(link) ? (
-      <ExternalLink link={link} label={label} />
+    const isThemeBuilder = link.includes('theme-builder');
+    return isExternalUrl(link) || isThemeBuilder ? (
+      <ExternalLink
+        style={{ paddingLeft: '10px !important' }}
+        link={link}
+        label={label}
+      />
     ) : (
-      <InternalLink link={link} label={label} />
+      <InternalLink
+        style={{ paddingLeft: '10px !important' }}
+        link={link}
+        label={label}
+      />
     );
   }
 
@@ -64,9 +92,9 @@ export default function Sidebar({ isMenuOpen }) {
             if (Array.isArray(items)) {
               const subitems = items.map(item => {
                 return (
-                  <Item key={item.link}>
+                  <CustomItem key={item.link}>
                     {renderLink(item.link, item.label)}
-                  </Item>
+                  </CustomItem>
                 );
               });
 
@@ -77,8 +105,21 @@ export default function Sidebar({ isMenuOpen }) {
               );
             }
 
-            return <Item key={id}>{renderLink(link, label)}</Item>;
+            return <CustomItem key={id}>{renderLink(link, label)}</CustomItem>;
           })}
+          <ListWithSubItems text="Components">
+            {allMdx.edges.map(({ node: { id, fields, frontmatter } }) => {
+              if (!frontmatter.title) {
+                console.warn(`Missing title for file at ${fields.slug}`);
+              }
+
+              return (
+                <CustomItem key={id}>
+                  {renderLink(fields.slug, frontmatter.title)}
+                </CustomItem>
+              );
+            })}
+          </ListWithSubItems>
         </List>
       </nav>
       <footer>

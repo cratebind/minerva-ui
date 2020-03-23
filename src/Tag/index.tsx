@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { MinervaProps, systemProps, Box } from '../layout';
-import Icon from '../Icon';
+import { Text, Icon } from '..';
 
 const IconContainer = styled('div')`
   margin-left: 5px;
@@ -26,7 +26,7 @@ const TagContent = styled('div')`
   align-items: center;
 `;
 
-const TagLabel = styled.p``;
+const TagLabel = styled(Text)``;
 
 export interface TagProps extends MinervaProps {
   children?: React.ReactNode;

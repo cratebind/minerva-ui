@@ -1,8 +1,12 @@
-<Meta title="Examples|Forms" />
+---
+title: 'Forms'
+---
 
-# Forms
+## Login Form
 
-```jsx
+Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
+
+```jsx live
 () => {
   const [username, setUsername] = React.useState('');
   const [usernameError, setUsernameError] = React.useState('');
@@ -12,9 +16,9 @@
 
   return (
     <Flex bg="gray.200" py="40px" justifyContent="center" alignItems="center">
-      <PseudoBox
+      <Box
         as="form"
-        bg="#fff"
+        bg="white"
         p="32px"
         pt="24px"
         width="100%"
@@ -33,6 +37,7 @@
           <Input
             placeholder="Username"
             value={username}
+            mb={3}
             onChange={e => {
               setUsernameError('');
               setUsername(e.target.value);
@@ -56,6 +61,7 @@
             type="password"
             placeholder="Password"
             value={password}
+            mb={3}
             onChange={e => {
               setPasswordError('');
               setPassword(e.target.value);
@@ -65,7 +71,6 @@
                 ? () => setPasswordError('Please enter a password.')
                 : null
             }
-            mb={3}
           />
         </InputField>
         <Flex alignItems="center" justifyContent="space-between">
@@ -78,7 +83,7 @@
             backgroundColor="purple.700"
             borderWidth={0}
             _hover={{
-              backgroundColor: 'purple.800',
+              backgroundColor: 'purple.900',
             }}
           >
             Sign In
@@ -88,13 +93,13 @@
             color="purple.700"
             fontWeight="700"
             _hover={{
-              color: 'purple.800'
+              color: 'purple.900'
             }}
           >
             Forgot Password?
           </Link>
         </Flex>
-      </PseudoBox>
+      </Box>
     </Flex>
   );
 };

@@ -5,7 +5,7 @@ module.exports = {
     siteTitleShort: `Minerva UI`,
     siteDescription: `Out of the box Gatsby Theme for creating documentation websites easily and quickly`,
     siteUrl: `https://rocketdocs.netlify.com`,
-    siteAuthor: `@rocketseat`,
+    siteAuthor: `cratebind`,
     siteImage: `/banner.png`,
     siteLanguage: `en`,
     themeColor: `#7159c1`,
@@ -18,7 +18,7 @@ module.exports = {
       options: {
         configPath: `src/config`,
         docsPath: `src/docs`,
-        githubUrl: `https://github.com/rocketseat/gatsby-themes`,
+        githubUrl: `https://github.com/cratebind/minerva-ui`,
         baseDir: `examples/gatsby-theme-docs`,
       },
     },
@@ -43,7 +43,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://rocketdocs.netlify.com`,
+        siteUrl: `https://minerva-ui.netlify.com`,
       },
     },
     `gatsby-plugin-offline`,

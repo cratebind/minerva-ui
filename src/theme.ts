@@ -59,7 +59,10 @@ const defaultTheme: MinervaTheme = {
     // opacity: 1,
     // color: 'rgb(148, 148, 148)',
   },
-  Input: {},
+  Input: {
+    WebkitAppearance: 'none',
+    fontSize: '16px',
+  },
   InputField: {},
   Link: {},
   Checkbox: {},
