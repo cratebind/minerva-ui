@@ -75,6 +75,7 @@
   "dependencies": {
     "@mdx-js/react": "^1.5.1",
     "@reach/checkbox": "^0.8.6",
+    "@reach/dialog": "^0.9.1",
     "@styled-system/css": "^5.1.5",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.5.0",

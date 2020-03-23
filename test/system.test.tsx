@@ -18,6 +18,7 @@ import {
   Image,
   Icon,
   Alert,
+  Modal,
 } from '../src';
 import { ThemeProvider } from '../src';
 
@@ -35,6 +36,7 @@ const basicComponents = {
   Tag,
   Image,
   Alert,
+  Modal,
   // Icon,
   // Table,
   // Select,
