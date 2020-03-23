@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Box } from '../layout';
+import PseudoBox from '../PseudoBox';
 
-const VisuallyHidden = styled(Box)`
+const VisuallyHidden = styled(PseudoBox)`
   border: 0px;
   clip: rect(0px, 0px, 0px, 0px);
   height: 1px;
