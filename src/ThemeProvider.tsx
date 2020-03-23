@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import baseTheme from './theme';
+import defaultTheme from './theme';
 
 // const defaultTheme = {};
 
@@ -11,9 +11,9 @@ export interface ProviderProps {
   children?: React.ReactNode;
 }
 
-function ThemeProvider({ theme = baseTheme, children }: ProviderProps) {
+function ThemeProvider({ theme = defaultTheme, children }: ProviderProps) {
   return (
-    <StyledThemeProvider theme={{ ...baseTheme, ...theme }}>
+    <StyledThemeProvider theme={{ ...defaultTheme, ...theme }}>
       {children}
     </StyledThemeProvider>
   );
