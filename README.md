@@ -6,6 +6,8 @@
 
 # [Documentation](https://minerva-ui.netlify.com)
 
+[![Edit minerva-ui-demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/vigorous-chatterjee-y1zi5?fontsize=14&hidenavigation=1&theme=dark)
+
 ## Get started
 
 Minerva UI is a reusable component library to help build UIs faster. This library aims to be highly composable, declarative and accessible.
