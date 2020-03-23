@@ -50,11 +50,11 @@ describe('<Alert />', () => {
     expect(alert).toHaveStyleRule('background-color', backgroundColor);
   });
 
-  it('should add styles when `alertBackground` prop is passed', () => {
+  it('should add styles when `bg` prop is passed', () => {
     const backgroundColor = '#fdf6b2';
     const { getByTestId } = render(
       <ThemeProvider>
-        <Alert alertBackground={backgroundColor} data-testid="alert">
+        <Alert bg={backgroundColor} data-testid="alert">
           Custom Color
         </Alert>
       </ThemeProvider>
