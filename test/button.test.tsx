@@ -37,6 +37,26 @@ describe('<Button />', () => {
     expect(button).toHaveStyleRule('background-color', backgroundColor);
   });
 
+  it('should allow custom props', () => {
+    const { getByRole } = render(
+      <ThemeProvider>
+        <Button radiusLeft="4px" textTransform="capitalize" shadow="md">
+          Disabled Button
+        </Button>
+      </ThemeProvider>
+    );
+
+    const button = getByRole('button');
+
+    expect(button).toHaveStyleRule('border-top-left-radius', '4px');
+    expect(button).toHaveStyleRule('border-bottom-left-radius', '4px');
+    expect(button).toHaveStyleRule('text-transform', 'capitalize');
+    expect(button).toHaveStyleRule(
+      'box-shadow',
+      '0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06)'
+    );
+  });
+
   it('should pass shorthand pseudo props', () => {
     const backgroundColor = '#e3e3e3';
     const { getByRole } = render(
@@ -175,7 +195,7 @@ describe('<Button />', () => {
   });
 
   it('should show new background color if provided in theme', () => {
-    const newColor = 'green';
+    const newColor = '#e3e3e3';
     const theme = {
       Button: {
         backgroundColor: newColor,
