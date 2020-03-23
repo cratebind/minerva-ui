@@ -106,6 +106,7 @@ export const Radio = ({
         ></VisuallyHidden>
 
         <ControlBox
+          data-testid="control-box"
           as="span"
           role="radio"
           checked={value === selectedValue}
