@@ -9,6 +9,8 @@ const components = {
   code: Code,
   inlineCode: props => <code className="inline-code" {...props} />,
   p: (props) => <Text m={0} mb="16px" lineHeight="28px" color="#737380" {...props} />,
+  ul: (props) => <Text m={0} as="ul" lineHeight="28px" color="#737380" {...props} />,
+  li: (props) => <Text m={0} as="li" lineHeight="28px" color="#737380" {...props} />,
 };
 
 export function wrapPageElement({ element }) {
@@ -34,7 +36,7 @@ export function wrapPageElement({ element }) {
         },
       }}
     >
-      <MDXProvider components={components}>{element}</MDXProvider>=
+      <MDXProvider components={components}>{element}</MDXProvider>
     </ThemeProvider>
   );
 }
