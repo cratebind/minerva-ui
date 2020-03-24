@@ -74,9 +74,13 @@ export default function GlobalStyle() {
 
         ol,
         ul {
-          list-style: none;
           margin: 0;
           padding: 0;
+          list-style-position: inside;
+        }
+
+        ul {
+          list-style: none;
         }
 
         nav > ul > li {
