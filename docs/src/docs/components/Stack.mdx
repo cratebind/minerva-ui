@@ -19,12 +19,20 @@ Also inspired by [Chakra UI](https://chakra-ui.com/stack).
 <Header description="test" components={['Stack']} />
 
 ## Usage
+
 ```jsx live noInline
 const Card = ({ children }) => (
-  <Box borderRadius="md" borderWidth="1px" borderStyle="solid" px={6} py={4} maxWidth="300px">
+  <Box
+    borderRadius="md"
+    borderWidth="1px"
+    borderStyle="solid"
+    px={6}
+    py={4}
+    maxWidth="300px"
+  >
     <Text>{children}</Text>
   </Box>
-)
+);
 
 render(
   <Stack>
@@ -32,7 +40,7 @@ render(
     <Card>Item 2</Card>
     <Card>Item 3</Card>
   </Stack>
-)
+);
 ```
 
 ## Variants
@@ -41,11 +49,17 @@ render(
 
 ```jsx live noInline
 const Card = ({ children }) => (
-  <Box borderRadius="md" borderWidth="1px" borderStyle="solid" px={6} py={4} maxWidth="300px">
+  <Box
+    borderRadius="md"
+    borderWidth="1px"
+    borderStyle="solid"
+    px={6}
+    py={4}
+    maxWidth="300px"
+  >
     <Text>{children}</Text>
   </Box>
-)
-
+);
 
 render(
   <Stack horizontal>
@@ -53,17 +67,24 @@ render(
     <Card>Item 2</Card>
     <Card>Item 3</Card>
   </Stack>
-)
+);
 ```
 
 ### Custom Gap
+
 ```jsx live noInline
 const Card = ({ children }) => (
-  <Box borderRadius="md" borderWidth="1px" borderStyle="solid" px={6} py={4} maxWidth="300px">
+  <Box
+    borderRadius="md"
+    borderWidth="1px"
+    borderStyle="solid"
+    px={6}
+    py={4}
+    maxWidth="300px"
+  >
     <Text>{children}</Text>
   </Box>
-)
-
+);
 
 render(
   <Stack gap="30px">
@@ -71,5 +92,5 @@ render(
     <Card>Item 2</Card>
     <Card>Item 3</Card>
   </Stack>
-)
+);
 ```

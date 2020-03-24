@@ -13,23 +13,14 @@ import { RadioGroup, Radio } from 'minerva-ui';
   const [value, setValue] = React.useState('supreme');
   return (
     <>
-    <Heading size="sm" fontWeight={600} mb={3}>
-      Pizza Toppings
-    </Heading>
-    <RadioGroup
-      onChange={e => setValue(e.target.value)}
-      value={value}
-    >
-      <Radio value="supreme">
-        Supreme
-      </Radio>
-      <Radio value="meat">
-        Meat
-      </Radio>
-      <Radio value="vegetarian">
-        Vegetarian
-      </Radio>
-    </RadioGroup>
+      <Heading size="sm" fontWeight={600} mb={3}>
+        Pizza Toppings
+      </Heading>
+      <RadioGroup onChange={e => setValue(e.target.value)} value={value}>
+        <Radio value="supreme">Supreme</Radio>
+        <Radio value="meat">Meat</Radio>
+        <Radio value="vegetarian">Vegetarian</Radio>
+      </RadioGroup>
     </>
   );
 };

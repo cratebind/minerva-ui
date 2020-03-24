@@ -7,22 +7,29 @@ import { Input } from 'minerva-ui';
 Extends native `<input />` component
 
 ```js
-import { Input } from 'minerva-ui'
+import { Input } from 'minerva-ui';
 ```
 
 ```jsx live
 () => {
-  const [name, setName] = React.useState('')
-  return <Input value={name} onChange={e => setName(e.target.value)} placeholder="Basic Input" />
-}
+  const [name, setName] = React.useState('');
+  return (
+    <Input
+      value={name}
+      onChange={e => setName(e.target.value)}
+      placeholder="Basic Input"
+    />
+  );
+};
 ```
 
 # Examples
 
 ### Disabled Input
+
 ```jsx live
 () => {
-  const [name, setName] = React.useState('')
+  const [name, setName] = React.useState('');
   return (
     <Input
       disabled
@@ -30,14 +37,15 @@ import { Input } from 'minerva-ui'
       onChange={e => setName(e.target.value)}
       placeholder="Basic Input"
     />
-  )
-}
+  );
+};
 ```
 
 ### Password Input
+
 ```jsx live
 () => {
-  const [name, setName] = React.useState('')
+  const [name, setName] = React.useState('');
   return (
     <Input
       type="password"
@@ -45,6 +53,6 @@ import { Input } from 'minerva-ui'
       onChange={e => setName(e.target.value)}
       placeholder="Basic Input"
     />
-  )
-}
+  );
+};
 ```

@@ -3,8 +3,9 @@ title: 'Buttons'
 ---
 
 ## Button Group
+
 ```jsx live noInline
-const CustomButton = (props) => (
+const CustomButton = props => (
   <Button bg="gray.300" borderWidth={0} {...props} />
 );
 
@@ -13,10 +14,11 @@ render(
     <CustomButton radiusRight={0}>Button 1</CustomButton>
     <CustomButton radiusLeft={0}>Button 2</CustomButton>
   </Flex>
-)
+);
 ```
 
 ## Button Hover Styles
+
 ```jsx live
 <Button
   _hover={{
