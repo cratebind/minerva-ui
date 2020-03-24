@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Text } from 'minerva-ui'
+import { Text } from 'minerva-ui';
 
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import SEO from '@rocketseat/gatsby-theme-docs/src/components/SEO';
@@ -9,8 +9,8 @@ import PostNav from '@rocketseat/gatsby-theme-docs/src/components/Docs/PostNav';
 import EditGithub from '@rocketseat/gatsby-theme-docs/src/components/Docs/EditGithub';
 
 const components = {
-  p: (props) => <Text m={0} {...props} />
-}
+  p: props => <Text m={0} {...props} />,
+};
 
 export default function Docs({ mdx, pageContext }) {
   const { prev, next, githubEditUrl } = pageContext;
