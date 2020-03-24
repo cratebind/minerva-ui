@@ -1,0 +1,52 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Skeleton } from '../Skeleton';
+import Text from '../Text';
+import Icon from '../Icon';
+import Image from '../Image';
+import Box from  '../layout';
+
+<Meta title="Elements|Skeleton" component={Skeleton} />
+
+# Skeleton
+
+Animated loading skeleton that automatically adapts to your app.
+
+```js
+import { Text } from 'minerva-ui';
+```
+
+```jsx
+() => {
+  const [data, setData] = React.useState('');
+  return data ? <Text>test</Text> : <Skeleton />;
+};
+```
+
+
+```jsx
+() => {
+  const [data, setData] = React.useState('');
+  return data ? <Icon name="plus"></Icon> : <Skeleton />;
+};
+```
+
+```jsx
+() => {
+  const [data, setData] = React.useState('');
+  return data ? <Box border="2px solid red" borderRadius="full">Test</Box> : <Skeleton />;
+};
+```
+
+<!-- ```jsx
+() => {
+    React.useEffect(() => {
+        setTimeout(() => {
+            setImageSrc("https://source.unsplash.com/random")
+        }, 3000);
+    },[])
+  const [imageSrc, setImageSrc] = React.useState('');
+ 
+  return imageSrc ?  <Image src={imageSrc} maxWidth="20rem" /> : <Skeleton />;
+};
+``` -->
+
