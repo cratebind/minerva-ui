@@ -25,7 +25,7 @@ import { Text } from 'minerva-ui';
 
 # Variants
 
-### Circular loading skeleton
+### Circular loading skeleton.
 
 ```jsx
 () => {
@@ -55,7 +55,7 @@ import { Text } from 'minerva-ui';
   return (
     <>
       <Button mb="10px" onClick={() => setLoading(prevState => !prevState)}>
-        {loading ? 'Loading' : 'Loaded'}
+        {loading ? 'Loading...' : 'Loaded'}
       </Button>
       <div>
         {!loading ? (

@@ -63,7 +63,7 @@ export const Skeleton = ({
       ></SkeletonAnimation>
     );
   }
-  return <Container>{elements}</Container>;
+  return <Container data-testid="skeleton">{elements}</Container>;
 };
 
 export default Skeleton;
