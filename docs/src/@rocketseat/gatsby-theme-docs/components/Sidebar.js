@@ -33,6 +33,8 @@ export default function Sidebar({ isMenuOpen }) {
       siteMetadata: { footer, basePath },
     },
     allMdx,
+    components,
+    examples,
   } = useStaticQuery(graphql`
     {
       site {
@@ -41,8 +43,24 @@ export default function Sidebar({ isMenuOpen }) {
           basePath
         }
       }
-      allMdx(
+      components: allMdx(
         filter: { fields: { slug: { regex: "/(components)/" } } }
+        sort: { fields: [frontmatter___title], order: ASC }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+      examples: allMdx(
+        filter: { fields: { slug: { regex: "/(examples)/" } } }
         sort: { fields: [frontmatter___title], order: ASC }
       ) {
         edges {
@@ -79,6 +97,8 @@ export default function Sidebar({ isMenuOpen }) {
     );
   }
 
+  console.log({ data, components, examples });
+
   return (
     <Container isMenuOpen={isMenuOpen}>
       <LogoContainer>
@@ -108,7 +128,20 @@ export default function Sidebar({ isMenuOpen }) {
             return <CustomItem key={id}>{renderLink(link, label)}</CustomItem>;
           })}
           <ListWithSubItems text="Components">
-            {allMdx.edges.map(({ node: { id, fields, frontmatter } }) => {
+            {components.edges.map(({ node: { id, fields, frontmatter } }) => {
+              if (!frontmatter.title) {
+                console.warn(`Missing title for file at ${fields.slug}`);
+              }
+
+              return (
+                <CustomItem key={id}>
+                  {renderLink(fields.slug, frontmatter.title)}
+                </CustomItem>
+              );
+            })}
+          </ListWithSubItems>
+          <ListWithSubItems text="Examples">
+            {examples.edges.map(({ node: { id, fields, frontmatter } }) => {
               if (!frontmatter.title) {
                 console.warn(`Missing title for file at ${fields.slug}`);
               }
