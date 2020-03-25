@@ -4,17 +4,24 @@ import { Dialog, DialogOverlay } from '@reach/dialog';
 // import { animated, useTransition } from 'react-spring';
 import { MinervaProps, systemProps, Box } from '../layout';
 import Icon from '../Icon';
+import Button from '../Button';
 
 import '@reach/dialog/styles.css';
 
-const StyledOverlay = styled(DialogOverlay)({});
+const StyledOverlay = styled(DialogOverlay)({}, systemProps);
 
 const StyledModal = styled(Dialog)(
-  {
-    padding: '1.25rem',
+  props => ({
+    // padding: '1.25rem',
+    padding: 0,
     borderRadius: '5px',
     alignItems: 'center',
-  },
+    width: '100%',
+    maxWidth: '30rem',
+    zIndex: 3,
+    // transition: 'all 900ms ease',
+    // opacity: props.isOpen ? 1 : 0,
+  }),
   systemProps
 );
 
@@ -26,10 +33,13 @@ const TopContainer = styled(Box)({
   width: '100%',
   justifyContent: 'space-between',
   alignItems: 'center',
-  marginBottom: '16px',
+  padding: '1.5rem',
 });
 
-const CloseButton = styled('button')({});
+const CloseButton = styled(Button)({
+  border: 0,
+  padding: '0.25rem',
+});
 
 const ModalTitle = styled('p')(
   {
@@ -39,7 +49,12 @@ const ModalTitle = styled('p')(
   systemProps
 );
 
-const StyledModalBody = styled(Box)({});
+const StyledModalBody = styled(Box)({
+  paddingLeft: '1.5rem',
+  paddingRight: '1.5rem',
+  paddingTop: '0.5rem',
+  paddingBottom: '1rem',
+});
 
 const StyledModalFooter = styled(Box)({});
 
@@ -94,32 +109,14 @@ export const Modal = forwardRef(function Modal(
   { title, children, isOpen, onClose, ...props }: ModalProps,
   ref
 ) {
-  // const transitions = useTransition(isOpen, null, {
-  //   from: { opacity: 0, y: -10 },
-  //   enter: { opacity: 1, y: 0 },
-  //   leave: { opacity: 0, y: 10 },
-  // });
   return (
-    //  transitions.map(
-    //   ({ item, key, props: styles }) =>
-    //     item && (
-    <StyledOverlay
-      isOpen={isOpen}
-      // style={{ opacity: styles.opacity }}
-    >
+    <StyledOverlay isOpen={isOpen}>
       <StyledModal
         aria-label="modal"
         isOpen={isOpen}
         onDismiss={onClose}
         ref={ref}
         {...props}
-        // style={{
-        //   transform: styles.y.interpolate(
-        //     value => `translate3d(0px, ${value}px, 0px)`
-        //   ),
-        //   border: '4px solid hsla(0, 0%, 0%, 0.5)',
-        //   borderRadius: 10,
-        // }}
       >
         {children}
       </StyledModal>

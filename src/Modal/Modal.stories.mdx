@@ -8,30 +8,32 @@ import Button from '../Button';
 
 Basic Modal component that accepts an `isOpen` prop.
 
+Uses the [Reach UI Modal](https://reacttraining.com/reach-ui/dialog) component to cover accessibility requirements.
+
 ```js
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'minerva-ui'
 ```
 
-``` jsx live
+```jsx live
 () => {
     const [open, setOpen ] = React.useState(false);
 
     return (
         <>
             <Button onClick={() => setOpen(true)}>Open Modal</Button>
-            <Modal isOpen={open} onClose={() => setOpen(false)}>
+            <Modal isOpen={open} onClose={() => setOpen(false)} overflow="hidden">
                 <ModalHeader onClose={() => setOpen(false)}>Hello World!</ModalHeader>
                 <ModalBody>
-                    Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Sunt ad dolore quis aute consequat. Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
+                    Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Sunt ad dolore quis aute consequat.
                 </ModalBody>
-                <ModalFooter>
-                    <Flex px={6} py={3} flexDirection={['column', 'row-reverse']}>
+                <ModalFooter bg="gray.50">
+                    <Flex px={6} py={3} flexDirection={['column', 'row-reverse']} bg="gray.50" radiusBottom="5px">
                         <Button
                             onClick={() => setOpen(false)}
                             boxShadow="base"
                             width={['100%', 'auto']}
                             >
-                            Okay
+                            Submit
                         </Button>
                     </Flex>
                 </ModalFooter>
@@ -39,4 +41,37 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from 'minerva-ui'
         </>
     )
 };
+```
+
+## Animations
+
+Animations are included by default in the `<GlobalStyles />` component:
+
+```css
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideup {
+  from {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+[data-reach-dialog-overlay] {
+  animation: fadein 0.18s;
+}
+
+[data-reach-dialog-content] {
+  animation: slideup 0.18s;
+}
 ```
