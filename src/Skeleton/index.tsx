@@ -5,9 +5,14 @@ import { useTheme } from '../theme';
 
 export interface SkeletonProps extends MinervaProps {
   count?: number;
+  circle?: boolean;
+}
+
+export interface SkeletonAnimationProps {
+  circle?: boolean;
+  gap?: string;
   height?: string;
   width?: string;
-  circle?: boolean;
 }
 
 const Container = styled.span`
@@ -17,15 +22,12 @@ const Container = styled.span`
   width: 100%;
 `;
 
-export interface SkeletonAnimationProps {
-  circle?: boolean;
-}
-
 const SkeletonAnimation = styled('div')`
   display: inline-block;
-  width: ${(props: SkeletonAnimationProps) => props.circle ? '100%' : '100%' };
-  height: ${(props: SkeletonAnimationProps) => props.circle ? '100%' : '2em' };
-  /* width: 3em; */
+  width: ${(props: SkeletonAnimationProps) => props.width ? `${props.width}` : '100%' };
+  height: ${(props: SkeletonAnimationProps) => props.height ? `${props.height}` : '2em' };
+  border-radius: ${(props: SkeletonAnimationProps) => props.circle ? '50%' : '5px' };
+  margin-bottom: ${(props: SkeletonAnimationProps) => props.gap ? `${props.gap}` : '10px' };
   background: linear-gradient(-90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
   background-size: 400% 400%;
   animation: pulse 1.2s ease-in-out infinite;
@@ -37,8 +39,6 @@ const SkeletonAnimation = styled('div')`
       background-position: -135% 0%;
     }
   }
-  /* width: 5.5em; */
-  border-radius: 5px;
   line-height: 1;
 
   &::before {
@@ -48,8 +48,6 @@ const SkeletonAnimation = styled('div')`
 
 export const Skeleton = ({
   count = 1,
-  height,
-  width,
   circle,
   ...props
 }: SkeletonProps) => {
@@ -58,7 +56,6 @@ export const Skeleton = ({
   for (let i = 0; i < count; i++) {
     elements.push(
       <SkeletonAnimation
-        style={{ height, width, borderRadius: circle ? '50%' : null }}
         count={count}
         circle={circle}
         {...props}
@@ -66,7 +63,7 @@ export const Skeleton = ({
       ></SkeletonAnimation>
     );
   }
-  return <Container {...props} style={{height, width}}>{elements}</Container>;
+  return <Container>{elements}</Container>;
 };
 
 export default Skeleton;
