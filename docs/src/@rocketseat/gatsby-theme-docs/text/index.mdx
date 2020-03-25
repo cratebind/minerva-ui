@@ -3,6 +3,7 @@
 Minerva UI is a reusable component library to help build UIs faster. This library aims to be highly composable, declarative and accessible.
 
 ## Install
+
 `npm install --save minerva-ui`
 or
 `yarn add minerva-ui`
@@ -21,7 +22,7 @@ const App = () => (
     {/* optional but recommended */}
     <GlobalStyles />
   </ThemeProvider>
-)
+);
 ```
 
 Then import components you want into your UI:
@@ -36,18 +37,17 @@ And use them:
 () => {
   const [checked, setChecked] = React.useState(false);
   return (
-    <Checkbox
-      checked={checked}
-      onChange={() => setChecked(!checked)}
-    >
+    <Checkbox checked={checked} onChange={() => setChecked(!checked)}>
       Stay Logged In
     </Checkbox>
-  )
-}
+  );
+};
 ```
 
 ## Principles
+
 ### Highly Composable
+
 A composable library avoids abstracting away too much control from the developer. Our goal is to avoid creating complex components with prop names like `innerInputIconStyles`.
 
 ```jsx
@@ -102,6 +102,7 @@ In this library, components that extend familiar HTML elements (such as `<input 
 ``` -->
 
 ## Contributing
+
 1. Clone Repo
 2. Run `yarn install`
 3. Run `yarn storybook` to open a local storybook server for development
@@ -115,6 +116,7 @@ In this library, components that extend familiar HTML elements (such as `<input 
 [Chakra UI](https://chakra-ui.com/) - Batteries-included React Component library
 
 ## Tools:
+
 - [Styled Components](https://styled-components.com/)
 - [Styled System](https://styled-system.com/)
 - [Jest](https://jestjs.io/)

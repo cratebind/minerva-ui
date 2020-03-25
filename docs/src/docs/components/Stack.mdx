@@ -1,0 +1,96 @@
+---
+title: 'Stack'
+---
+
+import { Box, Stack } from 'minerva-ui';
+import Header from '../../components/Header';
+
+Wrapper component that adds margins between child components using [this hack](https://every-layout.dev/layouts/stack/#the-solution):
+
+```css
+/* adds margin between all immediate child elements that are adjacent */
+.stack > * + * {
+  margin-top: 1.5rem;
+}
+```
+
+Also inspired by [Chakra UI](https://chakra-ui.com/stack).
+
+<Header description="test" components={['Stack']} />
+
+## Usage
+
+```jsx live noInline
+const Card = ({ children }) => (
+  <Box
+    borderRadius="md"
+    borderWidth="1px"
+    borderStyle="solid"
+    px={6}
+    py={4}
+    maxWidth="300px"
+  >
+    <Text>{children}</Text>
+  </Box>
+);
+
+render(
+  <Stack>
+    <Card>Item 1</Card>
+    <Card>Item 2</Card>
+    <Card>Item 3</Card>
+  </Stack>
+);
+```
+
+## Variants
+
+### Horizontal Stack
+
+```jsx live noInline
+const Card = ({ children }) => (
+  <Box
+    borderRadius="md"
+    borderWidth="1px"
+    borderStyle="solid"
+    px={6}
+    py={4}
+    maxWidth="300px"
+  >
+    <Text>{children}</Text>
+  </Box>
+);
+
+render(
+  <Stack horizontal>
+    <Card>Item 1</Card>
+    <Card>Item 2</Card>
+    <Card>Item 3</Card>
+  </Stack>
+);
+```
+
+### Custom Gap
+
+```jsx live noInline
+const Card = ({ children }) => (
+  <Box
+    borderRadius="md"
+    borderWidth="1px"
+    borderStyle="solid"
+    px={6}
+    py={4}
+    maxWidth="300px"
+  >
+    <Text>{children}</Text>
+  </Box>
+);
+
+render(
+  <Stack gap="30px">
+    <Card>Item 1</Card>
+    <Card>Item 2</Card>
+    <Card>Item 3</Card>
+  </Stack>
+);
+```

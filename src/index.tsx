@@ -21,6 +21,7 @@ export { default as Alert } from './Alert';
  */
 export { Box, Block, Flex } from './layout';
 export { default as PseudoBox } from './PseudoBox';
+export { default as Stack } from './Stack';
 
 /**
  * Inputs

@@ -17,15 +17,15 @@
 #       link: '/elements/Checkbox'
 #     - label: 'Heading'
 #       link: '/elements/Heading'
-- label: Examples
-  items:
-    - label: 'Buttons'
-      link: '/examples/Buttons'
-    - label: 'Cards'
-      link: '/examples/Cards'
-    - label: 'Forms'
-      link: '/examples/Forms'
-    - label: 'Modals'
-      link: '/examples/Modals'
-    - label: 'Navigation'
-      link: '/examples/Navigation'
+# - label: Examples
+#   items:
+#     - label: 'Buttons'
+#       link: '/examples/Buttons'
+#     - label: 'Cards'
+#       link: '/examples/Cards'
+#     - label: 'Forms'
+#       link: '/examples/Forms'
+#     - label: 'Modals'
+#       link: '/examples/Modals'
+#     - label: 'Navigation'
+#       link: '/examples/Navigation'

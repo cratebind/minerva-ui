@@ -33,7 +33,7 @@ import { TagsInput } from 'minerva-ui';
           addTag();
         }
         if (e.key === 'Backspace' && !inputVal) {
-            removeTag(tags.length - 1)
+          removeTag(tags.length - 1);
         }
       }}
       onChange={e => setInputVal(e.target.value)}
