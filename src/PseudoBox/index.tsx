@@ -190,30 +190,6 @@ const PseudoBox = styled(Box)<PseudoProps>(
   }: PseudoBoxProps) => {
     // console.log(transformAliasProps(_hover));
     return css({
-      // [hover]: transformAliasProps(_hover),
-      // [focus]: transformAliasProps(_focus),
-      // [active]: transformAliasProps(_active),
-      // [visited]: transformAliasProps(_visited),
-      // [disabled]: transformAliasProps(_disabled),
-      // [selected]: transformAliasProps(_selected),
-      // [invalid]: transformAliasProps(_invalid),
-      // [expanded]: transformAliasProps(_expanded),
-      // [grabbed]: transformAliasProps(_grabbed),
-      // [readOnly]: transformAliasProps(_readOnly),
-      // [first]: transformAliasProps(_first),
-      // [notFirst]: transformAliasProps(_notFirst),
-      // [notLast]: transformAliasProps(_notLast),
-      // [last]: transformAliasProps(_last),
-      // [odd]: transformAliasProps(_odd),
-      // [even]: transformAliasProps(_even),
-      // [mixed]: transformAliasProps(_mixed),
-      // [checked]: transformAliasProps(_checked),
-      // [pressed]: transformAliasProps(_pressed),
-      // [groupHover]: transformAliasProps(_groupHover),
-      // '&:before': transformAliasProps(_before),
-      // '&:after': transformAliasProps(_after),
-      // '&:focus-within': transformAliasProps(_focusWithin),
-      // '&::placeholder': transformAliasProps(_placeholder),
       [hover]: _hover,
       [focus]: _focus,
       [active]: _active,
@@ -238,7 +214,7 @@ const PseudoBox = styled(Box)<PseudoProps>(
       '&:after': _after,
       '&:focus-within': _focusWithin,
       '&::placeholder': _placeholder,
-    });
+    } as any);
   }
 );
 

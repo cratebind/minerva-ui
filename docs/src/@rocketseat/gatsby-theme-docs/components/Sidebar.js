@@ -32,7 +32,6 @@ export default function Sidebar({ isMenuOpen }) {
     site: {
       siteMetadata: { footer, basePath },
     },
-    allMdx,
     components,
     examples,
   } = useStaticQuery(graphql`
