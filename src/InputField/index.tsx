@@ -33,7 +33,7 @@ export const StyledRequiredMarker = styled(Text)(() => {
   };
 });
 
-export const RequiredMarker = ({ color }) => {
+export const RequiredMarker = ({ color }: { color?: string }) => {
   return (
     <StyledRequiredMarker aria-hidden="true" color={color}>
       *

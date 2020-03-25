@@ -2,7 +2,9 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { MinervaProps, systemProps } from '../layout';
 
-const sizes = {
+type SizeNames = 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+
+const sizes: { [key in SizeNames]: string } = {
   xl: '40px',
   lg: '32px',
   md: '24px',
@@ -11,7 +13,7 @@ const sizes = {
 };
 
 const StyledHeading = styled('h1')<any>(
-  props => ({
+  (props: { theme: any; size: SizeNames; lineHeight?: string }) => ({
     ...props.theme.Heading,
     fontSize: sizes[props.size],
     lineHeight: props.lineHeight,

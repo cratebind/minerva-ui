@@ -6,10 +6,12 @@ import { ThemeContext } from 'styled-components';
 // import { useContext } from 'react';
 // import { ThemeContext } from 'styled-components';
 
+const AllIcons: { [index: string]: any } = Icon;
+
 const logoColor = '#551A8B';
 
 // https://gist.github.com/thevangelist/8ff91bac947018c9f3bfaad6487fa149
-function toKebabCase(string) {
+function toKebabCase(string: string): string {
   return string
     .replace(/([a-z])([A-Z])/g, '$1-$2')
     .replace(/\s+/g, '-')
@@ -69,8 +71,8 @@ const defaultTheme: MinervaTheme = {
   Select: {},
   Tag: {},
   defaultBorderColor: '#d2d6dc',
-  icons: Object.keys(Icon).reduce((result, iconName) => {
-    result[toKebabCase(iconName)] = Icon[iconName];
+  icons: Object.keys(Icon).reduce((result: any, iconName) => {
+    result[toKebabCase(iconName)] = AllIcons[iconName];
     return result;
   }, {}),
   colors: {
