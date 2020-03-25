@@ -6,7 +6,13 @@ title: 'Modals'
 
 ```jsx live
 <Flex bg="gray.500" justifyContent="center" p={6}>
-  <Box maxWidth="512px" bg="white" borderRadius="lg" shadow="xl" overflow="hidden">
+  <Box
+    maxWidth="512px"
+    bg="white"
+    borderRadius="lg"
+    shadow="xl"
+    overflow="hidden"
+  >
     <Box p={6} pb={4} bg="white">
       <Flex
         alignItems={['center', 'flex-start']}
@@ -38,7 +44,8 @@ title: 'Modals'
           </Heading>
           <Box mt={2}>
             <Text fontSize="sm" color="gray.500">
-              Are you sure you want to deactivate your account? All of your data will be permanantly removed. This action cannot be undone.
+              Are you sure you want to deactivate your account? All of your data
+              will be permanantly removed. This action cannot be undone.
             </Text>
           </Box>
         </Box>
@@ -55,15 +62,12 @@ title: 'Modals'
         color="white"
         _hover={{
           bg: 'red.500',
-          color: 'white'
+          color: 'white',
         }}
       >
         Deactivate
       </Button>
-      <Button
-          boxShadow="base"
-          width={['100%', 'auto']}
-        >
+      <Button boxShadow="base" width={['100%', 'auto']}>
         Cancel
       </Button>
     </Flex>

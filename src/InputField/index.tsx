@@ -42,7 +42,7 @@ export const RequiredMarker = ({ color }) => {
 };
 
 const Label = styled.label`
-  display: block;
+  display: inline-block;
   position: relative;
   margin-bottom: 8px;
   line-height: 1.5;

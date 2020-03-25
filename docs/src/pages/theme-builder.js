@@ -7,5 +7,5 @@ export default function ThemeBuilderPage() {
     <AppProvider>
       <ThemeBuilder />
     </AppProvider>
-  )
+  );
 }

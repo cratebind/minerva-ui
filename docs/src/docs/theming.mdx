@@ -15,7 +15,6 @@ Minerva comes with a [default theme](https://github.com/cratebind/minerva-ui/blo
 You can also extend these styles to customize them or provide your own style object:
 
 ```jsx live noInline
-
 const customTheme = {
   // spread the default theme if you want to extend them
   ...defaultTheme,
@@ -23,20 +22,17 @@ const customTheme = {
     // make sure to spread nested objects like this
     // unless you are trying to override the entire object
     ...defaultTheme.colors,
-    primary:  '#551A8B'
-  }
-}
+    primary: '#551A8B',
+  },
+};
 
 render(
   <ThemeProvider theme={customTheme}>
-    <Button
-      bg="primary"
-      color="white"
-    >
+    <Button bg="primary" color="white">
       Primary Button
     </Button>
   </ThemeProvider>
-)
+);
 ```
 
 ## Component Theming
@@ -50,20 +46,20 @@ Theme styles for specific components can be provided in your `theme` object:
     Button: {
       ...defaultTheme.Button,
       backgroundColor: 'midnightblue',
-      color: '#fff'
-    }
-  }
+      color: '#fff',
+    },
+  };
 
   return (
     <ThemeProvider theme={theme}>
       <Button>Custom Button Styles</Button>
     </ThemeProvider>
-  )
-}
+  );
+};
 ```
 
 ## Default Theme
 
-<code className="language-json"style={{ whiteSpace: 'pre-wrap'}}>
+<code className="language-json" style={{ whiteSpace: 'pre-wrap' }}>
   {JSON.stringify(defaultTheme, null, 2)}
 </code>

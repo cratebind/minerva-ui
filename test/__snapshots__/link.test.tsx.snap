@@ -5,18 +5,6 @@ exports[`<Link /> should render 1`] = `
   font-size: 16px;
 }
 
-.c0 {
-  font-size: 16px;
-}
-
-.c0 {
-  font-size: 16px;
-}
-
-.c0 {
-  font-size: 16px;
-}
-
 <div>
   <a
     class="sc-AxirZ sc-AxhUy c0"

@@ -94,6 +94,10 @@ interface ICustomConfig {
   roundedTopLeft?: borderRadius;
   roundedBottomRight?: borderRadius;
   roundedBottomLeft?: borderRadius;
+  radiusLeft?: borderRadius;
+  radiusTop?: borderRadius;
+  radiusRight?: borderRadius;
+  radiusBottom?: borderRadius;
 
   // Custom borderColor alias
   borderBottomColor?: borderColor;
