@@ -1,9 +1,13 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { Dialog } from '@reach/dialog';
-import '@reach/dialog/styles.css';
+import { Dialog, DialogOverlay } from '@reach/dialog';
+// import { animated, useTransition } from 'react-spring';
 import { MinervaProps, systemProps, Box } from '../layout';
 import Icon from '../Icon';
+
+import '@reach/dialog/styles.css';
+
+const StyledOverlay = styled(DialogOverlay)({});
 
 const StyledModal = styled(Dialog)(
   {
@@ -13,6 +17,9 @@ const StyledModal = styled(Dialog)(
   },
   systemProps
 );
+
+// const StyledOverlay = animated(DialogOverlay);
+// const StyledModal = animated(Dialog);
 
 const TopContainer = styled(Box)({
   display: 'flex',
@@ -87,10 +94,37 @@ export const Modal = forwardRef(function Modal(
   { title, children, isOpen, onClose, ...props }: ModalProps,
   ref
 ) {
+  // const transitions = useTransition(isOpen, null, {
+  //   from: { opacity: 0, y: -10 },
+  //   enter: { opacity: 1, y: 0 },
+  //   leave: { opacity: 0, y: 10 },
+  // });
   return (
-    <StyledModal isOpen={isOpen} onDismiss={onClose} ref={ref} {...props}>
-      {children}
-    </StyledModal>
+    //  transitions.map(
+    //   ({ item, key, props: styles }) =>
+    //     item && (
+    <StyledOverlay
+      isOpen={isOpen}
+      // style={{ opacity: styles.opacity }}
+    >
+      <StyledModal
+        aria-label="modal"
+        isOpen={isOpen}
+        onDismiss={onClose}
+        ref={ref}
+        {...props}
+        // style={{
+        //   transform: styles.y.interpolate(
+        //     value => `translate3d(0px, ${value}px, 0px)`
+        //   ),
+        //   border: '4px solid hsla(0, 0%, 0%, 0.5)',
+        //   borderRadius: 10,
+        // }}
+      >
+        {children}
+      </StyledModal>
+    </StyledOverlay>
+    // )
   );
 });
 

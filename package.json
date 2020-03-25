@@ -87,6 +87,7 @@
     "copy-to-clipboard": "^3.3.1",
     "eslint-config-cratebind": "^3.0.8",
     "react-feather": "^2.0.3",
+    "react-spring": "^8.0.27",
     "styled-components": "^5.0.0",
     "styled-system": "^5.1.5"
   },
@@ -112,7 +113,10 @@
       "<rootDir>/src/CodeBlock.*",
       "(.d.ts)$",
       ".stories.tsx$"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
+    }
   },
   "config": {
     "commitizen": {
