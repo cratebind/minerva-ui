@@ -17,8 +17,14 @@ import { Text } from 'minerva-ui';
 
 ```jsx
 () => {
+  return  <div style={{width: '100px'}}><Skeleton count={5} circle/></div>;
+};
+```
+
+```jsx
+() => {
   const [data, setData] = React.useState('');
-  return data ? <Text>test</Text> : <Skeleton />;
+  return <div style={{width: '500px', height: '100px'}}>{data ? <Text>test</Text> : <Skeleton />}</div>;
 };
 ```
 
@@ -36,17 +42,4 @@ import { Text } from 'minerva-ui';
   return data ? <Box border="2px solid red" borderRadius="full">Test</Box> : <Skeleton />;
 };
 ```
-
-<!-- ```jsx
-() => {
-    React.useEffect(() => {
-        setTimeout(() => {
-            setImageSrc("https://source.unsplash.com/random")
-        }, 3000);
-    },[])
-  const [imageSrc, setImageSrc] = React.useState('');
- 
-  return imageSrc ?  <Image src={imageSrc} maxWidth="20rem" /> : <Skeleton />;
-};
-``` -->
 
