@@ -1,20 +1,42 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import Modal from '../Modal';
+import Modal, { ModalBody, ModalHeader, ModalFooter } from '../Modal';
+import Button from '../Button';
 
 <Meta title="Elements|Modal" component={Modal} />
 
 # Modal
 
-Basic Modal component with predefined status codes and customizable color and icon.
+Basic Modal component that accepts an `isOpen` prop.
 
 ```js
-import { Modal } from 'minerva-ui'
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'minerva-ui'
 ```
 
-If status codes are supplied, the component will supply predefined colors and icons.
+``` jsx live
+() => {
+    const [open, setOpen ] = React.useState(false);
 
-```jsx
-<Modal>
-Hello World!
-</Modal>
+    return (
+        <>
+            <Button onClick={() => setOpen(true)}>Open Modal</Button>
+            <Modal isOpen={open} onClose={() => setOpen(false)}>
+                <ModalHeader onClose={() => setOpen(false)}>Hello World!</ModalHeader>
+                <ModalBody>
+                    Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Sunt ad dolore quis aute consequat. Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
+                </ModalBody>
+                <ModalFooter>
+                    <Flex px={6} py={3} flexDirection={['column', 'row-reverse']}>
+                        <Button
+                            onClick={() => setOpen(false)}
+                            boxShadow="base"
+                            width={['100%', 'auto']}
+                            >
+                            Okay
+                        </Button>
+                    </Flex>
+                </ModalFooter>
+            </Modal>
+        </>
+    )
+};
 ```
