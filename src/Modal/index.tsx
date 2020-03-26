@@ -1,7 +1,6 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { Dialog, DialogOverlay } from '@reach/dialog';
-// import { animated, useTransition } from 'react-spring';
 import { MinervaProps, systemProps, Box } from '../layout';
 import Icon from '../Icon';
 import Button from '../Button';
@@ -11,22 +10,16 @@ import '@reach/dialog/styles.css';
 const StyledOverlay = styled(DialogOverlay)({}, systemProps);
 
 const StyledModal = styled(Dialog)(
-  props => ({
-    // padding: '1.25rem',
+  {
     padding: 0,
     borderRadius: '5px',
     alignItems: 'center',
     width: '100%',
     maxWidth: '30rem',
     zIndex: 3,
-    // transition: 'all 900ms ease',
-    // opacity: props.isOpen ? 1 : 0,
-  }),
+  },
   systemProps
 );
-
-// const StyledOverlay = animated(DialogOverlay);
-// const StyledModal = animated(Dialog);
 
 const TopContainer = styled(Box)({
   display: 'flex',
