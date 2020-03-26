@@ -10,6 +10,7 @@ const RadioContainer = styled(Box)`
   display: flex;
   align-items: center;
   margin: 0 10px 10px 0;
+  cursor: pointer;
 
   input[type='radio']:focus + [data-minerva='control-box'] {
     box-shadow: 0 0 0 3px rgba(118, 169, 250, 0.45);

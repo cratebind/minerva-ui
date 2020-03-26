@@ -46,10 +46,7 @@ exports[`<Select /> should change style if disabled 1`] = `
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
-}
-
-.c1:hover {
-  background-color: #f9fafb;
+  cursor: pointer;
 }
 
 .c1:focus {
@@ -183,10 +180,7 @@ exports[`<Select /> should render 1`] = `
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
-}
-
-.c1:hover {
-  background-color: #f9fafb;
+  cursor: pointer;
 }
 
 .c1:focus {

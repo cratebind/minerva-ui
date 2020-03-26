@@ -12,34 +12,32 @@ const sizes = {
 
 const StyledHeading = styled('h1')<any>(
   props => ({
+    margin: 0,
+    fontWeight: 'bold',
     ...props.theme.Heading,
-    fontSize: sizes[props.size],
-    lineHeight: props.lineHeight,
   }),
   systemProps
 );
 
 export interface HeadingProps extends MinervaProps {
   children?: React.ReactNode;
-  size?: string;
-  lineHeight?: string;
+  fontSize?: string;
   props?: any;
 }
 
 export const Heading = forwardRef(function Heading(
-  { children, ...props }: HeadingProps,
+  { children, fontSize = 'xl', ...props }: HeadingProps,
   ref
 ) {
   return (
-    <StyledHeading ref={ref} {...props}>
+    <StyledHeading ref={ref} fontSize={fontSize && sizes[fontSize]} {...props}>
       {children}
     </StyledHeading>
   );
 });
 
 Heading.defaultProps = {
-  size: 'xl',
-  lineHeight: 'normal',
+  fontSize: 'xl',
 };
 
 export default Heading;

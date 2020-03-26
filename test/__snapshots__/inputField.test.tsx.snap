@@ -2,6 +2,10 @@
 
 exports[`<InputField> should render 1`] = `
 .c1 {
+  padding-bottom: 0.5rem;
+}
+
+.c2 {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 12px;
@@ -16,19 +20,19 @@ exports[`<InputField> should render 1`] = `
   -webkit-appearance: none;
 }
 
-.c1:focus {
+.c2:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(164,202,254,.45);
 }
 
-.c1:disabled {
+.c2:disabled {
   background-color: #EAEAEA;
   color: #8F8F8F;
   cursor: not-allowed;
 }
 
 .c0 {
-  display: inline-block;
+  display: block;
   position: relative;
   margin-bottom: 8px;
   line-height: 1.5;
@@ -37,20 +41,25 @@ exports[`<InputField> should render 1`] = `
 <div>
   <div
     class=""
+    role="group"
   >
     <label
       class="c0"
       data-testid="label"
-      for="example-input"
     >
-      Placeholder
+      <div
+        class="c1"
+      >
+        Placeholder
+         
+      </div>
+      <input
+        class="c2"
+        id="example-input"
+        placeholder="Basic Input"
+        value=""
+      />
     </label>
-    <input
-      class="c1"
-      id="example-input"
-      placeholder="Basic Input"
-      value=""
-    />
   </div>
 </div>
 `;

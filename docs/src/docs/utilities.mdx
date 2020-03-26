@@ -2,7 +2,21 @@
 title: Utility Props
 ---
 
-Utility props are provided as aliases for most components. The style is heavily influenced by [Tailwind CSS](https://tailwindcss.com/docs/font-size).
+Utility props are provided as aliases for most components.
+
+The style is heavily influenced by [Tailwind CSS](https://tailwindcss.com/docs/utility-first) "utility classes", which are
+
+They also provide preset "contraints" designed control the CSS you write and avoid "hard coding" all CSS values.
+
+For example, this library uses [Styled System's "spacing" utility](https://styled-system.com/api#space), which allows you to use constraints in a range to define `margin` and `padding`.
+
+```jsx live
+<>
+  <Button p={1}>Padding 1</Button>
+  <Button p={3}>Padding 3</Button>
+  <Button p={5}>Padding 5</Button>
+</>
+```
 
 They also allow you to use the shorthand methods from [Styled System](https://styled-system.com/api)
 
@@ -20,7 +34,7 @@ For example:
 </>
 ```
 
-## Styling Props Example
+## Component Example
 
 Here's the ["Card" example](https://tailwindcss.com/components/cards) by Tailwind recreated using this API:
 
@@ -76,11 +90,13 @@ Here's the ["Card" example](https://tailwindcss.com/components/cards) by Tailwin
 </Flex>
 ```
 
+## Extracting Components
+
 Once you've settled on your styles, you can then easily extract components into your own custom components without sacrificing control:
 
 ```jsx live noInline
 // make sure to pass children and "forward" all props to your component
-const Tag = ({ children, ...props }) => (
+const CustomTag = ({ children, ...props }) => (
   <Block
     color="gray.700"
     bg="gray.200"
@@ -95,11 +111,11 @@ const Tag = ({ children, ...props }) => (
 
 render(
   <Flex>
-    <Tag>High Priority</Tag>
+    <CustomTag>High Priority</CustomTag>
     {/* by passing props down we can still style our custom component */}
-    <Tag bg="indigo.600" color="#fff" ml={2}>
-      Customized Tag
-    </Tag>
+    <CustomTag bg="indigo.600" color="#fff" ml={2}>
+      Customized tag
+    </CustomTag>
   </Flex>
 );
 ```

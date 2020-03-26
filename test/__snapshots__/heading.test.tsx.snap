@@ -2,16 +2,15 @@
 
 exports[`<Text /> should render 1`] = `
 .c0 {
+  margin: 0;
+  font-weight: bold;
   font-size: 40px;
-  line-height: normal;
-  width: xl;
-  height: xl;
-  line-height: normal;
 }
 
 <div>
   <h1
     class="c0"
+    font-size="40px"
   >
     Test
   </h1>
