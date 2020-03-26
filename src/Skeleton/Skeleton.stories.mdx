@@ -28,13 +28,7 @@ import { Text } from 'minerva-ui';
 ### Circular loading skeleton.
 
 ```jsx
-() => {
-  return (
-    <div>
-      <Skeleton height="100px" width="100px" circle />
-    </div>
-  );
-};
+() =>  <Skeleton height="100px" width="100px" circle />;
 ```
 
 ### Three-line loading skeleton with custom gap and width. Gap defaults to 10px.
@@ -43,10 +37,17 @@ import { Text } from 'minerva-ui';
 () => {
   const [data, setData] = React.useState('');
   return (
-    <div>{data ? <Text>test</Text> : <Skeleton count={3} width="500px" gap="15px" />}</div>
+    <div>
+      {data ? (
+        <Text>test</Text>
+      ) : (
+        <Skeleton count={3} width="500px" gap="15px" />
+      )}
+    </div>
   );
 };
 ```
+
 ### Use the button to toggle between the 'loaded' and 'loading' states of the image.
 
 ```jsx
@@ -59,7 +60,11 @@ import { Text } from 'minerva-ui';
       </Button>
       <div>
         {!loading ? (
-          <Image src="https://source.unsplash.com/random" height="200px" width="200px" />
+          <Image
+            src="https://source.unsplash.com/random"
+            height="200px"
+            width="200px"
+          />
         ) : (
           <Skeleton width="200px" height="200px" />
         )}

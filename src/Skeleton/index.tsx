@@ -56,6 +56,7 @@ export const Skeleton = ({
   for (let i = 0; i < count; i++) {
     elements.push(
       <SkeletonAnimation
+      data-testid="skeleton"
         count={count}
         circle={circle}
         {...props}
@@ -63,7 +64,7 @@ export const Skeleton = ({
       ></SkeletonAnimation>
     );
   }
-  return <Container data-testid="skeleton">{elements}</Container>;
+  return <Container>{elements}</Container>;
 };
 
 export default Skeleton;

@@ -1,33 +1,59 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-// import * as ReactDOM from 'react-dom';
-import { Skeleton } from '../src';
-import { ThemeProvider } from 'styled-components';
+import { Skeleton, ThemeProvider } from '../src';
 
-describe('Skeleton', () => {
-//   it('renders without crashing', () => {
-//     const div = document.createElement('div');
-//     ReactDOM.render(<Skeleton />, div);
-//     ReactDOM.unmountComponentAtNode(div);
-//   });
+describe('<Skeleton />', () => {
+  it('should render', () => {
+    const { container } = render(
+      <ThemeProvider>
+        <Skeleton></Skeleton>
+      </ThemeProvider>
+    );
+    expect(container).toMatchSnapshot();
+  });
 
   it('renders skeletons equal to the number of count prop', () => {
-    const { getByTestId } = render(<ThemeProvider><Skeleton count={4}></Skeleton></ThemeProvider>);
+    const { getAllByTestId } = render(
+      <ThemeProvider>
+        <Skeleton count={4}></Skeleton>
+      </ThemeProvider>
+    );
 
-    const skeletons = getByTestId('skeleton');
-    console.log('SKELETONS', skeletons)
+    const skeletons = getAllByTestId('skeleton');
     expect(skeletons).toHaveLength(4);
   });
 
   it('should take the width of its parent container if a width prop is not passed', () => {
     const { getByTestId } = render(
-      <div style={{ width: '350px' }}>
-        <Skeleton></Skeleton>
-      </div>
+      <ThemeProvider>
+        <div style={{ width: '350px' }}>
+          <Skeleton></Skeleton>
+        </div>
+      </ThemeProvider>
     );
 
     const skeleton = getByTestId('skeleton');
-    expect(skeleton).toHaveStyle('width: 350px');
+    expect(skeleton).toHaveStyle('width: 100%');
+  });
+
+  it('should span the width of the width prop ', () => {
+    const { getByTestId } = render(
+      <ThemeProvider>
+        <Skeleton width="500px"></Skeleton>
+      </ThemeProvider>
+    );
+    const skeleton = getByTestId('skeleton');
+    expect(skeleton).toHaveStyle('width: 500px');
+  });
+
+  it('should be circular in shape if passed the circle prop ', () => {
+    const { getByTestId } = render(
+      <ThemeProvider>
+        <Skeleton circle></Skeleton>
+      </ThemeProvider>
+    );
+    const skeleton = getByTestId('skeleton');
+    expect(skeleton).toHaveStyle('border-radius: 50%');
   });
 });
