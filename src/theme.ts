@@ -25,6 +25,7 @@ export interface MinervaTheme extends Theme {
   Checkbox?: React.CSSProperties;
   Select?: React.CSSProperties;
   Tag?: React.CSSProperties;
+  Skeleton?: React.CSSProperties;
   icons: any;
   defaultBorderColor?: string;
 }
@@ -68,6 +69,7 @@ const defaultTheme: MinervaTheme = {
   Checkbox: {},
   Select: {},
   Tag: {},
+  Skeleton: {},
   defaultBorderColor: '#d2d6dc',
   icons: Object.keys(Icon).reduce((result, iconName) => {
     result[toKebabCase(iconName)] = Icon[iconName];
