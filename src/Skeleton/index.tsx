@@ -18,16 +18,20 @@ export interface SkeletonAnimationProps {
 const Container = styled.span`
   display: flex;
   flex-direction: column;
-  height: 100%; 
+  height: 100%;
   width: 100%;
 `;
 
 const SkeletonAnimation = styled('div')`
   display: inline-block;
-  width: ${(props: SkeletonAnimationProps) => props.width ? `${props.width}` : '100%' };
-  height: ${(props: SkeletonAnimationProps) => props.height ? `${props.height}` : '2em' };
-  border-radius: ${(props: SkeletonAnimationProps) => props.circle ? '50%' : '5px' };
-  margin-bottom: ${(props: SkeletonAnimationProps) => props.gap ? `${props.gap}` : '10px' };
+  width: ${(props: SkeletonAnimationProps) =>
+    props.width ? `${props.width}` : '100%'};
+  height: ${(props: SkeletonAnimationProps) =>
+    props.height ? `${props.height}` : '2em'};
+  border-radius: ${(props: SkeletonAnimationProps) =>
+    props.circle ? '50%' : '5px'};
+  margin-bottom: ${(props: SkeletonAnimationProps) =>
+    props.gap ? `${props.gap}` : '10px'};
   background: linear-gradient(-90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
   background-size: 400% 400%;
   animation: pulse 1.2s ease-in-out infinite;
@@ -46,17 +50,13 @@ const SkeletonAnimation = styled('div')`
   }
 `;
 
-export const Skeleton = ({
-  count = 1,
-  circle,
-  ...props
-}: SkeletonProps) => {
+export const Skeleton = ({ count = 1, circle, ...props }: SkeletonProps) => {
   const theme = useTheme();
   const elements: JSX.Element[] = [];
   for (let i = 0; i < count; i++) {
     elements.push(
       <SkeletonAnimation
-      data-testid="skeleton"
+        data-testid="skeleton"
         count={count}
         circle={circle}
         {...props}

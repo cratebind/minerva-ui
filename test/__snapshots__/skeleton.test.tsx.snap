@@ -33,7 +33,6 @@ exports[`<Skeleton /> should render 1`] = `
 <div>
   <span
     class="c0"
-    data-testid="skeleton-container"
   >
     <div
       class="c1"
