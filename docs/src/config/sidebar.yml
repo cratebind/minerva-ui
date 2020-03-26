@@ -2,6 +2,8 @@
 
 - label: 'Getting Started'
   link: '/'
+- label: 'Concepts'
+  link: '/concepts'
 - label: 'Theming'
   link: '/theming'
 - label: 'Utilities'

@@ -1,0 +1,60 @@
+---
+title: 'Concepts'
+---
+
+## Easy To Use
+We've found that good component libraries are easy to use and limit the learning curve of new APIs.
+
+In our components, we've tried to limit the complexity to prevent developers from having to learn a list of 12 possible props that a component can accept.
+
+```jsx title=test
+// No one enjoys looking these up
+<Modal
+  title="Complex Modal"
+  body="Modal Body Content"
+  onModalClose={...}
+  modalHeaderStyles={...}
+  modalFooterStyles={...}
+  modalButtonText="Submit"
+/>
+```
+
+This example could have up to 8 or 10 props and would quickly grow in complexity over time.
+
+Instead, we prefer to follow the guidelines of [Reach UI](https://gist.github.com/ryanflorence/e5c794e6093d16a69fa88d2112a292f7#one-to-one-rendered-dom-element-to-reach-component) and maintain a one-to-one mapping of components to DOM elements:
+
+```jsx
+<Modal onClose={...}>
+  <ModalHeader fontSize="lg">Complex Modal</ModalHeader>
+  <ModalBody>
+    Modal Body Content
+  </ModalBody>
+  <ModalFooter backgroundColor="#e3e3e3">
+    <Button onClick={() => setOpen(false)}>Submit</Button>
+  </ModalFooter>
+</Modal>
+```
+
+In this example, our `<Modal />` component only needs two props: `onClose` and `isOpen`. Our modal is only concerned with these props because they're the only two things our modal _needs_ to control.
+
+If you want to style an inner component, you can find the inner component and style it directly.
+
+By keeping control over the content entirely with the developer, you spend less time tinkering with the limited controls you get from props like `modalFooterStyles`.
+
+When a common functionality starts to get more complex, we might also consider turning it into an [example or recipe](/examples/Forms/) rather than making an entirely new component for it.
+
+## Unopinionated
+We've found that the more presets a component library has, the more you end up having to fight against.
+
+Tools like [Bootstrap](https://getbootstrap.com/) are excellent for developers who want to put together a straight-forward without overthinking the design.
+
+But when building a UI with a custom design, you end up not only overriding included CSS, but adding extra CSS to your bundle that's never getting used.
+
+However, we don't want to provide unstyled components for those who do want to start a project quickly. We export a `defaultTheme` that you are able to overwrite and manually style every component in the library.
+
+## Accessible
+We believe web UIs should always be accessible, even if you don't _think_ your audience "needs" it. Accessibility could be important for someone who prefers tabbing around a form on their keyboard or for someone who sustained a recent hand injury.
+
+In addition, accessible rules are rules that people come to _expect_ from a UI. One of the rules for a `Modal` or ([Dialog](https://www.w3.org/TR/wai-aria-practices-1.2/#dialog_modal)) is that pressing `esc` should close the modal. But when you ignore this rule and someone presses `esc`, a user could get frustrated because it's a behavior they've come to expect from accessibility compliant websites.
+
+In this library, we try to leverage the great work in [Reach UI](https://reacttraining.com/reach-ui/) as a foundation for making our components as [WAI-ARIA compliant](https://www.w3.org/TR/wai-aria-practices-1.2/) as possible.

@@ -72,7 +72,7 @@ export default function CodeHighlight({
           style={{
             flexDirection: 'column',
             boxShadow: 'none',
-            margin: '32px 0',
+            marginBottom: '32px',
           }}
         >
           <LivePreview
@@ -115,7 +115,7 @@ export default function CodeHighlight({
   return (
     <>
       {title && <PreHeader>{title}</PreHeader>}
-      <div className="gatsby-highlight" style={{ margin: '32px 0' }}>
+      <div className="gatsby-highlight" style={{ marginBottom: '32px' }}>
         <Highlight
           {...defaultProps}
           code={codeString}
