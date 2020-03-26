@@ -7,7 +7,7 @@ describe('<Skeleton />', () => {
   it('should render', () => {
     const { container } = render(
       <ThemeProvider>
-        <Skeleton></Skeleton>
+        <Skeleton />
       </ThemeProvider>
     );
     expect(container).toMatchSnapshot();
@@ -16,7 +16,7 @@ describe('<Skeleton />', () => {
   it('renders skeletons equal to the number of count prop', () => {
     const { getAllByTestId } = render(
       <ThemeProvider>
-        <Skeleton count={4}></Skeleton>
+        <Skeleton count={4} />
       </ThemeProvider>
     );
 
@@ -28,7 +28,7 @@ describe('<Skeleton />', () => {
     const { getByTestId } = render(
       <ThemeProvider>
         <div style={{ width: '350px' }}>
-          <Skeleton></Skeleton>
+          <Skeleton />
         </div>
       </ThemeProvider>
     );
@@ -40,7 +40,7 @@ describe('<Skeleton />', () => {
   it('should span the width of the width prop ', () => {
     const { getByTestId } = render(
       <ThemeProvider>
-        <Skeleton width="500px"></Skeleton>
+        <Skeleton width="500px" />
       </ThemeProvider>
     );
     const skeleton = getByTestId('skeleton');
@@ -50,7 +50,7 @@ describe('<Skeleton />', () => {
   it('should be circular in shape if passed the circle prop ', () => {
     const { getByTestId } = render(
       <ThemeProvider>
-        <Skeleton circle></Skeleton>
+        <Skeleton circle />
       </ThemeProvider>
     );
     const skeleton = getByTestId('skeleton');
