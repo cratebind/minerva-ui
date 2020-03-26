@@ -14,7 +14,7 @@ describe('<Text />', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should display text', () => {
+  it('should display text at default size', () => {
     const content = 'Heading';
     const { container } = render(
       <ThemeProvider>
@@ -23,5 +23,18 @@ describe('<Text />', () => {
     );
 
     expect(container).toHaveTextContent(content);
+    // expect(container.firstChild).toHaveStyleRule('font-size', '32px')
+  });
+
+  it('should display text with style props', () => {
+    const content = 'Heading';
+    const { container } = render(
+      <ThemeProvider>
+        <Heading fontSize="lg">{content}</Heading>
+      </ThemeProvider>
+    );
+
+    expect(container).toHaveTextContent(content);
+    expect(container.firstChild).toHaveStyleRule('font-size', '32px');
   });
 });
