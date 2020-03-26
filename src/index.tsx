@@ -41,6 +41,7 @@ export { default as Image } from './Image';
 export { default as Table } from './Table';
 export { default as Icon } from './Icon';
 export * from './Table';
+export { Modal, ModalHeader, ModalBody, ModalFooter } from './Modal';
 export { default as Skeleton } from './Skeleton';
 
 /**

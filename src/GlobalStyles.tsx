@@ -600,6 +600,34 @@ video {
   max-width: 100%;
   height: auto;
 }
+
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideup {
+  from {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+[data-reach-dialog-overlay] {
+  animation: fadein 0.18s;
+}
+
+[data-reach-dialog-content] {
+  animation: slideup 0.18s;
+}
 `;
 
 export default GlobalStyles;
