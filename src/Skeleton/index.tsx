@@ -56,12 +56,13 @@ export const Skeleton = ({ count = 1, circle, ...props }: SkeletonProps) => {
   for (let i = 0; i < count; i++) {
     elements.push(
       <SkeletonAnimation
+        key={i}
         data-testid="skeleton"
         count={count}
         circle={circle}
         {...props}
         {...theme.Skeleton}
-      ></SkeletonAnimation>
+      />
     );
   }
   return <Container>{elements}</Container>;
