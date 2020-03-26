@@ -19,7 +19,7 @@ import { InputField, Input } from 'minerva-ui';
   const [error, setError] = React.useState('');
 
   return (
-    <InputField label="Label" errorMsg={error}>
+    <InputField label="Label" errorText={error}>
       <Input
         placeholder="Basic Input"
         value={name}
@@ -46,12 +46,9 @@ import { InputField, Input } from 'minerva-ui';
   return (
     <InputField
       label="Label"
-      htmlFor="basicInput"
-      errorMsg={error}
-      errorStyles={{ color: '#FF8247', size: '16px' }}
+      errorText={error}
     >
       <Input
-        id="basicInput"
         placeholder="Basic Input"
         value={name}
         onBlur={!name ? () => setError('This field cannot be empty') : null}
@@ -75,13 +72,10 @@ import { InputField, Input } from 'minerva-ui';
   return (
     <InputField
       label="Label"
-      htmlFor="basicInput"
       isRequired
-      requiredMarkerColor="#FF6347"
-      errorMsg={error}
+      errorText={error}
     >
       <Input
-        id="basicInput"
         placeholder="Basic Input"
         value={name}
         onBlur={!name ? () => setError('This field cannot be empty') : null}

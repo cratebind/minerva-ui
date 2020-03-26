@@ -1,11 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
+import { axe, toHaveNoViolations } from 'jest-axe';
 import {
   Button,
   Checkbox,
   Heading,
   Input,
+  InputField,
   Link,
   PseudoBox,
   Block,
@@ -20,6 +22,7 @@ import {
   Alert,
 } from '../src';
 import { ThemeProvider } from '../src';
+expect.extend(toHaveNoViolations);
 
 const basicComponents = {
   Button,
@@ -46,6 +49,46 @@ const childrenValidationComponents = {
 };
 
 const allComponents = { ...basicComponents, ...childrenValidationComponents };
+
+// one giant component that renders all library components
+const KitchenSink = () => {
+  return (
+    <Box>
+      <Button>Button</Button>
+      <Checkbox>Checkbox</Checkbox>
+      <Heading>Heading</Heading>
+      <InputField label="Label">
+        <Input
+          placeholder="Basic Input"
+          value="value"
+          onChange={() => {}}
+          id="label"
+        />
+      </InputField>
+      <Link>Link</Link>
+      <Block>Block</Block>
+      <Flex>Flex</Flex>
+      <Text>Text</Text>
+      <Tag>Tag</Tag>
+      <Image alt="img alt text" />
+      <Alert status="error" />
+    </Box>
+  );
+};
+
+describe('Accessibility', () => {
+  it('all components should pass basic accessibility checks', async () => {
+    const { container } = render(
+      <ThemeProvider>
+        <KitchenSink />
+      </ThemeProvider>
+    );
+
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
+  });
+});
 
 /**
  * All basic basicComponents should be able to pass down styles properly
