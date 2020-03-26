@@ -55,7 +55,7 @@ export interface ModalProps extends MinervaProps {
   children?: React.ReactNode;
   title?: string;
   isOpen: boolean;
-  onClose: any;
+  onClose?: (event?: React.SyntheticEvent) => void;
   props?: any;
 }
 
