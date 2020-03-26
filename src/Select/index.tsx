@@ -43,6 +43,7 @@ const StyledSelect = styled(Input)(
     borderRadius: '5px',
     transition: 'all 150ms ease 0s',
     outline: 'none',
+    cursor: 'pointer',
     ':hover': {
       backgroundColor: '#f9fafb',
     },
