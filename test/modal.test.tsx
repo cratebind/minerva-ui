@@ -8,6 +8,8 @@ import {
   ModalFooter,
   ThemeProvider,
 } from '../src';
+import { axe, toHaveNoViolations } from 'jest-axe';
+expect.extend(toHaveNoViolations);
 
 describe('<Modal />', () => {
   it('should not render when isOpen is false', () => {
@@ -79,5 +81,31 @@ describe('<Modal />', () => {
     );
     expect(queryByTestId(testId)).toBeInTheDocument();
     expect(queryByText(modalContent)).toBeInTheDocument();
+  });
+
+  it('should be accessible when Open', async () => {
+    const modalContent = 'Modal Content';
+    const { container } = render(
+      <ThemeProvider>
+        <Modal isOpen>{modalContent}</Modal>
+      </ThemeProvider>
+    );
+
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
+  });
+
+  it('should be accessible when Closed', async () => {
+    const modalContent = 'Modal Content';
+    const { container } = render(
+      <ThemeProvider>
+        <Modal isOpen={false}>{modalContent}</Modal>
+      </ThemeProvider>
+    );
+
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
   });
 });
