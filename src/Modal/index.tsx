@@ -61,7 +61,7 @@ export interface ModalProps extends MinervaProps {
 
 export interface ModalHeaderProps extends MinervaProps {
   children?: React.ReactNode;
-  onClose: any;
+  onClose?: any;
   props?: any;
 }
 

@@ -1,7 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-import { Modal, ThemeProvider } from '../src';
+import {
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ThemeProvider,
+} from '../src';
 
 describe('<Modal />', () => {
   it('should not render when isOpen is false', () => {
@@ -21,11 +27,57 @@ describe('<Modal />', () => {
 
   it('should render when isOpen is true', () => {
     const testId = 'modal';
-    const { queryByTestId } = render(
+    const modalContent = 'Modal Content';
+    const { queryByText, queryByTestId } = render(
       <ThemeProvider>
-        <Modal isOpen data-testid={testId} />
+        <Modal isOpen data-testid={testId}>
+          {modalContent}
+        </Modal>
       </ThemeProvider>
     );
     expect(queryByTestId(testId)).toBeInTheDocument();
+    expect(queryByText(modalContent)).toBeInTheDocument();
+  });
+
+  it('should render ModalHeader when component is called and when isOpen is true', () => {
+    const testId = 'modal-header';
+    const modalContent = 'Modal Header';
+    const { queryByText, queryByTestId } = render(
+      <ThemeProvider>
+        <Modal isOpen>
+          <ModalHeader data-testid={testId}>{modalContent}</ModalHeader>
+        </Modal>
+      </ThemeProvider>
+    );
+    expect(queryByTestId(testId)).toBeInTheDocument();
+    expect(queryByText(modalContent)).toBeInTheDocument();
+  });
+
+  it('should render Modal Body when component is called and when isOpen is true', () => {
+    const testId = 'modal-body';
+    const modalContent = 'Modal Body';
+    const { queryByText, queryByTestId } = render(
+      <ThemeProvider>
+        <Modal isOpen>
+          <ModalBody data-testid={testId}>{modalContent}</ModalBody>
+        </Modal>
+      </ThemeProvider>
+    );
+    expect(queryByTestId(testId)).toBeInTheDocument();
+    expect(queryByText(modalContent)).toBeInTheDocument();
+  });
+
+  it('should render Modal Footer when component is called and when isOpen is true', () => {
+    const testId = 'modal-footer';
+    const modalContent = 'Modal Footer';
+    const { queryByText, queryByTestId } = render(
+      <ThemeProvider>
+        <Modal isOpen>
+          <ModalFooter data-testid={testId}>{modalContent}</ModalFooter>
+        </Modal>
+      </ThemeProvider>
+    );
+    expect(queryByTestId(testId)).toBeInTheDocument();
+    expect(queryByText(modalContent)).toBeInTheDocument();
   });
 });
