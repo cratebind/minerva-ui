@@ -44,9 +44,6 @@ const StyledSelect = styled(Input)(
     transition: 'all 150ms ease 0s',
     outline: 'none',
     cursor: 'pointer',
-    ':hover': {
-      backgroundColor: '#f9fafb',
-    },
     ':focus': {
       borderColor: '#a4cafe',
       boxShadow: '0 0 0 3px rgba(118,169,250,.45)',

@@ -49,10 +49,6 @@ exports[`<Select /> should change style if disabled 1`] = `
   cursor: pointer;
 }
 
-.c1:hover {
-  background-color: #f9fafb;
-}
-
 .c1:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
@@ -185,10 +181,6 @@ exports[`<Select /> should render 1`] = `
   transition: all 150ms ease 0s;
   outline: none;
   cursor: pointer;
-}
-
-.c1:hover {
-  background-color: #f9fafb;
 }
 
 .c1:focus {

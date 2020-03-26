@@ -16,7 +16,7 @@ import ExternalLink from '@rocketseat/gatsby-theme-docs/src/components/Sidebar/E
 import InternalLink from '@rocketseat/gatsby-theme-docs/src/components/Sidebar/InternalLink';
 import Logo from '@rocketseat/gatsby-theme-docs/src/components/Logo';
 
-const CustomItem = props => <Item style={{ lineHeight: '20px' }} {...props} />;
+const CustomItem = props => <Item style={{ lineHeight: '22px' }} {...props} />;
 
 function ListWithSubItems({ children, text }) {
   return (
@@ -99,7 +99,13 @@ export default function Sidebar({ isMenuOpen }) {
   return (
     <Container isMenuOpen={isMenuOpen}>
       <LogoContainer
-        style={{ paddingTop: 15, paddingBottom: 15, minHeight: 'initial' }}
+        style={{
+          paddingTop: 30,
+          paddingBottom: 30,
+          minHeight: 'initial',
+          maxHeight: 'initial',
+          height: 'initial',
+        }}
       >
         <Link to={basePath} style={{ textDecoration: 'none' }}>
           <Logo />
