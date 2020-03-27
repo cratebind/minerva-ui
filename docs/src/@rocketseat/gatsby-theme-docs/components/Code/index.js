@@ -66,6 +66,7 @@ export default function CodeHighlight({
         scope={{
           mdx,
           ...Minerva,
+          ...React,
         }}
       >
         <LiveWrapper

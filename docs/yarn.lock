@@ -816,6 +816,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.3.1":
+  version "7.9.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.2.tgz#d90df0583a3a252f09aaa619665367bae518db06"
+  integrity sha512-NE2DtOdufG7R5vnfQUTehdTfNycfUANEtCa9PssN9O/xmTzP4E08UI797ixaei6hBEVL9BI/PsdJS5x7mWoB9Q==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.8.3", "@babel/template@^7.8.6":
   version "7.8.6"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.8.6.tgz#86b22af15f828dfb086474f964dcc3e39c43ce2b"
@@ -1421,6 +1428,18 @@
     react-remove-scroll "^2.2.0"
     tslib "^1.10.0"
 
+"@reach/dialog@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@reach/dialog/-/dialog-0.9.1.tgz#683daf9be621d8a4e7cde2bc0ca545cf6935224c"
+  integrity sha512-UR959q6d5LEeB2OSRhPwRtIW3C7UVXdgxayP1F5+IUW4YlcpC25/FQm86dj8CC1fR7Sgs6z14nF2sIY5l05HxQ==
+  dependencies:
+    "@reach/portal" "^0.9.0"
+    "@reach/utils" "^0.9.0"
+    prop-types "^15.7.2"
+    react-focus-lock "^2.2.1"
+    react-remove-scroll "^2.2.0"
+    tslib "^1.10.0"
+
 "@reach/machine@^0.8.6":
   version "0.8.6"
   resolved "https://registry.yarnpkg.com/@reach/machine/-/machine-0.8.6.tgz#c8836e7d93fd9eded7e2be018dad37dda0a0f86d"
@@ -1438,6 +1457,14 @@
     "@reach/utils" "^0.8.6"
     tslib "^1.10.0"
 
+"@reach/portal@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@reach/portal/-/portal-0.9.0.tgz#8346c4403aba071b36ff0bd5137b1363f70ade15"
+  integrity sha512-V3xmdKCWLyKwAdSvvF4EvO8wKPGInQsJXmCuo9c7RU5ZCDnErCQmiD/jqyD78UzGF0snXATiGHuQV0h/Ppjt0w==
+  dependencies:
+    "@reach/utils" "^0.9.0"
+    tslib "^1.10.0"
+
 "@reach/router@^1.3.3":
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.3.3.tgz#58162860dce6c9449d49be86b0561b5ef46d80db"
@@ -1452,6 +1479,14 @@
   version "0.8.6"
   resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.8.6.tgz#41c7ac8b7699d0e663bda773398ae1c459679ee3"
   integrity sha512-ec9Ea99LQhlBoMKsJ7n2GYD3u3a0IHDLcfbA50C6aDKnSFvVYSPkF2Iav3fQ07VGfe+FuNGi0iYi1qkE8uSmDw==
+  dependencies:
+    tslib "^1.10.0"
+    warning "^4.0.3"
+
+"@reach/utils@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.9.0.tgz#ee47c25c79eb2f98e6c0e728a2672075cc9991d5"
+  integrity sha512-cmiykRaxuCysVTsSY3PgrLjySnEIt1PLiSYKh5rAH8nYyEmaOCtw0vaNItFAiqQIjfrxkixmcUE8dyD8kqVuJA==
   dependencies:
     tslib "^1.10.0"
     warning "^4.0.3"
@@ -9451,13 +9486,14 @@ min-indent@^1.0.0:
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
   integrity sha1-z8RcN+nsDY8KDsPdTvf3w6vjklY=
 
-minerva-ui@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/minerva-ui/-/minerva-ui-2.7.0.tgz#cd7d7957cc8e26b24db859be2c0eadd6fbfc702c"
-  integrity sha512-Wo9G9r98jDK9E7o7jiWwd9dk4+Gj2RciiUiKYHJORQ5oNZioAsA6Zk0DDmKS9ggP4QVgppSwUZhBKM20eCSWOw==
+minerva-ui@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/minerva-ui/-/minerva-ui-2.8.0.tgz#9d9396e93ece85820752f864c25f0726685e29d7"
+  integrity sha512-ytat2twayvw+u3/WktUtGR3Kr5wcptMavGMICRZCc/ZUbpmc+YQf8NHRwlPflyQE3zdD8lcJZpqilcjToAqfYQ==
   dependencies:
     "@mdx-js/react" "^1.5.1"
     "@reach/checkbox" "^0.8.6"
+    "@reach/dialog" "^0.9.1"
     "@styled-system/css" "^5.1.5"
     "@testing-library/jest-dom" "^5.1.1"
     "@testing-library/react" "^9.5.0"
@@ -9466,6 +9502,7 @@ minerva-ui@^2.7.0:
     copy-to-clipboard "^3.3.1"
     eslint-config-cratebind "^3.0.8"
     react-feather "^2.0.3"
+    react-spring "^8.0.27"
     styled-components "^5.0.0"
     styled-system "^5.1.5"
 
@@ -11706,6 +11743,14 @@ react-simple-code-editor@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/react-simple-code-editor/-/react-simple-code-editor-0.10.0.tgz#73e7ac550a928069715482aeb33ccba36efe2373"
   integrity sha512-bL5W5mAxSW6+cLwqqVWY47Silqgy2DKDTR4hDBrLrUqC5BXc29YVx17l2IZk5v36VcDEq1Bszu2oHm1qBwKqBA==
+
+react-spring@^8.0.27:
+  version "8.0.27"
+  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-8.0.27.tgz#97d4dee677f41e0b2adcb696f3839680a3aa356a"
+  integrity sha512-nDpWBe3ZVezukNRandTeLSPcwwTMjNVu1IDq9qA/AMiUqHuRN4BeSWvKr3eIxxg1vtiYiOLy4FqdfCP5IoP77g==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+    prop-types "^15.5.8"
 
 react-style-singleton@^2.0.0:
   version "2.0.0"
