@@ -37,6 +37,7 @@ export default function GlobalStyle() {
           font-size: 40px;
           font-weight: 700;
           margin-bottom: 24px;
+          /* margin-top: 24px; */
         }
 
         h2 {
@@ -47,7 +48,7 @@ export default function GlobalStyle() {
         }
 
         h3 {
-          font-size: 24px;
+          font-size: 20px;
         }
 
         h4 {
@@ -281,6 +282,14 @@ export default function GlobalStyle() {
         pre[class~='language-flow']::before {
           content: 'flow';
           background: #e8bd36;
+        }
+
+        h1 .anchor.before,
+        h2 .anchor.before,
+        h3 .anchor.before,
+        h4.anchor.before {
+          top: 50%;
+          transform: translateX(-100%) translateY(-50%);
         }
       `}
     />

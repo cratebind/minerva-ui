@@ -13,7 +13,7 @@ import { RadioGroup, Radio } from 'minerva-ui';
   const [value, setValue] = React.useState('supreme');
   return (
     <>
-      <Heading size="sm" fontWeight={600} mb={3}>
+      <Heading as="h3" fontSize="md" fontWeight={600} mb={3}>
         Pizza Toppings
       </Heading>
       <RadioGroup onChange={e => setValue(e.target.value)} value={value}>

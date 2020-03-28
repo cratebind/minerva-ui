@@ -5,6 +5,7 @@ const StyledLogo = styled.h1`
   font-weight: 800;
   text-decoration: none;
   margin-bottom: 0;
+  margin-top: 0;
   color: #161e2e;
   font-size: 24px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,

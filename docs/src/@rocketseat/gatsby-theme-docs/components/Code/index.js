@@ -25,7 +25,11 @@ const CustomCopyCode = ({ style, ...props }) => (
       zIndex: 50,
       backgroundColor: '#fff',
       padding: '4px 8px',
+      fontFamily:
+        'system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
       color: '#333',
+      textTransform: 'uppercase',
+      fontSize: '10px',
       ...style,
     }}
     {...props}
@@ -74,6 +78,7 @@ export default function CodeHighlight({
             flexDirection: 'column',
             boxShadow: 'none',
             marginBottom: '32px',
+            marginTop: '32px',
           }}
         >
           <LivePreview
@@ -116,7 +121,10 @@ export default function CodeHighlight({
   return (
     <>
       {title && <PreHeader>{title}</PreHeader>}
-      <div className="gatsby-highlight" style={{ marginBottom: '32px' }}>
+      <div
+        className="gatsby-highlight"
+        style={{ marginBottom: '32px', marginTop: '32px' }}
+      >
         <Highlight
           {...defaultProps}
           code={codeString}
