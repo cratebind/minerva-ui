@@ -24,7 +24,7 @@ const components = {
   li: props => (
     <Text m={0} as="li" lineHeight="28px" color="#737380" {...props} />
   ),
-  h1: props => <Heading fontSize="xl" {...props} />,
+  h1: props => <Heading fontSize="xl" fontWeight={700} {...props} />,
   h2: props => <Heading as="h2" fontSize="md" my="24px" {...props} />,
   h3: props => (
     <Heading
