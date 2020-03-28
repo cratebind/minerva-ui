@@ -52,6 +52,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h1`
   padding: 40px 0 0 40px;
+  font-size: 40px;
 
   @media (max-width: 780px) {
     padding: 24px 0 0 24px;
