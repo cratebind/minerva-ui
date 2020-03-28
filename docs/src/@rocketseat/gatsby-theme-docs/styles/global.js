@@ -34,7 +34,7 @@ export default function GlobalStyle() {
         }
 
         h1 {
-          font-size: 36px;
+          font-size: 40px;
           font-weight: 700;
           margin-bottom: 24px;
         }
