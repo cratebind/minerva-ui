@@ -1,6 +1,15 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import { Text, Heading, Box } from 'minerva-ui';
+import {
+  Text,
+  Heading,
+  Box,
+  TableHeader,
+  TableBody,
+  TableCell,
+  TableHeaderCell,
+  TableRow,
+} from 'minerva-ui';
 
 import Code from '../src/@rocketseat/gatsby-theme-docs/components/Code';
 
@@ -32,6 +41,22 @@ const components = {
       {...props}
     />
   ),
+  table: props => (
+    <Box
+      overflow="hidden"
+      borderRadius="8px"
+      border="1px solid #e5e7eb"
+      mt={4}
+      borderBottom="0"
+    >
+      <Box as="table" minWidth="100%" borderCollapse="collapse" {...props} />
+    </Box>
+  ),
+  thead: props => <TableHeader {...props} />,
+  tbody: props => <TableBody {...props} />,
+  td: props => <TableCell {...props} />,
+  th: props => <TableHeaderCell {...props} />,
+  tr: props => <TableRow {...props} />,
 };
 
 export function wrapPageElement({ element }) {

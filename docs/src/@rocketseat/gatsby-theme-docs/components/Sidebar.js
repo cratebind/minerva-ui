@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { useSidebar } from '@rocketseat/gatsby-theme-docs-core';
@@ -79,6 +79,8 @@ export default function Sidebar({ isMenuOpen }) {
 
   const data = useSidebar();
 
+  const containerRef = useRef();
+
   function renderLink(link, label) {
     const isThemeBuilder = link.includes('theme-builder');
     return isExternalUrl(link) || isThemeBuilder ? (
@@ -96,8 +98,11 @@ export default function Sidebar({ isMenuOpen }) {
     );
   }
 
+  console.log(containerRef);
+  console.log(containerRef.current);
+
   return (
-    <Container isMenuOpen={isMenuOpen}>
+    <Container ref={containerRef} isMenuOpen={isMenuOpen}>
       <LogoContainer
         style={{
           paddingTop: 30,

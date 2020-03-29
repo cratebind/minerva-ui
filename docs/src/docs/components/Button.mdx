@@ -3,6 +3,7 @@ title: 'Button'
 ---
 
 import { Box, Button } from 'minerva-ui';
+// import PropsTable from '../../components/PropsTable';
 
 Basic button component, replaces `<button />` tag
 
@@ -25,3 +26,12 @@ import { Button } from 'minerva-ui';
 ```jsx live
 <Button disabled>Disabled Button</Button>
 ```
+
+## Props
+
+The Button composes the `PseudoBox` component so you can pass props for
+`PseudoBox`. These are props related to the Button component.
+
+|Name|Type|Default|Description|
+| --- | --- | --- | --- |
+| `isLoading` | boolean | false | Displays loading spinner and disables button when `true`|

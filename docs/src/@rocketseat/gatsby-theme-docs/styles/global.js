@@ -132,7 +132,7 @@ export default function GlobalStyle() {
           color: #444;
         } */
 
-        th,
+        /* th,
         td {
           text-align: left;
           padding: 12px;
@@ -148,7 +148,7 @@ export default function GlobalStyle() {
 
         iframe {
           margin-bottom: 16px;
-        }
+        } */
 
         /* ul,
         ol {
@@ -287,7 +287,7 @@ export default function GlobalStyle() {
         h1 .anchor.before,
         h2 .anchor.before,
         h3 .anchor.before,
-        h4.anchor.before {
+        h4 .anchor.before {
           top: 50%;
           transform: translateX(-100%) translateY(-50%);
         }

@@ -35,6 +35,6 @@ describe('<Text />', () => {
     );
 
     expect(container).toHaveTextContent(content);
-    expect(container.firstChild).toHaveStyleRule('font-size', '32px');
+    expect(container.firstChild).toHaveStyleRule('font-size', '1.125rem');
   });
 });
