@@ -2,14 +2,6 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { MinervaProps, systemProps } from '../layout';
 
-const sizes = {
-  xl: '40px',
-  lg: '32px',
-  md: '24px',
-  sm: '16px',
-  xs: '8px',
-};
-
 const StyledHeading = styled('h1')<any>(
   props => ({
     margin: 0,
@@ -26,11 +18,11 @@ export interface HeadingProps extends MinervaProps {
 }
 
 export const Heading = forwardRef(function Heading(
-  { children, fontSize = 'xl', ...props }: HeadingProps,
+  { children, fontSize = '2xl', ...props }: HeadingProps,
   ref
 ) {
   return (
-    <StyledHeading ref={ref} fontSize={fontSize && sizes[fontSize]} {...props}>
+    <StyledHeading ref={ref} fontSize={fontSize} {...props}>
       {children}
     </StyledHeading>
   );
