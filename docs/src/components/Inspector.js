@@ -50,6 +50,11 @@ const fieldSections = {
     { name: 'paddingBottom', type: 'text' },
     { name: 'paddingLeft', type: 'text' },
   ],
+  border: [
+    { name: 'borderColor', type: 'color' },
+    { name: 'borderWidth', type: 'text' },
+    // { name: 'borderColor', type: 'color' },
+  ],
   colors: [
     { name: 'backgroundColor', type: 'color' },
     { name: 'color', type: 'color' },
