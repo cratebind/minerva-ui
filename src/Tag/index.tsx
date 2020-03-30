@@ -1,7 +1,8 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { MinervaProps, systemProps, Box } from '../layout';
-import { Text, Icon } from '..';
+import {Text} from '../Text'; 
+import {Icon} from '../Icon';
 
 const IconContainer = styled('div')`
   margin-left: 5px;

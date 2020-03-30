@@ -1,15 +1,20 @@
-<!-- ---
-title: 'Switch'
----
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Switch from '../Switch';
+// import { Box } from '../layout'
 
-import { Switch } from 'minerva-ui';
+<Meta title="Elements|Switch" component={Switch} />
 
-```jsx
+# Switch
+
+```js
 import { Switch } from 'minerva-ui';
 ```
 
-```jsx live
+```jsx
 () => {
-  return <Switch />;
+  const [checked, setChecked] = React.useState(false);
+  return <Switch checked={checked} onChange={() => setChecked(!checked)}></Switch>;
 };
-``` -->
+```
+
+<Props of={Switch} />
