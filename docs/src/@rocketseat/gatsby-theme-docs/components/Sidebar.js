@@ -28,6 +28,8 @@ function ListWithSubItems({ children, text }) {
 }
 
 export default function Sidebar({ isMenuOpen }) {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
   const {
     site: {
       siteMetadata: { footer, basePath },
@@ -98,8 +100,34 @@ export default function Sidebar({ isMenuOpen }) {
     );
   }
 
-  console.log(containerRef);
-  console.log(containerRef.current);
+  useEffect(() => {
+    function handleScroll(e) {
+      const isBrowser = typeof window !== `undefined`;
+
+      if (isBrowser) {
+        setScrollPosition(e.target.scrollTop);
+      }
+    }
+
+    if (containerRef && containerRef.current) {
+      containerRef.current.addEventListener('scroll', handleScroll);
+    }
+
+    const previousScrollPosition = localStorage.getItem('sidebar-scroll');
+
+    // if there was a previous scroll position, restore it
+    if (previousScrollPosition !== undefined) {
+      containerRef.current.scrollTop = previousScrollPosition;
+    }
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!!scrollPosition) {
+      localStorage.setItem('sidebar-scroll', scrollPosition);
+    }
+  }, [scrollPosition]);
 
   return (
     <Container ref={containerRef} isMenuOpen={isMenuOpen}>
