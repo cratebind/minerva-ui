@@ -104,3 +104,35 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
   );
 };
 ```
+
+## Async Form
+
+```jsx live
+() => {
+  const [value, setValue] = useState('')
+  const [isLoading, setIsLoading] = useState(false);
+
+  // async timeout to simulate API response
+  const wait = (amount = 0) =>
+  new Promise(resolve => setTimeout(resolve, amount));
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setIsLoading(true);
+    // wait 1 second, simulating API call
+    await wait(1000);
+    setIsLoading(false);
+  }
+
+  return (
+    <Flex as="form" onSubmit={handleSubmit} justifyContent="center">
+      <Box as="fieldset" disabled={isLoading} aria-busy={isLoading} maxWidth="600px">
+        <Flex>
+          <PseudoBox as={Input} value={value} onChange={e => setValue(e.target.value)} radiusRight={0} borderRight={0} _disabled={{ opacity: 0.4 }} />
+          <Button type="submit" radiusLeft={0} isLoading={isLoading}>Search</Button>
+        </Flex>
+      </Box>
+    </Flex>
+  )
+}
+```
