@@ -14,7 +14,7 @@ import {
 import Code from '../src/@rocketseat/gatsby-theme-docs/components/Code';
 
 export const Title = props => (
-  <Heading fontSize="xl" fontWeight={700} {...props} />
+  <Heading fontSize="40px" fontWeight={700} {...props} />
 );
 
 const components = {

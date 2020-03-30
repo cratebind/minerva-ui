@@ -113,7 +113,7 @@ export default function Sidebar({ isMenuOpen }) {
       containerRef.current.addEventListener('scroll', handleScroll);
     }
 
-    const previousScrollPosition = localStorage.getItem('sidebar-scroll');
+    const previousScrollPosition = sessionStorage.getItem('sidebar-scroll');
 
     // if there was a previous scroll position, restore it
     if (previousScrollPosition !== undefined) {
@@ -124,8 +124,8 @@ export default function Sidebar({ isMenuOpen }) {
   }, []);
 
   useEffect(() => {
-    if (!!scrollPosition) {
-      localStorage.setItem('sidebar-scroll', scrollPosition);
+    if (scrollPosition !== null) {
+      sessionStorage.setItem('sidebar-scroll', scrollPosition);
     }
   }, [scrollPosition]);
 
