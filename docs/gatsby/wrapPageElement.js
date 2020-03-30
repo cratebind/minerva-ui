@@ -31,12 +31,12 @@ const components = {
     <Text m={0} as="li" lineHeight="28px" color="#737380" {...props} />
   ),
   h1: props => <Title {...props} />,
-  h2: props => <Heading as="h2" fontSize="md" my="24px" {...props} />,
+  h2: props => <Heading as="h2" fontSize="32px" my="24px" {...props} />,
   h3: props => (
     <Heading
       as="h3"
       my="20px"
-      fontSize="sm"
+      fontSize="24px"
       style={{ fontSize: '20px' }}
       {...props}
     />
