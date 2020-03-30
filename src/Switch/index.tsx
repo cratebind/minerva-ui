@@ -110,8 +110,12 @@ export const Switch = forwardRef(function Checkbox(
           <CustomCheckboxInput id="test" />
         </VisuallyHidden>
         <SwitchLabel as="label" htmlFor="test">
-          <SwitchInner checked={checked} data-yes={options[1]} data-no={options[0]} />
-          <StyledSwitch checked={checked}  />
+          <SwitchInner
+            checked={checked}
+            data-yes={options[1]}
+            data-no={options[0]}
+          />
+          <StyledSwitch checked={checked} />
         </SwitchLabel>
       </CustomCheckboxContainer>
       {children}
