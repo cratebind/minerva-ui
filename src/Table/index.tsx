@@ -1,16 +1,14 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { Box, systemProps } from '../layout';
+import { MinervaProps, Box, systemProps } from '../layout';
 
 const TableContainer = styled.div`
   border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 `;
 
-export const StyledTable = styled(Box)(
+export const StyledTable = styled<any>(Box)<any>(
   {
-    // backgroundColor: '#525252',
-
     minWidth: '100%',
     borderCollapse: 'collapse',
   },
@@ -66,9 +64,8 @@ export const TableCell = styled('td')(
 
 export const TableRow = styled('tr')({}, systemProps);
 
-export interface CustomTableProps
-  extends React.ButtonHTMLAttributes<HTMLTableElement> {
-  children?: React.ReactNode;
+export interface CustomTableProps extends MinervaProps {
+  children?: any;
 }
 
 export type Ref = HTMLTableElement;

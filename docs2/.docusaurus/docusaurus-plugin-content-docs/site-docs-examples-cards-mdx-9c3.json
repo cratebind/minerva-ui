@@ -1,0 +1,14 @@
+{
+  "id": "examples/Cards",
+  "title": "Cards",
+  "description": "## Content Card",
+  "source": "@site/docs/examples/Cards.mdx",
+  "permalink": "/docs/examples/Cards",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/examples/Cards.mdx",
+  "sidebar_label": "Cards",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Input",
+    "permalink": "/docs/Input"
+  }
+}

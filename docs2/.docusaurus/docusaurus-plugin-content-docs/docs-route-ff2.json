@@ -1,0 +1,56 @@
+{
+  "docsSidebars": {
+    "someSidebar": [
+      {
+        "type": "category",
+        "label": "Docusaurus",
+        "items": [
+          {
+            "type": "link",
+            "label": "Style Guide",
+            "href": "/docs/doc1"
+          },
+          {
+            "type": "link",
+            "label": "Document Number 2",
+            "href": "/docs/doc2"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Components",
+        "items": [
+          {
+            "type": "link",
+            "label": "Button",
+            "href": "/docs/Button"
+          },
+          {
+            "type": "link",
+            "label": "Input",
+            "href": "/docs/Input"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Examples",
+        "items": [
+          {
+            "type": "link",
+            "label": "Cards",
+            "href": "/docs/examples/Cards"
+          }
+        ]
+      }
+    ]
+  },
+  "permalinkToSidebar": {
+    "/docs/Button": "someSidebar",
+    "/docs/Input": "someSidebar",
+    "/docs/doc1": "someSidebar",
+    "/docs/doc2": "someSidebar",
+    "/docs/examples/Cards": "someSidebar"
+  }
+}

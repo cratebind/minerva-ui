@@ -1,0 +1,18 @@
+{
+  "id": "Input",
+  "title": "Input",
+  "description": "import { Input } from 'minerva-ui';",
+  "source": "@site/docs/Input.mdx",
+  "permalink": "/docs/Input",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/Input.mdx",
+  "sidebar_label": "Input",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Button",
+    "permalink": "/docs/Button"
+  },
+  "next": {
+    "title": "Cards",
+    "permalink": "/docs/examples/Cards"
+  }
+}
