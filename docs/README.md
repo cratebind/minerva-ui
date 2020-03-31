@@ -1,58 +1,33 @@
-<p align="center">
-  <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/theme-docs.svg" alt="A illustration of file that is the @rocketseat/gatsby-theme-docs logo" width="100">
-</p>
+# Website
 
-<h2 align="center">
-  Gatsby Starter: Rocket Docs
-</h2>
+This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
-<p align="center">
-  Out of the box Gatsby Starter for creating documentation websites easily and quickly. With support for MDX, code highlight, Analytics, SEO and more 🔥 Using the theme: <a href="https://github.com/Rocketseat/gatsby-themes/tree/master/%40rocketseat/gatsby-theme-docs">@rocketseat/gatsby-theme-docs</a>
-</p>
+### Installation
 
-<p align="center">
-  <img src="https://img.shields.io/badge/PRs-welcome-%237159c1.svg" alt="PRs welcome!" />
+```
+$ yarn
+```
 
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-%237159c1">
+### Local Development
 
-  <a href="https://twitter.com/intent/follow?screen_name=rocketseat">
-    <img src="https://img.shields.io/twitter/follow/rocketseat.svg?label=Follow%20@rocketseat" alt="Follow @rocketseat" />
-  </a>
-</p>
+```
+$ yarn start
+```
 
-## 🚀 Features
+This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
 
-- MDX for docs;
-- Fully customizable through the usage of Gatsby Themes (and Theme UI)
-- Sidebar customization with Yaml;
-- Code highlighting with [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer) and [react-live](https://github.com/FormidableLabs/react-live) support. Copy code button and option to show line numbers.
-- SEO (Sitemap, schema.org data, Open Graph and Twitter tags).
-- Google Analytics support;
-- Offline Support & WebApp Manifest
+### Build
 
-## ⚡️ Getting started
+```
+$ yarn build
+```
 
-1. Create the website.
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-    ```sh
-    gatsby new rocket-docs https://github.com/rocketseat/gatsby-starter-rocket-docs
-    ```
+### Deployment
 
-2. Start developing.
+```
+$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+```
 
-    ```sh
-    cd rocket-docs
-    gatsby develop
-    ```
-
-3. Are you ready for launch? 
-
-    Your site is now running at `http://localhost:8000`
-
-## 📄 Docs
-
-Looking for docs? Check our live demo and documentation [website](https://rocketdocs.netlify.com).
-
----
-
-Made with 💜 by Rocketseat :wave: [check our community!](https://discordapp.com/invite/gCRAFhc)
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

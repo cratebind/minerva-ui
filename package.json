@@ -1,6 +1,6 @@
 {
   "name": "minerva-ui",
-  "version": "1.1.0",
+  "version": "2.8.2",
   "license": "MIT",
   "author": "Cratebind",
   "description": "Composable, Simple React Base Components",
@@ -12,10 +12,12 @@
     "dist"
   ],
   "scripts": {
-    "start": "tsdx watch",
+    "start": "tsdx watch --format esm",
+    "dev:docs": "lerna run --parallel start",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
-    "lint": "yarn tsdx lint src test --ext js,tsx,ts,mdx --fix",
+    "lint": "yarn tsdx lint src test --ext js,tsx,ts,mdx --fix --cache",
+    "bootstrap": "lerna bootstrap",
     "release": "np",
     "storybook": "start-storybook -p 6006 --docs",
     "build-storybook": "build-storybook --docs",
@@ -62,6 +64,7 @@
     "husky": "^3.0.9",
     "jest-axe": "^3.4.0",
     "jest-styled-components": "^7.0.0",
+    "lerna": "^3.10.7",
     "np": "^5.1.2",
     "prettier-eslint": "^9.0.1",
     "prism-react-renderer": "^1.0.2",

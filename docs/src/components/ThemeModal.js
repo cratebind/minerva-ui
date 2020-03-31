@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Dialog } from '@reach/dialog';
 import VisuallyHidden from '@reach/visually-hidden';
 import { Button, styled, Text, Box, Input } from 'minerva-ui';
 import { useAppContext } from './AppContext';
 
 import '@reach/dialog/styles.css';
-import { useRef } from 'react';
 
 const isBrowser = typeof window !== `undefined`;
 

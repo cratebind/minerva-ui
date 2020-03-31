@@ -16,6 +16,7 @@ import { MinervaProps } from '../layout';
 
 const StyledText = styled('p')<any>(
   {
+    margin: 0,
     fontSize: 16,
   },
   props => ({

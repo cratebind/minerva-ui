@@ -70,7 +70,7 @@ function ThemeBuilder() {
               bg="transparent"
               color="white"
               ml={4}
-              href="/theming"
+              href="/docs/theming"
             >
               Back to Docs
             </Button>

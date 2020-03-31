@@ -14,6 +14,8 @@ exports[`<Input /> should render 1`] = `
   outline: none;
   width: 100%;
   -webkit-appearance: none;
+  border-style: solid;
+  border-color: #d2d6dc;
 }
 
 .c0:focus {

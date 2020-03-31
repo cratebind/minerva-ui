@@ -138,7 +138,7 @@ export const Select = forwardRef(function Select(
 ) {
   return (
     <Block position="relative">
-      <StyledSelect as="select" ref={ref} {...props}>
+      <StyledSelect as="select" ref={ref} disabled={disabled} {...props}>
         {children}
       </StyledSelect>
 
