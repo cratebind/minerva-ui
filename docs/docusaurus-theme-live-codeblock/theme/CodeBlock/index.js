@@ -18,8 +18,6 @@ import * as Minerva from 'minerva-ui';
 
 import styles from './styles.module.css';
 
-console.log({ defaultTheme });
-
 const highlightLinesRangeRegex = /{([\d,-]+)}/;
 
 export default ({
