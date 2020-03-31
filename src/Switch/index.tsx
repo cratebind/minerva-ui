@@ -19,17 +19,17 @@ const switchSizes = {
   },
 };
 
-const SwitchContainer = styled(Box)<SwitchProps>((props: SwitchProps) => ({
-  position: 'relative',
-  width: props.switchSize ? switchSizes[props.switchSize].width : '50px',
-  display: 'inline-block',
-  verticalAlign: 'middle',
-  textAlign: 'left',
-}), 
-systemProps
-);
+const SwitchContainer = styled(Box)<SwitchProps>`
+  position: relative;
+  width: ${props =>
+    props.switchSize ? switchSizes[props.switchSize].width : '50px'};
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  ${systemProps}
+`;
 
-const SwitchLabel = styled('label')<SwitchProps>((props: SwitchProps) => ({
+const ControlBox = styled(Box)<SwitchProps>((props: SwitchProps) => ({
   display: 'block',
   overflow: 'hidden',
   cursor: 'pointer',
@@ -37,6 +37,12 @@ const SwitchLabel = styled('label')<SwitchProps>((props: SwitchProps) => ({
   borderRadius: '20px',
   margin: '0',
   height: props.switchSize ? switchSizes[props.switchSize].height : '20px',
+
+  ':focus': {
+    borderColor: '#a4cafe',
+    boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
+    outline: 0,
+  },
 }));
 
 const SwitchInner = styled.span<CustomSwitchProps>`
@@ -64,7 +70,8 @@ const SwitchInner = styled.span<CustomSwitchProps>`
     content: attr(data-yes);
     text-transform: uppercase;
     padding-left: 10px;
-    background-color: ${props => props.switchColor ? props.switchColor : '#5850ec'};
+    background-color: ${props =>
+      props.switchColor ? props.switchColor : '#5850ec'};
     color: #fff;
   }
 
@@ -137,7 +144,13 @@ export const Switch = forwardRef(function Checkbox(
         <VisuallyHidden>
           <CustomCheckboxInput id={htmlFor} />
         </VisuallyHidden>
-        <SwitchLabel switchSize={switchSize} as="label" htmlFor={htmlFor}>
+        <ControlBox
+          tabIndex={0}
+          data-minerva="control-box"
+          switchSize={switchSize}
+          as="label"
+          htmlFor={htmlFor}
+        >
           <SwitchInner
             checked={checked}
             data-yes={yesLabel}
@@ -145,7 +158,7 @@ export const Switch = forwardRef(function Checkbox(
             switchColor={switchColor}
           />
           <StyledSwitch checked={checked} />
-        </SwitchLabel>
+        </ControlBox>
       </CustomCheckboxContainer>
     </SwitchContainer>
   );
