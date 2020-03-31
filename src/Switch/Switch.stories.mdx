@@ -1,6 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Switch from '../Switch';
-// import { Box } from '../layout'
 
 <Meta title="Elements|Switch" component={Switch} />
 
@@ -13,7 +12,13 @@ import { Switch } from 'minerva-ui';
 ```jsx
 () => {
   const [checked, setChecked] = React.useState(false);
-  return <Switch htmlFor="example1" checked={checked} onChange={() => setChecked(!checked)}></Switch>;
+  return (
+    <Switch
+      htmlFor="example1"
+      checked={checked}
+      onChange={() => setChecked(!checked)}
+    ></Switch>
+  );
 };
 ```
 
@@ -28,9 +33,14 @@ import { Switch } from 'minerva-ui';
   const [checked, setChecked] = React.useState(false);
   return (
     <>
-    <Switch switchSize="lg" htmlFor="example2" checked={checked} onChange={() => setChecked(!checked)}></Switch>
+      <Switch
+        switchSize="lg"
+        htmlFor="example2"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+      ></Switch>
     </>
-  )
+  );
 };
 ```
 
@@ -41,8 +51,14 @@ import { Switch } from 'minerva-ui';
   const [checked, setChecked] = React.useState(false);
   return (
     <>
-    <Switch switchSize="sm" switchColor="#66ff00" htmlFor="example3" checked={checked} onChange={() => setChecked(!checked)}></Switch>
+      <Switch
+        switchSize="sm"
+        switchColor="#66ff00"
+        htmlFor="example3"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+      ></Switch>
     </>
-  )
+  );
 };
 ```
