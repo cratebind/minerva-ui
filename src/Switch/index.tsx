@@ -22,7 +22,9 @@ const switchSizes = {
 const SwitchContainer = styled(Box)<SwitchProps>`
   position: relative;
   width: ${props =>
-    props.switchSize ? switchSizes[props.switchSize].width :  switchSizes['md'].width};
+    props.switchSize
+      ? switchSizes[props.switchSize].width
+      : switchSizes['md'].width};
   display: inline-block;
   vertical-align: middle;
   text-align: left;
@@ -36,7 +38,9 @@ const ControlBox = styled(Box)<SwitchProps>((props: SwitchProps) => ({
   border: '0 solid #ccc',
   borderRadius: '20px',
   margin: '0',
-  height: props.switchSize ? switchSizes[props.switchSize].height :  switchSizes['md'].height,
+  height: props.switchSize
+    ? switchSizes[props.switchSize].height
+    : switchSizes['md'].height,
 
   ':focus': {
     borderColor: '#a4cafe',
