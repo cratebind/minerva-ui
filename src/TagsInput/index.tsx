@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Input, { InputProps } from '../Input';
 import Tag from '../Tag';
+import { Box } from '../layout';
 
 const StyledTagsInput = styled.ul`
   background: white;
@@ -29,6 +30,10 @@ const StyledInput = styled(Input)`
   }
 `;
 
+export const ListItem = styled(Box)`
+  list-style-type: none;
+`;
+
 export interface TagsInput extends InputProps {
   tags: string[];
   onClickIcon: (index: number) => void;
@@ -46,7 +51,7 @@ export const TagsInput = function TagsInput({
     >
       {tags &&
         tags.map((tag, i) => (
-          <li key={tag + i}>
+          <ListItem key={tag + i}>
             <Tag
               data-testid="tag"
               showIcon={true}
@@ -57,11 +62,11 @@ export const TagsInput = function TagsInput({
             >
               {tag}
             </Tag>
-          </li>
+          </ListItem>
         ))}
-      <li>
+      <ListItem>
         <StyledInput ref={inputRef} data-testid="input" {...props} />
-      </li>
+      </ListItem>
     </StyledTagsInput>
   );
 };

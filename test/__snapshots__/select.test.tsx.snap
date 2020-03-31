@@ -102,6 +102,7 @@ exports[`<Select /> should change style if disabled 1`] = `
   >
     <select
       class="c1"
+      disabled=""
       id="select-input"
     >
       <option

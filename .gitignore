@@ -10,3 +10,11 @@ docs/node_modules
 dist
 storybook-static
 coverage/
+
+# Docusaurus
+# Production
+docs/build
+
+# Generated files
+.docusaurus
+.cache-loader

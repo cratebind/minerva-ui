@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Alert /> should render 1`] = `
+.c1 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 .c0 {
   background-color: #e5e7eb;
   display: -webkit-box;
@@ -22,7 +28,7 @@ exports[`<Alert /> should render 1`] = `
     class="sc-AxirZ sc-AxhCb c0"
   >
     <p
-      class=""
+      class="c1 "
     >
       Test
     </p>

@@ -1,10 +1,6 @@
 {
-  "eslint.autoFixOnSave": true,
   "eslint.packageManager": "yarn",
   "eslint.lintTask.options": ". --ext .tsx,.ts",
   "eslint.alwaysShowStatus": true,
-  "eslint.lintTask.enable": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+  "eslint.lintTask.enable": true
 }

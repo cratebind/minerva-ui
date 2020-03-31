@@ -62,6 +62,8 @@ const defaultTheme: MinervaTheme = {
   Input: {
     WebkitAppearance: 'none',
     fontSize: '16px',
+    borderStyle: 'solid',
+    borderColor: '#d2d6dc',
   },
   InputField: {},
   Link: {},
