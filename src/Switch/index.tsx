@@ -111,9 +111,9 @@ export interface SwitchProps extends BaseProps {
   checked?: boolean;
   yesLabel?: string;
   noLabel?: string;
+  htmlFor: string;
   onChange?: () => any;
   style?: any;
-  htmlFor: string;
 }
 
 export interface CustomSwitchProps {
@@ -146,9 +146,9 @@ export const Switch = forwardRef(function Checkbox(
         </VisuallyHidden>
         <ControlBox
           tabIndex={0}
-          data-minerva="control-box"
           switchSize={switchSize}
           as="label"
+          aria-label={htmlFor}
           htmlFor={htmlFor}
         >
           <SwitchInner
@@ -156,8 +156,9 @@ export const Switch = forwardRef(function Checkbox(
             data-yes={yesLabel}
             data-no={noLabel}
             switchColor={switchColor}
+            data-testid="switch-inner"
           />
-          <StyledSwitch checked={checked} />
+          <StyledSwitch checked={checked} data-testid="switch" />
         </ControlBox>
       </CustomCheckboxContainer>
     </SwitchContainer>
