@@ -13,7 +13,7 @@ import { Switch } from 'minerva-ui';
 ```jsx
 () => {
   const [checked, setChecked] = React.useState(false);
-  return <Switch checked={checked} onChange={() => setChecked(!checked)}></Switch>;
+  return <Switch htmlFor="test" checked={checked} onChange={() => setChecked(!checked)}></Switch>;
 };
 ```
 

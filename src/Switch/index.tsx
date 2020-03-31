@@ -4,32 +4,42 @@ import { CustomCheckboxContainer, CustomCheckboxInput } from '@reach/checkbox';
 import { MinervaProps, Box, systemProps } from '../layout';
 import VisuallyHidden from '../VisuallyHidden';
 
-const SwitchContainer = styled(Box)<SwitchProps>(
-  {
-    position: 'relative',
+const switchSizes = {
+  lg: {
     width: '75px',
-    display: 'inline-block',
-    verticalAlign: 'middle',
-    textAlign: 'left',
+    height: '34px',
   },
-  systemProps
-);
-
-export type ControlBoxProps = {
-  checked?: boolean;
-  theme?: any;
+  md: {
+    width: '50px',
+    height: '20px',
+  },
+  sm: {
+    width: '40px',
+    height: '16px',
+  },
 };
 
-const SwitchLabel = styled.label`
-  display: block;
-  overflow: hidden;
-  cursor: pointer;
-  border: 0 solid #ccc;
-  border-radius: 20px;
-  margin: 0;
-`;
+const SwitchContainer = styled(Box)<SwitchProps>((props: SwitchProps) => ({
+  position: 'relative',
+  width: props.switchSize ? switchSizes[props.switchSize].width : '50px',
+  display: 'inline-block',
+  verticalAlign: 'middle',
+  textAlign: 'left',
+}), 
+systemProps
+);
 
-const SwitchInner = styled.span<SwitchProps>`
+const SwitchLabel = styled('label')<SwitchProps>((props: SwitchProps) => ({
+  display: 'block',
+  overflow: 'hidden',
+  cursor: 'pointer',
+  border: '0 solid #ccc',
+  borderRadius: '20px',
+  margin: '0',
+  height: props.switchSize ? switchSizes[props.switchSize].height : '20px',
+}));
+
+const SwitchInner = styled.span<CustomSwitchProps>`
   display: block;
   width: 200%;
   margin-left: -100%;
@@ -54,7 +64,7 @@ const SwitchInner = styled.span<SwitchProps>`
     content: attr(data-yes);
     text-transform: uppercase;
     padding-left: 10px;
-    background-color: #5850ec;
+    background-color: ${props => props.switchColor ? props.switchColor : '#5850ec'};
     color: #fff;
   }
 
@@ -68,7 +78,7 @@ const SwitchInner = styled.span<SwitchProps>`
   }
 `;
 
-const StyledSwitch = styled.span<SwitchProps>`
+const StyledSwitch = styled.span<CustomSwitchProps>`
   display: block;
   width: 24px;
   margin: 5px;
@@ -76,49 +86,67 @@ const StyledSwitch = styled.span<SwitchProps>`
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 40px;
   border: 0 solid #ccc;
   border-radius: 50%;
-  transition: all 0.2s ease-in 0s;
-  right: ${props => (props.checked ? '0px' : null)};
+  transition: right 0.2s ease-in 0s;
+  right: ${props => (props.checked ? '0%' : '56%')};
+  margin: 5.3%;
+  width: 32%;
+  height: 76%;
 `;
 
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
 export interface SwitchProps extends BaseProps {
-  // define the custom props we're going to be using
-  children?: React.ReactNode;
   // add a question mark to make it an optional prop
   disabled?: boolean;
   switchSize?: string;
   switchColor?: string;
   checked?: boolean;
-  options?: string[];
+  yesLabel?: string;
+  noLabel?: string;
   onChange?: () => any;
   style?: any;
+  htmlFor: string;
+}
+
+export interface CustomSwitchProps {
+  'data-yes'?: string;
+  'data-no'?: string;
+  checked?: boolean;
+  switchColor?: string;
 }
 
 export const Switch = forwardRef(function Checkbox(
   props: SwitchProps,
   ref: any
 ) {
-  const { children, checked = false, onChange, options = [], ...rest } = props;
+  const {
+    checked = false,
+    switchSize,
+    switchColor,
+    onChange,
+    yesLabel,
+    noLabel,
+    htmlFor,
+    ...rest
+  } = props;
 
   return (
-    <SwitchContainer as="div" ref={ref} {...rest}>
+    <SwitchContainer switchSize={switchSize} as="div" ref={ref} {...rest}>
       <CustomCheckboxContainer checked={checked} onChange={onChange}>
         <VisuallyHidden>
-          <CustomCheckboxInput id="test" />
+          <CustomCheckboxInput id={htmlFor} />
         </VisuallyHidden>
-        <SwitchLabel as="label" htmlFor="test">
+        <SwitchLabel switchSize={switchSize} as="label" htmlFor={htmlFor}>
           <SwitchInner
             checked={checked}
-            data-yes={options[1]}
-            data-no={options[0]}
+            data-yes={yesLabel}
+            data-no={noLabel}
+            switchColor={switchColor}
           />
           <StyledSwitch checked={checked} />
         </SwitchLabel>
       </CustomCheckboxContainer>
-      {children}
     </SwitchContainer>
   );
 });
