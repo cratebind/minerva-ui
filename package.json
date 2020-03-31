@@ -16,7 +16,7 @@
     "dev:docs": "lerna run --parallel start",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
-    "lint": "yarn tsdx lint src test --ext js,tsx,ts,mdx --fix",
+    "lint": "yarn tsdx lint src test --ext js,tsx,ts,mdx --fix --cache",
     "bootstrap": "lerna bootstrap",
     "release": "np",
     "storybook": "start-storybook -p 6006 --docs",
