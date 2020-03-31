@@ -13,8 +13,36 @@ import { Switch } from 'minerva-ui';
 ```jsx
 () => {
   const [checked, setChecked] = React.useState(false);
-  return <Switch htmlFor="test" checked={checked} onChange={() => setChecked(!checked)}></Switch>;
+  return <Switch htmlFor="example1" checked={checked} onChange={() => setChecked(!checked)}></Switch>;
 };
 ```
 
 <Props of={Switch} />
+
+# Variants
+
+### Switch with size variant
+
+```jsx
+() => {
+  const [checked, setChecked] = React.useState(false);
+  return (
+    <>
+    <Switch switchSize="lg" htmlFor="example2" checked={checked} onChange={() => setChecked(!checked)}></Switch>
+    </>
+  )
+};
+```
+
+### Switch with size and color variant
+
+```jsx
+() => {
+  const [checked, setChecked] = React.useState(false);
+  return (
+    <>
+    <Switch switchSize="sm" switchColor="#66ff00" htmlFor="example3" checked={checked} onChange={() => setChecked(!checked)}></Switch>
+    </>
+  )
+};
+```

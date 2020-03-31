@@ -6,23 +6,23 @@ import VisuallyHidden from '../VisuallyHidden';
 
 const switchSizes = {
   lg: {
-    width: '75px',
-    height: '34px',
+    width: '55px',
+    height: '25px',
   },
   md: {
-    width: '50px',
-    height: '20px',
+    width: '40px',
+    height: '18px',
   },
   sm: {
-    width: '40px',
-    height: '16px',
+    width: '33px',
+    height: '14.5px',
   },
 };
 
 const SwitchContainer = styled(Box)<SwitchProps>`
   position: relative;
   width: ${props =>
-    props.switchSize ? switchSizes[props.switchSize].width : '50px'};
+    props.switchSize ? switchSizes[props.switchSize].width :  switchSizes['md'].width};
   display: inline-block;
   vertical-align: middle;
   text-align: left;
@@ -36,7 +36,7 @@ const ControlBox = styled(Box)<SwitchProps>((props: SwitchProps) => ({
   border: '0 solid #ccc',
   borderRadius: '20px',
   margin: '0',
-  height: props.switchSize ? switchSizes[props.switchSize].height : '20px',
+  height: props.switchSize ? switchSizes[props.switchSize].height :  switchSizes['md'].height,
 
   ':focus': {
     borderColor: '#a4cafe',
@@ -67,8 +67,7 @@ const SwitchInner = styled.span<CustomSwitchProps>`
   }
 
   &::before {
-    content: attr(data-yes);
-    text-transform: uppercase;
+    content: '';
     padding-left: 10px;
     background-color: ${props =>
       props.switchColor ? props.switchColor : '#5850ec'};
@@ -76,8 +75,7 @@ const SwitchInner = styled.span<CustomSwitchProps>`
   }
 
   &::after {
-    content: attr(data-no);
-    text-transform: uppercase;
+    content: '';
     padding-right: 10px;
     background-color: #ccc;
     color: #fff;
@@ -98,7 +96,7 @@ const StyledSwitch = styled.span<CustomSwitchProps>`
   transition: right 0.2s ease-in 0s;
   right: ${props => (props.checked ? '0%' : '56%')};
   margin: 5.3%;
-  width: 32%;
+  width: 34%;
   height: 76%;
 `;
 
@@ -109,16 +107,12 @@ export interface SwitchProps extends BaseProps {
   switchSize?: string;
   switchColor?: string;
   checked?: boolean;
-  yesLabel?: string;
-  noLabel?: string;
   htmlFor: string;
   onChange?: () => any;
   style?: any;
 }
 
 export interface CustomSwitchProps {
-  'data-yes'?: string;
-  'data-no'?: string;
   checked?: boolean;
   switchColor?: string;
 }
@@ -132,8 +126,6 @@ export const Switch = forwardRef(function Checkbox(
     switchSize,
     switchColor,
     onChange,
-    yesLabel,
-    noLabel,
     htmlFor,
     ...rest
   } = props;
@@ -153,8 +145,6 @@ export const Switch = forwardRef(function Checkbox(
         >
           <SwitchInner
             checked={checked}
-            data-yes={yesLabel}
-            data-no={noLabel}
             switchColor={switchColor}
             data-testid="switch-inner"
           />
