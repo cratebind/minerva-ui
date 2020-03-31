@@ -1,0 +1,138 @@
+---
+title: 'Forms'
+---
+
+## Login Form
+
+Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
+
+```jsx live
+() => {
+  const [username, setUsername] = React.useState('');
+  const [usernameError, setUsernameError] = React.useState('');
+
+  const [password, setPassword] = React.useState('');
+  const [passwordError, setPasswordError] = React.useState('');
+
+  return (
+    <Flex bg="gray.200" py="40px" justifyContent="center" alignItems="center">
+      <Box
+        as="form"
+        bg="white"
+        p="32px"
+        pt="24px"
+        width="100%"
+        maxWidth="20rem"
+        boxShadow="base"
+        borderRadius="md"
+      >
+        <InputField
+          label="Username"
+          errorMsg={usernameError}
+          fontWeight="700"
+          fontSize="14px"
+          color="gray.700"
+          mb={4}
+        >
+          <Input
+            placeholder="Username"
+            value={username}
+            mb={3}
+            onChange={e => {
+              setUsernameError('');
+              setUsername(e.target.value);
+            }}
+            onBlur={
+              !username
+                ? () => setUsernameError('Please enter a username.')
+                : null
+            }
+          />
+        </InputField>
+        <InputField
+          label="Password"
+          errorMsg={passwordError}
+          fontWeight="700"
+          fontSize="14px"
+          color="gray.700"
+          mb={6}
+        >
+          <Input
+            type="password"
+            placeholder="Password"
+            value={password}
+            mb={3}
+            onChange={e => {
+              setPasswordError('');
+              setPassword(e.target.value);
+            }}
+            onBlur={
+              !password
+                ? () => setPasswordError('Please enter a password.')
+                : null
+            }
+          />
+        </InputField>
+        <Flex alignItems="center" justifyContent="space-between">
+          <Button
+            color="#fff"
+            lineHeight="1.7"
+            fontWeight="700"
+            fontSize="16px"
+            onClick={e => e.preventDefault()}
+            backgroundColor="purple.700"
+            borderWidth={0}
+            _hover={{
+              backgroundColor: 'purple.900',
+            }}
+          >
+            Sign In
+          </Button>
+          <Link
+            href="#"
+            color="purple.700"
+            fontWeight="700"
+            _hover={{
+              color: 'purple.900',
+            }}
+          >
+            Forgot Password?
+          </Link>
+        </Flex>
+      </Box>
+    </Flex>
+  );
+}
+```
+
+## Async Form
+
+```jsx live
+() => {
+  const [value, setValue] = useState('')
+  const [isLoading, setIsLoading] = useState(false);
+
+  // async timeout to simulate API response
+  const wait = (amount = 0) =>
+  new Promise(resolve => setTimeout(resolve, amount));
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setIsLoading(true);
+    // wait 1 second, simulating API call
+    await wait(1000);
+    setIsLoading(false);
+  }
+
+  return (
+    <Flex as="form" onSubmit={handleSubmit} justifyContent="center">
+      <Box as="fieldset" disabled={isLoading} aria-busy={isLoading} maxWidth="600px">
+        <Flex>
+          <PseudoBox as={Input} value={value} onChange={e => setValue(e.target.value)} radiusRight={0} borderRight={0} _disabled={{ opacity: 0.4 }} />
+          <Button type="submit" radiusLeft={0} isLoading={isLoading}>Search</Button>
+        </Flex>
+      </Box>
+    </Flex>
+  )
+}
+```

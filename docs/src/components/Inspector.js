@@ -13,7 +13,7 @@ import { BlockPicker } from 'react-color';
 // import 'react-color-picker/index.css';
 
 import { useAppContext } from './AppContext';
-import { toTitleCase } from '../utils';
+import { toTitleCase } from './utils';
 
 import '@reach/accordion/styles.css';
 

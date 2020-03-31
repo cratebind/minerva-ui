@@ -1,9 +1,0 @@
-{
-  "id": "Button",
-  "title": "Button",
-  "description": "import { ThemeProvider, Button } from 'minerva-ui';",
-  "source": "@site/docs/Button.mdx",
-  "permalink": "/docs/Button",
-  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/Button.mdx",
-  "sidebar_label": "Button"
-}

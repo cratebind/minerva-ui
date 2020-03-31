@@ -10,3 +10,4 @@ docs/node_modules
 dist
 storybook-static
 coverage/
+.docusaurus

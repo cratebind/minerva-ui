@@ -1,37 +1,34 @@
 {
-  "name": "minerva-ui-docs",
+  "name": "docs",
+  "version": "0.0.0",
   "private": true,
-  "version": "1.0.0",
-  "description": "Gatsby Documentation for Minerva UI React Component Library",
-  "author": "Cratebind",
-  "license": "MIT",
-  "starter-name": "minerva-ui-docs",
-  "dependencies": {
-    "@reach/accordion": "^0.8.6",
-    "@reach/dialog": "^0.8.6",
-    "@reach/visually-hidden": "^0.8.6",
-    "@rocketseat/gatsby-theme-docs": "^2.1.0",
-    "babel-plugin-styled-components": "^1.10.7",
-    "gatsby": "^2.19.10",
-    "gatsby-plugin-canonical-urls": "^2.1.19",
-    "gatsby-plugin-google-analytics": "^2.1.34",
-    "gatsby-plugin-manifest": "^2.2.37",
-    "gatsby-plugin-offline": "^3.0.32",
-    "gatsby-plugin-sitemap": "^2.2.26",
-    "gatsby-plugin-styled-components": "^3.2.1",
-    "minerva-ui": "^2.8.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-color": "^2.18.0",
-    "react-dom": "^16.12.0",
-    "react-feather": "^2.0.3",
-    "styled-components": "^5.0.1"
-  },
-  "devDependencies": {},
   "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^2.0.0-alpha.48",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.48",
+    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.39",
+    "@reach/accordion": "^0.9.1",
+    "@reach/dialog": "^0.9.1",
+    "@reach/visually-hidden": "^0.9.0",
+    "classnames": "^2.2.6",
+    "minerva-ui": "2.8.2",
+    "react-color": "^2.18.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
