@@ -1,0 +1,17 @@
+{
+  "id": "components/Tag",
+  "title": "Tag",
+  "description": "import { Tag } from 'minerva-ui';",
+  "source": "@site/docs/components/Tag.mdx",
+  "permalink": "/docs/components/Tag",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/Tag.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Table",
+    "permalink": "/docs/components/Table"
+  },
+  "next": {
+    "title": "TagsInput",
+    "permalink": "/docs/components/TagsInput"
+  }
+}

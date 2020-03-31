@@ -133,7 +133,12 @@ render(
 
 1. Clone Repo
 2. Run `yarn install`
-3. Run `yarn storybook` to open a local storybook server for development
+3. Run `yarn lerna bootstrap` to link dependencies
+
+If you want to run the documentation locally:
+1. Follow the steps above
+2. Run `yarn start` in the root directory
+3. Go to the `docs` directory and run `yarn start`
 
 ### Influences:
 

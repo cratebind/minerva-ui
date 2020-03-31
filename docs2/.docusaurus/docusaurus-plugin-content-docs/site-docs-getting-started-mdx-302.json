@@ -1,0 +1,14 @@
+{
+  "id": "getting-started",
+  "title": "Getting Started",
+  "description": "Minerva UI is a reusable component library to help build UIs faster. This library aims to be highly composable, declarative and accessible.",
+  "source": "@site/docs/getting-started.mdx",
+  "permalink": "/docs/getting-started",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/getting-started.mdx",
+  "sidebar_label": "Getting Started",
+  "sidebar": "docs",
+  "next": {
+    "title": "Alert",
+    "permalink": "/docs/components/Alert"
+  }
+}

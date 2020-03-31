@@ -1,0 +1,30 @@
+---
+title: 'Heading'
+---
+
+import { Heading } from 'minerva-ui'
+
+Basic heading component, replaces `<h1> <h2> <h3> <h4>`.
+
+Tag names are not associated with any specific tag size, since tag choices should be made based on hierarchy for [SEO purposes](https://developer.mozilla.org/en-US/docs/Glossary/Semantics).
+
+```js
+import { Heading } from 'minerva-ui';
+```
+
+```jsx
+<Heading>Heading</Heading>
+```
+
+## Heading Font Sizes
+```jsx live
+<Stack>
+  {/* use `as` prop to change heading tag type */}
+  <Heading as="h1" fontSize="2xl">2x Large Heading</Heading>
+  <Heading as="h2" fontSize="xl">Extra Large Heading</Heading>
+  <Heading as="h3" fontSize="lg">Large Heading</Heading>
+  <Heading as="h4" fontSize="md">Medium Heading</Heading>
+  <Heading as="h5" fontSize="sm">Small Heading</Heading>
+  <Heading as="h6" fontSize="xs">Extra Small Heading</Heading>
+</Stack>
+```

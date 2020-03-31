@@ -1,0 +1,17 @@
+{
+  "id": "components/TagsInput",
+  "title": "TagsInput",
+  "description": "import { useState } from 'react';",
+  "source": "@site/docs/components/TagsInput.mdx",
+  "permalink": "/docs/components/TagsInput",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/TagsInput.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Tag",
+    "permalink": "/docs/components/Tag"
+  },
+  "next": {
+    "title": "Text",
+    "permalink": "/docs/components/Text"
+  }
+}

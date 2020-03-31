@@ -1,0 +1,17 @@
+{
+  "id": "components/Spinner",
+  "title": "Spinner",
+  "description": "import { Spinner } from 'minerva-ui';",
+  "source": "@site/docs/components/Spinner.mdx",
+  "permalink": "/docs/components/Spinner",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/Spinner.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Select",
+    "permalink": "/docs/components/Select"
+  },
+  "next": {
+    "title": "Stack",
+    "permalink": "/docs/components/Stack"
+  }
+}

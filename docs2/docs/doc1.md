@@ -1,8 +1,10 @@
 ---
-id: Getting Started
-title: Getting Started
-sidebar_label: Getting Started
+id: doc1
+title: Style Guide
+sidebar_label: Style Guide
 ---
+
+# Getting Started
 
 Minerva UI is a reusable component library to help build UIs faster. This library aims to be highly composable, declarative and accessible.
 
@@ -21,6 +23,7 @@ First add the `<ThemeProvider />` and `<GlobalStyles />` to the root of your app
 
 GlobalStyles is optional but highly recommended. It includes the CSS reset and styles from [Tailwind CSS.](https://tailwindcss.com/docs/preflight)
 
+
 ```jsx
 import { ThemeProvider, GlobalStyles } from 'minerva-ui';
 
@@ -29,7 +32,7 @@ const App = () => (
     {/* optional but recommended */}
     <GlobalStyles />
   </ThemeProvider>
-);
+)
 ```
 
 Then import components you want into your UI:
@@ -48,7 +51,7 @@ And use them:
       Stay Logged In
     </Checkbox>
   );
-};
+}
 ```
 
 ## Principles

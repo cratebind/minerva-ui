@@ -1,0 +1,17 @@
+{
+  "id": "examples/Buttons",
+  "title": "Buttons",
+  "description": "## Button Group",
+  "source": "@site/docs/examples/Buttons.mdx",
+  "permalink": "/docs/examples/Buttons",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/examples/Buttons.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Text",
+    "permalink": "/docs/components/Text"
+  },
+  "next": {
+    "title": "Cards",
+    "permalink": "/docs/examples/Cards"
+  }
+}

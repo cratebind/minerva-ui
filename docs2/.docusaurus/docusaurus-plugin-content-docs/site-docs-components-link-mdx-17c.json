@@ -1,0 +1,17 @@
+{
+  "id": "components/Link",
+  "title": "Link",
+  "description": "import { Link } from 'minerva-ui';",
+  "source": "@site/docs/components/Link.mdx",
+  "permalink": "/docs/components/Link",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/Link.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "InputField",
+    "permalink": "/docs/components/InputField"
+  },
+  "next": {
+    "title": "Modal",
+    "permalink": "/docs/components/Modal"
+  }
+}

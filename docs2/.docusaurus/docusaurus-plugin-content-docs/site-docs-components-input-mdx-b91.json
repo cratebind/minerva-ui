@@ -1,0 +1,17 @@
+{
+  "id": "components/Input",
+  "title": "Input",
+  "description": "import { Input } from 'minerva-ui';",
+  "source": "@site/docs/components/Input.mdx",
+  "permalink": "/docs/components/Input",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/Input.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Image",
+    "permalink": "/docs/components/Image"
+  },
+  "next": {
+    "title": "InputField",
+    "permalink": "/docs/components/InputField"
+  }
+}

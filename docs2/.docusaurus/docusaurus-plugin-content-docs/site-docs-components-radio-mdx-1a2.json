@@ -1,0 +1,17 @@
+{
+  "id": "components/Radio",
+  "title": "Radio",
+  "description": "import { RadioGroup, Radio } from 'minerva-ui';",
+  "source": "@site/docs/components/Radio.mdx",
+  "permalink": "/docs/components/Radio",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/Radio.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "PseudoBox",
+    "permalink": "/docs/components/PseudoBox"
+  },
+  "next": {
+    "title": "Select",
+    "permalink": "/docs/components/Select"
+  }
+}

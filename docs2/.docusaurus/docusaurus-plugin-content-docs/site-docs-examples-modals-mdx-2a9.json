@@ -1,0 +1,17 @@
+{
+  "id": "examples/Modals",
+  "title": "Modals",
+  "description": "## Custom Modal Content",
+  "source": "@site/docs/examples/Modals.mdx",
+  "permalink": "/docs/examples/Modals",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/examples/Modals.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Forms",
+    "permalink": "/docs/examples/Forms"
+  },
+  "next": {
+    "title": "Navigation",
+    "permalink": "/docs/examples/Navigation"
+  }
+}

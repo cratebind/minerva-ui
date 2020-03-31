@@ -1,0 +1,17 @@
+{
+  "id": "examples/Forms",
+  "title": "Forms",
+  "description": "## Login Form",
+  "source": "@site/docs/examples/Forms.mdx",
+  "permalink": "/docs/examples/Forms",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/examples/Forms.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Cards",
+    "permalink": "/docs/examples/Cards"
+  },
+  "next": {
+    "title": "Modals",
+    "permalink": "/docs/examples/Modals"
+  }
+}

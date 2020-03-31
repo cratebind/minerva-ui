@@ -1,0 +1,17 @@
+{
+  "id": "components/Stack",
+  "title": "Stack",
+  "description": "import { Box, Stack } from 'minerva-ui';",
+  "source": "@site/docs/components/Stack.mdx",
+  "permalink": "/docs/components/Stack",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/Stack.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Spinner",
+    "permalink": "/docs/components/Spinner"
+  },
+  "next": {
+    "title": "Table",
+    "permalink": "/docs/components/Table"
+  }
+}

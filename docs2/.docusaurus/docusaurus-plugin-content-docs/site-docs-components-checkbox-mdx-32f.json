@@ -1,0 +1,17 @@
+{
+  "id": "components/Checkbox",
+  "title": "Checkbox",
+  "description": "import { Checkbox } from 'minerva-ui';",
+  "source": "@site/docs/components/Checkbox.mdx",
+  "permalink": "/docs/components/Checkbox",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/Checkbox.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Button",
+    "permalink": "/docs/components/Button"
+  },
+  "next": {
+    "title": "Heading",
+    "permalink": "/docs/components/Heading"
+  }
+}

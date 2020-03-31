@@ -1,0 +1,17 @@
+{
+  "id": "components/Image",
+  "title": "Image",
+  "description": "import { Image } from 'minerva-ui';",
+  "source": "@site/docs/components/Image.mdx",
+  "permalink": "/docs/components/Image",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/Image.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Icon",
+    "permalink": "/docs/components/Icon"
+  },
+  "next": {
+    "title": "Input",
+    "permalink": "/docs/components/Input"
+  }
+}

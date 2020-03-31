@@ -1,0 +1,18 @@
+{
+  "id": "components/Alert",
+  "title": "Alert",
+  "description": "import { Alert } from 'minerva-ui';",
+  "source": "@site/docs/components/Alert.mdx",
+  "permalink": "/docs/components/Alert",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/Alert.mdx",
+  "sidebar_label": "Alert",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Getting Started",
+    "permalink": "/docs/getting-started"
+  },
+  "next": {
+    "title": "Button",
+    "permalink": "/docs/components/Button"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "packages": [
+    ".",
+    "docs2"
+  ],
+  "version": "independent",
+  "npmClient": "yarn"
+}

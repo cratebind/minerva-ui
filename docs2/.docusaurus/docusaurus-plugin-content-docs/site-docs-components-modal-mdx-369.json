@@ -1,0 +1,17 @@
+{
+  "id": "components/Modal",
+  "title": "Modal",
+  "description": "import { Modal } from 'minerva-ui';",
+  "source": "@site/docs/components/Modal.mdx",
+  "permalink": "/docs/components/Modal",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/Modal.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Link",
+    "permalink": "/docs/components/Link"
+  },
+  "next": {
+    "title": "PseudoBox",
+    "permalink": "/docs/components/PseudoBox"
+  }
+}

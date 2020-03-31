@@ -1,0 +1,60 @@
+---
+id: Input
+title: Input
+sidebar_label: Input
+---
+
+import { Input } from 'minerva-ui';
+
+Extends native `<input />` component
+
+```js
+import { Input } from 'minerva-ui';
+```
+
+```jsx live
+() => {
+  const [name, setName] = React.useState('');
+  return (
+    <Input
+      value={name}
+      onChange={e => setName(e.target.value)}
+      placeholder="Basic Input"
+    />
+  );
+}
+```
+
+# Examples
+
+### Disabled Input
+
+```jsx live
+() => {
+  const [name, setName] = React.useState('');
+  return (
+    <Input
+      disabled
+      value={name}
+      onChange={e => setName(e.target.value)}
+      placeholder="Basic Input"
+    />
+  );
+}
+```
+
+### Password Input
+
+```jsx live
+() => {
+  const [name, setName] = React.useState('');
+  return (
+    <Input
+      type="password"
+      value={name}
+      onChange={e => setName(e.target.value)}
+      placeholder="Basic Input"
+    />
+  );
+}
+```

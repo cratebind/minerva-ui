@@ -1,0 +1,13 @@
+{
+  "id": "examples/Navigation",
+  "title": "Navigation",
+  "description": "## Header",
+  "source": "@site/docs/examples/Navigation.mdx",
+  "permalink": "/docs/examples/Navigation",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/examples/Navigation.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Modals",
+    "permalink": "/docs/examples/Modals"
+  }
+}

@@ -1,0 +1,44 @@
+---
+title: 'TagsInput'
+---
+
+import { useState } from 'react';
+import { TagsInput } from 'minerva-ui';
+
+```js
+import { TagsInput } from 'minerva-ui';
+```
+
+```jsx live
+() => {
+  const [tags, setTags] = React.useState([]);
+  const [inputVal, setInputVal] = React.useState('');
+
+  const addTag = e => {
+    setTags([...tags, inputVal]);
+    setInputVal('');
+  };
+
+  const removeTag = index => {
+    const updatedTags = tags.filter((_, i) => i !== index);
+    setTags(updatedTags);
+  };
+
+  return (
+    <TagsInput
+      value={inputVal}
+      tags={tags}
+      onKeyDown={e => {
+        if (e.key === 'Enter' && inputVal) {
+          addTag();
+        }
+        if (e.key === 'Backspace' && !inputVal) {
+          removeTag(tags.length - 1);
+        }
+      }}
+      onChange={e => setInputVal(e.target.value)}
+      onClickIcon={removeTag}
+    />
+  );
+};
+```

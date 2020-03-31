@@ -1,0 +1,18 @@
+{
+  "id": "components/Button",
+  "title": "Button",
+  "description": "import { Box, Button } from 'minerva-ui';",
+  "source": "@site/docs/components/Button.mdx",
+  "permalink": "/docs/components/Button",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/Button.mdx",
+  "sidebar_label": "Button",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Alert",
+    "permalink": "/docs/components/Alert"
+  },
+  "next": {
+    "title": "Checkbox",
+    "permalink": "/docs/components/Checkbox"
+  }
+}

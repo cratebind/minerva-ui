@@ -1,5 +1,4 @@
 ---
-id: Getting Started
 title: Getting Started
 sidebar_label: Getting Started
 ---
@@ -21,7 +20,7 @@ First add the `<ThemeProvider />` and `<GlobalStyles />` to the root of your app
 
 GlobalStyles is optional but highly recommended. It includes the CSS reset and styles from [Tailwind CSS.](https://tailwindcss.com/docs/preflight)
 
-```jsx
+```jsx highlightOnly
 import { ThemeProvider, GlobalStyles } from 'minerva-ui';
 
 const App = () => (
@@ -48,7 +47,7 @@ And use them:
       Stay Logged In
     </Checkbox>
   );
-};
+}
 ```
 
 ## Principles
@@ -57,7 +56,7 @@ And use them:
 
 A composable library avoids abstracting away too much control from the developer. Our goal is to avoid creating complex components with prop names like `innerInputIconStyles`.
 
-```jsx
+```jsx highlightOnly
 <>
   {/* non-composable */}
   <Table tableCellStyles={{ backgroundColor: 'grey' }} />
@@ -84,11 +83,16 @@ However, since we also realize that many developers don't want to have to sink h
 
 They're designed to be copy and pasted into your codebase to help you get started, and they allow you to easily customize anything you need to down the road.
 
-## Contributing
+### Local Development
 
 1. Clone Repo
 2. Run `yarn install`
-3. Run `yarn storybook` to open a local storybook server for development
+3. Run `yarn lerna bootstrap` to link dependencies
+
+If you want to run the documentation locally:
+1. Follow the steps above
+2. Run `yarn start` in the root directory
+3. Go to the `docs` directory and run `yarn start`
 
 ## Influences:
 

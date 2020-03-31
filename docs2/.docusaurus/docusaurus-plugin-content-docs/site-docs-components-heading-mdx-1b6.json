@@ -1,0 +1,17 @@
+{
+  "id": "components/Heading",
+  "title": "Heading",
+  "description": "import { Heading } from 'minerva-ui'",
+  "source": "@site/docs/components/Heading.mdx",
+  "permalink": "/docs/components/Heading",
+  "editUrl": "https://github.com/facebook/docusaurus/edit/master/website/docs/components/Heading.mdx",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Checkbox",
+    "permalink": "/docs/components/Checkbox"
+  },
+  "next": {
+    "title": "Icon",
+    "permalink": "/docs/components/Icon"
+  }
+}
