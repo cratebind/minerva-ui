@@ -43,6 +43,9 @@ const StyledSwitch = styled.div<CustomSwitchProps>`
   border-radius: 50%;
   transition: transform 0.2s ease-in;
   transform: ${props =>
+  /*Determine how much to translate based on the factor being used to scale the SwitchInner's width. See SwitchInner.
+  For example, if SwitchInner was 3x as wide as StyledSwitch (aka switchSize), then we would need to translate StyledSwitch, 2 * switchSize
+  in order to move it to the other end. So in that case, if props.checked exist, then translateX(${props.switchSize * 2}px)*/
     props.checked ? `translateX(${props.switchSize}px)` : 'translateX(0)'};  
   width: ${props => props.switchSize}px;
   height: ${props => props.switchSize}px;
