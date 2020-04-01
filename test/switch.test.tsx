@@ -19,35 +19,29 @@ describe('Switch', () => {
     );
     const switchInner = getByTestId('switch-inner');
 
-    expect(switchInner).toHaveStyleRule('background-color', '#ccc', {
-      modifier: '::after',
-    });
+    expect(switchInner).toHaveStyleRule('background-color', '#ccc');
   });
 
   it('shows purple background when checked', () => {
     const { getByTestId } = render(
       <ThemeProvider>
-        <Switch htmlFor="test" />
+        <Switch checked={true} htmlFor="test" />
       </ThemeProvider>
     );
     const switchInner = getByTestId('switch-inner');
 
-    expect(switchInner).toHaveStyleRule('background-color', '#5850ec', {
-      modifier: '::before',
-    });
+    expect(switchInner).toHaveStyleRule('background-color', '#5850ec');
   });
 
   it('shows custom background color when switchColor prop exists and when checked', () => {
     const { getByTestId } = render(
       <ThemeProvider>
-        <Switch htmlFor="test" switchColor="#FF00FF" />
+        <Switch htmlFor="test" checked={true} switchColor="#FF00FF" />
       </ThemeProvider>
     );
     const switchInner = getByTestId('switch-inner');
 
-    expect(switchInner).toHaveStyleRule('background-color', '#FF00FF', {
-      modifier: '::before',
-    });
+    expect(switchInner).toHaveStyleRule('background-color', '#FF00FF');
   });
 
   it('shows switch on the right when checked', () => {
@@ -58,6 +52,6 @@ describe('Switch', () => {
     );
     const switchBtn = getByTestId('switch');
 
-    expect(switchBtn).toHaveStyleRule('right', '0%');
+    expect(switchBtn).toHaveStyleRule('transform', 'translateX(14px)');
   });
 });

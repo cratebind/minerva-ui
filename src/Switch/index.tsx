@@ -31,7 +31,7 @@ const SwitchInner = styled.div<CustomSwitchProps>`
   background-color: ${props => (props.checked ? props.switchColor : '#ccc')};
   height: ${props => props.switchSize}px;
   /* So if the switch is 14px wide then the inner colored part will be 28px wide */
-  width: ${props => props.switchSize * 2}px; 
+  width: ${props => props.switchSize * 2}px;
   padding: 3px;
   box-sizing: content-box;
 `;
@@ -43,10 +43,10 @@ const StyledSwitch = styled.div<CustomSwitchProps>`
   border-radius: 50%;
   transition: transform 0.2s ease-in;
   transform: ${props =>
-  /*Determine how much to translate based on the factor being used to scale the SwitchInner's width. See SwitchInner.
+    /*Determine how much to translate based on the factor being used to scale the SwitchInner's width. See SwitchInner.
   For example, if SwitchInner was 3x as wide as StyledSwitch (aka switchSize), then we would need to translate StyledSwitch, 2 * switchSize
   in order to move it to the other end. So in that case, if props.checked exist, then translateX(${props.switchSize * 2}px)*/
-    props.checked ? `translateX(${props.switchSize}px)` : 'translateX(0)'};  
+    props.checked ? `translateX(${props.switchSize}px)` : 'translateX(0)'};
   width: ${props => props.switchSize}px;
   height: ${props => props.switchSize}px;
 `;
@@ -86,9 +86,9 @@ export const Switch = forwardRef(function Checkbox(
     sm: 10,
     md: 14,
     lg: 20,
-  }
+  };
 
-  const activeSize = sizePresets[switchSize]
+  const activeSize = sizePresets[switchSize];
 
   return (
     <SwitchContainer switchSize={switchSize} as="div" ref={ref} {...rest}>
@@ -109,13 +109,12 @@ export const Switch = forwardRef(function Checkbox(
             switchSize={activeSize}
             data-testid="switch-inner"
           >
-             <StyledSwitch
+            <StyledSwitch
               checked={checked}
               switchSize={activeSize}
               data-testid="switch"
             />
           </SwitchInner>
-         
         </ControlBox>
       </CustomCheckboxContainer>
     </SwitchContainer>
