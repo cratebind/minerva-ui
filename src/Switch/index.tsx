@@ -52,9 +52,10 @@ const ControlBox = styled(Box)<SwitchProps>((props: SwitchProps) => ({
 const SwitchInner = styled.span<CustomSwitchProps>`
   display: block;
   width: 200%;
-  margin-left: -100%;
+  /* margin-left: -100%; */
   transition: transform 250ms ease 2s;
-  margin-left: ${props => (props.checked ? '0px' : null)};
+  transform: ${props =>
+    props.checked ? 'translateX(100%)' : 'translateX(0%)'};
 
   &::before,
   &::after {
