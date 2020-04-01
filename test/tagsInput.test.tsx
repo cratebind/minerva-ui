@@ -3,12 +3,12 @@ import { render, fireEvent } from '@testing-library/react';
 import 'jest-styled-components';
 import { ThemeProvider, TagsInput } from '../src';
 
-const ExampleTagInput = props => {
+const ExampleTagInput = () => {
   const initialState: string[] = [];
   const [tags, setTags] = useState(initialState);
   const [inputVal, setInputVal] = React.useState('');
 
-  const addTag = e => {
+  const addTag = () => {
     setTags([...tags, inputVal]);
     setInputVal('');
   };
@@ -25,7 +25,7 @@ const ExampleTagInput = props => {
         tags={tags}
         onKeyDown={e => {
           if (e.key === 'Enter' && inputVal) {
-            addTag(e);
+            addTag();
           }
           if (e.key === 'Backspace' && !inputVal) {
             removeTag(tags.length - 1);

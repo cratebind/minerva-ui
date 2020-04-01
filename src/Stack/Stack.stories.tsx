@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Flex, Image, Text, Block } from '..';
+import { Stack, Flex, Image, Text } from '..';
 
 export default {
   title: 'Elements|Stack',
@@ -65,13 +65,3 @@ export const CustomGap = () => {
     </>
   );
 };
-
-// export const Custom = () => (
-//   <>
-//     <Stack icon="arrow-right-circle" bg="orange.200" title="Stack!!!" />
-//     <br />
-//     <Stack icon="circle" bg="green.100">
-//       Here is some information.
-//     </Stack>
-//   </>
-// );
