@@ -11,8 +11,8 @@ const switchSizes = {
     switchBtn: {
       width: '20px',
       height: '20px',
-      // margin: '2.5px 1px 2.5px 1px;',
-      margin: '2.5px 4px 2.5px 1px',
+      // margin: '2.5px 4px 2.5px 1px',
+
     },
   },
   md: {
@@ -21,7 +21,7 @@ const switchSizes = {
     switchBtn: {
       width: '14px',
       height: '14px',
-      margin: '1.5px 3px',
+      // margin: '1.5px 3px',
     },
   },
   sm: {
@@ -30,7 +30,7 @@ const switchSizes = {
     switchBtn: {
       width: '11px',
       height: '11px',
-      margin: '1.5px 3px',
+      // margin: '1.5px 3px',
     },
   },
 };
@@ -75,7 +75,7 @@ const StyledSwitch = styled.span<CustomSwitchProps>`
   border-radius: 50%;
   transition: transform 0.2s ease-in;
   transform: ${props =>
-    props.checked ? 'translateX(150%)' : 'translateX(0%)'};
+    props.checked ? 'translateX(170%)' : 'translateX(0%)'};
   /* margin: 5%;
   width: 34%;
   height: 76%; */
