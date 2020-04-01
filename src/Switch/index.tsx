@@ -133,7 +133,11 @@ export const Switch = forwardRef(function Checkbox(
             switchColor={switchColor}
             data-testid="switch-inner"
           />
-          <StyledSwitch checked={checked} switchSize={switchSize} data-testid="switch" />
+          <StyledSwitch
+            checked={checked}
+            switchSize={switchSize}
+            data-testid="switch"
+          />
         </ControlBox>
       </CustomCheckboxContainer>
     </SwitchContainer>
