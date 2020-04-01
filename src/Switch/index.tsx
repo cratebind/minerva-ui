@@ -4,40 +4,8 @@ import { CustomCheckboxContainer, CustomCheckboxInput } from '@reach/checkbox';
 import { MinervaProps, Box, systemProps } from '../layout';
 import VisuallyHidden from '../VisuallyHidden';
 
-const switchSizes = {
-  lg: {
-    width: '55px',
-    height: '25px',
-    switchBtn: {
-      width: '20px',
-      height: '20px',
-      // margin: '2.5px 4px 2.5px 1px',
-
-    },
-  },
-  md: {
-    width: '40px',
-    height: '18px',
-    switchBtn: {
-      width: '14px',
-      height: '14px',
-      // margin: '1.5px 3px',
-    },
-  },
-  sm: {
-    width: '33px',
-    height: '14.5px',
-    switchBtn: {
-      width: '11px',
-      height: '11px',
-      // margin: '1.5px 3px',
-    },
-  },
-};
-
 const SwitchContainer = styled(Box)<SwitchProps>`
   position: relative;
-  width: ${props => switchSizes[props.switchSize || 'md'].width};
   display: inline-block;
   vertical-align: middle;
   text-align: left;
@@ -51,8 +19,6 @@ const ControlBox = styled(Box)<SwitchProps>((props: SwitchProps) => ({
   border: '0 solid #ccc',
   borderRadius: '20px',
   margin: '0',
-  height: switchSizes[props.switchSize || 'md'].height,
-
   ':focus-within': {
     borderColor: '#a4cafe',
     boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
@@ -60,28 +26,26 @@ const ControlBox = styled(Box)<SwitchProps>((props: SwitchProps) => ({
   },
 }));
 
-const SwitchInner = styled.span<CustomSwitchProps>`
+const SwitchInner = styled.div<CustomSwitchProps>`
   display: block;
   background-color: ${props => (props.checked ? props.switchColor : '#ccc')};
-  height: 34px;
+  height: ${props => props.switchSize}px;
+  /* So if the switch is 14px wide then the inner colored part will be 28px wide */
+  width: ${props => props.switchSize * 2}px; 
+  padding: 3px;
+  box-sizing: content-box;
 `;
 
-const StyledSwitch = styled.span<CustomSwitchProps>`
+const StyledSwitch = styled.div<CustomSwitchProps>`
   display: block;
   background: #fff;
-  position: absolute;
-  bottom: 0;
   border: 0 solid #ccc;
   border-radius: 50%;
   transition: transform 0.2s ease-in;
   transform: ${props =>
-    props.checked ? 'translateX(170%)' : 'translateX(0%)'};
-  /* margin: 5%;
-  width: 34%;
-  height: 76%; */
-  margin: ${props => switchSizes[props.switchSize || 'md'].switchBtn.margin};
-  width: ${props => switchSizes[props.switchSize || 'md'].switchBtn.width};
-  height: ${props => switchSizes[props.switchSize || 'md'].switchBtn.height};
+    props.checked ? `translateX(${props.switchSize}px)` : 'translateX(0)'};  
+  width: ${props => props.switchSize}px;
+  height: ${props => props.switchSize}px;
 `;
 
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
@@ -99,7 +63,7 @@ export interface SwitchProps extends BaseProps {
 export interface CustomSwitchProps {
   checked?: boolean;
   switchColor?: string;
-  switchSize?: string;
+  switchSize: number;
 }
 
 export const Switch = forwardRef(function Checkbox(
@@ -114,6 +78,14 @@ export const Switch = forwardRef(function Checkbox(
     htmlFor,
     ...rest
   } = props;
+
+  const sizePresets = {
+    sm: 10,
+    md: 14,
+    lg: 20,
+  }
+
+  const activeSize = sizePresets[switchSize]
 
   return (
     <SwitchContainer switchSize={switchSize} as="div" ref={ref} {...rest}>
@@ -131,13 +103,16 @@ export const Switch = forwardRef(function Checkbox(
           <SwitchInner
             checked={checked}
             switchColor={switchColor}
+            switchSize={activeSize}
             data-testid="switch-inner"
-          />
-          <StyledSwitch
-            checked={checked}
-            switchSize={switchSize}
-            data-testid="switch"
-          />
+          >
+             <StyledSwitch
+              checked={checked}
+              switchSize={activeSize}
+              data-testid="switch"
+            />
+          </SwitchInner>
+         
         </ControlBox>
       </CustomCheckboxContainer>
     </SwitchContainer>
