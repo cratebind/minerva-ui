@@ -42,7 +42,7 @@ const ControlBox = styled(Box)<SwitchProps>((props: SwitchProps) => ({
     ? switchSizes[props.switchSize].height
     : switchSizes['md'].height,
 
-  ':focus': {
+  ':focus-within': {
     borderColor: '#a4cafe',
     boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
     outline: 0,
