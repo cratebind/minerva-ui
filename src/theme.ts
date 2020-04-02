@@ -20,6 +20,7 @@ export interface MinervaTheme extends Theme {
   InputField?: React.CSSProperties;
   Link?: React.CSSProperties;
   Checkbox?: React.CSSProperties;
+  Switch?: React.CSSProperties;
   Select?: React.CSSProperties;
   Tag?: React.CSSProperties;
   Skeleton?: React.CSSProperties;
@@ -68,6 +69,7 @@ const defaultTheme: MinervaTheme = {
   InputField: {},
   Link: {},
   Checkbox: {},
+  Switch: {},
   Select: {},
   Tag: {},
   Skeleton: {},
