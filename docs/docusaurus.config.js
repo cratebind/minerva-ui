@@ -92,12 +92,12 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Minerva UI, Inc. Built with Docusaurus.`,
     },
-    // algolia: {
-    //   appId: 'app-id',
-    //   apiKey: 'api-key',
-    //   indexName: 'index-name',
-    //   algoliaOptions: {}, // Optional, if provided by Algolia
-    // },
+    algolia: {
+      // appId: 'minerva-ui',
+      apiKey: process.env.ALGOLIA_API_KEY,
+      indexName: 'minerva-ui',
+      algoliaOptions: {}, // Optional, if provided by Algolia
+    },
   },
   presets: [
     [
