@@ -4,7 +4,7 @@ import { CustomCheckboxContainer, CustomCheckboxInput } from '@reach/checkbox';
 import { MinervaProps, Box, systemProps } from '../layout';
 import VisuallyHidden from '../VisuallyHidden';
 
-const SwitchContainer = styled(Box) <SwitchProps>`
+const SwitchContainer = styled(Box)<SwitchProps>`
   position: relative;
   display: inline-block;
   vertical-align: middle;
