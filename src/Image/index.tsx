@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 import { MinervaProps, Box } from '../layout';
+import { useTheme } from '../theme';
 // import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 
 // type BaseProps = MinervaProps &
@@ -20,7 +21,11 @@ export const Image = forwardRef(function Image(
   { src, alt, ...props }: ImageProps,
   ref
 ) {
-  return <Box as="img" ref={ref} src={src} alt={alt} {...props} />;
+  const theme = useTheme();
+
+  return (
+    <Box as="img" ref={ref} src={src} alt={alt} {...theme.Image} {...props} />
+  );
 });
 
 export default Image;

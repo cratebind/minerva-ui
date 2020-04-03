@@ -12,11 +12,21 @@ import { Tag } from 'minerva-ui';
 ```
 
 ```jsx
-<>
+<Stack horizontal>
   <Tag>#photography</Tag>
-  <Tag ml={2}>#nature</Tag>
-  <Tag ml={2}>#travel</Tag>
-</>
+  <Tag>#nature</Tag>
+  <Tag>#travel</Tag>
+</Stack >
 ```
 
 <Props of={Tag} />
+
+
+## Closeable Tag
+```jsx
+<Stack horizontal>
+  <Tag showIcon>#photography</Tag>
+  <Tag>#nature</Tag>
+  <Tag>#travel</Tag>
+</Stack >
+```

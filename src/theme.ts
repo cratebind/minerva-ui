@@ -17,6 +17,7 @@ export interface MinervaTheme extends Theme {
   Button?: React.CSSProperties;
   Text?: React.CSSProperties;
   Input?: React.CSSProperties;
+  Image?: React.CSSProperties;
   InputField?: React.CSSProperties;
   Link?: React.CSSProperties;
   Checkbox?: React.CSSProperties;
@@ -59,7 +60,8 @@ const defaultTheme: MinervaTheme = {
     paddingRight: '16px',
     borderRadius: '5px',
   },
-  Text: {},
+  Checkbox: {},
+  Image: {},
   Input: {
     WebkitAppearance: 'none',
     fontSize: '16px',
@@ -68,11 +70,11 @@ const defaultTheme: MinervaTheme = {
   },
   InputField: {},
   Link: {},
-  Checkbox: {},
-  Switch: {},
-  Select: {},
   Tag: {},
+  Text: {},
+  Select: {},
   Skeleton: {},
+  Switch: {},
   defaultBorderColor: '#d2d6dc',
   icons: Object.keys(Icon).reduce((result, iconName) => {
     result[toKebabCase(iconName)] = Icon[iconName];
@@ -364,6 +366,13 @@ const defaultTheme: MinervaTheme = {
 
 export function useTheme(): MinervaTheme {
   return useContext(ThemeContext);
+}
+
+// use this to avoid spreading properties for a component that doesn't have theme styles
+export function useComponentStyles(componentName: string): React.CSSProperties {
+  const theme = useTheme();
+
+  return theme[componentName] || {};
 }
 
 export default defaultTheme;

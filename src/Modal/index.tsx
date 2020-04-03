@@ -6,18 +6,20 @@ import Icon from '../Icon';
 import Button from '../Button';
 
 import '@reach/dialog/styles.css';
+import { useComponentStyles } from '../theme';
 
 const StyledOverlay = styled(DialogOverlay)({}, systemProps);
 
 const StyledModal = styled(Dialog)(
-  {
+  props => ({
     padding: 0,
     borderRadius: '5px',
     alignItems: 'center',
     width: '100%',
     maxWidth: '30rem',
     zIndex: 3,
-  },
+    ...props.theme.Modal,
+  }),
   systemProps
 );
 
@@ -91,10 +93,16 @@ export const ModalHeader = ({
 };
 
 export const ModalBody = ({ children, ...props }: ModalBodyProps) => {
-  return <StyledModalBody {...props}>{children}</StyledModalBody>;
+  const componentStyles = useComponentStyles('ModalBody');
+  return (
+    <StyledModalBody {...componentStyles} {...props}>
+      {children}
+    </StyledModalBody>
+  );
 };
 
 export const ModalFooter = ({ children, ...props }: ModalFooterProps) => {
+  // const theme = useTheme();
   return <StyledModalFooter {...props}>{children}</StyledModalFooter>;
 };
 

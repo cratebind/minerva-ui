@@ -10,12 +10,13 @@ import VisuallyHidden from '../VisuallyHidden';
  */
 
 const CheckboxContainer = styled(Box)(
-  {
+  props => ({
     display: 'flex',
     alignItems: 'center',
     cursor: 'pointer',
     fontSize: '14px',
-  },
+    ...props.theme.Checkbox,
+  }),
   systemProps
 );
 

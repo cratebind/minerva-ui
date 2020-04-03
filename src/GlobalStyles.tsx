@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { MinervaTheme } from './theme';
 
 /**
  * Base styles from Tailwind CSS
@@ -464,8 +463,7 @@ html {
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: ${(p: { theme: MinervaTheme }) =>
-    (p.theme && p.theme.defaultBorderColor) || '#d2d6dc'}; /* 2 */
+  border-color: #d2d6dc; /* 2 */
 }
 
 /*

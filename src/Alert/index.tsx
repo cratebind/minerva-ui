@@ -4,7 +4,7 @@ import { MinervaProps, systemProps, Flex } from '../layout';
 import Icon from '../Icon';
 import Text from '../Text';
 
-const StyledAlert = styled(Flex)(
+export const StyledAlert = styled(Flex)(
   {
     padding: '16px',
     borderRadius: '5px',
@@ -13,7 +13,7 @@ const StyledAlert = styled(Flex)(
   systemProps
 );
 
-const StyledAlertTitle = styled(Text)(
+export const StyledAlertTitle = styled(Text)(
   {
     fontWeight: 'bold',
     marginRight: '5px',
@@ -21,7 +21,7 @@ const StyledAlertTitle = styled(Text)(
   systemProps
 );
 
-const StyledAlertDescription = styled(Text)``;
+export const StyledAlertDescription = styled(Text)``;
 
 export interface AlertProps extends MinervaProps {
   children?: React.ReactNode;

@@ -13,6 +13,7 @@ import {
   Block,
   Flex,
   Box,
+  ModalBody,
   Text,
   Table,
   Select,
@@ -20,6 +21,7 @@ import {
   Image,
   Icon,
   Alert,
+  defaultTheme,
 } from '../src';
 import { ThemeProvider } from '../src';
 expect.extend(toHaveNoViolations);
@@ -232,5 +234,57 @@ describe(`<Icon />`, () => {
     const component = getByTestId('icon');
 
     expect(component).toHaveStyleRule('background-color', backgroundColor);
+  });
+});
+
+const THEMEABLE_COMPONENTS = {
+  Button,
+  Checkbox,
+  Heading,
+  Image,
+  Input,
+  InputField,
+  Link,
+  ModalBody,
+  Text,
+  Select,
+  Tag,
+};
+
+/**
+ * Themeable components
+ */
+Object.entries(THEMEABLE_COMPONENTS).forEach(([name, Component]: any[]) => {
+  describe(`<${name} />`, () => {
+    it('should be style-able from theme', () => {
+      const backgroundColor = '#e9e9e9';
+      const customTheme = {
+        ...defaultTheme,
+        [name]: {
+          backgroundColor,
+        },
+      };
+
+      const { getByTestId } = render(
+        <ThemeProvider theme={customTheme}>
+          <Component data-testid={name} />
+        </ThemeProvider>
+      );
+
+      const component = getByTestId(name);
+
+      expect(component).toHaveStyleRule('background-color', backgroundColor);
+    });
+
+    it('should still render when theme has no custom styles', () => {
+      const { getByTestId } = render(
+        <ThemeProvider theme={{}}>
+          <Component data-testid={name} />
+        </ThemeProvider>
+      );
+
+      const component = getByTestId(name);
+      expect(component).toBeInTheDocument();
+    });
   });
 });

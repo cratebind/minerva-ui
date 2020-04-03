@@ -1,43 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Tag /> should render 1`] = `
-.c2 {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
 .c0 {
-  display: inline-block;
-  background-color: #EDF2F7;
-  border-radius: 5px;
-  padding: 8px 10px;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background-color: #EDF2F7;
+  border-radius: 5px;
+  padding: 8px 10px;
 }
 
 <div>
   <div
     class="sc-AxirZ c0"
   >
-    <div
-      class="c1"
-    >
-      <p
-        class="c2 "
-      >
-        Test
-      </p>
-    </div>
+    Test
   </div>
 </div>
 `;

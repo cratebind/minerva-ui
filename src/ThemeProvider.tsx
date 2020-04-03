@@ -12,11 +12,7 @@ export interface ProviderProps {
 }
 
 function ThemeProvider({ theme = defaultTheme, children }: ProviderProps) {
-  return (
-    <StyledThemeProvider theme={{ ...defaultTheme, ...theme }}>
-      {children}
-    </StyledThemeProvider>
-  );
+  return <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>;
 }
 
 // const useTheme = () => {
