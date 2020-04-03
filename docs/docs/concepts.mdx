@@ -3,6 +3,7 @@ title: 'Concepts'
 ---
 
 ## Easy To Use
+
 We've found that good component libraries are easy to use and limit the learning curve of new APIs.
 
 In our components, we've tried to limit the complexity to prevent developers from having to learn a list of 12 possible props that a component can accept.
@@ -44,6 +45,7 @@ By keeping control over the content entirely with the developer, you spend less 
 When a common functionality starts to get more complex, we might also consider turning it into an [example or recipe](/examples/Forms/) rather than making an entirely new component for it.
 
 ## Unopinionated
+
 We've found that the more presets a component library has, the more you end up having to fight against.
 
 Tools like [Bootstrap](https://getbootstrap.com/) are excellent for developers who want to put together a straight-forward without overthinking the design.
@@ -53,6 +55,7 @@ But when building a UI with a custom design, you end up not only overriding incl
 However, we don't want to provide unstyled components for those who do want to start a project quickly. We export a `defaultTheme` that you are able to overwrite and manually style every component in the library.
 
 ## Accessible
+
 We believe web UIs should always be accessible, even if you don't _think_ your audience "needs" it. Accessibility could be important for someone who prefers tabbing around a form on their keyboard or for someone who sustained a recent hand injury.
 
 In addition, accessible rules are rules that people come to _expect_ from a UI. One of the rules for a `Modal` or ([Dialog](https://www.w3.org/TR/wai-aria-practices-1.2/#dialog_modal)) is that pressing `esc` should close the modal. But when you ignore this rule and someone presses `esc`, a user could get frustrated because it's a behavior they've come to expect from accessibility compliant websites.
