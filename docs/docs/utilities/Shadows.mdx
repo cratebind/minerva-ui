@@ -1,0 +1,40 @@
+import { defaultTheme } from 'minerva-ui'
+import UtilityTable from '../../src/components/UtilityTable';
+
+```jsx noInline
+const Card = (props) => <Flex size="60px" bg="white" borderRadius="4px" alignItems="center" justifyContent="center" {...props} />
+
+render(
+  <Flex
+    backgroundColor="#edf2f7"
+    padding="10px"
+    justifyContent="space-between"
+  >
+    <Card boxShadow="base">base</Card>
+    <Card boxShadow="md">md</Card>
+    <Card boxShadow="lg">lg</Card>
+    <Card boxShadow="xl">xl</Card>
+    <Card boxShadow="2xl">2xl</Card>
+    <Card boxShadow="inner">inner</Card>
+    <Card boxShadow="outline">outline</Card>
+    <Card boxShadow="none">none</Card>
+  </Flex>
+)
+```
+
+## Shorthand Props
+```jsx noInline
+const Card = (props) => <Flex size="60px" bg="white" borderRadius="4px" alignItems="center" justifyContent="center" {...props} />
+
+render(
+  <Flex
+    backgroundColor="#edf2f7"
+    padding="10px"
+    justifyContent="space-between"
+  >
+    <Card shadow="base">base</Card>
+  </Flex>
+)
+```
+
+<UtilityTable themeProperty={defaultTheme.shadows} />

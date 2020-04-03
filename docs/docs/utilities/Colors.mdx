@@ -1,10 +1,6 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import baseTheme from '../theme';
-import ColorTag from '../../utils/ColorTag';
-
-<Meta title="Utilities|Colors" />
-
-# Colors
+import { Box, Stack, Heading, defaultTheme } from 'minerva-ui';
+import ColorTag from '../../src/components/ColorTag';
+import UtilityTable from '../../src/components/UtilityTable';
 
 ```jsx
 () => (
@@ -44,23 +40,29 @@ import ColorTag from '../../utils/ColorTag';
 )
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th>Key</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    {Object.entries(baseTheme.colors).map(([color, value]) => (
-      <tr>
-        <td><pre>{color}</pre></td>
-        <td>
-          {typeof value === 'string' ? <ColorTag color={['transparent', '#fff'].includes(value) ? '#000' : '#fff'} code={value}>{value}</ColorTag> : Object.entries(value).map(([number, code]) => (
-            <ColorTag number={number} code={code}>{number}: {code}</ColorTag>
-          ))}
-        </td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+<Stack>
+  {Object.entries(defaultTheme.colors).map(([color, value]) => {
+    console.log({ color, value })
+    return (
+      <Stack>
+        <Heading textTransform="capitalize" fontSize="lg">{color}</Heading>
+        {typeof value === 'string' ? (
+          <UtilityTable
+            themeProperty={{ [color]: value }}
+            renderValue={({ property, value }) =>
+              <ColorTag code={value} color={['transparent', '#fff'].includes(value) ? '#000' : '#fff'} />
+            }
+          />
+        ) : (
+          <UtilityTable
+            themeProperty={Object.entries(value).reduce((result, [key, colorCode]) => {
+              result[`${color}.${key}`] = colorCode;
+              return result;
+            }, {})}
+            renderValue={({ property, value }) => <ColorTag code={value} number={property} />}
+          />
+        )}
+      </Stack>
+    )
+  })}
+</Stack>

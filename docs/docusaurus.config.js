@@ -23,12 +23,12 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {
-          to: 'docs/components/Alert',
-          activeBasePath: 'docs/components',
-          label: 'Components',
-          position: 'left',
-        },
+        // {
+        //   to: 'docs/components/Alert',
+        //   activeBasePath: 'docs/components',
+        //   label: 'Components',
+        //   position: 'left',
+        // },
         {
           to: 'theme-builder',
           activeBasePath: 'theme-builder',
@@ -92,6 +92,12 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Minerva UI, Inc. Built with Docusaurus.`,
     },
+    // algolia: {
+    //   appId: 'app-id',
+    //   apiKey: 'api-key',
+    //   indexName: 'index-name',
+    //   algoliaOptions: {}, // Optional, if provided by Algolia
+    // },
   },
   presets: [
     [

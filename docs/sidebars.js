@@ -1,16 +1,10 @@
 const path = require('path');
-const { readdirSync, readFileSync } = require('fs');
+const { readdirSync } = require('fs');
 
 const getDirectoryPaths = folderName =>
   readdirSync(path.resolve(__dirname, `docs/${folderName}`)).map(
     file => `${folderName}/${file.split('.')[0]}`
   );
-
-// const componentPaths = readdirSync(
-//   path.resolve(__dirname, 'docs/components')
-// ).map(file => `components/${file.split('.')[0]}`);
-
-const componentPaths = getDirectoryPaths('components');
 
 module.exports = {
   docs: [
@@ -22,6 +16,11 @@ module.exports = {
       type: 'category',
       label: 'Components',
       items: getDirectoryPaths('components'),
+    },
+    {
+      type: 'category',
+      label: 'Utilities',
+      items: getDirectoryPaths('utilities'),
     },
     {
       type: 'category',
