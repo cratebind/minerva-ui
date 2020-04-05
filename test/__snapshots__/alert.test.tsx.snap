@@ -26,6 +26,7 @@ exports[`<Alert /> should render 1`] = `
 <div>
   <div
     class="sc-AxirZ sc-AxhCb c0"
+    role="alert"
   >
     <p
       class="c1 "
