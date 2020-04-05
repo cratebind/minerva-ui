@@ -30,7 +30,14 @@ const SkeletonAnimation = styled(Box)`
   }
 `;
 
-export const Skeleton = ({ count = 1, width = '100%', height = '2rem', borderRadius = '5px', gap = '10px', ...props }: SkeletonProps) => {
+export const Skeleton = ({
+  count = 1,
+  width = '100%',
+  height = '2rem',
+  borderRadius = '5px',
+  gap = '10px',
+  ...props
+}: SkeletonProps) => {
   const theme = useTheme();
   const elements: JSX.Element[] = [];
   for (let i = 0; i < count; i++) {
