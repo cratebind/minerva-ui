@@ -9,20 +9,21 @@ exports[`<Skeleton /> should render 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
+}
+
+.c0 > * + * {
+  margin-top: 10px;
 }
 
 .c1 {
-  display: inline-block;
+  height: 2rem;
   width: 100%;
-  height: 2em;
   border-radius: 5px;
-  margin-bottom: 10px;
+  display: inline-block;
   background: linear-gradient(-90deg,#f0f0f0 0%,#f8f8f8 50%,#f0f0f0 100%);
   background-size: 400% 400%;
-  -webkit-animation: pulse 1.2s ease-in-out infinite;
-  animation: pulse 1.2s ease-in-out infinite;
+  -webkit-animation: jtkAyK 1.2s ease-in-out infinite;
+  animation: jtkAyK 1.2s ease-in-out infinite;
   line-height: 1;
 }
 
@@ -31,13 +32,15 @@ exports[`<Skeleton /> should render 1`] = `
 }
 
 <div>
-  <span
-    class="c0"
+  <div
+    class="sc-AxirZ sc-AxhCb c0"
   >
     <div
-      class="c1"
+      class="sc-AxirZ c1"
       data-testid="skeleton"
+      height="2rem"
+      width="100%"
     />
-  </span>
+  </div>
 </div>
 `;

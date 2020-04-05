@@ -50,7 +50,7 @@ describe('<Skeleton />', () => {
   it('should be circular in shape if passed the circle prop ', () => {
     const { getByTestId } = render(
       <ThemeProvider>
-        <Skeleton circle />
+        <Skeleton borderRadius="full" />
       </ThemeProvider>
     );
     const skeleton = getByTestId('skeleton');
