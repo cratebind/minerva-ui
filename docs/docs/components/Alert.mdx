@@ -47,3 +47,14 @@ You can also supply your own colors and icons. The default theme includes [Feath
   </Alert>
 </>
 ```
+
+## Props
+
+Props related to the Alert component.
+
+| Name     | Type                                  | Is Required | Default | Description                                                                          |
+| -------- | ------------------------------------- | ----------- | ------- | ------------------------------------------------------------------------------------ |
+| `status` | 'error', 'success', 'warning', 'info' | optional    | none    | If status codes are supplied, the component will supply predefined colors and icons. |
+| `title`  | string                                | optional    | none    | Title for Alert                                                                      |
+| `bg`     | string                                | optional    | #e5e7eb | Sets the background color of the alert. Will override `status`                       |
+| `icon`   | string                                | optional    | none    | Icon for Alert                                                                       |

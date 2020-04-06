@@ -21,3 +21,34 @@ Basic `div` component with additional props for CSS pseudo selectors.
   _focus={{ backgroundColor: '#fff', borderColor: 'purple' }}
 />
 ```
+
+## Props
+
+These are props related to the Pseudo Box component.
+
+| Prop           | Selector                                                                                                                                   |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `_after`       | `&:after`                                                                                                                                  |
+| `_before`      | `&:before`                                                                                                                                 |
+| `_hover`       | `&:hover`                                                                                                                                  |
+| `_focus`       | `&:focus`                                                                                                                                  |
+| `_active`      | `&:active`, `&[data-active=true]`                                                                                                          |
+| `_visited`     | `&:visited`                                                                                                                                |
+| `_pressed`     | `&:pressed`                                                                                                                                |
+| `_checked`     | `&[aria-checked=true]`                                                                                                                     |
+| `_mixed`       | `&[aria-checked=mixed]`                                                                                                                    |
+| `_selected`    | `&[aria-selected=true]`                                                                                                                    |
+| `_disabled`    | `&:disabled,` `&:disabled:focus`,`&:disabled:hover`, `&[aria-disabled=true]`, `&[aria-disabled=true]:focus`, `&[aria-disabled=true]:hover` |
+| `_invalid`     | `&[aria-invalid=true]`                                                                                                                     |
+| `readOnly`     | `&[aria-readonly=true]` `&[readonly]`                                                                                                      |
+| `_even`        | `&:nth-of-type(even)`                                                                                                                      |
+| `_odd`         | `&:nth-of-type(odd)`                                                                                                                       |
+| `_first`       | `&:first-of-type`                                                                                                                          |
+| `_last`        | `&:last-of-type`                                                                                                                           |
+| `_expanded`    | `&[aria-expanded=true]`                                                                                                                    |
+| `_grabbed`     | `&[aria-grabbed=true]`                                                                                                                     |
+| `_groupHover`  | `[role=group]:hover &`                                                                                                                     |
+| `_notFirst`    | `&:not(:first-of-type)`                                                                                                                    |
+| `_notLast`     | `&:not(:last-of-type)`                                                                                                                     |
+| `_focusWithin` | `&:focus-within`                                                                                                                           |
+| `_placeholder` | `&::placeholder`                                                                                                                           |
