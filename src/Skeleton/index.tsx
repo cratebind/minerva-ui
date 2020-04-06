@@ -18,12 +18,12 @@ const pulseKeyframes = keyframes`
   }
 `;
 
-const SkeletonAnimation = styled(Box)`
+export const SkeletonItem = styled(Box)`
   display: inline-block;
   background: linear-gradient(-90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
   background-size: 400% 400%;
   animation: ${pulseKeyframes} 1.2s ease-in-out infinite;
-  line-height: 1;
+  /* width: 100%; */
 
   &::before {
     content: '\00a0';
@@ -42,19 +42,19 @@ export const Skeleton = ({
   const elements: JSX.Element[] = [];
   for (let i = 0; i < count; i++) {
     elements.push(
-      <SkeletonAnimation
+      <SkeletonItem
         key={i}
         data-testid="skeleton"
         count={count}
         height={height}
-        width={width}
+        // width={width}
         borderRadius={borderRadius}
         {...props}
         {...theme.Skeleton}
       />
     );
   }
-  return <Stack gap={gap}>{elements}</Stack>;
+  return <Stack width="100%" height="100%" gap={gap}>{elements}</Stack>;
 };
 
 export default Skeleton;
