@@ -10,10 +10,11 @@ export interface SkeletonProps extends MinervaProps {
 }
 
 const pulseKeyframes = keyframes`
-  0% {
+  from {
     background-position: 0% 0%;
   }
-  100% {
+
+  to {
     background-position: -135% 0%;
   }
 `;
@@ -22,8 +23,7 @@ export const SkeletonItem = styled(Box)`
   display: inline-block;
   background: linear-gradient(-90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
   background-size: 400% 400%;
-  animation: ${pulseKeyframes} 1.2s ease-in-out infinite;
-  /* width: 100%; */
+  animation: 1.2s ease-in-out infinite alternate ${pulseKeyframes};
 
   &::before {
     content: '\00a0';
