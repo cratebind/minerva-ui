@@ -47,7 +47,7 @@ export const Skeleton = ({
         data-testid="skeleton"
         count={count}
         height={height}
-        // width={width}
+        width={width}
         borderRadius={borderRadius}
         {...props}
         {...theme.Skeleton}

@@ -140,7 +140,7 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
   border-right-color: currentColor;
   border-top-color: currentColor;
   border-radius: 9999px;
-  color: #777;
+  color: currentColor;
   border-style: solid;
   height: 20px;
   width: 20px;

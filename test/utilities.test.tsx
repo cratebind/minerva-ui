@@ -33,7 +33,7 @@ describe('Layout Components', () => {
 
 describe('Helper Components', () => {
   it('should render <Spinner />', () => {
-    const color = '#e3e3e3';
+    const color = 'currentColor';
     const { getByTestId } = render(
       <Spinner color={color} data-testid="spinner" />
     );

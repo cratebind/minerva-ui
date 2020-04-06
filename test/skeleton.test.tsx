@@ -34,7 +34,7 @@ describe('<Skeleton />', () => {
     );
 
     const skeleton = getByTestId('skeleton');
-    expect(skeleton).toHaveStyle('width: 100%');
+    expect(skeleton).toHaveStyleRule('width', '100%');
   });
 
   it('should span the width of the width prop ', () => {
@@ -44,7 +44,7 @@ describe('<Skeleton />', () => {
       </ThemeProvider>
     );
     const skeleton = getByTestId('skeleton');
-    expect(skeleton).toHaveStyle('width: 500px');
+    expect(skeleton).toHaveStyleRule('width', '500px');
   });
 
   it('should be circular in shape if passed the circle prop ', () => {
@@ -54,6 +54,6 @@ describe('<Skeleton />', () => {
       </ThemeProvider>
     );
     const skeleton = getByTestId('skeleton');
-    expect(skeleton).toHaveStyle('border-radius: 50%');
+    expect(skeleton).toHaveStyle('border-radius: 9999px');
   });
 });
