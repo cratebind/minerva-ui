@@ -54,7 +54,11 @@ export const Skeleton = ({
       />
     );
   }
-  return <Stack width="100%" height="100%" gap={gap}>{elements}</Stack>;
+  return (
+    <Stack width="100%" height="100%" gap={gap}>
+      {elements}
+    </Stack>
+  );
 };
 
 export default Skeleton;
