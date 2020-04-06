@@ -6,7 +6,13 @@ export default {
   component: Stack,
 };
 
-const Card = ({ children, direction = 'row' }) => (
+const Card = ({
+  children,
+  direction = 'row',
+}: {
+  children: React.ReactNode;
+  direction?: 'row' | 'column';
+}) => (
   <Flex
     flexDirection={direction}
     boxShadow="lg"

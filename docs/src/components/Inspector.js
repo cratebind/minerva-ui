@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { Box, Flex, Input } from 'minerva-ui';
-import { ThemeContext } from 'styled-components';
+import React, { useState } from 'react';
+import { Box, Flex, Input, useTheme } from 'minerva-ui';
 import {
   Accordion,
   AccordionItem,
@@ -16,8 +15,9 @@ import { useAppContext } from './AppContext';
 import { toTitleCase } from './utils';
 
 import '@reach/accordion/styles.css';
+import { Components } from './ThemeBuilder';
 
-const InnerContainer = props => <Box px="10px" {...props} />;
+const InnerContainer = props => <Box pt="10px" px="10px" {...props} />;
 
 const Title = props => (
   <Box fontSize="18px" fontWeight={600} p="10px" {...props} />
@@ -28,8 +28,10 @@ const FieldHeading = props => (
     display="flex"
     px="12px"
     py="8px"
-    mb="10px"
-    bg="rgb(247, 250, 252)"
+    // mb="10px"
+    // bg="rgb(247, 250, 252)"
+    bg="#3b4c67"
+    color="white"
     width="100%"
     textAlign="left"
     justifyContent="space-between"
@@ -76,7 +78,8 @@ const fieldSectionCount = Object.keys(fieldSections).length + 1;
 
 const Inspector = React.memo(function Inspector() {
   const { state, setContext } = useAppContext();
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useTheme();
+
   const [activeSections, setActiveSections] = useState([
     ...new Array(fieldSectionCount).fill().map((_, index) => index),
   ]);
@@ -112,63 +115,168 @@ const Inspector = React.memo(function Inspector() {
           </FieldHeading>
           <AccordionPanel>
             <InnerContainer>
-              {Object.entries(state[activeComponent].customProps).map(
-                ([key, value]) => (
-                  <InspectorField
-                    key={key}
-                    name={key}
-                    value={value}
-                    type="text"
-                    componentProps={componentProps}
-                    activeComponent={activeComponent}
-                    onChange={e =>
-                      setContext({
-                        [activeComponent]: {
-                          ...componentProps,
-                          customProps: {
-                            ...state[activeComponent].customProps,
-                            [key]: e.target.value,
+              {state?.[activeComponent]?.customProps &&
+                Object.entries(state[activeComponent].customProps).map(
+                  ([key, value]) => (
+                    <InspectorField
+                      key={key}
+                      name={key}
+                      value={value}
+                      type="text"
+                      componentProps={componentProps}
+                      activeComponent={activeComponent}
+                      onChange={e =>
+                        setContext({
+                          [activeComponent]: {
+                            ...componentProps,
+                            customProps: {
+                              ...state[activeComponent].customProps,
+                              [key]: e.target.value,
+                            },
                           },
-                        },
-                      })
-                    }
-                  />
-                )
-              )}
+                        })
+                      }
+                    />
+                  )
+                )}
             </InnerContainer>
           </AccordionPanel>
         </AccordionItem>
 
-        {Object.entries(fieldSections).map(([section, fields], index) => (
-          <AccordionItem key={section}>
-            <FieldHeading as={AccordionButton}>
-              {toTitleCase(section)}
-              <DropdownArrow active={activeSections.includes(index + 1)} />
-            </FieldHeading>
-            <AccordionPanel>
-              {fields.map(({ name, type }) => (
+        {/* for components, show a fixed set of properties */}
+        {Object.keys(Components).includes(activeComponent) ? (
+          Object.entries(fieldSections).map(([section, fields], index) => (
+            <AccordionItem key={section}>
+              <FieldHeading as={AccordionButton}>
+                {toTitleCase(section)}
+                <DropdownArrow active={activeSections.includes(index + 1)} />
+              </FieldHeading>
+              <AccordionPanel>
+                {fields.map(({ name, type }) => (
+                  <InnerContainer>
+                    <InspectorField
+                      key={name}
+                      name={name}
+                      type={type}
+                      value={state[activeComponent][name]}
+                      activeComponent={activeComponent}
+                      onChange={e =>
+                        setContext({
+                          [activeComponent]: {
+                            ...componentProps,
+                            [name]: e.target.value,
+                          },
+                        })
+                      }
+                    />
+                  </InnerContainer>
+                ))}
+              </AccordionPanel>
+            </AccordionItem>
+          ))
+        ) : (
+          <>
+            {/* for a "config" option, map over all the values recursively */}
+            <AccordionItem>
+              <FieldHeading as={AccordionButton}>
+                Key
+                <DropdownArrow
+                // active={activeSections.includes(index + 1)}
+                />
+              </FieldHeading>
+              <AccordionPanel>
                 <InnerContainer>
-                  <InspectorField
-                    key={name}
-                    name={name}
-                    type={type}
-                    value={themeContext[activeComponent][name]}
-                    componentProps={componentProps}
-                    activeComponent={activeComponent}
-                    onChange={e =>
-                      setContext({
-                        [activeComponent]: {
-                          ...componentProps,
-                          [name]: e.target.value,
-                        },
-                      })
+                  {Object.entries(state[activeComponent]).map(
+                    ([key, value]) => {
+                      return (
+                        typeof value === 'string' && (
+                          <InspectorField
+                            name={key}
+                            type="color"
+                            value={state[activeComponent][key]}
+                            activeComponent={activeComponent}
+                            onChange={e => {
+                              setContext({
+                                [activeComponent]: {
+                                  ...componentProps,
+                                  [key]: e.target.value,
+                                },
+                              });
+                            }}
+                          />
+                        )
+                      );
                     }
-                  />
+                  )}
                 </InnerContainer>
-              ))}
-            </AccordionPanel>
-          </AccordionItem>
-        ))}
+              </AccordionPanel>
+              {/* {typeof value !== 'string' && (
+                    <AccordionPanel>
+                      {Object.entries(value).map(([nestedKey, nestedValue]) => (
+                        <InnerContainer>
+                          <InspectorField
+                            name={nestedKey}
+                            type="color"
+                            value={state[activeComponent][key][nestedKey]}
+                            activeComponent={activeComponent}
+                            onChange={e => {
+                              setContext({
+                                [activeComponent]: {
+                                  ...componentProps,
+                                  [key]: {
+                                    ...componentProps[key],
+                                    [nestedKey]: e.target.value,
+                                  },
+                                },
+                              });
+                            }}
+                          />
+                        </InnerContainer>
+                      ))}
+                    </AccordionPanel>
+                  )} */}
+            </AccordionItem>
+            {Object.entries(state[activeComponent]).map(([key, value]) => {
+              return (
+                <AccordionItem key={key}>
+                  <FieldHeading as={AccordionButton}>
+                    {toTitleCase(key)}
+                    <DropdownArrow
+                    // active={activeSections.includes(index + 1)}
+                    />
+                  </FieldHeading>
+                  {typeof value !== 'string' && (
+                    <AccordionPanel>
+                      {Object.entries(value).map(([nestedKey, nestedValue]) => (
+                        <InnerContainer>
+                          <InspectorField
+                            // key={nestedKey}
+                            name={nestedKey}
+                            type="color"
+                            value={state[activeComponent][key][nestedKey]}
+                            // componentProps={componentProps}
+                            activeComponent={activeComponent}
+                            onChange={e => {
+                              setContext({
+                                [activeComponent]: {
+                                  ...componentProps,
+                                  [key]: {
+                                    ...componentProps[key],
+                                    [nestedKey]: e.target.value,
+                                  },
+                                },
+                              });
+                            }}
+                          />
+                        </InnerContainer>
+                      ))}
+                    </AccordionPanel>
+                  )}
+                </AccordionItem>
+              );
+            })}
+          </>
+        )}
       </Accordion>
     </Flex>
   );

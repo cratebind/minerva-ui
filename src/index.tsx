@@ -4,7 +4,7 @@
 
 export { default as ThemeProvider } from './ThemeProvider';
 export { default as GlobalStyles } from './GlobalStyles';
-export { default as defaultTheme } from './theme';
+export { default as defaultTheme, useTheme, useComponentStyles } from './theme';
 export { default as styled } from 'styled-components';
 
 /**
@@ -44,6 +44,7 @@ export { default as Icon } from './Icon';
 export * from './Table';
 export { Modal, ModalHeader, ModalBody, ModalFooter } from './Modal';
 export { default as Skeleton } from './Skeleton';
+export * from './Skeleton';
 
 /**
  * Helpers

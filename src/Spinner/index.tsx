@@ -48,20 +48,20 @@ export interface SpinnerProps {
 }
 
 const StyledSpinner = styled(Block)(
-  (props): any => ({
+  {
     display: 'inline-block',
     borderBottomColor: 'transparent',
     borderLeftColor: 'transparent',
     borderRightColor: 'currentColor',
     borderTopColor: 'currentColor',
     borderRadius: '9999px',
-    color: props.color,
+    color: 'currentColor',
     borderStyle: 'solid',
     height: '20px',
     width: '20px',
     borderWidth: '2px',
     margin: '2px',
-  }),
+  },
   css`
     animation: ${spin} 0.45s linear infinite;
   `

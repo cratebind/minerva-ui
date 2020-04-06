@@ -3,14 +3,35 @@ import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 import { MinervaProps } from '../layout';
 import { useTheme } from '../theme';
-// import styled from 'styled-components';
 
-// const StyledButton = styled(PseudoBox)(
-//   props => ({
-//     ...props.theme.Button,
-//   }),
-//   systemProps
-// );
+// const buttonVariants = {
+//   primary: {
+//     backgroundColor: 'blue.800',
+//     borderColor: '#5850ec',
+//     color: 'white',
+//     _hover: {
+//       backgroundColor: 'blue.900',
+//       borderColor: 'blue.900'
+//     }
+//   },
+//   secondary: {
+//     backgroundColor: 'white',
+//     borderColor: 'blue.800',
+//     color: 'blue.800',
+//     _hover: {
+//       backgroundColor: 'blue.800',
+//       color: 'white'
+//     }
+//   },
+//   tertiary: {
+//     backgroundColor: 'white',
+//     borderColor: 'transparent',
+//     color: 'blue.800',
+//     _hover: {
+//       textDecoration: 'underline'
+//     }
+//   },
+// }
 
 export interface ButtonProps extends MinervaProps, PseudoBoxProps {
   children?: React.ReactNode;
@@ -18,6 +39,7 @@ export interface ButtonProps extends MinervaProps, PseudoBoxProps {
   disabled?: boolean;
   /** If `true`, button will show a spinner. */
   isLoading?: boolean;
+  variant?: string;
 }
 
 export const Button = forwardRef(function Button(
@@ -26,11 +48,14 @@ export const Button = forwardRef(function Button(
     disabled = false,
     as: Comp = 'button',
     isLoading = false,
+    // variant,
     ...props
   }: ButtonProps,
   ref
 ) {
   const theme = useTheme();
+
+  // const variantStyles = variant ? buttonVariants[variant] : {};
 
   return (
     <PseudoBox
@@ -54,6 +79,7 @@ export const Button = forwardRef(function Button(
         cursor: 'not-allowed',
       }}
       {...theme.Button}
+      // {...variantStyles}
       {...props}
     >
       {isLoading ? <Spinner /> : children}

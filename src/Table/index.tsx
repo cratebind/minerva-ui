@@ -7,14 +7,24 @@ export const TableContainer = styled.div`
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 `;
 
-export const StyledTable = styled(Box)(
-  {
-    // backgroundColor: '#525252',
+// export const StyledTable = styled(Box)(
+//   {
+//     // backgroundColor: '#525252',
 
-    minWidth: '100%',
-    borderCollapse: 'collapse',
-  },
-  systemProps
+//     minWidth: '100%',
+//     borderCollapse: 'collapse',
+//   },
+//   systemProps
+// );
+
+export const StyledTable = props => (
+  <Box
+    as="table"
+    margin={0}
+    minWidth="100%"
+    borderCollapse="collapse"
+    {...props}
+  />
 );
 
 export const TableHeader = styled('thead')(
@@ -48,6 +58,7 @@ export const TableHeaderCell = styled('th')(
     fontSize: '12px',
     letterSpacing: '0.6px',
     textAlign: 'left',
+    border: 0,
     borderBottom: '1px solid #e5e7eb',
   },
   systemProps
@@ -59,12 +70,18 @@ export const TableCell = styled('td')(
     color: '#161e2e',
     backgroundColor: '#fff',
     fontSize: '14px',
+    border: 0,
     borderBottom: '1px solid #e5e7eb',
   },
   systemProps
 );
 
-export const TableRow = styled('tr')({}, systemProps);
+export const TableRow = styled('tr')(
+  {
+    border: 0,
+  },
+  systemProps
+);
 
 export interface CustomTableProps
   extends React.ButtonHTMLAttributes<HTMLTableElement> {

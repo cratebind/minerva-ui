@@ -13,7 +13,7 @@ import {
 const UtilityTable = ({ themeProperty, renderValue }) => {
   return (
     <TableContainer style={{ overflow: 'hidden' }}>
-      <StyledTable>
+      <StyledTable display="table" borderColor="transparent">
         <TableHeader>
           <TableRow>
             <TableHeaderCell>Key</TableHeaderCell>
@@ -29,25 +29,7 @@ const UtilityTable = ({ themeProperty, renderValue }) => {
                   {property}
                 </Box>
               </TableCell>
-              <TableCell>
-                {value}
-                {/* {typeof value === 'string' ? (
-                <ColorTag
-                  color={
-                    ['transparent', '#fff'].includes(value) ? '#000' : '#fff'
-                  }
-                  code={value}
-                >
-                  {value}
-                </ColorTag>
-              ) : (
-                Object.entries(value).map(([number, code]) => (
-                  <ColorTag number={number} code={code}>
-                    {number}: {code}
-                  </ColorTag>
-                ))
-              )} */}
-              </TableCell>
+              <TableCell>{value}</TableCell>
               {renderValue && (
                 <TableCell>{renderValue({ property, value })}</TableCell>
               )}
