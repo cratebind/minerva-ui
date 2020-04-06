@@ -17,15 +17,21 @@ export const TableContainer = styled.div`
 //   systemProps
 // );
 
-export const StyledTable = props => (
-  <Box
-    as="table"
-    margin={0}
-    minWidth="100%"
-    borderCollapse="collapse"
-    {...props}
-  />
-);
+export const StyledTable = forwardRef(function SyledTable(
+  props: any,
+  ref: any
+) {
+  return (
+    <Box
+      as="table"
+      ref={ref}
+      margin={0}
+      minWidth="100%"
+      borderCollapse="collapse"
+      {...props}
+    />
+  );
+});
 
 export const TableHeader = styled('thead')(
   {
