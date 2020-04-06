@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Table /> should render 1`] = `
+.c1 {
+  margin: 0;
+  min-width: 100%;
+}
+
 .c0 {
   border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);
 }
 
-.c1 {
-  min-width: 100%;
-  border-collapse: collapse;
-}
-
-.c2 {
+.c3 {
   padding: 12px 24px;
   color: #6b7280;
   background-color: #f9fafb;
@@ -23,15 +23,21 @@ exports[`<Table /> should render 1`] = `
   -ms-letter-spacing: 0.6px;
   letter-spacing: 0.6px;
   text-align: left;
+  border: 0;
   border-bottom: 1px solid #e5e7eb;
 }
 
-.c3 {
+.c4 {
   padding: 16px 24px;
   color: #161e2e;
   background-color: #fff;
   font-size: 14px;
+  border: 0;
   border-bottom: 1px solid #e5e7eb;
+}
+
+.c2 {
+  border: 0;
 }
 
 <div>
@@ -39,31 +45,31 @@ exports[`<Table /> should render 1`] = `
     class="c0"
   >
     <table
-      class="sc-AxirZ c1"
+      class="c1"
     >
       <thead
         class=""
       >
         <tr
-          class=""
+          class="c2"
         >
           <th
-            class="c2"
+            class="c3"
           >
             Name
           </th>
           <th
-            class="c2"
+            class="c3"
           >
             Job
           </th>
           <th
-            class="c2"
+            class="c3"
           >
             Status
           </th>
           <th
-            class="c2"
+            class="c3"
           >
             Role
           </th>
@@ -73,25 +79,25 @@ exports[`<Table /> should render 1`] = `
         class=""
       >
         <tr
-          class=""
+          class="c2"
         >
           <td
-            class="c3"
+            class="c4"
           >
             Test
           </td>
           <td
-            class="c3"
+            class="c4"
           >
             Tester
           </td>
           <td
-            class="c3"
+            class="c4"
           >
             Testing
           </td>
           <td
-            class="c3"
+            class="c4"
           >
             Test Master
           </td>
@@ -103,17 +109,17 @@ exports[`<Table /> should render 1`] = `
 `;
 
 exports[`<Table /> should render 2`] = `
+.c1 {
+  margin: 0;
+  min-width: 100%;
+}
+
 .c0 {
   border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);
 }
 
-.c1 {
-  min-width: 100%;
-  border-collapse: collapse;
-}
-
-.c2 {
+.c3 {
   padding: 12px 24px;
   color: #6b7280;
   background-color: #f9fafb;
@@ -125,15 +131,21 @@ exports[`<Table /> should render 2`] = `
   -ms-letter-spacing: 0.6px;
   letter-spacing: 0.6px;
   text-align: left;
+  border: 0;
   border-bottom: 1px solid #e5e7eb;
 }
 
-.c3 {
+.c4 {
   padding: 16px 24px;
   color: #161e2e;
   background-color: #fff;
   font-size: 14px;
+  border: 0;
   border-bottom: 1px solid #e5e7eb;
+}
+
+.c2 {
+  border: 0;
 }
 
 <div>
@@ -141,31 +153,31 @@ exports[`<Table /> should render 2`] = `
     class="c0"
   >
     <table
-      class="sc-AxirZ c1"
+      class="c1"
     >
       <thead
         class=""
       >
         <tr
-          class=""
+          class="c2"
         >
           <th
-            class="c2"
+            class="c3"
           >
             Name
           </th>
           <th
-            class="c2"
+            class="c3"
           >
             Job
           </th>
           <th
-            class="c2"
+            class="c3"
           >
             Status
           </th>
           <th
-            class="c2"
+            class="c3"
           >
             Role
           </th>
@@ -175,25 +187,25 @@ exports[`<Table /> should render 2`] = `
         class=""
       >
         <tr
-          class=""
+          class="c2"
         >
           <td
-            class="c3"
+            class="c4"
           >
             Test
           </td>
           <td
-            class="c3"
+            class="c4"
           >
             Tester
           </td>
           <td
-            class="c3"
+            class="c4"
           >
             Testing
           </td>
           <td
-            class="c3"
+            class="c4"
           >
             Test Master
           </td>
