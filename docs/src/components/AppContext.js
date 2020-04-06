@@ -1,8 +1,10 @@
 import React, { useState, useContext, useMemo } from 'react';
+import { defaultTheme } from 'minerva-ui';
 
 const initialState = {
   activeComponent: 'Button',
   modalOpen: false,
+  ...defaultTheme,
   Button: {
     customProps: {
       children: 'Button',
@@ -55,14 +57,12 @@ const useMergeState = initialMergeState => {
 };
 
 const AppProvider = ({ children }) => {
-  const [state, setState] = useMergeState({
-    ...initialState,
-  });
+  const [state, setState] = useMergeState(initialState);
 
-  const memoState = useMemo(() => ({ state }), [state]);
+  // const memoState = useMemo(() => ({ state }), [state]);
 
   return (
-    <AppContext.Provider value={{ ...memoState, setContext: setState }}>
+    <AppContext.Provider value={{ state: state, setContext: setState }}>
       {children}
     </AppContext.Provider>
   );
