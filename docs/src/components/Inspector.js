@@ -225,7 +225,7 @@ function InspectorField({ name, value, onChange, type }) {
                   triangle="hide"
                   color={value}
                   onChangeComplete={color => {
-                    console.log({ color });
+                    // console.log({ color });
                     onChange({ target: { value: color.hex } });
                     setOpen(false);
                   }}

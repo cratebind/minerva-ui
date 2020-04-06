@@ -50,14 +50,20 @@ While components like `ModalHeader`, `ModalBody` and `ModalFooter` are provided,
                 </Heading>
                 <Box mt={2}>
                   <Text fontSize="sm" color="gray.500">
-                    Are you sure you want to deactivate your account? All of your data
-                    will be permanantly removed. This action cannot be undone.
+                    Are you sure you want to deactivate your account? All of
+                    your data will be permanantly removed. This action cannot be
+                    undone.
                   </Text>
                 </Box>
               </Box>
             </Flex>
           </Box>
-          <Flex bg="gray.50" px={6} py={3} flexDirection={['column', 'row-reverse']}>
+          <Flex
+            bg="gray.50"
+            px={6}
+            py={3}
+            flexDirection={['column', 'row-reverse']}
+          >
             <Button
               ml={[0, 3]}
               mb={[3, 0]}
@@ -74,13 +80,17 @@ While components like `ModalHeader`, `ModalBody` and `ModalFooter` are provided,
             >
               Deactivate
             </Button>
-            <Button onClick={() => setIsOpen(false)} boxShadow="base" width={['100%', 'auto']}>
+            <Button
+              onClick={() => setIsOpen(false)}
+              boxShadow="base"
+              width={['100%', 'auto']}
+            >
               Cancel
             </Button>
           </Flex>
         </Box>
       </Modal>
     </Flex>
-  )
-}
+  );
+};
 ```

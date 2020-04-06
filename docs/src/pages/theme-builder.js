@@ -9,7 +9,7 @@ const ThemeBuilderStyles = createGlobalStyle`
     background-color: #fff;
     color: #333;
   }
-`
+`;
 
 function ThemeBuilderPage() {
   return (

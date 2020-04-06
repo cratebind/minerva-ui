@@ -7,7 +7,7 @@ module.exports = {
     "plugin:mdx/recommended"
   ],
   rules: {
-    'import/no-unresolved': [2, { ignore: ['minerva-ui']}]
+    'import/no-unresolved': [2, { ignore: ['minerva-ui', '@docusaurus', '@theme']}]
   },
   settings: {
     "import/resolver": {

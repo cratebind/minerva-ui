@@ -23,5 +23,25 @@ import { RadioGroup, Radio } from 'minerva-ui';
       </RadioGroup>
     </>
   );
-}
+};
 ```
+
+
+## Props
+
+These are props related to the Radio component.
+
+|Name|Type|Is Required|Default|Description|
+| --- | --- | --- | --- | --- |
+| `value` | string | optional| none | Label for radio |
+| `isDisabled` | boolean | optional| none | Sets if radio is able to be selected |
+
+
+These are props related to the Radio Group component.
+
+|Name|Type|Is Required|Default|Description|
+| --- | --- | --- | --- | --- |
+| `value` | string | optional| none | Selected value of radio group |
+| `radioColor` | string | optional| #5850ec | Color of radio button |
+| `radioSize` | string | optional| 16px | Size of radio button |
+| `onChange` | string | optional| none | Action to take when the state of a radio button in the group is changed |

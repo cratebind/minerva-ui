@@ -84,6 +84,18 @@ export default ({
     language = prism.defaultLanguage;
   }
 
+  const lines = children.trim().split('\n');
+  const lastLine = lines[lines.length - 1];
+
+  // if it's an inline function and the last charaacter is a semicolon, react-live gets upset
+  if (lastLine.includes(';')) {
+    const lastSemicolonIndex = children.lastIndexOf(';');
+    children =
+      children.substring(0, lastSemicolonIndex) +
+      '' +
+      children.substring(lastSemicolonIndex + 1);
+  }
+
   if (language === 'jsx' && !highlightOnly) {
     return (
       <Minerva.ThemeProvider>

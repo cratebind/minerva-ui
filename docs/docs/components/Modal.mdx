@@ -47,7 +47,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from 'minerva-ui';
       </Modal>
     </>
   );
-}
+};
 ```
 
 ## Animations
@@ -82,3 +82,20 @@ Animations are included by default in the `<GlobalStyles />` component:
   animation: slideup 0.18s;
 }
 ```
+
+## Props
+
+These are props related to the Modal component.
+
+|Name|Type|Is Required|Default|Description|
+| --- | --- | --- | --- | --- |
+| `title` | string | optional| none | Title for Modal |
+| `isOpen` | boolean | required | false | Sets if modal is open |
+| `onClose` | function | optional | none | Action to take when modal is closed |
+
+
+These are props related to the Modal Header component.
+
+|Name|Type|Is Required|Default|Description|
+| --- | --- | --- | --- | --- |
+| `onClose` | function | optional | none | Action to take when modal is closed |
