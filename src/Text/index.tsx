@@ -1,38 +1,6 @@
 import React, { forwardRef } from 'react';
-import styled from 'styled-components';
-import {
-  background,
-  border,
-  color,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  space,
-  typography,
-} from 'styled-system';
-import { MinervaProps } from '../layout';
-
-const StyledText = styled('p')<any>(
-  {
-    margin: 0,
-    fontSize: 16,
-  },
-  props => ({
-    ...props.theme.Text,
-  }),
-  color,
-  space,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  background,
-  border,
-  typography
-);
+import { MinervaProps, Box } from '../layout';
+import { useComponentStyles } from '../theme';
 
 export interface TextProps extends MinervaProps {
   children?: React.ReactNode;
@@ -41,10 +9,19 @@ export interface TextProps extends MinervaProps {
 }
 
 export const Text = forwardRef(({ children, ...props }: TextProps, ref) => {
+  const componentStyles = useComponentStyles('Text');
+
   return (
-    <StyledText ref={ref} {...props}>
+    <Box
+      as="p"
+      ref={ref}
+      margin={0}
+      fontSize="16px"
+      {...componentStyles}
+      {...props}
+    >
       {children}
-    </StyledText>
+    </Box>
   );
 });
 

@@ -2,6 +2,8 @@
 
 exports[`<Select /> should change style if disabled 1`] = `
 .c0 {
+  box-sizing: border-box;
+  min-width: 0;
   position: relative;
   display: block;
 }
@@ -98,7 +100,7 @@ exports[`<Select /> should change style if disabled 1`] = `
     Name
   </label>
   <div
-    class="sc-AxirZ c0"
+    class="sc-AxjAm c0"
   >
     <select
       class="c1"
@@ -137,6 +139,8 @@ exports[`<Select /> should change style if disabled 1`] = `
 
 exports[`<Select /> should render 1`] = `
 .c0 {
+  box-sizing: border-box;
+  min-width: 0;
   position: relative;
   display: block;
 }
@@ -233,7 +237,7 @@ exports[`<Select /> should render 1`] = `
     Name
   </label>
   <div
-    class="sc-AxirZ c0"
+    class="sc-AxjAm c0"
   >
     <select
       class="c1"

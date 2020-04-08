@@ -23,10 +23,9 @@ describe('<Text />', () => {
     );
 
     expect(container).toHaveTextContent(content);
-    // expect(container.firstChild).toHaveStyleRule('font-size', '32px')
   });
 
-  it('should display text with style props', () => {
+  it('should display text with style prop preset', () => {
     const content = 'Heading';
     const { container } = render(
       <ThemeProvider>
@@ -36,5 +35,17 @@ describe('<Text />', () => {
 
     expect(container).toHaveTextContent(content);
     expect(container.firstChild).toHaveStyleRule('font-size', '1.125rem');
+  });
+
+  it('should display text with style prop custom value', () => {
+    const content = 'Heading';
+    const { container } = render(
+      <ThemeProvider>
+        <Heading fontSize="16px">{content}</Heading>
+      </ThemeProvider>
+    );
+
+    expect(container).toHaveTextContent(content);
+    expect(container.firstChild).toHaveStyleRule('font-size', '16px');
   });
 });
