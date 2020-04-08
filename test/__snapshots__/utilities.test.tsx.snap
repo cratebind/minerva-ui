@@ -2,13 +2,15 @@
 
 exports[`Border Radius should render 1`] = `
 .c0 {
+  box-sizing: border-box;
+  min-width: 0;
   border-radius: 0.125rem;
   display: block;
 }
 
 <div>
   <div
-    class="sc-AxirZ c0"
+    class="sc-AxjAm c0"
     data-testid="block"
   >
     Default Text
@@ -18,13 +20,15 @@ exports[`Border Radius should render 1`] = `
 
 exports[`Colors should render 1`] = `
 .c0 {
+  box-sizing: border-box;
+  min-width: 0;
   background-color: #0694a2;
   display: block;
 }
 
 <div>
   <div
-    class="sc-AxirZ c0"
+    class="sc-AxjAm c0"
     data-testid="block"
   >
     Default Text

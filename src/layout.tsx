@@ -14,6 +14,11 @@ import StyledSystem, {
   compose,
   system,
 } from 'styled-system';
+import {
+  createShouldForwardProp,
+  props,
+} from '@styled-system/should-forward-prop';
+
 import extraConfig from './utils';
 
 const customProps = system({
@@ -271,67 +276,29 @@ export type MinervaProps = StyledSystemProps &
   React.HTMLAttributes<any> &
   React.RefAttributes<any>;
 
-// export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
+const shouldForwardProp = createShouldForwardProp([
+  ...props,
+  'd',
+  'textDecoration',
+  'visibility',
+  'transform',
+  'cursor',
+  'minWidth',
+  'maxWidth',
+  'width',
+  'height',
+]);
 
-export const Box = styled.div<MinervaProps>({}, systemProps);
-
-// export const Box = forwardRef(function Box(props, ref) {
-//   return <BaseBox ref={ref} {...props} />;
-// });
-
-// export const PseudoBox = styled(Box)(
-//   ({
-//     _after,
-//     _focus,
-//     _selected,
-//     _focusWithin,
-//     _hover,
-//     _invalid,
-//     _active,
-//     _disabled,
-//     _grabbed,
-//     _pressed,
-//     _expanded,
-//     _visited,
-//     _before,
-//     _readOnly,
-//     _first,
-//     _notFirst,
-//     _notLast,
-//     _last,
-//     _placeholder,
-//     _checked,
-//     _groupHover,
-//     _mixed,
-//     _odd,
-//     _even,
-//   }: PseudoBoxProps) => ({
-//     [hover]: _hover,
-//     [focus]: _focus,
-//     [active]: _active,
-//     [visited]: _visited,
-//     [disabled]: _disabled,
-//     [selected]: _selected,
-//     [invalid]: _invalid,
-//     [expanded]: _expanded,
-//     [grabbed]: _grabbed,
-//     [readOnly]: _readOnly,
-//     [first]: _first,
-//     [notFirst]: _notFirst,
-//     [notLast]: _notLast,
-//     [last]: _last,
-//     [odd]: _odd,
-//     [even]: _even,
-//     [mixed]: _mixed,
-//     [checked]: _checked,
-//     [pressed]: _pressed,
-//     [groupHover]: _groupHover,
-//     '&:before': _before,
-//     '&:after': _after,
-//     '&:focus-within': _focusWithin,
-//     '&::placeholder': _placeholder,
-//   })
-// );
+// @ts-ignore
+export const Box = styled('div').withConfig({
+  shouldForwardProp: prop => shouldForwardProp(prop),
+})(
+  {
+    boxSizing: 'border-box',
+    minWidth: 0,
+  },
+  systemProps
+);
 
 export const Block = styled(Box)(
   {
