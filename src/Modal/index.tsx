@@ -64,7 +64,7 @@ export const ModalHeader = forwardRef(function ModalHeader(
       <Text fontWeight="bold" fontSize="1.25rem">
         {children}
       </Text>
-      <Button border={0} padding="0.25rem" onClick={onClose}>
+      <Button border={0} padding="0.25rem" type="button" onClick={onClose}>
         <Icon name="x" size="26px" />
       </Button>
     </Box>
