@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, forwardRef } from 'react';
 import styled from 'styled-components';
 import { MinervaProps, systemProps } from '../layout';
 import { Box } from '../layout';
@@ -95,12 +95,10 @@ export const RadioGroup = ({
 
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
 
-export const Radio = ({
-  value,
-  isDisabled,
-  children,
-  ...props
-}: RadioProps) => {
+export const Radio = forwardRef(function Radio(
+  { value, isDisabled, children, ...props }: RadioProps,
+  ref
+) {
   const { selectedValue, radioColor, radioSize, onChange } = useContext(
     SelectedValueContext
   );
@@ -116,6 +114,7 @@ export const Radio = ({
       htmlFor={value}
       as="label"
       aria-label={value}
+      ref={ref}
       {...props}
     >
       <Box display="inline-flex">
@@ -153,6 +152,6 @@ export const Radio = ({
       {children && <Box data-testid="label">{children}</Box>}
     </RadioContainer>
   );
-};
+});
 
 export default Radio;

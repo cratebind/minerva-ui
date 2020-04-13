@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Stack /> should change margin with gap prop 1`] = `
+.c1 {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
 .c0 {
+  box-sizing: border-box;
+  min-width: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -17,15 +24,15 @@ exports[`<Stack /> should change margin with gap prop 1`] = `
 
 <div>
   <div
-    class="sc-AxhCb c0"
+    class="sc-AxiKw c0"
   >
     <div
-      class=""
+      class="c1"
     >
       Item 1
     </div>
     <div
-      class=""
+      class="c1"
       data-testid="second-item"
     >
       Item 2
@@ -35,7 +42,14 @@ exports[`<Stack /> should change margin with gap prop 1`] = `
 `;
 
 exports[`<Stack /> should render 1`] = `
+.c1 {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
 .c0 {
+  box-sizing: border-box;
+  min-width: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -51,15 +65,15 @@ exports[`<Stack /> should render 1`] = `
 
 <div>
   <div
-    class="sc-AxhCb c0"
+    class="sc-AxiKw c0"
   >
     <div
-      class=""
+      class="c1"
     >
       Item 1
     </div>
     <div
-      class=""
+      class="c1"
     >
       Item 2
     </div>

@@ -4,13 +4,14 @@ import { Dialog, DialogOverlay } from '@reach/dialog';
 import { MinervaProps, systemProps, Box } from '../layout';
 import Icon from '../Icon';
 import Button from '../Button';
+import Text from '../Text';
 
 import '@reach/dialog/styles.css';
 import { useComponentStyles } from '../theme';
 
-const StyledOverlay = styled(DialogOverlay)({}, systemProps);
+export const ModalOverlay = styled(DialogOverlay)({}, systemProps);
 
-const StyledModal = styled(Dialog)(
+export const StyledModal = styled(Dialog)(
   props => ({
     padding: 0,
     borderRadius: '5px',
@@ -23,39 +24,8 @@ const StyledModal = styled(Dialog)(
   systemProps
 );
 
-const TopContainer = styled(Box)({
-  display: 'flex',
-  width: '100%',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '1.5rem',
-});
-
-const CloseButton = styled(Button)({
-  border: 0,
-  padding: '0.25rem',
-});
-
-const ModalTitle = styled('p')(
-  {
-    fontWeight: 'bold',
-    fontSize: '1.25rem',
-  },
-  systemProps
-);
-
-const StyledModalBody = styled(Box)({
-  paddingLeft: '1.5rem',
-  paddingRight: '1.5rem',
-  paddingTop: '0.5rem',
-  paddingBottom: '1rem',
-});
-
-const StyledModalFooter = styled(Box)({});
-
 export interface ModalProps extends MinervaProps {
   children?: React.ReactNode;
-  title?: string;
   isOpen: boolean;
   onClose?: (event?: React.SyntheticEvent) => void;
   props?: any;
@@ -77,41 +47,67 @@ export interface ModalFooterProps extends MinervaProps {
   props?: any;
 }
 
-export const ModalHeader = ({
-  children,
-  onClose,
-  ...props
-}: ModalHeaderProps) => {
-  return (
-    <TopContainer {...props}>
-      <ModalTitle>{children}</ModalTitle>
-      <CloseButton onClick={onClose}>
-        <Icon name="x" size="26px" />
-      </CloseButton>
-    </TopContainer>
-  );
-};
-
-export const ModalBody = ({ children, ...props }: ModalBodyProps) => {
-  const componentStyles = useComponentStyles('ModalBody');
-  return (
-    <StyledModalBody {...componentStyles} {...props}>
-      {children}
-    </StyledModalBody>
-  );
-};
-
-export const ModalFooter = ({ children, ...props }: ModalFooterProps) => {
-  // const theme = useTheme();
-  return <StyledModalFooter {...props}>{children}</StyledModalFooter>;
-};
-
-export const Modal = forwardRef(function Modal(
-  { title, children, isOpen, onClose, ...props }: ModalProps,
+export const ModalHeader = forwardRef(function ModalHeader(
+  { children, onClose, ...props }: ModalHeaderProps,
   ref
 ) {
   return (
-    <StyledOverlay isOpen={isOpen}>
+    <Box
+      ref={ref}
+      display="flex"
+      width="100%"
+      justifyContent="space-between"
+      alignItems="center"
+      padding="1.5rem"
+      {...props}
+    >
+      <Text fontWeight="bold" fontSize="1.25rem">
+        {children}
+      </Text>
+      <Button border={0} padding="0.25rem" type="button" onClick={onClose}>
+        <Icon name="x" size="26px" />
+      </Button>
+    </Box>
+  );
+});
+
+export const ModalBody = forwardRef(function ModalBody(
+  { children, ...props }: ModalBodyProps,
+  ref
+) {
+  const componentStyles = useComponentStyles('ModalBody');
+  return (
+    <Box
+      ref={ref}
+      px="1.5rem"
+      pt="0.5rem"
+      pb="1rem"
+      {...componentStyles}
+      {...props}
+    >
+      {children}
+    </Box>
+  );
+});
+
+export const ModalFooter = forwardRef(function ModalFooter(
+  { children, ...props }: ModalFooterProps,
+  ref
+) {
+  // const theme = useTheme();
+  return (
+    <Box ref={ref} {...props}>
+      {children}
+    </Box>
+  );
+});
+
+export const Modal = forwardRef(function Modal(
+  { children, isOpen, onClose, ...props }: ModalProps,
+  ref
+) {
+  return (
+    <ModalOverlay isOpen={isOpen}>
       <StyledModal
         aria-label="modal"
         isOpen={isOpen}
@@ -121,7 +117,7 @@ export const Modal = forwardRef(function Modal(
       >
         {children}
       </StyledModal>
-    </StyledOverlay>
+    </ModalOverlay>
     // )
   );
 });

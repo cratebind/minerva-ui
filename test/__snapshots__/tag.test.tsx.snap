@@ -2,6 +2,8 @@
 
 exports[`<Tag /> should render 1`] = `
 .c0 {
+  box-sizing: border-box;
+  min-width: 0;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -17,7 +19,7 @@ exports[`<Tag /> should render 1`] = `
 
 <div>
   <div
-    class="sc-AxirZ c0"
+    class="sc-AxjAm c0"
   >
     Test
   </div>

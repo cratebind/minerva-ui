@@ -15,12 +15,17 @@ import {
   Box,
   ModalBody,
   Text,
-  Table,
+  // Table,
   Select,
   Tag,
   Image,
   Icon,
+  // Radio,
+  Switch,
   Alert,
+  ModalHeader,
+  ModalFooter,
+  // Skeleton,
   defaultTheme,
 } from '../src';
 import { ThemeProvider } from '../src';
@@ -40,17 +45,23 @@ const basicComponents = {
   Tag,
   Image,
   Alert,
+  Switch,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  // Skeleton,
+  // Radio,
   // Icon,
   // Table,
   // Select,
 };
 
-const childrenValidationComponents = {
-  Table,
-  Select,
-};
+// const childrenValidationComponents = {
+//   Table,
+//   Select,
+// };
 
-const allComponents = { ...basicComponents, ...childrenValidationComponents };
+const allComponents = { ...basicComponents };
 
 // one giant component that renders all library components
 const KitchenSink = () => {
@@ -119,7 +130,6 @@ Object.entries(allComponents).forEach(([name, Component]) => {
     });
 
     it('should forward ref', () => {
-      // console.log(`COMPONENT: ${name}`);
       const refId = 'ref-id';
       const RefComp = () => {
         const [id, setId] = useState('');
@@ -179,6 +189,20 @@ Object.entries(allComponents).forEach(([name, Component]) => {
     //     modifier: ':disabled',
     //   });
     // });
+
+    it('should not forward style props', () => {
+      const width = '50px';
+      const { getByTestId } = render(
+        <ThemeProvider>
+          <Component data-testid={name} width={width} />
+        </ThemeProvider>
+      );
+
+      const component = getByTestId(name);
+
+      expect(component.getAttribute('width')).toBeNull();
+      expect(component).toHaveStyleRule('width', width);
+    });
   });
 });
 
