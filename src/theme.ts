@@ -2,6 +2,7 @@ import { Theme } from 'styled-system';
 import * as Icon from 'react-feather';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import { buttonVariants } from './Button';
 
 const logoColor = '#551A8B';
 
@@ -27,6 +28,7 @@ export interface MinervaTheme extends Theme {
   Skeleton?: React.CSSProperties;
   icons: any;
   defaultBorderColor?: string;
+  variants?: any;
 }
 
 const breakpoints: any = ['640px', '768px', '1024px', '1280px'];
@@ -380,6 +382,10 @@ const defaultTheme: MinervaTheme = {
     relaxed: '1.625',
     loose: '2',
   },
+  // variants
+  variants: {
+    Button: buttonVariants,
+  },
 };
 
 export function useTheme(): MinervaTheme {
@@ -390,7 +396,7 @@ export function useTheme(): MinervaTheme {
 export function useComponentStyles(componentName: string): React.CSSProperties {
   const theme = useTheme();
 
-  return theme[componentName] || {};
+  return theme ? theme[componentName] : {};
 }
 
 export default defaultTheme;
