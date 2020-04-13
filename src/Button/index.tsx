@@ -40,6 +40,8 @@ export interface ButtonProps extends MinervaProps, PseudoBoxProps {
   /** If `true`, button will show a spinner. */
   isLoading?: boolean;
   variant?: string;
+  /** HTML Button Type (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) */
+  type?: 'button' | 'reset' | 'submit';
 }
 
 export const Button = forwardRef(function Button(

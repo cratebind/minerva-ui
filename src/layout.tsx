@@ -14,6 +14,11 @@ import StyledSystem, {
   compose,
   system,
 } from 'styled-system';
+import {
+  createShouldForwardProp,
+  props,
+} from '@styled-system/should-forward-prop';
+
 import extraConfig from './utils';
 
 const customProps = system({
@@ -83,7 +88,7 @@ type CSS = React.CSSProperties;
 type borderRadius = StyledSystem.BorderRadiusProps['borderRadius'];
 type borderColor = StyledSystem.BorderColorProps['borderColor'];
 
-interface ICustomConfig {
+export interface ICustomConfig {
   // Custom borderRadius alias
   rounded?: borderRadius;
   roundedTop?: borderRadius;
@@ -192,7 +197,7 @@ type FontSize =
   | '5xl'
   | '6xl';
 
-interface IFontSize {
+export interface IFontSize {
   fontSize?:
     | StyledSystem.ResponsiveValue<FontSize>
     | StyledSystem.FontSizeProps['fontSize'];
@@ -209,7 +214,7 @@ type FontWeight =
   | 'extrabold'
   | 'black';
 
-interface IFontWeight {
+export interface IFontWeight {
   fontWeight?:
     | StyledSystem.ResponsiveValue<FontWeight>
     | StyledSystem.FontWeightProps['fontWeight'];
@@ -217,13 +222,13 @@ interface IFontWeight {
 
 type LineHeight = 'none' | 'shorter' | 'short' | 'normal' | 'tall' | 'taller';
 
-interface ILineHeight {
+export interface ILineHeight {
   lineHeight?:
     | StyledSystem.ResponsiveValue<LineHeight>
     | StyledSystem.LineHeightProps['lineHeight'];
 }
 
-type LetterSpacing =
+export type LetterSpacing =
   | 'tighter'
   | 'tight'
   | 'normal'
@@ -231,13 +236,13 @@ type LetterSpacing =
   | 'wider'
   | 'widest';
 
-interface ILetterSpacing {
+export interface ILetterSpacing {
   letterSpacing?:
     | StyledSystem.ResponsiveValue<LetterSpacing>
     | StyledSystem.LetterSpacingProps['letterSpacing'];
 }
 
-interface As {
+export interface As {
   as?: React.ElementType;
 }
 
@@ -271,67 +276,29 @@ export type MinervaProps = StyledSystemProps &
   React.HTMLAttributes<any> &
   React.RefAttributes<any>;
 
-// export const Box = styled('div')<MinervaProps>(() => ({}), systemProps);
+const shouldForwardProp = createShouldForwardProp([
+  ...props,
+  'd',
+  'textDecoration',
+  'visibility',
+  'transform',
+  'cursor',
+  'minWidth',
+  'maxWidth',
+  'width',
+  'height',
+]);
 
-export const Box = styled.div<MinervaProps>({}, systemProps);
-
-// export const Box = forwardRef(function Box(props, ref) {
-//   return <BaseBox ref={ref} {...props} />;
-// });
-
-// export const PseudoBox = styled(Box)(
-//   ({
-//     _after,
-//     _focus,
-//     _selected,
-//     _focusWithin,
-//     _hover,
-//     _invalid,
-//     _active,
-//     _disabled,
-//     _grabbed,
-//     _pressed,
-//     _expanded,
-//     _visited,
-//     _before,
-//     _readOnly,
-//     _first,
-//     _notFirst,
-//     _notLast,
-//     _last,
-//     _placeholder,
-//     _checked,
-//     _groupHover,
-//     _mixed,
-//     _odd,
-//     _even,
-//   }: PseudoBoxProps) => ({
-//     [hover]: _hover,
-//     [focus]: _focus,
-//     [active]: _active,
-//     [visited]: _visited,
-//     [disabled]: _disabled,
-//     [selected]: _selected,
-//     [invalid]: _invalid,
-//     [expanded]: _expanded,
-//     [grabbed]: _grabbed,
-//     [readOnly]: _readOnly,
-//     [first]: _first,
-//     [notFirst]: _notFirst,
-//     [notLast]: _notLast,
-//     [last]: _last,
-//     [odd]: _odd,
-//     [even]: _even,
-//     [mixed]: _mixed,
-//     [checked]: _checked,
-//     [pressed]: _pressed,
-//     [groupHover]: _groupHover,
-//     '&:before': _before,
-//     '&:after': _after,
-//     '&:focus-within': _focusWithin,
-//     '&::placeholder': _placeholder,
-//   })
-// );
+// @ts-ignore
+export const Box = styled('div').withConfig({
+  shouldForwardProp: prop => shouldForwardProp(prop),
+})(
+  {
+    boxSizing: 'border-box',
+    minWidth: 0,
+  },
+  systemProps
+);
 
 export const Block = styled(Box)(
   {
