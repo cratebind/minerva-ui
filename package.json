@@ -118,6 +118,9 @@
     ],
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
+    },
+    "globals": {
+      "__DEV__": true
     }
   },
   "config": {

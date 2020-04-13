@@ -389,7 +389,15 @@ const defaultTheme: MinervaTheme = {
 };
 
 export function useTheme(): MinervaTheme {
-  return useContext(ThemeContext);
+  const context = useContext(ThemeContext);
+
+  if (context === undefined) {
+    throw new Error(
+      `useTheme cannot be used outside a <ThemeProvider />\n See: minerva-ui.netlify.com/docs/theming`
+    );
+  }
+
+  return context;
 }
 
 // use this to avoid spreading properties for a component that doesn't have theme styles

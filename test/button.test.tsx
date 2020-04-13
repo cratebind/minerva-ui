@@ -212,4 +212,28 @@ describe('<Button />', () => {
 
     expect(button).toHaveStyleRule('background-color', newColor);
   });
+
+  it('should allow default variants to render', () => {
+    const { getByRole } = render(
+      <ThemeProvider>
+        <Button variant="primary">Test</Button>
+      </ThemeProvider>
+    );
+
+    const button = getByRole('button');
+
+    expect(button).toHaveStyleRule('background-color', '#42389d');
+  });
+
+  it('should allow secondary variant to render', () => {
+    const { getByRole } = render(
+      <ThemeProvider>
+        <Button variant="secondary">Test</Button>
+      </ThemeProvider>
+    );
+
+    const button = getByRole('button');
+
+    expect(button).toHaveStyleRule('background-color', '#fff');
+  });
 });

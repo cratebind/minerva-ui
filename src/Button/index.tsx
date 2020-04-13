@@ -66,6 +66,17 @@ export const Button = forwardRef(function Button(
 ) {
   const theme = useTheme();
 
+  // if a variant is provided and it doesn't exist in the current theme, warn in development
+  if (__DEV__) {
+    if (variant && !Object.keys(theme.variants.Button).includes(variant)) {
+      console.error(
+        `Variant "${variant}" not found in theme variants for <Button />:\n\nExpected one of:\n[${Object.keys(
+          theme.variants.Button
+        ).join(', ')}]`
+      );
+    }
+  }
+
   const variantStyles = variant ? theme.variants.Button[variant] : {};
 
   return (
