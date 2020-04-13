@@ -9,7 +9,7 @@ exports[`<Link /> should render 1`] = `
 
 <div>
   <a
-    class="sc-AxjAm sc-AxhCb c0"
+    class="sc-AxjAm sc-AxhUy c0"
   >
     Test
   </a>
