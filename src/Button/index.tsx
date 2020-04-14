@@ -3,35 +3,44 @@ import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 import { MinervaProps } from '../layout';
 import { useTheme } from '../theme';
+// import { variant } from 'styled-system';
+// import styled from 'styled-components';
 
-// const buttonVariants = {
-//   primary: {
-//     backgroundColor: 'blue.800',
-//     borderColor: '#5850ec',
-//     color: 'white',
-//     _hover: {
-//       backgroundColor: 'blue.900',
-//       borderColor: 'blue.900'
-//     }
-//   },
-//   secondary: {
-//     backgroundColor: 'white',
-//     borderColor: 'blue.800',
-//     color: 'blue.800',
-//     _hover: {
-//       backgroundColor: 'blue.800',
-//       color: 'white'
-//     }
-//   },
-//   tertiary: {
-//     backgroundColor: 'white',
-//     borderColor: 'transparent',
-//     color: 'blue.800',
-//     _hover: {
-//       textDecoration: 'underline'
-//     }
-//   },
-// }
+export const buttonVariants = {
+  primary: {
+    bg: 'indigo.800',
+    borderColor: 'indigo.800',
+    color: 'white',
+    _hover: {
+      bg: 'indigo.900',
+      borderColor: 'indigo.900',
+    },
+  },
+  secondary: {
+    bg: 'white',
+    borderColor: 'indigo.800',
+    color: 'indigo.800',
+    _hover: {
+      bg: 'indigo.800',
+      color: 'white',
+    },
+  },
+  tertiary: {
+    bg: 'white',
+    borderColor: 'transparent',
+    color: 'indigo.800',
+    _hover: {
+      textDecoration: 'underline',
+    },
+  },
+};
+
+// const StyledButton = styled(PseudoBox)(
+//   variant({
+//     scale: 'buttons',
+//     variants: buttonVariants
+//   })
+// )
 
 export interface ButtonProps extends MinervaProps, PseudoBoxProps {
   children?: React.ReactNode;
@@ -50,14 +59,25 @@ export const Button = forwardRef(function Button(
     disabled = false,
     as: Comp = 'button',
     isLoading = false,
-    // variant,
+    variant,
     ...props
   }: ButtonProps,
   ref
 ) {
   const theme = useTheme();
 
-  // const variantStyles = variant ? buttonVariants[variant] : {};
+  // if a variant is provided and it doesn't exist in the current theme, warn in development
+  if (__DEV__) {
+    if (variant && !Object.keys(theme.variants.Button).includes(variant)) {
+      console.error(
+        `Variant "${variant}" not found in theme variants for <Button />:\n\nExpected one of:\n[${Object.keys(
+          theme.variants.Button
+        ).join(', ')}]`
+      );
+    }
+  }
+
+  const variantStyles = variant ? theme.variants.Button[variant] : {};
 
   return (
     <PseudoBox
@@ -81,7 +101,7 @@ export const Button = forwardRef(function Button(
         cursor: 'not-allowed',
       }}
       {...theme.Button}
-      // {...variantStyles}
+      {...variantStyles}
       {...props}
     >
       {isLoading ? <Spinner /> : children}

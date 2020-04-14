@@ -16,7 +16,7 @@
     "@reach/dialog": "^0.9.1",
     "@reach/visually-hidden": "^0.9.0",
     "classnames": "^2.2.6",
-    "minerva-ui": "2.8.2",
+    "minerva-ui": "3.0.5",
     "react-color": "^2.18.0"
   },
   "browserslist": {
