@@ -4,7 +4,7 @@ import {
   addDecorator
 } from '@storybook/react';
 import CodeBlock from '../src/CodeBlock';
-import { GlobalStyles, ThemeProvider, Heading } from '../src';
+import { GlobalStyles, ThemeProvider, defaultTheme, Heading } from '../src';
 
 const h1 = (props) => <Heading as="h1" fontSize="36px" {...props} fontWeight={700} />
 
@@ -12,7 +12,7 @@ addParameters({
   docs: {
     components: {
       code: CodeBlock,
-      h1
+      // h1
     },
   },
 });
@@ -47,8 +47,8 @@ addParameters({
 
 addDecorator(storyFn => (
   <>
-    <GlobalStyles />
-    <ThemeProvider>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyles />
       {storyFn()}
     </ThemeProvider>
   </>

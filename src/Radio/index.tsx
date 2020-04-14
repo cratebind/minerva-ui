@@ -26,13 +26,7 @@ const ControlBox = styled(Box)<ControlBoxProps>((props: ControlBoxProps) => ({
   marginRight: '8px',
   backgroundClip: 'content-box',
   transition: 'all 120ms ease',
-  // backgroundColor: props.checked ? props.radioColor : '#fff',
   border: '2px solid #ecebed',
-  // border: props.checked
-  //   ? `${(parseInt(props.radioSize) / 3).toFixed(2)}px solid ${
-  //       props.radioColor
-  //     }`
-  //   : '2px solid #ecebed',
   borderRadius: '50%',
 }));
 

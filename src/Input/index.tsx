@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { MinervaProps } from '../layout';
-import PseudoBox from '../PseudoBox';
+import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 import { useComponentStyles } from '../theme';
 
 // const StyledInput = styled('input')(
@@ -30,7 +30,9 @@ import { useComponentStyles } from '../theme';
 //   systemProps
 // );
 
-type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
+type BaseProps = MinervaProps &
+  PseudoBoxProps &
+  React.InputHTMLAttributes<HTMLInputElement>;
 
 export interface InputProps extends BaseProps {
   /** Toggles disabled pseudo class */

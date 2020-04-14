@@ -65,7 +65,7 @@ export const Button = forwardRef(function Button(
       as={Comp}
       disabled={disabled || isLoading}
       role="button"
-      transition="all 150ms ease 0s"
+      transition="all 180ms ease 0s"
       outline="none"
       _hover={{
         backgroundColor: '#f9fafb',

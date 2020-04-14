@@ -2,6 +2,7 @@ import { Theme } from 'styled-system';
 import * as Icon from 'react-feather';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+// import { InputProps } from './Input';
 
 const logoColor = '#551A8B';
 
@@ -15,8 +16,12 @@ function toKebabCase(string) {
 
 export interface MinervaTheme extends Theme {
   Button?: React.CSSProperties;
+  // Button?: ButtonProps;
+  // Button?: any;
+  // @TODO: Figure out types for pseudobox inheriting components
   Text?: React.CSSProperties;
-  Input?: React.CSSProperties;
+  Input?: any;
+  // Input?: InputProps
   Image?: React.CSSProperties;
   InputField?: React.CSSProperties;
   Link?: React.CSSProperties;
@@ -73,18 +78,18 @@ const defaultTheme: MinervaTheme = {
     paddingRight: '32px',
     borderWidth: '1px',
     borderRadius: '4px',
-    transition: 'all 250ms ease 0s',
+    transition: 'all 180ms ease 0s',
     outline: 'none',
     width: '100%',
-    // ':focus': {
-    //   borderColor: '#a4cafe',
-    //   boxShadow: '0 0 0 3px rgba(164,202,254,.45)',
-    // },
-    // ':disabled': {
-    //   backgroundColor: '#EAEAEA',
-    //   color: '#8F8F8F',
-    //   cursor: 'not-allowed',
-    // },
+    _focus: {
+      borderColor: '#a4cafe',
+      boxShadow: '0 0 0 3px rgba(164,202,254,.45)',
+    },
+    _disabled: {
+      backgroundColor: '#EAEAEA',
+      color: '#8F8F8F',
+      cursor: 'not-allowed',
+    },
   },
   InputField: {},
   Link: {},

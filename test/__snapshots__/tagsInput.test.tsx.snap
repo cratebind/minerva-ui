@@ -13,10 +13,26 @@ exports[`<TagsInput /> should render 1`] = `
   padding-right: 32px;
   border-width: 1px;
   border-radius: 4px;
-  -webkit-transition: all 250ms ease 0s;
-  transition: all 250ms ease 0s;
+  -webkit-transition: all 180ms ease 0s;
+  transition: all 180ms ease 0s;
   outline: none;
   width: 100%;
+}
+
+.c2:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(164,202,254,.45);
+}
+
+.c2:disabled,
+.c2:disabled:focus,
+.c2:disabled:hover,
+.c2[aria-disabled=true],
+.c2[aria-disabled=true]:focus,
+.c2[aria-disabled=true]:hover {
+  background-color: #EAEAEA;
+  color: #8F8F8F;
+  cursor: not-allowed;
 }
 
 .c0 {

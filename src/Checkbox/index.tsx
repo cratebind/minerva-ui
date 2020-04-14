@@ -9,7 +9,7 @@ import VisuallyHidden from '../VisuallyHidden';
  * - Add sizes
  */
 
-const CheckboxContainer = styled(Box)(
+export const CheckboxContainer = styled(Box)(
   props => ({
     display: 'flex',
     alignItems: 'center',
@@ -25,7 +25,7 @@ export type ControlBoxProps = {
   theme?: any;
 };
 
-const ControlBox = styled(Box)<ControlBoxProps>(
+export const ControlBox = styled(Box)<ControlBoxProps>(
   (props: ControlBoxProps) => ({
     display: 'flex',
     alignItems: 'center',
@@ -33,20 +33,14 @@ const ControlBox = styled(Box)<ControlBoxProps>(
     borderStyle: 'solid',
     borderWidth: '1px',
     borderRadius: '4px',
-    width: '16px',
-    height: '16px',
+    width: '18px',
+    height: '18px',
     bg: 'primary',
-    marginRight: '8px',
+    marginRight: '6px',
+    color: 'white',
     transition: 'background-color 120ms ease 0s, box-shadow 250ms ease 0s',
-    borderColor: props.checked ? '#fff' : '#ecebed',
-    backgroundImage: `url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 16 16' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L7 8.586 5.707 7.293z'/%3E%3C/svg%3E")`,
-    // backgroundColor: props.checked
-    //   ? props.theme.colors.logoColor
-    //   : '0px 7px 20px rgba(0, 0, 0, 0.00)',
+    borderColor: props.checked ? '#5850ec' : '#ecebed',
     backgroundColor: props.checked ? '#5850ec' : '#fff',
-    // boxShadow: props.checked
-    //   ? '0px 7px 20px rgba(0, 0, 0, 0.07)'
-    //   : '0px 7px 20px rgba(0, 0, 0, 0.00)',
     ':focus': {
       borderColor: '#a4cafe',
       boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
@@ -55,7 +49,7 @@ const ControlBox = styled(Box)<ControlBoxProps>(
   }),
   systemProps
 );
-//
+
 // const CheckboxIcon = ({ checked = false, fill = '#fff' }) => {
 //   return (
 //     <svg
@@ -113,7 +107,23 @@ export const Checkbox = forwardRef(function Checkbox(
         <VisuallyHidden>
           <CustomCheckboxInput />
         </VisuallyHidden>
-        <ControlBox data-testid="control-box" tabIndex={0} checked={checked} />
+        <ControlBox data-testid="control-box" tabIndex={0} checked={checked}>
+          <Box
+            as="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            p="1px"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </Box>
+        </ControlBox>
       </CustomCheckboxContainer>
       {children}
     </CheckboxContainer>

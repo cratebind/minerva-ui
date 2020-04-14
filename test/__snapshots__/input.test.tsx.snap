@@ -13,10 +13,26 @@ exports[`<Input /> should render 1`] = `
   padding-right: 32px;
   border-width: 1px;
   border-radius: 4px;
-  -webkit-transition: all 250ms ease 0s;
-  transition: all 250ms ease 0s;
+  -webkit-transition: all 180ms ease 0s;
+  transition: all 180ms ease 0s;
   outline: none;
   width: 100%;
+}
+
+.c0:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(164,202,254,.45);
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover,
+.c0[aria-disabled=true],
+.c0[aria-disabled=true]:focus,
+.c0[aria-disabled=true]:hover {
+  background-color: #EAEAEA;
+  color: #8F8F8F;
+  cursor: not-allowed;
 }
 
 <div>
