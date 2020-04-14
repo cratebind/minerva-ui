@@ -35,7 +35,9 @@ export const Icon = forwardRef(function Icon(
       as={IconComponent}
       width={size}
       height={size}
+      role="presentation"
       stroke="currentColor"
+      title={name.replace('-', ' ')}
       color={color}
       ref={ref}
       {...props}

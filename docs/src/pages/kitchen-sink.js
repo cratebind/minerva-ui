@@ -86,8 +86,14 @@ const KitchenSink = () => {
           <h2 className="component-title">Button</h2>
           <Stack gap="30px">
             <Button>Button</Button>
+            <Button>
+              <Icon name="archive" />
+            </Button>
+            <Button>
+              <Icon name="archive" /> Icon with Button
+            </Button>
             <Button isLoading aria-label="loading button">
-              Loading Button
+              Send
             </Button>
             <Button disabled>Disabled Button</Button>
           </Stack>

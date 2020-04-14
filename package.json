@@ -91,7 +91,8 @@
     "eslint-config-cratebind": "^3.0.8",
     "react-feather": "^2.0.3",
     "styled-components": "^5.1.0",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "tiny-warning": "^1.0.3"
   },
   "jest": {
     "setupFilesAfterEnv": [

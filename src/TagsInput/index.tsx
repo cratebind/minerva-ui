@@ -51,7 +51,7 @@ export const TagsInput = function TagsInput({
     >
       {tags &&
         tags.map((tag, i) => (
-          <ListItem key={tag + i}>
+          <ListItem as="li" key={tag + i}>
             <Tag
               data-testid="tag"
               showIcon={true}
@@ -64,7 +64,7 @@ export const TagsInput = function TagsInput({
             </Tag>
           </ListItem>
         ))}
-      <ListItem>
+      <ListItem as="li">
         <StyledInput ref={inputRef} data-testid="input" {...props} />
       </ListItem>
     </StyledTagsInput>
