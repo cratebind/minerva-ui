@@ -2,6 +2,7 @@ import { Theme } from 'styled-system';
 import * as Icon from 'react-feather';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
+import { buttonVariants } from './Button';
 
 const logoColor = '#551A8B';
 
@@ -27,6 +28,7 @@ export interface MinervaTheme extends Theme {
   Skeleton?: React.CSSProperties;
   icons: any;
   defaultBorderColor?: string;
+  variants?: any;
 }
 
 const breakpoints: any = ['640px', '768px', '1024px', '1280px'];
@@ -380,17 +382,29 @@ const defaultTheme: MinervaTheme = {
     relaxed: '1.625',
     loose: '2',
   },
+  // variants
+  variants: {
+    Button: buttonVariants,
+  },
 };
 
 export function useTheme(): MinervaTheme {
-  return useContext(ThemeContext);
+  const context = useContext(ThemeContext);
+
+  if (context === undefined) {
+    throw new Error(
+      `useTheme cannot be used outside a <ThemeProvider />\n See: minerva-ui.netlify.com/docs/theming`
+    );
+  }
+
+  return context;
 }
 
 // use this to avoid spreading properties for a component that doesn't have theme styles
 export function useComponentStyles(componentName: string): React.CSSProperties {
   const theme = useTheme();
 
-  return theme[componentName] || {};
+  return theme ? theme[componentName] : {};
 }
 
 export default defaultTheme;
