@@ -73,7 +73,7 @@
     "react-live": "^2.2.2",
     "semantic-release": "^17.0.2",
     "ts-loader": "^6.2.1",
-    "tsdx": "^0.12.3",
+    "tsdx": "^0.13.2",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   },
@@ -88,7 +88,6 @@
     "@types/styled-components": "^5.0.1",
     "@types/styled-system": "^5.1.9",
     "copy-to-clipboard": "^3.3.1",
-    "eslint-config-cratebind": "^3.0.8",
     "react-feather": "^2.0.3",
     "styled-components": "^5.1.0",
     "styled-system": "^5.1.5",

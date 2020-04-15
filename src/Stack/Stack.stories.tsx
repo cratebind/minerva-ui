@@ -38,36 +38,30 @@ const Card = ({
 
 export const Basic = () => {
   return (
-    <>
-      <Stack>
-        <Card>Item 1</Card>
-        <Card>Item 2</Card>
-        <Card>Item 3</Card>
-      </Stack>
-    </>
+    <Stack>
+      <Card>Item 1</Card>
+      <Card>Item 2</Card>
+      <Card>Item 3</Card>
+    </Stack>
   );
 };
 
 export const Horizontal = () => {
   return (
-    <>
-      <Stack horizontal>
-        <Card direction="column">Item 1</Card>
-        <Card direction="column">Item 2</Card>
-        <Card direction="column">Item 3</Card>
-      </Stack>
-    </>
+    <Stack horizontal>
+      <Card direction="column">Item 1</Card>
+      <Card direction="column">Item 2</Card>
+      <Card direction="column">Item 3</Card>
+    </Stack>
   );
 };
 
 export const CustomGap = () => {
   return (
-    <>
-      <Stack gap="80px">
-        <Card>Item 1</Card>
-        <Card>Item 2</Card>
-        <Card>Item 3</Card>
-      </Stack>
-    </>
+    <Stack gap="80px">
+      <Card>Item 1</Card>
+      <Card>Item 2</Card>
+      <Card>Item 3</Card>
+    </Stack>
   );
 };

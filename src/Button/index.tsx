@@ -74,10 +74,12 @@ export const Button = forwardRef(function Button(
   // if a variant is provided and it doesn't exist in the current theme, warn in development
   warning(
     !variant ||
-      (variant && theme?.variants?.Button && Object.keys(theme?.variants?.Button).includes(variant)),
-    `Variant "${variant}" not found in theme variants for <Button />:\n\n${theme?.variants?.Button && `Expected one of:\n[${Object.keys(
-      theme.variants.Button
-    ).join(', ')}]`}`
+      (variant &&
+        theme?.variants?.Button &&
+        Object.keys(theme?.variants?.Button).includes(variant)),
+    `Variant "${variant}" not found in theme variants for <Button />:\n\n${theme
+      ?.variants?.Button &&
+      `Expected one of:\n[${Object.keys(theme.variants.Button).join(', ')}]`}`
   );
 
   warning(
@@ -85,7 +87,8 @@ export const Button = forwardRef(function Button(
     'Buttons without children require a `name` attribute to be accessible.'
   );
 
-  const variantStyles = variant && theme?.variants?.Button ? theme.variants.Button[variant] : {};
+  const variantStyles =
+    variant && theme?.variants?.Button ? theme.variants.Button[variant] : {};
 
   return (
     <PseudoBox
