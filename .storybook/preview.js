@@ -6,7 +6,7 @@ import {
 import CodeBlock from '../src/CodeBlock';
 import { GlobalStyles, ThemeProvider, Heading } from '../src';
 
-const h1 = (props) => <Heading as="h1" fontSize="36px" {...props} fontWeight={700} />
+const h1 = (props) => <Heading as="h1" fontFamily={`-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`}fontSize="36px" {...props} fontWeight={700} />
 
 addParameters({
   docs: {

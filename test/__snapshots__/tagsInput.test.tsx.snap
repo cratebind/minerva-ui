@@ -23,7 +23,7 @@ exports[`<TagsInput /> should render 1`] = `
   background: white;
   box-sizing: border-box;
   border: 1px solid #d2d6dc;
-  padding: 5px 32px 5px 12px;
+  padding: 3px 32px 3px 12px;
   border-width: 1px;
   border-radius: 4px;
   -webkit-transition: all 250ms ease 0s;
@@ -37,6 +37,9 @@ exports[`<TagsInput /> should render 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-flex: 1 1 0%;
+  -ms-flex: 1 1 0%;
+  flex: 1 1 0%;
 }
 
 .c0 li {
@@ -44,7 +47,12 @@ exports[`<TagsInput /> should render 1`] = `
 }
 
 .c3 {
+  display: inline-block;
+  width: 100%;
   border: none;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .c3:focus {
@@ -55,6 +63,7 @@ exports[`<TagsInput /> should render 1`] = `
   box-sizing: border-box;
   min-width: 0;
   list-style-type: none;
+  margin-right: 5px;
 }
 
 <div>

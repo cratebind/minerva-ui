@@ -1,5 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import Tag from '../Tag';
+import Tag, { TagButton } from '../Tag';
 
 <Meta title="Elements|Tag" component={Tag} />
 
@@ -25,8 +25,8 @@ import { Tag } from 'minerva-ui';
 ## Closeable Tag
 ```jsx
 <Stack horizontal>
-  <Tag showIcon>#photography</Tag>
-  <Tag>#nature</Tag>
+  <Tag>#photography</Tag>
+  <Tag>#nature <TagButton /></Tag>
   <Tag>#travel</Tag>
 </Stack >
 ```
