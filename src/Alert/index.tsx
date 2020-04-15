@@ -2,6 +2,7 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { MinervaProps, systemProps, Flex } from '../layout';
 import Icon from '../Icon';
+import Button from '../Button';
 import Text from '../Text';
 
 export const StyledAlert = styled(Flex)(
@@ -9,6 +10,7 @@ export const StyledAlert = styled(Flex)(
     padding: '16px',
     borderRadius: '5px',
     alignItems: 'center',
+    justifyContent: 'space-between',
   },
   systemProps
 );
@@ -23,12 +25,27 @@ export const StyledAlertTitle = styled(Text)(
 
 export const StyledAlertDescription = styled(Text)``;
 
+export const StyledCloseText = styled(Text)`
+  text-decoration: underline;
+`;
+
+export const StyledAlertInner = styled(Flex)``;
+
+export const StyledAlertIconSection = styled(Flex)`
+  justify-content: flex-start;
+`;
+
 export interface AlertProps extends MinervaProps {
   children?: React.ReactNode;
   status?: 'error' | 'success' | 'warning' | 'info';
   title?: string;
+  body?: string;
   bg?: string;
   icon?: string;
+  isOpen?: boolean;
+  canBeClosed?: boolean;
+  hasCloseIcon?: boolean;
+  closeText?: string;
   props?: any;
 }
 
@@ -53,7 +70,19 @@ const alertTypes = {
 };
 
 export const Alert = forwardRef(function Alert(
-  { title, children, status, bg, icon, ...props }: AlertProps,
+  {
+    title,
+    body,
+    children,
+    status,
+    bg,
+    icon,
+    isOpen = true,
+    canBeClosed = true,
+    hasCloseIcon = false,
+    closeText,
+    ...props
+  }: AlertProps,
   ref
 ) {
   const { statusColor, statusIcon } =
@@ -74,9 +103,22 @@ export const Alert = forwardRef(function Alert(
       backgroundColor={bg ? bg : statusColor}
       {...props}
     >
-      {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
-      {title && <StyledAlertTitle>{title}</StyledAlertTitle>}
-      <StyledAlertDescription>{children}</StyledAlertDescription>
+      <StyledAlertInner>
+        {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
+        <StyledAlertTitle>{title}</StyledAlertTitle>
+        <StyledAlertDescription>{body}</StyledAlertDescription>
+      </StyledAlertInner>
+      {canBeClosed && (
+        <Button
+          {...props}
+          ref={ref}
+          name="Close Alert"
+          style={{ padding: 0, background: 'transparent', border: 'none' }}
+        >
+          {hasCloseIcon && <Icon name="x" size="20px" />}
+          <StyledCloseText>{closeText}</StyledCloseText>
+        </Button>
+      )}
     </StyledAlert>
   );
 });

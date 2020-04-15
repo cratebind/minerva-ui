@@ -3,6 +3,10 @@ import {
   ThemeProvider,
   GlobalStyles,
   Alert,
+  AlertClose,
+  AlertTitle,
+  AlertBody,
+  AlertInner,
   Stack,
   Button,
   Checkbox,
@@ -74,12 +78,19 @@ const KitchenSink = () => {
         <section className="component-wrapper">
           <h2 className="component-title">Alert</h2>
           <Stack gap="30px">
-            <Alert status="error" title="Whoa!">
-              Something not great is happening
-            </Alert>
-            <Alert status="success" title="Congrats!">
-              Something great is happening!
-            </Alert>
+            <Alert
+              status="error"
+              title="Whoa!"
+              body="Something not great is happening!"
+              canBeClosed
+              closeText="Got it!"
+            />
+            <Alert
+              status="success"
+              title="Congrats!"
+              body="Something great is happening!"
+              canBeClosed={false}
+            />
           </Stack>
         </section>
         <section className="component-wrapper">
