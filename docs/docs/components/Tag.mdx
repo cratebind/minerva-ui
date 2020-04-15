@@ -2,7 +2,7 @@
 title: 'Tag'
 ---
 
-import { Tag } from 'minerva-ui';
+import { Tag, Stack, TagButton } from 'minerva-ui';
 
 Basic Tag component
 
@@ -11,11 +11,20 @@ import { Tag } from 'minerva-ui';
 ```
 
 ```jsx live
-<>
+<Stack horizontal>
   <Tag>#photography</Tag>
-  <Tag ml={2}>#nature</Tag>
-  <Tag ml={2}>#travel</Tag>
-</>
+  <Tag>#nature</Tag>
+  <Tag>#travel</Tag>
+</Stack>
+```
+
+## Closeable Tag
+```jsx
+<Stack horizontal>
+  <Tag>#photography</Tag>
+  <Tag>#nature <TagButton /></Tag>
+  <Tag>#travel</Tag>
+</Stack >
 ```
 
 ## Props

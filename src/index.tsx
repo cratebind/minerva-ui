@@ -14,6 +14,7 @@ export { default as Text } from './Text';
 export { default as Link } from './Link';
 export { default as Heading } from './Heading';
 export { default as Tag } from './Tag';
+export * from './Tag';
 export { default as Alert } from './Alert';
 
 /**

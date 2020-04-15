@@ -392,7 +392,7 @@ export function useTheme(): MinervaTheme {
   const context = useContext(ThemeContext);
 
   if (context === undefined) {
-    throw new Error(
+    console.warn(
       `useTheme cannot be used outside a <ThemeProvider />\n See: minerva-ui.netlify.com/docs/theming`
     );
   }

@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { MinervaProps, systemProps, Box } from '../layout';
 import { Icon } from '../Icon';
 import { useComponentStyles } from '../theme';
+import Button from '../Button';
 
-export const TagIcon = styled('div')`
+export const TagIcon = styled(Button)`
   margin-left: 5px;
   margin-top: 1px;
   &:hover {
@@ -26,24 +27,42 @@ const StyledTag = styled(Box)<MinervaProps>(
 
 export interface TagProps extends MinervaProps {
   children?: React.ReactNode;
-  showIcon?: boolean;
-  icon?: string;
-  onClickIcon?: (event: any) => void;
 }
 
+export interface TagButtonProps extends MinervaProps {
+  iconName?: string;
+}
+
+export const TagButton = forwardRef(function TagButton(
+  { iconName, ...props }: TagButtonProps,
+  ref
+) {
+  return (
+    <Button
+      ref={ref}
+      data-testid="input-tag-icon"
+      marginLeft="5px"
+      marginTop="1px"
+      p={0}
+      bg="transparent"
+      border={0}
+      borderRadius="full"
+      _hover={{ cursor: 'pointer' }}
+      {...props}
+    >
+      <Icon name={iconName || 'x'} size="14px" />
+    </Button>
+  );
+});
+
 export const Tag = forwardRef(function Tag(
-  { children, showIcon, icon, onClickIcon, ...props }: TagProps,
+  { children, ...props }: TagProps,
   ref
 ) {
   const componentStyles = useComponentStyles('Tag');
   return (
     <StyledTag ref={ref} {...componentStyles} {...props}>
       {children}
-      {showIcon && (
-        <TagIcon data-testid="input-tag-icon" onClick={onClickIcon}>
-          <Icon name={icon || 'x'} size="14px" />
-        </TagIcon>
-      )}
     </StyledTag>
   );
 });
