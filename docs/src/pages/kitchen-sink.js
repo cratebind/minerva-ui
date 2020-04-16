@@ -335,7 +335,7 @@ const KitchenSink = () => {
 
         <section className="component-wrapper left-align">
           <h2 className="component-title">Spinner</h2>
-          <Spinner color="white" Spin />
+          <Spinner spinnerColor="red" spinnerSize="sm" Spin />
         </section>
 
         <section className="component-wrapper left-align">
