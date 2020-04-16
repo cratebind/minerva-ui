@@ -78,6 +78,7 @@ const defaultTheme: MinervaTheme = {
     transition: 'all 250ms ease 0s',
     outline: 'none',
     width: '100%',
+    color: '#374151',
     // ':focus': {
     //   borderColor: '#a4cafe',
     //   boxShadow: '0 0 0 3px rgba(164,202,254,.45)',
