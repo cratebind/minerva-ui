@@ -188,7 +188,7 @@ const KitchenSink = () => {
               className="input-label white-text"
               label="Input With Error"
               htmlFor="basicInput"
-              errorMsg={error}
+              errorText={error}
               errorStyles={{ color: '#FF8247', size: '16px' }}
               isRequired
               requiredMarkerColor="#FF6347"
