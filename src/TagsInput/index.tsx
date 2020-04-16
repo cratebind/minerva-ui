@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Input, { InputProps } from '../Input';
-import Tag from '../Tag';
+import Tag, { TagButton } from '../Tag';
 import { Box } from '../layout';
 
 const StyledTagsInput = styled.ul`
   background: white;
   box-sizing: border-box;
   border: 1px solid #d2d6dc;
-  padding: 5px 32px 5px 12px;
+  padding: 3px 32px 3px 12px;
   border-width: 1px;
   border-radius: 4px;
   transition: all 250ms ease 0s;
@@ -16,6 +16,7 @@ const StyledTagsInput = styled.ul`
   width: 100%;
   display: inline-flex;
   flex-wrap: wrap;
+  flex: 1 1 0%;
 
   li {
     margin: 0 2px;
@@ -23,7 +24,12 @@ const StyledTagsInput = styled.ul`
 `;
 
 const StyledInput = styled(Input)`
+  display: inline-block;
+  width: 100%;
   border: none;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   &:focus {
     box-shadow: none;
@@ -32,6 +38,7 @@ const StyledInput = styled(Input)`
 
 export const ListItem = styled(Box)`
   list-style-type: none;
+  margin-right: 5px;
 `;
 
 export interface TagsInput extends InputProps {
@@ -52,15 +59,9 @@ export const TagsInput = function TagsInput({
       {tags &&
         tags.map((tag, i) => (
           <ListItem as="li" key={tag + i}>
-            <Tag
-              data-testid="tag"
-              showIcon={true}
-              onClickIcon={e => {
-                e.preventDefault();
-                onClickIcon(i);
-              }}
-            >
+            <Tag data-testid="tag" my="2px">
               {tag}
+              <TagButton onClick={() => onClickIcon(i)} />
             </Tag>
           </ListItem>
         ))}
