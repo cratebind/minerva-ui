@@ -16,22 +16,54 @@ If status codes are supplied, the component will supply predefined colors and ic
 
 ```jsx
 <>
-  <Alert status="error" title="Whoa!">
-    Something not great is happening
-  </Alert>
+  <Alert
+    status="error"
+    title="Whoa!"
+    body="Something not great is happening."
+  />
   <br />
-  <Alert status="success" title="Congrats!">
-    Something great is happening!
-  </Alert>
+  <Alert
+    status="success"
+    title="Congrats!"
+    body="Something great is happening!"
+  />
   <br />
-  <Alert status="warning">
-    Something is happening that isn't bad yet, but might be soon.
-  </Alert>
+  <Alert
+    status="warning"
+    body="Something is happening that isn't bad yet, but might be soon."
+  />
   <br />
-  <Alert status="info" title="Attention:">
-    Something is happening and you should know about it.
-  </Alert>
+  <Alert
+    status="info"
+    title="Attention:"
+    body="Something is happening and you should know about it."
+  />
 </>
+```
+
+## Alerts that close
+
+You can supply a prop of `canBeClosed` to allow an Alert to display and hide.
+
+```jsx live
+() => {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      {!open && <Button onClick={() => setOpen(true)}>Open Alert</Button>}
+      <Alert
+        canBeClosed
+        closeText="Got it!"
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        status="error"
+        title="Whoa!"
+        body="Something not great is happening!"
+      />
+    </>
+  );
+};
 ```
 
 ## Custom Colors / Icons
@@ -42,9 +74,7 @@ You can also supply your own colors and icons. The default theme includes [Feath
 <>
   <Alert icon="arrow-right-circle" bg="orange.200" title="Alert!!!" />
   <br />
-  <Alert icon="circle" bg="green.100">
-    Here is some information.
-  </Alert>
+  <Alert icon="circle" bg="green.100" body="Here is some information." />
 </>
 ```
 
@@ -52,9 +82,15 @@ You can also supply your own colors and icons. The default theme includes [Feath
 
 Props related to the Alert component.
 
-| Name     | Type                                  | Is Required | Default | Description                                                                          |
-| -------- | ------------------------------------- | ----------- | ------- | ------------------------------------------------------------------------------------ |
-| `status` | 'error', 'success', 'warning', 'info' | optional    | none    | If status codes are supplied, the component will supply predefined colors and icons. |
-| `title`  | string                                | optional    | none    | Title for Alert                                                                      |
-| `bg`     | string                                | optional    | #e5e7eb | Sets the background color of the alert. Will override `status`                       |
-| `icon`   | string                                | optional    | none    | Icon for Alert                                                                       |
+| Name           | Type                                  | Is Required | Default | Description                                                                          |
+| -------------- | ------------------------------------- | ----------- | ------- | ------------------------------------------------------------------------------------ |
+| `status`       | 'error', 'success', 'warning', 'info' | optional    | none    | If status codes are supplied, the component will supply predefined colors and icons. |
+| `title`        | string                                | optional    | none    | Title for Alert                                                                      |
+| `body`         | string                                | optional    | none    | Body for Alert                                                                       |
+| `bg`           | string                                | optional    | #e5e7eb | Sets the background color of the alert. Will override `status`                       |
+| `icon`         | string                                | optional    | none    | Icon for Alert                                                                       |
+| `isOpen`       | boolean                               | optional    | true    | Sets if Alert is open                                                                |
+| `canBeClosed`  | boolean                               | optional    | false   | Sets is Alert can be opened and closed                                               |
+| `onClose`      | function                              | optional    | none    | Action to take when alert is closed                                                  |
+| `hasCloseIcon` | boolean                               | optional    | false   | Sets if Alert close button has an X icon                                             |
+| `closeText`    | string                                | optional    | none    | Sets text for Alert close button                                                     |

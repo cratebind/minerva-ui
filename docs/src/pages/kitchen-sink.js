@@ -42,6 +42,7 @@ import {
 import '../css/kitchen-sink.css';
 
 const KitchenSink = () => {
+  const [alertOpen, setAlertOpen] = React.useState(false);
   const [checked, setChecked] = React.useState(false);
   const [name, setName] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -78,7 +79,12 @@ const KitchenSink = () => {
         <section className="component-wrapper">
           <h2 className="component-title">Alert</h2>
           <Stack gap="30px">
+            {!alertOpen && (
+              <Button onClick={() => setAlertOpen(true)}>Open Alert</Button>
+            )}
             <Alert
+              isOpen={alertOpen}
+              onClose={() => setAlertOpen(false)}
               status="error"
               title="Whoa!"
               body="Something not great is happening!"

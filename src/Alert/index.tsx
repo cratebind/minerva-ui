@@ -43,6 +43,7 @@ export interface AlertProps extends MinervaProps {
   bg?: string;
   icon?: string;
   isOpen?: boolean;
+  onClose?: any;
   canBeClosed?: boolean;
   hasCloseIcon?: boolean;
   closeText?: string;
@@ -78,7 +79,8 @@ export const Alert = forwardRef(function Alert(
     bg,
     icon,
     isOpen = true,
-    canBeClosed = true,
+    onClose,
+    canBeClosed = false,
     hasCloseIcon = false,
     closeText,
     ...props
@@ -96,12 +98,14 @@ export const Alert = forwardRef(function Alert(
 
   const alertIcon = icon || statusIcon;
 
-  return (
+  return isOpen ? (
     <StyledAlert
       ref={ref}
       role="alert"
       backgroundColor={bg ? bg : statusColor}
       {...props}
+      aria-label={`${title} ${body}`}
+      aria-live="polite"
     >
       <StyledAlertInner>
         {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
@@ -114,13 +118,14 @@ export const Alert = forwardRef(function Alert(
           ref={ref}
           name="Close Alert"
           style={{ padding: 0, background: 'transparent', border: 'none' }}
+          onClick={onClose}
         >
           {hasCloseIcon && <Icon name="x" size="20px" />}
           <StyledCloseText>{closeText}</StyledCloseText>
         </Button>
       )}
     </StyledAlert>
-  );
+  ) : null;
 });
 
 export default Alert;
