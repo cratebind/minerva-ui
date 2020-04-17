@@ -3,10 +3,6 @@ import {
   ThemeProvider,
   GlobalStyles,
   Alert,
-  AlertClose,
-  AlertTitle,
-  AlertBody,
-  AlertInner,
   Stack,
   Button,
   Checkbox,
@@ -103,7 +99,7 @@ const KitchenSink = () => {
           <h2 className="component-title">Button</h2>
           <Stack gap="30px">
             <Button>Button</Button>
-            <Button>
+            <Button aria-label="archive">
               <Icon name="archive" />
             </Button>
             <Button>
@@ -155,10 +151,10 @@ const KitchenSink = () => {
               value={name}
               onChange={e => setName(e.target.value)}
               placeholder="placeholder"
-              aria-label="Basic Input"
+              hiddenLabel="Basic Input"
             />
             <Input
-              aria-label="Disabled Input"
+              hiddenLabel="Disabled Input"
               disabled
               placeholder="placeholder"
             />
@@ -167,7 +163,7 @@ const KitchenSink = () => {
               value={password}
               onChange={e => setPassword(e.target.value)}
               placeholder="placeholder"
-              aria-label="Password Input"
+              hiddenLabel="Password Input"
             />
           </Stack>
         </section>
@@ -253,7 +249,7 @@ const KitchenSink = () => {
         <section className="component-wrapper">
           <h2 className="component-title">Psuedo Box</h2>
           <PseudoBox
-            aria-label="Pseudo Box"
+            hiddenLabel="Pseudo Box"
             as={Input}
             placeholder="Focus me"
             py={2}
@@ -335,7 +331,7 @@ const KitchenSink = () => {
 
         <section className="component-wrapper left-align">
           <h2 className="component-title">Spinner</h2>
-          <Spinner spinnerColor="red" spinnerSize="sm" Spin />
+          <Spinner spinnerColor="red" spinnerSize="sm" />
         </section>
 
         <section className="component-wrapper left-align">
