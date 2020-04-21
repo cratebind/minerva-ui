@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import {
   Menu as ReachMenuContainer,
   MenuList as ReachMenuList,
@@ -10,7 +10,7 @@ import {
 } from '@reach/menu-button';
 import styled from 'styled-components';
 import Button from '../Button';
-import { MinervaProps, Box } from '../layout';
+import { Box } from '../layout';
 // import { useTheme } from '../theme';
 
 import '@reach/menu-button/styles.css';
