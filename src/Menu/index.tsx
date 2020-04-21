@@ -65,5 +65,11 @@ export const MenuLink = styled(ReachMenuLink)`
 `;
 
 export const MenuDivider = props => (
-  <Box as="hr" aria-orientation="horizontal" my={2} borderColor="#d2d6dc" />
+  <Box
+    as="hr"
+    aria-orientation="horizontal"
+    my={2}
+    borderColor="#d2d6dc"
+    {...props}
+  />
 );
