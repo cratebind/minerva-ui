@@ -619,6 +619,18 @@ video {
   }
 }
 
+@keyframes grow {
+  from {
+    opacity: 0;
+    transform: scale(.95)
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
 [data-reach-dialog-overlay] {
   animation: fadein 0.18s;
 }
@@ -626,6 +638,19 @@ video {
 [data-reach-dialog-content] {
   animation: slideup 0.18s;
 }
+
+/* [data-reach-menu-button][aria-expanded="true"] {
+  box-shadow: 0 0 0 3px rgba(164,202,254,.45);
+  outline: 0;
+  border-color: #a4cafe;
+} */
+
+.menu-list[data-reach-menu-list],
+.menu-list[data-reach-menu-items] {
+  transform-origin: top;
+  animation: grow 0.2s ease;
+}
+
 `;
 
 export default GlobalStyles;
