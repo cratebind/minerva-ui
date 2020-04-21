@@ -639,6 +639,12 @@ video {
   animation: slideup 0.18s;
 }
 
+/* [data-reach-menu-button][aria-expanded="true"] {
+  box-shadow: 0 0 0 3px rgba(164,202,254,.45);
+  outline: 0;
+  border-color: #a4cafe;
+} */
+
 .menu-list[data-reach-menu-list],
 .menu-list[data-reach-menu-items] {
   transform-origin: top;

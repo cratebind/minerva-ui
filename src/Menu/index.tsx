@@ -4,8 +4,6 @@ import {
   MenuList as ReachMenuList,
   MenuButton as ReachMenuButton,
   MenuItem as ReachMenuItem,
-  // MenuItems as ReachMenuItems,
-  // MenuPopover,
   MenuLink as ReachMenuLink,
 } from '@reach/menu-button';
 import styled from 'styled-components';
@@ -15,10 +13,12 @@ import { Box } from '../layout';
 
 import '@reach/menu-button/styles.css';
 
+// this is a context provider, so we don't need to allow stying
 export const MenuContainer = ReachMenuContainer;
 
 export const MenuButton = props => <Button as={ReachMenuButton} {...props} />;
 
+// @TODO: Figure out how to make this more composable, but we need two layers of shadows for the desired effect
 export const MenuList = props => (
   <Box
     as={ReachMenuList}
@@ -51,7 +51,6 @@ export const MenuItem = styled(ReachMenuItem)`
 `;
 
 export const MenuLink = styled(ReachMenuLink)`
-  /* display: block; */
   color: #374151;
   padding: 0.5rem 1rem;
   font-size: 14px;
@@ -60,5 +59,6 @@ export const MenuLink = styled(ReachMenuLink)`
   &:hover {
     background-color: #f4f5f7;
     color: #161e2e;
+    text-decoration: none;
   }
 `;

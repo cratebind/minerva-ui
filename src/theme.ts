@@ -61,6 +61,7 @@ const defaultTheme: MinervaTheme = {
     paddingLeft: '16px',
     paddingRight: '16px',
     borderRadius: '5px',
+    borderStyle: 'solid',
   },
   Checkbox: {},
   Image: {},
