@@ -37,6 +37,7 @@ exports[`<Button /> should change style if disabled 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 5px;
+  border-style: solid;
 }
 
 .c0:hover {
@@ -45,6 +46,13 @@ exports[`<Button /> should change style if disabled 1`] = `
 }
 
 .c0:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
+}
+
+.c0:active,
+.c0[data-active=true] {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
@@ -129,6 +137,7 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 5px;
+  border-style: solid;
 }
 
 .c0:hover {
@@ -137,6 +146,13 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
 }
 
 .c0:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
+}
+
+.c0:active,
+.c0[data-active=true] {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
@@ -202,6 +218,7 @@ exports[`<Button /> should render 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 5px;
+  border-style: solid;
 }
 
 .c0:hover {
@@ -210,6 +227,13 @@ exports[`<Button /> should render 1`] = `
 }
 
 .c0:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
+}
+
+.c0:active,
+.c0[data-active=true] {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
