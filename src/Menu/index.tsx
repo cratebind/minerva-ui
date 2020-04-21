@@ -28,6 +28,7 @@ export const MenuList = props => (
     boxShadow="0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05)"
     border={0}
     className="menu-list"
+    minWidth="220px"
   >
     <Box
       borderRadius="6px"
@@ -62,3 +63,7 @@ export const MenuLink = styled(ReachMenuLink)`
     text-decoration: none;
   }
 `;
+
+export const MenuDivider = props => (
+  <Box as="hr" aria-orientation="horizontal" my={2} borderColor="#d2d6dc" />
+);

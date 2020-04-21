@@ -36,3 +36,22 @@ import { MenuContainer, MenuButton, MenuList, MenuItem, MenuLink } from 'minerva
   </MenuList>
 </MenuContainer>
 ```
+
+## With Divider
+```jsx
+<MenuContainer>
+  <MenuButton>
+    Actions <Icon name="chevron-down" ml={2} size="14px" />
+  </MenuButton>
+  <MenuList>
+    <MenuItem onSelect={() => alert("Edit Profile")}>Edit Profile</MenuItem>
+    <MenuItem onSelect={() => alert("Settings")}>
+      Settings
+    </MenuItem>
+    <MenuDivider />
+    <MenuLink href="https://minerva-ui.netlify.com/">
+      Sign Out
+    </MenuLink>
+  </MenuList>
+</MenuContainer>
+```
