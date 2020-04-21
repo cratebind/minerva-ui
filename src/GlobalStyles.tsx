@@ -619,6 +619,18 @@ video {
   }
 }
 
+@keyframes grow {
+  from {
+    opacity: 0;
+    transform: scale(.95)
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+
 [data-reach-dialog-overlay] {
   animation: fadein 0.18s;
 }
@@ -626,6 +638,13 @@ video {
 [data-reach-dialog-content] {
   animation: slideup 0.18s;
 }
+
+.menu-list[data-reach-menu-list],
+.menu-list[data-reach-menu-items] {
+  transform-origin: top;
+  animation: grow 0.2s ease;
+}
+
 `;
 
 export default GlobalStyles;
