@@ -17,20 +17,16 @@ export interface TabsProps extends MinervaProps {
   children?: React.ReactNode;
 }
 
-const CustomTabs = styled(ReachTabs)<TabsProps>`
-  [data-reach-tab] {
-    outline: 0;
-  }
-
-  ${systemProps}
-`;
+// const CustomTabs = styled(ReachTabs)`
+//   ${systemProps}
+// `;
 
 export const Tabs = ({ children, ...rest }: TabsProps) => {
   const theme = useTheme();
   return (
-    <CustomTabs {...rest} {...theme.Tabs}>
+    <Box as={ReachTabs} {...rest} {...theme.Tabs}>
       {children}
-    </CustomTabs>
+    </Box>
   );
 };
 
@@ -46,6 +42,7 @@ export const Tab = ({ children, ...rest }: TabsProps) => (
     display="flex"
     alignItems="center"
     justifyContent="space-between"
+    _focus={{ outline: 0, bg: 'transparent' }}
     {...rest}
   >
     {children}

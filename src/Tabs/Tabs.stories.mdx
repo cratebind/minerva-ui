@@ -30,7 +30,7 @@ import {
 <Tabs>
   <TabList mb="20px">
     <Tab mr="15px">My Account</Tab>
-    <Tab mr="15px">Favorites</Tab>
+    <Tab _selected={{outline: 0}} mr="15px">Favorites</Tab>
     <Tab mr="15px">Orders</Tab>
     <Tab>Billing</Tab>
   </TabList>
@@ -178,7 +178,7 @@ import {
 () => {
   const selectedStyles = {
     bg: '#e0e0e0',
-    borderColor: '#e0e0e0',
+    border: 'none',
     borderRadius: '5px',
   };
   return (
@@ -227,7 +227,7 @@ import {
 () => {
   const selectedStyles = {
     bg: 'rgb(88,80,236, 0.1)',
-    borderColor: 'rgb(88,80,236, 0.1)',
+    border: 'none',
     borderRadius: '5px',
     color: '#5850EC',
     fontWeight: 'bold',
