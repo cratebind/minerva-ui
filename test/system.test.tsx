@@ -50,7 +50,6 @@ const basicComponents = {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  Tabs,
   // Skeleton,
   // Radio,
   // Icon,

@@ -10,11 +10,13 @@ import {
 import '@reach/tabs/styles.css';
 import { MinervaProps, Box, Flex } from '../layout';
 import { useTheme } from '../theme';
-import PseudoBox from '../PseudoBox';
+import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 
 export interface TabsProps extends MinervaProps {
   children?: React.ReactNode;
 }
+
+export interface TabProps extends TabsProps, PseudoBoxProps {}
 
 export const Tabs = ({ children, ...rest }: TabsProps) => {
   const theme = useTheme();
@@ -31,7 +33,7 @@ export const TabList = ({ children, ...rest }: TabsProps) => (
   </Flex>
 );
 
-export const Tab = ({ children, ...rest }: TabsProps) => (
+export const Tab = ({ children, ...rest }: TabProps) => (
   <PseudoBox
     as={ReachTab}
     display="flex"
