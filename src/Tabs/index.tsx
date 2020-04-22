@@ -14,7 +14,6 @@ import PseudoBox from '../PseudoBox';
 
 export interface TabsProps extends MinervaProps {
   children?: React.ReactNode;
-  _selected?: any;
 }
 
 export const Tabs = ({ children, ...rest }: TabsProps) => {
