@@ -61,6 +61,7 @@ describe('<Skeleton />', () => {
       .c0 {
         box-sizing: border-box;
         min-width: 0;
+        color: #374151;
         width: 100%;
         height: 100%;
         display: -webkit-box;
@@ -83,6 +84,7 @@ describe('<Skeleton />', () => {
       .c1 {
         box-sizing: border-box;
         min-width: 0;
+        color: #374151;
         height: 1rem;
         width: 100%;
         border-radius: 9999px;

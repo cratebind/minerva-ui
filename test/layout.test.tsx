@@ -63,6 +63,7 @@ describe('<Box />', () => {
       .c0 {
         box-sizing: border-box;
         min-width: 0;
+        color: #374151;
         width: 50px;
       }
 

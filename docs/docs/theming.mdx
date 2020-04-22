@@ -3,9 +3,9 @@ title: 'Theming'
 ---
 
 import { defaultTheme } from 'minerva-ui';
+import CodeSnippet from '../src/components/CodeSnippet';
 
 The Minerva theme object follows the [Styled System spec](https://system-ui.com/theme/), with some more specific styles added to create styles for specific components.
-
 These specific styles allow you to control different components and their different states. In the future we plan to connect this config with tools like Figma to easily generate themes from design systems.
 
 ## Using a Theme
@@ -60,6 +60,4 @@ Theme styles for specific components can be provided in your `theme` object:
 
 ## Default Theme
 
-<code className="language-json" style={{ whiteSpace: 'pre-wrap' }}>
-  {JSON.stringify(defaultTheme, null, 2)}
-</code>
+<CodeSnippet>{JSON.stringify(defaultTheme, null, 2)}</CodeSnippet>

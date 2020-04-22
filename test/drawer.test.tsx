@@ -11,7 +11,7 @@ import {
 import { axe, toHaveNoViolations } from 'jest-axe';
 expect.extend(toHaveNoViolations);
 
-const PLACEMENTS: ['left', 'right'] = ['left', 'right']
+const PLACEMENTS: ['left', 'right'] = ['left', 'right'];
 
 PLACEMENTS.forEach(placement => {
   describe(`<Drawer /> (${placement})`, () => {
@@ -49,7 +49,7 @@ PLACEMENTS.forEach(placement => {
       const drawerContent = 'Drawer Header';
       const { queryByText, queryByTestId } = render(
         <ThemeProvider>
-          <Drawer isOpen placement={placement} >
+          <Drawer isOpen placement={placement}>
             <DrawerHeader data-testid={testId}>{drawerContent}</DrawerHeader>
           </Drawer>
         </ThemeProvider>
@@ -63,7 +63,7 @@ PLACEMENTS.forEach(placement => {
       const drawerContent = 'Drawer Body';
       const { queryByText, queryByTestId } = render(
         <ThemeProvider>
-          <Drawer isOpen placement={placement} >
+          <Drawer isOpen placement={placement}>
             <DrawerBody data-testid={testId}>{drawerContent}</DrawerBody>
           </Drawer>
         </ThemeProvider>
@@ -77,7 +77,7 @@ PLACEMENTS.forEach(placement => {
       const drawerContent = 'Drawer Footer';
       const { queryByText, queryByTestId } = render(
         <ThemeProvider>
-          <Drawer isOpen placement={placement} >
+          <Drawer isOpen placement={placement}>
             <DrawerFooter data-testid={testId}>{drawerContent}</DrawerFooter>
           </Drawer>
         </ThemeProvider>
@@ -89,8 +89,10 @@ PLACEMENTS.forEach(placement => {
     it('should be accessible when Open', async () => {
       const drawerContent = 'Drawer Content';
       const { container } = render(
-        <ThemeProvider  >
-          <Drawer isOpen placement={placement}>{drawerContent}</Drawer>
+        <ThemeProvider>
+          <Drawer isOpen placement={placement}>
+            {drawerContent}
+          </Drawer>
         </ThemeProvider>
       );
 
@@ -102,8 +104,10 @@ PLACEMENTS.forEach(placement => {
     it('should be accessible when Closed', async () => {
       const drawerContent = 'Drawer Content';
       const { container } = render(
-        <ThemeProvider  >
-          <Drawer isOpen={false} placement={placement}>{drawerContent}</Drawer>
+        <ThemeProvider>
+          <Drawer isOpen={false} placement={placement}>
+            {drawerContent}
+          </Drawer>
         </ThemeProvider>
       );
 
@@ -112,4 +116,4 @@ PLACEMENTS.forEach(placement => {
       expect(results).toHaveNoViolations();
     });
   });
-})
+});

@@ -1,11 +1,14 @@
 import React from 'react';
 import {
   Menu as ReachMenuContainer,
-  MenuList as ReachMenuList,
+  // MenuList as ReachMenuList,
   MenuButton as ReachMenuButton,
   MenuItem as ReachMenuItem,
   MenuLink as ReachMenuLink,
+  MenuPopover as ReachMenuPopover,
+  MenuItems as ReachMenuItems,
 } from '@reach/menu-button';
+import { positionDefault, positionRight } from '@reach/popover';
 import styled from 'styled-components';
 import Button from '../Button';
 import { Box } from '../layout';
@@ -19,38 +22,38 @@ export const MenuContainer = ReachMenuContainer;
 
 export const MenuButton = props => <Button as={ReachMenuButton} {...props} />;
 
-/* <Box
-      borderRadius="6px"
-      boxShadow="0 0 0 1px rgba(0,0,0,.05)"
+export const MenuList = ({
+  menuPosition,
+  ...props
+}: {
+  menuPosition?: 'left' | 'right';
+}) => (
+  <ReachMenuPopover
+    position={menuPosition === 'right' ? positionRight : positionDefault}
+  >
+    <PseudoBox
       py={1}
+      mt="8px"
+      position="relative"
+      borderRadius="6px"
+      boxShadow="0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05)"
+      _after={{
+        content: `''`,
+        boxShadow: '0 0 0 1px rgba(0,0,0,.05)',
+        borderRadius: '6px',
+        position: 'absolute',
+        top: 0,
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none',
+      }}
+      border={0}
+      className="menu-list"
+      minWidth="220px"
+      as={ReachMenuItems}
       {...props}
-    /> */
-
-// @TODO: Figure out how to make this more composable, but we need two layers of shadows for the desired effect
-export const MenuList = props => (
-  <PseudoBox
-    as={ReachMenuList}
-    py={1}
-    mt="8px"
-    position="relative"
-    borderRadius="6px"
-    boxShadow="0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05)"
-    _after={{
-      content: `''`,
-      boxShadow: "0 0 0 1px rgba(0,0,0,.05)",
-      borderRadius: '6px',
-      position: 'absolute',
-      top: 0,
-      width: '100%',
-      height: '100%',
-      pointerEvents: 'none',
-    }}
-    border={0}
-    className="menu-list"
-    minWidth="220px"
-    {...props}
-  />
-
+    />
+  </ReachMenuPopover>
 );
 
 export const MenuItem = styled(ReachMenuItem)`
