@@ -4,11 +4,13 @@ exports[`Tabs should change TabList background color 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
 }
 
 .c1 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
   background-color: #f5f6fa;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -30,6 +32,7 @@ exports[`Tabs should change TabList background color 1`] = `
 .c2 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -60,6 +63,7 @@ exports[`Tabs should change TabList background color 1`] = `
 .c3 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
