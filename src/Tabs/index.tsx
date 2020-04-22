@@ -10,6 +10,7 @@ import {
 import '@reach/tabs/styles.css';
 import styled from 'styled-components';
 import { MinervaProps, systemProps, Box, Flex } from '../layout';
+import { useTheme } from '../theme';
 
 export interface TabsProps extends MinervaProps {
   children?: React.ReactNode;
@@ -59,24 +60,28 @@ export const Tabs = ({
   activeColor,
   activeWeight,
   ...rest
-}: TabsProps) => (
-  <CustomTabs
-    tabListBgColor={tabListBgColor}
-    activeBg={activeBg}
-    activeColor={activeColor}
-    activeWeight={activeWeight}
-    underline={underline}
-    underlineColor={underlineColor}
-    underlineSize={underlineSize}
-    pills={pills}
-    {...rest}
-  >
-    {children}
-  </CustomTabs>
-);
+}: TabsProps) => {
+  const theme = useTheme();
+  return (
+    <CustomTabs
+      tabListBgColor={tabListBgColor}
+      activeBg={activeBg}
+      activeColor={activeColor}
+      activeWeight={activeWeight}
+      underline={underline}
+      underlineColor={underlineColor}
+      underlineSize={underlineSize}
+      pills={pills}
+      {...rest}
+      {...theme.Tabs}
+    >
+      {children}
+    </CustomTabs>
+  );
+};
 
 export const TabList = ({ children, ...rest }: TabsProps) => (
-  <Box as={ReachTabList} {...rest}>
+  <Box data-testid="tab-list" as={ReachTabList} {...rest}>
     {children}
   </Box>
 );

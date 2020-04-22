@@ -25,6 +25,7 @@ import {
   Alert,
   ModalHeader,
   ModalFooter,
+  Tabs,
   // Skeleton,
   defaultTheme,
 } from '../src';
@@ -49,6 +50,7 @@ const basicComponents = {
   ModalHeader,
   ModalBody,
   ModalFooter,
+  Tabs,
   // Skeleton,
   // Radio,
   // Icon,
@@ -273,6 +275,7 @@ const THEMEABLE_COMPONENTS = {
   Text,
   Select,
   Tag,
+  Tabs,
 };
 
 /**
