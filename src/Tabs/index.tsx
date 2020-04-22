@@ -1,64 +1,105 @@
 import React from 'react';
 import {
-  Tabs as ReachUITabs,
-  TabList as ReachUITabList,
-  Tab as ReachUITab,
-  TabPanels as ReachUITabPanels,
-  TabPanel as ReachUITabPanel,
+  Tabs as ReachTabs,
+  TabList as ReachTabList,
+  Tab as ReachTab,
+  TabPanels as ReachTabPanels,
+  TabPanel as ReachTabPanel,
   useTabsContext,
 } from '@reach/tabs';
 import '@reach/tabs/styles.css';
 import styled from 'styled-components';
-import { MinervaProps, systemProps } from '../layout';
-
-export const CustomTabs = styled(ReachUITabs)({}, systemProps);
+import { MinervaProps, systemProps, Box, Flex } from '../layout';
 
 export interface TabsProps extends MinervaProps {
   children?: React.ReactNode;
+  tabsListColor?: string;
+  tabColor?: string;
+  activeBg?: string;
+  activeColor?: string;
+  activeWeight?: string;
+  underline?: boolean;
+  underlineColor?: string;
+  underlineSize?: string;
+  pills?: boolean;
 }
 
-export const Tabs = ({ children }: TabsProps) => (
-  <CustomTabs>{children}</CustomTabs>
+const CustomTabs = styled(ReachTabs)<TabsProps>`
+  [data-reach-tab-list] {
+    align-items: center;
+    background-color: ${props => props.tabsListColor};
+  }
+
+  [data-reach-tab] {
+    outline: 0;
+  }
+
+  [data-reach-tab][data-selected] {
+    background-color: ${props => props.activeBg};
+    color: ${props => props.activeColor};
+    font-weight: ${props => props.activeWeight};
+    border-radius: ${props => (props.pills ? '5px' : '0')};
+    border-bottom: ${props =>
+      props.underline && !props.pills
+        ? `${props.underlineSize} solid ${props.underlineColor}`
+        : 'none'};
+  }
+
+  ${systemProps}
+`;
+
+export const Tabs = ({
+  children,
+  tabsListColor = '#fff',
+  pills = false,
+  underline = true,
+  underlineColor = pills ? '#e0e0e0' : '#currentColor',
+  underlineSize = '1px',
+  activeBg = pills ? '#e0e0e0' : 'transparent',
+  activeColor,
+  activeWeight,
+  ...rest
+}: TabsProps) => (
+  <CustomTabs
+    tabsListColor={tabsListColor}
+    activeBg={activeBg}
+    activeColor={activeColor}
+    activeWeight={activeWeight}
+    underline={underline}
+    underlineColor={underlineColor}
+    underlineSize={underlineSize}
+    pills={pills}
+    {...rest}
+  >
+    {children}
+  </CustomTabs>
 );
 
-export interface TabListProps extends TabsProps {
-  children?: React.ReactNode;
-}
-
-export const CustomTabList = styled(ReachUITabList)({}, systemProps);
-
-export const TabList = ({ children }: TabListProps) => (
-  <CustomTabList>{children}</CustomTabList>
+export const TabList = ({ children, ...rest }: TabsProps) => (
+  <Box as={ReachTabList} {...rest}>
+    {children}
+  </Box>
 );
 
-export interface TabProps extends TabListProps {
-  children?: React.ReactNode;
-}
-
-export const CustomTab = styled(ReachUITab)({}, systemProps);
-
-export const Tab = ({ children }: TabProps) => (
-  <CustomTab>{children}</CustomTab>
+export const Tab = ({ children, ...rest }: TabsProps) => (
+  <Flex
+    alignItems="center"
+    justifyContent="space-between"
+    as={ReachTab}
+    {...rest}
+  >
+    {children}
+  </Flex>
 );
 
-export interface TabPanelsProps extends TabsProps {
-  children?: React.ReactNode;
-}
-
-export const CustomTabPanels = styled(ReachUITabPanels)({}, systemProps);
-
-export const TabPanels = ({ children }: TabPanelsProps) => (
-  <CustomTabPanels>{children}</CustomTabPanels>
+export const TabPanels = ({ children, ...rest }: TabsProps) => (
+  <Box as={ReachTabPanels} {...rest}>
+    {children}
+  </Box>
 );
 
-export interface TabPanelProps extends TabPanelsProps {
-  children?: React.ReactNode;
-}
-
-export const CustomTabPanel = styled(ReachUITabPanel)({}, systemProps);
-
-export const TabPanel = ({ children }: TabPanelProps) => (
-  <CustomTabPanel>{children}</CustomTabPanel>
+export const TabPanel = ({ children }: TabsProps) => (
+  <Box as={ReachTabPanel}>{children}</Box>
 );
 
 export { useTabsContext };

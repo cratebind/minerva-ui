@@ -7,8 +7,11 @@ import {
   TabPanel,
   useTabContext,
 } from '../Tabs';
+import { Icon } from '../Icon';
 
 <Meta title="Elements|Tabs" />
+
+# Tabs
 
 ```js
 import {
@@ -21,23 +24,179 @@ import {
 } from 'minerva-ui';
 ```
 
+## Tabs with underline
+
 ```jsx
 <Tabs>
-  <TabList>
-    <Tab>One</Tab>
-    <Tab>Two</Tab>
-    <Tab>Three</Tab>
+  <TabList mb="20px">
+    <Tab mr="15px">My Account</Tab>
+    <Tab mr="15px">Favorites</Tab>
+    <Tab mr="15px">Orders</Tab>
+    <Tab>Billing</Tab>
   </TabList>
   <TabPanels>
     <TabPanel>
-      <p>one!</p>
+      <p>My Account!</p>
     </TabPanel>
     <TabPanel>
-      <p>two!</p>
+      <p>Favorites!</p>
     </TabPanel>
     <TabPanel>
-      <p>three!</p>
+      <p>Orders!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Billing!</p>
     </TabPanel>
   </TabPanels>
 </Tabs>
 ```
+
+## Tabs with custom underline
+
+```jsx
+<Tabs underlineColor="#5850EC" underlineSize="3px">
+  <TabList mb="20px">
+    <Tab mr="15px">My Account</Tab>
+    <Tab mr="15px">Favorites</Tab>
+    <Tab mr="15px">Orders</Tab>
+    <Tab>Billing</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      <p>My Account!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Favorites!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Orders!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Billing!</p>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+```
+
+
+## Tabs with underline and icons
+
+```jsx
+<Tabs>
+  <TabList mb="20px">
+    <Tab mr="15px">
+      <Icon name="user" size="14px" mr="15px" />
+      My Account
+    </Tab>
+    <Tab mr="15px">
+      <Icon name="heart" size="14px" mr="15px" />
+      Favorites
+    </Tab>
+    <Tab mr="15px">
+      <Icon name="shopping-bag" size="14px" mr="15px" />
+      Orders
+    </Tab>
+    <Tab>
+      <Icon name="credit-card" size="14px" mr="15px" />
+      Billing
+    </Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      <p>My Account!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Favorites!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Orders!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Billing!</p>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+```
+
+## Tabs in pills
+
+```jsx
+<Tabs pills>
+  <TabList mb="20px">
+    <Tab mr="15px">My Account</Tab>
+    <Tab mr="15px">Favorites</Tab>
+    <Tab mr="15px">Orders</Tab>
+    <Tab>Billing</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      <p>My Account!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Favorites!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Orders!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Billing!</p>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+```
+
+## Tabs in pills on gray
+
+```jsx
+<Tabs pills tabsListColor="#f5f6fa">
+  <TabList mb="20px" height="80px">
+    <Tab ml="10px" mr="15px" height="40px">My Account</Tab>
+    <Tab mr="15px" height="40px">Favorites</Tab>
+    <Tab mr="15px" height="40px">Orders</Tab>
+    <Tab height="40px">Billing</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      <p>My Account!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Favorites!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Orders!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Billing!</p>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+```
+
+## Tabs in pills with brand color
+
+```jsx
+<Tabs pills activeBg="rgb(88,80,236, 0.1)" activeColor="#5850EC" activeWeight="bold">
+  <TabList mb="20px" height="80px">
+    <Tab ml="10px" mr="15px" height="40px">My Account</Tab>
+    <Tab mr="15px" height="40px">Favorites</Tab>
+    <Tab mr="15px" height="40px">Orders</Tab>
+    <Tab height="40px">Billing</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      <p>My Account!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Favorites!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Orders!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Billing!</p>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+```
+
+<Props of={Tabs} />
