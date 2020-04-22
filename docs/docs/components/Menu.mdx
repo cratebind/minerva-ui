@@ -1,0 +1,38 @@
+---
+id: Menu
+title: Menu
+sidebar_label: Menu
+---
+
+import { Box, Menu } from 'minerva-ui';
+
+Accessibility-focused dropdown menu button. Built on top of the [Reach UI Menu Button](https://reacttraining.com/reach-ui/menu-button).
+
+### When To Use:
+
+When you need to trigger actions from a dropdown (such as when clicking in the menu of a desktop application).
+
+Do _not_ use this if you need to store a value. Use a `<select />` component instead.
+
+```js
+import { MenuContainer, MenuButton, MenuList, MenuItem, MenuLink } from 'minerva-ui'
+```
+
+```jsx
+<MenuContainer>
+  <MenuButton>
+    Actions <Icon name="chevron-down" ml={2} size="14px" />
+  </MenuButton>
+  <MenuList>
+    <MenuItem onSelect={() => alert("Download")}>Download</MenuItem>
+    <MenuItem onSelect={() => alert("Copy")}>Create a Copy</MenuItem>
+    <MenuItem onSelect={() => alert("Mark as Draft")}>
+      Mark as Draft
+    </MenuItem>
+    <MenuItem onSelect={() => alert("Delete")}>Delete</MenuItem>
+    <MenuLink href="https://minerva-ui.netlify.com/">
+      Open Documentation
+    </MenuLink>
+  </MenuList>
+</MenuContainer>
+```
