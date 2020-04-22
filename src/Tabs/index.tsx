@@ -8,18 +8,14 @@ import {
   useTabsContext,
 } from '@reach/tabs';
 import '@reach/tabs/styles.css';
-import styled from 'styled-components';
-import { MinervaProps, systemProps, Box, Flex } from '../layout';
+import { MinervaProps, Box, Flex } from '../layout';
 import { useTheme } from '../theme';
 import PseudoBox from '../PseudoBox';
 
 export interface TabsProps extends MinervaProps {
   children?: React.ReactNode;
+  _selected?: any;
 }
-
-// const CustomTabs = styled(ReachTabs)`
-//   ${systemProps}
-// `;
 
 export const Tabs = ({ children, ...rest }: TabsProps) => {
   const theme = useTheme();
