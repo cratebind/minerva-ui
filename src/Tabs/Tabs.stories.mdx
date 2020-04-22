@@ -54,30 +54,42 @@ import {
 ## Tabs with custom underline
 
 ```jsx
-<Tabs underlineColor="#5850EC" underlineSize="3px">
-  <TabList mb="20px">
-    <Tab mr="15px">My Account</Tab>
-    <Tab mr="15px">Favorites</Tab>
-    <Tab mr="15px">Orders</Tab>
-    <Tab>Billing</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>My Account!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Favorites!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Orders!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Billing!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+() => {
+  const selectedStyles = {
+    borderBottom: '3px solid #5850EC',
+  };
+  return (
+    <Tabs>
+      <TabList mb="20px">
+        <Tab _selected={{ ...selectedStyles }} mr="15px">
+          My Account
+        </Tab>
+        <Tab _selected={{ ...selectedStyles }} mr="15px">
+          Favorites
+        </Tab>
+        <Tab _selected={{ ...selectedStyles }} mr="15px">
+          Orders
+        </Tab>
+        <Tab _selected={{ ...selectedStyles }}>Billing</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>My Account!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Favorites!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Orders!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Billing!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
 ```
-
 
 ## Tabs with underline and icons
 
@@ -121,82 +133,143 @@ import {
 ## Tabs in pills
 
 ```jsx
-<Tabs pills>
-  <TabList mb="20px">
-    <Tab mr="15px">My Account</Tab>
-    <Tab mr="15px">Favorites</Tab>
-    <Tab mr="15px">Orders</Tab>
-    <Tab>Billing</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>My Account!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Favorites!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Orders!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Billing!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+() => {
+  const selectedStyled = {
+    bg: '#e0e0e0',
+    borderColor: '#e0e0e0',
+    borderRadius: '5px',
+  };
+  return (
+    <Tabs>
+      <TabList mb="20px">
+        <Tab _selected={{ ...selectedStyled }} mr="15px">
+          My Account
+        </Tab>
+        <Tab _selected={{ ...selectedStyled }} mr="15px">
+          Favorites
+        </Tab>
+        <Tab _selected={{ ...selectedStyled }} mr="15px">
+          Orders
+        </Tab>
+        <Tab _selected={{ ...selectedStyled }}>Billing</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>My Account!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Favorites!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Orders!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Billing!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
 ```
 
 ## Tabs in pills on gray
 
 ```jsx
-<Tabs pills tabListBgColor="#f5f6fa">
-  <TabList mb="20px" height="80px">
-    <Tab ml="10px" mr="15px" height="40px">My Account</Tab>
-    <Tab mr="15px" height="40px">Favorites</Tab>
-    <Tab mr="15px" height="40px">Orders</Tab>
-    <Tab height="40px">Billing</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>My Account!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Favorites!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Orders!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Billing!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+() => {
+  const selectedStyles = {
+    bg: '#e0e0e0',
+    borderColor: '#e0e0e0',
+    borderRadius: '5px',
+  };
+  return (
+    <Tabs>
+      <TabList mb="20px" height="80px" bg="#f5f6fa" >
+        <Tab
+          _selected={{ ...selectedStyles }}
+          ml="10px"
+          mr="15px"
+          height="40px"
+        >
+          My Account
+        </Tab>
+        <Tab _selected={{ ...selectedStyles }} mr="15px" height="40px">
+          Favorites
+        </Tab>
+        <Tab _selected={{ ...selectedStyles }} mr="15px" height="40px">
+          Orders
+        </Tab>
+        <Tab _selected={{ ...selectedStyles }} height="40px">
+          Billing
+        </Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>My Account!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Favorites!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Orders!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Billing!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
 ```
 
 ## Tabs in pills with brand color
 
 ```jsx
-<Tabs pills activeBg="rgb(88,80,236, 0.1)" activeColor="#5850EC" activeWeight="bold">
-  <TabList mb="20px" height="80px">
-    <Tab ml="10px" mr="15px" height="40px">My Account</Tab>
-    <Tab mr="15px" height="40px">Favorites</Tab>
-    <Tab mr="15px" height="40px">Orders</Tab>
-    <Tab height="40px">Billing</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>My Account!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Favorites!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Orders!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Billing!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+() => {
+  const selectedStyles = {
+    bg: 'rgb(88,80,236, 0.1)',
+    borderColor: 'rgb(88,80,236, 0.1)',
+    borderRadius: '5px',
+    color: '#5850EC',
+    fontWeight: 'bold',
+  };
+  return (
+    <Tabs>
+      <TabList mb="20px" height="80px">
+        <Tab
+          _selected={{ ...selectedStyles }}
+          ml="10px"
+          mr="15px"
+          height="40px"
+        >
+          My Account
+        </Tab>
+        <Tab _selected={{ ...selectedStyles }} mr="15px" height="40px">
+          Favorites
+        </Tab>
+        <Tab _selected={{ ...selectedStyles }} mr="15px" height="40px">
+          Orders
+        </Tab>
+        <Tab _selected={{ ...selectedStyles }} height="40px">
+          Billing
+        </Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>My Account!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Favorites!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Orders!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Billing!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
 ```
 
 <Props of={Tabs} />
