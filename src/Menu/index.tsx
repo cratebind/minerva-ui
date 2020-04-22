@@ -11,23 +11,26 @@ import {
 import { positionDefault, positionRight } from '@reach/popover';
 import styled from 'styled-components';
 import Button from '../Button';
-import { Box } from '../layout';
+import { Box, MinervaProps } from '../layout';
 // import { useTheme } from '../theme';
 
 import '@reach/menu-button/styles.css';
 import PseudoBox from '../PseudoBox';
 
-// this is a context provider, so we don't need to allow stying
+// this is a context provider, so we don't need to allow styling
 export const MenuContainer = ReachMenuContainer;
 
 export const MenuButton = props => <Button as={ReachMenuButton} {...props} />;
 
-export const MenuList = ({
-  menuPosition,
-  ...props
-}: {
+export interface MenuListProps extends MinervaProps {
+  children?: React.ReactNode;
   menuPosition?: 'left' | 'right';
-}) => (
+}
+
+export const MenuList = ({
+  menuPosition = 'left',
+  ...props
+}: MenuListProps) => (
   <ReachMenuPopover
     position={menuPosition === 'right' ? positionRight : positionDefault}
   >
