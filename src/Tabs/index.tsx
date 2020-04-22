@@ -13,7 +13,7 @@ import { MinervaProps, systemProps, Box, Flex } from '../layout';
 
 export interface TabsProps extends MinervaProps {
   children?: React.ReactNode;
-  tabsListColor?: string;
+  tabListBgColor?: string;
   tabColor?: string;
   activeBg?: string;
   activeColor?: string;
@@ -27,7 +27,7 @@ export interface TabsProps extends MinervaProps {
 const CustomTabs = styled(ReachTabs)<TabsProps>`
   [data-reach-tab-list] {
     align-items: center;
-    background-color: ${props => props.tabsListColor};
+    background-color: ${props => props.tabListBgColor};
   }
 
   [data-reach-tab] {
@@ -50,10 +50,10 @@ const CustomTabs = styled(ReachTabs)<TabsProps>`
 
 export const Tabs = ({
   children,
-  tabsListColor = '#fff',
+  tabListBgColor = '#fff',
   pills = false,
   underline = true,
-  underlineColor = pills ? '#e0e0e0' : '#currentColor',
+  underlineColor = pills ? '#e0e0e0' : 'currentColor',
   underlineSize = '1px',
   activeBg = pills ? '#e0e0e0' : 'transparent',
   activeColor,
@@ -61,7 +61,7 @@ export const Tabs = ({
   ...rest
 }: TabsProps) => (
   <CustomTabs
-    tabsListColor={tabsListColor}
+    tabListBgColor={tabListBgColor}
     activeBg={activeBg}
     activeColor={activeColor}
     activeWeight={activeWeight}
