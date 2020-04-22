@@ -24,6 +24,10 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
+p {
+  font-size: 16px;
+}
+
 .prism-code.language-js .token.module {
 
 }

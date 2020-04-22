@@ -16,6 +16,8 @@ function toKebabCase(string) {
 
 export interface MinervaTheme extends Theme {
   Button?: React.CSSProperties;
+  Drawer?: React.CSSProperties;
+  Modal?: React.CSSProperties;
   Text?: React.CSSProperties;
   Input?: React.CSSProperties;
   Image?: React.CSSProperties;
@@ -66,6 +68,7 @@ const defaultTheme: MinervaTheme = {
     borderColor: '#d2d6dc',
   },
   Checkbox: {},
+  Drawer: {},
   Image: {},
   Input: {
     WebkitAppearance: 'none',
@@ -94,6 +97,7 @@ const defaultTheme: MinervaTheme = {
   InputField: {},
   Link: {},
   Tabs: {},
+  Modal: {},
   Tag: {},
   Text: {},
   Select: {},
