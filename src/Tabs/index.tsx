@@ -9,8 +9,9 @@ import {
 } from '@reach/tabs';
 import '@reach/tabs/styles.css';
 import styled from 'styled-components';
-import { MinervaProps, systemProps, Box, Flex } from '../layout';
+import { MinervaProps, systemProps, Box } from '../layout';
 import { useTheme } from '../theme';
+import PseudoBox from '../PseudoBox';
 
 export interface TabsProps extends MinervaProps {
   children?: React.ReactNode;
@@ -28,7 +29,6 @@ export interface TabsProps extends MinervaProps {
 const CustomTabs = styled(ReachTabs)<TabsProps>`
   [data-reach-tab-list] {
     align-items: center;
-    background-color: ${props => props.tabListBgColor};
   }
 
   [data-reach-tab] {
@@ -36,14 +36,14 @@ const CustomTabs = styled(ReachTabs)<TabsProps>`
   }
 
   [data-reach-tab][data-selected] {
-    background-color: ${props => props.activeBg};
-    color: ${props => props.activeColor};
+    /* background-color: ${props => props.activeBg}; */
+    /* color: ${props => props.activeColor};
     font-weight: ${props => props.activeWeight};
     border-radius: ${props => (props.pills ? '5px' : '0')};
     border-bottom: ${props =>
       props.underline && !props.pills
         ? `${props.underlineSize} solid ${props.underlineColor}`
-        : 'none'};
+        : 'none'}; */
   }
 
   ${systemProps}
@@ -87,14 +87,19 @@ export const TabList = ({ children, ...rest }: TabsProps) => (
 );
 
 export const Tab = ({ children, ...rest }: TabsProps) => (
-  <Flex
+  <PseudoBox
+    as={ReachTab}
+    display="flex"
     alignItems="center"
     justifyContent="space-between"
-    as={ReachTab}
+    _selected={{
+      bg: '#e0e0e0',
+      borderBottom: '1px solid #e0e0e0',
+    }}
     {...rest}
   >
     {children}
-  </Flex>
+  </PseudoBox>
 );
 
 export const TabPanels = ({ children, ...rest }: TabsProps) => (

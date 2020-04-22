@@ -36,11 +36,14 @@ const ExampleTabs = () => (
 
 describe('Tabs', () => {
   it('should change TabList background color', () => {
-    const { getByTestId } = render(
+    const { container, getByTestId, debug } = render(
       <ThemeProvider>
         <ExampleTabs />
       </ThemeProvider>
     );
+
+    expect(container).toMatchSnapshot();
+    debug();
     const tabList = getByTestId('tab-list');
     // console.log(tabList);
     expect(tabList).toHaveStyleRule('background-color', '#f5f6fa');

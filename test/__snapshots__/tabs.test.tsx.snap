@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs should change TabList background color 1`] = `
+.c1 {
+  box-sizing: border-box;
+  min-width: 0;
+  margin-bottom: 20px;
+  height: 80px;
+}
+
+.c5 {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.c2 {
+  box-sizing: border-box;
+  min-width: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 15px;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 15px;
+  height: 40px;
+}
+
+.c3 {
+  box-sizing: border-box;
+  min-width: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-right: 15px;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-right: 15px;
+  height: 40px;
+}
+
+.c4 {
+  box-sizing: border-box;
+  min-width: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.c0 [data-reach-tab-list] {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #f5f6fa;
+}
+
+.c0 [data-reach-tab] {
+  outline: 0;
+}
+
+.c0 [data-reach-tab][data-selected] {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  border-bottom: none;
+}
+
+<div>
+  <div
+    activebg="#e0e0e0"
+    class="c0"
+    data-orientation="horizontal"
+    data-reach-tabs=""
+    tablistbgcolor="#f5f6fa"
+    underlinecolor="#e0e0e0"
+    underlinesize="1px"
+  >
+    <div
+      aria-orientation="horizontal"
+      class="c1"
+      data-reach-tab-list=""
+      data-testid="tab-list"
+      role="tablist"
+    >
+      <button
+        aria-controls="tabs--1--panel--0"
+        aria-selected="true"
+        class="c2"
+        data-orientation="horizontal"
+        data-reach-tab=""
+        data-selected=""
+        id="tabs--1--tab--0"
+        role="tab"
+        tabindex="0"
+      >
+        My Account
+      </button>
+      <button
+        aria-controls="tabs--1--panel--1"
+        aria-selected="false"
+        class="c3"
+        data-orientation="horizontal"
+        data-reach-tab=""
+        id="tabs--1--tab--1"
+        role="tab"
+        tabindex="-1"
+      >
+        Favorites
+      </button>
+      <button
+        aria-controls="tabs--1--panel--2"
+        aria-selected="false"
+        class="c3"
+        data-orientation="horizontal"
+        data-reach-tab=""
+        id="tabs--1--tab--2"
+        role="tab"
+        tabindex="-1"
+      >
+        Orders
+      </button>
+      <button
+        aria-controls="tabs--1--panel--3"
+        aria-selected="false"
+        class="c4"
+        data-orientation="horizontal"
+        data-reach-tab=""
+        id="tabs--1--tab--3"
+        role="tab"
+        tabindex="-1"
+      >
+        Billing
+      </button>
+    </div>
+    <div
+      class="c5"
+      data-reach-tab-panels=""
+    >
+      <div
+        aria-labelledby="tabs--1--tab--0"
+        class="c5"
+        data-reach-tab-panel=""
+        id="tabs--1--panel--0"
+        role="tabpanel"
+        tabindex="0"
+      >
+        <p>
+          My Account!
+        </p>
+      </div>
+      <div
+        aria-labelledby="tabs--1--tab--1"
+        class="c5"
+        data-reach-tab-panel=""
+        hidden=""
+        id="tabs--1--panel--1"
+        role="tabpanel"
+        tabindex="-1"
+      >
+        <p>
+          Favorites!
+        </p>
+      </div>
+      <div
+        aria-labelledby="tabs--1--tab--2"
+        class="c5"
+        data-reach-tab-panel=""
+        hidden=""
+        id="tabs--1--panel--2"
+        role="tabpanel"
+        tabindex="-1"
+      >
+        <p>
+          Orders!
+        </p>
+      </div>
+      <div
+        aria-labelledby="tabs--1--tab--3"
+        class="c5"
+        data-reach-tab-panel=""
+        hidden=""
+        id="tabs--1--panel--3"
+        role="tabpanel"
+        tabindex="-1"
+      >
+        <p>
+          Billing!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
