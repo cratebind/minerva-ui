@@ -4,12 +4,14 @@ exports[`<InputField> should render 1`] = `
 .c1 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
   padding-bottom: 0.5rem;
 }
 
 .c2 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
   font-size: 16px;
   border-style: solid;
   border-color: #d2d6dc;

@@ -15,7 +15,13 @@ When you need to trigger actions from a dropdown (such as when clicking in the m
 Do _not_ use this if you need to store a value. Use a `<select />` component instead.
 
 ```js
-import { MenuContainer, MenuButton, MenuList, MenuItem, MenuLink } from 'minerva-ui'
+import {
+  MenuContainer,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuLink,
+} from 'minerva-ui';
 ```
 
 ```jsx
@@ -24,12 +30,10 @@ import { MenuContainer, MenuButton, MenuList, MenuItem, MenuLink } from 'minerva
     Actions <Icon name="chevron-down" ml={2} size="14px" />
   </MenuButton>
   <MenuList>
-    <MenuItem onSelect={() => alert("Download")}>Download</MenuItem>
-    <MenuItem onSelect={() => alert("Copy")}>Create a Copy</MenuItem>
-    <MenuItem onSelect={() => alert("Mark as Draft")}>
-      Mark as Draft
-    </MenuItem>
-    <MenuItem onSelect={() => alert("Delete")}>Delete</MenuItem>
+    <MenuItem onSelect={() => alert('Download')}>Download</MenuItem>
+    <MenuItem onSelect={() => alert('Copy')}>Create a Copy</MenuItem>
+    <MenuItem onSelect={() => alert('Mark as Draft')}>Mark as Draft</MenuItem>
+    <MenuItem onSelect={() => alert('Delete')}>Delete</MenuItem>
     <MenuLink href="https://minerva-ui.netlify.com/">
       Open Documentation
     </MenuLink>

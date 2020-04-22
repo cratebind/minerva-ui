@@ -41,6 +41,7 @@ const customProps = system({
   textOverflow: true,
   boxSizing: true,
   cursor: true,
+  content: true,
   resize: true,
   listStyleType: true,
   listStylePosition: true,
@@ -296,6 +297,8 @@ export const Box = styled('div').withConfig({
   {
     boxSizing: 'border-box',
     minWidth: 0,
+    // @TODO: Change when light / dark themes are added
+    color: '#374151',
   },
   systemProps
 );

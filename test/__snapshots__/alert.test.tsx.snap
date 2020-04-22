@@ -4,6 +4,7 @@ exports[`<Alert /> should render 1`] = `
 .c1 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
   margin: 0;
   font-size: 16px;
   line-height: normal;
@@ -12,6 +13,7 @@ exports[`<Alert /> should render 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
   background-color: #e5e7eb;
   display: -webkit-box;
   display: -webkit-flex;
