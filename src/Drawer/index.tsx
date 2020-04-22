@@ -6,7 +6,7 @@ import { MinervaProps, systemProps } from '../layout';
 // import { useComponentStyles } from '../theme';
 import { ModalBody, ModalHeader, ModalFooter } from '../Modal';
 
-const OVERLAY_ZINDEX = 5;
+const OVERLAY_ZINDEX = 500;
 
 export const DrawerOverlay = styled(DialogOverlay)(
   {
@@ -15,14 +15,11 @@ export const DrawerOverlay = styled(DialogOverlay)(
   systemProps
 );
 
-export const StyledDrawer = styled(DialogContent)(
+export const DrawerContent = styled(DialogContent)(
   props => ({
     padding: 0,
-    // borderRadius: '5px',
     display: 'flex',
     flexDirection: 'column',
-    // alignItems: 'center',
-    // width: '100%',
     maxWidth: '20rem',
     width: '100%',
     position: 'fixed',
@@ -30,12 +27,12 @@ export const StyledDrawer = styled(DialogContent)(
     margin: 0,
     zIndex: OVERLAY_ZINDEX + 1,
     willChange: 'opacity, transform',
-    ...props.theme.Modal,
+    ...props.theme.Drawer,
   }),
   systemProps
 );
 
-export interface ModalProps extends MinervaProps {
+export interface DrawerProps extends MinervaProps {
   children?: React.ReactNode;
   isOpen: boolean;
   onClose?: (event?: React.SyntheticEvent) => void;
@@ -48,24 +45,22 @@ export const DrawerBody = props => <ModalBody flex="1 1 0%" {...props} />;
 export const DrawerFooter = ModalFooter;
 
 export const Drawer = forwardRef(function Drawer(
-  { children, isOpen, onClose, placement = 'left', ...props }: ModalProps,
+  { children, isOpen, onClose, placement = 'right', ...props }: DrawerProps,
   ref
 ) {
   const placementStyles =
     placement === 'right' ? { right: '0px' } : { left: '0px' };
   return (
     <DrawerOverlay isOpen={isOpen} onDismiss={onClose}>
-      <StyledDrawer
+      <DrawerContent
         data-minerva-drawer={placement}
-        aria-label="modal"
-        isOpen={isOpen}
-        onDismiss={onClose}
+        aria-label="drawer"
         ref={ref}
         {...placementStyles}
         {...props}
       >
         {children}
-      </StyledDrawer>
+      </DrawerContent>
     </DrawerOverlay>
   );
 });

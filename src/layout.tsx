@@ -41,6 +41,7 @@ const customProps = system({
   textOverflow: true,
   boxSizing: true,
   cursor: true,
+  content: true,
   resize: true,
   listStyleType: true,
   listStylePosition: true,
@@ -199,8 +200,8 @@ type FontSize =
 
 export interface IFontSize {
   fontSize?:
-    | StyledSystem.ResponsiveValue<FontSize>
-    | StyledSystem.FontSizeProps['fontSize'];
+  | StyledSystem.ResponsiveValue<FontSize>
+  | StyledSystem.FontSizeProps['fontSize'];
 }
 
 type FontWeight =
@@ -216,16 +217,16 @@ type FontWeight =
 
 export interface IFontWeight {
   fontWeight?:
-    | StyledSystem.ResponsiveValue<FontWeight>
-    | StyledSystem.FontWeightProps['fontWeight'];
+  | StyledSystem.ResponsiveValue<FontWeight>
+  | StyledSystem.FontWeightProps['fontWeight'];
 }
 
 type LineHeight = 'none' | 'shorter' | 'short' | 'normal' | 'tall' | 'taller';
 
 export interface ILineHeight {
   lineHeight?:
-    | StyledSystem.ResponsiveValue<LineHeight>
-    | StyledSystem.LineHeightProps['lineHeight'];
+  | StyledSystem.ResponsiveValue<LineHeight>
+  | StyledSystem.LineHeightProps['lineHeight'];
 }
 
 export type LetterSpacing =
@@ -238,8 +239,8 @@ export type LetterSpacing =
 
 export interface ILetterSpacing {
   letterSpacing?:
-    | StyledSystem.ResponsiveValue<LetterSpacing>
-    | StyledSystem.LetterSpacingProps['letterSpacing'];
+  | StyledSystem.ResponsiveValue<LetterSpacing>
+  | StyledSystem.LetterSpacingProps['letterSpacing'];
 }
 
 export interface As {
@@ -296,6 +297,8 @@ export const Box = styled('div').withConfig({
   {
     boxSizing: 'border-box',
     minWidth: 0,
+    // @TODO: Change when light / dark themes are added
+    color: '#374151'
   },
   systemProps
 );
