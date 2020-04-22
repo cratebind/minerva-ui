@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { MinervaProps, systemProps, Box } from '../layout';
 import { Icon } from '../Icon';
@@ -68,3 +69,13 @@ export const Tag = forwardRef(function Tag(
 });
 
 export default Tag;
+
+if (__DEV__) {
+  Tag.propTypes = {
+    children: PropTypes.node,
+  };
+
+  TagButton.propTypes = {
+    iconName: PropTypes.string,
+  };
+}

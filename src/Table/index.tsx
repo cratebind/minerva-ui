@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Box, systemProps } from '../layout';
 
@@ -111,3 +112,9 @@ export const Table = forwardRef<Ref, CustomTableProps>(
 Table.displayName = 'Table';
 
 export default Table;
+
+if (__DEV__) {
+  Table.propTypes = {
+    children: PropTypes.node,
+  };
+}

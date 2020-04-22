@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Dialog, DialogOverlay } from '@reach/dialog';
 import { MinervaProps, systemProps, Box } from '../layout';
@@ -129,3 +130,21 @@ export const Modal = forwardRef(function Modal(
 });
 
 export default Modal;
+
+if (__DEV__) {
+  Modal.propTypes = {
+    children: PropTypes.node,
+    isOpen: PropTypes.bool,
+    onClose: PropTypes.func,
+  };
+  ModalHeader.propTypes = {
+    children: PropTypes.node,
+    onClose: PropTypes.func,
+  };
+  ModalBody.propTypes = {
+    children: PropTypes.node,
+  };
+  ModalFooter.propTypes = {
+    children: PropTypes.node,
+  };
+}

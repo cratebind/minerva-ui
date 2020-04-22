@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
 import { useTheme } from '../theme';
 // import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
@@ -29,3 +30,10 @@ export const Image = forwardRef(function Image(
 });
 
 export default Image;
+
+if (__DEV__) {
+  Image.propTypes = {
+    src: PropTypes.string,
+    alt: PropTypes.string,
+  };
+}

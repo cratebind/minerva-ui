@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 import { MinervaProps } from '../layout';
@@ -115,3 +116,12 @@ export const Button = forwardRef(function Button(
 });
 
 export default Button;
+
+if (__DEV__) {
+  Button.propTypes = {
+    children: PropTypes.node,
+    disabled: PropTypes.bool,
+    isLoading: PropTypes.bool,
+    variant: PropTypes.string,
+  };
+}
