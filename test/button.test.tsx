@@ -94,7 +94,7 @@ describe('<Button />', () => {
   it('should handle "as" prop', () => {
     const { getByRole } = render(
       <ThemeProvider>
-        <Button as="a">"As" Button</Button>
+        <Button as="a">As Button</Button>
       </ThemeProvider>
     );
 

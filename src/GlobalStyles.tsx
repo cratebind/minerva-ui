@@ -1,4 +1,79 @@
-import { createGlobalStyle } from 'styled-components';
+import { css, createGlobalStyle } from 'styled-components';
+
+const animationStyles = css`
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideup {
+    from {
+      transform: translateY(20px);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes grow {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideright {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes slideleft {
+    from {
+      transform: translateX(100%);
+    }
+
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  [data-reach-dialog-overlay] {
+    animation: fadein 0.18s;
+  }
+
+  [data-reach-dialog-content] {
+    animation: slideup 0.18s;
+  }
+
+  [data-minerva-drawer='left'] {
+    animation: slideright 0.18s;
+  }
+
+  [data-minerva-drawer='right'] {
+    animation: slideleft 0.18s;
+  }
+
+  .menu-list[data-reach-menu-list],
+  .menu-list[data-reach-menu-items] {
+    transform-origin: top;
+    animation: grow 0.2s ease;
+  }
+`;
 
 /**
  * Base styles from Tailwind CSS
@@ -599,58 +674,11 @@ video {
   height: auto;
 }
 
+${animationStyles}
+`;
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideup {
-  from {
-    transform: translateY(20px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes grow {
-  from {
-    opacity: 0;
-    transform: scale(.95)
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1)
-  }
-}
-
-[data-reach-dialog-overlay] {
-  animation: fadein 0.18s;
-}
-
-[data-reach-dialog-content] {
-  animation: slideup 0.18s;
-}
-
-/* [data-reach-menu-button][aria-expanded="true"] {
-  box-shadow: 0 0 0 3px rgba(164,202,254,.45);
-  outline: 0;
-  border-color: #a4cafe;
-} */
-
-.menu-list[data-reach-menu-list],
-.menu-list[data-reach-menu-items] {
-  transform-origin: top;
-  animation: grow 0.2s ease;
-}
-
+export const AnimationStyles = createGlobalStyle`
+  ${animationStyles}
 `;
 
 export default GlobalStyles;

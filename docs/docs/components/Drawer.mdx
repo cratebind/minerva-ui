@@ -1,0 +1,155 @@
+---
+title: 'Drawer'
+---
+
+The Drawer component opens a side overlay on the left or right of the screen.
+
+It's best used for things like mobile navigation menus or sidebars.
+
+Uses the [Reach UI Modal](https://reacttraining.com/reach-ui/dialog) component to cover accessibility requirements.
+
+```js
+import { Drawer, DrawerHeader, DrawerBody, DrawerFooter } from 'minerva-ui';
+```
+
+```jsx live
+() => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>Open Drawer</Button>
+      <Drawer isOpen={open} onClose={() => setOpen(false)} overflow="hidden">
+        <DrawerHeader onClose={() => setOpen(false)}>Hello World!</DrawerHeader>
+        <DrawerBody>
+          Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco
+          deserunt aute id consequat veniam incididunt duis in sint irure nisi.
+        </DrawerBody>
+        <DrawerFooter bg="gray.50">
+          <Flex
+            px={6}
+            py={3}
+            flexDirection={['column', 'row-reverse']}
+            bg="gray.50"
+            radiusBottom="5px"
+          >
+            <Button
+              onClick={() => setOpen(false)}
+              boxShadow="base"
+              width={['100%', 'auto']}
+            >
+              Submit
+            </Button>
+          </Flex>
+        </DrawerFooter>
+      </Drawer>
+    </>
+  );
+};
+```
+
+## Drawer Placement
+
+Drawer can be positioned to the `left` or `right` of the screen.
+
+```jsx live
+() => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>Open Drawer</Button>
+      <Drawer
+        placement="left"
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        overflow="hidden"
+      >
+        <DrawerHeader onClose={() => setOpen(false)}>Hello World!</DrawerHeader>
+        <DrawerBody>
+          Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco
+          deserunt aute id consequat veniam incididunt duis in sint irure nisi.
+          Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor
+          esse quis. Sunt ad dolore quis aute consequat.
+        </DrawerBody>
+        <DrawerFooter bg="gray.50">
+          <Flex
+            px={6}
+            py={3}
+            flexDirection={['column', 'row-reverse']}
+            bg="gray.50"
+            radiusBottom="5px"
+          >
+            <Button
+              onClick={() => setOpen(false)}
+              boxShadow="base"
+              width={['100%', 'auto']}
+            >
+              Submit
+            </Button>
+          </Flex>
+        </DrawerFooter>
+      </Drawer>
+    </>
+  );
+};
+```
+
+## Animations
+
+Animations are included by default in the `<GlobalStyles />` component:
+
+```css
+@keyframes slideright {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideleft {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+[data-minerva-drawer='left'] {
+  animation: slideright 0.18s;
+}
+
+[data-minerva-drawer='right'] {
+  animation: slideleft 0.18s;
+}
+```
+
+## Props
+
+Props are the same as the `<Modal />` component, with the addition of `placement`.
+
+### `<Drawer />`
+
+| Name        | Type              | Is Required | Default | Description                           |
+| ----------- | ----------------- | ----------- | ------- | ------------------------------------- |
+| `isOpen`    | boolean           | required    | false   | Sets if Drawer is open                |
+| `onClose`   | function          | optional    | none    | Action to take when Drawer is closed  |
+| `placement` | `left` or `right` | optional    | `right` | Control placement of drawer on screen |
+
+### `<DrawerHeader />`
+
+| Name       | Type     | Is Required | Default | Description                          |
+| ---------- | -------- | ----------- | ------- | ------------------------------------ |
+| `onClose`  | function | optional    | none    | Action to take when Drawer is closed |
+| `children` | `node`   | optional    | none    |
+
+### `<DrawerBody />` and `<DrawerFooter />`
+
+| Name       | Type   | Is Required | Default | Description |
+| ---------- | ------ | ----------- | ------- | ----------- |
+| `children` | `node` | optional    | none    |

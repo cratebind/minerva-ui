@@ -1,0 +1,284 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import {
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+  useTabContext,
+} from '../Tabs';
+import { Icon } from '../Icon';
+
+<Meta title="Elements|Tabs" />
+
+# Tabs
+
+```js
+import {
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+  useTabContext,
+} from 'minerva-ui';
+```
+
+## Tabs with underline
+
+```jsx
+<Tabs>
+  <TabList mb="20px" borderBottom="2px solid #d2d6dc">
+    <Tab>My Account</Tab>
+    <Tab>Favorites</Tab>
+    <Tab>Orders</Tab>
+    <Tab>Billing</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      <p>My Account!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Favorites!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Orders!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Billing!</p>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+```
+
+## Tabs with custom underline
+
+```jsx
+() => {
+  const selectedStyles = {
+    borderBottom: '2px solid #5850EC',
+  };
+  return (
+    <Tabs>
+      <TabList mb="20px" borderBottom="2px solid #d2d6dc">
+        <Tab _selected={{ ...selectedStyles }}>
+          My Account
+        </Tab>
+        <Tab _selected={{ ...selectedStyles }}>
+          Favorites
+        </Tab>
+        <Tab _selected={{ ...selectedStyles }}>
+          Orders
+        </Tab>
+        <Tab _selected={{ ...selectedStyles }}>Billing</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>My Account!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Favorites!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Orders!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Billing!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
+```
+
+## Tabs with underline and icons
+
+```jsx
+<Tabs>
+  <TabList mb="20px">
+    <Tab>
+      <Icon name="user" size="14px" mr="15px" color="currentColor" />
+      My Account
+    </Tab>
+    <Tab>
+      <Icon name="heart" size="14px" mr="15px" color="currentColor" />
+      Favorites
+    </Tab>
+    <Tab>
+      <Icon name="shopping-bag" size="14px" mr="15px" color="currentColor" />
+      Orders
+    </Tab>
+    <Tab>
+      <Icon name="credit-card" size="14px" mr="15px" color="currentColor" />
+      Billing
+    </Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      <p>My Account!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Favorites!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Orders!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Billing!</p>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+```
+
+## Tabs in pills
+
+```jsx
+() => {
+  const tabStyles ={
+    borderRadius: '5px',
+    border: 0,
+    marginRight: 2,
+  }
+  const selectedStyles = {
+    bg: '#e0e0e0',
+    border: 0,
+  };
+  return (
+    <Tabs>
+      <TabList mb="20px">
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }} ml={2}>
+          My Account
+        </Tab>
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }} >
+          Favorites
+        </Tab>
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }} >
+          Orders
+        </Tab>
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }} >Billing</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>My Account!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Favorites!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Orders!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Billing!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
+```
+
+## Tabs in pills on gray
+
+```jsx
+() => {
+  const tabStyles = {
+    borderRadius: '5px',
+    border: 0,
+    marginRight: 2,
+  }
+  const selectedStyles = {
+    bg: '#e0e0e0',
+    border: 0,
+  };
+  return (
+    <Tabs>
+      <TabList mb="20px" height="80px" bg="#f5f6fa" >
+        <Tab
+          {...tabStyles}
+          _selected={{ ...selectedStyles }}
+          ml={2}
+        >
+          My Account
+        </Tab>
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }} >
+          Favorites
+        </Tab>
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }} >
+          Orders
+        </Tab>
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }} >
+          Billing
+        </Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>My Account!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Favorites!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Orders!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Billing!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
+```
+
+## Tabs in pills with brand color
+
+```jsx
+() => {
+  const tabStyles = {
+    borderRadius: '5px',
+    border: 0,
+    marginRight: 2,
+  }
+  const selectedStyles = {
+    bg: 'rgb(88,80,236, 0.1)',
+    border: 'none',
+    borderRadius: '5px',
+    color: '#5850EC',
+  };
+  return (
+    <Tabs>
+      <TabList mb="20px" height="80px">
+        <Tab
+          {...tabStyles}
+          _selected={{ ...selectedStyles }}
+        >
+          My Account
+        </Tab>
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }} >
+          Favorites
+        </Tab>
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }}>
+          Orders
+        </Tab>
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }}>
+          Billing
+        </Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>My Account!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Favorites!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Orders!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Billing!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
+```
+
+<Props of={Tabs} />

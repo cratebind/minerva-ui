@@ -29,6 +29,7 @@ export const StyledTable = forwardRef(function SyledTable(
       margin={0}
       minWidth="100%"
       borderCollapse="collapse"
+      display="table"
       {...props}
     />
   );
