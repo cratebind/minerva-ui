@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import exact from 'prop-types-exact';
 import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
+import { useTheme } from '../theme';
+import exact from 'prop-types-exact';
 import { MinervaProps, minervaPropTypes } from '../layout';
 
 export const buttonVariants = {
