@@ -39,7 +39,23 @@ export const Tab = ({ children, ...rest }: TabProps) => (
     display="flex"
     alignItems="center"
     justifyContent="space-between"
-    _focus={{ outline: 0, bg: 'transparent' }}
+    py={4}
+    px={3}
+    fontWeight={500}
+    borderWidth="2px"
+    borderColor="transparent"
+    borderStyle="solid"
+    marginBottom="-2px"
+    _focus={{
+      color: 'blue.700',
+      outline: 0,
+      borderWidth: '2px',
+    }}
+    _selected={{
+      color: 'blue.700',
+      outline: 0,
+      borderWidth: '2px',
+    }}
     {...rest}
   >
     {children}

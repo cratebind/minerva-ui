@@ -45,16 +45,27 @@ exports[`Tabs should change TabList background color 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-weight: 500;
+  border-width: 2px;
+  border-color: transparent;
+  border-style: solid;
+  margin-bottom: -2px;
   margin-right: 15px;
 }
 
 .c2:focus {
+  color: #1a56db;
   outline: 0;
-  background-color: transparent;
+  border-width: 2px;
 }
 
 .c2[aria-selected=true],
-.c2[data-selected=true] {
+.c2[data-selected=true],
+.c2[data-selected] {
   background-color: #e0e0e0;
   border-color: #e0e0e0;
   border-radius: 5px;
@@ -76,15 +87,26 @@ exports[`Tabs should change TabList background color 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-weight: 500;
+  border-width: 2px;
+  border-color: transparent;
+  border-style: solid;
+  margin-bottom: -2px;
 }
 
 .c3:focus {
+  color: #1a56db;
   outline: 0;
-  background-color: transparent;
+  border-width: 2px;
 }
 
 .c3[aria-selected=true],
-.c3[data-selected=true] {
+.c3[data-selected=true],
+.c3[data-selected] {
   background-color: #e0e0e0;
   border-color: #e0e0e0;
   border-radius: 5px;
