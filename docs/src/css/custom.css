@@ -28,6 +28,25 @@ p {
   font-size: 16px;
 }
 
+h2 {
+  font-size: 28px;
+}
+
+/* .menu__list-item, .menu__link {
+  font-size: 16px;
+} */
+
+.admonition.alert {
+  color: #000;
+}
+
+.admonition-icon svg {
+  fill: #000;
+  stroke: #000;
+  margin-right: 10px;
+}
+
 .prism-code.language-js .token.module {
 
 }
+

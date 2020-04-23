@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo } from 'react';
+import React, { useState, useContext } from 'react';
 import { defaultTheme } from 'minerva-ui';
 
 const initialState = {

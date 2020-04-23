@@ -8,6 +8,7 @@ exports[`<Button /> should change style if disabled 1`] = `
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
+  cursor: pointer;
   background-color: #fff;
   border-width: 1px;
   color: #374151;
@@ -114,6 +115,7 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
+  cursor: pointer;
   background-color: #fff;
   border-width: 1px;
   color: #374151;
@@ -197,6 +199,7 @@ exports[`<Button /> should render 1`] = `
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
+  cursor: pointer;
   background-color: #fff;
   border-width: 1px;
   color: #374151;

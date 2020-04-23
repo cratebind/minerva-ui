@@ -11,7 +11,7 @@ module.exports = {
     { id: 'getting-started', type: 'doc' },
     { id: 'concepts', type: 'doc' },
     { id: 'theming', type: 'doc' },
-    { id: 'utilities', type: 'doc' },
+    { id: 'utility-props', type: 'doc' },
     {
       type: 'category',
       label: 'Components',

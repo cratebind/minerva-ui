@@ -20,6 +20,7 @@ const StyledTag = styled(Box)<MinervaProps>(
     backgroundColor: '#EDF2F7',
     borderRadius: '5px',
     padding: '8px 10px',
+    fontSize: '16px',
     ...props.theme.Tag,
   }),
   systemProps

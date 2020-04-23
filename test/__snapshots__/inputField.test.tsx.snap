@@ -27,6 +27,22 @@ exports[`<InputField> should render 1`] = `
   width: 100%;
 }
 
+.c2:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(164,202,254,.45);
+}
+
+.c2:disabled,
+.c2:disabled:focus,
+.c2:disabled:hover,
+.c2[aria-disabled=true],
+.c2[aria-disabled=true]:focus,
+.c2[aria-disabled=true]:hover {
+  background-color: #EAEAEA;
+  color: #8F8F8F;
+  cursor: not-allowed;
+}
+
 .c0 {
   display: block;
   position: relative;
