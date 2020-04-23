@@ -1,2 +1,6 @@
-/docs/node_modules/
-/node_modules/
+docs/node_modules
+docs/build
+docs/.docusaurus
+node_modules
+coverage
+dist
