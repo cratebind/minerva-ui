@@ -28,6 +28,7 @@ export interface MinervaTheme extends Theme {
   Select?: React.CSSProperties;
   Tag?: React.CSSProperties;
   Skeleton?: React.CSSProperties;
+  Tabs?: React.CSSProperties;
   icons: any;
   defaultBorderColor?: string;
   variants?: any;
@@ -95,6 +96,7 @@ const defaultTheme: MinervaTheme = {
   },
   InputField: {},
   Link: {},
+  Tabs: {},
   Modal: {},
   Tag: {},
   Text: {},

@@ -25,6 +25,7 @@ import {
   Alert,
   ModalHeader,
   ModalFooter,
+  Tabs,
   // Skeleton,
   defaultTheme,
 } from '../src';
@@ -273,6 +274,7 @@ const THEMEABLE_COMPONENTS = {
   Text,
   Select,
   Tag,
+  Tabs,
 };
 
 /**
