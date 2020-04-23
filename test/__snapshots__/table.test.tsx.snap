@@ -7,6 +7,7 @@ exports[`<Table /> should render 1`] = `
   color: #374151;
   margin: 0;
   min-width: 100%;
+  display: table;
 }
 
 .c0 {
@@ -118,6 +119,7 @@ exports[`<Table /> should render 2`] = `
   color: #374151;
   margin: 0;
   min-width: 100%;
+  display: table;
 }
 
 .c0 {
