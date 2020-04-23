@@ -1,11 +1,20 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
+<<<<<<< HEAD
 import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 import { MinervaProps } from '../layout';
 import { useTheme } from '../theme';
 // import { variant } from 'styled-system';
 // import styled from 'styled-components';
+=======
+import exact from 'prop-types-exact';
+import Spinner from '../Spinner';
+import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
+import { MinervaProps, systemProps, minervaPropTypes } from '../layout';
+// import { useTheme } from '../theme';
+import styled from 'styled-components';
+>>>>>>> Start adding prop types to button component
 
 export const buttonVariants = {
   primary: {
@@ -65,6 +74,7 @@ export const Button = forwardRef(function Button(
   }: ButtonProps,
   ref
 ) {
+<<<<<<< HEAD
   const theme = useTheme();
 
   // if a variant is provided and it doesn't exist in the current theme, warn in development
@@ -80,6 +90,8 @@ export const Button = forwardRef(function Button(
 
   const variantStyles = variant ? theme.variants.Button[variant] : {};
 
+=======
+>>>>>>> Start adding prop types to button component
   return (
     <PseudoBox
       ref={ref}
@@ -114,6 +126,17 @@ export const Button = forwardRef(function Button(
     </PseudoBox>
   );
 });
+
+if (process.env.NODE_ENV !== 'production') {
+  Button.propTypes = exact({
+    ...minervaPropTypes,
+    children: PropTypes.node,
+    disabled: PropTypes.bool,
+    isLoading: PropTypes.bool,
+    onClick: PropTypes.func,
+    style: PropTypes.object,
+  });
+}
 
 export default Button;
 
