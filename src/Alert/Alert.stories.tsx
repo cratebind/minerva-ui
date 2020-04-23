@@ -18,7 +18,7 @@ export const Statuses = () => {
       </Alert>
       <br />
       <Alert status="warning">
-        Something is happening that isn't bad yet, but might be soon.
+        Something is happening that is not bad yet, but might be soon.
       </Alert>
       <br />
       <Alert status="info" title="Attention:">

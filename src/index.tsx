@@ -5,6 +5,7 @@
 export { default as ThemeProvider } from './ThemeProvider';
 export { default as GlobalStyles, AnimationStyles } from './GlobalStyles';
 export { default as defaultTheme, useTheme, useComponentStyles } from './theme';
+export { default as baseTheme } from './theme';
 export { default as styled } from 'styled-components';
 
 /**

@@ -4,18 +4,9 @@ title: Tabs
 sidebar_label: Tabs
 ---
 
-import {
-  Box,
-  Flex,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-  useTabContext,
-} from 'minerva-ui';
+The `<Tabs />` component renders accessibility-focused tab controls.
 
-Accessibility-focused tabs. Built on top of the [Reach UI Tabs](https://reacttraining.com/reach-ui/tabs).
+Built on top of the [Reach UI Tabs](https://reacttraining.com/reach-ui/tabs).
 
 ```js
 import {
@@ -34,10 +25,10 @@ import {
 
 ```jsx
 <Tabs>
-  <TabList mb="20px">
-    <Tab mr="15px">My Account</Tab>
-    <Tab mr="15px">Favorites</Tab>
-    <Tab mr="15px">Orders</Tab>
+  <TabList mb="20px" borderBottom="2px solid #d2d6dc">
+    <Tab>My Account</Tab>
+    <Tab>Favorites</Tab>
+    <Tab>Orders</Tab>
     <Tab>Billing</Tab>
   </TabList>
   <TabPanels>
@@ -66,16 +57,10 @@ import {
   };
   return (
     <Tabs>
-      <TabList mb="20px">
-        <Tab _selected={{ ...selectedStyles }} mr="15px">
-          My Account
-        </Tab>
-        <Tab _selected={{ ...selectedStyles }} mr="15px">
-          Favorites
-        </Tab>
-        <Tab _selected={{ ...selectedStyles }} mr="15px">
-          Orders
-        </Tab>
+      <TabList mb="20px" borderBottom="2px solid #d2d6dc">
+        <Tab _selected={{ ...selectedStyles }}>My Account</Tab>
+        <Tab _selected={{ ...selectedStyles }}>Favorites</Tab>
+        <Tab _selected={{ ...selectedStyles }}>Orders</Tab>
         <Tab _selected={{ ...selectedStyles }}>Billing</Tab>
       </TabList>
       <TabPanels>
@@ -102,20 +87,20 @@ import {
 ```jsx
 <Tabs>
   <TabList mb="20px">
-    <Tab mr="15px">
-      <Icon name="user" size="14px" mr="15px" />
+    <Tab>
+      <Icon name="user" size="14px" mr="15px" color="currentColor" />
       My Account
     </Tab>
-    <Tab mr="15px">
-      <Icon name="heart" size="14px" mr="15px" />
+    <Tab>
+      <Icon name="heart" size="14px" mr="15px" color="currentColor" />
       Favorites
     </Tab>
-    <Tab mr="15px">
-      <Icon name="shopping-bag" size="14px" mr="15px" />
+    <Tab>
+      <Icon name="shopping-bag" size="14px" mr="15px" color="currentColor" />
       Orders
     </Tab>
     <Tab>
-      <Icon name="credit-card" size="14px" mr="15px" />
+      <Icon name="credit-card" size="14px" mr="15px" color="currentColor" />
       Billing
     </Tab>
   </TabList>
@@ -140,24 +125,30 @@ import {
 
 ```jsx
 () => {
-  const selectedStyled = {
-    bg: '#e0e0e0',
-    borderColor: '#e0e0e0',
+  const tabStyles = {
     borderRadius: '5px',
+    border: 0,
+    marginRight: 2,
+  };
+  const selectedStyles = {
+    bg: '#e0e0e0',
+    border: 0,
   };
   return (
     <Tabs>
       <TabList mb="20px">
-        <Tab _selected={{ ...selectedStyled }} mr="15px">
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }} ml={2}>
           My Account
         </Tab>
-        <Tab _selected={{ ...selectedStyled }} mr="15px">
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }}>
           Favorites
         </Tab>
-        <Tab _selected={{ ...selectedStyled }} mr="15px">
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }}>
           Orders
         </Tab>
-        <Tab _selected={{ ...selectedStyled }}>Billing</Tab>
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }}>
+          Billing
+        </Tab>
       </TabList>
       <TabPanels>
         <TabPanel>
@@ -182,29 +173,28 @@ import {
 
 ```jsx
 () => {
+  const tabStyles = {
+    borderRadius: '5px',
+    border: 0,
+    marginRight: 2,
+  };
   const selectedStyles = {
     bg: '#e0e0e0',
-    border: 'none',
-    borderRadius: '5px',
+    border: 0,
   };
   return (
     <Tabs>
       <TabList mb="20px" height="80px" bg="#f5f6fa">
-        <Tab
-          _selected={{ ...selectedStyles }}
-          ml="10px"
-          mr="15px"
-          height="40px"
-        >
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }} ml={2}>
           My Account
         </Tab>
-        <Tab _selected={{ ...selectedStyles }} mr="15px" height="40px">
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }}>
           Favorites
         </Tab>
-        <Tab _selected={{ ...selectedStyles }} mr="15px" height="40px">
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }}>
           Orders
         </Tab>
-        <Tab _selected={{ ...selectedStyles }} height="40px">
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }}>
           Billing
         </Tab>
       </TabList>
@@ -231,31 +221,30 @@ import {
 
 ```jsx
 () => {
+  const tabStyles = {
+    borderRadius: '5px',
+    border: 0,
+    marginRight: 2,
+  };
   const selectedStyles = {
     bg: 'rgb(88,80,236, 0.1)',
     border: 'none',
     borderRadius: '5px',
     color: '#5850EC',
-    fontWeight: 'bold',
   };
   return (
     <Tabs>
       <TabList mb="20px" height="80px">
-        <Tab
-          _selected={{ ...selectedStyles }}
-          ml="10px"
-          mr="15px"
-          height="40px"
-        >
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }}>
           My Account
         </Tab>
-        <Tab _selected={{ ...selectedStyles }} mr="15px" height="40px">
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }}>
           Favorites
         </Tab>
-        <Tab _selected={{ ...selectedStyles }} mr="15px" height="40px">
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }}>
           Orders
         </Tab>
-        <Tab _selected={{ ...selectedStyles }} height="40px">
+        <Tab {...tabStyles} _selected={{ ...selectedStyles }}>
           Billing
         </Tab>
       </TabList>
@@ -277,3 +266,42 @@ import {
   );
 };
 ```
+
+## Props
+
+Props are all extended from [Reach UI's `<Tabs />` component](https://reacttraining.com/reach-ui/tabs)
+
+### `<Tabs />`
+
+| Name                 | Type                       | Is Required | Default      | Description                                                                                                       |
+| -------------------- | -------------------------- | ----------- | ------------ | ----------------------------------------------------------------------------------------------------------------- |
+| `defaultIndex`       | number                     | optional    | none         | Initial active tab index                                                                                          |
+| `index`              | number                     | optional    | none         | Active tab index                                                                                                  |
+| `onChange`           | function                   | optional    | none         | Callback that's triggered whenever a new tab is selected                                                          |
+| `keyboardActivation` | `auto` or `manual`         | optional    | `auto`       | When `auto`, tabs are activated when focused, when `manual` you must press `Spacebar` or `Enter` to activate tabs |
+| `orientation`        | `horizontal` or `vertical` | optional    | `horizontal` | Change direction of tabs                                                                                          |
+
+### `<TabsList />`
+
+| Name       | Type   | Is Required | Default | Description |
+| ---------- | ------ | ----------- | ------- | ----------- |
+| `children` | `node` | optional    | none    |
+
+### `<Tab />`
+
+| Name       | Type      | Is Required | Default | Description                      |
+| ---------- | --------- | ----------- | ------- | -------------------------------- |
+| `children` | `node`    | optional    | none    |
+| `disabled` | `boolean` | optional    | false   | Disable clicking or focusing tab |
+
+### `<TabPanels />`
+
+| Name       | Type   | Is Required | Default | Description |
+| ---------- | ------ | ----------- | ------- | ----------- |
+| `children` | `node` | optional    | none    |
+
+### `<TabPanel />`
+
+| Name       | Type   | Is Required | Default | Description |
+| ---------- | ------ | ----------- | ------- | ----------- |
+| `children` | `node` | optional    | none    |

@@ -39,8 +39,8 @@ export const Tab = ({ children, ...rest }: TabProps) => (
     display="flex"
     alignItems="center"
     justifyContent="space-between"
-    py={4}
-    px={3}
+    py={3}
+    px={2}
     fontWeight={500}
     borderWidth="2px"
     borderColor="transparent"

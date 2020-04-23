@@ -16,7 +16,6 @@ import {
   styled,
   defaultTheme,
   Heading,
-  useTheme,
   // Heading,
 } from 'minerva-ui';
 import Editor from './Editor';

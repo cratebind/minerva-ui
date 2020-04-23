@@ -75,6 +75,7 @@ export default ({
         clipboard.destroy();
       }
     };
+    // eslint-disable-next-line
   }, [button.current, target.current]);
 
   let language =

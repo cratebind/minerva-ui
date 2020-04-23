@@ -8,7 +8,7 @@ const StyledTagsInput = styled.ul`
   background: white;
   box-sizing: border-box;
   border: 1px solid #d2d6dc;
-  padding: 3px 32px 3px 12px;
+  padding: 3px 12px 3px 12px;
   border-width: 1px;
   border-radius: 4px;
   transition: all 250ms ease 0s;
@@ -27,9 +27,11 @@ const StyledInput = styled(Input)`
   display: inline-block;
   width: 100%;
   border: none;
+  padding: 0;
   padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  line-height: 44px;
+  height: 100%;
+  min-height: 44px;
 
   &:focus {
     box-shadow: none;
@@ -65,7 +67,7 @@ export const TagsInput = function TagsInput({
             </Tag>
           </ListItem>
         ))}
-      <ListItem>
+      <ListItem flexGrow={1}>
         <StyledInput ref={inputRef} data-testid="input" {...props} />
       </ListItem>
     </StyledTagsInput>
