@@ -49,6 +49,7 @@ export const Tab = ({ children, ...rest }: TabProps) => (
     _focus={{
       color: 'blue.700',
       outline: 0,
+      boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
       borderWidth: '2px',
     }}
     _selected={{

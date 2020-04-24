@@ -51,12 +51,55 @@ import {
 </Tabs>
 ```
 
+## Vertical Tabs
+
+```jsx
+() => {
+  const tabStyles = {
+    width: '100%',
+    marginBottom: 2,
+    borderRadius: 5,
+    justifyContent: 'center',
+    _selected: {
+      color: 'rgb(85, 26, 139)',
+      backgroundColor: 'cool-gray.200',
+      borderBottom: 0,
+    },
+  }
+  return (
+    <Tabs orientation="vertical">
+      <TabList mb="20px">
+        <Tab {...tabStyles}>My Account</Tab>
+        <Tab {...tabStyles}>Favorites</Tab>
+        <Tab {...tabStyles}>Orders</Tab>
+        <Tab {...tabStyles}>Billing</Tab>
+      </TabList>
+      <TabPanels p={2}>
+        <TabPanel>
+          <p>My Account!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Favorites!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Orders!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Billing!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  )
+}
+```
+
 ## Tabs with custom underline
 
 ```jsx
 () => {
   const selectedStyles = {
-    borderBottom: '2px solid #5850EC',
+    borderBottom: '2px solid rgb(85, 26, 139)',
+    color: 'rgb(85, 26, 139)',
   };
   return (
     <Tabs>

@@ -17,6 +17,47 @@ render(
 );
 ```
 
+## Button with Icon
+
+```jsx live
+<Stack horizontal>
+  <Button>
+    <Icon name="mail" mr={2} size="16px" /> Inbox
+  </Button>
+  <Button>
+    Save <Icon name="save" ml={2} size="16px" />
+  </Button>
+</Stack>
+```
+
+## Pagination
+
+```jsx live noInline
+const buttonStyles = {
+  borderRadius: 0,
+  fontWeight: 400,
+  marginLeft: '-1px',
+};
+
+render(
+  <>
+    <Button {...buttonStyles} radiusLeft="md" px={2}>
+      <Icon name="chevron-left" size="20px" height="100%" />
+    </Button>
+    <Button {...buttonStyles}>1</Button>
+    <Button {...buttonStyles} fontWeight={800}>
+      2
+    </Button>
+    <Button {...buttonStyles}>3</Button>
+    <Button {...buttonStyles}>4</Button>
+    <Button {...buttonStyles}>5</Button>
+    <Button {...buttonStyles} radiusRight="md" px={2}>
+      <Icon name="chevron-right" size="20px" height="100%" />
+    </Button>
+  </>
+);
+```
+
 ## Button Hover Styles
 
 ```jsx live
