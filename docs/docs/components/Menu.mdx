@@ -4,19 +4,29 @@ title: Menu
 sidebar_label: Menu
 ---
 
-import { Box, Menu } from 'minerva-ui';
+The `<Menu />` component is an accessibility-focused dropdown menu.
 
-Accessibility-focused dropdown menu button. Built on top of the [Reach UI Menu Button](https://reacttraining.com/reach-ui/menu-button).
+Built on top of the [Reach UI Menu Button](https://reacttraining.com/reach-ui/menu-button).
 
 ### When To Use:
 
 When you need to trigger actions from a dropdown (such as when clicking in the menu of a desktop application).
 
+:::caution
 Do _not_ use this if you need to store a value. Use a `<select />` component instead.
+:::
 
 ```js
-import { MenuContainer, MenuButton, MenuList, MenuItem, MenuLink } from 'minerva-ui'
+import {
+  MenuContainer,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuLink,
+} from 'minerva-ui';
 ```
+
+## With Divider
 
 ```jsx
 <MenuContainer>
@@ -24,15 +34,67 @@ import { MenuContainer, MenuButton, MenuList, MenuItem, MenuLink } from 'minerva
     Actions <Icon name="chevron-down" ml={2} size="14px" />
   </MenuButton>
   <MenuList>
-    <MenuItem onSelect={() => alert("Download")}>Download</MenuItem>
-    <MenuItem onSelect={() => alert("Copy")}>Create a Copy</MenuItem>
-    <MenuItem onSelect={() => alert("Mark as Draft")}>
-      Mark as Draft
-    </MenuItem>
-    <MenuItem onSelect={() => alert("Delete")}>Delete</MenuItem>
-    <MenuLink href="https://minerva-ui.netlify.com/">
-      Open Documentation
-    </MenuLink>
+    <MenuItem onSelect={() => alert('Edit Profile')}>Edit Profile</MenuItem>
+    <MenuItem onSelect={() => alert('Settings')}>Settings</MenuItem>
+    <MenuDivider />
+    <MenuLink href="https://minerva-ui.netlify.com/">Sign Out</MenuLink>
   </MenuList>
 </MenuContainer>
 ```
+
+## Positioned To Right
+
+Change alignment for `MenuList` relative to parent
+
+```jsx
+<Flex justifyContent="flex-end">
+  <MenuContainer>
+    <MenuButton>
+      Actions <Icon name="chevron-down" ml={2} size="14px" />
+    </MenuButton>
+    <MenuList menuPosition="right">
+      <MenuItem onSelect={() => alert('Edit Profile')}>Edit Profile</MenuItem>
+      <MenuItem onSelect={() => alert('Settings')}>Settings</MenuItem>
+    </MenuList>
+  </MenuContainer>
+</Flex>
+```
+
+## Props
+
+Most props are extended from [Reach UI's `<MenuButton />` component](https://reacttraining.com/reach-ui/menu-button#menulink)
+
+### `<Menu />`
+
+| Name       | Type   | Is Required | Default | Description |
+| ---------- | ------ | ----------- | ------- | ----------- |
+| `children` | `node` | optional    | none    |
+
+### `<MenuButton />`
+
+| Name       | Type   | Is Required | Default | Description |
+| ---------- | ------ | ----------- | ------- | ----------- |
+| `children` | `node` | optional    | none    |
+
+### `<MenuList />`
+
+| Name           | Type              | Is Required | Default | Description                                        |
+| -------------- | ----------------- | ----------- | ------- | -------------------------------------------------- |
+| `children`     | `node`            | optional    | none    |
+| `menuPosition` | `left` or `right` | optional    | `left`  | Change alignment for `MenuList` relative to parent |
+
+### `<MenuItem />`
+
+| Name       | Type       | Is Required | Default | Description                                    |
+| ---------- | ---------- | ----------- | ------- | ---------------------------------------------- |
+| `onSelect` | `function` | required    | none    | Callback that fires event MenuLink is selected |
+| `children` | `node`     | optional    | none    |
+
+### `<MenuLink />`
+
+Similar to `<MenuItem />`, but used for links (renders an `<a />` tag)
+
+| Name       | Type       | Is Required | Default | Description                                    |
+| ---------- | ---------- | ----------- | ------- | ---------------------------------------------- |
+| `onSelect` | `function` | required    | none    | Callback that fires event MenuLink is selected |
+| `children` | `node`     | optional    | none    |

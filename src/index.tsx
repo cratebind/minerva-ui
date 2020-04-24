@@ -3,8 +3,9 @@
  */
 
 export { default as ThemeProvider } from './ThemeProvider';
-export { default as GlobalStyles } from './GlobalStyles';
+export { default as GlobalStyles, AnimationStyles } from './GlobalStyles';
 export { default as defaultTheme, useTheme, useComponentStyles } from './theme';
+export { default as baseTheme } from './theme';
 export { default as styled } from 'styled-components';
 
 /**
@@ -36,6 +37,7 @@ export { RadioGroup, Radio } from './Radio';
 export { default as InputField } from './InputField';
 export { default as Select } from './Select';
 export { default as TagsInput } from './TagsInput';
+export * from './Tabs';
 
 /**
  * Elements
@@ -45,6 +47,7 @@ export { default as Table } from './Table';
 export { default as Icon } from './Icon';
 export * from './Table';
 export { Modal, ModalHeader, ModalBody, ModalFooter } from './Modal';
+export { Drawer, DrawerHeader, DrawerBody, DrawerFooter } from './Drawer';
 export { default as Skeleton } from './Skeleton';
 export * from './Skeleton';
 

@@ -2,9 +2,7 @@
 title: 'Modal'
 ---
 
-import { Modal } from 'minerva-ui';
-
-Basic Modal component that accepts an `isOpen` prop.
+Modal / Dialog component, displays when `isOpen` is `true`.
 
 Uses the [Reach UI Modal](https://reacttraining.com/reach-ui/dialog) component to cover accessibility requirements.
 
@@ -85,16 +83,22 @@ Animations are included by default in the `<GlobalStyles />` component:
 
 ## Props
 
-These are props related to the Modal component.
+### `<Modal />`
 
 | Name      | Type     | Is Required | Default | Description                         |
 | --------- | -------- | ----------- | ------- | ----------------------------------- |
-| `title`   | string   | optional    | none    | Title for Modal                     |
 | `isOpen`  | boolean  | required    | false   | Sets if modal is open               |
 | `onClose` | function | optional    | none    | Action to take when modal is closed |
 
-These are props related to the Modal Header component.
+### `<ModalHeader />`
 
-| Name      | Type     | Is Required | Default | Description                         |
-| --------- | -------- | ----------- | ------- | ----------------------------------- |
-| `onClose` | function | optional    | none    | Action to take when modal is closed |
+| Name       | Type     | Is Required | Default | Description                         |
+| ---------- | -------- | ----------- | ------- | ----------------------------------- |
+| `onClose`  | function | optional    | none    | Action to take when modal is closed |
+| `children` | `node`   | optional    | none    |
+
+### `<ModalBody />` and `<ModalFooter />`
+
+| Name       | Type   | Is Required | Default | Description |
+| ---------- | ------ | ----------- | ------- | ----------- |
+| `children` | `node` | optional    | none    |

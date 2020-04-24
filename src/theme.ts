@@ -3,6 +3,7 @@ import * as Icon from 'react-feather';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { buttonVariants } from './Button';
+import { PseudoBoxProps } from './PseudoBox';
 
 const logoColor = '#551A8B';
 
@@ -14,10 +15,14 @@ function toKebabCase(string) {
     .toLowerCase();
 }
 
+export interface ThemeComponent extends React.CSSProperties, PseudoBoxProps {}
+
 export interface MinervaTheme extends Theme {
   Button?: React.CSSProperties;
+  Drawer?: React.CSSProperties;
+  Modal?: React.CSSProperties;
   Text?: React.CSSProperties;
-  Input?: React.CSSProperties;
+  Input?: ThemeComponent;
   Image?: React.CSSProperties;
   InputField?: React.CSSProperties;
   Link?: React.CSSProperties;
@@ -26,6 +31,7 @@ export interface MinervaTheme extends Theme {
   Select?: React.CSSProperties;
   Tag?: React.CSSProperties;
   Skeleton?: React.CSSProperties;
+  Tabs?: React.CSSProperties;
   icons: any;
   defaultBorderColor?: string;
   variants?: any;
@@ -65,6 +71,7 @@ const defaultTheme: MinervaTheme = {
     borderColor: '#d2d6dc',
   },
   Checkbox: {},
+  Drawer: {},
   Image: {},
   Input: {
     WebkitAppearance: 'none',
@@ -80,18 +87,20 @@ const defaultTheme: MinervaTheme = {
     transition: 'all 250ms ease 0s',
     outline: 'none',
     width: '100%',
-    // ':focus': {
-    //   borderColor: '#a4cafe',
-    //   boxShadow: '0 0 0 3px rgba(164,202,254,.45)',
-    // },
-    // ':disabled': {
-    //   backgroundColor: '#EAEAEA',
-    //   color: '#8F8F8F',
-    //   cursor: 'not-allowed',
-    // },
+    _focus: {
+      borderColor: '#a4cafe',
+      boxShadow: '0 0 0 3px rgba(164,202,254,.45)',
+    },
+    _disabled: {
+      backgroundColor: '#EAEAEA',
+      color: '#8F8F8F',
+      cursor: 'not-allowed',
+    },
   },
   InputField: {},
   Link: {},
+  Tabs: {},
+  Modal: {},
   Tag: {},
   Text: {},
   Select: {},

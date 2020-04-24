@@ -85,6 +85,7 @@ export const ModalBody = forwardRef(function ModalBody(
   const componentStyles = useComponentStyles('ModalBody');
   return (
     <Box
+      color="#374151"
       ref={ref}
       px="1.5rem"
       pt="0.5rem"

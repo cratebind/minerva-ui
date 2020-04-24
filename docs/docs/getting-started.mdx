@@ -3,7 +3,7 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-Minerva UI is a reusable component library to help build UIs faster. This library aims to be highly composable, declarative and accessible.
+Minerva UI is a reusable component library to help build UIs faster. This library aims to be highly composable, easy to use and accessible.
 
 ## Install
 
@@ -19,7 +19,9 @@ npm install --save minerva-ui
 
 First add the `<ThemeProvider />` and `<GlobalStyles />` to the root of your app:
 
-GlobalStyles is optional but highly recommended. It includes the CSS reset and styles from [Tailwind CSS.](https://tailwindcss.com/docs/preflight)
+:::info
+`<GlobalStyles />` is optional but highly recommended. It includes the CSS reset and base styles from [Tailwind CSS.](https://tailwindcss.com/docs/preflight)
+:::
 
 ```jsx highlightOnly
 import { ThemeProvider, GlobalStyles } from 'minerva-ui';
@@ -32,7 +34,7 @@ const App = () => (
 );
 ```
 
-Then import components you want into your UI:
+Then import components you want to use
 
 ```js
 import { Checkbox } from 'minerva-ui';
@@ -51,40 +53,15 @@ And use them:
 };
 ```
 
-## Principles
+## Learn More
 
-### Highly Composable
+- ### [Concepts](/docs/concepts)
+- ### [Theming](/docs/theming)
+- ### [Utility Props](/docs/utilities)
 
-A composable library avoids abstracting away too much control from the developer. Our goal is to avoid creating complex components with prop names like `innerInputIconStyles`.
+## Contributing
 
-```jsx highlightOnly
-<>
-  {/* non-composable */}
-  <Table tableCellStyles={{ backgroundColor: 'grey' }} />
-  {/* composable */}
-  <Table>
-    <TableBody>
-      <TableRow>
-        <TableCell style={{ backgroundColor: 'grey'}}>
-
-        </TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
-<>
-```
-
-While composable approaches might look more verbose, it means that your codebase keeps _more control_ over how components are rendered. If you want to rearrange components, you're able to easily move things around.
-
-### Lower-Level Components
-
-The goal of this library is not to provide fully-styled, pre-packaged components that are difficult to customize. Instead we want to provide powerful primitive components that can be easily composed to build your UI.
-
-However, since we also realize that many developers don't want to have to sink hours of time into building their own UI, we also feature [many examples](/examples/Cards) of common UI patterns that are built with Minerva.
-
-They're designed to be copy and pasted into your codebase to help you get started, and they allow you to easily customize anything you need to down the road.
-
-## Local Development
+### Local Development
 
 1. Clone Repo
 2. Run `yarn install`
@@ -96,7 +73,7 @@ If you want to run the documentation locally:
 2. Run `yarn start` in the root directory
 3. Go to the `docs` directory and run `yarn start`
 
-## Influences:
+## Influences
 
 [Ryan Florence "Reach UI" Guidelines](https://gist.github.com/ryanflorence/e5c794e6093d16a69fa88d2112a292f7) - Great guidelines for making composable / declarative React APIs
 
@@ -104,10 +81,11 @@ If you want to run the documentation locally:
 
 [Chakra UI](https://chakra-ui.com/) - Batteries-included React Component library
 
-## Tools:
+## Tools
 
 - [Styled Components](https://styled-components.com/)
 - [Styled System](https://styled-system.com/)
+- [Reach UI](https://reacttraining.com/reach-ui/)
 - [Jest](https://jestjs.io/)
 - [Typescript](https://www.typescriptlang.org/)
 - [TSDX](https://github.com/jaredpalmer/tsdx)
