@@ -69,6 +69,7 @@ export const ModalHeader = forwardRef(function ModalHeader(
         padding="0.25rem"
         bg="transparent"
         type="button"
+        aria-label="Close Modal"
         onClick={onClose}
       >
         <Icon name="x" size="26px" />
