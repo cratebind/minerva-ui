@@ -14,7 +14,7 @@ import Button from '../Button';
 import { Box, MinervaProps } from '../layout';
 // import { useTheme } from '../theme';
 
-import '@reach/menu-button/styles.css';
+// import '@reach/menu-button/styles.css';
 import PseudoBox from '../PseudoBox';
 
 // this is a context provider, so we don't need to allow styling
