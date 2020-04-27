@@ -195,7 +195,7 @@ export const ReachStyles = css`
     /* margin: 0; */
     /* background: none; */
     color: inherit;
-    font: inherit;
+    /* font: inherit; */
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
