@@ -15,6 +15,7 @@ import {
 } from 'styled-system';
 import { Block, MinervaProps } from '../layout';
 import Input from '../Input';
+import Icon from '../Icon';
 
 const StyledSelect = styled(Input)(
   (props): any => ({
@@ -69,23 +70,6 @@ const StyledSelect = styled(Input)(
   typography
 );
 
-const SVG = styled('svg')(
-  () => ({
-    height: '1.25rem',
-    width: '1.25rem',
-  }),
-  color,
-  space,
-  flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
-  background,
-  border,
-  typography
-);
-
 const IconContainer = styled('div')(
   () => ({
     position: 'absolute',
@@ -114,12 +98,7 @@ const IconContainer = styled('div')(
 
 const SelectIcon = () => (
   <IconContainer>
-    <SVG viewBox="0 0 24 24" focusable="false" role="presentation">
-      <path
-        fill="currentColor"
-        d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-      />
-    </SVG>
+    <Icon name="chevron-down" size="20px" />
   </IconContainer>
 );
 
@@ -142,11 +121,6 @@ export const Select = forwardRef(function Select(
       <StyledSelect as="select" ref={ref} disabled={disabled} {...props}>
         {children}
       </StyledSelect>
-
-      {/* <Input as="select" disabled={disabled} {...props}>
-        {children}
-      </Input>
-      <Input /> */}
       <SelectIcon />
     </Block>
   );
