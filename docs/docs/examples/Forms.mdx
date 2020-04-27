@@ -129,18 +129,15 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
         as="fieldset"
         disabled={isLoading}
         aria-busy={isLoading}
-        maxWidth="600px"
+        maxWidth="800px"
         border={0}
       >
         <Flex>
-          <PseudoBox
-            as={Input}
-            value={value}
+          <Input value={value}
             onChange={e => setValue(e.target.value)}
             radiusRight={0}
             borderRight={0}
-            _disabled={{ opacity: 0.4 }}
-          />
+            _disabled={{ opacity: 0.4 }} />
           <Button type="submit" radiusLeft={0} isLoading={isLoading}>
             Search
           </Button>

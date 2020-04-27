@@ -5,7 +5,7 @@ title: 'Alerts'
 ## Alert with custom border
 
 ```jsx live
-<Alert 
+<Alert
   bg="teal.100"
   borderStyle="solid"
   borderColor="teal.300"
@@ -18,7 +18,7 @@ title: 'Alerts'
 ## Alert pill
 
 ```jsx live
-<Alert 
+<Alert
   status="error"
   borderRadius="full"
   title="Error:"
@@ -30,7 +30,7 @@ title: 'Alerts'
 ## Alert with Image
 
 ```jsx live
-<Alert 
+<Alert
   bg="blue.100"
 >
   <Flex
@@ -53,8 +53,12 @@ title: 'Alerts'
 ## Alert with Button
 
 ```jsx live
-<Alert 
+<Alert
   bg="green.100"
+  justifyContent="space-between"
+  alignItems="center"
+  width="100%"
+  title="Here is some information."
 >
   <Button
     marginRight={5}
@@ -70,14 +74,13 @@ title: 'Alerts'
   >
     Dismiss
   </Button>
-  Here is some information.
 </Alert>
 ```
 
 ## Alert with custom badge
 
 ```jsx live
-<Alert 
+<Alert
   bg="purple.300"
   borderRadius="full"
 >
@@ -104,7 +107,7 @@ title: 'Alerts'
 ## Left accent border
 
 ```jsx live
-<Alert 
+<Alert
   status="warning"
   borderLeftStyle="solid"
   borderLeftWidth={5}
@@ -119,7 +122,7 @@ title: 'Alerts'
 ## Top accent border
 
 ```jsx live
-<Alert 
+<Alert
   status="success"
   borderTopStyle="solid"
   borderTopWidth={4}
@@ -134,7 +137,7 @@ title: 'Alerts'
 ## Banner
 
 ```jsx live
-<Alert 
+<Alert
   bg="blue.200"
   borderColor="blue.400"
   borderBottomStyle="solid"
