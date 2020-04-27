@@ -128,7 +128,7 @@ export const ReachStyles = css`
 
     /* a */
     display: block;
-    color: inherit;
+    /* color: inherit; */
     /* font: inherit; */
     text-decoration: initial;
 
@@ -194,7 +194,7 @@ export const ReachStyles = css`
     /* padding: 0.25em 0.5em; */
     /* margin: 0; */
     /* background: none; */
-    color: inherit;
+    /* color: inherit; */
     /* font: inherit; */
     cursor: pointer;
     -webkit-appearance: none;
