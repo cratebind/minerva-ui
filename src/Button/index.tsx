@@ -1,11 +1,12 @@
 import React, { forwardRef } from 'react';
 import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
-import { MinervaProps } from '../layout';
 import { useTheme } from '../theme';
 import PropTypes from 'prop-types';
 // import { variant } from 'styled-system';
 // import styled from 'styled-components';
+import exact from 'prop-types-exact';
+import { MinervaProps, minervaPropTypes } from '../layout';
 
 export const buttonVariants = {
   primary: {
@@ -115,6 +116,17 @@ export const Button = forwardRef(function Button(
     </PseudoBox>
   );
 });
+
+if (process.env.NODE_ENV !== 'production') {
+  Button.propTypes = exact({
+    ...minervaPropTypes,
+    children: PropTypes.node,
+    disabled: PropTypes.bool,
+    isLoading: PropTypes.bool,
+    onClick: PropTypes.func,
+    style: PropTypes.object,
+  });
+}
 
 export default Button;
 
