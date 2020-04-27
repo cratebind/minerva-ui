@@ -130,7 +130,7 @@ if (__DEV__) {
     switchSize: PropTypes.string,
     switchColor: PropTypes.string,
     checked: PropTypes.bool,
-    htmlFor: PropTypes.string,
+    htmlFor: PropTypes.string.isRequired,
     onChange: PropTypes.func,
     style: PropTypes.any,
   };

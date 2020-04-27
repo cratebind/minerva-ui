@@ -48,7 +48,7 @@ export default Icon;
 
 if (__DEV__) {
   Icon.propTypes = {
-    name: PropTypes.node,
+    name: PropTypes.string.isRequired,
     size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     color: PropTypes.string,
   };

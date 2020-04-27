@@ -1,0 +1,149 @@
+---
+title: 'Alerts'
+---
+
+## Alert with custom border
+
+```jsx live
+<Alert 
+  bg="teal.100"
+  borderStyle="solid"
+  borderColor="teal.300"
+  borderWidth={1}
+>
+  This is a custom alert.
+</Alert>
+```
+
+## Alert pill
+
+```jsx live
+<Alert 
+  status="error"
+  borderRadius="full"
+  title="Error:"
+>
+  Something not great is happening.
+</Alert>
+```
+
+## Alert with Image
+
+```jsx live
+<Alert 
+  bg="blue.100"
+>
+  <Flex
+    alignItems="center"
+  >
+    <Image
+      src="https://images.unsplash.com/photo-1553798194-cc0213ae7f99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80"
+      borderRadius="full"
+      w="3rem"
+      h="3rem"
+      objectFit="cover"
+      float="left"
+      marginRight={5}
+    />
+    <Text>Dave Grant just signed in</Text>
+  </Flex>
+</Alert>
+```
+
+## Alert with Button
+
+```jsx live
+<Alert 
+  bg="green.100"
+>
+  <Button
+    marginRight={5}
+    bg="green.100"
+    borderColor="green.200"
+    _hover={{
+      bg: 'green.300',
+    }}
+    _active={{
+      borderColor: 'green.400',
+      bg: 'green.400',
+    }}
+  >
+    Dismiss
+  </Button>
+  Here is some information.
+</Alert>
+```
+
+## Alert with custom badge
+
+```jsx live
+<Alert 
+  bg="purple.300"
+  borderRadius="full"
+>
+  <Flex
+    alignItems="center"
+  >
+    <Text
+      bg="blue.700"
+      color="white"
+      borderRadius="full"
+      px={2}
+      py={1}
+      fontWeight="800"
+      fontSize="xs"
+      marginRight={5}
+    >
+      NEW
+    </Text>
+    <Text>Check out our latest features!</Text>
+  </Flex>
+</Alert>
+```
+
+## Left accent border
+
+```jsx live
+<Alert 
+  status="warning"
+  borderLeftStyle="solid"
+  borderLeftWidth={5}
+  borderColor="orange.300"
+  borderRadius="none"
+  title="Warning!"
+>
+  Something is happening that isn't too bad.
+</Alert>
+```
+
+## Top accent border
+
+```jsx live
+<Alert 
+  status="success"
+  borderTopStyle="solid"
+  borderTopWidth={4}
+  borderColor="green.300"
+  borderRadius="none"
+  title="Success!"
+>
+  Something great is happening!
+</Alert>
+```
+
+## Banner
+
+```jsx live
+<Alert 
+  bg="blue.200"
+  borderColor="blue.400"
+  borderBottomStyle="solid"
+  borderBottomWidth={1}
+  borderTopStyle="solid"
+  borderTopWidth={1}
+  borderRadius="none"
+  title="Message:"
+>
+  This is important.
+</Alert>
+```

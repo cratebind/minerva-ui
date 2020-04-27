@@ -135,7 +135,7 @@ export default Modal;
 if (__DEV__) {
   Modal.propTypes = {
     children: PropTypes.node,
-    isOpen: PropTypes.bool,
+    isOpen: PropTypes.bool.isRequired,
     onClose: PropTypes.func,
   };
   ModalHeader.propTypes = {
