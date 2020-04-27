@@ -7,7 +7,7 @@ import {
   TabPanel as ReachTabPanel,
   useTabsContext,
 } from '@reach/tabs';
-import '@reach/tabs/styles.css';
+
 import { MinervaProps, Box, Flex } from '../layout';
 import { useTheme } from '../theme';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
@@ -43,9 +43,10 @@ export const Tab = ({ children, ...rest }: TabProps) => (
     px={2}
     fontWeight={500}
     borderWidth="2px"
-    borderColor="transparent"
-    borderStyle="solid"
+    // borderColor="transparent"
     marginBottom="-2px"
+    border={0}
+    borderBottom="2px solid transparent"
     _focus={{
       color: 'blue.700',
       outline: 0,
@@ -56,6 +57,7 @@ export const Tab = ({ children, ...rest }: TabProps) => (
       color: 'blue.700',
       outline: 0,
       borderWidth: '2px',
+      borderBottom: '2px solid currentColor',
     }}
     {...rest}
   >

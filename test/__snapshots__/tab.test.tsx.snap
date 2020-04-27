@@ -51,15 +51,16 @@ exports[`Tabs should change TabList background color 1`] = `
   padding-right: 0.5rem;
   font-weight: 500;
   border-width: 2px;
-  border-color: transparent;
-  border-style: solid;
   margin-bottom: -2px;
+  border: 0;
+  border-bottom: 2px solid transparent;
   margin-right: 15px;
 }
 
 .c2:focus {
   color: #1a56db;
   outline: 0;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   border-width: 2px;
 }
 
@@ -93,14 +94,15 @@ exports[`Tabs should change TabList background color 1`] = `
   padding-right: 0.5rem;
   font-weight: 500;
   border-width: 2px;
-  border-color: transparent;
-  border-style: solid;
   margin-bottom: -2px;
+  border: 0;
+  border-bottom: 2px solid transparent;
 }
 
 .c3:focus {
   color: #1a56db;
   outline: 0;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   border-width: 2px;
 }
 

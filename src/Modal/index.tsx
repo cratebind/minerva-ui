@@ -7,7 +7,7 @@ import Icon from '../Icon';
 import Button from '../Button';
 import Text from '../Text';
 
-import '@reach/dialog/styles.css';
+// import '@reach/dialog/styles.css';
 import { useComponentStyles } from '../theme';
 
 export const ModalOverlay = styled(DialogOverlay)({}, systemProps);
@@ -18,6 +18,7 @@ export const StyledModal = styled(Dialog)(
     borderRadius: '5px',
     alignItems: 'center',
     width: '100%',
+    backgroundColor: 'white',
     maxWidth: '30rem',
     zIndex: 3,
     ...props.theme.Modal,
@@ -70,6 +71,7 @@ export const ModalHeader = forwardRef(function ModalHeader(
         padding="0.25rem"
         bg="transparent"
         type="button"
+        aria-label="Close Modal"
         onClick={onClose}
       >
         <Icon name="x" size="26px" />
