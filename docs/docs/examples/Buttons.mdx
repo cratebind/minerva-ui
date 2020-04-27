@@ -75,3 +75,53 @@ render(
   Hover Button
 </Button>
 ```
+
+## Button Pill
+
+```jsx live
+<Button
+  borderRadius="full"
+>
+  Button Pill
+</Button>
+```
+
+## Button with Shadow
+
+```jsx live
+<Button
+  boxShadow="base"
+>
+  Shadow Button
+</Button>
+```
+
+## Custom Image Button
+
+```jsx live
+<Button
+  boxShadow="base"
+>
+  <Image
+    src="https://images.unsplash.com/photo-1553798194-cc0213ae7f99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80"
+    borderRadius="full"
+    w="3rem"
+    h="3rem"
+    objectFit="cover"
+    marginRight="1rem"
+  />
+  Send message to Dave
+</Button>
+```
+
+## Button with Animated Styles
+
+```jsx live
+<Button
+  _active={{
+    transform:'translateY(2px)'
+  }}
+>
+  Click here!
+</Button>
+```

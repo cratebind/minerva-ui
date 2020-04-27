@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { CustomCheckboxContainer, CustomCheckboxInput } from '@reach/checkbox';
 import { MinervaProps, Box, systemProps } from '../layout';
@@ -122,3 +123,15 @@ export const Switch = forwardRef(function Checkbox(
 });
 
 export default Switch;
+
+if (__DEV__) {
+  Switch.propTypes = {
+    disabled: PropTypes.bool,
+    switchSize: PropTypes.string,
+    switchColor: PropTypes.string,
+    checked: PropTypes.bool,
+    htmlFor: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+    style: PropTypes.any,
+  };
+}

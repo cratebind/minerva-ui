@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
 import { useTheme } from '../theme';
 
@@ -44,3 +45,11 @@ export const Icon = forwardRef(function Icon(
 });
 
 export default Icon;
+
+if (__DEV__) {
+  Icon.propTypes = {
+    name: PropTypes.string.isRequired,
+    size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    color: PropTypes.string,
+  };
+}

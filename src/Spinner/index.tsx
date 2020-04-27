@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import styled, { css, keyframes } from 'styled-components';
 import { Block } from '../layout';
 
@@ -83,3 +84,13 @@ export const Spinner = forwardRef<Ref, SpinnerProps>(
 Spinner.displayName = 'Spinner';
 
 export default Spinner;
+
+if (__DEV__) {
+  Spinner.propTypes = {
+    size: PropTypes.string,
+    emptyColor: PropTypes.string,
+    color: PropTypes.string,
+    thickness: PropTypes.string,
+    label: PropTypes.string,
+  };
+}

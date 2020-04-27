@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {
   background,
@@ -126,3 +127,10 @@ export const Select = forwardRef(function Select(
 });
 
 export default Select;
+
+if (__DEV__) {
+  Select.propTypes = {
+    children: PropTypes.node,
+    disabled: PropTypes.bool,
+  };
+}

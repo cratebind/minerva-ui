@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import { MinervaProps, Box } from '../layout';
 import { useTheme } from '../theme';
@@ -62,3 +63,10 @@ export const Skeleton = ({
 };
 
 export default Skeleton;
+
+if (__DEV__) {
+  Skeleton.propTypes = {
+    count: PropTypes.number,
+    gap: PropTypes.string,
+  };
+}
