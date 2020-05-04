@@ -25,6 +25,7 @@ export const DrawerContent = styled(DialogContent)(
     position: 'fixed',
     height: '100vh',
     margin: 0,
+    backgroundColor: '#fff',
     zIndex: OVERLAY_ZINDEX + 1,
     willChange: 'opacity, transform',
     ...props.theme.Drawer,

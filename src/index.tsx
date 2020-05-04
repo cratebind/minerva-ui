@@ -3,6 +3,7 @@
  */
 
 export { default as ThemeProvider } from './ThemeProvider';
+export { default as VisuallyHidden } from './VisuallyHidden';
 export { default as GlobalStyles, AnimationStyles } from './GlobalStyles';
 export { default as defaultTheme, useTheme, useComponentStyles } from './theme';
 export { default as baseTheme } from './theme';

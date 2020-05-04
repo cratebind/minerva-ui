@@ -74,7 +74,7 @@ export const Alert = forwardRef(function Alert(
       backgroundColor={bg ? bg : statusColor}
       {...props}
     >
-      {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
+      {alertIcon && <Icon name={alertIcon} size="20px" mr={3} />}
       {title && <StyledAlertTitle>{title}</StyledAlertTitle>}
       <StyledAlertDescription>{children}</StyledAlertDescription>
     </StyledAlert>

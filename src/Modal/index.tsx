@@ -21,6 +21,7 @@ export const StyledModal = styled(Dialog)(
     backgroundColor: 'white',
     maxWidth: '30rem',
     zIndex: 3,
+    margin: '10vh auto',
     ...props.theme.Modal,
   }),
   systemProps
@@ -116,19 +117,28 @@ export const Modal = forwardRef(function Modal(
   { children, isOpen, onClose, ...props }: ModalProps,
   ref
 ) {
+  const componentStyles = useComponentStyles('Modal');
   return (
     <ModalOverlay isOpen={isOpen}>
-      <StyledModal
+      <Box
+        as={Dialog}
         aria-label="modal"
         isOpen={isOpen}
         onDismiss={onClose}
         ref={ref}
+        padding={0}
+        borderRadius="5px"
+        alignItems="center"
+        width="100%"
+        backgroundColor="white"
+        maxWidth="30rem"
+        zIndex={3}
+        {...componentStyles}
         {...props}
       >
         {children}
-      </StyledModal>
+      </Box>
     </ModalOverlay>
-    // )
   );
 });
 

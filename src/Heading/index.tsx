@@ -5,7 +5,6 @@ import { useComponentStyles } from '../theme';
 
 export interface HeadingProps extends MinervaProps {
   children?: React.ReactNode;
-  fontSize?: string;
 }
 
 export const Heading = forwardRef(function Heading(

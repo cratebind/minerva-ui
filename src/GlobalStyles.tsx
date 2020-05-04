@@ -163,7 +163,7 @@ export const ReachStyles = css`
 
   [data-reach-dialog-content] {
     /* width: 50vw; */
-    margin: 10vh auto;
+    /* margin: 10vh auto; */
     /* background: white; */
     /* padding: 2rem; */
     outline: none;
