@@ -27,31 +27,6 @@ export type ControlBoxProps = {
   theme?: any;
 };
 
-// const ControlBox = styled(Box)<ControlBoxProps>(
-//   (props: ControlBoxProps) => ({
-//     display: 'flex',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     borderStyle: 'solid',
-//     borderWidth: '1px',
-//     borderRadius: '4px',
-//     width: '18px',
-//     height: '18px',
-//     marginRight: '8px',
-//     padding: '2px',
-//     transition: 'background-color 120ms ease 0s, box-shadow 250ms ease 0s',
-//     borderColor: props.checked ? '#fff' : '#ecebed',
-//     color: props.checked ? '#fff' : 'transparent',
-//     backgroundColor: props.checked ? '#5850ec' : '#fff',
-//     ':focus': {
-//       borderColor: '#a4cafe',
-//       boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
-//       outline: 0,
-//     },
-//   }),
-//   systemProps
-// );
-
 const ControlBox = ({ checked, ...props }) => (
   <PseudoBox
     display="flex"

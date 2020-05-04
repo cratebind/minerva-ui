@@ -6,17 +6,16 @@ import {
   TabPanels as ReachTabPanels,
   TabPanel as ReachTabPanel,
   useTabsContext,
+  TabsProps as ReachTabsProps
 } from '@reach/tabs';
 
 import { MinervaProps, Box, Flex } from '../layout';
 import { useTheme } from '../theme';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 
-export interface TabsProps extends MinervaProps {
-  children?: React.ReactNode;
-}
+// export interface TabsProps extends MinervaProps, PseudoBoxProps, ReachTabsProps { }
 
-export interface TabProps extends TabsProps, PseudoBoxProps {}
+export type TabsProps = MinervaProps & ReachTabsProps & PseudoBoxProps;
 
 export const Tabs = ({ children, ...rest }: TabsProps) => {
   const theme = useTheme();
@@ -33,7 +32,7 @@ export const TabList = ({ children, ...rest }: TabsProps) => (
   </Flex>
 );
 
-export const Tab = ({ children, ...rest }: TabProps) => (
+export const Tab = ({ children, ...rest }: TabsProps) => (
   <PseudoBox
     as={ReachTab}
     display="flex"
@@ -65,14 +64,12 @@ export const Tab = ({ children, ...rest }: TabProps) => (
   </PseudoBox>
 );
 
-export const TabPanels = ({ children, ...rest }: TabsProps) => (
-  <Box as={ReachTabPanels} {...rest}>
-    {children}
-  </Box>
+export const TabPanels = (props: TabsProps) => (
+  <Box as={ReachTabPanels} {...props} />
 );
 
-export const TabPanel = ({ children }: TabsProps) => (
-  <Box as={ReachTabPanel}>{children}</Box>
+export const TabPanel = (props: TabsProps) => (
+  <Box as={ReachTabPanel} {...props} />
 );
 
 export { useTabsContext };

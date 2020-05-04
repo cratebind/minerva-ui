@@ -74,7 +74,7 @@ const defaultTheme: MinervaTheme = {
   Drawer: {},
   Image: {},
   Input: {
-    WebkitAppearance: 'none',
+    appearance: 'none',
     fontSize: '16px',
     borderStyle: 'solid',
     borderColor: '#d2d6dc',
