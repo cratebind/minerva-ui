@@ -6,7 +6,7 @@ import {
   TabPanels as ReachTabPanels,
   TabPanel as ReachTabPanel,
   useTabsContext,
-  TabsProps as ReachTabsProps
+  TabsProps as ReachTabsProps,
 } from '@reach/tabs';
 
 import { MinervaProps, Box, Flex } from '../layout';

@@ -133,11 +133,13 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
         border={0}
       >
         <Flex>
-          <Input value={value}
+          <Input
+            value={value}
             onChange={e => setValue(e.target.value)}
             radiusRight={0}
             borderRight={0}
-            _disabled={{ opacity: 0.4 }} />
+            _disabled={{ opacity: 0.4 }}
+          />
           <Button type="submit" radiusLeft={0} isLoading={isLoading}>
             Search
           </Button>

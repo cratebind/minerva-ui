@@ -5,12 +5,7 @@ title: 'Alerts'
 ## Alert with custom border
 
 ```jsx live
-<Alert
-  bg="teal.100"
-  borderStyle="solid"
-  borderColor="teal.300"
-  borderWidth={1}
->
+<Alert bg="teal.100" borderStyle="solid" borderColor="teal.300" borderWidth={1}>
   This is a custom alert.
 </Alert>
 ```
@@ -18,11 +13,7 @@ title: 'Alerts'
 ## Alert pill
 
 ```jsx live
-<Alert
-  status="error"
-  borderRadius="full"
-  title="Error:"
->
+<Alert status="error" borderRadius="full" title="Error:">
   Something not great is happening.
 </Alert>
 ```
@@ -30,12 +21,8 @@ title: 'Alerts'
 ## Alert with Image
 
 ```jsx live
-<Alert
-  bg="blue.100"
->
-  <Flex
-    alignItems="center"
-  >
+<Alert bg="blue.100">
+  <Flex alignItems="center">
     <Image
       src="https://images.unsplash.com/photo-1553798194-cc0213ae7f99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80"
       borderRadius="full"
@@ -80,13 +67,8 @@ title: 'Alerts'
 ## Alert with custom badge
 
 ```jsx live
-<Alert
-  bg="purple.300"
-  borderRadius="full"
->
-  <Flex
-    alignItems="center"
-  >
+<Alert bg="purple.300" borderRadius="full">
+  <Flex alignItems="center">
     <Text
       bg="blue.700"
       color="white"
