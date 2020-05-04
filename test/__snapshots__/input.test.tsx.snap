@@ -5,6 +5,9 @@ exports[`<Input /> should render 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   font-size: 16px;
   border-style: solid;
   border-color: #d2d6dc;
