@@ -48,6 +48,44 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from 'minerva-ui';
 };
 ```
 
+## Customize `ModalOverlay` or `ModalContent`
+```js
+import { ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter } from 'minerva-ui'
+```
+
+```jsx live
+() => {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClose = () => setOpen(false);
+
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>Open Modal</Button>
+      <ModalOverlay isOpen={open} onDismiss={handleClose} bg="rgba(0, 150, 136, 0.31)">
+        <ModalContent isOpen={open} onClose={handleClose} maxWidth="80vw" overflow="hidden">
+          <ModalHeader onClose={handleClose}>Hello World!</ModalHeader>
+          <ModalBody>
+            Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis. Sunt ad dolore quis aute consequat.
+          </ModalBody>
+          <ModalFooter bg="gray.50">
+            <Flex px={6} py={3} flexDirection={['column', 'row-reverse']} bg="gray.50" radiusBottom="5px">
+              <Button
+                onClick={handleClose}
+                boxShadow="base"
+                width={['100%', 'auto']}
+              >
+                Submit
+              </Button>
+            </Flex>
+          </ModalFooter>
+        </ModalContent>
+      </ModalOverlay>
+    </>
+  )
+};
+```
+
 ## Animations
 
 Animations are included by default in the `<GlobalStyles />` component:
@@ -102,3 +140,17 @@ Animations are included by default in the `<GlobalStyles />` component:
 | Name       | Type   | Is Required | Default | Description |
 | ---------- | ------ | ----------- | ------- | ----------- |
 | `children` | `node` | optional    | none    |
+
+### `<ModalContent />`
+
+| Name      | Type     | Is Required | Default | Description                         |
+| --------- | -------- | ----------- | ------- | ----------------------------------- |
+| `isOpen`  | boolean  | required    | false   | Sets if modal is open               |
+| `onClose` | function | optional    | none    | Action to take when modal is closed |
+
+### `<ModalOverlay />`
+
+| Name      | Type     | Is Required | Default | Description                         |
+| --------- | -------- | ----------- | ------- | ----------------------------------- |
+| `isOpen`  | boolean  | required    | false   | Sets if modal is open               |
+| `onDismiss` | function | optional    | none    | Action to take when modal is closed |
