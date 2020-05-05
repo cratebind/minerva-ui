@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Menu as ReachMenuContainer,
-  // MenuList as ReachMenuList,
   MenuButton as ReachMenuButton,
   MenuItem as ReachMenuItem,
   MenuLink as ReachMenuLink,
@@ -51,6 +50,9 @@ export const MenuList = ({
         height: '100%',
         pointerEvents: 'none',
       }}
+      _focus={{
+        outline: 0,
+      }}
       border={0}
       className="menu-list"
       minWidth="220px"
@@ -64,6 +66,7 @@ export const MenuItem = styled(ReachMenuItem)`
   color: #374151;
   padding: 0.5rem 1rem;
   font-size: 14px;
+  cursor: pointer;
 
   &[data-selected],
   &:hover {
@@ -76,6 +79,8 @@ export const MenuLink = styled(ReachMenuLink)`
   color: #374151;
   padding: 0.5rem 1rem;
   font-size: 14px;
+  display: block;
+  cursor: pointer;
 
   &[data-selected],
   &:hover {
@@ -94,3 +99,5 @@ export const MenuDivider = props => (
     {...props}
   />
 );
+
+export { useMenuButtonContext } from '@reach/menu-button';
