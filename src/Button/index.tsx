@@ -92,7 +92,6 @@ export const Button = forwardRef(function Button(
       cursor="pointer"
       _hover={{
         backgroundColor: '#f9fafb',
-        cursor: 'pointer',
       }}
       _focus={{
         borderColor: '#a4cafe',
