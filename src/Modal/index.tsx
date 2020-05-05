@@ -1,14 +1,15 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { DialogContent, DialogOverlay } from '@reach/dialog';
+import { DialogContent, DialogOverlay, DialogProps } from '@reach/dialog';
 import { MinervaProps, systemProps, Box } from '../layout';
 import Icon from '../Icon';
 import Button from '../Button';
 import Text from '../Text';
 import { useComponentStyles } from '../theme';
 
-export const ModalOverlay = styled(DialogOverlay)<MinervaProps>(
+type OverlayProps = DialogProps & MinervaProps;
+export const ModalOverlay = styled(DialogOverlay)<OverlayProps>(
   {
     backgroundColor: 'hsla(0, 0%, 0%, 0.33)',
   },
