@@ -311,6 +311,9 @@ const shouldForwardProp = createShouldForwardProp([
   'maxWidth',
   'width',
   'height',
+  'isOpen',
+  'onDismiss',
+  'onClose',
 ]);
 
 // @ts-ignore

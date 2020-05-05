@@ -1,29 +1,17 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Dialog, DialogOverlay } from '@reach/dialog';
+import { DialogContent, DialogOverlay } from '@reach/dialog';
 import { MinervaProps, systemProps, Box } from '../layout';
 import Icon from '../Icon';
 import Button from '../Button';
 import Text from '../Text';
-
-// import '@reach/dialog/styles.css';
 import { useComponentStyles } from '../theme';
 
-export const ModalOverlay = styled(DialogOverlay)({}, systemProps);
-
-export const StyledModal = styled(Dialog)(
-  props => ({
-    padding: 0,
-    borderRadius: '5px',
-    alignItems: 'center',
-    width: '100%',
-    backgroundColor: 'white',
-    maxWidth: '30rem',
-    zIndex: 3,
-    margin: '10vh auto',
-    ...props.theme.Modal,
-  }),
+export const ModalOverlay = styled(DialogOverlay)<MinervaProps>(
+  {
+    backgroundColor: 'hsla(0, 0%, 0%, 0.33)',
+  },
   systemProps
 );
 
@@ -106,10 +94,36 @@ export const ModalFooter = forwardRef(function ModalFooter(
   ref
 ) {
   // const theme = useTheme();
+  const componentStyles = useComponentStyles('ModalFooter');
   return (
-    <Box ref={ref} {...props}>
+    <Box ref={ref} {...componentStyles} {...props}>
       {children}
     </Box>
+  );
+});
+
+export const ModalContent = forwardRef(function ModalContent(
+  { ...props }: MinervaProps,
+  ref
+) {
+  // const theme = useTheme();
+  const componentStyles = useComponentStyles('ModalContent');
+  return (
+    <Box
+      as={DialogContent}
+      ref={ref}
+      aria-label="modal"
+      padding={0}
+      borderRadius="5px"
+      alignItems="center"
+      width="100%"
+      backgroundColor="white"
+      maxWidth="30rem"
+      zIndex={3}
+      margin="10vh auto"
+      {...componentStyles}
+      {...props}
+    />
   );
 });
 
@@ -117,27 +131,11 @@ export const Modal = forwardRef(function Modal(
   { children, isOpen, onClose, ...props }: ModalProps,
   ref
 ) {
-  const componentStyles = useComponentStyles('Modal');
   return (
-    <ModalOverlay isOpen={isOpen}>
-      <Box
-        as={Dialog}
-        aria-label="modal"
-        isOpen={isOpen}
-        onDismiss={onClose}
-        ref={ref}
-        padding={0}
-        borderRadius="5px"
-        alignItems="center"
-        width="100%"
-        backgroundColor="white"
-        maxWidth="30rem"
-        zIndex={3}
-        {...componentStyles}
-        {...props}
-      >
+    <ModalOverlay isOpen={isOpen} onDismiss={onClose}>
+      <ModalContent ref={ref} {...props}>
         {children}
-      </Box>
+      </ModalContent>
     </ModalOverlay>
   );
 });

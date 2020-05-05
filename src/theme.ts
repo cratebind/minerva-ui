@@ -21,6 +21,9 @@ export interface MinervaTheme extends Theme {
   Button?: React.CSSProperties;
   Drawer?: React.CSSProperties;
   Modal?: React.CSSProperties;
+  ModalContent?: React.CSSProperties;
+  ModalBody?: React.CSSProperties;
+  ModalFooter?: React.CSSProperties;
   Text?: React.CSSProperties;
   Input?: ThemeComponent;
   Image?: React.CSSProperties;
@@ -101,6 +104,9 @@ const defaultTheme: MinervaTheme = {
   Link: {},
   Tabs: {},
   Modal: {},
+  ModalBody: {},
+  ModalFooter: {},
+  ModalContent: {},
   Tag: {},
   Text: {},
   Select: {},
