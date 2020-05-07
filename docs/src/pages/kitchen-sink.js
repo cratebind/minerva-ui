@@ -178,7 +178,7 @@ const KitchenSink = () => {
                 onChange={e => {
                   setField(e.target.value);
                 }}
-              ></Input>
+              />
             </InputField>
             <InputField
               className="input-label white-text"
@@ -201,7 +201,7 @@ const KitchenSink = () => {
                   setError('This field cannot be empty');
                   setErrorField(e.target.value);
                 }}
-              ></Input>
+              />
             </InputField>
           </Stack>
         </section>
@@ -340,7 +340,7 @@ const KitchenSink = () => {
             htmlFor="toggle switch"
             checked={checked}
             onChange={() => setChecked(!checked)}
-          ></Switch>
+          />
         </section>
 
         <section className="component-wrapper">
