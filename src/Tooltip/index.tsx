@@ -61,13 +61,24 @@ const left = (triggerRect, tooltipRect) => {
 const defaultPosition = (triggerRect, tooltipRect) => {
   const left = triggerRect.left;
   const maxLeft = window.innerWidth - tooltipRect.width - 2;
+
   return {
     left: Math.min(Math.max(2, left), maxLeft) + window.scrollX,
     top: triggerRect.bottom + 8 + window.scrollY,
   };
 };
 
-export const TooltipCustom = styled(TooltipComponent)({}, systemProps);
+export const TooltipCustom = styled(TooltipComponent)(
+  {
+    backgroundColor: 'gray.700',
+    border: 0,
+    borderRadius: 'md',
+    padding: '0.5rem 1rem',
+    fontSize: 'sm',
+    color: 'white',
+  },
+  systemProps
+);
 
 export const Tooltip = forwardRef(
   (
@@ -96,6 +107,12 @@ export const Tooltip = forwardRef(
         ref={ref}
         position={setTooltipPosition}
         label={label}
+        backgroundColor="gray.700"
+        border="none"
+        borderRadius="md"
+        padding="0.5em 1em"
+        fontSize="xs"
+        color="white"
         {...props}
         {...componentStyles}
       >

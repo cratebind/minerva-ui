@@ -21,7 +21,7 @@ import { Tooltip } from 'minerva-ui'
 </Tooltip>
 ```
 
-# Tooltip with custom styles
+# Tooltip with Custom Position
 
 ```js
 import { Tooltip } from 'minerva-ui'
@@ -31,12 +31,22 @@ import { Tooltip } from 'minerva-ui'
 <Tooltip
   label="Tooltip text"
   tooltipPosition="right"
-  backgroundColor="gray.700"
-  border="none"
-  borderRadius="md"
-  padding="0.5em 1em"
-  fontSize="xs"
-  color="white"
+>
+  <Button variant="primary">Hover me!</Button>
+</Tooltip>
+```
+
+# Tooltip with Custom Styles
+
+```js
+import { Tooltip } from 'minerva-ui'
+```
+
+```jsx
+<Tooltip
+  label="Tooltip text"
+  bg="indigo.700"
+  borderRadius="full"
 >
   <Button variant="primary">Hover me!</Button>
 </Tooltip>
