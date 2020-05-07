@@ -7,7 +7,7 @@ describe('<Alert />', () => {
   it('should render', () => {
     const { container } = render(
       <ThemeProvider>
-        <Alert>Test</Alert>
+        <Alert title="Test" />
       </ThemeProvider>
     );
     expect(container).toMatchSnapshot();
@@ -17,7 +17,7 @@ describe('<Alert />', () => {
     const description = 'Hello World';
     const { container } = render(
       <ThemeProvider>
-        <Alert>{description}</Alert>
+        <Alert body={description} />
       </ThemeProvider>
     );
 
@@ -29,7 +29,7 @@ describe('<Alert />', () => {
     const description = 'World';
     const { container } = render(
       <ThemeProvider>
-        <Alert title={title}>{description}</Alert>
+        <Alert title={title} body={description} />
       </ThemeProvider>
     );
 
@@ -41,9 +41,7 @@ describe('<Alert />', () => {
     const backgroundColor = '#f8b4b4';
     const { getByTestId } = render(
       <ThemeProvider>
-        <Alert status="error" data-testid="alert">
-          Error
-        </Alert>
+        <Alert status="error" data-testid="alert" body="Error" />
       </ThemeProvider>
     );
     const alert = getByTestId('alert');
@@ -54,12 +52,42 @@ describe('<Alert />', () => {
     const backgroundColor = '#fdf6b2';
     const { getByTestId } = render(
       <ThemeProvider>
-        <Alert bg={backgroundColor} data-testid="alert">
-          Custom Color
-        </Alert>
+        <Alert bg={backgroundColor} data-testid="alert" body="Custom Color" />
       </ThemeProvider>
     );
     const alert = getByTestId('alert');
     expect(alert).toHaveStyleRule('background-color', backgroundColor);
+  });
+
+  it('should not render when `isOpen` is false', () => {
+    const testId = 'alert';
+    const { queryByTestId } = render(
+      <ThemeProvider>
+        <Alert ata-testid={testId} title="Test" isOpen={false} />
+      </ThemeProvider>
+    );
+
+    expect(queryByTestId(testId)).not.toBeInTheDocument();
+  });
+
+  it('should add close button text when `closeText` prop is passed', () => {
+    const title = 'Hello';
+    const description = 'World';
+    const closeText = 'Dismiss';
+    const { container } = render(
+      <ThemeProvider>
+        <Alert
+          title={title}
+          body={description}
+          canBeClosed
+          closeText={closeText}
+          hasCloseIcon
+        />
+      </ThemeProvider>
+    );
+
+    expect(container).toHaveTextContent(title);
+    expect(container).toHaveTextContent(description);
+    expect(container).toHaveTextContent(closeText);
   });
 });

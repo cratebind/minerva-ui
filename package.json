@@ -78,7 +78,7 @@
     "rollup-plugin-postcss": "^3.1.1",
     "semantic-release": "^17.0.2",
     "ts-loader": "^6.2.1",
-    "tsdx": "^0.12.3",
+    "tsdx": "^0.13.2",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   },
@@ -103,7 +103,8 @@
     "prop-types-exact": "^1.2.0",
     "react-feather": "^2.0.8",
     "styled-components": "^5.0.0",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "tiny-warning": "^1.0.3"
   },
   "jest": {
     "setupFilesAfterEnv": [

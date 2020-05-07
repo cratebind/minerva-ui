@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import warning from 'tiny-warning';
 import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
 import { useTheme } from '../theme';
@@ -23,6 +24,8 @@ export const Image = forwardRef(function Image(
   ref
 ) {
   const theme = useTheme();
+
+  warning(!alt, 'Images require an `alt` attribute to be accessible.');
 
   return (
     <Box as="img" ref={ref} src={src} alt={alt} {...theme.Image} {...props} />

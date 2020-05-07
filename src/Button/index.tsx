@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import warning from 'tiny-warning';
 import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 import { useTheme } from '../theme';
@@ -50,6 +51,9 @@ export interface ButtonProps extends MinervaProps, PseudoBoxProps {
   disabled?: boolean;
   /** If `true`, button will show a spinner. */
   isLoading?: boolean;
+  /** Accessibility label for buttons without text content */
+  name?: string;
+  /** Button variant styles inherited from theme */
   variant?: string;
   /** HTML Button Type (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) */
   type?: 'button' | 'reset' | 'submit';
@@ -61,6 +65,7 @@ export const Button = forwardRef(function Button(
     disabled = false,
     as: Comp = 'button',
     isLoading = false,
+    name,
     variant,
     ...props
   }: ButtonProps,
@@ -69,17 +74,23 @@ export const Button = forwardRef(function Button(
   const theme = useTheme();
 
   // if a variant is provided and it doesn't exist in the current theme, warn in development
-  if (__DEV__) {
-    if (variant && !Object.keys(theme.variants.Button).includes(variant)) {
-      console.error(
-        `Variant "${variant}" not found in theme variants for <Button />:\n\nExpected one of:\n[${Object.keys(
-          theme.variants.Button
-        ).join(', ')}]`
-      );
-    }
-  }
+  warning(
+    !variant ||
+      (variant &&
+        theme?.variants?.Button &&
+        Object.keys(theme?.variants?.Button).includes(variant)),
+    `Variant "${variant}" not found in theme variants for <Button />:\n\n${theme
+      ?.variants?.Button &&
+      `Expected one of:\n[${Object.keys(theme.variants.Button).join(', ')}]`}`
+  );
 
-  const variantStyles = variant ? theme.variants.Button[variant] : {};
+  warning(
+    children || (!children && name),
+    'Buttons without children require a `name` attribute to be accessible.'
+  );
+
+  const variantStyles =
+    variant && theme?.variants?.Button ? theme.variants.Button[variant] : {};
 
   return (
     <PseudoBox
@@ -108,6 +119,8 @@ export const Button = forwardRef(function Button(
         opacity: 0.4,
         cursor: 'not-allowed',
       }}
+      aria-busy={isLoading}
+      name={name}
       {...theme.Button}
       {...variantStyles}
       {...props}
