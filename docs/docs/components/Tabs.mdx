@@ -24,35 +24,28 @@ import {
 ## Tabs with underline
 
 ```jsx
-() => {
-  const tabStyles = {
-    borderBottom: '2px solid #d2d6dc',
-  };
-  return (
-    <Tabs>
-      <TabList mb="20px" borderBottom="2px solid #d2d6dc">
-        <Tab {...tabStyles}>My Account</Tab>
-        <Tab {...tabStyles}>Favorites</Tab>
-        <Tab {...tabStyles}>Orders</Tab>
-        <Tab {...tabStyles}>Billing</Tab>
-      </TabList>
-      <TabPanels>
-        <TabPanel>
-          <p>My Account!</p>
-        </TabPanel>
-        <TabPanel>
-          <p>Favorites!</p>
-        </TabPanel>
-        <TabPanel>
-          <p>Orders!</p>
-        </TabPanel>
-        <TabPanel>
-          <p>Billing!</p>
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
-  );
-};
+<Tabs>
+  <TabList mb="20px" borderBottom="2px solid #d2d6dc">
+    <Tab>My Account</Tab>
+    <Tab>Favorites</Tab>
+    <Tab>Orders</Tab>
+    <Tab>Billing</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      <p>My Account!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Favorites!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Orders!</p>
+    </TabPanel>
+    <TabPanel>
+      <p>Billing!</p>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
 ```
 
 ## Vertical Tabs
@@ -102,21 +95,18 @@ import {
 
 ```jsx
 () => {
-  const tabStyles = {
-    borderBottom: '2px solid #d2d6dc',
-    marginRight: 2,
-    _selected: {
-      borderBottom: '2px solid #5850EC',
-    },
+  const selectedStyles = {
+    borderBottom: '2px solid rgb(85, 26, 139)',
+    color: 'rgb(85, 26, 139)',
   };
 
   return (
     <Tabs>
       <TabList mb="20px" borderBottom="2px solid #d2d6dc">
-        <Tab {...tabStyles}>My Account</Tab>
-        <Tab {...tabStyles}>Favorites</Tab>
-        <Tab {...tabStyles}>Orders</Tab>
-        <Tab {...tabStyles}>Billing</Tab>
+        <Tab _selected={{ ...selectedStyles }}>My Account</Tab>
+        <Tab _selected={{ ...selectedStyles }}>Favorites</Tab>
+        <Tab _selected={{ ...selectedStyles }}>Orders</Tab>
+        <Tab _selected={{ ...selectedStyles }}>Billing</Tab>
       </TabList>
       <TabPanels>
         <TabPanel>
