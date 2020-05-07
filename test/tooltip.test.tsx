@@ -1,22 +1,83 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, act } from '@testing-library/react';
 import 'jest-styled-components';
-import { Button, Tooltip, ThemeProvider } from '../src';
+import { LEAVE_TIMEOUT, MOUSE_REST_TIMEOUT } from '@reach/tooltip';
+import { Tooltip, ThemeProvider } from '../src';
+
+function leaveTooltip(element: HTMLElement) {
+  fireEvent.mouseLeave(element);
+  jest.advanceTimersByTime(LEAVE_TIMEOUT);
+}
 
 describe('<Tooltip />', () => {
-  it('should render', () => {
-    const { container, debug } = render(
-      <ThemeProvider>
-        <Tooltip label="Tooltip Text">
-          <Button>Button Text</Button>
-        </Tooltip>
-      </ThemeProvider>
-    );
-
-    fireEvent.mouseOver(container?.firstElementChild);
-    debug(container);
-    expect(container).toMatchSnapshot();
+  beforeEach(() => {
+    jest.useFakeTimers();
   });
+
+  describe('rendering', () => {
+    it('renders as any HTML element', async () => {
+      let tooltipText = 'Look at me';
+      let { getByText, debug } = render(
+        <ThemeProvider>
+          <p>
+            <Tooltip style={{ display: 'block' }} label={tooltipText}>
+              <span>Trigger</span>
+            </Tooltip>
+          </p>
+        </ThemeProvider>
+      );
+
+      let trigger = getByText('Trigger');
+      debug(trigger);
+      act(() => {
+        fireEvent.mouseOver(trigger);
+        jest.advanceTimersByTime(MOUSE_REST_TIMEOUT);
+      });
+
+      let tooltip = getByText(tooltipText);
+      expect(tooltip.tagName).toBe('DIV');
+
+      act(() => void leaveTooltip(trigger));
+    });
+  });
+
+  // describe('rendering', () => {
+  //   it('renders as any HTML element', () => {
+  //     let tooltipText = 'Look at me';
+  //     let { getByText } = render(
+  //       <p>
+  //         <Tooltip as="span" style={{ display: 'block' }} label={tooltipText}>
+  //           <span>Trigger</span>
+  //         </Tooltip>
+  //       </p>
+  //     );
+
+  //     let trigger = getByText('Trigger');
+  //     act(() => {
+  //       fireEvent.mouseOver(trigger);
+  //       jest.advanceTimersByTime(MOUSE_REST_TIMEOUT);
+  //     });
+
+  //     let tooltip = getByText(tooltipText);
+  //     expect(tooltip.tagName).toBe('SPAN');
+
+  //     act(() => void leaveTooltip(trigger));
+  //   });
+  // });
+
+  // it('should render', () => {
+  //   const { container, debug } = render(
+  //     <ThemeProvider>
+  //       <Tooltip label="Tooltip Text">
+  //         <Button>Button Text</Button>
+  //       </Tooltip>
+  //     </ThemeProvider>
+  //   );
+
+  //   fireEvent.mouseOver(container?.firstElementChild);
+  //   debug(container);
+  //   expect(container).toMatchSnapshot();
+  // });
 
   // it('should pass basic style props ', () => {
   //   const color = '#e3e3e3';
