@@ -52,6 +52,7 @@ export const TagsInput = function TagsInput({
   ...props
 }: TagsInput) {
   const inputRef = React.createRef<HTMLInputElement>();
+
   return (
     <StyledTagsInput
       onClick={() => inputRef && inputRef.current && inputRef.current.focus()}
@@ -66,7 +67,12 @@ export const TagsInput = function TagsInput({
           </ListItem>
         ))}
       <ListItem as="li">
-        <StyledInput ref={inputRef} data-testid="input" {...props} />
+        <StyledInput
+          aria-label="new tag input"
+          ref={inputRef}
+          data-testid="input"
+          {...props}
+        />
       </ListItem>
     </StyledTagsInput>
   );

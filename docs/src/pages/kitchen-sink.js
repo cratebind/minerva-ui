@@ -249,7 +249,7 @@ const KitchenSink = () => {
         <section className="component-wrapper">
           <h2 className="component-title">Psuedo Box</h2>
           <PseudoBox
-            hiddenLabel="Pseudo Box"
+            aria-label="Pseudo Box"
             as={Input}
             placeholder="Focus me"
             py={2}
@@ -281,14 +281,12 @@ const KitchenSink = () => {
         <section className="component-wrapper">
           <h2 className="component-title">Select</h2>
           <Stack gap="20px">
-            <Select aria-label="Select Animal">
+            <Select>
               <option value="cat">Cat</option>
               <option value="dog">Dog</option>
               <option value="other">Other</option>
             </Select>
-            <Select aria-label="Disabled Select" disabled>
-              Disabled Select
-            </Select>
+            <Select disabled>Disabled Select</Select>
           </Stack>
         </section>
 
@@ -396,7 +394,7 @@ const KitchenSink = () => {
         <section className="component-wrapper left-align">
           <h2 className="component-title">Tags Input</h2>
           <TagsInput
-            aria-label="Tags Input"
+            hiddenLabel="Tags Input"
             value={inputVal}
             tags={tags}
             onKeyDown={e => {
