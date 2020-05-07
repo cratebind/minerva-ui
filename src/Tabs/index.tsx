@@ -45,6 +45,8 @@ export const Tab = ({ children, ...rest }: TabsProps) => (
     // borderColor="transparent"
     marginBottom="-2px"
     border={0}
+    fontSize="16px"
+    bg="transparent"
     borderBottom="2px solid transparent"
     _focus={{
       color: 'blue.700',

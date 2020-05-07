@@ -8,7 +8,7 @@
 import * as React from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import classnames from 'classnames';
-import { AnimationStyles } from 'minerva-ui';
+import { AnimationStyles, ReachGlobalStyles } from 'minerva-ui';
 
 import styles from './styles.module.css';
 
@@ -22,6 +22,7 @@ function Playground({ children, theme, transformCode, ...props }) {
     >
       {/* <GlobalStyles /> */}
       <AnimationStyles />
+      <ReachGlobalStyles />
       <div
         className={classnames(
           styles.playgroundHeader,
