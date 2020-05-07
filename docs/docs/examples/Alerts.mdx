@@ -5,17 +5,24 @@ title: 'Alerts'
 ## Alert with custom border
 
 ```jsx live
-<Alert bg="teal.100" borderStyle="solid" borderColor="teal.300" borderWidth={1}>
-  This is a custom alert.
-</Alert>
+<Alert
+  bg="teal.100"
+  borderStyle="solid"
+  borderColor="teal.300"
+  borderWidth={1}
+  body="This is a custom alert."
+/>
 ```
 
 ## Alert pill
 
 ```jsx live
-<Alert status="error" borderRadius="full" title="Error:">
-  Something not great is happening.
-</Alert>
+<Alert
+  status="error"
+  borderRadius="full"
+  title="Error:"
+  body=" Something not great is happening."
+/>
 ```
 
 ## Alert with Image
@@ -45,8 +52,8 @@ title: 'Alerts'
   justifyContent="space-between"
   alignItems="center"
   width="100%"
-  title="Here is some information."
 >
+  <Text>Here is some information.</Text>
   <Button
     marginRight={5}
     bg="green.100"

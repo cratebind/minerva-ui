@@ -107,11 +107,14 @@ export const Alert = forwardRef(function Alert(
       aria-label={`${title} ${body}`}
       aria-live="polite"
     >
-      <StyledAlertInner>
-        {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
-        <StyledAlertTitle>{title}</StyledAlertTitle>
-        <StyledAlertDescription>{body}</StyledAlertDescription>
-      </StyledAlertInner>
+      {children && children}
+      {!children && (
+        <StyledAlertInner>
+          {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
+          <StyledAlertTitle>{title}</StyledAlertTitle>
+          <StyledAlertDescription>{body}</StyledAlertDescription>
+        </StyledAlertInner>
+      )}
       {canBeClosed && (
         <Button
           {...props}

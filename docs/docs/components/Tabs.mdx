@@ -24,28 +24,35 @@ import {
 ## Tabs with underline
 
 ```jsx
-<Tabs>
-  <TabList mb="20px" borderBottom="2px solid #d2d6dc">
-    <Tab borderBottom="2px solid #d2d6dc">My Account</Tab>
-    <Tab>Favorites</Tab>
-    <Tab>Orders</Tab>
-    <Tab>Billing</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>My Account!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Favorites!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Orders!</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Billing!</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
+() => {
+  const tabStyles = {
+    borderBottom: '2px solid #d2d6dc',
+  };
+  return (
+    <Tabs>
+      <TabList mb="20px" borderBottom="2px solid #d2d6dc">
+        <Tab {...tabStyles}>My Account</Tab>
+        <Tab {...tabStyles}>Favorites</Tab>
+        <Tab {...tabStyles}>Orders</Tab>
+        <Tab {...tabStyles}>Billing</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>My Account!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Favorites!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Orders!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Billing!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
 ```
 
 ## Vertical Tabs
@@ -55,6 +62,7 @@ import {
   const tabStyles = {
     width: '100%',
     marginBottom: 2,
+    marginRight: 2,
     borderRadius: 5,
     justifyContent: 'center',
     _selected: {
@@ -94,16 +102,21 @@ import {
 
 ```jsx
 () => {
-  const selectedStyles = {
-    borderBottom: '3px solid #5850EC',
+  const tabStyles = {
+    borderBottom: '2px solid #d2d6dc',
+    marginRight: 2,
+    _selected: {
+      borderBottom: '2px solid #5850EC',
+    },
   };
+
   return (
     <Tabs>
       <TabList mb="20px" borderBottom="2px solid #d2d6dc">
-        <Tab _selected={{ ...selectedStyles }}>My Account</Tab>
-        <Tab _selected={{ ...selectedStyles }}>Favorites</Tab>
-        <Tab _selected={{ ...selectedStyles }}>Orders</Tab>
-        <Tab _selected={{ ...selectedStyles }}>Billing</Tab>
+        <Tab {...tabStyles}>My Account</Tab>
+        <Tab {...tabStyles}>Favorites</Tab>
+        <Tab {...tabStyles}>Orders</Tab>
+        <Tab {...tabStyles}>Billing</Tab>
       </TabList>
       <TabPanels>
         <TabPanel>
