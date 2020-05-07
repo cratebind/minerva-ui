@@ -55,21 +55,27 @@ export const TagsInput = function TagsInput({
   ...props
 }: TagsInput) {
   const inputRef = React.createRef<HTMLInputElement>();
+
   return (
     <StyledTagsInput
       onClick={() => inputRef && inputRef.current && inputRef.current.focus()}
     >
       {tags &&
         tags.map((tag, i) => (
-          <ListItem key={tag + i}>
+          <ListItem as="li" key={tag + i}>
             <Tag data-testid="tag" my="2px">
               {tag}
               <TagButton onClick={() => onClickIcon(i)} />
             </Tag>
           </ListItem>
         ))}
-      <ListItem flexGrow={1}>
-        <StyledInput ref={inputRef} data-testid="input" {...props} />
+      <ListItem as="li">
+        <StyledInput
+          aria-label="new tag input"
+          ref={inputRef}
+          data-testid="input"
+          {...props}
+        />
       </ListItem>
     </StyledTagsInput>
   );

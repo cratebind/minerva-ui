@@ -16,7 +16,7 @@ import { InputField, Input } from 'minerva-ui';
   const [error, setError] = React.useState('');
 
   return (
-    <InputField label="Label" errorMsg={error}>
+    <InputField label="Label" errorText={error}>
       <Input
         placeholder="Basic Input"
         value={name}
@@ -42,7 +42,7 @@ import { InputField, Input } from 'minerva-ui';
     <InputField
       label="Label"
       htmlFor="basicInput"
-      errorMsg={error}
+      errorText={error}
       errorStyles={{ color: '#FF8247', size: '16px' }}
     >
       <Input
@@ -73,7 +73,7 @@ import { InputField, Input } from 'minerva-ui';
       htmlFor="basicInput"
       isRequired
       requiredMarkerColor="#FF6347"
-      errorMsg={error}
+      errorText={error}
     >
       <Input
         id="basicInput"
