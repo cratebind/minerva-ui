@@ -1,7 +1,8 @@
 {
   "packages": [
     ".",
-    "docs"
+    "docs",
+    "theme-builder"
   ],
   "version": "independent",
   "npmClient": "yarn"

@@ -1,0 +1,19 @@
+{
+  "name": "theme-builder",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@reach/accordion": "^0.9.1",
+    "@reach/visually-hidden": "^0.10.1",
+    "minerva-ui": "3.0.5",
+    "next": "9.3.6",
+    "react": "16.13.1",
+    "react-color": "^2.18.0",
+    "react-dom": "16.13.1"
+  }
+}
