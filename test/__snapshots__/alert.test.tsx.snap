@@ -41,6 +41,7 @@ exports[`<Alert /> should render 1`] = `
 .c1 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
