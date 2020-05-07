@@ -5,42 +5,209 @@ title: 'Navigation'
 ## Header
 
 ```jsx live
-<Flex
-  bg="indigo.800"
-  color="#fff"
-  p={6}
-  justifyContent="space-between"
-  alignItems="center"
->
-  <Text fontWeight="bold" color="#fff" m={0} fontSize="xl" mr={6}>
-    Minerva UI
-  </Text>
-  <Flex justifyContent="flex-start" flexGrow={1}>
-    <Link href="#" color="indigo.200" _hover={{ color: '#fff' }} mr={4}>
+<Flex bg="indigo.800" color="#fff" p={3} alignItems="center">
+  <Flex
+    fontWeight="bold"
+    color="#fff"
+    m={0}
+    fontSize="xl"
+    mr={3}
+    minWidth="initial"
+    flex="0 0 auto"
+  >
+    Minerva
+  </Flex>
+  <Flex
+    flexGrow={1}
+    flex={1}
+    width="auto"
+    alignItems="stretch"
+    minWidth="initial"
+    overflowX="auto"
+  >
+    <Link
+      display="flex"
+      minWidth="initial"
+      href="#"
+      color="indigo.200"
+      _hover={{ color: '#fff' }}
+      px={1}
+    >
+      About
+    </Link>
+    <Link
+      display="flex"
+      minWidth="initial"
+      href="#"
+      color="indigo.200"
+      _hover={{ color: '#fff' }}
+      px={1}
+    >
       Docs
     </Link>
-    <Link href="#" color="indigo.200" _hover={{ color: '#fff' }} mr={4}>
+    <Link
+      display="flex"
+      minWidth="initial"
+      href="#"
+      color="indigo.200"
+      _hover={{ color: '#fff' }}
+      px={1}
+    >
       Examples
     </Link>
-    <Link href="#" color="indigo.200" _hover={{ color: '#fff' }} mr={4}>
-      Blog
+    <Link
+      display="flex"
+      minWidth="initial"
+      href="#"
+      color="indigo.200"
+      _hover={{ color: '#fff' }}
+      px={1}
+    >
+      Contact
     </Link>
   </Flex>
-  <Box>
-    <Link
-      href="#"
-      px={4}
-      py={2}
-      color="white"
-      borderColor="white"
-      borderStyle="solid"
-      borderWidth="1px"
-      textDecoration="none"
-      borderRadius="md"
-      _hover={{ color: 'indigo.800', backgroundColor: '#fff' }}
-    >
-      Download
-    </Link>
-  </Box>
 </Flex>
+```
+
+## Dashboard Header with Profile Dropdown
+
+```jsx live
+() => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Flex
+      bg="indigo.800"
+      color="#fff"
+      px={5}
+      py={3}
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <Text fontWeight="bold" color="#fff" m={0} fontSize="xl" mr={6}>
+        Minerva UI
+      </Text>
+      <Box>
+        <MenuContainer>
+          <MenuButton
+            p={2}
+            backgroundColor="transparent"
+            border={0}
+            display="flex"
+            alignItems="center"
+            _hover={{ bg: 'indigo.900' }}
+          >
+            <Text color="white">Dave</Text>
+            <Image
+              src="https://tailwindcss.com/img/jonathan.jpg"
+              alt="profile-picture"
+              maxWidth="30px"
+              border="2px solid #fff"
+              borderRadius="full"
+              ml={2}
+            />
+          </MenuButton>
+          <MenuList menuPosition="right">
+            <MenuItem onSelect={() => alert('Edit Profile')}>
+              Edit Profile
+            </MenuItem>
+            <MenuItem onSelect={() => alert('Settings')}>Settings</MenuItem>
+            <MenuDivider />
+            <MenuLink href="https://minerva-ui.netlify.com/">Log Out</MenuLink>
+          </MenuList>
+        </MenuContainer>
+      </Box>
+    </Flex>
+  );
+};
+```
+
+## Mobile Header with Drawer
+
+```jsx live
+() => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Flex
+      bg="indigo.800"
+      color="#fff"
+      p={6}
+      justifyContent="space-between"
+      alignItems="center"
+    >
+      <Text fontWeight="bold" color="#fff" m={0} fontSize="xl" mr={6}>
+        Minerva UI
+      </Text>
+      <Box>
+        <Button
+          onClick={() => setOpen(true)}
+          padding={1}
+          bg="transparent"
+          type="button"
+          border={0}
+          _active={{
+            bg: 'indigo.900',
+          }}
+          _hover={{
+            bg: 'indigo.900',
+          }}
+        >
+          <Icon name="menu" size="26px" color="#fff" />
+        </Button>
+      </Box>
+      <Drawer
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        placement="right"
+        overflow="hidden"
+      >
+        <DrawerHeader onClose={() => setOpen(false)}>Minerva UI</DrawerHeader>
+        <DrawerBody>
+          <Flex justifyContent="flex-start" flexDirection="column" flexGrow={1}>
+            <Link
+              href="#"
+              color="indigo.700"
+              _hover={{ color: 'indigo.800' }}
+              mr={4}
+            >
+              Docs
+            </Link>
+            <Link
+              href="#"
+              color="indigo.700"
+              _hover={{ color: 'indigo.800' }}
+              mr={4}
+            >
+              Examples
+            </Link>
+            <Link
+              href="#"
+              color="indigo.700"
+              _hover={{ color: 'indigo.800' }}
+              mr={4}
+            >
+              Blog
+            </Link>
+          </Flex>
+        </DrawerBody>
+        <DrawerFooter bg="gray.50">
+          <Flex
+            px={6}
+            py={3}
+            flexDirection={['column', 'row-reverse']}
+            bg="gray.50"
+            radiusBottom="5px"
+          >
+            <Button
+              onClick={() => setOpen(false)}
+              boxShadow="base"
+              width={['100%', 'auto']}
+            >
+              Submit
+            </Button>
+          </Flex>
+        </DrawerFooter>
+      </Drawer>
+    </Flex>
+  );
+};
 ```

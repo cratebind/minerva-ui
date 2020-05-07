@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Text from '../Text';
 import { systemProps, Box } from '../layout';
 
@@ -83,3 +84,12 @@ const InputField = ({
 };
 
 export default InputField;
+
+if (__DEV__) {
+  InputField.propTypes = {
+    children: PropTypes.node,
+    label: PropTypes.string,
+    errorText: PropTypes.string,
+    isRequired: PropTypes.bool,
+  };
+}

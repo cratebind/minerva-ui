@@ -4,6 +4,7 @@ exports[`Border Radius should render 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
   border-radius: 0.125rem;
   display: block;
 }
@@ -22,6 +23,7 @@ exports[`Colors should render 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
   background-color: #0694a2;
   display: block;
 }

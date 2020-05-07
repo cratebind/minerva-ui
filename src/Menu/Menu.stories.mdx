@@ -1,0 +1,74 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { MenuContainer } from '../Menu';
+import { Box } from '../layout'
+
+<Meta title="Elements|Menu" component={MenuContainer} />
+
+# Menu
+
+Accessibility-focused dropdown menu button.
+
+### When To Use:
+
+When you need to trigger actions from a dropdown (such as when clicking in the menu of a desktop application).
+
+Do _not_ use this if you need to store a value. Use a `<select />` component instead.
+
+```js
+import { MenuContainer, MenuButton, MenuList, MenuItem, MenuLink } from 'minerva-ui'
+```
+
+```jsx
+<MenuContainer>
+  <MenuButton>
+    Actions <Icon name="chevron-down" ml={2} size="14px" />
+  </MenuButton>
+  <MenuList>
+    <MenuItem onSelect={() => alert("Download")}>Download</MenuItem>
+    <MenuItem onSelect={() => alert("Copy")}>Create a Copy</MenuItem>
+    <MenuItem onSelect={() => alert("Mark as Draft")}>
+      Mark as Draft
+    </MenuItem>
+    <MenuItem onSelect={() => alert("Delete")}>Delete</MenuItem>
+    <MenuLink href="https://minerva-ui.netlify.com/">
+      Open Documentation
+    </MenuLink>
+  </MenuList>
+</MenuContainer>
+```
+
+## With Divider
+```jsx
+<MenuContainer>
+  <MenuButton>
+    Actions <Icon name="chevron-down" ml={2} size="14px" />
+  </MenuButton>
+  <MenuList>
+    <MenuItem onSelect={() => alert("Edit Profile")}>Edit Profile</MenuItem>
+    <MenuItem onSelect={() => alert("Settings")}>
+      Settings
+    </MenuItem>
+    <MenuDivider />
+    <MenuLink href="https://minerva-ui.netlify.com/">
+      Sign Out
+    </MenuLink>
+  </MenuList>
+</MenuContainer>
+```
+
+## Positioned To Right
+```jsx
+<Flex justifyContent="flex-end">
+  <MenuContainer>
+    <MenuButton>
+      Actions <Icon name="chevron-down" ml={2} size="14px" />
+    </MenuButton>
+    <MenuList menuPosition="right">
+      <MenuItem onSelect={() => alert("Edit Profile")}>Edit Profile</MenuItem>
+      <MenuItem onSelect={() => alert("Settings")}>
+        Settings
+      </MenuItem>
+    </MenuList>
+  </MenuContainer>
+</Flex>
+```

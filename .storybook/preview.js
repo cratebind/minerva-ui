@@ -47,8 +47,8 @@ addParameters({
 
 addDecorator(storyFn => (
   <>
-    <GlobalStyles />
     <ThemeProvider>
+      <GlobalStyles />
       {storyFn()}
     </ThemeProvider>
   </>

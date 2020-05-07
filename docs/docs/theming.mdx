@@ -3,14 +3,15 @@ title: 'Theming'
 ---
 
 import { defaultTheme } from 'minerva-ui';
+import CodeSnippet from '../src/components/CodeSnippet';
 
-The Minerva theme object follows the [Styled System spec](https://system-ui.com/theme/), with some more specific styles added to create styles for specific components.
+The Minerva theme object follows the [Styled System spec](https://system-ui.com/theme/), with some more specific objects added to create styles for specific components.
 
-These specific styles allow you to control different components and their different states. In the future we plan to connect this config with tools like Figma to easily generate themes from design systems.
+These specific styles allow you to control different components and their different states. In the future we plan to connect this config with other tools to easily generate themes from design systems.
 
 ## Using a Theme
 
-Minerva comes with a [default theme](https://github.com/cratebind/minerva-ui/blob/master/src/theme.ts) that you can use to show the styles from Storybook by default.
+Minerva comes with a [default theme](https://github.com/cratebind/minerva-ui/blob/master/src/theme.ts) that you can use to show the styles shown here by default.
 
 You can also extend these styles to customize them or provide your own style object:
 
@@ -28,9 +29,23 @@ const customTheme = {
 
 render(
   <ThemeProvider theme={customTheme}>
-    <Button bg="primary" color="white">
+    <Button bg="primary" color="white" _hover={{ bg: 'primary' }}>
       Primary Button
     </Button>
+  </ThemeProvider>
+);
+```
+
+You can also entirely remove the base styles
+
+```jsx live noInline
+const customTheme = {
+  Button: {},
+};
+
+render(
+  <ThemeProvider theme={customTheme}>
+    <Button>Primary Button</Button>
   </ThemeProvider>
 );
 ```
@@ -45,8 +60,11 @@ Theme styles for specific components can be provided in your `theme` object:
     ...defaultTheme,
     Button: {
       ...defaultTheme.Button,
-      backgroundColor: 'midnightblue',
+      backgroundColor: 'blue.700',
       color: '#fff',
+      _hover: {
+        backgroundColor: 'blue.800',
+      },
     },
   };
 
@@ -58,8 +76,48 @@ Theme styles for specific components can be provided in your `theme` object:
 };
 ```
 
+## Component Variants
+
+For components like a `<Button />`, you'll often need to define more than one preset.
+
+To account for this, you can modify a `variants` object in the theme for compatible components.
+
+```jsx noInline
+const theme = {
+  ...defaultTheme,
+  variants: {
+    Button: {
+      halloween: {
+        bg: 'orange.500',
+        borderColor: 'orange.500',
+        color: 'black',
+        _hover: {
+          bg: 'orange.600',
+        },
+      },
+    },
+  },
+};
+
+render(
+  <ThemeProvider theme={theme}>
+    <Button variant="halloween">Halloween Button</Button>
+  </ThemeProvider>
+);
+```
+
+Currently only the `<Button />` component can use variants, but this will soon be extended to all components
+
+The `defaultTheme` also provides a `primary`, `secondary` and `tertiary` variant.
+
+```jsx
+<Stack horizontal>
+  <Button variant="primary">Primary Button</Button>
+  <Button variant="secondary">Secondary Button</Button>
+  <Button variant="tertiary">Tertiary Button</Button>
+</Stack>
+```
+
 ## Default Theme
 
-<code className="language-json" style={{ whiteSpace: 'pre-wrap' }}>
-  {JSON.stringify(defaultTheme, null, 2)}
-</code>
+<CodeSnippet>{JSON.stringify(defaultTheme, null, 2)}</CodeSnippet>

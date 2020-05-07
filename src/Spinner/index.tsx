@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import styled, { css, keyframes } from 'styled-components';
 import { Block } from '../layout';
 
@@ -13,9 +14,9 @@ const spin = keyframes`
 
 export interface SpinnerProps {
   /**
-   * The size of the spinner
+   * size of spinner
    */
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | string;
+  size?: string;
   /**
    * The color of the empty area in the spinner
    */
@@ -32,14 +33,6 @@ export interface SpinnerProps {
    * ```
    */
   thickness?: string;
-  /**
-   * The speed of the spinner.
-   * @example
-   * ```jsx
-   * <Spinner speed="0.2s"/>
-   * ```
-   */
-  speed?: string;
   /**
    * For accessibility, it's important to add a fallback loading text.
    * This text will be visible to screen readers.
@@ -73,16 +66,31 @@ const StyledSpinner = styled(Block)(
 
 export type Ref = HTMLDivElement;
 
-export const Spinner = forwardRef<Ref, SpinnerProps>((
-  { color = '#777', ...rest },
-  /* thickness = '2px', */
-  /* label, */
-  /* size = '20px' */
-  ref
-) => {
-  return <StyledSpinner ref={ref} color={color} {...rest} />;
-});
+export const Spinner = forwardRef<Ref, SpinnerProps>(
+  ({ color = '#777', size = '20px', thickness = '2px', ...rest }, ref) => {
+    return (
+      <StyledSpinner
+        ref={ref}
+        height={size}
+        borderWidth={thickness}
+        width={size}
+        color={color}
+        {...rest}
+      />
+    );
+  }
+);
 
 Spinner.displayName = 'Spinner';
 
 export default Spinner;
+
+if (__DEV__) {
+  Spinner.propTypes = {
+    size: PropTypes.string,
+    emptyColor: PropTypes.string,
+    color: PropTypes.string,
+    thickness: PropTypes.string,
+    label: PropTypes.string,
+  };
+}

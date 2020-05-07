@@ -129,12 +129,11 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
         as="fieldset"
         disabled={isLoading}
         aria-busy={isLoading}
-        maxWidth="600px"
+        maxWidth="800px"
         border={0}
       >
         <Flex>
-          <PseudoBox
-            as={Input}
+          <Input
             value={value}
             onChange={e => setValue(e.target.value)}
             radiusRight={0}

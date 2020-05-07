@@ -1,4 +1,219 @@
-import { createGlobalStyle } from 'styled-components';
+import { css, createGlobalStyle } from 'styled-components';
+
+const animationStyles = css`
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideup {
+    from {
+      transform: translateY(20px);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes grow {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideright {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes slideleft {
+    from {
+      transform: translateX(100%);
+    }
+
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  [data-reach-dialog-overlay] {
+    animation: fadein 0.18s;
+  }
+
+  [data-reach-dialog-content] {
+    animation: slideup 0.18s;
+  }
+
+  [data-minerva-drawer='left'] {
+    animation: slideright 0.18s;
+  }
+
+  [data-minerva-drawer='right'] {
+    animation: slideleft 0.18s;
+  }
+
+  .menu-list[data-reach-menu-list],
+  .menu-list[data-reach-menu-items] {
+    transform-origin: top;
+    animation: grow 0.2s ease;
+  }
+`;
+
+export const ReachStyles = css`
+  /*
+ * Reach Menu
+ */
+  :root {
+    --reach-menu-button: 1;
+  }
+
+  [data-reach-menu],
+  [data-reach-menu-popover] {
+    display: block;
+    position: absolute;
+  }
+
+  [data-reach-menu][hidden],
+  [data-reach-menu-popover][hidden] {
+    display: none;
+  }
+
+  [data-reach-menu-list],
+  [data-reach-menu-items] {
+    display: block;
+    white-space: nowrap;
+    /* border: solid 1px hsla(0, 0%, 0%, 0.25); */
+    background: hsla(0, 100%, 100%, 0.99);
+    outline: none;
+    /* padding: 1rem 0; */
+    /* font-size: 85%; */
+  }
+
+  [data-reach-menu-item] {
+    display: block;
+    user-select: none;
+  }
+
+  /*
+ The dom structure of a MenuLink is reach-menu-item > a,
+ so to target all items we can use 'data-reach - menu - item'
+*/
+  [data-reach-menu-item] {
+    /*
+    These are styled in one rule instead of something like a[data-reach-menu-item]
+    and li[data-reach-menu-item] so that apps don't have to fight specificity and
+    can style both li and a menu items with one rule,
+    ie: '[data - selected] { background: red; } '.
+    Otherwise they'd have to define two styles, one for a and one for li.
+  */
+
+    /* reach-menu-item */
+    cursor: pointer;
+
+    /* a */
+    display: block;
+    /* color: inherit; */
+    /* font: inherit; */
+    text-decoration: initial;
+
+    /* both */
+    /* padding: 5px 20px; */
+  }
+
+  /* pseudo pseudo selector */
+  [data-reach-menu-item][data-selected] {
+    /* background: hsl(211, 81%, 36%); */
+    /* color: white; */
+    outline: none;
+  }
+
+  /*
+ * Reach Dialog
+ */
+
+  :root {
+    --reach-dialog: 1;
+  }
+
+  [data-reach-dialog-overlay] {
+    /* background: hsla(0, 0%, 0%, 0.33); */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+  }
+
+  [data-reach-dialog-content] {
+    /* width: 50vw; */
+    /* margin: 10vh auto; */
+    /* background: white; */
+    /* padding: 2rem; */
+    outline: none;
+  }
+
+  /**
+ * Reach Tabs
+ */
+  :root {
+    --reach-tabs: 1;
+  }
+
+  [data-reach-tabs][data-orientation='vertical'] {
+    display: flex;
+  }
+
+  [data-reach-tab-list] {
+    display: flex;
+  }
+
+  [data-reach-tab-list][aria-orientation='vertical'] {
+    flex-direction: column;
+  }
+
+  [data-reach-tab] {
+    /* display: inline-block; */
+    /* border: none; */
+    /* padding: 0.25em 0.5em; */
+    /* margin: 0; */
+    /* background: none; */
+    /* color: inherit; */
+    /* font: inherit; */
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  [data-reach-tab]:active {
+    /* background: hsla(0, 0%, 0%, 0.05); */
+  }
+
+  [data-reach-tab]:disabled {
+    /* opacity: 0.25; */
+    cursor: default;
+  }
+
+  [data-reach-tab][data-selected] {
+    /* border-bottom: 1px solid currentColor; */
+  }
+`;
 
 /**
  * Base styles from Tailwind CSS
@@ -599,33 +814,12 @@ video {
   height: auto;
 }
 
+${ReachStyles}
+${animationStyles}
+`;
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideup {
-  from {
-    transform: translateY(20px);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-[data-reach-dialog-overlay] {
-  animation: fadein 0.18s;
-}
-
-[data-reach-dialog-content] {
-  animation: slideup 0.18s;
-}
+export const AnimationStyles = createGlobalStyle`
+  ${animationStyles}
 `;
 
 export default GlobalStyles;

@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
 import { useComponentStyles } from '../theme';
 
@@ -32,3 +33,11 @@ Text.defaultProps = {
 };
 
 export default Text;
+
+if (__DEV__) {
+  Text.propTypes = {
+    children: PropTypes.node,
+    lineHeight: PropTypes.string,
+    props: PropTypes.any,
+  };
+}

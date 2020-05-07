@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Flex, Input, useTheme } from 'minerva-ui';
+import { Box, Flex, Input } from 'minerva-ui';
 import {
   Accordion,
   AccordionItem,
@@ -78,7 +78,7 @@ const fieldSectionCount = Object.keys(fieldSections).length + 1;
 
 const Inspector = React.memo(function Inspector() {
   const { state, setContext } = useAppContext();
-  const themeContext = useTheme();
+  // const themeContext = useTheme();
 
   const [activeSections, setActiveSections] = useState([
     ...new Array(fieldSectionCount).fill().map((_, index) => index),

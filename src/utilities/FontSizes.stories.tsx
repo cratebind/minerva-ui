@@ -9,13 +9,9 @@ export default {
 };
 
 export const FontSizes = () => {
-  return (
-    <>
-      {Object.keys(fontSizes).map(key => (
-        <Block>
-          <Text fontSize={fontSizes[key]}>Heading ({key})</Text>
-        </Block>
-      ))}
-    </>
-  );
+  return Object.keys(fontSizes).map(key => (
+    <Block>
+      <Text fontSize={fontSizes[key]}>Heading ({key})</Text>
+    </Block>
+  ));
 };

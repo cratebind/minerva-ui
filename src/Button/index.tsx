@@ -2,10 +2,12 @@ import React, { forwardRef } from 'react';
 import warning from 'tiny-warning';
 import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
-import { MinervaProps } from '../layout';
 import { useTheme } from '../theme';
+import PropTypes from 'prop-types';
 // import { variant } from 'styled-system';
 // import styled from 'styled-components';
+import exact from 'prop-types-exact';
+import { MinervaProps, minervaPropTypes } from '../layout';
 
 export const buttonVariants = {
   primary: {
@@ -98,11 +100,17 @@ export const Button = forwardRef(function Button(
       role="button"
       transition="all 150ms ease 0s"
       outline="none"
+      cursor="pointer"
       _hover={{
         backgroundColor: '#f9fafb',
         cursor: 'pointer',
       }}
       _focus={{
+        borderColor: '#a4cafe',
+        boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
+        outline: 0,
+      }}
+      _active={{
         borderColor: '#a4cafe',
         boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
         outline: 0,
@@ -122,4 +130,24 @@ export const Button = forwardRef(function Button(
   );
 });
 
+if (process.env.NODE_ENV !== 'production') {
+  Button.propTypes = exact({
+    ...minervaPropTypes,
+    children: PropTypes.node,
+    disabled: PropTypes.bool,
+    isLoading: PropTypes.bool,
+    onClick: PropTypes.func,
+    style: PropTypes.object,
+  });
+}
+
 export default Button;
+
+if (__DEV__) {
+  Button.propTypes = {
+    children: PropTypes.node,
+    disabled: PropTypes.bool,
+    isLoading: PropTypes.bool,
+    variant: PropTypes.string,
+  };
+}

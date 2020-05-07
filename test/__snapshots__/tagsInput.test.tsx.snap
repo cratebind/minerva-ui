@@ -4,6 +4,10 @@ exports[`<TagsInput /> should render 1`] = `
 .c2 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   font-size: 16px;
   border-style: solid;
   border-color: #d2d6dc;
@@ -19,11 +23,27 @@ exports[`<TagsInput /> should render 1`] = `
   width: 100%;
 }
 
+.c2:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(164,202,254,.45);
+}
+
+.c2:disabled,
+.c2:disabled:focus,
+.c2:disabled:hover,
+.c2[aria-disabled=true],
+.c2[aria-disabled=true]:focus,
+.c2[aria-disabled=true]:hover {
+  background-color: #EAEAEA;
+  color: #8F8F8F;
+  cursor: not-allowed;
+}
+
 .c0 {
   background: white;
   box-sizing: border-box;
   border: 1px solid #d2d6dc;
-  padding: 3px 32px 3px 12px;
+  padding: 3px 12px 3px 12px;
   border-width: 1px;
   border-radius: 4px;
   -webkit-transition: all 250ms ease 0s;
@@ -50,9 +70,11 @@ exports[`<TagsInput /> should render 1`] = `
   display: inline-block;
   width: 100%;
   border: none;
+  padding: 0;
   padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  line-height: 44px;
+  height: 100%;
+  min-height: 44px;
 }
 
 .c3:focus {
@@ -62,6 +84,11 @@ exports[`<TagsInput /> should render 1`] = `
 .c1 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   list-style-type: none;
   margin-right: 5px;
 }

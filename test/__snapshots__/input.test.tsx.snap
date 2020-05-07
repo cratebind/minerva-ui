@@ -4,6 +4,10 @@ exports[`<Input /> should render 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   font-size: 16px;
   border-style: solid;
   border-color: #d2d6dc;
@@ -17,6 +21,22 @@ exports[`<Input /> should render 1`] = `
   transition: all 250ms ease 0s;
   outline: none;
   width: 100%;
+}
+
+.c0:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(164,202,254,.45);
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover,
+.c0[aria-disabled=true],
+.c0[aria-disabled=true]:focus,
+.c0[aria-disabled=true]:hover {
+  background-color: #EAEAEA;
+  color: #8F8F8F;
+  cursor: not-allowed;
 }
 
 <div>

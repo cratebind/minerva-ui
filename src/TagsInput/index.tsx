@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Input, { InputProps } from '../Input';
 import Tag, { TagButton } from '../Tag';
@@ -8,7 +9,7 @@ const StyledTagsInput = styled.ul`
   background: white;
   box-sizing: border-box;
   border: 1px solid #d2d6dc;
-  padding: 3px 32px 3px 12px;
+  padding: 3px 12px 3px 12px;
   border-width: 1px;
   border-radius: 4px;
   transition: all 250ms ease 0s;
@@ -27,9 +28,11 @@ const StyledInput = styled(Input)`
   display: inline-block;
   width: 100%;
   border: none;
+  padding: 0;
   padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  line-height: 44px;
+  height: 100%;
+  min-height: 44px;
 
   &:focus {
     box-shadow: none;
@@ -79,3 +82,10 @@ export const TagsInput = function TagsInput({
 };
 
 export default TagsInput;
+
+if (__DEV__) {
+  TagsInput.propTypes = {
+    tags: PropTypes.arrayOf(PropTypes.string),
+    onClickIcon: PropTypes.func,
+  };
+}

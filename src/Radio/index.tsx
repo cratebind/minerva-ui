@@ -1,5 +1,6 @@
 import React, { useContext, forwardRef } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { MinervaProps, systemProps } from '../layout';
 import { Box } from '../layout';
 import VisuallyHidden from '../VisuallyHidden';
@@ -155,3 +156,19 @@ export const Radio = forwardRef(function Radio(
 });
 
 export default Radio;
+
+if (__DEV__) {
+  Radio.propTypes = {
+    children: PropTypes.node,
+    value: PropTypes.string,
+    isDisabled: PropTypes.bool,
+  };
+
+  RadioGroup.propTypes = {
+    children: PropTypes.node,
+    value: PropTypes.string,
+    radioColor: PropTypes.string,
+    radioSize: PropTypes.string,
+    onChange: PropTypes.func,
+  };
+}

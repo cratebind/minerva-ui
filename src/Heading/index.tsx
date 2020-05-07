@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
 import { useComponentStyles } from '../theme';
 
 export interface HeadingProps extends MinervaProps {
   children?: React.ReactNode;
-  fontSize?: string;
 }
 
 export const Heading = forwardRef(function Heading(
@@ -30,3 +30,10 @@ export const Heading = forwardRef(function Heading(
 });
 
 export default Heading;
+
+if (__DEV__) {
+  Heading.propTypes = {
+    children: PropTypes.node,
+    fontSize: PropTypes.string,
+  };
+}

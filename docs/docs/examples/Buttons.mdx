@@ -17,16 +17,101 @@ render(
 );
 ```
 
+## Button with Icon
+
+```jsx live
+<Stack horizontal>
+  <Button>
+    <Icon name="mail" mr={2} size="16px" /> Inbox
+  </Button>
+  <Button>
+    Save <Icon name="save" ml={2} size="16px" />
+  </Button>
+</Stack>
+```
+
+## Pagination
+
+```jsx live noInline
+const buttonStyles = {
+  borderRadius: 0,
+  fontWeight: 400,
+  marginLeft: '-1px',
+};
+
+render(
+  <>
+    <Button {...buttonStyles} radiusLeft="md" px={2}>
+      <Icon name="chevron-left" size="20px" height="100%" />
+    </Button>
+    <Button {...buttonStyles}>1</Button>
+    <Button {...buttonStyles} fontWeight={800}>
+      2
+    </Button>
+    <Button {...buttonStyles}>3</Button>
+    <Button {...buttonStyles}>4</Button>
+    <Button {...buttonStyles}>5</Button>
+    <Button {...buttonStyles} radiusRight="md" px={2}>
+      <Icon name="chevron-right" size="20px" height="100%" />
+    </Button>
+  </>
+);
+```
+
 ## Button Hover Styles
 
 ```jsx live
 <Button
   _hover={{
-    backgroundColor: 'purple.800',
+    bg: 'purple.800',
     borderColor: 'purple.800',
     color: '#fff',
   }}
+  _active={{
+    bg: 'purple.900',
+    borderColor: 'purple.900',
+  }}
 >
   Hover Button
+</Button>
+```
+
+## Button Pill
+
+```jsx live
+<Button borderRadius="full">Button Pill</Button>
+```
+
+## Button with Shadow
+
+```jsx live
+<Button boxShadow="base">Shadow Button</Button>
+```
+
+## Custom Image Button
+
+```jsx live
+<Button boxShadow="base">
+  <Image
+    src="https://images.unsplash.com/photo-1553798194-cc0213ae7f99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80"
+    borderRadius="full"
+    w="3rem"
+    h="3rem"
+    objectFit="cover"
+    marginRight="1rem"
+  />
+  Send message to Dave
+</Button>
+```
+
+## Button with Animated Styles
+
+```jsx live
+<Button
+  _active={{
+    transform: 'translateY(2px)',
+  }}
+>
+  Click here!
 </Button>
 ```

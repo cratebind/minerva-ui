@@ -1,9 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Select /> should change style if disabled 1`] = `
+.c3 {
+  box-sizing: border-box;
+  min-width: 0;
+  color: #374151;
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  color: #000;
+}
+
 .c0 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
   position: relative;
   display: block;
 }
@@ -15,12 +26,15 @@ exports[`<Select /> should change style if disabled 1`] = `
   width: 100%;
   background-color: #fff;
   border-width: 1px;
+  border-color: #d2d6dc;
   color: #374151;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -63,11 +77,6 @@ exports[`<Select /> should change style if disabled 1`] = `
   cursor: not-allowed;
 }
 
-.c3 {
-  height: 1.25rem;
-  width: 1.25rem;
-}
-
 .c2 {
   position: absolute;
   display: -webkit-inline-box;
@@ -100,7 +109,7 @@ exports[`<Select /> should change style if disabled 1`] = `
     Name
   </label>
   <div
-    class="sc-AxjAm c0"
+    class="c0"
   >
     <select
       class="c1"
@@ -123,13 +132,18 @@ exports[`<Select /> should change style if disabled 1`] = `
     >
       <svg
         class="c3"
-        focusable="false"
-        role="presentation"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
         viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-          fill="currentColor"
+        <polyline
+          points="6 9 12 15 18 9"
         />
       </svg>
     </div>
@@ -138,9 +152,20 @@ exports[`<Select /> should change style if disabled 1`] = `
 `;
 
 exports[`<Select /> should render 1`] = `
+.c3 {
+  box-sizing: border-box;
+  min-width: 0;
+  color: #374151;
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  color: #000;
+}
+
 .c0 {
   box-sizing: border-box;
   min-width: 0;
+  color: #374151;
   position: relative;
   display: block;
 }
@@ -152,12 +177,15 @@ exports[`<Select /> should render 1`] = `
   width: 100%;
   background-color: #fff;
   border-width: 1px;
+  border-color: #d2d6dc;
   color: #374151;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -200,11 +228,6 @@ exports[`<Select /> should render 1`] = `
   cursor: not-allowed;
 }
 
-.c3 {
-  height: 1.25rem;
-  width: 1.25rem;
-}
-
 .c2 {
   position: absolute;
   display: -webkit-inline-box;
@@ -237,7 +260,7 @@ exports[`<Select /> should render 1`] = `
     Name
   </label>
   <div
-    class="sc-AxjAm c0"
+    class="c0"
   >
     <select
       class="c1"
@@ -259,13 +282,18 @@ exports[`<Select /> should render 1`] = `
     >
       <svg
         class="c3"
-        focusable="false"
-        role="presentation"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
         viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
-          fill="currentColor"
+        <polyline
+          points="6 9 12 15 18 9"
         />
       </svg>
     </div>

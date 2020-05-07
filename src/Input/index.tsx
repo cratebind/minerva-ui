@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 import warning from 'tiny-warning';
+import PropTypes from 'prop-types';
 import { MinervaProps } from '../layout';
 import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';
@@ -64,3 +65,9 @@ export const Input = forwardRef(function Input(
 });
 
 export default Input;
+
+if (__DEV__) {
+  Input.propTypes = {
+    disabled: PropTypes.bool,
+  };
+}

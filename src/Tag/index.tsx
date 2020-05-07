@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { MinervaProps, systemProps, Box } from '../layout';
 import { Icon } from '../Icon';
@@ -20,6 +21,7 @@ const StyledTag = styled(Box)<MinervaProps>(
     backgroundColor: '#EDF2F7',
     borderRadius: '5px',
     padding: '8px 10px',
+    fontSize: '16px',
     ...props.theme.Tag,
   }),
   systemProps
@@ -68,3 +70,13 @@ export const Tag = forwardRef(function Tag(
 });
 
 export default Tag;
+
+if (__DEV__) {
+  Tag.propTypes = {
+    children: PropTypes.node,
+  };
+
+  TagButton.propTypes = {
+    iconName: PropTypes.string,
+  };
+}
