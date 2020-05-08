@@ -1,6 +1,10 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { Tooltip as TooltipComponent } from '@reach/tooltip';
+import {
+  createShouldForwardProp,
+  props,
+} from '@styled-system/should-forward-prop';
 import { MinervaProps, systemProps } from '../layout';
 import '@reach/tooltip/styles.css';
 import styled from 'styled-components';
@@ -9,7 +13,7 @@ import { useComponentStyles } from '../theme';
 export interface TooltipProps extends MinervaProps {
   children?: React.ReactNode;
   label?: string;
-  tooltipPosition?: 'top' | 'left' | 'bottom' | 'right' | 'default';
+  placement?: 'top' | 'left' | 'bottom' | 'right' | 'default';
 }
 
 const top = (triggerRect, tooltipRect) => {
@@ -68,7 +72,27 @@ const defaultPosition = (triggerRect, tooltipRect) => {
   };
 };
 
-export const TooltipCustom = styled(TooltipComponent)(
+const shouldForwardProp = createShouldForwardProp([
+  ...props,
+  'd',
+  'textDecoration',
+  'visibility',
+  'transform',
+  'cursor',
+  'minWidth',
+  'maxWidth',
+  'width',
+  'height',
+  'isOpen',
+  'onDismiss',
+  'onClose',
+]);
+
+// @ts-ignore
+export const TooltipCustom = styled(TooltipComponent).withConfig({
+  // for some reason we have to manually allow "position" to be passed
+  shouldForwardProp: prop => prop === 'position' || shouldForwardProp(prop),
+})(
   {
     backgroundColor: 'gray.700',
     border: 0,
@@ -81,12 +105,9 @@ export const TooltipCustom = styled(TooltipComponent)(
 );
 
 export const Tooltip = forwardRef(
-  (
-    { label, children, tooltipPosition = 'default', ...props }: TooltipProps,
-    ref
-  ) => {
-    const setTooltipPosition = (triggerRect, tooltipRect) => {
-      switch (tooltipPosition) {
+  ({ label, children, placement = 'default', ...props }: TooltipProps, ref) => {
+    const setPlacement = (triggerRect, tooltipRect) => {
+      switch (placement) {
         case 'top':
           return top(triggerRect, tooltipRect);
         case 'bottom':
@@ -105,7 +126,7 @@ export const Tooltip = forwardRef(
     return (
       <TooltipCustom
         ref={ref}
-        position={setTooltipPosition}
+        position={setPlacement}
         label={label}
         backgroundColor="gray.700"
         border="none"
@@ -130,6 +151,6 @@ if (__DEV__) {
   Tooltip.propTypes = {
     children: PropTypes.node,
     label: PropTypes.string,
-    tooltipPosition: PropTypes.oneOf(['top', 'bottom', 'right', 'default']),
+    placement: PropTypes.oneOf(['top', 'bottom', 'right', 'left', 'default']),
   };
 }

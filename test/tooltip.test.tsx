@@ -9,35 +9,51 @@ function leaveTooltip(element: HTMLElement) {
   jest.advanceTimersByTime(LEAVE_TIMEOUT);
 }
 
+type Positions = 'top' | 'left' | 'bottom' | 'right' | 'default';
+
 describe('<Tooltip />', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
 
   describe('rendering', () => {
-    it('renders as any HTML element', async () => {
-      let tooltipText = 'Look at me';
-      let { getByText, debug } = render(
-        <ThemeProvider>
-          <p>
-            <Tooltip style={{ display: 'block' }} label={tooltipText}>
-              <span>Trigger</span>
-            </Tooltip>
-          </p>
-        </ThemeProvider>
-      );
+    const POSITIONS: Array<Positions> = [
+      'top',
+      'left',
+      'bottom',
+      'right',
+      'default',
+    ];
 
-      let trigger = getByText('Trigger');
-      debug(trigger);
-      act(() => {
-        fireEvent.mouseOver(trigger);
-        jest.advanceTimersByTime(MOUSE_REST_TIMEOUT);
+    POSITIONS.forEach(position => {
+      it('renders all positions on hover', async () => {
+        let tooltipText = 'Look at me';
+        let { getByText, debug } = render(
+          <ThemeProvider>
+            <p>
+              <Tooltip
+                placement={position}
+                style={{ display: 'block' }}
+                label={tooltipText}
+              >
+                <span>Trigger</span>
+              </Tooltip>
+            </p>
+          </ThemeProvider>
+        );
+
+        let trigger = getByText('Trigger');
+        debug(trigger);
+        act(() => {
+          fireEvent.mouseOver(trigger);
+          jest.advanceTimersByTime(MOUSE_REST_TIMEOUT);
+        });
+
+        let tooltip = getByText(tooltipText);
+        expect(tooltip.tagName).toBe('DIV');
+
+        act(() => void leaveTooltip(trigger));
       });
-
-      let tooltip = getByText(tooltipText);
-      expect(tooltip.tagName).toBe('DIV');
-
-      act(() => void leaveTooltip(trigger));
     });
   });
 
