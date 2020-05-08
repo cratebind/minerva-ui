@@ -1,0 +1,55 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Tooltip from '../Tooltip';
+import { Box } from '../layout';
+import { Button } from '../Button';
+
+<Meta title="Elements|Tooltip" />
+
+# Tooltip
+
+Basic tooltip that pops up when hovering its child component
+
+```js
+import { Tooltip } from 'minerva-ui'
+```
+
+```jsx
+<Tooltip
+  label="Tooltip text"
+>
+  <Button>Hover me!</Button>
+</Tooltip>
+```
+
+# Tooltip with Custom Position
+
+```js
+import { Tooltip } from 'minerva-ui'
+```
+
+```jsx
+<Tooltip
+  label="Tooltip text"
+  placement="right"
+>
+  <Button variant="primary">Hover me!</Button>
+</Tooltip>
+```
+
+# Tooltip with Custom Styles
+
+```js
+import { Tooltip } from 'minerva-ui'
+```
+
+```jsx
+<Tooltip
+  label="Tooltip text"
+  bg="indigo.700"
+  borderRadius="full"
+>
+  <Button variant="primary">Hover me!</Button>
+</Tooltip>
+```
+
+<Props of={Tooltip} />
