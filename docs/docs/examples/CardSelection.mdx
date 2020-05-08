@@ -1,0 +1,66 @@
+---
+id: CardSelection
+title: Card Selection
+sidebar_label: Card Selection
+---
+
+## Selecting a card from a list
+
+```jsx live
+() => {
+  const items = [
+    {
+      id: 1,
+      title: 'Small',
+      description: 'For light background jobs like sending email.',
+      cost: '$40',
+    },
+    {
+      id: 2,
+      title: 'Medium',
+      description: 'For tasks like image resizing, exporting PDFs, etc.',
+      cost: '$40',
+    },
+    {
+      id: 3,
+      title: 'Large',
+      description: 'For intensive tasks like video encoding, etc.',
+      cost: '$40',
+    },
+  ];
+  const [selected, setSelected] = useState({});
+
+  return items.map(plan => (
+    <Flex
+      flexDirection="row"
+      boxShadow="md"
+      borderRadius="md"
+      maxWidth="30rem"
+      overflow="hidden"
+      alignItems="center"
+      borderWidth="1"
+      borderColor="blue.500"
+      onClick={() => setSelected(plan)}
+    >
+      <Box
+        width={4}
+        height={4}
+        backgroundColor={selected.id === plan.id ? 'gray.500' : 'transparent'}
+        mx={4}
+        borderRadius={50}
+        borderColor="gray.500"
+        borderWidth={1}
+        borderStyle="solid"
+      />
+      <Flex flexDirection="column" px={1} py={4}>
+        <Text fontWeight="bold" fontSize="xl" mb={1} color="gray.700">
+          {plan.title}
+        </Text>
+        <Text color="gray.400" lineHeight="normal">
+          {plan.description}
+        </Text>
+      </Flex>
+    </Flex>
+  ));
+};
+```
