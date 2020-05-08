@@ -50,7 +50,7 @@ exports[`<Alert /> should render 1`] = `
 
 <div>
   <div
-    aria-label="Test undefined"
+    aria-label="Test"
     aria-live="polite"
     class="sc-AxiKw c0"
     role="alert"
@@ -63,9 +63,6 @@ exports[`<Alert /> should render 1`] = `
       >
         Test
       </p>
-      <p
-        class="c2 "
-      />
     </div>
   </div>
 </div>

@@ -17,7 +17,7 @@ describe('<Alert />', () => {
     const description = 'Hello World';
     const { container } = render(
       <ThemeProvider>
-        <Alert body={description} />
+        <Alert>{description}</Alert>
       </ThemeProvider>
     );
 
@@ -29,7 +29,7 @@ describe('<Alert />', () => {
     const description = 'World';
     const { container } = render(
       <ThemeProvider>
-        <Alert title={title} body={description} />
+        <Alert title={title}>{description}</Alert>}
       </ThemeProvider>
     );
 
@@ -41,7 +41,9 @@ describe('<Alert />', () => {
     const backgroundColor = '#f8b4b4';
     const { getByTestId } = render(
       <ThemeProvider>
-        <Alert status="error" data-testid="alert" body="Error" />
+        <Alert status="error" data-testid="alert">
+          error
+        </Alert>
       </ThemeProvider>
     );
     const alert = getByTestId('alert');
@@ -52,7 +54,9 @@ describe('<Alert />', () => {
     const backgroundColor = '#fdf6b2';
     const { getByTestId } = render(
       <ThemeProvider>
-        <Alert bg={backgroundColor} data-testid="alert" body="Custom Color" />
+        <Alert bg={backgroundColor} data-testid="alert">
+          Custom Color
+        </Alert>
       </ThemeProvider>
     );
     const alert = getByTestId('alert');
@@ -76,13 +80,9 @@ describe('<Alert />', () => {
     const closeText = 'Dismiss';
     const { container } = render(
       <ThemeProvider>
-        <Alert
-          title={title}
-          body={description}
-          canBeClosed
-          closeText={closeText}
-          hasCloseIcon
-        />
+        <Alert title={title} canBeClosed closeText={closeText} hasCloseIcon>
+          {description}
+        </Alert>
       </ThemeProvider>
     );
 

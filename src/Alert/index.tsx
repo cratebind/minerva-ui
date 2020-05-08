@@ -39,7 +39,6 @@ export interface AlertProps extends MinervaProps {
   children?: React.ReactNode;
   status?: 'error' | 'success' | 'warning' | 'info';
   title?: string;
-  body?: string;
   bg?: string;
   icon?: string;
   isOpen?: boolean;
@@ -73,7 +72,6 @@ const alertTypes = {
 export const Alert = forwardRef(function Alert(
   {
     title,
-    body,
     children,
     status,
     bg,
@@ -104,17 +102,14 @@ export const Alert = forwardRef(function Alert(
       role="alert"
       backgroundColor={bg ? bg : statusColor}
       {...props}
-      aria-label={`${title} ${body}`}
+      aria-label={`${title}`}
       aria-live="polite"
     >
-      {children && children}
-      {!children && (
-        <StyledAlertInner>
-          {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
-          <StyledAlertTitle>{title}</StyledAlertTitle>
-          <StyledAlertDescription>{body}</StyledAlertDescription>
-        </StyledAlertInner>
-      )}
+      <StyledAlertInner>
+        {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
+        <StyledAlertTitle>{title}</StyledAlertTitle>
+      </StyledAlertInner>
+      {children}
       {canBeClosed && (
         <Button
           {...props}
