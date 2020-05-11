@@ -152,7 +152,7 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
 
 # Card Selection Examples
 
-## Selecting an item card from a list
+## Selecting an item from a list
 
 ```jsx live
 () => {
@@ -181,9 +181,11 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
   return items.map(plan => (
     <Flex
       flexDirection="row"
-      boxShadow="md"
-      borderRadius="md"
-      maxWidth="30rem"
+      width="100%"
+      borderBottomWidth={1}
+      borderBottomStyle="solid"
+      borderBottomColor="gray.300"
+      pr={3}
       overflow="hidden"
       alignItems="center"
       onClick={() => setSelected(plan)}
@@ -210,11 +212,24 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
           borderStyle="solid"
         />
       </Flex>
-      <Flex flexDirection="column" px={1} py={4}>
-        <Text fontWeight="bold" fontSize="xl" mb={1} color="gray.700">
-          {plan.title}
-        </Text>
-        <Text color="gray.400">{plan.description}</Text>
+      <Flex
+        width="100%"
+        flexDirection="row"
+        justifyContent="space-between"
+        px={1}
+        py={4}
+      >
+        <Flex flexDirection="column">
+          <Text fontWeight="bold" fontSize="xl" mb={1} color="gray.700">
+            {plan.title}
+          </Text>
+          <Text color="gray.400">{plan.description}</Text>
+        </Flex>
+        <Flex>
+          <Text fontSize="2xl" py={2}>
+            {plan.cost}/mo
+          </Text>
+        </Flex>
       </Flex>
     </Flex>
   ));
