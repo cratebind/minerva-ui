@@ -1,6 +1,7 @@
 import React from 'react';
 import { Alert } from '../Alert';
 import Button from '../Button';
+import Icon from '../Icon';
 
 export default {
   title: 'Elements|Alert',
@@ -34,17 +35,22 @@ export const Hidden = () => {
 
   return (
     <>
-      {!open && <Button onClick={() => setOpen(true)}>Open Alert</Button>}
-      <Alert
-        canBeClosed
-        closeText="Got it!"
-        isOpen={open}
-        onClose={() => setOpen(false)}
-        status="error"
-        title="Whoa!"
-      >
-        Something not great is happening!
-      </Alert>
+      <Button onClick={() => setOpen(true)}>Open Alert</Button>
+      {open && (
+        <Alert status="error" title="Whoa!">
+          Something not great is happening!
+          <Button
+            bg="transparent"
+            padding={2}
+            border={0}
+            name="Close Alert"
+            marginLeft="auto"
+            onClick={() => setOpen(false)}
+          >
+            <Icon name="x" size="20px" />
+          </Button>
+        </Alert>
+      )}
     </>
   );
 };
@@ -54,7 +60,7 @@ export const Custom = () => (
     <Alert icon="arrow-right-circle" bg="orange.200" title="Alert!!!" />
     <br />
     <Alert icon="circle" bg="green.100">
-      "Here is some information."
+      Here is some information.
     </Alert>
   </>
 );
