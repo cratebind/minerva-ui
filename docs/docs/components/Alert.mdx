@@ -36,7 +36,7 @@ If status codes are supplied, the component will supply predefined colors and ic
 </>
 ```
 
-## Alerts that close
+## Closeable Alert
 
 You can supply a prop of `canBeClosed` to allow an Alert to display and hide.
 
@@ -46,17 +46,22 @@ You can supply a prop of `canBeClosed` to allow an Alert to display and hide.
 
   return (
     <>
-      {!open && <Button onClick={() => setOpen(true)}>Open Alert</Button>}
-      <Alert
-        canBeClosed
-        closeText="Got it!"
-        isOpen={open}
-        onClose={() => setOpen(false)}
-        status="error"
-        title="Whoa!"
-      >
-        Something not great is happening!
-      </Alert>
+      <Button onClick={() => setOpen(true)}>Open Alert</Button>
+      {open && (
+        <Alert status="error" title="Whoa!">
+          Something not great is happening!
+          <Button
+            bg="transparent"
+            padding={1}
+            border={0}
+            name="Close Alert"
+            marginLeft="auto"
+            onClick={() => setOpen(false)}
+          >
+            <Icon name="x" size="20px" />
+          </Button>
+        </Alert>
+      )}
     </>
   );
 };

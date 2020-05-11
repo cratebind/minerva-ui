@@ -27,8 +27,8 @@ describe('<Tooltip />', () => {
 
     POSITIONS.forEach(position => {
       it('renders all positions on hover', async () => {
-        let tooltipText = 'Look at me';
-        let { getByText, debug } = render(
+        const tooltipText = 'Look at me';
+        const { getByText } = render(
           <ThemeProvider>
             <p>
               <Tooltip
@@ -42,14 +42,13 @@ describe('<Tooltip />', () => {
           </ThemeProvider>
         );
 
-        let trigger = getByText('Trigger');
-        debug(trigger);
+        const trigger = getByText('Trigger');
         act(() => {
           fireEvent.mouseOver(trigger);
           jest.advanceTimersByTime(MOUSE_REST_TIMEOUT);
         });
 
-        let tooltip = getByText(tooltipText);
+        const tooltip = getByText(tooltipText);
         expect(tooltip.tagName).toBe('DIV');
 
         act(() => void leaveTooltip(trigger));
