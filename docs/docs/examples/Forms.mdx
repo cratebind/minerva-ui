@@ -179,13 +179,15 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
   const [selected, setSelected] = useState({});
 
   return items.map(plan => (
-    <Flex
+    <Button
       flexDirection="row"
       width="100%"
+      borderWidth={0}
       borderBottomWidth={1}
       borderBottomStyle="solid"
       borderBottomColor="gray.300"
       pr={3}
+      pl={3}
       overflow="hidden"
       alignItems="center"
       onClick={() => setSelected(plan)}
@@ -194,7 +196,7 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
         width={4}
         height={4}
         backgroundColor={selected.id === plan.id ? '#5850ec' : 'transparent'}
-        mx={4}
+        mr={4}
         borderRadius={100}
         borderColor="#5850ec"
         borderWidth={1}
@@ -219,7 +221,7 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
         px={1}
         py={4}
       >
-        <Flex flexDirection="column">
+        <Flex flexDirection="column" alignItems="flex-start">
           <Text fontWeight="bold" fontSize="xl" mb={1} color="gray.700">
             {plan.title}
           </Text>
@@ -231,7 +233,7 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
           </Text>
         </Flex>
       </Flex>
-    </Flex>
+    </Button>
   ));
 };
 ```
@@ -268,10 +270,10 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
   return (
     <Flex>
       {items.map(plan => (
-        <Flex
+        <Button
+          width={300}
           flexDirection="column"
           borderRadius="md"
-          width="25vw"
           overflow="hidden"
           alignItems="center"
           borderWidth={1}
@@ -279,9 +281,11 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
           borderStyle="solid"
           onClick={() => setSelected(plan)}
           mx={2}
+          px={0}
+          py={0}
         >
           <Flex
-            width="100%"
+            width={245}
             justifyContent="space-between"
             alignItems="center"
             backgroundColor={
@@ -316,7 +320,13 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
               />
             </Flex>
           </Flex>
-          <Flex flexDirection="column" px={4} py={5} width="100%">
+          <Flex
+            flexDirection="column"
+            px={4}
+            py={5}
+            width={245}
+            alignItems="flex-start"
+          >
             <Text color="gray.400" fontSize="lg" pt={1}>
               {plan.cpu}
             </Text>
@@ -327,7 +337,7 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
               {plan.cost}/mo
             </Text>
           </Flex>
-        </Flex>
+        </Button>
       ))}
     </Flex>
   );
