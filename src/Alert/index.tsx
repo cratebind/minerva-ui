@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { MinervaProps, systemProps, Flex } from '../layout';
 import Icon from '../Icon';
-import Button from '../Button';
+// import Button from '../Button';
 import Text from '../Text';
 
 export const StyledAlert = styled(Flex)(
@@ -10,7 +10,7 @@ export const StyledAlert = styled(Flex)(
     padding: '16px',
     borderRadius: '5px',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
   },
   systemProps
 );
@@ -41,11 +41,11 @@ export interface AlertProps extends MinervaProps {
   title?: string;
   bg?: string;
   icon?: string;
-  isOpen?: boolean;
-  onClose?: any;
-  canBeClosed?: boolean;
-  hasCloseIcon?: boolean;
-  closeText?: string;
+  // isOpen?: boolean;
+  // onClose?: any;
+  // canBeClosed?: boolean;
+  // hasCloseIcon?: boolean;
+  // closeText?: string;
   props?: any;
 }
 
@@ -70,19 +70,7 @@ const alertTypes = {
 };
 
 export const Alert = forwardRef(function Alert(
-  {
-    title,
-    children,
-    status,
-    bg,
-    icon,
-    isOpen = true,
-    onClose,
-    canBeClosed = false,
-    hasCloseIcon = false,
-    closeText,
-    ...props
-  }: AlertProps,
+  { title, children, status, icon, ...props }: AlertProps,
   ref
 ) {
   const { statusColor, statusIcon } =
@@ -96,34 +84,21 @@ export const Alert = forwardRef(function Alert(
 
   const alertIcon = icon || statusIcon;
 
-  return isOpen ? (
+  return (
     <StyledAlert
       ref={ref}
       role="alert"
-      backgroundColor={bg ? bg : statusColor}
-      {...props}
+      bg={statusColor}
+      lineHeight={1}
       aria-label={`${title}`}
       aria-live="polite"
+      {...props}
     >
-      <StyledAlertInner>
-        {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
-        <StyledAlertTitle>{title}</StyledAlertTitle>
-      </StyledAlertInner>
+      {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
+      <StyledAlertTitle>{title}</StyledAlertTitle>
       {children}
-      {canBeClosed && (
-        <Button
-          {...props}
-          ref={ref}
-          name="Close Alert"
-          style={{ padding: 0, background: 'transparent', border: 'none' }}
-          onClick={onClose}
-        >
-          {hasCloseIcon && <Icon name="x" size="20px" />}
-          <StyledCloseText>{closeText}</StyledCloseText>
-        </Button>
-      )}
     </StyledAlert>
-  ) : null;
+  );
 });
 
 export default Alert;

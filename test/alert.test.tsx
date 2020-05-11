@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-import { Alert, ThemeProvider } from '../src';
+import { Alert, ThemeProvider, Button } from '../src';
 
 describe('<Alert />', () => {
   it('should render', () => {
@@ -29,7 +29,7 @@ describe('<Alert />', () => {
     const description = 'World';
     const { container } = render(
       <ThemeProvider>
-        <Alert title={title}>{description}</Alert>}
+        <Alert title={title}>{description}</Alert>
       </ThemeProvider>
     );
 
@@ -67,7 +67,7 @@ describe('<Alert />', () => {
     const testId = 'alert';
     const { queryByTestId } = render(
       <ThemeProvider>
-        <Alert ata-testid={testId} title="Test" isOpen={false} />
+        <Alert ata-testid={testId} title="Test" />
       </ThemeProvider>
     );
 
@@ -80,8 +80,17 @@ describe('<Alert />', () => {
     const closeText = 'Dismiss';
     const { container } = render(
       <ThemeProvider>
-        <Alert title={title} canBeClosed closeText={closeText} hasCloseIcon>
+        <Alert title={title}>
           {description}
+          <Button
+            bg="transparent"
+            padding={2}
+            border={0}
+            name="Close Alert"
+            marginLeft="auto"
+          >
+            {closeText}
+          </Button>
         </Alert>
       </ThemeProvider>
     );
