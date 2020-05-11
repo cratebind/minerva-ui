@@ -149,3 +149,197 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
   );
 };
 ```
+
+# Card Selection Examples
+
+## Selecting an item from a list
+
+```jsx live
+() => {
+  const items = [
+    {
+      id: 1,
+      title: 'Small',
+      description: 'For light background jobs like sending email.',
+      cost: '$40',
+    },
+    {
+      id: 2,
+      title: 'Medium',
+      description: 'For tasks like image resizing, exporting PDFs, etc.',
+      cost: '$40',
+    },
+    {
+      id: 3,
+      title: 'Large',
+      description: 'For intensive tasks like video encoding, etc.',
+      cost: '$40',
+    },
+  ];
+  const [selected, setSelected] = useState({});
+
+  return items.map(plan => (
+    <Button
+      flexDirection="row"
+      width="100%"
+      borderWidth={0}
+      borderBottomWidth={1}
+      borderBottomStyle="solid"
+      borderBottomColor="gray.300"
+      pr={3}
+      pl={3}
+      overflow="hidden"
+      alignItems="center"
+      onClick={() => setSelected(plan)}
+    >
+      <Flex
+        width={4}
+        height={4}
+        backgroundColor={selected.id === plan.id ? '#5850ec' : 'transparent'}
+        mr={4}
+        borderRadius={100}
+        borderColor="#5850ec"
+        borderWidth={1}
+        borderStyle="solid"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Box
+          width={1}
+          height={1}
+          backgroundColor={selected.id === plan.id ? '#fff' : 'transparent'}
+          borderRadius={50}
+          borderColor="#fff"
+          borderWidth={1}
+          borderStyle="solid"
+        />
+      </Flex>
+      <Flex
+        width="100%"
+        flexDirection="row"
+        justifyContent="space-between"
+        px={1}
+        py={4}
+      >
+        <Flex flexDirection="column" alignItems="flex-start">
+          <Text fontWeight="bold" fontSize="xl" mb={1} color="gray.700">
+            {plan.title}
+          </Text>
+          <Text color="gray.400">{plan.description}</Text>
+        </Flex>
+        <Flex>
+          <Text fontSize="2xl" py={2}>
+            {plan.cost}/mo
+          </Text>
+        </Flex>
+      </Flex>
+    </Button>
+  ));
+};
+```
+
+## Selecting a card item from a grid
+
+```jsx live
+() => {
+  const items = [
+    {
+      id: 1,
+      title: 'Small',
+      cpu: '8gb/4CPUs',
+      ssd: '160 GB SSD disk',
+      cost: '$10',
+    },
+    {
+      id: 2,
+      title: 'Medium',
+      cpu: '8gb/4CPUs',
+      ssd: '160 GB SSD disk',
+      cost: '$20',
+    },
+    {
+      id: 3,
+      title: 'Large',
+      cpu: '8gb/4CPUs',
+      ssd: '160 GB SSD disk',
+      cost: '$30',
+    },
+  ];
+  const [selected, setSelected] = useState({});
+
+  return (
+    <Flex>
+      {items.map(plan => (
+        <Button
+          width={300}
+          flexDirection="column"
+          borderRadius="md"
+          overflow="hidden"
+          alignItems="center"
+          borderWidth={1}
+          borderColor={selected.id === plan.id ? '#5850ec' : 'gray.300'}
+          borderStyle="solid"
+          onClick={() => setSelected(plan)}
+          mx={2}
+          px={0}
+          py={0}
+        >
+          <Flex
+            width={245}
+            justifyContent="space-between"
+            alignItems="center"
+            backgroundColor={
+              selected.id === plan.id ? 'rgba(88, 80, 236, 0.2)' : 'transparent'
+            }
+            py={4}
+            px={4}
+            borderBottomWidth={1}
+            borderBottomColor={selected.id === plan.id ? '#5850ec' : 'gray.300'}
+            borderBottomStyle="solid"
+          >
+            <Text fontWeight="bold" fontSize="xl" mb={1} color="gray.700">
+              {plan.title}
+            </Text>
+            <Flex
+              width={4}
+              height={4}
+              backgroundColor={
+                selected.id === plan.id ? '#5850ec' : 'transparent'
+              }
+              borderRadius={100}
+              borderColor="#5850ec"
+              borderWidth={1}
+              borderStyle="solid"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Icon
+                name="check"
+                size="10px"
+                color={selected.id === plan.id ? '#fff' : 'transparent'}
+              />
+            </Flex>
+          </Flex>
+          <Flex
+            flexDirection="column"
+            px={4}
+            py={5}
+            width={245}
+            alignItems="flex-start"
+          >
+            <Text color="gray.400" fontSize="lg" pt={1}>
+              {plan.cpu}
+            </Text>
+            <Text color="gray.400" fontSize="lg" pt={1}>
+              {plan.ssd}
+            </Text>
+            <Text fontSize="2xl" py={2}>
+              {plan.cost}/mo
+            </Text>
+          </Flex>
+        </Button>
+      ))}
+    </Flex>
+  );
+};
+```
