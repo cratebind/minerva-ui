@@ -300,7 +300,7 @@ export type MinervaProps = StyledSystemProps &
   React.HTMLAttributes<any> &
   React.RefAttributes<any>;
 
-const shouldForwardProp = createShouldForwardProp([
+export const shouldForwardProp = createShouldForwardProp([
   ...props,
   'd',
   'textDecoration',
