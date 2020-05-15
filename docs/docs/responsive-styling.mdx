@@ -1,0 +1,174 @@
+---
+id: 'responsive-styling'
+title: 'Responsive Styling'
+---
+
+Minerva components are built using [styled system](https://styled-system.com/responsive-styles), and use the same approach for adding responsive styles using these default breakpoints:
+
+```js
+const breakpoints = ['640px', '768px', '1024px', '1280px'];
+
+// breakpoint aliases
+breakpoints.base = '0px';
+breakpoints.sm = breakpoints[0];
+breakpoints.md = breakpoints[1];
+breakpoints.lg = breakpoints[2];
+breakpoints.xl = breakpoints[3];
+```
+
+```jsx
+<Box
+  bg="indigo.800"
+  color="white"
+  borderRadius="md"
+  p={4}
+  width={[
+    '100%', // below the smallest breakpoint (640px)
+    '50%', // from the smallest breakpoint (640px) and up
+    '33%', // from the next breakpoint (768px) and up
+    '25%', // from the next breakpoint (1024px) and up
+    '20%', // from the next breakpoint (1280px) and up
+  ]}
+>
+  This should resize with browser
+</Box>
+```
+
+Minerva also aliases those defaults to `sm`, `md`, `lg`, and `xl`
+
+```jsx
+<Box
+  bg="indigo.800"
+  color="white"
+  borderRadius="md"
+  p={4}
+  width={{
+    base: '100%', // below the smallest breakpoint (640px)
+    sm: '50%', // from 'sm' breakpoint (640px) and up
+    md: '33%', // from 'md' breakpoint (768px) and up
+    lg: '25%', // from 'lg' breakpoint (1024px) and up
+    xl: '20%', // from 'lg' breakpoint (1280px) and up
+  }}
+>
+  This should resize with browser
+</Box>
+```
+
+### Styling a grid with the styled-system
+
+```jsx live
+// Re-size your browser to view changes
+() => {
+  const items = [
+    {
+      id: 1,
+      title: 'Small',
+      cpu: '8gb/4CPUs',
+      ssd: '160 GB SSD disk',
+      cost: '$10',
+    },
+    {
+      id: 2,
+      title: 'Medium',
+      cpu: '8gb/4CPUs',
+      ssd: '160 GB SSD disk',
+      cost: '$20',
+    },
+    {
+      id: 3,
+      title: 'Large',
+      cpu: '8gb/4CPUs',
+      ssd: '160 GB SSD disk',
+      cost: '$30',
+    },
+  ];
+
+  return (
+    <Box
+      display="grid"
+      gridTemplateColumns={{ base: '1fr', md: '1fr 1fr', xl: '1fr 1fr 1fr' }}
+      gridColumnGap={5}
+      gridRowGap={5}
+    >
+      {items.map(plan => (
+        <Flex
+          key={plan.id}
+          flexDirection="column"
+          borderRadius="md"
+          overflow="hidden"
+          alignItems="center"
+          borderWidth={1}
+          borderColor="#5850ec"
+          borderStyle="solid"
+          px={0}
+          py={0}
+        >
+          <Flex
+            minWidth="100%"
+            justifyContent="space-between"
+            alignItems="center"
+            backgroundColor="rgba(88, 80, 236, 0.2)"
+            py={4}
+            px={4}
+            borderBottomWidth={1}
+            borderBottomColor="#5850ec"
+            borderBottomStyle="solid"
+          >
+            <Text
+              fontWeight="bold"
+              fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
+              mb={1}
+              color="gray.700"
+            >
+              {plan.title}
+            </Text>
+            <Flex
+              width={{ base: 4, md: 5, lg: 6 }}
+              height={{ base: 4, md: 5, lg: 6 }}
+              backgroundColor="#5850ec"
+              borderRadius={100}
+              borderColor="#5850ec"
+              borderWidth={1}
+              borderStyle="solid"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Icon
+                name="check"
+                size={{ base: '10px', md: '12px', lg: '14px' }}
+                color="#fff"
+              />
+            </Flex>
+          </Flex>
+          <Box
+            display="flex"
+            flexDirection={{ base: 'row', lg: 'column' }}
+            px={4}
+            py={5}
+            minWidth="100%"
+            justifyContent="space-between"
+            alignItems={{ base: 'center', lg: 'flex-start' }}
+          >
+            <Box>
+              <Text color="gray.400" fontSize={{ base: 'md', lg: 'xl' }} pt={1}>
+                {plan.cpu}
+              </Text>
+              <Text color="gray.400" fontSize={{ base: 'md', lg: 'xl' }} pt={1}>
+                {plan.ssd}
+              </Text>
+            </Box>
+            <Box>
+              <Text
+                fontSize={{ base: '2xl', lg: 'xl' }}
+                pt={{ base: 0, lg: 8 }}
+              >
+                {plan.cost}/mo
+              </Text>
+            </Box>
+          </Box>
+        </Flex>
+      ))}
+    </Box>
+  );
+};
+```
