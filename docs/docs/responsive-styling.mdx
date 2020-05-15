@@ -1,48 +1,57 @@
 ---
-title: 'Responsiveness'
+id: 'responsive-styling'
+title: 'Responsive Styling'
 ---
 
-## Responsive Design
+Minerva components are built using [styled system](https://styled-system.com/responsive-styles), and use the same approach for adding responsive styles using these default breakpoints:
 
-"Often when working on responsive layouts, it's useful to adjust styles along a singular dimension – such as font-size, margin, padding, and width. Instead of manually managing media queries and adding nested style objects throughout a code base, Styled System offers a convenient shorthand syntax for adding responsive styles with a mobile-first approach."  
-[Styled System](https://styled-system.com/responsive-styles/)  
-[Array Props](https://styled-system.com/guides/array-props)
+```js
+const breakpoints = ['640px', '768px', '1024px', '1280px'];
 
-```jsx live
-// Re-size your browser to view changes
-<Text fontSize={[36, 24, 18]}>Hello, World</Text>
+// breakpoint aliases
+breakpoints.base = '0px';
+breakpoints.sm = breakpoints[0];
+breakpoints.md = breakpoints[1];
+breakpoints.lg = breakpoints[2];
+breakpoints.xl = breakpoints[3];
 ```
 
-Alternatively, you can define breakpoints with aliases and use plain objects as values. Any undefined alias key will define the base, non-responsive value.
-
-```
-    // theme.js
-    const breakpoints = ['640px', '768px', '1024px', '1280px'];
-
-    // aliases
-    breakpoints.sm = breakpoints[0];
-    breakpoints.md = breakpoints[1];
-    breakpoints.lg = breakpoints[2];
-    breakpoints.xl = breakpoints[3];
-
-    export default {
-        breakpoints,
-    };
-```
-
-```jsx live
-// Re-size your browser to view changes
-<Flex
-  alignItems="center"
-  justifyContent="center"
-  borderRadius={5}
-  backgroundColor="blue.300"
-  height={100}
-  width={{ _: '100%', md: 1 / 2, lg: 1 / 3, xl: 1 / 4 }}
-  p={[2, 3, 4]}
+```jsx
+<Box
+  bg="indigo.800"
+  color="white"
+  borderRadius="md"
+  p={4}
+  width={[
+    '100%', // below the smallest breakpoint (640px)
+    '50%', // from the smallest breakpoint (640px) and up
+    '33%', // from the next breakpoint (768px) and up
+    '25%', // from the next breakpoint (1024px) and up
+    '20%', // from the next breakpoint (1280px) and up
+  ]}
 >
-  <Text fontSize={[36, 24, 18]}>Hello, World</Text>
-</Flex>
+  This should resize with browser
+</Box>
+```
+
+Minerva also aliases those defaults to `sm`, `md`, `lg`, and `xl`
+
+```jsx
+<Box
+  bg="indigo.800"
+  color="white"
+  borderRadius="md"
+  p={4}
+  width={{
+    base: '100%', // below the smallest breakpoint (640px)
+    sm: '50%', // from 'sm' breakpoint (640px) and up
+    md: '33%', // from 'md' breakpoint (768px) and up
+    lg: '25%', // from 'lg' breakpoint (1024px) and up
+    xl: '20%', // from 'lg' breakpoint (1280px) and up
+  }}
+>
+  This should resize with browser
+</Box>
 ```
 
 ### Styling a grid with the styled-system
@@ -77,12 +86,13 @@ Alternatively, you can define breakpoints with aliases and use plain objects as 
   return (
     <Box
       display="grid"
-      gridTemplateColumns={{ _: '1fr', md: '1fr 1fr', xl: '1fr 1fr 1fr' }}
+      gridTemplateColumns={{ base: '1fr', md: '1fr 1fr', xl: '1fr 1fr 1fr' }}
       gridColumnGap={5}
       gridRowGap={5}
     >
       {items.map(plan => (
         <Flex
+          key={plan.id}
           flexDirection="column"
           borderRadius="md"
           overflow="hidden"
@@ -90,7 +100,6 @@ Alternatively, you can define breakpoints with aliases and use plain objects as 
           borderWidth={1}
           borderColor="#5850ec"
           borderStyle="solid"
-          onClick={() => setSelected(plan)}
           px={0}
           py={0}
         >
@@ -107,15 +116,15 @@ Alternatively, you can define breakpoints with aliases and use plain objects as 
           >
             <Text
               fontWeight="bold"
-              fontSize={{ _: 'md', md: 'lg', lg: 'xl' }}
+              fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
               mb={1}
               color="gray.700"
             >
               {plan.title}
             </Text>
             <Flex
-              width={{ _: 4, md: 5, lg: 6 }}
-              height={{ _: 4, md: 5, lg: 6 }}
+              width={{ base: 4, md: 5, lg: 6 }}
+              height={{ base: 4, md: 5, lg: 6 }}
               backgroundColor="#5850ec"
               borderRadius={100}
               borderColor="#5850ec"
@@ -126,30 +135,33 @@ Alternatively, you can define breakpoints with aliases and use plain objects as 
             >
               <Icon
                 name="check"
-                size={{ _: '10px', md: '12px', lg: '14px' }}
+                size={{ base: '10px', md: '12px', lg: '14px' }}
                 color="#fff"
               />
             </Flex>
           </Flex>
           <Box
             display="flex"
-            flexDirection={{ _: 'row', lg: 'column' }}
+            flexDirection={{ base: 'row', lg: 'column' }}
             px={4}
             py={5}
             minWidth="100%"
             justifyContent="space-between"
-            alignItems={{ _: 'center', lg: 'flex-start' }}
+            alignItems={{ base: 'center', lg: 'flex-start' }}
           >
             <Box>
-              <Text color="gray.400" fontSize={{ _: 'md', lg: 'xl' }} pt={1}>
+              <Text color="gray.400" fontSize={{ base: 'md', lg: 'xl' }} pt={1}>
                 {plan.cpu}
               </Text>
-              <Text color="gray.400" fontSize={{ _: 'md', lg: 'xl' }} pt={1}>
+              <Text color="gray.400" fontSize={{ base: 'md', lg: 'xl' }} pt={1}>
                 {plan.ssd}
               </Text>
             </Box>
             <Box>
-              <Text fontSize={{ _: '2xl', lg: 'xl' }} pt={{ _: 0, lg: 8 }}>
+              <Text
+                fontSize={{ base: '2xl', lg: 'xl' }}
+                pt={{ base: 0, lg: 8 }}
+              >
                 {plan.cost}/mo
               </Text>
             </Box>
