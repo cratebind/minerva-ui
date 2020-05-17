@@ -12,6 +12,7 @@ module.exports = {
     { id: 'concepts', type: 'doc' },
     { id: 'theming', type: 'doc' },
     { id: 'utility-props', type: 'doc' },
+    { id: 'responsive-styling', type: 'doc' },
     {
       type: 'category',
       label: 'Components',

@@ -40,15 +40,10 @@ title: 'Alerts'
 ## Alert with Button
 
 ```jsx live
-<Alert
-  bg="green.100"
-  justifyContent="space-between"
-  alignItems="center"
-  width="100%"
-  title="Here is some information."
->
+<Alert bg="green.100">
+  <Text>Here is some information.</Text>
   <Button
-    marginRight={5}
+    marginLeft="auto"
     bg="green.100"
     borderColor="green.200"
     _hover={{
@@ -77,7 +72,7 @@ title: 'Alerts'
       py={1}
       fontWeight="800"
       fontSize="xs"
-      marginRight={5}
+      marginRight={3}
     >
       NEW
     </Text>

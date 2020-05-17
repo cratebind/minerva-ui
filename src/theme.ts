@@ -35,6 +35,7 @@ export interface MinervaTheme extends Theme {
   Tag?: React.CSSProperties;
   Skeleton?: React.CSSProperties;
   Tabs?: React.CSSProperties;
+  Tooltip?: React.CSSProperties;
   icons: any;
   defaultBorderColor?: string;
   variants?: any;
@@ -42,6 +43,7 @@ export interface MinervaTheme extends Theme {
 
 const breakpoints: any = ['640px', '768px', '1024px', '1280px'];
 
+breakpoints.base = '0px';
 breakpoints.sm = breakpoints[0];
 breakpoints.md = breakpoints[1];
 breakpoints.lg = breakpoints[2];

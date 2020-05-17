@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-import { Alert, ThemeProvider } from '../src';
+import { Alert, ThemeProvider, Button } from '../src';
 
 describe('<Alert />', () => {
   it('should render', () => {
     const { container } = render(
       <ThemeProvider>
-        <Alert>Test</Alert>
+        <Alert title="Test" />
       </ThemeProvider>
     );
     expect(container).toMatchSnapshot();
@@ -42,7 +42,7 @@ describe('<Alert />', () => {
     const { getByTestId } = render(
       <ThemeProvider>
         <Alert status="error" data-testid="alert">
-          Error
+          error
         </Alert>
       </ThemeProvider>
     );
@@ -61,5 +61,42 @@ describe('<Alert />', () => {
     );
     const alert = getByTestId('alert');
     expect(alert).toHaveStyleRule('background-color', backgroundColor);
+  });
+
+  it('should not render when `isOpen` is false', () => {
+    const testId = 'alert';
+    const { queryByTestId } = render(
+      <ThemeProvider>
+        <Alert ata-testid={testId} title="Test" />
+      </ThemeProvider>
+    );
+
+    expect(queryByTestId(testId)).not.toBeInTheDocument();
+  });
+
+  it('should add close button text when `closeText` prop is passed', () => {
+    const title = 'Hello';
+    const description = 'World';
+    const closeText = 'Dismiss';
+    const { container } = render(
+      <ThemeProvider>
+        <Alert title={title}>
+          {description}
+          <Button
+            bg="transparent"
+            padding={2}
+            border={0}
+            name="Close Alert"
+            marginLeft="auto"
+          >
+            {closeText}
+          </Button>
+        </Alert>
+      </ThemeProvider>
+    );
+
+    expect(container).toHaveTextContent(title);
+    expect(container).toHaveTextContent(description);
+    expect(container).toHaveTextContent(closeText);
   });
 });

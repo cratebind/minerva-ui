@@ -15,11 +15,13 @@ exports[`<Alert /> should render 1`] = `
   min-width: 0;
   color: #374151;
   background-color: #e5e7eb;
+  line-height: 1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   background-color: #e5e7eb;
+  line-height: 1;
   padding: 16px;
   border-radius: 5px;
   -webkit-align-items: center;
@@ -27,15 +29,23 @@ exports[`<Alert /> should render 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: #e5e7eb;
+  line-height: 1;
+}
+
+.c2 {
+  font-weight: bold;
+  margin-right: 5px;
 }
 
 <div>
   <div
+    aria-label="Test"
+    aria-live="polite"
     class="sc-AxiKw c0"
     role="alert"
   >
     <p
-      class="c1 "
+      class="c1 c2"
     >
       Test
     </p>

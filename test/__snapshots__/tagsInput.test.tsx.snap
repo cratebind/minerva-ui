@@ -85,10 +85,6 @@ exports[`<TagsInput /> should render 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
   list-style-type: none;
   margin-right: 5px;
 }
@@ -97,7 +93,7 @@ exports[`<TagsInput /> should render 1`] = `
   <ul
     class="c0"
   >
-    <div
+    <li
       class="sc-AxjAm c1"
     >
       <input
@@ -105,7 +101,7 @@ exports[`<TagsInput /> should render 1`] = `
         data-testid="input"
         value=""
       />
-    </div>
+    </li>
   </ul>
 </div>
 `;

@@ -55,6 +55,7 @@ import {
   const tabStyles = {
     width: '100%',
     marginBottom: 2,
+    marginRight: 2,
     borderRadius: 5,
     justifyContent: 'center',
     _selected: {
@@ -95,8 +96,10 @@ import {
 ```jsx
 () => {
   const selectedStyles = {
-    borderBottom: '3px solid #5850EC',
+    borderBottom: '2px solid rgb(85, 26, 139)',
+    color: 'rgb(85, 26, 139)',
   };
+
   return (
     <Tabs>
       <TabList mb="20px" borderBottom="2px solid #d2d6dc">

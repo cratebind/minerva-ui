@@ -1,5 +1,7 @@
 import React from 'react';
-import { Alert } from '..';
+import { Alert } from '../Alert';
+import Button from '../Button';
+import Icon from '../Icon';
 
 export default {
   title: 'Elements|Alert',
@@ -10,7 +12,7 @@ export const Statuses = () => {
   return (
     <>
       <Alert status="error" title="Whoa!">
-        Something not great is happening
+        Something not great is happening.
       </Alert>
       <br />
       <Alert status="success" title="Congrats!">
@@ -18,12 +20,37 @@ export const Statuses = () => {
       </Alert>
       <br />
       <Alert status="warning">
-        Something is happening that is not bad yet, but might be soon.
+        Something is happening that isn't bad yet, but might be soon.
       </Alert>
       <br />
       <Alert status="info" title="Attention:">
         Something is happening and you should know about it.
       </Alert>
+    </>
+  );
+};
+
+export const Hidden = () => {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>Open Alert</Button>
+      {open && (
+        <Alert status="error" title="Whoa!">
+          Something not great is happening!
+          <Button
+            bg="transparent"
+            padding={2}
+            border={0}
+            name="Close Alert"
+            marginLeft="auto"
+            onClick={() => setOpen(false)}
+          >
+            <Icon name="x" size="20px" />
+          </Button>
+        </Alert>
+      )}
     </>
   );
 };

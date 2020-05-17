@@ -822,4 +822,8 @@ export const AnimationStyles = createGlobalStyle`
   ${animationStyles}
 `;
 
+export const ReachGlobalStyles = createGlobalStyle`
+  ${ReachStyles}
+`;
+
 export default GlobalStyles;
