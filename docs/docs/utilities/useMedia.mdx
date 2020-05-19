@@ -14,7 +14,16 @@ import { useMedia } from 'minerva-ui';
 
 ## Usage
 
-```js
-const small = useMedia('(min-width: 400px)');
-const medium = useMedia({ minWidth: 800 });
+```jsx live
+function Example() {
+  const small = useMedia('(max-width: 640px)');
+  const medium = useMedia({ maxWidth: 768 });
+
+  return (
+    <>
+      <Box bg="green.300" height={100} width={small ? 100 : 500} />
+      <Box bg="orange.300" height={100} width={medium ? 500 : 100} />
+    </>
+  );
+}
 ```
