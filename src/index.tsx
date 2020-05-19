@@ -77,3 +77,4 @@ export { default as useClipboard } from './useClipboard';
 export { default as useDisclosure } from './useDisclosure';
 export { default as useMedia } from './useMedia';
 export { default as useNetwork } from './useNetwork';
+export { default as useLocalStorage } from './useLocalStorage';
