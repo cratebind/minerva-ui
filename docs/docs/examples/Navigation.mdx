@@ -73,7 +73,6 @@ title: 'Navigation'
 
 ```jsx live
 () => {
-  const [open, setOpen] = useState(false);
   return (
     <Flex
       bg="indigo.800"
@@ -125,7 +124,8 @@ title: 'Navigation'
 
 ```jsx live
 () => {
-  const [open, setOpen] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Flex
       bg="indigo.800"
@@ -139,7 +139,7 @@ title: 'Navigation'
       </Text>
       <Box>
         <Button
-          onClick={() => setOpen(true)}
+          onClick={onOpen}
           padding={1}
           bg="transparent"
           type="button"
@@ -155,12 +155,12 @@ title: 'Navigation'
         </Button>
       </Box>
       <Drawer
-        isOpen={open}
-        onClose={() => setOpen(false)}
+        isOpen={isOpen}
+        onClose={onClose}
         placement="right"
         overflow="hidden"
       >
-        <DrawerHeader onClose={() => setOpen(false)}>Minerva UI</DrawerHeader>
+        <DrawerHeader onClose={onClose}>Minerva UI</DrawerHeader>
         <DrawerBody>
           <Flex justifyContent="flex-start" flexDirection="column" flexGrow={1}>
             <Link
@@ -197,11 +197,7 @@ title: 'Navigation'
             bg="gray.50"
             radiusBottom="5px"
           >
-            <Button
-              onClick={() => setOpen(false)}
-              boxShadow="base"
-              width={['100%', 'auto']}
-            >
+            <Button onClick={onClose} boxShadow="base" width={['100%', 'auto']}>
               Submit
             </Button>
           </Flex>
