@@ -68,3 +68,9 @@ export * from './Skeleton';
  * Helpers
  */
 export { default as Spinner } from './Spinner';
+
+/**
+ * Utilities
+ */
+
+export { default as useClipboard } from './useClipboard';

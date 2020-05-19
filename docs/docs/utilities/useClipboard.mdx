@@ -1,0 +1,20 @@
+import { useClipboard } from 'minerva-ui';
+
+```jsx live
+function Example() {
+  const [value, setValue] = React.useState('Hello world');
+  const { onCopy, hasCopied } = useClipboard(value);
+
+  return (
+    <>
+      <Flex mb={2}>
+        <Input value={value} isReadOnly placeholder="Welcome" />
+        <Button onClick={onCopy} ml={2}>
+          {hasCopied ? 'Copied' : 'Copy'}
+        </Button>
+      </Flex>
+      <Input placeholder="Paste here" />
+    </>
+  );
+}
+```
