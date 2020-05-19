@@ -1,0 +1,20 @@
+import { useMedia } from 'minerva-ui';
+
+`useMedia` is a custom hook to handle media queries. It utilizes [json2mq](https://github.com/akiran/json2mq) to parse a string or object into json.
+
+The useMedia hook returns an object with the following fields:
+
+| Name    | Type    | Default | Description                                       |
+| ------- | ------- | ------- | ------------------------------------------------- |
+| `match` | boolean |         | True if the media query matches, false otherwise. |
+
+```js
+import { useMedia } from 'minerva-ui';
+```
+
+## Usage
+
+```js
+const small = useMedia('(min-width: 400px)');
+const medium = useMedia({ minWidth: 800 });
+```
