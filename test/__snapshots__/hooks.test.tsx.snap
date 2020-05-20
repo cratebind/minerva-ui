@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> should change style if disabled 1`] = `
+exports[`useClipboard should render Clipboard Component 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
@@ -70,128 +70,69 @@ exports[`<Button /> should change style if disabled 1`] = `
   cursor: not-allowed;
 }
 
-<div>
-  <button
-    aria-busy="false"
-    class="sc-AxjAm c0"
-    disabled=""
-    role="button"
-  >
-    Disabled Button
-  </button>
-</div>
-`;
-
-exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
 .c1 {
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  height: 20px;
-  border-width: 2px;
-  width: 20px;
-  color: #777;
-  display: block;
-  display: inline-block;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  border-right-color: currentColor;
-  border-top-color: currentColor;
-  border-radius: 9999px;
-  color: currentColor;
-  border-style: solid;
-  height: 20px;
-  width: 20px;
-  border-width: 2px;
-  margin: 2px;
-  -webkit-animation: cilQsd 0.45s linear infinite;
-  animation: cilQsd 0.45s linear infinite;
-}
-
-.c0 {
-  box-sizing: border-box;
-  min-width: 0;
-  color: #374151;
-  -webkit-transition: all 150ms ease 0s;
-  transition: all 150ms ease 0s;
-  outline: none;
-  cursor: pointer;
-  background-color: #fff;
-  border-width: 1px;
-  color: #374151;
-  font-weight: 500;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: relative;
-  white-space: nowrap;
-  vertical-align: middle;
-  font-size: 14px;
-  line-height: 20px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 16px;
   border-style: solid;
   border-color: #d2d6dc;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  padding-right: 32px;
+  border-width: 1px;
+  border-radius: 4px;
+  -webkit-transition: all 250ms ease 0s;
+  transition: all 250ms ease 0s;
+  outline: none;
+  width: 100%;
 }
 
-.c0:hover {
-  background-color: #f9fafb;
-}
-
-.c0:focus {
+.c1:focus {
   border-color: #a4cafe;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  outline: 0;
+  box-shadow: 0 0 0 3px rgba(164,202,254,.45);
 }
 
-.c0:active,
-.c0[data-active=true] {
-  border-color: #a4cafe;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  outline: 0;
-}
-
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover,
-.c0[aria-disabled=true],
-.c0[aria-disabled=true]:focus,
-.c0[aria-disabled=true]:hover {
-  opacity: 0.4;
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover,
+.c1[aria-disabled=true],
+.c1[aria-disabled=true]:focus,
+.c1[aria-disabled=true]:hover {
+  background-color: #EAEAEA;
+  color: #8F8F8F;
   cursor: not-allowed;
 }
 
 <div>
   <button
-    aria-busy="true"
+    aria-busy="false"
     class="sc-AxjAm c0"
-    disabled=""
     role="button"
   >
-    <div
-      class="sc-AxjAm sc-AxirZ c1"
-    />
+    Copy
   </button>
+  <input
+    class="sc-AxjAm c1"
+    data-testid="paste-field"
+  />
 </div>
 `;
 
-exports[`<Button /> should render 1`] = `
+exports[`useLocalStorage should render Local Storage Component 1`] = `
+.c1 {
+  box-sizing: border-box;
+  min-width: 0;
+  color: #374151;
+  margin: 0;
+  font-size: 16px;
+  line-height: normal;
+}
+
 .c0 {
   box-sizing: border-box;
   min-width: 0;
@@ -264,10 +205,17 @@ exports[`<Button /> should render 1`] = `
 <div>
   <button
     aria-busy="false"
-    class="sc-AxjAm c0"
+    class="c0"
     role="button"
   >
-    Test
+    Add To Count
   </button>
+  <p
+    class="c1"
+  >
+    You've clicked the button 
+    0
+     times.
+  </p>
 </div>
 `;

@@ -1,5 +1,5 @@
 {
-  "include": ["src", "types", "stories"],
+  "include": ["src", "types", "stories", "utils/SectionLink.tsx"],
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",

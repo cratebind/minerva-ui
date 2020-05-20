@@ -18,13 +18,13 @@ import { useClipboard } from 'minerva-ui';
 
 ```jsx live
 function Example() {
-  const [value, setValue] = React.useState('Hello world');
+  const [value, setValue] = React.useState('Hello World');
   const { onCopy, hasCopied } = useClipboard(value);
 
   return (
     <>
       <Flex mb={2}>
-        <Input value={value} disabled placeholder="Welcome" />
+        <Input value={value} onChange={e => setValue(e.target.value)} />
         <Button onClick={onCopy} ml={2}>
           {hasCopied ? 'Copied' : 'Copy'}
         </Button>
