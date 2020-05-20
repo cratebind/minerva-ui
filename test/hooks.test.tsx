@@ -7,10 +7,12 @@ import {
   Button,
   Input,
   Box,
+  Drawer,
   useLocalStorage,
   useClipboard,
   useMedia,
   useNetwork,
+  useDisclosure,
 } from '../src';
 
 /**
@@ -164,5 +166,45 @@ describe('useNetwork', () => {
       </ThemeProvider>
     );
     expect(container).toHaveTextContent('Network Offline');
+  });
+});
+
+const DisclosureComponent = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure(false);
+
+  return (
+    <>
+      <Button onClick={onOpen}>Open Drawer</Button>
+      <Drawer
+        data-testid="drawer"
+        isOpen={isOpen}
+        onClose={onClose}
+        overflow="hidden"
+      />
+    </>
+  );
+};
+
+describe('useDisclosure', () => {
+  it('should render Disclosure Component', () => {
+    const { container } = render(
+      <ThemeProvider>
+        <DisclosureComponent />
+      </ThemeProvider>
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should open drawer', () => {
+    const { getByRole, queryByTestId } = render(
+      <ThemeProvider>
+        <DisclosureComponent />
+      </ThemeProvider>
+    );
+
+    const btn = getByRole('button');
+    expect(queryByTestId('drawer')).toBeNull();
+    fireEvent.click(btn);
+    expect(queryByTestId('drawer')).toBeTruthy();
   });
 });
