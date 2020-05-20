@@ -6,8 +6,10 @@ import {
   Text,
   Button,
   Input,
+  Box,
   useLocalStorage,
   useClipboard,
+  useMedia,
 } from '../src';
 
 /**
@@ -84,5 +86,45 @@ describe('useLocalStorage', () => {
     const btn = getByRole('button');
     fireEvent.click(btn);
     expect(container).toHaveTextContent("You've clicked the button 1 times.");
+  });
+});
+
+const MediaComponent = () => {
+  const small = useMedia({ maxWidth: 640 });
+
+  return <Box data-testid="media-box" height={100} width={small ? 100 : 500} />;
+};
+
+describe('useMedia', () => {
+  beforeAll(() => {
+    Object.defineProperty(window, 'matchMedia', {
+      value: jest.fn(() => {
+        return {
+          matches: true, // Causes all media queries to return true
+          addListener: jest.fn(),
+          removeListener: jest.fn(),
+        };
+      }),
+    });
+  });
+
+  it('should render Local Storage Component', () => {
+    const { container } = render(
+      <ThemeProvider>
+        <MediaComponent />
+      </ThemeProvider>
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should pass style rules', () => {
+    const { getByTestId } = render(
+      <ThemeProvider>
+        <MediaComponent />
+      </ThemeProvider>
+    );
+
+    const box = getByTestId('media-box');
+    expect(box).toHaveStyleRule('width', '100px');
   });
 });

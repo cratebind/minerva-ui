@@ -219,3 +219,20 @@ exports[`useLocalStorage should render Local Storage Component 1`] = `
   </p>
 </div>
 `;
+
+exports[`useMedia should render Local Storage Component 1`] = `
+.c0 {
+  box-sizing: border-box;
+  min-width: 0;
+  color: #374151;
+  height: 100px;
+  width: 100px;
+}
+
+<div>
+  <div
+    class="c0"
+    data-testid="media-box"
+  />
+</div>
+`;

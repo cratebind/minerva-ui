@@ -12,3 +12,7 @@ jest.mock('@reach/utils', () => ({
 jest.mock('copy-to-clipboard', () => {
   return jest.fn();
 });
+
+jest.mock('json2mq', () => {
+  return jest.fn();
+});
