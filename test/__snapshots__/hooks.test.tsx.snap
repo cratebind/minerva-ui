@@ -236,3 +236,23 @@ exports[`useMedia should render Local Storage Component 1`] = `
   />
 </div>
 `;
+
+exports[`useNetwork should render Network Component 1`] = `
+.c0 {
+  box-sizing: border-box;
+  min-width: 0;
+  color: #374151;
+  margin: 0;
+  font-size: 16px;
+  line-height: normal;
+}
+
+<div>
+  <p
+    class="c0"
+  >
+    Network 
+    Online
+  </p>
+</div>
+`;

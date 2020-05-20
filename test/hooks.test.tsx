@@ -10,6 +10,7 @@ import {
   useLocalStorage,
   useClipboard,
   useMedia,
+  useNetwork,
 } from '../src';
 
 /**
@@ -126,5 +127,42 @@ describe('useMedia', () => {
 
     const box = getByTestId('media-box');
     expect(box).toHaveStyleRule('width', '100px');
+  });
+});
+
+const NetworkComponent = () => {
+  const online = useNetwork();
+
+  return <Text>Network {online ? 'Online' : 'Offline'}</Text>;
+};
+
+describe('useNetwork', () => {
+  it('should render Network Component', () => {
+    const { container } = render(
+      <ThemeProvider>
+        <NetworkComponent />
+      </ThemeProvider>
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should show "online"', () => {
+    jest.spyOn(navigator, 'onLine', 'get').mockReturnValue(true);
+    const { container } = render(
+      <ThemeProvider>
+        <NetworkComponent />
+      </ThemeProvider>
+    );
+    expect(container).toHaveTextContent('Network Online');
+  });
+
+  it('should show "offline"', () => {
+    jest.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+    const { container } = render(
+      <ThemeProvider>
+        <NetworkComponent />
+      </ThemeProvider>
+    );
+    expect(container).toHaveTextContent('Network Offline');
   });
 });
