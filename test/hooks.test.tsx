@@ -196,7 +196,27 @@ const DisclosureComponent = () => {
         isOpen={isOpen}
         onClose={onClose}
         overflow="hidden"
-      />
+      >
+        <Button onClick={onClose}>Close Drawer</Button>
+      </Drawer>
+    </>
+  );
+};
+
+const DisclosureToggleComponent = () => {
+  const { isOpen, onToggle } = useDisclosure(false);
+
+  return (
+    <>
+      <Button onClick={onToggle} />
+      <Drawer
+        data-testid="drawer"
+        isOpen={isOpen}
+        onClose={onToggle}
+        overflow="hidden"
+      >
+        <Button onClick={onToggle}>Close Drawer</Button>
+      </Drawer>
     </>
   );
 };
@@ -222,5 +242,24 @@ describe('useDisclosure', () => {
     expect(queryByTestId('drawer')).toBeNull();
     fireEvent.click(btn);
     expect(queryByTestId('drawer')).toBeTruthy();
+    const drawerBtn = getByRole('button');
+    fireEvent.click(drawerBtn);
+    expect(queryByTestId('drawer')).toBeNull();
+  });
+
+  it('should toggle drawer', () => {
+    const { getByRole, queryByTestId } = render(
+      <ThemeProvider>
+        <DisclosureToggleComponent />
+      </ThemeProvider>
+    );
+
+    const btn = getByRole('button');
+    expect(queryByTestId('drawer')).toBeNull();
+    fireEvent.click(btn);
+    expect(queryByTestId('drawer')).toBeTruthy();
+    const drawerBtn = getByRole('button');
+    fireEvent.click(drawerBtn);
+    expect(queryByTestId('drawer')).toBeNull();
   });
 });
