@@ -301,7 +301,7 @@ exports[`useLocalStorage should render Local Storage Component 1`] = `
 </div>
 `;
 
-exports[`useMedia should render Local Storage Component 1`] = `
+exports[`useMedia should render Media Component 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;

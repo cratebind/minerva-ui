@@ -99,7 +99,11 @@ const MediaComponent = () => {
 };
 
 describe('useMedia', () => {
+  const spy = jest.fn();
+  const testWidth = 420;
+
   beforeAll(() => {
+    window.addEventListener('resize', spy);
     Object.defineProperty(window, 'matchMedia', {
       value: jest.fn(() => {
         return {
@@ -111,7 +115,7 @@ describe('useMedia', () => {
     });
   });
 
-  it('should render Local Storage Component', () => {
+  it('should render Media Component', () => {
     const { container } = render(
       <ThemeProvider>
         <MediaComponent />
@@ -129,8 +133,18 @@ describe('useMedia', () => {
 
     const box = getByTestId('media-box');
     expect(box).toHaveStyleRule('width', '100px');
-
     expect(window.matchMedia).toHaveBeenCalledTimes(2);
+  });
+
+  it('should trigger onResize method when window is resized', () => {
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: 420,
+    });
+    window.dispatchEvent(new Event('resize'));
+    expect(spy).toHaveBeenCalled();
+    expect(window.innerWidth).toBe(testWidth);
   });
 });
 
