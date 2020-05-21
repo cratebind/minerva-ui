@@ -23,7 +23,7 @@ const UtilityTable = ({ themeProperty, renderValue }) => {
         </TableHeader>
         <TableBody>
           {Object.entries(themeProperty).map(([property, value]) => (
-            <TableRow>
+            <TableRow key={property}>
               <TableCell>
                 <Box as="pre" bg="#f5f6f7">
                   {property}
