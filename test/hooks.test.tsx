@@ -93,7 +93,7 @@ describe('useLocalStorage', () => {
 });
 
 const MediaComponent = () => {
-  const small = useMedia({ maxWidth: 640 });
+  const small = useMedia('(max-width: 640px)');
 
   return <Box data-testid="media-box" height={100} width={small ? 100 : 500} />;
 };
@@ -129,6 +129,8 @@ describe('useMedia', () => {
 
     const box = getByTestId('media-box');
     expect(box).toHaveStyleRule('width', '100px');
+
+    expect(window.matchMedia).toHaveBeenCalledTimes(2);
   });
 });
 
