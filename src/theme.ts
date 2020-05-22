@@ -27,6 +27,7 @@ export interface MinervaTheme extends Theme {
   Text?: React.CSSProperties;
   Input?: ThemeComponent;
   Image?: React.CSSProperties;
+  Tooltip?: React.CSSProperties;
   InputField?: React.CSSProperties;
   Link?: React.CSSProperties;
   Checkbox?: React.CSSProperties;
@@ -35,7 +36,6 @@ export interface MinervaTheme extends Theme {
   Tag?: React.CSSProperties;
   Skeleton?: React.CSSProperties;
   Tabs?: React.CSSProperties;
-  Tooltip?: React.CSSProperties;
   icons: any;
   defaultBorderColor?: string;
   variants?: any;
@@ -111,6 +111,7 @@ const defaultTheme: MinervaTheme = {
   ModalContent: {},
   Tag: {},
   Text: {},
+  Tooltip: {},
   Select: {},
   Skeleton: {},
   Switch: {},
