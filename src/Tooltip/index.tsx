@@ -6,7 +6,6 @@ import {
   props,
 } from '@styled-system/should-forward-prop';
 import { MinervaProps, systemProps } from '../layout';
-// import '@reach/tooltip/styles.css';
 import styled from 'styled-components';
 import { useComponentStyles } from '../theme';
 
@@ -121,7 +120,7 @@ export const Tooltip = forwardRef(
       }
     };
 
-    const componentStyles = useComponentStyles('Text');
+    const componentStyles = useComponentStyles('Tooltip');
 
     return (
       <TooltipCustom

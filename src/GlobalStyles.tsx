@@ -213,6 +213,21 @@ export const ReachStyles = css`
   [data-reach-tab][data-selected] {
     /* border-bottom: 1px solid currentColor; */
   }
+
+  /**
+   * Reach Tooltip
+   */
+  :root {
+    --reach-tooltip: 1;
+  }
+
+  [data-reach-tooltip] {
+    z-index: 1;
+    pointer-events: none;
+    position: absolute;
+    white-space: nowrap;
+    animation: grow 0.1s ease;
+  }
 `;
 
 /**
