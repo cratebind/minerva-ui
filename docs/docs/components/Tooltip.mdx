@@ -1,0 +1,46 @@
+---
+title: 'Tooltip'
+---
+
+The `<Tooltip />` component displays a small pop-up that display additional information when hovered or focused.
+
+```js
+import { Tooltip } from 'minerva-ui';
+```
+
+```jsx
+<Tooltip label="Tooltip text">
+  <Button>Hover me!</Button>
+</Tooltip>
+```
+
+# Tooltip with Custom Position
+
+```js
+import { Tooltip } from 'minerva-ui';
+```
+
+```jsx
+<Tooltip label="Tooltip text" placement="right">
+  <Button variant="primary">Hover me!</Button>
+</Tooltip>
+```
+
+# Tooltip with Custom Styles
+
+```js
+import { Tooltip } from 'minerva-ui';
+```
+
+```jsx
+<Tooltip label="Tooltip text" bg="indigo.700" borderRadius="full">
+  <Button variant="primary">Hover me!</Button>
+</Tooltip>
+```
+
+## Props
+
+| Name       | Type                             | Is Required | Default  | Description                |
+| ---------- | -------------------------------- | ----------- | -------- | -------------------------- |
+| `label`    | `string`                         | optional    | `null`   | Text to display in tooltip |
+| `position` | `top`, `right`, `bottom`, `left` | optional    | `bottom` | Text to display in tooltip |
