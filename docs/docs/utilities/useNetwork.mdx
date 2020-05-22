@@ -1,0 +1,28 @@
+import { useNetwork } from 'minerva-ui';
+
+`useNetwork` is a custom hook to check the network status to determine if the user is connected to the internet or not.
+
+The useNetwork hook returns an object with the following fields:
+
+| Name           | Type    | Default | Description                                                     |
+| -------------- | ------- | ------- | --------------------------------------------------------------- |
+| `onlineStatus` | boolean |         | True if the user is connected to the internet, false otherwise. |
+
+```js
+import { useNetwork } from 'minerva-ui';
+```
+
+## Usage
+
+```jsx live
+function Example() {
+  const online = useNetwork();
+  // Disable network to view change
+
+  return (
+    <Box>
+      <Text>Network {online ? 'Online' : 'Offline'}</Text>
+    </Box>
+  );
+}
+```

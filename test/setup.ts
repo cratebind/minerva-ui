@@ -8,3 +8,11 @@ jest.mock('@reach/utils', () => ({
   ...jest.requireActual('@reach/utils'),
   checkStyles: jest.fn(),
 }));
+
+jest.mock('copy-to-clipboard', () => {
+  return jest.fn();
+});
+
+jest.mock('json2mq', () => {
+  return jest.fn();
+});
