@@ -27,7 +27,7 @@ import { useAppContext } from './AppContext';
 import Inspector from './Inspector';
 import ThemeModal from './ThemeModal';
 import UtilityTable from './UtilityTable';
-import { ModalExample } from './examples';
+import { ModalExample, CardExamples, FormExamples } from './examples';
 
 const ColorTag = ({ number, code, ...props }) => (
   <Block
@@ -113,6 +113,8 @@ export const Components = {
 
 export const Examples = {
   Modal: ModalExample,
+  Cards: CardExamples,
+  Forms: FormExamples,
 };
 
 const ComponentButton = styled(Button)`

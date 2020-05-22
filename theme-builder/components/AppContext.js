@@ -42,6 +42,8 @@ const initialState = {
   Table: { customProps: {} },
   Text: { customProps: { children: 'Text' } },
   Heading: { customProps: { children: 'Heading' } },
+  Cards: { customProps: {} },
+  Forms: { customProps: {} },
 };
 
 const AppContext = React.createContext({
