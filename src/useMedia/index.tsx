@@ -7,6 +7,7 @@ export function useMedia(
 ) {
   const [matches, setMatches] = useState(defaultMatches);
 
+  /* istanbul ignore next */
   useEffect(() => {
     const mediaQueryList = window.matchMedia(
       typeof query === 'string' ? query : json2mq(query)
