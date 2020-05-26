@@ -1,0 +1,36 @@
+import { useClipboard } from 'minerva-ui';
+
+`useClipboard` is a custom hook to handle copying content to clipboard.
+
+The useClipboard hook returns an object with the following fields:
+
+| Name        | Type     | Default | Description                                       |
+| ----------- | -------- | ------- | ------------------------------------------------- |
+| `value`     | string   |         | The copied value                                  |
+| `onCopy`    | function |         | Action to copy content                            |
+| `hasCopied` | boolean  | false   | True if the content has been copied to clipboard. |
+
+```js
+import { useClipboard } from 'minerva-ui';
+```
+
+## Usage
+
+```jsx live
+function Example() {
+  const [value, setValue] = React.useState('Hello World');
+  const { onCopy, hasCopied } = useClipboard(value);
+
+  return (
+    <>
+      <Flex mb={2}>
+        <Input value={value} onChange={e => setValue(e.target.value)} />
+        <Button onClick={onCopy} ml={2}>
+          {hasCopied ? 'Copied' : 'Copy'}
+        </Button>
+      </Flex>
+      <Input placeholder="Paste here" />
+    </>
+  );
+}
+```

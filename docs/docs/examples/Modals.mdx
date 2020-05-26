@@ -8,12 +8,12 @@ While components like `ModalHeader`, `ModalBody` and `ModalFooter` are provided,
 
 ```jsx live
 () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Flex bg="gray.500" justifyContent="center" p={6}>
-      <Button onClick={() => setIsOpen(true)}>Deactivate Account</Button>
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} overflow="hidden">
+      <Button onClick={onOpen}>Deactivate Account</Button>
+      <Modal isOpen={isOpen} onClose={onClose} overflow="hidden">
         <Box
           maxWidth="512px"
           bg="white"
@@ -72,7 +72,7 @@ While components like `ModalHeader`, `ModalBody` and `ModalFooter` are provided,
               borderColor="red.600"
               boxShadow="base"
               color="white"
-              onClick={() => setIsOpen(false)}
+              onClick={onClose}
               _hover={{
                 bg: 'red.500',
                 color: 'white',
@@ -80,11 +80,7 @@ While components like `ModalHeader`, `ModalBody` and `ModalFooter` are provided,
             >
               Deactivate
             </Button>
-            <Button
-              onClick={() => setIsOpen(false)}
-              boxShadow="base"
-              width={['100%', 'auto']}
-            >
+            <Button onClick={onClose} boxShadow="base" width={['100%', 'auto']}>
               Cancel
             </Button>
           </Flex>

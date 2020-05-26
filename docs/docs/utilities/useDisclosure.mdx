@@ -1,0 +1,37 @@
+import { useDisclosure } from 'minerva-ui';
+
+`useDisclosure` is a custom hook to help handle common open, close, or toggle scenarios. It can be used to control feedback component such as Modal, AlertDialog, Drawer, etc.
+
+```js
+import { useDisclosure } from 'minerva-ui';
+```
+
+The `useDisclosure` hook returns an object with the following fields:
+
+| Name       | Type     | Default | Description                                            |
+| ---------- | -------- | ------- | ------------------------------------------------------ |
+| `isOpen`   | boolean  | false   | If true, it sets the component to it's visible state.  |
+| `onClose`  | function |         | Function that sets `isOpen` to false.                  |
+| `onOpen`   | function |         | Function that sets `isOpen` to true.                   |
+| `onToggle` | function |         | Function that toggles `isOpen` between true and false. |
+
+## Usage
+
+```jsx live
+function Example() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  return (
+    <>
+      <Button onClick={onOpen}>Open Drawer</Button>
+      <Drawer isOpen={isOpen} onClose={onClose} overflow="hidden">
+        <DrawerHeader onClose={onClose}>Hello World!</DrawerHeader>
+        <DrawerBody>
+          Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco
+          deserunt aute id consequat veniam incididunt duis in sint irure nisi.
+        </DrawerBody>
+      </Drawer>
+    </>
+  );
+}
+```

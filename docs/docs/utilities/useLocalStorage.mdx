@@ -1,0 +1,33 @@
+import { useLocalStorage } from 'minerva-ui';
+
+`useLocalStorage` is a custom hook to help handle storing data in Local Storage.
+
+```js
+import { useLocalStorage } from 'minerva-ui';
+```
+
+The `useLocalStorage` hook returns an object with the following fields:
+
+| Name       | Type     | Default | Description                                            |
+| ---------- | -------- | ------- | ------------------------------------------------------ |
+| `isOpen`   | boolean  | false   | If true, it sets the component to it's visible state.  |
+| `onClose`  | function |         | Function that sets `isOpen` to false.                  |
+| `onOpen`   | function |         | Function that sets `isOpen` to true.                   |
+| `onToggle` | function |         | Function that toggles `isOpen` between true and false. |
+
+## Usage
+
+```jsx live
+function Example() {
+  const [count, setCount] = useLocalStorage('click-count', 0);
+
+  return (
+    <>
+      <Button onClick={() => setCount(count + 1)}>Add To Count</Button>
+      <Text py={5} fontSize="2xl">
+        You've clicked the button {count} times.
+      </Text>
+    </>
+  );
+}
+```
