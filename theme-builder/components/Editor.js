@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { Box, styled } from 'minerva-ui';
 import { useAppContext } from './AppContext';
-import { Components, ThemeConfig, Examples } from './ThemeBuilder';
+import { Components, Examples } from './ThemeBuilder';
 
 const Container = styled(Box)`
   flex: 1;
@@ -14,7 +14,11 @@ function Editor() {
 
   const activeComponent = state?.activeComponent;
 
-  const AllViews = { ...Components, ...ThemeConfig, ...Examples };
+  const AllViews = {
+    ...Components,
+    // ...ThemeConfig,
+    ...Examples,
+  };
 
   const Component = activeComponent ? AllViews[activeComponent] : null;
 
