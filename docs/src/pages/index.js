@@ -6,6 +6,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
+import '../css/kitchen-sink.css';
+
 const features = [
   {
     title: <>Easy To Use</>,

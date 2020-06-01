@@ -35,8 +35,6 @@ import {
   Text,
 } from 'minerva-ui';
 
-import '../css/kitchen-sink.css';
-
 const KitchenSink = () => {
   const [alertOpen, setAlertOpen] = React.useState(false);
   const [checked, setChecked] = React.useState(false);
