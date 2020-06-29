@@ -325,6 +325,8 @@ export const Box = styled('div').withConfig({
     minWidth: 0,
     // @TODO: Change when light / dark themes are added
     color: '#374151',
+    fontFamily:
+      '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
   },
   systemProps
 );

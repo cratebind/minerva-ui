@@ -92,6 +92,7 @@ export const Alert = forwardRef(function Alert(
       lineHeight={1}
       aria-label={`${title}`}
       aria-live="polite"
+      fontFamily="body"
       {...props}
     >
       {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
