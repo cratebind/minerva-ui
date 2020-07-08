@@ -38,6 +38,7 @@ export { default as Button } from './Button';
 export { default as Checkbox } from './Checkbox';
 export { default as Switch } from './Switch';
 export { default as Input } from './Input';
+export * from './Combobox';
 export * from './Menu';
 export { RadioGroup, Radio } from './Radio';
 export { default as InputField } from './InputField';

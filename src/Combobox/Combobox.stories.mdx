@@ -1,0 +1,40 @@
+import { useState } from 'react';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxList,
+  ComboboxOption,
+  ComboboxOptionText,
+} from '../Combobox';
+
+<Meta title="Elements|Combobox" component={Combobox} />
+
+# Combobox
+
+Extends native `<input />` component
+
+```js
+import { Input } from 'minerva-ui'
+```
+
+```jsx
+() => {
+  return (
+    <Combobox aria-label="choose a fruit">
+      <ComboboxInput />
+      <ComboboxPopover>
+        <ComboboxList>
+          <ComboboxOption value="Apple" />
+          <ComboboxOption value="Banana" />
+        </ComboboxList>
+      </ComboboxPopover>
+    </Combobox>
+  )
+}
+```
+
+<Props of={Combobox} />
+
+# Examples

@@ -86,6 +86,7 @@
     "@mdx-js/react": "^1.5.1",
     "@reach/accordion": "^0.10.1",
     "@reach/checkbox": "^0.8.6",
+    "@reach/combobox": "^0.10.5",
     "@reach/dialog": "^0.9.1",
     "@reach/menu-button": "^0.10.0",
     "@reach/popover": "^0.10.1",
