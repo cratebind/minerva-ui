@@ -21,6 +21,7 @@ import { Input } from 'minerva-ui'
 
 ```jsx
 () => {
+  const [search, setSearch] = React.useState('');
   return (
     <Combobox aria-label="choose a fruit">
       <ComboboxInput />
@@ -38,3 +39,24 @@ import { Input } from 'minerva-ui'
 <Props of={Combobox} />
 
 # Examples
+
+## Client-Side Search
+```jsx
+() => {
+  const [search, setSearch] = React.useState('');
+  const items = ['apple', 'banana'];
+
+  return (
+    <Combobox aria-label="choose a fruit">
+      <ComboboxInput value={search} onChange={e => setSearch(e.target.value)} />
+      <ComboboxPopover>
+        <ComboboxList>
+          {items.filter(item => item.includes(search)).map(item => (
+            <ComboboxOption value={item} />
+          ))}
+        </ComboboxList>
+      </ComboboxPopover>
+    </Combobox>
+  )
+}
+```
