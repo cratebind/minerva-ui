@@ -18,6 +18,7 @@ export const Text = forwardRef(({ children, ...props }: TextProps, ref) => {
       ref={ref}
       margin={0}
       fontSize="16px"
+      fontFamily="body"
       {...componentStyles}
       {...props}
     >

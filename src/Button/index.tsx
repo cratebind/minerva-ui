@@ -101,6 +101,7 @@ export const Button = forwardRef(function Button(
       transition="all 150ms ease 0s"
       outline="none"
       cursor="pointer"
+      fontFamily="body"
       _hover={{
         backgroundColor: '#f9fafb',
       }}
