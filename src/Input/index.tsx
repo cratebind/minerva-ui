@@ -49,7 +49,7 @@ export const Input = forwardRef(function Input(
   const componentStyles = useComponentStyles('Input');
 
   warning(
-    !hiddenLabel,
+    hiddenLabel,
     'Inputs without associated labels require a `hiddenLabel` attribute to be accessible.'
   );
 

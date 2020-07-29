@@ -172,6 +172,7 @@ const KitchenSink = () => {
           <Stack gap="30px">
             <InputField label="Basic Input" className="input-label white-text">
               <Input
+                hiddenLabel="Basic Input"
                 style={{ color: 'black' }}
                 placeholder="placeholder"
                 value={field}
@@ -181,6 +182,7 @@ const KitchenSink = () => {
               />
             </InputField>
             <InputField
+              hiddenLabel="Input with Error"
               className="input-label white-text"
               label="Input With Error"
               htmlFor="basicInput"
@@ -190,6 +192,7 @@ const KitchenSink = () => {
               requiredMarkerColor="#FF6347"
             >
               <Input
+                hiddenLabel="Input with Error"
                 style={{ color: 'black' }}
                 id="basicInput"
                 placeholder="placeholder"
