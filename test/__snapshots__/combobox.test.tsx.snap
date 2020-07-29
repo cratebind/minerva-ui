@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Input /> should render 1`] = `
+exports[`<Combobox /> should render 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
@@ -44,12 +44,21 @@ exports[`<Input /> should render 1`] = `
   <label
     for="input-field"
   >
-    Name
-    <input
-      class="sc-AxjAm c0"
-      id="input-field"
-      value=""
-    />
+    Fruit
+    <div
+      data-reach-combobox=""
+    >
+      <input
+        aria-autocomplete="both"
+        aria-controls="listbox--1"
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        class="sc-AxjAm c0"
+        data-reach-combobox-input=""
+        role="combobox"
+        value="Hello"
+      />
+    </div>
   </label>
 </div>
 `;

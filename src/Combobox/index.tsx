@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 // import warning from 'tiny-warning';
 // import PropTypes from 'prop-types';
 import {
@@ -31,6 +31,7 @@ export const ComboboxPopover = props => (
     overflow="hidden"
     zIndex="50"
     as={ReachComboboxPopover}
+    data-testid="combobox-popover"
     {...props}
   />
 );

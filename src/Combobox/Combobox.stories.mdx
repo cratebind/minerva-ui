@@ -16,7 +16,7 @@ import {
 Extends native `<input />` component
 
 ```js
-import { Input } from 'minerva-ui'
+import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from 'minerva-ui';
 ```
 
 ```jsx
@@ -44,10 +44,10 @@ import { Input } from 'minerva-ui'
 ```jsx
 () => {
   const [search, setSearch] = React.useState('');
-  const items = ['apple', 'banana'];
+  const items = ['apple', 'banana', 'kiwi', 'orange'];
 
   return (
-    <Combobox aria-label="choose a fruit">
+    <Combobox aria-label="choose a fruit" openOnFocus onSelect={(item) => {setSearch(item)}}>
       <ComboboxInput value={search} onChange={e => setSearch(e.target.value)} />
       <ComboboxPopover>
         <ComboboxList>
