@@ -1,22 +1,19 @@
 import React, { forwardRef } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import {
   Accordion as ReachAccordion,
   AccordionItem as ReachAccordionItem,
   AccordionButton as ReachAccordionButton,
   AccordionPanel as ReachAccordionPanel,
   AccordionProps as ReachAccordionProps,
+  AccordionItemProps as ReachAccordionItemProps,
+  // useAccordionItemContext,
 } from '@reach/accordion';
-import { MinervaProps, Box, systemProps } from '../layout';
-import Icon from '../Icon';
+import { MinervaProps, Box } from '../layout';
+// import Icon from '../Icon';
 import Button from '../Button';
 
 export interface AccordionProps extends MinervaProps {
-  children?: React.ReactNode;
-  props?: any;
-}
-
-export interface AccordionItemProps extends MinervaProps {
   children?: React.ReactNode;
   props?: any;
 }
@@ -31,17 +28,9 @@ export interface AccordionPanelProps extends MinervaProps {
   props?: any;
 }
 
-type AllAccordionProps = ReachAccordionProps & MinervaProps;
-export const Accordion = styled(ReachAccordion)<AllAccordionProps>(
-  {
-    borderBottomColor: 'gray.200',
-    borderBottomWidth: '1px',
-  },
-  systemProps
-);
-
+type AllAccordionItemProps = ReachAccordionItemProps & MinervaProps;
 export const AccordionItem = forwardRef(function AccordionItem(
-  { ...props }: AccordionItemProps,
+  { ...props }: AllAccordionItemProps,
   ref
 ) {
   return <Box as={ReachAccordionItem} ref={ref} {...props} />;
@@ -91,15 +80,22 @@ export const AccordionPanel = forwardRef(function AccordionPanel(
   );
 });
 
-export const MainAccordion = forwardRef(function Alert(
-  { children, ...props }: AccordionProps,
+type AllAccordionProps = ReachAccordionProps & MinervaProps;
+export const Accordion = forwardRef(function Alert(
+  { children, ...props }: AllAccordionProps,
   ref
 ) {
   return (
-    <Accordion {...props} ref={ref}>
+    <Box
+      as={ReachAccordion}
+      borderBottomColor="gray.200"
+      borderBottomWidth="1px"
+      {...props}
+      ref={ref}
+    >
       {children}
-    </Accordion>
+    </Box>
   );
 });
 
-export default MainAccordion;
+export default Accordion;
