@@ -1,6 +1,8 @@
 import React, { useContext, forwardRef } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { useId } from '@reach/auto-id';
+
 import { MinervaProps, systemProps } from '../layout';
 import { Box } from '../layout';
 import VisuallyHidden from '../VisuallyHidden';
@@ -109,10 +111,12 @@ export const Radio = forwardRef(function Radio(
   // only accept defaultChecked if no onChange handler is passed
   const checkedProps = !onChange ? { defaultChecked: checked } : { checked };
 
+  const id = useId();
+
   return (
     <RadioContainer
       data-testid="radio"
-      htmlFor={value}
+      htmlFor={id}
       as="label"
       aria-label={value}
       ref={ref}
@@ -123,7 +127,7 @@ export const Radio = forwardRef(function Radio(
           as="input"
           type="radio"
           aria-label={value}
-          id={value}
+          id={id}
           value={value}
           onChange={onChange}
           aria-checked={checked}

@@ -1,0 +1,80 @@
+---
+title: 'Combobox'
+---
+
+Extends native `<input />` component
+
+```js
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxList,
+  ComboboxOption,
+} from 'minerva-ui';
+```
+
+```jsx live
+() => {
+  const [search, setSearch] = React.useState('');
+  return (
+    <Combobox aria-label="choose a fruit">
+      <ComboboxInput />
+      <ComboboxPopover>
+        <ComboboxList>
+          <ComboboxOption value="Apple" />
+          <ComboboxOption value="Banana" />
+        </ComboboxList>
+      </ComboboxPopover>
+    </Combobox>
+  );
+};
+```
+
+# Examples
+
+## Client-Side Search
+
+```jsx
+() => {
+  const [search, setSearch] = React.useState('');
+  const items = ['apple', 'banana', 'kiwi', 'orange'];
+
+  return (
+    <Combobox
+      aria-label="choose a fruit"
+      openOnFocus
+      onSelect={item => {
+        setSearch(item);
+      }}
+    >
+      <ComboboxInput value={search} onChange={e => setSearch(e.target.value)} />
+      <ComboboxPopover>
+        <ComboboxList>
+          {items
+            .filter(item => item.includes(search))
+            .map(item => (
+              <ComboboxOption value={item} />
+            ))}
+        </ComboboxList>
+      </ComboboxPopover>
+    </Combobox>
+  );
+};
+```
+
+## Props
+
+Props related to the Combobox component.
+
+| Name          | Type     | Is Required | Default | Description                                                                                              |
+| ------------- | -------- | ----------- | ------- | -------------------------------------------------------------------------------------------------------- |
+| `onSelect`    | function | optional    | none    | Called with the selection value when the user makes a selection from the list. `(value: string) => void` |
+| `openOnFocus` | boolean  | optional    | false   | If true, the popover opens when focus is on the text box.                                                |
+
+Props related to the Combobox Input component.
+
+| Name            | Type    | Is Required | Default | Description                                                                                                                                                                        |
+| --------------- | ------- | ----------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `selectOnClick` | boolean | optional    | false   | If true, when the user clicks inside the text box the current value will be selected. Use this if the user is likely to delete all the text anyway (like the URL bar in browsers). |
+| `autocomplete`  | boolean | optional    | true    | Determines if the value in the input changes or not as the user navigates with the keyboard. If true, the value changes, if false the value doesn't change.                        |
