@@ -3131,6 +3131,14 @@
     "@reach/utils" "^0.10.1"
     tslib "^1.11.1"
 
+"@reach/auto-id@0.10.5":
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/@reach/auto-id/-/auto-id-0.10.5.tgz#fa78c71ce2f565ebed1ad91a8d9a685176d23c48"
+  integrity sha512-we4/bwjFxJ3F+2eaddQ1HltbKvJ7AB8clkN719El7Zugpn/vOjfPMOVUiBqTmPGLUvkYrq4tpuFwLvk2HyOVHg==
+  dependencies:
+    "@reach/utils" "0.10.5"
+    tslib "^2.0.0"
+
 "@reach/auto-id@^0.10.0":
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/@reach/auto-id/-/auto-id-0.10.0.tgz#72b70b9bb3f7d0f39b9fae0dcb412168ee139762"
@@ -3174,6 +3182,28 @@
     "@xstate/fsm" "^1.3.0"
     tslib "^1.10.0"
     warning "^4.0.3"
+
+"@reach/combobox@^0.10.5":
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/@reach/combobox/-/combobox-0.10.5.tgz#60e442ee7d1c63022cc3079e1aa4713aa1d398d4"
+  integrity sha512-UrvdELLk+rnxK0o2e+jWmw6b7dteBWAylX4CEHE9KJuBbdwZ1PJY3YIAwJuvWM13Lcll2Pk7OlFJqRT90r2mRg==
+  dependencies:
+    "@reach/auto-id" "0.10.5"
+    "@reach/descendants" "0.10.5"
+    "@reach/popover" "0.10.5"
+    "@reach/portal" "0.10.5"
+    "@reach/utils" "0.10.5"
+    highlight-words-core "1.2.2"
+    prop-types "^15.7.2"
+    tslib "^2.0.0"
+
+"@reach/descendants@0.10.5":
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/@reach/descendants/-/descendants-0.10.5.tgz#2611174e9e9b326dba548356221e2f8c8f5c8612"
+  integrity sha512-8HhN4DwS/HsPQ+Ym/Ft/XJ1spXBYdE8hqpnbYR9UcU7Nx3oDbTIdhjA6JXXt23t5avYIx2jRa8YHCtVKSHuiwA==
+  dependencies:
+    "@reach/utils" "0.10.5"
+    tslib "^2.0.0"
 
 "@reach/descendants@^0.10.0":
   version "0.10.0"
@@ -3225,10 +3255,26 @@
     tslib "^1.10.0"
     warning "^4.0.3"
 
+"@reach/observe-rect@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@reach/observe-rect/-/observe-rect-1.2.0.tgz#d7a6013b8aafcc64c778a0ccb83355a11204d3b2"
+  integrity sha512-Ba7HmkFgfQxZqqaeIWWkNK0rEhpxVQHIoVyW1YDSkGsGIXzcaW4deC8B0pZrNSSyLTdIk7y+5olKt5+g0GmFIQ==
+
 "@reach/observe-rect@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@reach/observe-rect/-/observe-rect-1.1.0.tgz#4e967a93852b6004c3895d9ed8d4e5b41895afde"
   integrity sha512-kE+jvoj/OyJV24C03VvLt5zclb9ArJi04wWXMMFwQvdZjdHoBlN4g0ZQFjyy/ejPF1Z/dpUD5dhRdBiUmIGZTA==
+
+"@reach/popover@0.10.5":
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/@reach/popover/-/popover-0.10.5.tgz#ccf89f6540e6477d8d087e78a8294e89295a743d"
+  integrity sha512-S+qWIsjrN1yMpHjgELhjpdGc4Q3q1plJtXBGGQRxUAjmCUA/5OY7t5w5C8iqMNAEBwCvYXKvK/pLcXFxxLykSw==
+  dependencies:
+    "@reach/portal" "0.10.5"
+    "@reach/rect" "0.10.5"
+    "@reach/utils" "0.10.5"
+    tabbable "^4.0.0"
+    tslib "^2.0.0"
 
 "@reach/popover@^0.10.0":
   version "0.10.0"
@@ -3251,6 +3297,14 @@
     "@reach/utils" "^0.10.1"
     tabbable "^4.0.0"
     tslib "^1.11.1"
+
+"@reach/portal@0.10.5":
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/@reach/portal/-/portal-0.10.5.tgz#532ce8472fc99d6c556520f6c8d53333d89e49a4"
+  integrity sha512-K5K8gW99yqDPDCWQjEfSNZAbGOQWSx5AN2lpuR1gDVoz4xyWpTJ0k0LbetYJTDVvLP/InEcR7AU42JaDYDCXQw==
+  dependencies:
+    "@reach/utils" "0.10.5"
+    tslib "^2.0.0"
 
 "@reach/portal@^0.10.0":
   version "0.10.0"
@@ -3275,6 +3329,16 @@
   dependencies:
     "@reach/utils" "^0.9.0"
     tslib "^1.10.0"
+
+"@reach/rect@0.10.5":
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/@reach/rect/-/rect-0.10.5.tgz#ba68722f155b146c6790e7d10a97dca1fd7ab14e"
+  integrity sha512-JBKs2HniYecq5zLO6UFReX28SUBPM3n0aizdNgHuvwZmDcTfNV4jsuJYQLqJ+FbCQsrSHkBxKZqWpfGXY9bUEg==
+  dependencies:
+    "@reach/observe-rect" "1.2.0"
+    "@reach/utils" "0.10.5"
+    prop-types "^15.7.2"
+    tslib "^2.0.0"
 
 "@reach/rect@^0.10.0":
   version "0.10.0"
@@ -3330,6 +3394,15 @@
     "@reach/visually-hidden" "^0.10.1"
     prop-types "^15.7.2"
     tslib "^1.11.1"
+
+"@reach/utils@0.10.5":
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.10.5.tgz#fbac944d29565f6dd7abd0e1b13950e99b1e470b"
+  integrity sha512-5E/xxQnUbmpI/LrufBAOXjunl96DnqX6B4zC2MO2KH/dRzLug5gM5VuOwV26egsp0jvsSPxojwciOhS43px3qw==
+  dependencies:
+    "@types/warning" "^3.0.0"
+    tslib "^2.0.0"
+    warning "^4.0.3"
 
 "@reach/utils@0.11.0":
   version "0.11.0"
@@ -10632,6 +10705,11 @@ hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
+
+highlight-words-core@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/highlight-words-core/-/highlight-words-core-1.2.2.tgz#1eff6d7d9f0a22f155042a00791237791b1eeaaa"
+  integrity sha512-BXUKIkUuh6cmmxzi5OIbUJxrG8OAk2MqoL1DtO3Wo9D2faJg2ph5ntyuQeLqaHJmzER6H5tllCDA9ZnNe9BVGg==
 
 highlight.js@~9.13.0:
   version "9.13.1"

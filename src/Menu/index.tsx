@@ -26,6 +26,33 @@ export interface MenuListProps extends MinervaProps {
   menuPosition?: 'left' | 'right';
 }
 
+export const OverlayBox = props => (
+  <PseudoBox
+    py={1}
+    mt="8px"
+    bg="white"
+    position="relative"
+    borderRadius="6px"
+    boxShadow="0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05)"
+    _after={{
+      content: `''`,
+      boxShadow: '0 0 0 1px rgba(0,0,0,.05)',
+      borderRadius: '6px',
+      position: 'absolute',
+      top: 0,
+      width: '100%',
+      height: '100%',
+      pointerEvents: 'none',
+    }}
+    _focus={{
+      outline: 0,
+    }}
+    border={0}
+    minWidth="220px"
+    {...props}
+  />
+);
+
 export const MenuList = ({
   menuPosition = 'left',
   ...props
@@ -33,27 +60,7 @@ export const MenuList = ({
   <ReachMenuPopover
     position={menuPosition === 'right' ? positionRight : positionDefault}
   >
-    <PseudoBox
-      py={1}
-      mt="8px"
-      bg="white"
-      position="relative"
-      borderRadius="6px"
-      boxShadow="0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05)"
-      _after={{
-        content: `''`,
-        boxShadow: '0 0 0 1px rgba(0,0,0,.05)',
-        borderRadius: '6px',
-        position: 'absolute',
-        top: 0,
-        width: '100%',
-        height: '100%',
-        pointerEvents: 'none',
-      }}
-      _focus={{
-        outline: 0,
-      }}
-      border={0}
+    <OverlayBox
       className="menu-list"
       minWidth="220px"
       as={ReachMenuItems}
