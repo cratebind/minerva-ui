@@ -14,7 +14,7 @@ import { BlockPicker } from 'react-color';
 import { useAppContext } from './AppContext';
 import { toTitleCase } from './utils';
 
-import '@reach/accordion/styles.css';
+// import '@reach/accordion/styles.css';
 import { Components } from './ThemeBuilder';
 
 const InnerContainer = props => <Box pt="10px" px="10px" {...props} />;
