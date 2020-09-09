@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Accordion /> should render 1`] = `
+.c0 {
+  box-sizing: border-box;
+  min-width: 0;
+  color: #374151;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  border-bottom-color: #e5e7eb;
+  border-bottom-width: 1px;
+}
+
+.c1 {
+  box-sizing: border-box;
+  min-width: 0;
+  color: #374151;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.c3 {
+  box-sizing: border-box;
+  min-width: 0;
+  color: #374151;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  width: 95%;
+}
+
+.c2 {
+  box-sizing: border-box;
+  min-width: 0;
+  color: #374151;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  -webkit-transition: all 150ms ease 0s;
+  transition: all 150ms ease 0s;
+  outline: none;
+  cursor: pointer;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  background-color: #fff;
+  border-width: 1px;
+  color: #374151;
+  font-weight: 400;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 18px;
+  line-height: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  border-top-color: #e5e7eb;
+  border-top-width: 1px;
+}
+
+.c2:hover {
+  background-color: #f9fafb;
+}
+
+.c2:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
+}
+
+.c2:active,
+.c2[data-active=true] {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
+}
+
+.c2:disabled,
+.c2:disabled:focus,
+.c2:disabled:hover,
+.c2[aria-disabled=true],
+.c2[aria-disabled=true]:focus,
+.c2[aria-disabled=true]:hover {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+<div>
+  <div
+    class="c0"
+    data-reach-accordion=""
+  >
+    <div
+      class="c1"
+      data-reach-accordion-item=""
+      data-state="open"
+    >
+      <button
+        aria-busy="false"
+        aria-controls="panel--1--0"
+        aria-expanded="true"
+        class="c2"
+        data-reach-accordion-button=""
+        id="button--1--0"
+        role="button"
+      >
+        Section 1 title
+      </button>
+      <div
+        aria-labelledby="button--1--0"
+        class="c3"
+        data-reach-accordion-panel=""
+        data-state="open"
+        id="panel--1--0"
+        role="region"
+        tabindex="-1"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </div>
+    </div>
+    <div
+      class="c1"
+      data-reach-accordion-item=""
+      data-state="collapsed"
+    >
+      <button
+        aria-busy="false"
+        aria-controls="panel--1--1"
+        aria-expanded="false"
+        class="c2"
+        data-reach-accordion-button=""
+        id="button--1--1"
+        role="button"
+      >
+        Section 2 title
+      </button>
+      <div
+        aria-labelledby="button--1--1"
+        class="c3"
+        data-reach-accordion-panel=""
+        data-state="collapsed"
+        hidden=""
+        id="panel--1--1"
+        role="region"
+        tabindex="-1"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </div>
+    </div>
+  </div>
+</div>
+`;

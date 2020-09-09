@@ -23,6 +23,12 @@ export { default as Tag } from './Tag';
 export * from './Tag';
 export { default as Alert } from './Alert';
 export { default as Tooltip } from './Tooltip';
+export {
+  Accordion,
+  AccordionButton,
+  AccordionItem,
+  AccordionPanel,
+} from './Accordion';
 
 /**
  * Layout
