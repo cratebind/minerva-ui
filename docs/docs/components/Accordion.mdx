@@ -1,0 +1,34 @@
+---
+id: 'Accordion'
+title: 'Accordion'
+sidebar_label: 'Accordion'
+---
+
+The `<Accordion />` component is a collection of grouped panels that show content when clicked.
+
+Uses the [Reach UI Accordion](https://reacttraining.com/reach-ui/accordion) component to cover accessibility requirements.
+
+```js
+import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from 'minerva-ui';
+```
+
+```jsx live
+() => {
+  return (
+    <Accordion>
+      <AccordionItem>
+        <AccordionButton>What does this library do?</AccordionButton>
+        <AccordionPanel>
+          Minerva UI is an accessible, composable React component library.
+        </AccordionPanel>
+      </AccordionItem>
+      <AccordionItem>
+        <AccordionButton>What is it built with?</AccordionButton>
+        <AccordionPanel>
+          Minerva UI is built with Typescript, Styled System and uses Reach UI for accessibility
+        </AccordionPanel>
+      </AccordionItem>
+    </Accordion>
+  );
+};
+```
