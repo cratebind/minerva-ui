@@ -10,9 +10,13 @@ import {
   Link,
   Select,
   Table,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
   Stack,
   Text,
   Block,
+  Radio,
   styled,
   defaultTheme,
   Heading,
@@ -23,6 +27,7 @@ import { useAppContext } from './AppContext';
 import Inspector from './Inspector';
 import ThemeModal from './ThemeModal';
 import UtilityTable from './UtilityTable';
+import { ModalExample, CardExamples, FormExamples } from './examples';
 
 const ColorTag = ({ number, code, ...props }) => (
   <Block
@@ -43,7 +48,7 @@ function Colors(props) {
     <Stack gap="20px">
       {Object.entries(state.colors).map(([color, value]) => {
         return (
-          <Stack>
+          <Stack key={color}>
             <Heading textTransform="capitalize" fontSize="lg">
               {color}
             </Heading>
@@ -80,18 +85,36 @@ function Colors(props) {
   );
 }
 
-export const ThemeConfig = {
-  colors: Colors,
-};
+// export const ThemeConfig = {
+//   colors: Colors,
+// };
 
 export const Components = {
   Button,
-  Input,
   Checkbox,
+  Heading,
+  Input,
   Link,
-  Select,
+  Radio,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Select: props => (
+    <Select {...props}>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+      <option value="4">Option 4</option>
+    </Select>
+  ),
   Table,
   Text,
+};
+
+export const Examples = {
+  Modal: ModalExample,
+  Cards: CardExamples,
+  Forms: FormExamples,
 };
 
 const ComponentButton = styled(Button)`
@@ -110,9 +133,7 @@ const ComponentButton = styled(Button)`
 const HEADER_HEIGHT = '48px';
 
 function ThemeBuilder() {
-  const { state, setContext } = useAppContext();
-
-  const { customProps, ...buttonStyles } = state.Button;
+  const { state, setContext, resetTheme } = useAppContext();
 
   return (
     <ThemeProvider>
@@ -140,13 +161,29 @@ function ThemeBuilder() {
               Back to Docs
             </Button>
           </Flex>
-          <Button border="0" onClick={() => setContext({ modalOpen: true })}>
-            Export Theme
-          </Button>
+          <Stack horizontal>
+            <Button
+              border="0"
+              onClick={() => {
+                const resetConfirm = window.confirm(
+                  'Are you sure you want to reset and lose all your theme styles?'
+                );
+
+                if (resetConfirm) {
+                  resetTheme();
+                }
+              }}
+            >
+              Reset Theme
+            </Button>
+            <Button border="0" onClick={() => setContext({ modalOpen: true })}>
+              Export Theme
+            </Button>
+          </Stack>
         </Flex>
         <Flex height={`calc(100vh - ${HEADER_HEIGHT})`}>
           <Flex flexDirection="column" padding={4} width="15rem" bg="#3b4c67">
-            <Heading as="h4" fontSize="16px" mb={2} color="white">
+            {/* <Heading as="h4" fontSize="16px" mb={2} color="white">
               Theme
             </Heading>
             {Object.keys(ThemeConfig).map(componentName => (
@@ -156,11 +193,22 @@ function ThemeBuilder() {
               >
                 {componentName}
               </ComponentButton>
-            ))}
+            ))} */}
             <Heading as="h4" fontSize="16px" mb={2} color="white">
               Components
             </Heading>
             {Object.keys(Components).map(componentName => (
+              <ComponentButton
+                key={componentName}
+                onClick={() => setContext({ activeComponent: componentName })}
+              >
+                {componentName}
+              </ComponentButton>
+            ))}
+            <Heading as="h4" fontSize="16px" mb={2} color="white">
+              Examples
+            </Heading>
+            {Object.keys(Examples).map(componentName => (
               <ComponentButton
                 key={componentName}
                 onClick={() => setContext({ activeComponent: componentName })}
@@ -173,10 +221,11 @@ function ThemeBuilder() {
           <ThemeProvider
             theme={{
               ...defaultTheme,
-              Button: {
-                ...defaultTheme.Button,
-                ...buttonStyles,
-              },
+              ...state,
+              // Button: {
+              //   ...defaultTheme.Button,
+              //   // ...buttonStyles,
+              // },
             }}
           >
             <Editor />

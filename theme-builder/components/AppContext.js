@@ -6,40 +6,44 @@ const initialState = {
   modalOpen: false,
   ...defaultTheme,
   Button: {
+    ...defaultTheme.Button,
     customProps: {
       children: 'Button',
       isLoading: false,
     },
-    backgroundColor: '#fff',
-    borderWidth: '1px',
-    color: '#374151',
-    fontWeight: '500',
-    display: 'inline-flex',
-    WebkitAppearance: 'none',
-    WebkitBoxAlign: 'center',
-    alignItems: 'center',
-    WebkitBoxPack: 'center',
-    justifyContent: 'center',
-    userSelect: 'none',
-    position: 'relative',
-    whiteSpace: 'nowrap',
-    verticalAlign: 'middle',
-    fontSize: '14px',
-    lineHeight: '20px',
-    paddingTop: '8px',
-    paddingBottom: '8px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
-    borderRadius: '5px',
   },
   Input: {
-    customProps: {},
+    ...defaultTheme.Input,
+    customProps: {
+      disabled: false,
+    },
   },
-  Checkbox: { customProps: { children: 'Checkbox' } },
+  ModalHeader: {
+    ...defaultTheme.ModalHeader,
+    customProps: {
+      children: 'Modal Header',
+    },
+  },
+  ModalBody: {
+    ...defaultTheme.ModalBody,
+    customProps: {
+      children: 'Modal Body',
+    },
+  },
+  ModalFooter: {
+    ...defaultTheme.ModalFooter,
+    customProps: {
+      children: 'Modal Footer',
+    },
+  },
+  Checkbox: { customProps: { children: 'Checkbox', checked: false } },
   Link: { customProps: { children: 'Link' } },
   Select: { customProps: {} },
   Table: { customProps: {} },
   Text: { customProps: { children: 'Text' } },
+  Heading: { customProps: { children: 'Heading' } },
+  Cards: { customProps: {} },
+  Forms: { customProps: {} },
 };
 
 const AppContext = React.createContext({
@@ -59,10 +63,16 @@ const useMergeState = initialMergeState => {
 const AppProvider = ({ children }) => {
   const [state, setState] = useMergeState(initialState);
 
+  function resetTheme() {
+    setState({ ...initialState });
+  }
+
   // const memoState = useMemo(() => ({ state }), [state]);
 
   return (
-    <AppContext.Provider value={{ state: state, setContext: setState }}>
+    <AppContext.Provider
+      value={{ state: state, setContext: setState, resetTheme }}
+    >
       {children}
     </AppContext.Provider>
   );

@@ -20,9 +20,11 @@ export interface ThemeComponent extends React.CSSProperties, PseudoBoxProps {}
 export interface MinervaTheme extends Theme {
   Button?: React.CSSProperties;
   Drawer?: React.CSSProperties;
+  Heading?: React.CSSProperties;
   Modal?: React.CSSProperties;
   ModalContent?: React.CSSProperties;
   ModalBody?: React.CSSProperties;
+  ModalHeader?: React.CSSProperties;
   ModalFooter?: React.CSSProperties;
   Text?: React.CSSProperties;
   Input?: ThemeComponent;
@@ -77,6 +79,7 @@ const defaultTheme: MinervaTheme = {
   },
   Checkbox: {},
   Drawer: {},
+  Heading: { fontWeight: 'bold' },
   Image: {},
   Input: {
     appearance: 'none',
@@ -106,6 +109,7 @@ const defaultTheme: MinervaTheme = {
   Link: {},
   Tabs: {},
   Modal: {},
+  ModalHeader: {},
   ModalBody: {},
   ModalFooter: {},
   ModalContent: {},

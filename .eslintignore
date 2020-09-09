@@ -1,6 +1,8 @@
 docs/node_modules
 docs/build
 docs/.docusaurus
+theme-builder/node_modules
+theme-builder/.next
 node_modules
 coverage
 dist

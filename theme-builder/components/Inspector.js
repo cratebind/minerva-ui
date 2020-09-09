@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Flex, Input } from 'minerva-ui';
+import { Box, Flex, Input, Checkbox } from 'minerva-ui';
 import {
   Accordion,
   AccordionItem,
@@ -14,7 +14,7 @@ import { BlockPicker } from 'react-color';
 import { useAppContext } from './AppContext';
 import { toTitleCase } from './utils';
 
-import '@reach/accordion/styles.css';
+// import '@reach/accordion/styles.css';
 import { Components } from './ThemeBuilder';
 
 const InnerContainer = props => <Box pt="10px" px="10px" {...props} />;
@@ -108,40 +108,43 @@ const Inspector = React.memo(function Inspector() {
     >
       <Title>{activeComponent}</Title>
       <Accordion index={activeSections} onChange={toggleItem}>
-        <AccordionItem>
-          <FieldHeading as={AccordionButton}>
-            Custom Properties
-            <DropdownArrow active={activeSections.includes(0)} />
-          </FieldHeading>
-          <AccordionPanel>
-            <InnerContainer>
-              {state?.[activeComponent]?.customProps &&
-                Object.entries(state[activeComponent].customProps).map(
-                  ([key, value]) => (
-                    <InspectorField
-                      key={key}
-                      name={key}
-                      value={value}
-                      type="text"
-                      componentProps={componentProps}
-                      activeComponent={activeComponent}
-                      onChange={e =>
-                        setContext({
-                          [activeComponent]: {
-                            ...componentProps,
-                            customProps: {
-                              ...state[activeComponent].customProps,
-                              [key]: e.target.value,
-                            },
-                          },
-                        })
-                      }
-                    />
-                  )
-                )}
-            </InnerContainer>
-          </AccordionPanel>
-        </AccordionItem>
+        {componentProps?.customProps &&
+          Object.keys(componentProps.customProps).length > 0 && (
+            <AccordionItem>
+              <FieldHeading as={AccordionButton}>
+                Custom Properties
+                <DropdownArrow active={activeSections.includes(0)} />
+              </FieldHeading>
+              <AccordionPanel>
+                <InnerContainer>
+                  {state?.[activeComponent]?.customProps &&
+                    Object.entries(state[activeComponent].customProps).map(
+                      ([key, value]) => (
+                        <InspectorField
+                          key={key}
+                          name={key}
+                          value={value}
+                          type="text"
+                          componentProps={componentProps}
+                          activeComponent={activeComponent}
+                          onChange={e =>
+                            setContext({
+                              [activeComponent]: {
+                                ...componentProps,
+                                customProps: {
+                                  ...state[activeComponent].customProps,
+                                  [key]: e.target.value,
+                                },
+                              },
+                            })
+                          }
+                        />
+                      )
+                    )}
+                </InnerContainer>
+              </AccordionPanel>
+            </AccordionItem>
+          )}
 
         {/* for components, show a fixed set of properties */}
         {Object.keys(Components).includes(activeComponent) ? (
@@ -153,7 +156,7 @@ const Inspector = React.memo(function Inspector() {
               </FieldHeading>
               <AccordionPanel>
                 {fields.map(({ name, type }) => (
-                  <InnerContainer>
+                  <InnerContainer key={name}>
                     <InspectorField
                       key={name}
                       name={name}
@@ -210,33 +213,10 @@ const Inspector = React.memo(function Inspector() {
                   )}
                 </InnerContainer>
               </AccordionPanel>
-              {/* {typeof value !== 'string' && (
-                    <AccordionPanel>
-                      {Object.entries(value).map(([nestedKey, nestedValue]) => (
-                        <InnerContainer>
-                          <InspectorField
-                            name={nestedKey}
-                            type="color"
-                            value={state[activeComponent][key][nestedKey]}
-                            activeComponent={activeComponent}
-                            onChange={e => {
-                              setContext({
-                                [activeComponent]: {
-                                  ...componentProps,
-                                  [key]: {
-                                    ...componentProps[key],
-                                    [nestedKey]: e.target.value,
-                                  },
-                                },
-                              });
-                            }}
-                          />
-                        </InnerContainer>
-                      ))}
-                    </AccordionPanel>
-                  )} */}
             </AccordionItem>
-            {Object.entries(state[activeComponent]).map(([key, value]) => {
+              {Object.entries(state[activeComponent]).map(([key, value]) => {
+                // ignore keys with no values
+                if (Object.keys(value).length === 0) return null
               return (
                 <AccordionItem key={key}>
                   <FieldHeading as={AccordionButton}>
@@ -343,7 +323,14 @@ function InspectorField({ name, value, onChange, type }) {
           )}
         </Box>
       )}
-      {type === 'text' && <Input value={value} onChange={onChange} />}
+      {typeof value === 'boolean' ? (
+        <Checkbox
+          checked={value}
+          onChange={() => onChange({ target: { value: !value } })}
+        />
+      ) : (
+        <>{type === 'text' && <Input value={value} onChange={onChange} />}</>
+      )}
     </Flex>
   );
 }

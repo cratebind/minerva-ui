@@ -94,10 +94,9 @@ export const ModalFooter = forwardRef(function ModalFooter(
   { children, ...props }: ModalFooterProps,
   ref
 ) {
-  // const theme = useTheme();
   const componentStyles = useComponentStyles('ModalFooter');
   return (
-    <Box ref={ref} {...componentStyles} {...props}>
+    <Box ref={ref} px={6} py={3} {...componentStyles} {...props}>
       {children}
     </Box>
   );
