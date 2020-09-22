@@ -9,7 +9,7 @@ import {
   ComboboxOption as ReachComboboxOption,
   ComboboxOptionText as ReachComboboxOptionText,
 } from '@reach/combobox';
-import '@reach/combobox/styles.css';
+// import '@reach/combobox/styles.css';
 // import { MinervaProps } from '../layout';
 // import PseudoBox from '../PseudoBox';
 // import { useComponentStyles } from '../theme';
