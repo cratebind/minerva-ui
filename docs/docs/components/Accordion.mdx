@@ -9,7 +9,12 @@ The `<Accordion />` component is a collection of grouped panels that show conten
 Uses the [Reach UI Accordion](https://reacttraining.com/reach-ui/accordion) component to cover accessibility requirements.
 
 ```js
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from 'minerva-ui';
+import {
+  Accordion,
+  AccordionButton,
+  AccordionItem,
+  AccordionPanel,
+} from 'minerva-ui';
 ```
 
 ```jsx live
@@ -25,7 +30,8 @@ import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from 'miner
       <AccordionItem>
         <AccordionButton>What is it built with?</AccordionButton>
         <AccordionPanel>
-          Minerva UI is built with Typescript, Styled System and uses Reach UI for accessibility
+          Minerva UI is built with Typescript, Styled System and uses Reach UI
+          for accessibility
         </AccordionPanel>
       </AccordionItem>
     </Accordion>
