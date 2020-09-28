@@ -37,7 +37,7 @@ const StyledSelect = styled(Input)(
     position: 'relative',
     whiteSpace: 'nowrap',
     verticalAlign: 'middle',
-    fontSize: '14px',
+    fontSize: '16px',
     lineHeight: '20px',
     paddingTop: '8px',
     paddingBottom: '8px',

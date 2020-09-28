@@ -54,7 +54,7 @@ exports[`<Select /> should change style if disabled 1`] = `
   position: relative;
   white-space: nowrap;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -209,7 +209,7 @@ exports[`<Select /> should render 1`] = `
   position: relative;
   white-space: nowrap;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   padding-top: 8px;
   padding-bottom: 8px;
