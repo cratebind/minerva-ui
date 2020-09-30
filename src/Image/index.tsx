@@ -25,7 +25,7 @@ export const Image = forwardRef(function Image(
 ) {
   const theme = useTheme();
 
-  warning(!alt, 'Images require an `alt` attribute to be accessible.');
+  warning(Boolean(alt), 'Images require an `alt` attribute to be accessible.');
 
   return (
     <Box as="img" ref={ref} src={src} alt={alt} {...theme.Image} {...props} />
