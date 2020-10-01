@@ -19,7 +19,12 @@ import { Checkbox, ThemeProvider } from '../src';
 describe('Checkbox', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Checkbox />, div);
+    ReactDOM.render(
+      <ThemeProvider>
+        <Checkbox />
+      </ThemeProvider>,
+      div
+    );
     ReactDOM.unmountComponentAtNode(div);
   });
 

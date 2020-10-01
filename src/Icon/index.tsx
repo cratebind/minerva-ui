@@ -27,8 +27,12 @@ export const Icon = forwardRef(function Icon(
   const theme = useTheme();
 
   if (!theme || !theme.icons || !theme.icons[name]) {
-    console.warn(`Could not find icon in theme with name of ${name}`);
-    return null;
+    if (process.env.NODE_ENV === 'development') {
+      throw new Error(`Could not find icon in theme with name of ${name}`);
+    } else {
+      console.warn(`Could not find icon in theme with name of ${name}`);
+      return null;
+    }
   }
 
   const IconComponent = theme.icons[name] || null;

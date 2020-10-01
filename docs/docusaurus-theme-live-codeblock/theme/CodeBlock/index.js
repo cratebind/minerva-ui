@@ -99,7 +99,12 @@ export default ({
 
   if (language === 'jsx' && !highlightOnly) {
     return (
-      <Minerva.ThemeProvider>
+      <Minerva.ThemeProvider
+        theme={{
+          ...Minerva.defaultTheme,
+          icons: Minerva.defaultIcons,
+        }}
+      >
         <Playground
           key={mounted}
           scope={{ ...React, ...Minerva }}

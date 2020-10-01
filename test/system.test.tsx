@@ -28,6 +28,7 @@ import {
   Tabs,
   // Skeleton,
   defaultTheme,
+  defaultIcons,
 } from '../src';
 import { ThemeProvider } from '../src';
 expect.extend(toHaveNoViolations);
@@ -64,6 +65,11 @@ const basicComponents = {
 
 const allComponents = { ...basicComponents };
 
+const themeWithIcons = {
+  ...defaultTheme,
+  icons: defaultIcons,
+};
+
 // one giant component that renders all library components
 const KitchenSink = () => {
   return (
@@ -93,7 +99,7 @@ const KitchenSink = () => {
 describe('Accessibility', () => {
   it('all components should pass basic accessibility checks', async () => {
     const { container } = render(
-      <ThemeProvider>
+      <ThemeProvider theme={themeWithIcons}>
         <KitchenSink />
       </ThemeProvider>
     );
@@ -112,7 +118,7 @@ Object.entries(allComponents).forEach(([name, Component]) => {
     it('should render', () => {
       const testId = `component-${name}`;
       const { getByTestId } = render(
-        <ThemeProvider>
+        <ThemeProvider theme={themeWithIcons}>
           <Component data-testid={testId} />
         </ThemeProvider>
       );
@@ -122,7 +128,7 @@ Object.entries(allComponents).forEach(([name, Component]) => {
     it('should pass basic style props', () => {
       const color = '#e3e3e3';
       const { getByTestId } = render(
-        <ThemeProvider>
+        <ThemeProvider theme={themeWithIcons}>
           <Component data-testid={name} color={color} />
         </ThemeProvider>
       );
@@ -145,7 +151,7 @@ Object.entries(allComponents).forEach(([name, Component]) => {
         }, [ref]);
 
         return (
-          <ThemeProvider>
+          <ThemeProvider theme={themeWithIcons}>
             <Component ref={ref} id={refId} data-testid={name} />
             <div data-testid="ref-content">{id}</div>
           </ThemeProvider>
@@ -160,7 +166,7 @@ Object.entries(allComponents).forEach(([name, Component]) => {
     it('should pass shorthand props', () => {
       const backgroundColor = '#e3e3e3';
       const { getByTestId } = render(
-        <ThemeProvider>
+        <ThemeProvider theme={themeWithIcons}>
           <Component data-testid={name} bg={backgroundColor} />
         </ThemeProvider>
       );
@@ -194,7 +200,7 @@ Object.entries(allComponents).forEach(([name, Component]) => {
     it('should not forward style props', () => {
       const width = '50px';
       const { getByTestId } = render(
-        <ThemeProvider>
+        <ThemeProvider theme={themeWithIcons}>
           <Component data-testid={name} width={width} />
         </ThemeProvider>
       );
@@ -211,7 +217,7 @@ describe(`<Icon />`, () => {
   it('should render', () => {
     const testId = `component-icon`;
     const { getByTestId } = render(
-      <ThemeProvider>
+      <ThemeProvider theme={themeWithIcons}>
         <Icon name="plus" data-testid={testId} />
       </ThemeProvider>
     );
@@ -221,7 +227,7 @@ describe(`<Icon />`, () => {
   it('should pass basic style props', () => {
     const color = '#e3e3e3';
     const { getByTestId } = render(
-      <ThemeProvider>
+      <ThemeProvider theme={themeWithIcons}>
         <Icon name="plus" data-testid="icon" size="36px" color={color} />
       </ThemeProvider>
     );
@@ -237,7 +243,7 @@ describe(`<Icon />`, () => {
     const iconName = 'invalid-icon-name';
 
     const { queryByTestId } = render(
-      <ThemeProvider>
+      <ThemeProvider theme={themeWithIcons}>
         <Icon name="invalid-icon-name" data-testid="icon" />
       </ThemeProvider>
     );
@@ -251,7 +257,7 @@ describe(`<Icon />`, () => {
   it('should pass shorthand props', () => {
     const backgroundColor = '#e3e3e3';
     const { getByTestId } = render(
-      <ThemeProvider>
+      <ThemeProvider theme={themeWithIcons}>
         <Icon name="plus" data-testid="icon" bg={backgroundColor} />
       </ThemeProvider>
     );
@@ -304,7 +310,11 @@ Object.entries(THEMEABLE_COMPONENTS).forEach(([name, Component]: any[]) => {
 
     it('should still render when theme has no custom styles', () => {
       const { getByTestId } = render(
-        <ThemeProvider theme={{}}>
+        <ThemeProvider
+          theme={{
+            icons: defaultIcons,
+          }}
+        >
           <Component data-testid={name} />
         </ThemeProvider>
       );
