@@ -1,4 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { ProviderWithIcons } from '../../.storybook/preview'
 import { MenuContainer } from '../Menu';
 import { Box } from '../layout'
 
@@ -19,56 +20,62 @@ import { MenuContainer, MenuButton, MenuList, MenuItem, MenuLink } from 'minerva
 ```
 
 ```jsx
-<MenuContainer>
-  <MenuButton>
-    Actions <Icon name="chevron-down" ml={2} size="14px" />
-  </MenuButton>
-  <MenuList>
-    <MenuItem onSelect={() => alert("Download")}>Download</MenuItem>
-    <MenuItem onSelect={() => alert("Copy")}>Create a Copy</MenuItem>
-    <MenuItem onSelect={() => alert("Mark as Draft")}>
-      Mark as Draft
-    </MenuItem>
-    <MenuItem onSelect={() => alert("Delete")}>Delete</MenuItem>
-    <MenuLink href="https://minerva-ui.netlify.com/">
-      Open Documentation
-    </MenuLink>
-  </MenuList>
-</MenuContainer>
-```
-
-## With Divider
-```jsx
-<MenuContainer>
-  <MenuButton>
-    Actions <Icon name="chevron-down" ml={2} size="14px" />
-  </MenuButton>
-  <MenuList>
-    <MenuItem onSelect={() => alert("Edit Profile")}>Edit Profile</MenuItem>
-    <MenuItem onSelect={() => alert("Settings")}>
-      Settings
-    </MenuItem>
-    <MenuDivider />
-    <MenuLink href="https://minerva-ui.netlify.com/">
-      Sign Out
-    </MenuLink>
-  </MenuList>
-</MenuContainer>
-```
-
-## Positioned To Right
-```jsx
-<Flex justifyContent="flex-end">
+<ProviderWithIcons>
   <MenuContainer>
     <MenuButton>
       Actions <Icon name="chevron-down" ml={2} size="14px" />
     </MenuButton>
-    <MenuList menuPosition="right">
+    <MenuList>
+      <MenuItem onSelect={() => alert("Download")}>Download</MenuItem>
+      <MenuItem onSelect={() => alert("Copy")}>Create a Copy</MenuItem>
+      <MenuItem onSelect={() => alert("Mark as Draft")}>
+        Mark as Draft
+      </MenuItem>
+      <MenuItem onSelect={() => alert("Delete")}>Delete</MenuItem>
+      <MenuLink href="https://minerva-ui.netlify.com/">
+        Open Documentation
+      </MenuLink>
+    </MenuList>
+  </MenuContainer>
+</ProviderWithIcons>
+```
+
+## With Divider
+```jsx
+<ProviderWithIcons>
+  <MenuContainer>
+    <MenuButton>
+      Actions <Icon name="chevron-down" ml={2} size="14px" />
+    </MenuButton>
+    <MenuList>
       <MenuItem onSelect={() => alert("Edit Profile")}>Edit Profile</MenuItem>
       <MenuItem onSelect={() => alert("Settings")}>
         Settings
       </MenuItem>
+      <MenuDivider />
+      <MenuLink href="https://minerva-ui.netlify.com/">
+        Sign Out
+      </MenuLink>
     </MenuList>
   </MenuContainer>
-</Flex>
+</ProviderWithIcons>
+```
+
+## Positioned To Right
+```jsx
+<ProviderWithIcons>
+  <Flex justifyContent="flex-end">
+    <MenuContainer>
+      <MenuButton>
+        Actions <Icon name="chevron-down" ml={2} size="14px" />
+      </MenuButton>
+      <MenuList menuPosition="right">
+        <MenuItem onSelect={() => alert("Edit Profile")}>Edit Profile</MenuItem>
+        <MenuItem onSelect={() => alert("Settings")}>
+          Settings
+        </MenuItem>
+      </MenuList>
+    </MenuContainer>
+  </Flex>
+</ProviderWithIcons>
 ```

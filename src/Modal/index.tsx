@@ -2,8 +2,8 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { DialogContent, DialogOverlay, DialogProps } from '@reach/dialog';
+import { X } from 'react-feather';
 import { MinervaProps, systemProps, Box } from '../layout';
-import Icon from '../Icon';
 import Button from '../Button';
 import Text from '../Text';
 import { useComponentStyles } from '../theme';
@@ -64,7 +64,7 @@ export const ModalHeader = forwardRef(function ModalHeader(
         aria-label="Close Modal"
         onClick={onClose}
       >
-        <Icon name="x" size="26px" />
+        <X size="26px" />
       </Button>
     </Box>
   );

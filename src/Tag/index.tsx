@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { X } from 'react-feather';
 import { MinervaProps, systemProps, Box } from '../layout';
-import { Icon } from '../Icon';
+// import { Icon } from '../Icon';
 import { useComponentStyles } from '../theme';
 import Button from '../Button';
 
@@ -52,7 +53,7 @@ export const TagButton = forwardRef(function TagButton(
       _hover={{ cursor: 'pointer' }}
       {...props}
     >
-      <Icon name={iconName || 'x'} size="14px" />
+      <X size="14px" />
     </Button>
   );
 });
