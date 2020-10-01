@@ -1,27 +1,10 @@
 import { Theme } from 'styled-system';
-import * as Icon from 'react-feather';
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { buttonVariants } from './Button';
 import { PseudoBoxProps } from './PseudoBox';
 
 const logoColor = '#551A8B';
-
-// https://gist.github.com/thevangelist/8ff91bac947018c9f3bfaad6487fa149
-function toKebabCase(string) {
-  return string
-    .replace(/([a-z])([A-Z])/g, '$1-$2')
-    .replace(/\s+/g, '-')
-    .toLowerCase();
-}
-
-export const defaultIcons: { [key: string]: any } = Object.keys(Icon).reduce(
-  (result, iconName) => {
-    result[toKebabCase(iconName)] = Icon[iconName];
-    return result;
-  },
-  {}
-);
 
 export interface ThemeComponent extends React.CSSProperties, PseudoBoxProps {}
 
@@ -128,13 +111,7 @@ const defaultTheme: MinervaTheme = {
   Skeleton: {},
   Switch: {},
   defaultBorderColor: '#d2d6dc',
-  icons: {
-    x: defaultIcons.x,
-    check: defaultIcons.check,
-    'chevron-down': defaultIcons['chevron-down'],
-    'alert-circle': defaultIcons['alert-circle'],
-    circle: defaultIcons['circle'],
-  },
+  icons: {},
   colors: {
     // custom colors
     // primary: '#6979F8',

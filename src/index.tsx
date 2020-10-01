@@ -1,3 +1,21 @@
+import * as Icon from 'react-feather';
+
+// https://gist.github.com/thevangelist/8ff91bac947018c9f3bfaad6487fa149
+function toKebabCase(string) {
+  return string
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/\s+/g, '-')
+    .toLowerCase();
+}
+
+export const defaultIcons: { [key: string]: any } = Object.keys(Icon).reduce(
+  (result, iconName) => {
+    result[toKebabCase(iconName)] = Icon[iconName];
+    return result;
+  },
+  {}
+);
+
 /**
  * Utilities
  */
@@ -10,12 +28,7 @@ export {
   ReachGlobalStyles,
   CSSReset,
 } from './GlobalStyles';
-export {
-  default as defaultTheme,
-  useTheme,
-  useComponentStyles,
-  defaultIcons,
-} from './theme';
+export { default as defaultTheme, useTheme, useComponentStyles } from './theme';
 export { default as baseTheme } from './theme';
 export { default as styled } from 'styled-components';
 

@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { CustomCheckboxContainer, CustomCheckboxInput } from '@reach/checkbox';
 import { MinervaProps, Box, systemProps } from '../layout';
 import VisuallyHidden from '../VisuallyHidden';
-import Icon from '../Icon';
+// import Icon from '../Icon';
 import PseudoBox from '../PseudoBox';
+import { Check } from 'react-feather';
 
 /**
  * TODO:
@@ -86,7 +87,7 @@ export const Checkbox = forwardRef(function Checkbox(
       >
         <VisuallyHidden as={CustomCheckboxInput} />
         <ControlBox data-testid="control-box" tabIndex={0} checked={checked}>
-          <Icon name="check" stroke="currentColor" color="currentColor" />
+          <Check stroke="currentColor" color="currentColor" />
         </ControlBox>
       </CustomCheckboxContainer>
       {children}
