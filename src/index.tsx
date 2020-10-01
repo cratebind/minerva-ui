@@ -8,6 +8,7 @@ export {
   default as GlobalStyles,
   AnimationStyles,
   ReachGlobalStyles,
+  CSSReset,
 } from './GlobalStyles';
 export { default as defaultTheme, useTheme, useComponentStyles } from './theme';
 export { default as baseTheme } from './theme';
