@@ -15,7 +15,7 @@ import {
 } from 'styled-system';
 import { Block, MinervaProps } from '../layout';
 import Input from '../Input';
-import Icon from '../Icon';
+// import Icon from '../Icon';
 
 const StyledSelect = styled(Input)(
   (props): any => ({
@@ -99,7 +99,25 @@ const IconContainer = styled('div')(
 
 const SelectIcon = () => (
   <IconContainer>
-    <Icon name="chevron-down" size="20px" />
+    <svg
+      style={{
+        width: 20,
+        height: 20,
+      }}
+      fill="none"
+      height="24"
+      role="presentation"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title>Down Arrow</title>
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
   </IconContainer>
 );
 

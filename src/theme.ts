@@ -15,6 +15,14 @@ function toKebabCase(string) {
     .toLowerCase();
 }
 
+export const defaultIcons: { [key: string]: any } = Object.keys(Icon).reduce(
+  (result, iconName) => {
+    result[toKebabCase(iconName)] = Icon[iconName];
+    return result;
+  },
+  {}
+);
+
 export interface ThemeComponent extends React.CSSProperties, PseudoBoxProps {}
 
 export interface MinervaTheme extends Theme {
@@ -120,10 +128,13 @@ const defaultTheme: MinervaTheme = {
   Skeleton: {},
   Switch: {},
   defaultBorderColor: '#d2d6dc',
-  icons: Object.keys(Icon).reduce((result, iconName) => {
-    result[toKebabCase(iconName)] = Icon[iconName];
-    return result;
-  }, {}),
+  icons: {
+    x: defaultIcons.x,
+    check: defaultIcons.check,
+    'chevron-down': defaultIcons['chevron-down'],
+    'alert-circle': defaultIcons['alert-circle'],
+    circle: defaultIcons['circle'],
+  },
   colors: {
     // custom colors
     // primary: '#6979F8',
