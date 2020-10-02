@@ -13,7 +13,8 @@ coverage/
 
 # Docusaurus
 # Production
-docs/build
+docs/.next
+docs/.vercel
 docs/node_modules
 
 # Generated files

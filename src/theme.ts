@@ -405,7 +405,7 @@ export function useTheme(): MinervaTheme {
 
   if (context === undefined) {
     console.warn(
-      `useTheme cannot be used outside a <ThemeProvider />\n See: minerva-ui.netlify.com/docs/theming`
+      `useTheme cannot be used outside a <ThemeProvider />\n See: https://minerva-ui-docs.vercel.app/docs/theming`
     );
   }
 

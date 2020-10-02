@@ -23,7 +23,7 @@ const ExampleMenu = () => (
       <MenuItem onSelect={() => alert('Copy')}>Create a Copy</MenuItem>
       <MenuItem onSelect={() => alert('Mark as Draft')}>Mark as Draft</MenuItem>
       <MenuItem onSelect={() => alert('Delete')}>Delete</MenuItem>
-      <MenuLink href="https://minerva-ui.netlify.com/">
+      <MenuLink href="https://minerva-ui-docs.vercel.app">
         Open Documentation
       </MenuLink>
     </MenuList>
