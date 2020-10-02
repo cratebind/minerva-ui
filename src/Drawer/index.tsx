@@ -11,6 +11,7 @@ const OVERLAY_ZINDEX = 500;
 export const DrawerOverlay = styled(DialogOverlay)(
   {
     zIndex: OVERLAY_ZINDEX,
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
   },
   systemProps
 );
