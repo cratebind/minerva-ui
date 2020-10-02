@@ -4,7 +4,7 @@
 
 ![npm](https://img.shields.io/npm/v/minerva-ui) ![size](https://badgen.net/bundlephobia/minzip/minerva-ui) ![license](https://img.shields.io/github/license/cratebind/minerva-ui)
 
-# [Documentation](https://minerva-ui.netlify.com)
+# [Documentation](https://minerva-ui-docs.vercel.app)
 
 [![Edit minerva-ui-demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/vigorous-chatterjee-y1zi5?fontsize=14&hidenavigation=1&theme=dark)
 

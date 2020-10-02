@@ -8,9 +8,9 @@ The Input component extends the native `<input />` component.
 import { Input } from 'minerva-ui';
 ```
 
-```jsx
+```jsx live
 () => {
-  const [name, setName] = React.useState('');
+  const [name, setName] = useState('');
   return (
     <Input
       value={name}
@@ -23,9 +23,9 @@ import { Input } from 'minerva-ui';
 
 ## Disabled Input
 
-```jsx
+```jsx live
 () => {
-  const [name, setName] = React.useState('');
+  const [name, setName] = useState('');
   return (
     <Input
       disabled
@@ -41,7 +41,7 @@ import { Input } from 'minerva-ui';
 
 ```jsx live
 () => {
-  const [name, setName] = React.useState('');
+  const [name, setName] = useState('');
   return (
     <Input
       type="password"

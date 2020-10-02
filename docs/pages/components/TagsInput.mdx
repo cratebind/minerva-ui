@@ -1,6 +1,4 @@
----
-title: 'TagsInput'
----
+# TagsInput
 
 The `<TagsInput />` component can be used to collect a list of inputs from the user.
 
@@ -10,8 +8,8 @@ import { TagsInput } from 'minerva-ui';
 
 ```jsx live
 () => {
-  const [tags, setTags] = React.useState([]);
-  const [inputVal, setInputVal] = React.useState('');
+  const [tags, setTags] = useState([]);
+  const [inputVal, setInputVal] = useState('');
 
   const addTag = e => {
     setTags([...tags, inputVal]);
