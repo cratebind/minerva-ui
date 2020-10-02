@@ -5514,6 +5514,11 @@ markdown-table@^2.0.0:
   dependencies:
     repeat-string "^1.0.0"
 
+markdown-to-jsx@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-7.0.0.tgz#66c57f69d1b22a710f862496b0bfde11b452a7d9"
+  integrity sha512-ZdV2vzQSepzmhdfaFYKxSyRhgtlRCM126iUqw2kYIC4Wq3H7xWnF45OgWa1/LXMjDsdrCLLxnQ+wEsX8IW7DHw==
+
 match-sorter@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/match-sorter/-/match-sorter-4.2.0.tgz#70c4e7443dacf5fa2503bc5afc189024092e9d27"
@@ -5680,10 +5685,10 @@ min-indent@^1.0.0:
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
   integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
 
-minerva-ui@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/minerva-ui/-/minerva-ui-5.0.2.tgz#2eedc6ba36e44d96e71643795cf8117a4d82136a"
-  integrity sha512-s4Mqnkb+RQiSTWfLjEYxCWYER69dW06CbqZjoD24OzA7n9PlkHzXc7vVbuxAmmMU1jEE/cykZfAVzWvPYTJQqA==
+minerva-ui@^5.0.5:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/minerva-ui/-/minerva-ui-5.0.5.tgz#035632da42e784ddbdd67d8c1dee0610d2ddbe48"
+  integrity sha512-6VXycmifYGtVJ37NoU8dz87LEbqWKbboG0KlOuAPRS97/h0ykUUzC7nVNk0TOzv1AwAixUY52PcxIa64jo53NA==
   dependencies:
     "@mdx-js/react" "^1.5.1"
     "@reach/accordion" "^0.10.1"
