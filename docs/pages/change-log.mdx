@@ -7,8 +7,8 @@ export const getStaticProps = ({ params }) => {
   return (
     fetch('https://api.github.com/repos/cratebind/minerva-ui/releases')
       .then(res => res.json())
-      // we keep the most recent 3 releases here
-      .then(releases => ({ props: { ssg: releases.slice(0, 3) } }))
+      // we keep the most recent 10 releases here
+      .then(releases => ({ props: { ssg: releases.slice(0, 10) } }))
   );
 };
 
