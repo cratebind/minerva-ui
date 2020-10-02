@@ -9,12 +9,12 @@ module.exports = {
   rules: {
     'import/no-unresolved': [2, { ignore: ['minerva-ui', '@docusaurus', '@theme'] }],
     "import/no-unused-modules": [
-      2,
+      1,
       {
         "unusedExports": true,
-        "ignoreExports": ["docs/src/pages/**/**.js", "docs/docusaurus-theme-live-codeblock/**/*.js"]
       }
     ],
+    'react/display-name': 1
   },
   settings: {
     "import/resolver": {

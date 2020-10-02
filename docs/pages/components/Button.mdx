@@ -1,0 +1,54 @@
+---
+id: Button
+title: Button
+sidebar_label: Button
+---
+
+The `<Button />` component replaces `<button />` tag and extends the standard props passed to a `<button />`.
+
+```js
+import { Button } from 'minerva-ui';
+```
+
+```jsx live
+<Button>Button</Button>
+```
+
+```jsx
+<Button>Button</Button>
+```
+
+## Variants
+
+Variants from `defaultTheme`
+
+```jsx
+<Stack horizontal>
+  <Button variant="primary">Primary Button</Button>
+  <Button variant="secondary">Secondary Button</Button>
+  <Button variant="tertiary">Tertiary Button</Button>
+</Stack>
+```
+
+## Loading Button
+
+```jsx live
+<Button isLoading>Loading Button</Button>
+```
+
+## Disabled Button
+
+```jsx live
+<Button disabled>Disabled Button</Button>
+```
+
+## Props
+
+The Button composes the `PseudoBox` component so you can pass props for
+`PseudoBox`. These are props related to the Button component.
+
+| Name        | Type     | Is Required | Default | Description                                                    |
+| ----------- | -------- | ----------- | ------- | -------------------------------------------------------------- |
+| `disabled`  | boolean  | optional    | false   | Toggles disabled pseudo class                                  |
+| `variant`   | `string` | optional    | none    | Optionally tries to use a variant style from your Theme object |
+| `isLoading` | boolean  | optional    | false   | Displays loading spinner and disables button when `true`       |

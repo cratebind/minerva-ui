@@ -1,0 +1,12 @@
+---
+title: Font Sizes
+---
+
+import { Text, defaultTheme } from 'minerva-ui';
+import UtilityTable from '../../components/UtilityTable';
+<UtilityTable
+  themeProperty={defaultTheme.fontSizes}
+  renderValue={({ value, property }) => (
+    <Text fontSize={value}>Text font size sample</Text>
+  )}
+/>;

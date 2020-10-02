@@ -1,0 +1,10 @@
+[data-name="live-editor"] textarea, [data-name="live-editor"] pre {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+h3 code {
+  font-size: inherit;
+}
