@@ -1,35 +1,28 @@
 {
-  "name": "docs",
-  "version": "0.0.0",
-  "private": true,
+  "name": "minerva-ui-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "docusaurus start",
-    "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy"
+    "dev": "next",
+    "build": "next build"
   },
+  "author": "Shu Ding",
+  "license": "MIT",
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.48",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.48",
-    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.39",
-    "@reach/accordion": "^0.9.1",
-    "@reach/dialog": "^0.9.1",
-    "@reach/tabs": "^0.10.0",
-    "@reach/visually-hidden": "^0.9.0",
-    "classnames": "^2.2.6",
-    "minerva-ui": "3.0.5",
-    "react-color": "^2.18.0"
+    "minerva-ui": "^5.0.2",
+    "next": "^9.5.3",
+    "nextra": "^0.2.4",
+    "nextra-theme-docs": "^0.1.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-live": "^2.2.2"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }

@@ -1,0 +1,89 @@
+import Callout from '../components/callout'
+
+
+# Getting Started
+
+Minerva UI is a reusable component library to help build UIs faster. This library aims to be highly composable, easy to use and accessible.
+
+## Install
+
+```bash
+yarn add minerva-ui
+```
+
+```bash
+npm install --save minerva-ui
+```
+
+## Usage
+
+First add the `<ThemeProvider />` and `<GlobalStyles />` to the root of your app:
+
+`<GlobalStyles />` is optional but highly recommended. It includes the CSS reset and base styles from [Tailwind CSS.](https://tailwindcss.com/docs/preflight)
+
+```jsx
+import { ThemeProvider, GlobalStyles } from 'minerva-ui';
+
+const App = () => (
+  <ThemeProvider>
+    {/* optional but recommended */}
+    <GlobalStyles />
+  </ThemeProvider>
+);
+```
+
+Then import components you want to use
+
+```js
+import { Checkbox } from 'minerva-ui';
+```
+
+And use them:
+
+```jsx live
+() => {
+  const [checked, setChecked] = React.useState(false);
+  return (
+    <Checkbox checked={checked} onChange={() => setChecked(!checked)}>
+      Stay Logged In
+    </Checkbox>
+  );
+};
+```
+
+- [Concepts](/concepts)
+- [Theming](/theming)
+- [Utility Props](/utilities)
+
+## Contributing
+
+### Local Development
+
+1. Clone Repo
+2. Run `yarn install`
+3. Run `yarn lerna bootstrap` to link dependencies
+
+If you want to run the documentation locally:
+
+1. Follow the steps above
+2. Run `yarn start` in the root directory
+3. Go to the `docs` directory and run `yarn start`
+
+## About
+
+### Influences
+
+[Ryan Florence "Reach UI" Guidelines](https://gist.github.com/ryanflorence/e5c794e6093d16a69fa88d2112a292f7) - Great guidelines for making composable / declarative React APIs
+
+[Tailwind CSS](https://tailwindcss.com/) - Utility-based CSS framework without pre-packaged styles
+
+[Chakra UI](https://chakra-ui.com/) - Batteries-included React Component library
+
+### Tools
+
+- [Styled Components](https://styled-components.com/)
+- [Styled System](https://styled-system.com/)
+- [Reach UI](https://reacttraining.com/reach-ui/)
+- [Jest](https://jestjs.io/)
+- [Typescript](https://www.typescriptlang.org/)
+- [TSDX](https://github.com/jaredpalmer/tsdx)
