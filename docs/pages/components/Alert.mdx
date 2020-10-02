@@ -16,7 +16,7 @@ import { Alert } from 'minerva-ui';
 
 If status codes are supplied, the component will supply predefined colors and icons.
 
-```jsx
+```jsx live
 <>
   <Alert status="error" title="Whoa!">
     Something not great is happening.
@@ -42,7 +42,7 @@ You can supply a prop of `canBeClosed` to allow an Alert to display and hide.
 
 ```jsx live
 () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <>

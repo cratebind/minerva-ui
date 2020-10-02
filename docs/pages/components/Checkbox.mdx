@@ -10,7 +10,7 @@ import { Checkbox } from 'minerva-ui';
 
 ```jsx live
 () => {
-  const [checked, setChecked] = React.useState(false);
+  const [checked, setChecked] = useState(false);
   return (
     <Checkbox checked={checked} onChange={() => setChecked(!checked)}>
       Stay Logged In

@@ -18,7 +18,7 @@ import { useClipboard } from 'minerva-ui';
 
 ```jsx live
 function Example() {
-  const [value, setValue] = React.useState('Hello World');
+  const [value, setValue] = useState('Hello World');
   const { onCopy, hasCopied } = useClipboard(value);
 
   return (

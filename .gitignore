@@ -11,12 +11,16 @@ dist
 storybook-static
 coverage/
 
-# Docusaurus
 # Production
+.next
+.vercel
 docs/.next
 docs/.vercel
 docs/node_modules
+.DS_Store
 
 # Generated files
 .docusaurus
 .cache-loader
+
+

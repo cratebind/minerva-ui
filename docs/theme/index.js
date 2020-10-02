@@ -28,7 +28,7 @@ const MenuContext = createContext(false);
 function Folder({ item, anchors }) {
   const route = useRouter().route + '/';
   const active = route.startsWith(item.route + '/');
-  const open = TreeState[item.route] ?? false;
+  const open = TreeState[item.route] ?? active;
   const [_, render] = useState(false);
 
   useEffect(() => {

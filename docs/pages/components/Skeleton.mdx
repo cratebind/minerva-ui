@@ -4,24 +4,24 @@ The `<Skeleton />` component renders a subtly animated placeholder for content w
 import { Text } from 'minerva-ui';
 ```
 
-```jsx
+```jsx live
 () => {
-  const [data, setData] = React.useState('');
+  const [data, setData] = useState('');
   return <div>{data ? <Text>test</Text> : <Skeleton />}</div>;
 };
 ```
 
 ## Circular Skeleton
 
-```jsx
+```jsx live
 () => <Skeleton height="100px" width="100px" borderRadius="full" />;
 ```
 
 ## Multi-line Skeleton with Custom Gap
 
-```jsx
+```jsx live
 () => {
-  const [data, setData] = React.useState('');
+  const [data, setData] = useState('');
   return (
     <div>
       {data ? (
@@ -36,9 +36,9 @@ import { Text } from 'minerva-ui';
 
 ## Skeleton Loading States
 
-```jsx
+```jsx live
 () => {
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = useState(false);
   return (
     <>
       <Button mb="10px" onClick={() => setLoading(prevState => !prevState)}>

@@ -84,7 +84,7 @@ const Search = ({ directories }) => {
     const down = e => {
       if (
         document.activeElement &&
-        inputs.includes(document.activeElement.tagName.toLowerCase())
+        inputs.indexOf(document.activeElement.tagName.toLowerCase() !== -1)
       ) {
         if (e.key === '/') {
           e.preventDefault();
