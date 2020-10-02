@@ -2,11 +2,11 @@ import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import slugify from '@sindresorhus/slugify';
 import Link from 'next/link';
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import Highlight, { defaultProps, PrismTheme } from 'prism-react-renderer';
 import * as Minerva from 'minerva-ui';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
-const THEME = {
+const THEME: PrismTheme = {
   plain: {
     color: '#000',
     backgroundColor: 'transparent',

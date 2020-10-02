@@ -10,12 +10,14 @@
   "author": "Shu Ding",
   "license": "MIT",
   "dependencies": {
+    "global": "^4.4.0",
     "minerva-ui": "^5.0.2",
     "next": "^9.5.3",
     "nextra": "^0.2.4",
     "nextra-theme-docs": "^0.1.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-live": "^2.2.2"
+    "react-live": "^2.2.2",
+    "ts-migrate": "^0.1.7"
   }
 }

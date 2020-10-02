@@ -53,7 +53,7 @@ function Folder({ item, anchors }) {
           display: open ? '' : 'none',
         }}
       >
-        <Menu dir={item.children} base={item.route} anchors={anchors} />
+        <Menu dir={item.children} anchors={anchors} />
       </div>
     </li>
   );
