@@ -300,7 +300,7 @@ const Layout = ({ filename, config: _config, pageMap, children }) => {
                         className="text-sm"
                         href={
                           config.github +
-                          '/tree/master/pages' +
+                          '/tree/master/docs/pages' +
                           filepathWithName
                         }
                         target="_blank"
