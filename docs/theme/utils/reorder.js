@@ -1,24 +1,27 @@
-import getTitle from 'title'
+import getTitle from 'title';
 
-export default function reorderBasedOnMeta (list) {
-  let meta = list.find(item => item.name === 'meta.json')
+export default function reorderBasedOnMeta(list) {
+  let meta = list.find(item => item.name === 'meta.json');
   if (!meta) {
-    meta = {}
+    meta = {};
   } else {
-    meta = meta.meta
+    meta = meta.meta;
   }
 
-  const metaKeys = Object.keys(meta)
+  const metaKeys = Object.keys(meta);
 
-  return list.filter(a => {
-    return a.name !== 'meta.json' && a.name !== '_app'
-  }).sort((a, b) => {
-    return metaKeys.indexOf(a.name) - metaKeys.indexOf(b.name)
-  }).map(a => {
-    return {
-      ...a,
-      children: a.children ? reorderBasedOnMeta(a.children) : undefined,
-      title: meta[a.name] || getTitle(a.name)
-    }
-  })
+  return list
+    .filter(a => {
+      return a.name !== 'meta.json' && a.name !== '_app';
+    })
+    .sort((a, b) => {
+      return metaKeys.indexOf(a.name) - metaKeys.indexOf(b.name);
+    })
+    .map(a => {
+      return {
+        ...a,
+        children: a.children ? reorderBasedOnMeta(a.children) : undefined,
+        title: meta[a.name] || getTitle(a.name),
+      };
+    });
 }

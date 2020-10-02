@@ -17,12 +17,5 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-live": "^2.2.2"
-  },
-  "devDependencies": {
-    "prettier": "^2.0.5"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
   }
 }

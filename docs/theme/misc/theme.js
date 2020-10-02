@@ -1,10 +1,10 @@
-import React from 'react'
-import { MDXProvider } from '@mdx-js/react'
-import slugify from '@sindresorhus/slugify'
-import Link from 'next/link'
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import React from 'react';
+import { MDXProvider } from '@mdx-js/react';
+import slugify from '@sindresorhus/slugify';
+import Link from 'next/link';
+import Highlight, { defaultProps } from 'prism-react-renderer';
 import * as Minerva from 'minerva-ui';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
 const THEME = {
   plain: {
@@ -70,112 +70,130 @@ const THEME = {
       },
     },
   ],
-}
+};
 
 // Anchor links
 
 const HeaderLink = ({ tag: Tag, children, ...props }) => {
-  const title = typeof children === 'string' ? children : children?.props?.children;
-  const slug = slugify(title || '')
+  const title =
+    typeof children === 'string' ? children : children?.props?.children;
+  const slug = slugify(title || '');
   return (
     <Tag {...props}>
       <span className="subheading-anchor" id={slug} />
       <a href={'#' + slug} className="text-current no-underline no-outline">
         {children}
-        <span className="anchor-icon" aria-hidden>#</span>
+        <span className="anchor-icon" aria-hidden>
+          #
+        </span>
       </a>
     </Tag>
-  )
-}
+  );
+};
 
 const H2 = ({ children, ...props }) => {
   return (
     <HeaderLink tag="h2" {...props}>
       {children}
     </HeaderLink>
-  )
-}
+  );
+};
 
 const H3 = ({ children, ...props }) => {
   return (
     <HeaderLink tag="h3" {...props}>
       {children}
     </HeaderLink>
-  )
-}
+  );
+};
 
 const H4 = ({ children, ...props }) => {
   return (
     <HeaderLink tag="h4" {...props}>
       {children}
     </HeaderLink>
-  )
-}
+  );
+};
 
 const H5 = ({ children, ...props }) => {
   return (
     <HeaderLink tag="h5" {...props}>
       {children}
     </HeaderLink>
-  )
-}
+  );
+};
 
 const H6 = ({ children, ...props }) => {
   return (
     <HeaderLink tag="h6" {...props}>
       {children}
     </HeaderLink>
-  )
-}
+  );
+};
 
 const A = ({ children, ...props }) => {
-  const isExternal = props.href && props.href.startsWith('https://')
+  const isExternal = props.href && props.href.startsWith('https://');
   if (isExternal) {
     return (
       <a target="_blank" {...props}>
         {children}
       </a>
-    )
+    );
   }
   return (
     <Link href={props.href}>
       <a {...props}>{children}</a>
     </Link>
-  )
-}
+  );
+};
 
 const scope = {
   ...Minerva,
   themeWithIcons: { ...Minerva.defaultTheme, icons: Minerva.defaultIcons },
   useState: React.useState,
   useEffect: React.useEffect,
-}
+};
 
 export const Code = ({ children, className, highlight, live, ...props }) => {
-  if (!className) return <code {...props}>{children}</code>
+  if (!className) return <code {...props}>{children}</code>;
 
-  const highlightedLines = highlight ? highlight.split(',').map(Number) : []
+  const highlightedLines = highlight
+    ? highlight.split(',').map(x => Number(x))
+    : [];
 
   // https://mdxjs.com/guides/syntax-highlighting#all-together
-  const language = className.replace(/language-/, '')
+  const language = className.replace(/language-/, '');
 
   if (live) {
     return (
       <LiveProvider code={children} theme={THEME} scope={scope} {...props}>
         {/* {props.showCopyButton && <Copy content={props.code} />} */}
         <Minerva.ThemeProvider theme={scope.themeWithIcons}>
-          <Minerva.Box bg="white" margin="-16px -16px 16px -16px" borderWidth="1px" borderBottomWidth={0} radiusTop="8px">
-            <Minerva.Box p="12px" >
+          <Minerva.Box
+            bg="white"
+            margin="-16px -16px 16px -16px"
+            borderWidth="1px"
+            borderBottomWidth={0}
+            radiusTop="8px"
+          >
+            <Minerva.Box p="12px">
               <LivePreview data-name="live-preview" />
             </Minerva.Box>
           </Minerva.Box>
         </Minerva.ThemeProvider>
-        <LiveEditor data-name="live-editor" style={{ paddingTop: 0, paddingBottom: 0, paddingLeft: 0, paddingRight: 0 }} />
+        <LiveEditor
+          data-name="live-editor"
+          style={{
+            paddingTop: 0,
+            paddingBottom: 0,
+            paddingLeft: 0,
+            paddingRight: 0,
+          }}
+        />
         <LiveError />
       </LiveProvider>
-    )
+    );
   }
-
 
   return (
     <Highlight
@@ -208,8 +226,8 @@ export const Code = ({ children, className, highlight, live, ...props }) => {
         </code>
       )}
     </Highlight>
-  )
-}
+  );
+};
 
 const components = {
   h2: H2,
@@ -219,23 +237,31 @@ const components = {
   h6: H6,
   a: A,
   code: Code,
-  th: props => <th className="px-6 py-3 whitespace-no-wrap bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider" {...props} style={{ backgroundColor: 'rgb(249,250,251)' }} />,
+  th: props => (
+    <th
+      className="px-6 py-3 whitespace-no-wrap bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+      {...props}
+      style={{ backgroundColor: 'rgb(249,250,251)' }}
+    />
+  ),
   td: props => <td className="px-6 py-4" {...props} />,
   thead: props => <thead className="rounded-lg" {...props} />,
-  tbody: props => <tbody className="bg-white divide-y divide-gray-200" {...props} />,
+  tbody: props => (
+    <tbody className="bg-white divide-y divide-gray-200" {...props} />
+  ),
   table: props => (
     <div className="overflow-x-auto mt-2">
-    <div className="py-2 px-1 align-middle inline-block min-w-full">
-      <div className="overflow-hidden rounded-lg">
-        <table className="min-w-full divide-y divide-gray-200" {...props} />
-      </div>
+      <div className="py-2 px-1 align-middle inline-block min-w-full">
+        <div className="overflow-hidden rounded-lg">
+          <table className="min-w-full divide-y divide-gray-200" {...props} />
+        </div>
       </div>
     </div>
   ),
-}
+};
 
 const Theme = ({ children }) => {
-  return <MDXProvider components={components}>{children}</MDXProvider>
+  return <MDXProvider components={components}>{children}</MDXProvider>;
 };
 
 export default Theme;

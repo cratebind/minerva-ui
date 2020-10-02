@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default {
   github: 'https://github.com/shuding/nextra',
@@ -30,5 +30,5 @@ export default {
       <meta name="og:title" content="Nextra: the next docs builder" />
       <meta name="apple-mobile-web-app-title" content="Nextra" />
     </React.Fragment>
-  )
-}
+  ),
+};

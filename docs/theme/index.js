@@ -1,43 +1,49 @@
-import React, { useState, useEffect, useMemo, useContext, createContext } from 'react'
-import { useRouter } from 'next/router'
-import Head from 'next/head'
-import Link from 'next/link'
-import slugify from '@sindresorhus/slugify'
-import 'focus-visible'
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useContext,
+  createContext,
+} from 'react';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Link from 'next/link';
+import slugify from '@sindresorhus/slugify';
+import 'focus-visible';
 
-import flatten from './utils/flatten'
-import reorderBasedOnMeta from './utils/reorder'
+import flatten from './utils/flatten';
+import reorderBasedOnMeta from './utils/reorder';
 
-import Search from './search'
-import GitHubIcon from './github-icon'
-import ArrowRight from './arrow-right'
+import Search from './search';
+import GitHubIcon from './github-icon';
+import ArrowRight from './arrow-right';
 
-import Theme from './misc/theme'
-import defaultConfig from './misc/default.config'
+import Theme from './misc/theme';
+import defaultConfig from './misc/default.config';
 
-const TreeState = new Map()
-const titleType = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
-const MenuContext = createContext(false)
+const TreeState = new Map();
+const titleType = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+const MenuContext = createContext(false);
 
 function Folder({ item, anchors }) {
-  const route = useRouter().route + '/'
-  const active = route.startsWith(item.route + '/')
-  const open = TreeState[item.route] ?? false
-  const [_, render] = useState(false)
+  const route = useRouter().route + '/';
+  const active = route.startsWith(item.route + '/');
+  const open = TreeState[item.route] ?? false;
+  const [_, render] = useState(false);
 
   useEffect(() => {
     if (active) {
-      TreeState[item.route] = true
+      TreeState[item.route] = true;
     }
-  }, [active])
+  }, [active]);
 
   return (
     <li className={open ? 'active' : ''}>
       <button
         onClick={() => {
-          if (active) return
-          TreeState[item.route] = !open
-          render((x) => !x)
+          if (active) return;
+          TreeState[item.route] = !open;
+          render(x => !x);
         }}
       >
         {item.title}
@@ -50,15 +56,15 @@ function Folder({ item, anchors }) {
         <Menu dir={item.children} base={item.route} anchors={anchors} />
       </div>
     </li>
-  )
+  );
 }
 
 function File({ item, anchors }) {
-  const { setMenu } = useContext(MenuContext)
-  const route = useRouter().route + '/'
-  const active = route.startsWith(item.route + '/')
+  const { setMenu } = useContext(MenuContext);
+  const route = useRouter().route + '/';
+  const active = route.startsWith(item.route + '/');
 
-  const title = item.title
+  const title = item.title;
   // if (item.title.startsWith('> ')) {
   // title = title.substr(2)
   if (anchors && anchors.length) {
@@ -69,9 +75,10 @@ function File({ item, anchors }) {
             <a>{title}</a>
           </Link>
           <ul>
-            {anchors.map((anchor) => {
-              const title = typeof anchor === 'string' ? anchor : anchor?.props?.children;
-              const slug = slugify(title || '')
+            {anchors.map(anchor => {
+              const title =
+                typeof anchor === 'string' ? anchor : anchor?.props?.children;
+              const slug = slugify(title || '');
               return (
                 <a
                   href={'#' + slug}
@@ -83,11 +90,11 @@ function File({ item, anchors }) {
                     <span className="inline-block">{anchor}</span>
                   </span>
                 </a>
-              )
+              );
             })}
           </ul>
         </li>
-      )
+      );
     }
   }
 
@@ -97,20 +104,20 @@ function File({ item, anchors }) {
         <a onClick={() => setMenu(false)}>{title}</a>
       </Link>
     </li>
-  )
+  );
 }
 
 function Menu({ dir, anchors }) {
   return (
     <ul>
-      {dir.map((item) => {
+      {dir.map(item => {
         if (item.children) {
-          return <Folder key={item.name} item={item} anchors={anchors} />
+          return <Folder key={item.name} item={item} anchors={anchors} />;
         }
-        return <File key={item.name} item={item} anchors={anchors} />
+        return <File key={item.name} item={item} anchors={anchors} />;
       })}
     </ul>
-  )
+  );
 }
 
 function Sidebar({ show, directories, anchors }) {
@@ -128,14 +135,14 @@ function Sidebar({ show, directories, anchors }) {
         <Menu dir={directories} anchors={anchors} />
       </div>
     </aside>
-  )
+  );
 }
 
 const NextLink = ({ config, flatDirectories, currentIndex }) => {
-  let next = flatDirectories[currentIndex + 1]
+  let next = flatDirectories[currentIndex + 1];
 
   if (!config.nextLinks || !next) {
-    return null
+    return null;
   }
 
   return (
@@ -145,14 +152,14 @@ const NextLink = ({ config, flatDirectories, currentIndex }) => {
         <ArrowRight className="inline ml-1 flex-shrink-0" />
       </a>
     </Link>
-  )
-}
+  );
+};
 
 const PrevLink = ({ config, flatDirectories, currentIndex }) => {
-  let prev = flatDirectories[currentIndex - 1]
+  let prev = flatDirectories[currentIndex - 1];
 
   if (!config.prevLinks || !prev) {
-    return null
+    return null;
   }
 
   return (
@@ -162,42 +169,42 @@ const PrevLink = ({ config, flatDirectories, currentIndex }) => {
         {prev.title}
       </a>
     </Link>
-  )
-}
+  );
+};
 
 const Layout = ({ filename, config: _config, pageMap, children }) => {
-  const [menu, setMenu] = useState(false)
-  const router = useRouter()
-  const { route, pathname } = router
+  const [menu, setMenu] = useState(false);
+  const router = useRouter();
+  const { route, pathname } = router;
 
-  const directories = useMemo(() => reorderBasedOnMeta(pageMap), [pageMap])
-  const flatDirectories = useMemo(() => flatten(directories), [directories])
-  const config = Object.assign({}, defaultConfig, _config)
+  const directories = useMemo(() => reorderBasedOnMeta(pageMap), [pageMap]);
+  const flatDirectories = useMemo(() => flatten(directories), [directories]);
+  const config = Object.assign({}, defaultConfig, _config);
 
-  const filepath = route.slice(0, route.lastIndexOf('/') + 1)
-  const filepathWithName = filepath + filename
-  const titles = React.Children.toArray(children).filter((child) =>
+  const filepath = route.slice(0, route.lastIndexOf('/') + 1);
+  const filepathWithName = filepath + filename;
+  const titles = React.Children.toArray(children).filter(child =>
     titleType.includes(child.props.mdxType)
-  )
-  const titleEl =
-    titles.find((child) => child.props.mdxType === 'h1')
-  const title = titleEl ? titleEl.props.children : filename.split('.')[0]
+  );
+  const titleEl = titles.find(child => child.props.mdxType === 'h1');
+  const title = titleEl ? titleEl.props.children : filename.split('.')[0];
   // const title = titleEl ? titleEl.props.children : 'Untitled'
   const anchors = titles
-    .filter((child) => child.props.mdxType === 'h2')
-    .map((child) => child.props.children)
+    .filter(child => child.props.mdxType === 'h2')
+    .map(child => child.props.children);
 
   useEffect(() => {
     if (menu) {
-      document.body.classList.add('overflow-hidden')
+      document.body.classList.add('overflow-hidden');
     } else {
-      document.body.classList.remove('overflow-hidden')
+      document.body.classList.remove('overflow-hidden');
     }
-  }, [menu])
+  }, [menu]);
 
-  const currentIndex = useMemo(() => flatDirectories.findIndex(
-    (dir) => dir.route === pathname
-  ), [flatDirectories, pathname])
+  const currentIndex = useMemo(
+    () => flatDirectories.findIndex(dir => dir.route === pathname),
+    [flatDirectories, pathname]
+  );
 
   return (
     <React.Fragment>
@@ -243,9 +250,9 @@ const Layout = ({ filename, config: _config, pageMap, children }) => {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
             </svg>
           </button>
         </nav>
@@ -266,32 +273,52 @@ const Layout = ({ filename, config: _config, pageMap, children }) => {
               <footer className="mt-24">
                 <nav className="flex flex-row items-center justify-between">
                   <div>
-                    <PrevLink config={config} flatDirectories={flatDirectories} currentIndex={currentIndex} />
+                    <PrevLink
+                      config={config}
+                      flatDirectories={flatDirectories}
+                      currentIndex={currentIndex}
+                    />
                   </div>
 
                   <div>
-                    <NextLink config={config} flatDirectories={flatDirectories} currentIndex={currentIndex} />
+                    <NextLink
+                      config={config}
+                      flatDirectories={flatDirectories}
+                      currentIndex={currentIndex}
+                    />
                   </div>
                 </nav>
 
                 <hr />
 
-                {config.footer ? <div className="mt-24 flex justify-between flex-col-reverse md:flex-row items-center md:items-end">
-                  <span className="text-gray-600">
-                    {config.footerText}
-                  </span>
-                  <div className="mt-6"/>
-                  {config.footerEditOnGitHubLink ? <a className="text-sm" href={
-                    config.github + '/tree/master/pages' + filepathWithName
-                  } target="_blank">Edit this page on GitHub</a> : null}
-                </div> : null}
+                {config.footer ? (
+                  <div className="mt-24 flex justify-between flex-col-reverse md:flex-row items-center md:items-end">
+                    <span className="text-gray-600">{config.footerText}</span>
+                    <div className="mt-6" />
+                    {config.footerEditOnGitHubLink ? (
+                      <a
+                        className="text-sm"
+                        href={
+                          config.github +
+                          '/tree/master/pages' +
+                          filepathWithName
+                        }
+                        target="_blank"
+                      >
+                        Edit this page on GitHub
+                      </a>
+                    ) : null}
+                  </div>
+                ) : null}
               </footer>
             </main>
           </content>
         </div>
       </div>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default (opts, config) => props => <Layout config={config} {...opts} {...props}/>
+export default (opts, config) => props => (
+  <Layout config={config} {...opts} {...props} />
+);

@@ -1,6 +1,7 @@
-import { AnimationStyles, ReachGlobalStyles } from 'minerva-ui'
-import 'nextra-theme-docs/style.css'
-import '../global.css'
+import React from 'react';
+import { AnimationStyles, ReachGlobalStyles } from 'minerva-ui';
+import 'nextra-theme-docs/style.css';
+import '../global.css';
 
 export default function CustomApp({ Component, pageProps }) {
   return (
@@ -9,5 +10,5 @@ export default function CustomApp({ Component, pageProps }) {
       <AnimationStyles />
       <Component {...pageProps} />
     </>
-  )
+  );
 }
