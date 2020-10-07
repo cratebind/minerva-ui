@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 // import lightTheme from 'prism-react-renderer/themes/nightOwlLight';
 import darkTheme from 'prism-react-renderer/themes/nightOwl';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { ProviderWithIcons } from '../.storybook/preview';
 import { mdx } from '@mdx-js/react';
 import * as Minerva from '.';
 import useClipboard from './hooks/useClipboard';
@@ -65,10 +66,10 @@ const previewStyles = {
 
 const LiveCodePreview = (props: any) => (
   <div style={previewStyles}>
-    <Minerva.ThemeProvider>
+    <ProviderWithIcons>
       <Minerva.GlobalStyles />
       <LivePreview {...props} />
-    </Minerva.ThemeProvider>
+    </ProviderWithIcons>
   </div>
 );
 

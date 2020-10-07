@@ -1,5 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { ProviderWithIcons } from '../../.storybook/preview'
+// import { ProviderWithIcons } from '../../.storybook/preview';
+
 import { MenuContainer } from '../Menu';
 import { Box } from '../layout'
 
@@ -20,7 +21,6 @@ import { MenuContainer, MenuButton, MenuList, MenuItem, MenuLink } from 'minerva
 ```
 
 ```jsx
-<ProviderWithIcons>
   <MenuContainer>
     <MenuButton>
       Actions <Icon name="chevron-down" ml={2} size="14px" />
@@ -37,12 +37,10 @@ import { MenuContainer, MenuButton, MenuList, MenuItem, MenuLink } from 'minerva
       </MenuLink>
     </MenuList>
   </MenuContainer>
-</ProviderWithIcons>
 ```
 
 ## With Divider
 ```jsx
-<ProviderWithIcons>
   <MenuContainer>
     <MenuButton>
       Actions <Icon name="chevron-down" ml={2} size="14px" />
@@ -58,12 +56,10 @@ import { MenuContainer, MenuButton, MenuList, MenuItem, MenuLink } from 'minerva
       </MenuLink>
     </MenuList>
   </MenuContainer>
-</ProviderWithIcons>
 ```
 
 ## Positioned To Right
 ```jsx
-<ProviderWithIcons>
   <Flex justifyContent="flex-end">
     <MenuContainer>
       <MenuButton>
@@ -77,5 +73,23 @@ import { MenuContainer, MenuButton, MenuList, MenuItem, MenuLink } from 'minerva
       </MenuList>
     </MenuContainer>
   </Flex>
-</ProviderWithIcons>
+```
+
+## Disabled Menu Items
+```jsx
+  <MenuContainer>
+    <MenuButton>
+      Actions <Icon name="chevron-down" ml={2} size="14px" />
+    </MenuButton>
+    <MenuList>
+      <MenuItem onSelect={() => alert("Edit Profile")}>Edit Profile</MenuItem>
+      <MenuItem disabled onSelect={() => alert("Settings")}>
+        Settings
+      </MenuItem>
+      <MenuDivider />
+      <MenuLink href="https://minerva-ui-docs.vercel.app">
+        Sign Out
+      </MenuLink>
+    </MenuList>
+  </MenuContainer>
 ```

@@ -123,6 +123,11 @@ export const ReachStyles = css`
     outline: none;
   }
 
+  [data-reach-menu-item][aria-disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   /* Reach Dialog */
   [data-reach-dialog-overlay] {
     position: fixed;
