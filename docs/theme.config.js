@@ -32,6 +32,11 @@ export default {
         content="Minerva UI: Composable React Component Library"
       />
       <meta name="apple-mobile-web-app-title" content="Minerva UI" />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" />
     </>
   ),
   search: true,
