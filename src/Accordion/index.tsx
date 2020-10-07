@@ -7,10 +7,8 @@ import {
   AccordionPanel as ReachAccordionPanel,
   AccordionProps as ReachAccordionProps,
   AccordionItemProps as ReachAccordionItemProps,
-  // useAccordionItemContext,
 } from '@reach/accordion';
 import { MinervaProps, Box } from '../layout';
-// import Icon from '../Icon';
 import Button from '../Button';
 
 export interface AccordionProps extends MinervaProps {

@@ -146,6 +146,7 @@ exports[`Tabs should change TabList background color 1`] = `
         id="tabs--1--tab--0"
         role="tab"
         tabindex="0"
+        type="button"
       >
         My Account
       </button>
@@ -158,6 +159,7 @@ exports[`Tabs should change TabList background color 1`] = `
         id="tabs--1--tab--1"
         role="tab"
         tabindex="-1"
+        type="button"
       >
         Favorites
       </button>
@@ -170,6 +172,7 @@ exports[`Tabs should change TabList background color 1`] = `
         id="tabs--1--tab--2"
         role="tab"
         tabindex="-1"
+        type="button"
       >
         Orders
       </button>
@@ -182,6 +185,7 @@ exports[`Tabs should change TabList background color 1`] = `
         id="tabs--1--tab--3"
         role="tab"
         tabindex="-1"
+        type="button"
       >
         Billing
       </button>

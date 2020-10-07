@@ -83,6 +83,7 @@ export const ReachStyles = css`
     --reach-dialog: 1;
     --reach-tooltip: 1;
     --reach-combobox: 1;
+    --reach-accordion: 1;
   }
   /*
  * Reach Menu
@@ -175,7 +176,6 @@ export const ReachStyles = css`
 
   /* Reach Combobox */
   [data-reach-combobox-popover] {
-    border: solid 1px hsla(0, 0%, 0%, 0.25);
     background: hsla(0, 100%, 100%, 0.99);
     font-size: 85%;
   }
@@ -207,6 +207,11 @@ export const ReachStyles = css`
 
   [data-suggested-value] {
     font-weight: bold;
+  }
+
+  /* Reach Accordion */
+  [data-reach-accordion-button][disabled] {
+    cursor: not-allowed;
   }
 `;
 
