@@ -61,10 +61,9 @@ const Search = ({ directories }) => {
   }, []);
 
   useEffect(() => {
-    console.log('SEARCH MOUNTED');
-
-    if (window.docsearch) {
-      console.log('DOCSEARCH FOUND');
+    // @ts-ignore
+    if (window?.docsearch) {
+      // @ts-ignore
       window.docsearch({
         apiKey: '968f29d09b1213475a35c6fa56d7a55d',
         indexName: 'minerva-ui-vercel',
