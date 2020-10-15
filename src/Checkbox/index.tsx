@@ -76,7 +76,17 @@ export const Checkbox = forwardRef(function Checkbox(
   props: CheckboxProps,
   ref: any
 ) {
-  const { children, checked = false, onChange, ...rest } = props;
+  const { children, checked = false, onChange, onKeyDown, ...rest } = props;
+
+  // Allow checkbox to be keyboard accessible
+  const handleKeyDown: CheckboxProps['onKeyDown'] = e => {
+    if (e.key === ' ' && !onKeyDown) {
+      e.preventDefault();
+      onChange?.();
+    }
+
+    onKeyDown?.(e);
+  };
 
   return (
     <CheckboxContainer as="label" ref={ref} {...rest}>
@@ -84,6 +94,7 @@ export const Checkbox = forwardRef(function Checkbox(
         data-testid="checkbox-container"
         checked={checked}
         onChange={onChange}
+        onKeyDown={handleKeyDown}
       >
         <VisuallyHidden as={CustomCheckboxInput} />
         <ControlBox data-testid="control-box" tabIndex={0} checked={checked}>
