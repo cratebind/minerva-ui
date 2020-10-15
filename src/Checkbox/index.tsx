@@ -80,11 +80,12 @@ export const Checkbox = forwardRef(function Checkbox(
 
   // Allow checkbox to be keyboard accessible
   const handleKeyDown: CheckboxProps['onKeyDown'] = e => {
-    if (e.key === ' ') {
+    if (e.key === ' ' && !onKeyDown) {
       e.preventDefault();
       onChange?.();
-      onKeyDown?.(e);
     }
+
+    onKeyDown?.(e);
   };
 
   return (

@@ -85,4 +85,22 @@ describe('Checkbox', () => {
 
     expect(handleChange).toHaveBeenCalled();
   });
+
+  it('can trigger onKeyDown if provided', () => {
+    const labelText = 'Checked Checkbox';
+    const handleChange = jest.fn();
+    const handleKeyDown = jest.fn();
+
+    const { getByTestId } = render(
+      <ThemeProvider>
+        <Checkbox onChange={handleChange} onKeyDown={handleKeyDown}>{labelText}</Checkbox>
+      </ThemeProvider>
+    );
+    const checkbox = getByTestId('control-box');
+
+    fireEvent.keyDown(checkbox, { key: ' ' });
+
+    expect(handleChange).not.toHaveBeenCalled();
+    expect(handleKeyDown).toHaveBeenCalled();
+  });
 });
