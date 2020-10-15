@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 import * as ReactDOM from 'react-dom';
 import { Checkbox, ThemeProvider } from '../src';
@@ -69,4 +69,20 @@ describe('Checkbox', () => {
 
   //   expect(getByTestId('control-box')).toHaveStyleRule('background-color', '#5850ec');
   // });
+
+  it('is accessible via the keyboard', () => {
+    const labelText = 'Checked Checkbox';
+    const handleChange = jest.fn();
+
+    const { getByTestId } = render(
+      <ThemeProvider>
+        <Checkbox onChange={handleChange}>{labelText}</Checkbox>
+      </ThemeProvider>
+    );
+    const checkbox = getByTestId('control-box');
+
+    fireEvent.keyDown(checkbox, { key: ' ' });
+
+    expect(handleChange).toHaveBeenCalled();
+  });
 });
