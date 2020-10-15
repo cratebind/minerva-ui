@@ -1,0 +1,45 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import NotificationContainer from '..';
+import useToasts from './useToasts';
+import Button from '../Button';
+
+<Meta title="Elements|Notifications" component={NotificationContainer} />
+
+# Notifications
+
+
+### Basic
+```jsx live
+() => {
+  const [toasts, setToast] = useToasts()
+
+
+  return (
+    <>
+      <Button onClick={() => setToast({ text: 'Show Toast Show Toast Show Toast Show Toast Show Toast Show Toast Show Toast Show Toast Show Toast Show Toast Show Toast Show Toast Show Toast Show Toast Show Toast ', delay: 1000000 })}>Show Toast </Button>
+    </>
+  )
+};
+```
+
+### With Actions
+```jsx live
+() => {
+  const [toasts, setToast] = useToasts()
+
+  const action = {
+    name: 'alert',
+    handler: () => alert('alert from toast')
+  }
+  const handleClick = () => setToast({
+    text: 'The Evil Rabbit jumped over the fence.',
+    actions: [action],
+  })
+
+  return (
+    <>
+      <Button onClick={handleClick}>Show Toast</Button>
+    </>
+  )
+};
+```

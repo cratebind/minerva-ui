@@ -1,3 +1,4 @@
+import { ToastProvider } from './Notification';
 import React from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import defaultTheme from './theme';
@@ -12,7 +13,11 @@ export interface ProviderProps {
 }
 
 function ThemeProvider({ theme = defaultTheme, children }: ProviderProps) {
-  return <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>;
+  return (
+    <StyledThemeProvider theme={theme}>
+      <ToastProvider>{children}</ToastProvider>
+    </StyledThemeProvider>
+  );
 }
 
 // const useTheme = () => {

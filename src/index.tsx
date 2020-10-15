@@ -94,6 +94,9 @@ export * from './Skeleton';
  * Helpers
  */
 export { default as Spinner } from './Spinner';
+export { default as NotificationContainer } from './Notification';
+export { default as useToasts } from './Notification/useToasts';
+export * from './Notification';
 
 /**
  * Utilities

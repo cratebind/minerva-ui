@@ -3220,7 +3220,7 @@
     tabbable "^4.0.0"
     tslib "^2.0.0"
 
-"@reach/portal@0.11.2":
+"@reach/portal@0.11.2", "@reach/portal@^0.11.2":
   version "0.11.2"
   resolved "https://registry.yarnpkg.com/@reach/portal/-/portal-0.11.2.tgz#19a671be9ff010a345892b81e710cb6e4d9f9762"
   integrity sha512-/53A/rY5oX2Y7D5TpvsP+V5cSd+4MPY6f21mAmVn4DCVwpkCFOlJ059ZL7ixS85M0Jz48YQnnvBJUqwkxqUG/g==
