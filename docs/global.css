@@ -8,3 +8,7 @@
 h3 code {
   font-size: inherit;
 }
+
+content pre {
+  position: relative;
+}

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Highlight, { defaultProps, PrismTheme } from 'prism-react-renderer';
 import * as Minerva from 'minerva-ui';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import Copy from '../../components/CopyButton';
 
 const THEME: PrismTheme = {
   plain: {
@@ -196,36 +197,44 @@ export const Code = ({ children, className, highlight, live, ...props }) => {
   }
 
   return (
-    <Highlight
-      {...defaultProps}
-      code={children.trim()}
-      language={language}
-      theme={THEME}
-    >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <code className={className} style={{ ...style }}>
-          {tokens.map((line, i) => (
-            <div
-              key={i}
-              {...getLineProps({ line, key: i })}
-              style={
-                highlightedLines.includes(i + 1)
-                  ? {
-                      background: '#cce0f5',
-                      margin: '0 -1rem',
-                      padding: '0 1rem',
-                    }
-                  : null
-              }
+    <>
+      <Minerva.ThemeProvider>
+        <Copy content={children.trim()} />
+        <Highlight
+          {...defaultProps}
+          code={children.trim()}
+          language={language}
+          theme={THEME}
+        >
+          {({ className, style, tokens, getLineProps, getTokenProps }) => (
+            <code
+              className={className}
+              style={{ ...style, position: 'relative' }}
             >
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token, key })} />
+              {tokens.map((line, i) => (
+                <div
+                  key={i}
+                  {...getLineProps({ line, key: i })}
+                  style={
+                    highlightedLines.includes(i + 1)
+                      ? {
+                          background: '#cce0f5',
+                          margin: '0 -1rem',
+                          padding: '0 1rem',
+                        }
+                      : null
+                  }
+                >
+                  {line.map((token, key) => (
+                    <span key={key} {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
               ))}
-            </div>
-          ))}
-        </code>
-      )}
-    </Highlight>
+            </code>
+          )}
+        </Highlight>
+      </Minerva.ThemeProvider>
+    </>
   );
 };
 
