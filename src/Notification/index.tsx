@@ -29,6 +29,7 @@ export interface ToastAction {
 }
 
 export interface Toast {
+  title?: string | React.ReactNode;
   text?: string | React.ReactNode;
   type?: NormalTypes;
   delay?: number;
@@ -109,6 +110,7 @@ const ToastContainer: React.FC<React.PropsWithChildren<{}>> = () => {
   const [hover, setHover] = useState<boolean>(false);
   const timer = useRef<number | undefined>();
   const { toasts, updateToastHoverStatus } = useToastContext();
+  console.log({ toasts });
   const toastElements = useMemo(
     () =>
       toasts.map((t, i) => (
@@ -149,7 +151,7 @@ const ToastContainer: React.FC<React.PropsWithChildren<{}>> = () => {
         position="fixed"
         width="420px"
         maxWidth="90vw"
-        bottom="22px"
+        top="22px"
         right="22px"
         zIndex={2000}
         transition="all 400ms ease"

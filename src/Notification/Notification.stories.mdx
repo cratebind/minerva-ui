@@ -43,3 +43,22 @@ import Button from '../Button';
   )
 };
 ```
+
+### With Title
+```jsx live
+() => {
+  const [toasts, setToast] = useToasts()
+
+  const handleClick = () => setToast({
+    text: 'Something happened',
+    title: 'Success!',
+    delay: 1000000
+  })
+
+  return (
+    <>
+      <Button onClick={handleClick}>Show Toast</Button>
+    </>
+  )
+};
+```

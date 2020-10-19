@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import useCurrentState from '../utils/use-current-state'
 // import { ToastWithID } from './toast-container'
 // import { getId } from '../utils/collections'
-import { NormalTypes, ToastWithID, useToastContext } from '.';
+import { NormalTypes, Toast, ToastWithID, useToastContext } from '.';
 import useCurrentState from './useCurrentState';
 
 export interface ToastAction {
@@ -12,13 +12,6 @@ export interface ToastAction {
     cancel: Function
   ) => void;
   passive?: boolean;
-}
-
-export interface Toast {
-  text?: string | React.ReactNode;
-  type?: NormalTypes;
-  delay?: number;
-  actions?: Array<ToastAction>;
 }
 
 const defaultToast = {
@@ -55,14 +48,15 @@ const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
   };
 
   const setToast = (toast: Toast): void => {
-    console.log('SETTING TOAST');
     const id = `toast-${Math.random()
       .toString(32)
       .slice(2, 10)}`;
     const delay = toast.delay || defaultToast.delay;
 
     const cancel = (id: string, delay: number) => {
+      console.log(`CLOSING TOAST: ${id}`);
       updateToasts((currentToasts: Array<ToastWithID>) => {
+        console.log({ currentToasts });
         return currentToasts.map(item => {
           if (item.id !== id) return item;
           return { ...item, willBeDestroy: true };
@@ -73,19 +67,16 @@ const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
     };
 
     updateToasts((currentToasts: Array<ToastWithID>) => {
-      console.log('STARTING UPDATE TOAST');
       const newToast = {
         ...toast,
         id,
         delay,
         cancel: () => cancel(id, delay),
       };
-      console.log({ newToast });
       return [...currentToasts, newToast];
     });
 
     const hideToast = (id: string, delay: number) => {
-      console.log('STARTING HIDE TOAST');
       const hideTimer = window.setTimeout(() => {
         if (hoveringRef.current) {
           hideToast(id, delay);
@@ -98,8 +89,6 @@ const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
 
     hideToast(id, delay);
   };
-
-  console.log({ toasts });
 
   return [toasts, setToast];
 };
