@@ -82,10 +82,14 @@ export const Checkbox = forwardRef(function Checkbox(
   const handleKeyDown: CheckboxProps['onKeyDown'] = e => {
     if (e.key === ' ' && !onKeyDown) {
       e.preventDefault();
-      onChange?.();
+      if (onChange) {
+        onChange();
+      }
     }
 
-    onKeyDown?.(e);
+    if (onKeyDown) {
+      onKeyDown(e);
+    }
   };
 
   return (

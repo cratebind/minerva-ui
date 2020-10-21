@@ -5,7 +5,6 @@ exports[`<Button /> should change style if disabled 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
@@ -89,7 +88,6 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   height: 20px;
   border-width: 2px;
   width: 20px;
@@ -115,7 +113,6 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
@@ -201,7 +198,6 @@ exports[`<Button /> should render 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;

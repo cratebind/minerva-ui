@@ -62,7 +62,6 @@ describe('<Skeleton />', () => {
         box-sizing: border-box;
         min-width: 0;
         color: #374151;
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         width: 100%;
         height: 100%;
         display: -webkit-box;
@@ -86,7 +85,6 @@ describe('<Skeleton />', () => {
         box-sizing: border-box;
         min-width: 0;
         color: #374151;
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         height: 1rem;
         width: 100%;
         border-radius: 9999px;

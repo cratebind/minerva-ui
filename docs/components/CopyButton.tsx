@@ -18,7 +18,9 @@ const copyToClipboard = (str: string) => {
     textarea.select();
     const range = document.createRange();
     const sel = window.getSelection();
+    // eslint-disable-next-line
     sel?.removeAllRanges();
+    // eslint-disable-next-line
     sel?.addRange(range);
     textarea.setSelectionRange(0, textarea.value.length);
     document.execCommand(`copy`);

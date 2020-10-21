@@ -5,7 +5,6 @@ exports[`<Skeleton /> should render 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -29,7 +28,6 @@ exports[`<Skeleton /> should render 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   height: 2rem;
   width: 100%;
   border-radius: 5px;
