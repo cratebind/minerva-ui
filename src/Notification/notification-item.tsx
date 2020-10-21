@@ -73,7 +73,9 @@ const ToastItem: React.FC<ToastItemProps> = React.memo(
       //     TOAST_OFFSET_VALUE}px, -${reverseIndex}px)`;
       // }
       // return `translate3d(0, calc(${calc}), -${reverseIndex}px)`;
-      return `translate3d(0, calc(${calc}), 0)`;
+
+      // return `translate3d(0, calc(${calc}), 0)`;
+      return `translate3d(0, 0%, 0)`;
     }, [onHover, index, total, reverseIndex, toast.willBeDestroy]);
 
     console.log({ visible });
@@ -115,7 +117,6 @@ const ToastItem: React.FC<ToastItemProps> = React.memo(
       // '-webkit-box-orient': 'vertical',
       // '-webkit-line-clamp': 2,
     };
-    console.log(toast);
 
     return (
       <Box
@@ -129,16 +130,16 @@ const ToastItem: React.FC<ToastItemProps> = React.memo(
         border={0}
         borderRadius="5px"
         padding="21px"
-        // marginBottom={2}
+        marginBottom={2}
         bg="#fff"
-        position="absolute"
-        top={0}
-        right={0}
+        // position="absolute"
+        // top={0}
+        // right={0}
         // opacity={reverseIndex > 4 ? 0 : 1}
         // className={`toast ${visible ? 'visible' : ''} ${hide ? 'hide' : ''}`}
         // boxShadow={reverseIndex > 4 ? 'none' : '0 5px 10px rgba(0, 0, 0, 0.12)'}
         boxShadow="0 5px 10px rgba(0, 0, 0, 0.12)"
-        transform="translate3d(0, -100%, 0px) scale(1)"
+        transform="translate3d(0, -100%, 0px)"
         transition="transform 400ms ease 0ms, visibility 200ms ease 0ms, opacity 200ms ease 0ms"
         {...visibleProps}
         {...hiddenProps}
