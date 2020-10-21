@@ -93,7 +93,9 @@ describe('Checkbox', () => {
 
     const { getByTestId } = render(
       <ThemeProvider>
-        <Checkbox onChange={handleChange} onKeyDown={handleKeyDown}>{labelText}</Checkbox>
+        <Checkbox onChange={handleChange} onKeyDown={handleKeyDown}>
+          {labelText}
+        </Checkbox>
       </ThemeProvider>
     );
     const checkbox = getByTestId('control-box');

@@ -64,7 +64,6 @@ describe('<Box />', () => {
         box-sizing: border-box;
         min-width: 0;
         color: #374151;
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
         width: 50px;
       }
 
