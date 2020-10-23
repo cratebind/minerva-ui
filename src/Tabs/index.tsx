@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import {
   Tabs as ReachTabs,
   TabList as ReachTabList,
@@ -32,39 +32,45 @@ export const TabList = ({ children, ...rest }: TabsProps) => (
   </Flex>
 );
 
-export const Tab = ({ children, ...rest }: TabsProps) => (
-  <PseudoBox
-    as={ReachTab}
-    display="flex"
-    alignItems="center"
-    justifyContent="space-between"
-    py={3}
-    px={2}
-    fontWeight={500}
-    borderWidth="2px"
-    // borderColor="transparent"
-    marginBottom="-2px"
-    border={0}
-    fontSize="16px"
-    bg="transparent"
-    borderBottom="2px solid transparent"
-    _focus={{
-      color: 'blue.700',
-      outline: 0,
-      boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
-      borderWidth: '2px',
-    }}
-    _selected={{
-      color: 'blue.700',
-      outline: 0,
-      borderWidth: '2px',
-      borderBottom: '2px solid currentColor',
-    }}
-    {...rest}
-  >
-    {children}
-  </PseudoBox>
-);
+export const Tab = forwardRef(function Tab(
+  { children, ...rest }: TabsProps,
+  ref
+) {
+  return (
+    <PseudoBox
+      as={ReachTab}
+      ref={ref}
+      display="flex"
+      alignItems="center"
+      justifyContent="space-between"
+      py={3}
+      px={2}
+      fontWeight={500}
+      borderWidth="2px"
+      // borderColor="transparent"
+      marginBottom="-2px"
+      border={0}
+      fontSize="16px"
+      bg="transparent"
+      borderBottom="2px solid transparent"
+      _focus={{
+        color: 'blue.700',
+        outline: 0,
+        boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
+        borderWidth: '2px',
+      }}
+      _selected={{
+        color: 'blue.700',
+        outline: 0,
+        borderWidth: '2px',
+        borderBottom: '2px solid currentColor',
+      }}
+      {...rest}
+    >
+      {children}
+    </PseudoBox>
+  );
+});
 
 export const TabPanels = (props: TabsProps) => (
   <Box as={ReachTabPanels} {...props} />

@@ -25,6 +25,7 @@ import {
   Alert,
   ModalHeader,
   ModalFooter,
+  Tab,
   Tabs,
   // Skeleton,
   defaultTheme,
@@ -51,6 +52,7 @@ const basicComponents = {
   ModalHeader,
   ModalBody,
   ModalFooter,
+  Tab,
   // Skeleton,
   // Radio,
   // Icon,
@@ -144,7 +146,7 @@ Object.entries(allComponents).forEach(([name, Component]) => {
 
         useEffect(() => {
           if (ref && ref.current) {
-            setId(ref.current.id);
+            setId(ref.current.dataset.testid);
           }
           // setId
           // console.log(ref);
@@ -152,7 +154,7 @@ Object.entries(allComponents).forEach(([name, Component]) => {
 
         return (
           <ThemeProvider theme={themeWithIcons}>
-            <Component ref={ref} id={refId} data-testid={name} />
+            <Component ref={ref} id={refId} data-testid={refId} />
             <div data-testid="ref-content">{id}</div>
           </ThemeProvider>
         );
