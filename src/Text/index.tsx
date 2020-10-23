@@ -5,7 +5,6 @@ import { useComponentStyles } from '../theme';
 
 export interface TextProps extends MinervaProps {
   children?: React.ReactNode;
-  lineHeight?: string;
   props?: any;
 }
 
@@ -29,16 +28,11 @@ export const Text = forwardRef(({ children, ...props }: TextProps, ref) => {
 
 Text.displayName = 'Text';
 
-Text.defaultProps = {
-  lineHeight: 'normal',
-};
-
 export default Text;
 
 if (__DEV__) {
   Text.propTypes = {
     children: PropTypes.node,
-    lineHeight: PropTypes.string,
     props: PropTypes.any,
   };
 }
