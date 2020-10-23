@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 // import { systemProps } from '../layout';
 import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';
+import { MinervaProps } from '../layout';
 
 // const StyledLink = styled(PseudoBox)<any>(
 //   props => ({
@@ -18,7 +19,9 @@ import { useComponentStyles } from '../theme';
 //   systemProps
 // );
 
-export interface LinkProps {
+type BaseProps = MinervaProps & React.LinkHTMLAttributes<HTMLAnchorElement>;
+
+export interface LinkProps extends BaseProps {
   children?: React.ReactNode;
   href?: string;
   isExternal?: boolean;
