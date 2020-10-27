@@ -2,8 +2,13 @@ import React from 'react';
 import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '.';
 
 export default {
-  title: 'Elements|Accordion',
+  title: 'Accordion',
   component: Accordion,
+  subcomponents: {
+    AccordionButton,
+    AccordionItem,
+    AccordionPanel,
+  },
 };
 
 export const Basic = () => {
