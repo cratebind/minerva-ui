@@ -30,6 +30,7 @@ export {
 } from './GlobalStyles';
 // export { useTheme, useComponentStyles } from './theme';
 export { default as baseTheme } from './theme';
+export { default as defaultTheme } from './theme';
 export * from './theme';
 export { default as styled } from 'styled-components';
 
