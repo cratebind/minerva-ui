@@ -28,8 +28,10 @@ export {
   ReachGlobalStyles,
   CSSReset,
 } from './GlobalStyles';
-export { default as defaultTheme, useTheme, useComponentStyles } from './theme';
+// export { useTheme, useComponentStyles } from './theme';
 export { default as baseTheme } from './theme';
+export { default as defaultTheme } from './theme';
+export * from './theme';
 export { default as styled } from 'styled-components';
 
 /**
@@ -63,6 +65,7 @@ export { default as Button } from './Button';
 export { default as Checkbox } from './Checkbox';
 export { default as Switch } from './Switch';
 export { default as Input } from './Input';
+export * from './Input';
 export * from './Combobox';
 export * from './Menu';
 export { RadioGroup, Radio } from './Radio';
