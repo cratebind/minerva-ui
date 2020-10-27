@@ -32,12 +32,12 @@ import { useComponentStyles } from '../theme';
 //   systemProps
 // );
 
-type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
+type BaseProps = React.InputHTMLAttributes<HTMLInputElement> & MinervaProps;
 
 export interface InputProps extends BaseProps {
   /** Toggles disabled pseudo class */
   disabled?: boolean;
-  // allows input to be labeled for accessibility
+  /** allows input to be labeled for accessibility */
   hiddenLabel?: string;
 }
 
@@ -66,8 +66,8 @@ export const Input = forwardRef(function Input(
 
 export default Input;
 
-if (__DEV__) {
-  Input.propTypes = {
-    disabled: PropTypes.bool,
-  };
-}
+// if (__DEV__) {
+//   Input.propTypes = {
+//     disabled: PropTypes.bool,
+//   };
+// }
