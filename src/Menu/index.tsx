@@ -6,8 +6,10 @@ import {
   MenuLink as ReachMenuLink,
   MenuPopover as ReachMenuPopover,
   MenuItems as ReachMenuItems,
+  MenuProps,
+  MenuButtonProps,
 } from '@reach/menu-button';
-import { positionDefault, positionRight } from '@reach/popover';
+import { PopoverProps, positionDefault, positionRight } from '@reach/popover';
 import styled from 'styled-components';
 import Button from '../Button';
 import { Box, MinervaProps } from '../layout';
@@ -16,12 +18,18 @@ import { Box, MinervaProps } from '../layout';
 // import '@reach/menu-button/styles.css';
 import PseudoBox from '../PseudoBox';
 
+export type MenuContainerProps = MenuProps;
+
 // this is a context provider, so we don't need to allow styling
-export const MenuContainer = ReachMenuContainer;
+export const MenuContainer = (props: MenuContainerProps) => (
+  <ReachMenuContainer {...props} />
+);
 
-export const MenuButton = props => <Button as={ReachMenuButton} {...props} />;
+export const MenuButton = (props: MenuButtonProps & MinervaProps) => (
+  <Button as={ReachMenuButton} {...props} />
+);
 
-export interface MenuListProps extends MinervaProps {
+export interface MenuListProps extends MinervaProps, PopoverProps {
   children?: React.ReactNode;
   menuPosition?: 'left' | 'right';
 }
@@ -63,6 +71,7 @@ export const MenuList = ({
     <OverlayBox
       className="menu-list"
       minWidth="220px"
+      zIndex={500}
       as={ReachMenuItems}
       {...props}
     />
