@@ -4,7 +4,6 @@ import Button from '../Button';
 import { X } from 'react-feather';
 import { defaultIcons, defaultTheme, ThemeProvider } from '..';
 import { filteredArgs } from '../utils';
-// import Icon from '../Icon';
 
 export default {
   title: 'Alert',

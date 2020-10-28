@@ -34,28 +34,3 @@ export const Basic = Template.bind({});
 Basic.args = {
   children: 'Stay Logged In',
 };
-
-// export const Default = Template.bind({});
-// Default.args = {
-//   children: 'Basic Checkbox',
-// };
-
-// export const Variants = () => (
-//   <Stack horizontal>
-//     <Checkbox variant="primary">Primary Checkbox</Checkbox>
-//     <Checkbox variant="secondary">Secondary Checkbox</Checkbox>
-//     <Checkbox variant="tertiary">Tertiary Checkbox</Checkbox>
-//   </Stack>
-// );
-
-// export const LoadingButton = Template.bind({});
-// LoadingButton.args = {
-//   children: 'Basic Checkbox',
-//   isLoading: true,
-// };
-
-// export const DisabledButton = Template.bind({});
-// DisabledButton.args = {
-//   children: 'Basic Checkbox',
-//   disabled: true,
-// };

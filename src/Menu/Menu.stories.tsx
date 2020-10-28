@@ -56,28 +56,3 @@ const Template: Story<MenuContainerProps> = ({}) => {
 
 export const Basic = Template.bind({});
 Basic.args = {};
-
-// export const Default = Template.bind({});
-// Default.args = {
-//   children: 'Basic Combobox',
-// };
-
-// export const Variants = () => (
-//   <Stack horizontal>
-//     <Button variant="primary">Primary Button</Button>
-//     <Button variant="secondary">Secondary Button</Button>
-//     <Button variant="tertiary">Tertiary Button</Button>
-//   </Stack>
-// );
-
-// export const LoadingButton = Template.bind({});
-// LoadingButton.args = {
-//   children: 'Basic Button',
-//   isLoading: true,
-// };
-
-// export const DisabledButton = Template.bind({});
-// DisabledButton.args = {
-//   children: 'Basic Button',
-//   disabled: true,
-// };
