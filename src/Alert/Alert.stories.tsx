@@ -3,11 +3,15 @@ import { Alert } from '../Alert';
 import Button from '../Button';
 import { X } from 'react-feather';
 import { defaultIcons, defaultTheme, ThemeProvider } from '..';
+import { filteredArgs } from '../utils';
 // import Icon from '../Icon';
 
 export default {
-  title: 'Elements|Alert',
+  title: 'Alert',
   component: Alert,
+  argTypes: {
+    ...filteredArgs,
+  },
 };
 
 const Provider = props => (

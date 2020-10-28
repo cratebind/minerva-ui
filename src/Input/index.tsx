@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import warning from 'tiny-warning';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { MinervaProps } from '../layout';
 import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';

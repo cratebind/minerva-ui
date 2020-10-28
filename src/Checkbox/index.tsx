@@ -61,7 +61,7 @@ const ControlBox = ({ checked, ...props }) => (
 
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
 
-export interface CheckboxProps {
+export interface CustomCheckboxProps {
   // define the custom props we're going to be using
   children?: React.ReactNode;
   // add a question mark to make it an optional prop
@@ -71,8 +71,10 @@ export interface CheckboxProps {
   style?: any;
 }
 
+export type CheckboxProps = CustomCheckboxProps & BaseProps;
+
 export const Checkbox = forwardRef(function Checkbox(
-  props: CheckboxProps & BaseProps,
+  props: CheckboxProps,
   ref: any
 ) {
   const { children, checked = false, onChange, onKeyDown, ...rest } = props;

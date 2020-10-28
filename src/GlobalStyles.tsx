@@ -189,20 +189,20 @@ export const ReachStyles = css`
 
   [data-reach-combobox-option] {
     cursor: pointer;
-    margin: 0;
-    padding: 0.25rem 0.5rem;
+    /* margin: 0; */
+    /* padding: 0.25rem 0.5rem; */
   }
 
   [data-reach-combobox-option][aria-selected='true'] {
-    background: hsl(211, 10%, 95%);
+    /* background: hsl(211, 10%, 95%); */
   }
 
   [data-reach-combobox-option]:hover {
-    background: hsl(211, 10%, 92%);
+    /* background: hsl(211, 10%, 92%); */
   }
 
   [data-reach-combobox-option][aria-selected='true']:hover {
-    background: hsl(211, 10%, 90%);
+    /* background: hsl(211, 10%, 90%); */
   }
 
   [data-suggested-value] {

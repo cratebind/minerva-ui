@@ -19,15 +19,20 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<CheckboxProps> = args => <Checkbox {...args} />;
-
-export const Basic = () => {
+const Template: Story<CheckboxProps> = args => {
   const [checked, setChecked] = React.useState(false);
   return (
-    <Checkbox checked={checked} onChange={() => setChecked(!checked)}>
-      Stay Logged In
-    </Checkbox>
+    <Checkbox
+      checked={checked}
+      onChange={() => setChecked(!checked)}
+      {...args}
+    />
   );
+};
+
+export const Basic = Template.bind({});
+Basic.args = {
+  children: 'Stay Logged In',
 };
 
 // export const Default = Template.bind({});
