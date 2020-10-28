@@ -6,28 +6,20 @@ import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';
 import { MinervaProps } from '../layout';
 
-// const StyledLink = styled(PseudoBox)<any>(
-//   props => ({
-//     fontSize: 16,
-//     // ':hover': {
-//     //   textDecoration: props.isDisabled ? 'none' : 'underline',
-//     // },
-//     // color: props.isDisabled ? '#8F8F8F' : '#333333',
-//     // cursor: props.isDisabled ? 'not-allowed' : 'pointer',
-//     ...props.theme.Link,
-//   }),
-//   systemProps
-// );
-
 type BaseProps = MinervaProps & React.LinkHTMLAttributes<HTMLAnchorElement>;
 
 export interface LinkProps extends BaseProps {
   children?: React.ReactNode;
   href?: string;
+  /** If `true`, the link will open in new tab */
   isExternal?: boolean;
-  // isDisabled?: boolean;
 }
 
+/**
+ * Links are <a> tags used for navigation.
+ *
+ * @see Docs @TODO
+ */
 export const Link = forwardRef(function Link(
   { children, href, isExternal, ...props }: LinkProps,
   ref
@@ -43,9 +35,6 @@ export const Link = forwardRef(function Link(
       href={href}
       ref={ref}
       fontSize="16px"
-      // @TODO: Rethink this due to possible accessibility issues
-      // isDisabled={isDisabled}
-      // onClick={isDisabled ? event => event.preventDefault() : onClick}
       {...externalProps}
       {...componentStyles}
       {...props}
