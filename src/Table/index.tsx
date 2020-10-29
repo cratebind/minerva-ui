@@ -93,7 +93,8 @@ export const TableRow = styled('tr')(
 );
 
 export interface CustomTableProps
-  extends React.ButtonHTMLAttributes<HTMLTableElement> {
+  extends React.HTMLAttributes<HTMLTableElement>,
+    MinervaProps {
   children?: React.ReactNode;
 }
 
