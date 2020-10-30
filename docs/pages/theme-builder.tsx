@@ -1,8 +1,8 @@
 import React from 'react';
-import { GlobalStyles, ThemeProvider, Link } from 'minerva-ui';
+import { GlobalStyles, ThemeProvider } from 'minerva-ui';
 import { createGlobalStyle } from 'styled-components';
-import { AppProvider } from '../components/AppContext';
-import ThemeBuilder from '../components/ThemeBuilder';
+import { AppProvider } from '../components/theme-builder/AppContext';
+import ThemeBuilder from '../components/theme-builder/ThemeBuilder';
 
 const ThemeBuilderStyles = createGlobalStyle`
   html, body {

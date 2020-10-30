@@ -1,5 +1,21 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalFooter, ModalBody, Flex, Image, Block, Text, Stack, Icon, Link, PseudoBox, InputField, Input,  } from 'minerva-ui';
+import {
+  Button,
+  Modal,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  Flex,
+  Image,
+  Block,
+  Text,
+  Stack,
+  Icon,
+  Link,
+  PseudoBox,
+  InputField,
+  Input,
+} from 'minerva-ui';
 
 export const ModalExample = props => {
   const [open, setOpen] = useState(false);
@@ -26,7 +42,7 @@ export const ModalExample = props => {
 export const CardExamples = props => {
   return (
     <Stack>
-          <Flex
+      <Flex
         flexDirection="column"
         boxShadow="lg"
         borderRadius="md"
@@ -44,9 +60,9 @@ export const CardExamples = props => {
             The Coldest Sunset
           </Text>
           <Text color="gray.700" lineHeight="normal">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-            quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-            nihil.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil.
           </Text>
         </Flex>
         <Flex px={6} py={4} flexWrap="wrap">
@@ -85,65 +101,65 @@ export const CardExamples = props => {
         </Flex>
       </Flex>
       <Flex flexDirection={['column', 'row']} maxWidth="700px">
-  <Block
-    backgroundImage="url('https://tailwindcss.com/img/card-top.jpg')"
-    radiusLeft={[0, '4px']}
-    radiusTop={['4px', 0]}
-    backgroundSize="cover"
-    width={['100%', '30rem']}
-    height={['12rem', 'auto']}
-    backgroundRepeat="no-repeat"
-  />
-  <Block
-    p="16px"
-    radiusRight={[0, '4px']}
-    radiusBottom={['4px', 0]}
-    borderStyle="solid"
-    borderWidth={1}
-  >
-    <Flex flexDirection="column">
-      <Block mb={4}>
-        <Flex fontSize="sm" color="gray.600" alignItems="center">
-          <Flex mr={2} alignItems="center">
-            <Icon name="lock" size="12px" />
-          </Flex>
-          <Text m={0} fontSize="sm" color="gray.600">
-            Members only
-          </Text>
-        </Flex>
-        <Text color="gray.900" fontWeight="bold" fontSize="xl" mb={2}>
-          Can coffee make you a better developer?
-        </Text>
-        <Text color="gray.700" fontSize="base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-          quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-          nihil.
-        </Text>
-      </Block>
-      <Flex alignItems="center">
         <Block
-          as="img"
-          size={10}
-          borderRadius="full"
-          mr={4}
-          src="https://tailwindcss.com/img/jonathan.jpg"
-          alt="Avatar of Jonathan Reinink"
+          backgroundImage="url('https://tailwindcss.com/img/card-top.jpg')"
+          radiusLeft={[0, '4px']}
+          radiusTop={['4px', 0]}
+          backgroundSize="cover"
+          width={['100%', '30rem']}
+          height={['12rem', 'auto']}
+          backgroundRepeat="no-repeat"
         />
-        <Block fontSize="sm">
-          <Text m={0} color="gray.900">
-            Jonathan Reinink
-          </Text>
-          <Text m={0} color="gray.600">
-            Aug 18
-          </Text>
+        <Block
+          p="16px"
+          radiusRight={[0, '4px']}
+          radiusBottom={['4px', 0]}
+          borderStyle="solid"
+          borderWidth={1}
+        >
+          <Flex flexDirection="column">
+            <Block mb={4}>
+              <Flex fontSize="sm" color="gray.600" alignItems="center">
+                <Flex mr={2} alignItems="center">
+                  <Icon name="lock" size="12px" />
+                </Flex>
+                <Text m={0} fontSize="sm" color="gray.600">
+                  Members only
+                </Text>
+              </Flex>
+              <Text color="gray.900" fontWeight="bold" fontSize="xl" mb={2}>
+                Can coffee make you a better developer?
+              </Text>
+              <Text color="gray.700" fontSize="base">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                exercitationem praesentium nihil.
+              </Text>
+            </Block>
+            <Flex alignItems="center">
+              <Block
+                as="img"
+                size={10}
+                borderRadius="full"
+                mr={4}
+                src="https://tailwindcss.com/img/jonathan.jpg"
+                alt="Avatar of Jonathan Reinink"
+              />
+              <Block fontSize="sm">
+                <Text m={0} color="gray.900">
+                  Jonathan Reinink
+                </Text>
+                <Text m={0} color="gray.600">
+                  Aug 18
+                </Text>
+              </Block>
+            </Flex>
+          </Flex>
         </Block>
       </Flex>
-    </Flex>
-  </Block>
-</Flex>
     </Stack>
-  )
-}
+  );
+};
 
 export const FormExamples = () => {
   const [username, setUsername] = React.useState('');
@@ -230,7 +246,7 @@ export const FormExamples = () => {
             color="purple.700"
             fontWeight="700"
             _hover={{
-              color: 'purple.800'
+              color: 'purple.800',
             }}
           >
             Forgot Password?
