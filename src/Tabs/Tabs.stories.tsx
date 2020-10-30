@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Tabs, TabList, Tab, TabPanels, TabPanel, TabsProps } from '../Tabs';
-import { Icon } from '..';
 import { filteredArgs } from '../utils';
 
 const meta: Meta = {

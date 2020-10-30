@@ -34,6 +34,5 @@ export default Text;
 if (__DEV__) {
   Text.propTypes = {
     children: PropTypes.node,
-    props: PropTypes.any,
   };
 }

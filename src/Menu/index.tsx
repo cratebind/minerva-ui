@@ -8,8 +8,9 @@ import {
   MenuItems as ReachMenuItems,
   MenuProps,
   MenuButtonProps,
+  MenuItemsProps,
 } from '@reach/menu-button';
-import { PopoverProps, positionDefault, positionRight } from '@reach/popover';
+import { positionDefault, positionRight } from '@reach/popover';
 import styled from 'styled-components';
 import Button from '../Button';
 import { Box, MinervaProps } from '../layout';
@@ -29,7 +30,7 @@ export const MenuButton = (props: MenuButtonProps & MinervaProps) => (
   <Button as={ReachMenuButton} {...props} />
 );
 
-export interface MenuListProps extends MinervaProps, PopoverProps {
+export interface MenuListProps extends MinervaProps {
   children?: React.ReactNode;
   menuPosition?: 'left' | 'right';
 }
@@ -64,7 +65,7 @@ export const OverlayBox = props => (
 export const MenuList = ({
   menuPosition = 'left',
   ...props
-}: MenuListProps) => (
+}: MenuListProps & MenuItemsProps) => (
   <ReachMenuPopover
     position={menuPosition === 'right' ? positionRight : positionDefault}
   >
