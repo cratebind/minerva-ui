@@ -214,9 +214,9 @@ const Inspector = React.memo(function Inspector() {
                 </InnerContainer>
               </AccordionPanel>
             </AccordionItem>
-              {Object.entries(state[activeComponent]).map(([key, value]) => {
-                // ignore keys with no values
-                if (Object.keys(value).length === 0) return null
+            {Object.entries(state[activeComponent]).map(([key, value]) => {
+              // ignore keys with no values
+              if (Object.keys(value).length === 0) return null;
               return (
                 <AccordionItem key={key}>
                   <FieldHeading as={AccordionButton}>
