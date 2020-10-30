@@ -2,31 +2,31 @@ import React, { forwardRef } from 'react';
 // import styled from 'styled-components';
 import {
   Accordion as ReachAccordion,
-  AccordionItem as ReachAccordionItem,
-  AccordionButton as ReachAccordionButton,
-  AccordionPanel as ReachAccordionPanel,
   AccordionProps as ReachAccordionProps,
+  AccordionItem as ReachAccordionItem,
   AccordionItemProps as ReachAccordionItemProps,
+  AccordionButton as ReachAccordionButton,
+  AccordionButtonProps as ReachAccordionButtonProps,
+  AccordionPanel as ReachAccordionPanel,
+  AccordionPanelProps as ReachAccordionPanelProps,
 } from '@reach/accordion';
 import { MinervaProps, Box } from '../layout';
 import Button from '../Button';
 
 export interface AccordionProps extends MinervaProps {
   children?: React.ReactNode;
-  props?: any;
 }
 
 export interface AccordionButtonProps extends MinervaProps {
   children?: React.ReactNode;
-  props?: any;
 }
 
 export interface AccordionPanelProps extends MinervaProps {
   children?: React.ReactNode;
-  props?: any;
 }
 
-type AllAccordionItemProps = ReachAccordionItemProps & MinervaProps;
+export type AllAccordionItemProps = ReachAccordionItemProps & MinervaProps;
+
 export const AccordionItem = forwardRef(function AccordionItem(
   { ...props }: AllAccordionItemProps,
   ref
@@ -35,7 +35,7 @@ export const AccordionItem = forwardRef(function AccordionItem(
 });
 
 export const AccordionButton = forwardRef(function AccordionButton(
-  { children, ...props }: AccordionButtonProps,
+  { children, ...props }: ReachAccordionButtonProps & AccordionButtonProps,
   ref
 ) {
   return (
@@ -62,8 +62,11 @@ export const AccordionButton = forwardRef(function AccordionButton(
   );
 });
 
+export type ExtendedAccordionPanelProps = ReachAccordionPanelProps &
+  AccordionPanelProps;
+
 export const AccordionPanel = forwardRef(function AccordionPanel(
-  { ...props }: AccordionPanelProps,
+  { ...props }: ExtendedAccordionPanelProps,
   ref
 ) {
   return (
@@ -78,7 +81,7 @@ export const AccordionPanel = forwardRef(function AccordionPanel(
   );
 });
 
-type AllAccordionProps = ReachAccordionProps & MinervaProps;
+export type AllAccordionProps = ReachAccordionProps & MinervaProps;
 export const Accordion = forwardRef(function Alert(
   { children, ...props }: AllAccordionProps,
   ref

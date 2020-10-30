@@ -95,10 +95,6 @@ describe('<Skeleton />', () => {
         animation: 1.2s ease-in-out infinite alternate kYdCAA;
       }
 
-      .c1::before {
-        content: '\\00a0';
-      }
-
       <div>
         <div
           class="sc-AxjAm sc-AxiKw c0"

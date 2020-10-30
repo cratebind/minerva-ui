@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack, Flex, Image, Text } from '..';
 
 export default {
-  title: 'Elements|Stack',
+  title: 'Stack',
   component: Stack,
 };
 

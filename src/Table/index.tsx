@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Box, systemProps } from '../layout';
+import { Box, MinervaProps, systemProps } from '../layout';
 
 export const TableContainer = styled.div`
   border-radius: 8px;
@@ -93,13 +93,13 @@ export const TableRow = styled('tr')(
 );
 
 export interface CustomTableProps
-  extends React.ButtonHTMLAttributes<HTMLTableElement> {
+  extends React.HTMLAttributes<HTMLTableElement> {
   children?: React.ReactNode;
 }
 
 export type Ref = HTMLTableElement;
 
-export const Table = forwardRef<Ref, CustomTableProps>(
+export const Table = forwardRef<Ref, CustomTableProps & MinervaProps>(
   ({ children, ...props }, ref) => {
     return (
       <TableContainer>

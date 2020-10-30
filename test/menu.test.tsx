@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import 'jest-styled-components';
 import {
   MenuContainer,
@@ -30,18 +30,24 @@ const ExampleMenu = () => (
   </MenuContainer>
 );
 
+// @TODO: Figure out how to test components being rendered in portals
 describe('<Menu />', () => {
   it('should render', () => {
-    const { queryByTestId } = render(
+    const { container, queryByTestId } = render(
       <ThemeProvider>
         <ExampleMenu />
       </ThemeProvider>
     );
 
     expect(queryByTestId('menu-button')).toBeInTheDocument();
+
+    expect(container).toMatchSnapshot('Closed Menu');
+
+    fireEvent.click(screen.getByTestId('menu-button'));
+
+    expect(container).toMatchSnapshot('Open Menu');
   });
 
-  // @TODO: Figure out how to test components being rendered in portals
   // it('should show <MenuList /> when clicked', () => {
   //   const { queryByTestId, baseElement } = render(
   //     <ThemeProvider>

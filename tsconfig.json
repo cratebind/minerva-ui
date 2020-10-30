@@ -1,9 +1,22 @@
 {
-  "include": ["src", "types", "stories", "utils/SectionLink.tsx"],
+  "include": [
+    "src",
+    "types",
+    "stories",
+    "utils/SectionLink.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "theme-builder",
+    "docs"
+  ],
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
@@ -24,7 +37,10 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "*": ["src/*", "node_modules/*"]
+      "*": [
+        "src/*",
+        "node_modules/*"
+      ]
     },
     "jsx": "react",
     "esModuleInterop": true
