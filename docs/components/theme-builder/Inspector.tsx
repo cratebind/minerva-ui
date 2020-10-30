@@ -40,6 +40,11 @@ const FieldHeading = props => (
   />
 );
 
+export type FieldType = {
+  name: string;
+  type: string;
+};
+
 const fieldSections = {
   dimensions: [
     { name: 'width', type: 'text' },
@@ -51,7 +56,11 @@ const fieldSections = {
     { name: 'paddingRight', type: 'text' },
     { name: 'paddingBottom', type: 'text' },
     { name: 'paddingLeft', type: 'text' },
-  ],
+    { name: 'marginTop', type: 'text' },
+    { name: 'marginRight', type: 'text' },
+    { name: 'marginBottom', type: 'text' },
+    { name: 'marginLeft', type: 'text' },
+  ] as FieldType[],
   border: [
     { name: 'borderColor', type: 'color' },
     { name: 'borderWidth', type: 'text' },
@@ -62,9 +71,9 @@ const fieldSections = {
     { name: 'color', type: 'color' },
   ],
   font: [{ name: 'fontFamily', type: 'text' }],
-};
+} as const;
 
-const DropdownArrow = ({ active }) => (
+const DropdownArrow = ({ active }: { active?: boolean }) => (
   <Box
     style={{
       transform: `rotate(${active ? -180 : 0}deg)`,
@@ -158,7 +167,20 @@ const Inspector = React.memo(function Inspector() {
               <AccordionPanel>
                 {section === 'layout' ? (
                   <InnerContainer>
-                    <LayoutEditor />
+                    <LayoutEditor
+                      fields={fields as FieldType[]}
+                      handleChange={(value: string, name: string) => {
+                        setContext({
+                          [activeComponent]: {
+                            ...componentProps,
+                            [name]: value,
+                          },
+                        });
+                      }}
+                      values={state[activeComponent]}
+                      // margin={fields.margin}
+                      // padding={fields.padding}
+                    />
                   </InnerContainer>
                 ) : (
                   fields.map(({ name, type }) => (
@@ -242,6 +264,7 @@ const Inspector = React.memo(function Inspector() {
                             type="color"
                             value={state[activeComponent][key][nestedKey]}
                             // componentProps={componentProps}
+                            // @ts-ignore
                             activeComponent={activeComponent}
                             onChange={e => {
                               setContext({
@@ -316,6 +339,7 @@ function InspectorField({ name, value, onChange, type }) {
                   transform: 'translateX(8px) translateY(calc(-122%))',
                 }}
               >
+                {/* @ts-ignore */}
                 <BlockPicker
                   triangle="hide"
                   color={value}

@@ -1,5 +1,6 @@
 import { Box, Input } from 'minerva-ui';
 import React from 'react';
+import { FieldType } from './Inspector';
 
 function Area({
   value = '10px',
@@ -10,9 +11,9 @@ function Area({
 }) {
   return (
     <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
+      // display="flex"
+      // alignItems="center"
+      // justifyContent="center"
       position="relative"
       {...containerProps}
     >
@@ -32,6 +33,7 @@ function Area({
         </svg>
       </Box>
       <Input
+        zIndex={5000}
         border={0}
         bg="transparent"
         value={value}
@@ -50,74 +52,135 @@ function Area({
   );
 }
 
-export default function LayoutEditor() {
+// type LayoutEditorProps = {
+//   margin: {
+//     left: any;
+//     right: any;
+//     top: any;
+//     bottom: any;
+//   };
+//   padding: {
+//     left: any;
+//     right: any;
+//     top: any;
+//     bottom: any;
+//   };
+// };
+
+type LayoutEditorProps = {
+  fields: FieldType[];
+  handleChange: (value: string, name: string) => void;
+  values?: any;
+};
+
+// @TODO: Clean this up later once the structure is settled
+export default function LayoutEditor({
+  fields,
+  handleChange,
+  values,
+}: LayoutEditorProps) {
+  console.log({ values });
   const outerEditorSize = 300;
   const innerEditorSize = 185;
+
+  const marginFields = fields.filter(field => field.name.includes('margin'));
+  const paddingFields = fields.filter(field => field.name.includes('padding'));
+
+  const [marginTop, marginRight, marginBottom, marginLeft] = marginFields;
+  const [paddingTop, paddingRight, paddingBottom, paddingLeft] = paddingFields;
+
   return (
     <Box position="relative">
-      <Box
-        width={`${outerEditorSize}px`}
-        height={`${outerEditorSize}px`}
-        mb={2}
-        position="relative"
-      >
-        <Area backgroundSize={outerEditorSize} transform="rotate(180deg)" />
-        <Area
-          backgroundSize={outerEditorSize}
-          containerProps={{
-            position: 'absolute',
-            right: '-40%',
-            width: '100%',
-            top: '40%',
-          }}
-          transform="rotate(-90deg)"
-        />
-        <Box position="absolute" bottom="1%" width="100%">
-          <Area backgroundSize={outerEditorSize} />
-        </Box>
-        <Area
-          backgroundSize={outerEditorSize}
-          containerProps={{
-            position: 'absolute',
-            left: '-40%',
-            width: '100%',
-            top: '40%',
-          }}
-          transform="rotate(90deg)"
-        />
-      </Box>
       <Box position="absolute" left="15%" top="19%">
         <Box
           width={`${innerEditorSize}px`}
           height={`${innerEditorSize}px`}
           mb={2}
           position="relative"
+          zIndex={5}
         >
-          <Area backgroundSize={innerEditorSize} transform="rotate(180deg)" />
+          <Area
+            backgroundSize={innerEditorSize}
+            transform="rotate(180deg)"
+            value={values[paddingTop.name]}
+            onChange={e => handleChange(e.target.value, paddingTop.name)}
+          />
           <Area
             backgroundSize={innerEditorSize}
             containerProps={{
               position: 'absolute',
               right: '-40%',
-              width: '100%',
+              // width: '100%',
               top: '40%',
             }}
             transform="rotate(-90deg)"
+            value={values[paddingRight.name]}
+            onChange={e => handleChange(e.target.value, paddingRight.name)}
           />
           <Box position="absolute" bottom="1%" width="100%">
-            <Area backgroundSize={innerEditorSize} />
+            <Area
+              backgroundSize={innerEditorSize}
+              value={values[paddingBottom.name]}
+              onChange={e => handleChange(e.target.value, paddingBottom.name)}
+            />
           </Box>
           <Area
             backgroundSize={innerEditorSize}
             containerProps={{
               position: 'absolute',
               left: '-40%',
-              width: '100%',
+              // width: '100%',
               top: '40%',
             }}
             transform="rotate(90deg)"
+            value={values[paddingLeft.name]}
+            onChange={e => handleChange(e.target.value, paddingLeft.name)}
           />
         </Box>
+      </Box>
+      <Box
+        width={`${outerEditorSize}px`}
+        height={`${outerEditorSize}px`}
+        mb={2}
+        position="relative"
+      >
+        <Area
+          backgroundSize={outerEditorSize}
+          transform="rotate(180deg)"
+          value={values[marginTop.name]}
+          onChange={e => handleChange(e.target.value, marginTop.name)}
+        />
+        <Area
+          backgroundSize={outerEditorSize}
+          containerProps={{
+            position: 'absolute',
+            right: '-40%',
+            // width: '100%',
+            top: '40%',
+          }}
+          transform="rotate(-90deg)"
+          value={values[marginRight.name]}
+          onChange={e => handleChange(e.target.value, marginRight.name)}
+        />
+        <Box position="absolute" bottom="1%" width="100%">
+          <Area
+            backgroundSize={outerEditorSize}
+            value={values[marginBottom.name]}
+            onChange={e => handleChange(e.target.value, marginBottom.name)}
+          />
+        </Box>
+        <Area
+          backgroundSize={outerEditorSize}
+          containerProps={{
+            position: 'absolute',
+            left: '-40%',
+            // width: '100%',
+            top: '40%',
+          }}
+          transform="rotate(90deg)"
+          value={values[marginLeft.name]}
+          onChange={e => handleChange(e.target.value, marginLeft.name)}
+        />
       </Box>
     </Box>
   );
