@@ -16,6 +16,7 @@ import { toTitleCase } from './utils';
 
 // import '@reach/accordion/styles.css';
 import { Components } from './ThemeBuilder';
+import LayoutEditor from './LayoutEditor';
 
 const InnerContainer = props => <Box pt="10px" px="10px" {...props} />;
 
@@ -46,7 +47,6 @@ const fieldSections = {
     { name: 'borderRadius', type: 'text' },
   ],
   layout: [
-    { name: 'fontFamily', type: 'text' },
     { name: 'paddingTop', type: 'text' },
     { name: 'paddingRight', type: 'text' },
     { name: 'paddingBottom', type: 'text' },
@@ -61,6 +61,7 @@ const fieldSections = {
     { name: 'backgroundColor', type: 'color' },
     { name: 'color', type: 'color' },
   ],
+  font: [{ name: 'fontFamily', type: 'text' }],
 };
 
 const DropdownArrow = ({ active }) => (
@@ -70,7 +71,7 @@ const DropdownArrow = ({ active }) => (
       transition: '180ms all ease',
     }}
   >
-    <ChevronDown />
+    <ChevronDown color="#fff" />
   </Box>
 );
 
@@ -155,25 +156,31 @@ const Inspector = React.memo(function Inspector() {
                 <DropdownArrow active={activeSections.includes(index + 1)} />
               </FieldHeading>
               <AccordionPanel>
-                {fields.map(({ name, type }) => (
-                  <InnerContainer key={name}>
-                    <InspectorField
-                      key={name}
-                      name={name}
-                      type={type}
-                      value={state[activeComponent][name]}
-                      activeComponent={activeComponent}
-                      onChange={e =>
-                        setContext({
-                          [activeComponent]: {
-                            ...componentProps,
-                            [name]: e.target.value,
-                          },
-                        })
-                      }
-                    />
+                {section === 'layout' ? (
+                  <InnerContainer>
+                    <LayoutEditor />
                   </InnerContainer>
-                ))}
+                ) : (
+                  fields.map(({ name, type }) => (
+                    <InnerContainer key={name}>
+                      <InspectorField
+                        key={name}
+                        name={name}
+                        type={type}
+                        value={state[activeComponent][name]}
+                        activeComponent={activeComponent}
+                        onChange={e =>
+                          setContext({
+                            [activeComponent]: {
+                              ...componentProps,
+                              [name]: e.target.value,
+                            },
+                          })
+                        }
+                      />
+                    </InnerContainer>
+                  ))
+                )}
               </AccordionPanel>
             </AccordionItem>
           ))

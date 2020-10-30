@@ -1,5 +1,5 @@
 import React from 'react';
-import { GlobalStyles, ThemeProvider } from 'minerva-ui';
+import { ThemeProvider } from 'minerva-ui';
 import { createGlobalStyle } from 'styled-components';
 import { AppProvider } from '../components/theme-builder/AppContext';
 import ThemeBuilder from '../components/theme-builder/ThemeBuilder';
@@ -15,7 +15,6 @@ function ThemeBuilderPage() {
   return (
     <ThemeProvider>
       <AppProvider>
-        <GlobalStyles />
         <ThemeBuilderStyles />
         <ThemeBuilder />
       </AppProvider>

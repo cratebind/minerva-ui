@@ -146,11 +146,11 @@ function ThemeBuilder() {
           justifyContent="space-between"
           bg="#252f3f"
         >
-          <Flex>
+          <Flex alignItems="center">
             <Text fontSize="20px" margin={0} fontWeight={800} color="#fff">
               Theme Builder
             </Text>
-            <Button
+            {/* <Button
               as="a"
               border={0}
               bg="transparent"
@@ -159,7 +159,7 @@ function ThemeBuilder() {
               href="/docs/theming"
             >
               Back to Docs
-            </Button>
+            </Button> */}
           </Flex>
           <Stack horizontal>
             <Button
