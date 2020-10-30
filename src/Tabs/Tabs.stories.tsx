@@ -15,7 +15,6 @@ const meta: Meta = {
   },
   argTypes: {
     ...filteredArgs,
-    placement: {},
   },
   parameters: {
     controls: { expanded: true },

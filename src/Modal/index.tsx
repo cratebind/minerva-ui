@@ -12,6 +12,7 @@ type OverlayProps = DialogProps & MinervaProps;
 export const ModalOverlay = styled(DialogOverlay)<OverlayProps>(
   {
     backgroundColor: 'hsla(0, 0%, 0%, 0.33)',
+    zIndex: 200,
   },
   systemProps
 );

@@ -5,7 +5,7 @@ import defaultTheme from '../theme';
 const { fontSizes }: any = defaultTheme;
 
 export default {
-  title: 'Utilities|FontSizes',
+  title: 'FontSizes',
 };
 
 export const FontSizes = () => {
