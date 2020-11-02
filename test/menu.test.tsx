@@ -9,20 +9,23 @@ import {
   MenuLink,
   Icon,
   ThemeProvider,
+  MenuListProps,
+  MenuDivider,
 } from '../src';
 // import { axe, toHaveNoViolations } from 'jest-axe';
 // expect.extend(toHaveNoViolations);
 
-const ExampleMenu = () => (
+const ExampleMenu = (props: MenuListProps) => (
   <MenuContainer data-testid="menu-container">
     <MenuButton data-testid="menu-button">
       Actions <Icon name="chevron-down" ml={2} size="14px" />
     </MenuButton>
-    <MenuList data-testid="menu-list">
+    <MenuList data-testid="menu-list" {...props}>
       <MenuItem onSelect={() => alert('Download')}>Download</MenuItem>
       <MenuItem onSelect={() => alert('Copy')}>Create a Copy</MenuItem>
       <MenuItem onSelect={() => alert('Mark as Draft')}>Mark as Draft</MenuItem>
       <MenuItem onSelect={() => alert('Delete')}>Delete</MenuItem>
+      <MenuDivider />
       <MenuLink href="https://minerva-ui-docs.vercel.app">
         Open Documentation
       </MenuLink>
@@ -36,6 +39,22 @@ describe('<Menu />', () => {
     const { container, queryByTestId } = render(
       <ThemeProvider>
         <ExampleMenu />
+      </ThemeProvider>
+    );
+
+    expect(queryByTestId('menu-button')).toBeInTheDocument();
+
+    expect(container).toMatchSnapshot('Closed Menu');
+
+    fireEvent.click(screen.getByTestId('menu-button'));
+
+    expect(container).toMatchSnapshot('Open Menu');
+  });
+
+  it('should render when positioned to Right', () => {
+    const { container, queryByTestId } = render(
+      <ThemeProvider>
+        <ExampleMenu menuPosition="right" />
       </ThemeProvider>
     );
 

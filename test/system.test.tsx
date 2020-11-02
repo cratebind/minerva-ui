@@ -292,8 +292,11 @@ const THEMEABLE_COMPONENTS = {
   Text,
   Select,
   Tag,
-  // Tooltip,
   Tabs,
+  Tab,
+  // TabList,
+  // TabPanels,
+  // TabPanel,
 };
 
 /**

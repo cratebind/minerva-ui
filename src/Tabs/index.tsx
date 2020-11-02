@@ -10,32 +10,43 @@ import {
 } from '@reach/tabs';
 
 import { MinervaProps, Box, Flex } from '../layout';
-import { useTheme } from '../theme';
+import { useComponentStyles } from '../theme';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 
 // export interface TabsProps extends MinervaProps, PseudoBoxProps, ReachTabsProps { }
 
 export type TabsProps = MinervaProps & ReachTabsProps & PseudoBoxProps;
 
-export const Tabs = ({ children, ...rest }: TabsProps) => {
-  const theme = useTheme();
+export const Tabs = ({ children, ...props }: TabsProps) => {
+  const componentStyles = useComponentStyles('Tabs');
   return (
-    <Box as={ReachTabs} {...rest} {...theme.Tabs}>
+    <Box as={ReachTabs} {...props} {...componentStyles}>
       {children}
     </Box>
   );
 };
 
-export const TabList = ({ children, ...rest }: TabsProps) => (
-  <Flex bg="#fff" alignItems="center" as={ReachTabList} {...rest}>
-    {children}
-  </Flex>
-);
+export const TabList = ({ children, ...props }: TabsProps) => {
+  const componentStyles = useComponentStyles('TabList');
+
+  return (
+    <Flex
+      bg="#fff"
+      alignItems="center"
+      as={ReachTabList}
+      {...componentStyles}
+      {...props}
+    >
+      {children}
+    </Flex>
+  );
+};
 
 export const Tab = forwardRef(function Tab(
-  { children, ...rest }: TabsProps,
+  { children, ...props }: TabsProps,
   ref
 ) {
+  const componentStyles = useComponentStyles('Tab');
   return (
     <PseudoBox
       as={ReachTab}
@@ -65,19 +76,22 @@ export const Tab = forwardRef(function Tab(
         borderWidth: '2px',
         borderBottom: '2px solid currentColor',
       }}
-      {...rest}
+      {...componentStyles}
+      {...props}
     >
       {children}
     </PseudoBox>
   );
 });
 
-export const TabPanels = (props: TabsProps) => (
-  <Box as={ReachTabPanels} {...props} />
-);
+export const TabPanels = (props: TabsProps) => {
+  const componentStyles = useComponentStyles('TabPanels');
+  return <Box as={ReachTabPanels} {...componentStyles} {...props} />;
+};
 
-export const TabPanel = (props: TabsProps) => (
-  <Box as={ReachTabPanel} {...props} />
-);
+export const TabPanel = (props: TabsProps) => {
+  const componentStyles = useComponentStyles('TabPanel');
+  return <Box as={ReachTabPanel} {...componentStyles} {...props} />;
+};
 
 export { useTabsContext };
