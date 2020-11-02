@@ -8,7 +8,7 @@ function Area({
   containerProps,
   backgroundSize = 250,
   ...props
-}) {
+}: any) {
   return (
     <Box
       // display="flex"
@@ -79,7 +79,7 @@ export default function LayoutEditor({
   handleChange,
   values,
 }: LayoutEditorProps) {
-  console.log({ values });
+  // console.log({ values });
   const outerEditorSize = 300;
   const innerEditorSize = 185;
 

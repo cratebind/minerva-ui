@@ -91,7 +91,7 @@ const Inspector = React.memo(function Inspector() {
   // const themeContext = useTheme();
 
   const [activeSections, setActiveSections] = useState([
-    ...new Array(fieldSectionCount).fill().map((_, index) => index),
+    ...new Array(fieldSectionCount).fill(null).map((_, index) => index),
   ]);
 
   function toggleItem(toggledIndex) {
@@ -135,8 +135,8 @@ const Inspector = React.memo(function Inspector() {
                           name={key}
                           value={value}
                           type="text"
-                          componentProps={componentProps}
-                          activeComponent={activeComponent}
+                          // componentProps={componentProps}
+                          // activeComponent={activeComponent}
                           onChange={e =>
                             setContext({
                               [activeComponent]: {
@@ -183,6 +183,7 @@ const Inspector = React.memo(function Inspector() {
                     />
                   </InnerContainer>
                 ) : (
+                  // @ts-ignore
                   fields.map(({ name, type }) => (
                     <InnerContainer key={name}>
                       <InspectorField
@@ -190,7 +191,7 @@ const Inspector = React.memo(function Inspector() {
                         name={name}
                         type={type}
                         value={state[activeComponent][name]}
-                        activeComponent={activeComponent}
+                        // activeComponent={activeComponent}
                         onChange={e =>
                           setContext({
                             [activeComponent]: {
@@ -226,7 +227,7 @@ const Inspector = React.memo(function Inspector() {
                             name={key}
                             type="color"
                             value={state[activeComponent][key]}
-                            activeComponent={activeComponent}
+                            // activeComponent={activeComponent}
                             onChange={e => {
                               setContext({
                                 [activeComponent]: {

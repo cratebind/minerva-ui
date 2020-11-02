@@ -44,7 +44,7 @@ const initialState = {
   Heading: { customProps: { children: 'Heading' } },
   Cards: { customProps: {} },
   Forms: { customProps: {} },
-};
+} as any;
 
 const AppContext = React.createContext({
   ...initialState,
@@ -59,6 +59,13 @@ const useMergeState = initialMergeState => {
 
   return [state, mergeState];
 };
+
+export interface AppContextValue {
+  state: any;
+  setContext: React.SetStateAction<any>;
+  resetTheme: () => void;
+  // setContext: React.
+}
 
 const AppProvider = ({ children }) => {
   const [state, setState] = useMergeState(initialState);
@@ -79,7 +86,7 @@ const AppProvider = ({ children }) => {
 };
 
 // const AppConsumer = AppContext.Consumer;
-const useAppContext = () => useContext(AppContext);
+const useAppContext = () => useContext<AppContextValue>(AppContext);
 
 export { AppProvider, useAppContext };
 // export default AppContext;

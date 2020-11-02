@@ -29,7 +29,7 @@ import ThemeModal from './ThemeModal';
 import UtilityTable from './UtilityTable';
 import { ModalExample, CardExamples, FormExamples } from './examples';
 
-const ColorTag = ({ number, code, ...props }) => (
+const ColorTag = ({ number, code, ...props }: any) => (
   <Block
     borderRadius="9999px"
     height="48px"
