@@ -188,8 +188,7 @@ export const FormExamples = () => {
         <InputField
           label="Username"
           errorText={usernameError}
-          fontWeight="700"
-          fontSize="14px"
+          // fontSize="14px"
           color="gray.700"
           mb={4}
         >
@@ -210,8 +209,7 @@ export const FormExamples = () => {
         <InputField
           label="Password"
           errorText={passwordError}
-          fontWeight="700"
-          fontSize="14px"
+          // fontSize="14px"
           color="gray.700"
           mb={6}
         >
@@ -246,14 +244,7 @@ export const FormExamples = () => {
           >
             Sign In
           </Button>
-          <Link
-            href="#"
-            color="purple.700"
-            fontWeight="700"
-            _hover={{
-              color: 'purple.800',
-            }}
-          >
+          <Link href="#" color="purple.700" fontWeight="700">
             Forgot Password?
           </Link>
         </Flex>

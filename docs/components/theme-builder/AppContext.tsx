@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 import { defaultTheme } from 'minerva-ui';
 
 const initialState = {
@@ -84,11 +84,11 @@ const AppProvider = ({ children }) => {
     setState({ ...initialState });
   }
 
-  // const memoState = useMemo(() => ({ state }), [state]);
+  const memoState = useMemo(() => state, [state]);
 
   return (
     <AppContext.Provider
-      value={{ state: state, setContext: setState, resetTheme }}
+      value={{ state: memoState, setContext: setState, resetTheme }}
     >
       {children}
     </AppContext.Provider>
