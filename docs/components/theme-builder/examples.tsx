@@ -15,6 +15,11 @@ import {
   PseudoBox,
   InputField,
   Input,
+  Tabs,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
 } from 'minerva-ui';
 
 export const ModalExample = props => {
@@ -121,7 +126,7 @@ export const CardExamples = props => {
             <Block mb={4}>
               <Flex fontSize="sm" color="gray.600" alignItems="center">
                 <Flex mr={2} alignItems="center">
-                  <Icon name="lock" size="12px" />
+                  {/* <Icon name="lock" size="12px" /> */}
                 </Flex>
                 <Text m={0} fontSize="sm" color="gray.600">
                   Members only
@@ -256,3 +261,28 @@ export const FormExamples = () => {
     </Flex>
   );
 };
+
+export const TabsExample = ({ tabProps }) => (
+  <Tabs>
+    <TabList mb="20px" borderBottom="2px solid #d2d6dc">
+      <Tab {...tabProps}>My Account</Tab>
+      <Tab {...tabProps}>Favorites</Tab>
+      <Tab {...tabProps}>Orders</Tab>
+      <Tab {...tabProps}>Billing</Tab>
+    </TabList>
+    <TabPanels>
+      <TabPanel>
+        <p>My Account!</p>
+      </TabPanel>
+      <TabPanel>
+        <p>Favorites!</p>
+      </TabPanel>
+      <TabPanel>
+        <p>Orders!</p>
+      </TabPanel>
+      <TabPanel>
+        <p>Billing!</p>
+      </TabPanel>
+    </TabPanels>
+  </Tabs>
+);

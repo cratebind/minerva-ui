@@ -12,8 +12,8 @@
   "dependencies": {
     "global": "^4.4.0",
     "markdown-to-jsx": "^7.0.0",
-    "minerva-ui": "^5.1.4",
-    "next": "^9.5.3",
+    "minerva-ui": "^5.1.5",
+    "next": "^10.0.0",
     "nextra": "^0.2.4",
     "nextra-theme-docs": "^0.1.5",
     "react": "^16.13.1",

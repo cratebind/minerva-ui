@@ -32,7 +32,7 @@
   "husky": {
     "hooks": {
       "prepare-commit-msg": "exec < /dev/tty && git cz --no-verify --hook",
-      "pre-commit": "yarn lint && git add ."
+      "pre-commit": "yarn lint --quiet && git add ."
     }
   },
   "prettier": {

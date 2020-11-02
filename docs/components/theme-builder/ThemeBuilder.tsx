@@ -17,9 +17,20 @@ import {
   Text,
   Block,
   Radio,
+  RadioGroup,
   styled,
   defaultTheme,
   Heading,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter,
+  Tag,
+  Tabs,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  defaultIcons,
   // Heading,
 } from 'minerva-ui';
 import Editor from './Editor';
@@ -27,7 +38,12 @@ import { useAppContext } from './AppContext';
 import Inspector from './Inspector';
 import ThemeModal from './ThemeModal';
 import UtilityTable from './UtilityTable';
-import { ModalExample, CardExamples, FormExamples } from './examples';
+import {
+  ModalExample,
+  CardExamples,
+  FormExamples,
+  TabsExample,
+} from './examples';
 
 const ColorTag = ({ number, code, ...props }: any) => (
   <Block
@@ -95,10 +111,25 @@ export const Components = {
   Heading,
   Input,
   Link,
-  Radio,
+  Radio: props => (
+    <RadioGroup value="1">
+      <Radio value="1">Option 1</Radio>
+      <Radio value="2">Option 2</Radio>
+      <Radio value="3">Option 3</Radio>
+      <Radio value="4">Option 4</Radio>
+    </RadioGroup>
+  ),
   ModalHeader,
   ModalBody,
   ModalFooter,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter,
+  Tab: props => <TabsExample tabProps={props} />,
+  // Tabs: props => <TabsExample {...props} />,
+  TabList: props => <TabsExample {...props} />,
+  TabPanels: props => <TabsExample {...props} />,
+  TabPanel: props => <TabsExample {...props} />,
   Select: props => (
     <Select {...props}>
       <option value="1">Option 1</option>
@@ -108,6 +139,7 @@ export const Components = {
     </Select>
   ),
   Table,
+  Tag,
   Text,
 };
 
@@ -136,7 +168,7 @@ function ThemeBuilder() {
   const { state, setContext, resetTheme } = useAppContext();
 
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={{ ...defaultTheme, icons: defaultIcons }}>
       <GlobalStyles />
       <Box height="100vh" width="100%">
         <Flex
@@ -201,6 +233,12 @@ function ThemeBuilder() {
               <ComponentButton
                 key={componentName}
                 onClick={() => setContext({ activeComponent: componentName })}
+                style={{
+                  backgroundColor:
+                    state?.activeComponent === componentName
+                      ? ' rgba(0, 0, 0, 0.3)'
+                      : 'transparent',
+                }}
               >
                 {componentName}
               </ComponentButton>
@@ -221,6 +259,7 @@ function ThemeBuilder() {
           <ThemeProvider
             theme={{
               ...defaultTheme,
+              icons: defaultIcons,
               ...state,
               // Button: {
               //   ...defaultTheme.Button,

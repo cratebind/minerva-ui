@@ -39,7 +39,17 @@ const initialState = {
   Checkbox: { customProps: { children: 'Checkbox', checked: false } },
   Link: { customProps: { children: 'Link' } },
   Select: { customProps: {} },
+  Radio: { customProps: {} },
   Table: { customProps: {} },
+  Tab: {
+    customProps: {
+      children: 'Tab',
+      disabled: false,
+    },
+  },
+  TabPanel: { customProps: {} },
+  TabList: { customProps: {} },
+  TabPanels: { customProps: {} },
   Text: { customProps: { children: 'Text' } },
   Heading: { customProps: { children: 'Heading' } },
   Cards: { customProps: {} },

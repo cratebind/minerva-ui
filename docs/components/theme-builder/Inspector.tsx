@@ -73,6 +73,13 @@ const fieldSections = {
   font: [{ name: 'fontFamily', type: 'text' }],
 } as const;
 
+const specialSections = {
+  _selected: [...fieldSections.colors],
+  _hover: [...fieldSections.colors],
+  _active: [...fieldSections.colors],
+  _disabled: [...fieldSections.colors],
+};
+
 const DropdownArrow = ({ active }: { active?: boolean }) => (
   <Box
     style={{
@@ -288,6 +295,38 @@ const Inspector = React.memo(function Inspector() {
             })}
           </>
         )}
+        {Object.entries(specialSections).map(([key, fields]) => {
+          console.log({ key, fields, activeComponent, state });
+
+          return (
+            <AccordionItem key={key}>
+              <FieldHeading as={AccordionButton}>
+                {toTitleCase(key.replace('_', ''))}
+                <DropdownArrow />
+              </FieldHeading>
+              {fields.map(({ name, type }) => (
+                <InnerContainer key={name}>
+                  <InspectorField
+                    key={name}
+                    name={name}
+                    type={type}
+                    value={state[activeComponent]?.[key]?.[name]}
+                    onChange={e =>
+                      setContext({
+                        [activeComponent]: {
+                          ...componentProps,
+                          [key]: {
+                            [name]: e.target.value,
+                          },
+                        },
+                      })
+                    }
+                  />
+                </InnerContainer>
+              ))}
+            </AccordionItem>
+          );
+        })}
       </Accordion>
     </Flex>
   );
