@@ -24,6 +24,11 @@ import {
   DrawerHeader,
   DrawerBody,
   DrawerFooter,
+  MenuContainer,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuLink,
   Tag,
   Tabs,
   Tab,
@@ -31,6 +36,8 @@ import {
   TabPanel,
   TabPanels,
   defaultIcons,
+  Icon,
+  MenuDivider,
   // Heading,
 } from 'minerva-ui';
 import Editor from './Editor';
@@ -193,7 +200,34 @@ function ThemeBuilder() {
               Back to Docs
             </Button> */}
           </Flex>
-          <Stack horizontal>
+          <MenuContainer>
+            <MenuButton
+              bg="transparent"
+              border={0}
+              _hover={{ bg: 'transparent' }}
+            >
+              <Icon name="settings" size="20px" color="#fff" />
+            </MenuButton>
+            <MenuList>
+              <MenuItem onSelect={() => setContext({ modalOpen: true })}>
+                Export Theme
+              </MenuItem>
+              <MenuItem
+                onSelect={() => {
+                  const resetConfirm = window.confirm(
+                    'Are you sure you want to reset and lose all your theme styles?'
+                  );
+
+                  if (resetConfirm) {
+                    resetTheme();
+                  }
+                }}
+              >
+                <Box color="rgb(224, 36, 36)">Reset Theme</Box>
+              </MenuItem>
+            </MenuList>
+          </MenuContainer>
+          {/* <Stack horizontal>
             <Button
               border="0"
               onClick={() => {
@@ -211,7 +245,7 @@ function ThemeBuilder() {
             <Button border="0" onClick={() => setContext({ modalOpen: true })}>
               Export Theme
             </Button>
-          </Stack>
+          </Stack> */}
         </Flex>
         <Flex height={`calc(100vh - ${HEADER_HEIGHT})`}>
           <Flex
