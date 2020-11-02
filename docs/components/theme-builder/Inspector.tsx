@@ -16,6 +16,7 @@ import { toTitleCase } from './utils';
 
 // import '@reach/accordion/styles.css';
 import { Components } from './ThemeBuilder';
+import LayoutEditor from './LayoutEditor';
 
 const InnerContainer = props => <Box pt="10px" px="10px" {...props} />;
 
@@ -39,6 +40,11 @@ const FieldHeading = props => (
   />
 );
 
+export type FieldType = {
+  name: string;
+  type: string;
+};
+
 const fieldSections = {
   dimensions: [
     { name: 'width', type: 'text' },
@@ -46,12 +52,15 @@ const fieldSections = {
     { name: 'borderRadius', type: 'text' },
   ],
   layout: [
-    { name: 'fontFamily', type: 'text' },
     { name: 'paddingTop', type: 'text' },
     { name: 'paddingRight', type: 'text' },
     { name: 'paddingBottom', type: 'text' },
     { name: 'paddingLeft', type: 'text' },
-  ],
+    { name: 'marginTop', type: 'text' },
+    { name: 'marginRight', type: 'text' },
+    { name: 'marginBottom', type: 'text' },
+    { name: 'marginLeft', type: 'text' },
+  ] as FieldType[],
   border: [
     { name: 'borderColor', type: 'color' },
     { name: 'borderWidth', type: 'text' },
@@ -61,16 +70,17 @@ const fieldSections = {
     { name: 'backgroundColor', type: 'color' },
     { name: 'color', type: 'color' },
   ],
-};
+  font: [{ name: 'fontFamily', type: 'text' }],
+} as const;
 
-const DropdownArrow = ({ active }) => (
+const DropdownArrow = ({ active }: { active?: boolean }) => (
   <Box
     style={{
       transform: `rotate(${active ? -180 : 0}deg)`,
       transition: '180ms all ease',
     }}
   >
-    <ChevronDown />
+    <ChevronDown color="#fff" />
   </Box>
 );
 
@@ -81,7 +91,7 @@ const Inspector = React.memo(function Inspector() {
   // const themeContext = useTheme();
 
   const [activeSections, setActiveSections] = useState([
-    ...new Array(fieldSectionCount).fill().map((_, index) => index),
+    ...new Array(fieldSectionCount).fill(null).map((_, index) => index),
   ]);
 
   function toggleItem(toggledIndex) {
@@ -125,8 +135,8 @@ const Inspector = React.memo(function Inspector() {
                           name={key}
                           value={value}
                           type="text"
-                          componentProps={componentProps}
-                          activeComponent={activeComponent}
+                          // componentProps={componentProps}
+                          // activeComponent={activeComponent}
                           onChange={e =>
                             setContext({
                               [activeComponent]: {
@@ -155,25 +165,45 @@ const Inspector = React.memo(function Inspector() {
                 <DropdownArrow active={activeSections.includes(index + 1)} />
               </FieldHeading>
               <AccordionPanel>
-                {fields.map(({ name, type }) => (
-                  <InnerContainer key={name}>
-                    <InspectorField
-                      key={name}
-                      name={name}
-                      type={type}
-                      value={state[activeComponent][name]}
-                      activeComponent={activeComponent}
-                      onChange={e =>
+                {section === 'layout' ? (
+                  <InnerContainer>
+                    <LayoutEditor
+                      fields={fields as FieldType[]}
+                      handleChange={(value: string, name: string) => {
                         setContext({
                           [activeComponent]: {
                             ...componentProps,
-                            [name]: e.target.value,
+                            [name]: value,
                           },
-                        })
-                      }
+                        });
+                      }}
+                      values={state[activeComponent]}
+                      // margin={fields.margin}
+                      // padding={fields.padding}
                     />
                   </InnerContainer>
-                ))}
+                ) : (
+                  // @ts-ignore
+                  fields.map(({ name, type }) => (
+                    <InnerContainer key={name}>
+                      <InspectorField
+                        key={name}
+                        name={name}
+                        type={type}
+                        value={state[activeComponent][name]}
+                        // activeComponent={activeComponent}
+                        onChange={e =>
+                          setContext({
+                            [activeComponent]: {
+                              ...componentProps,
+                              [name]: e.target.value,
+                            },
+                          })
+                        }
+                      />
+                    </InnerContainer>
+                  ))
+                )}
               </AccordionPanel>
             </AccordionItem>
           ))
@@ -197,7 +227,7 @@ const Inspector = React.memo(function Inspector() {
                             name={key}
                             type="color"
                             value={state[activeComponent][key]}
-                            activeComponent={activeComponent}
+                            // activeComponent={activeComponent}
                             onChange={e => {
                               setContext({
                                 [activeComponent]: {
@@ -235,6 +265,7 @@ const Inspector = React.memo(function Inspector() {
                             type="color"
                             value={state[activeComponent][key][nestedKey]}
                             // componentProps={componentProps}
+                            // @ts-ignore
                             activeComponent={activeComponent}
                             onChange={e => {
                               setContext({
@@ -309,6 +340,7 @@ function InspectorField({ name, value, onChange, type }) {
                   transform: 'translateX(8px) translateY(calc(-122%))',
                 }}
               >
+                {/* @ts-ignore */}
                 <BlockPicker
                   triangle="hide"
                   color={value}

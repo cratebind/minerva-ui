@@ -1,15 +1,15 @@
-import React from 'react';
+// import React from 'react';
 
 const Callout = ({ children, background = 'bg-orange-100', emoji = '💡' }) => {
   return (
     <p className={`${background} flex rounded-lg`}>
       <span className="pl-3 pr-2 py-2 select-none text-xl">{emoji}</span>
       <span className="pr-4 py-2">{children}</span>
-      <style jsx>{`
+      {/* <style jsx>{`
         span > :global(p) {
           margin-top: 0;
         }
-      `}</style>
+      `}</style> */}
     </p>
   );
 };

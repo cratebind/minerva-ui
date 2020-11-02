@@ -1,7 +1,15 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import 'jest-styled-components';
-import { Tabs, TabList, Tab, TabPanels, TabPanel, ThemeProvider } from '../src';
+import {
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+  ThemeProvider,
+  defaultTheme,
+} from '../src';
 
 const ExampleTabs = () => {
   const selectedStyled = {
@@ -11,7 +19,7 @@ const ExampleTabs = () => {
   };
   return (
     <Tabs>
-      <TabList data-testid="tab-list" bg="#f5f6fa" mb="20px">
+      <TabList data-testid="TabList" bg="#f5f6fa" mb="20px">
         <Tab
           data-testid="active-tab"
           _selected={{ ...selectedStyled }}
@@ -27,8 +35,8 @@ const ExampleTabs = () => {
         </Tab>
         <Tab _selected={{ ...selectedStyled }}>Billing</Tab>
       </TabList>
-      <TabPanels>
-        <TabPanel>
+      <TabPanels data-testid="TabPanels">
+        <TabPanel data-testid="TabPanel">
           <p>My Account!</p>
         </TabPanel>
         <TabPanel>
@@ -45,7 +53,7 @@ const ExampleTabs = () => {
   );
 };
 
-describe('Tabs', () => {
+describe('<Tabs />', () => {
   it('should change TabList background color', () => {
     const { container, getByTestId } = render(
       <ThemeProvider>
@@ -53,7 +61,7 @@ describe('Tabs', () => {
       </ThemeProvider>
     );
     expect(container).toMatchSnapshot();
-    const tabList = getByTestId('tab-list');
+    const tabList = getByTestId('TabList');
     expect(tabList).toHaveStyleRule('background-color', '#f5f6fa');
   });
 
@@ -69,3 +77,65 @@ describe('Tabs', () => {
     });
   });
 });
+
+['TabList', 'TabPanels', 'TabPanel'].forEach(componentName => {
+  describe(`<${componentName} />`, () => {
+    it('should be theme-able', () => {
+      const backgroundColor = '#e9e9e9';
+      const customTheme = {
+        ...defaultTheme,
+        [componentName]: {
+          backgroundColor,
+        },
+      };
+      const { container, getByTestId } = render(
+        <ThemeProvider theme={customTheme}>
+          <ExampleTabs />
+        </ThemeProvider>
+      );
+      expect(container).toMatchSnapshot();
+      const tabList = getByTestId(componentName);
+      expect(tabList).toHaveStyleRule('background-color', backgroundColor);
+    });
+  });
+});
+
+// describe('<TabList />', () => {
+//   it('should be theme-able', () => {
+//     const backgroundColor = '#e9e9e9';
+//     const customTheme = {
+//       ...defaultTheme,
+//       TabList: {
+//         backgroundColor,
+//       },
+//     };
+//     const { container, getByTestId } = render(
+//       <ThemeProvider theme={customTheme}>
+//         <ExampleTabs />
+//       </ThemeProvider>
+//     );
+//     expect(container).toMatchSnapshot();
+//     const tabList = getByTestId('TabList');
+//     expect(tabList).toHaveStyleRule('background-color', backgroundColor);
+//   });
+// });
+
+// describe('<TabPanels />', () => {
+//   it('should be theme-able', () => {
+//     const backgroundColor = '#e9e9e9';
+//     const customTheme = {
+//       ...defaultTheme,
+//       TabList: {
+//         backgroundColor,
+//       },
+//     };
+//     const { container, getByTestId } = render(
+//       <ThemeProvider theme={customTheme}>
+//         <ExampleTabs />
+//       </ThemeProvider>
+//     );
+//     expect(container).toMatchSnapshot();
+//     const tabList = getByTestId('TabList');
+//     expect(tabList).toHaveStyleRule('background-color', backgroundColor);
+//   });
+// });

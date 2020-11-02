@@ -1,5 +1,111 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Menu /> should render when positioned to Right: Closed Menu 1`] = `
+.c0 {
+  box-sizing: border-box;
+  min-width: 0;
+  color: #374151;
+  -webkit-transition: all 150ms ease 0s;
+  transition: all 150ms ease 0s;
+  outline: none;
+  cursor: pointer;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  background-color: #fff;
+  border-width: 1px;
+  color: #374151;
+  font-weight: 500;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #d2d6dc;
+}
+
+.c0:hover {
+  background-color: #f9fafb;
+}
+
+.c0:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
+}
+
+.c0:active,
+.c0[data-active=true] {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover,
+.c0[aria-disabled=true],
+.c0[aria-disabled=true]:focus,
+.c0[aria-disabled=true]:hover {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+<div>
+  <button
+    aria-busy="false"
+    aria-controls="menu--7"
+    aria-haspopup="true"
+    class="c0"
+    data-reach-menu-button=""
+    data-testid="menu-button"
+    id="menu-button--menu--7"
+    role="button"
+    type="button"
+  >
+    Actions 
+  </button>
+</div>
+`;
+
+exports[`<Menu /> should render when positioned to Right: Open Menu 1`] = `
+<div>
+  <button
+    aria-busy="false"
+    aria-controls="menu--7"
+    aria-haspopup="true"
+    class="sc-AxjAm sc-AxhUy hMoEoa"
+    data-reach-menu-button=""
+    data-testid="menu-button"
+    id="menu-button--menu--7"
+    role="button"
+    type="button"
+  >
+    Actions 
+  </button>
+</div>
+`;
+
 exports[`<Menu /> should render: Closed Menu 1`] = `
 .c0 {
   box-sizing: border-box;
@@ -76,7 +182,7 @@ exports[`<Menu /> should render: Closed Menu 1`] = `
     aria-busy="false"
     aria-controls="menu--1"
     aria-haspopup="true"
-    class="sc-AxjAm c0"
+    class="c0"
     data-reach-menu-button=""
     data-testid="menu-button"
     id="menu-button--menu--1"

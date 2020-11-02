@@ -6,6 +6,7 @@ import { useId } from '@reach/auto-id';
 import { MinervaProps, systemProps } from '../layout';
 import { Box } from '../layout';
 import VisuallyHidden from '../VisuallyHidden';
+import { useComponentStyles } from '../theme';
 
 const RadioGroupContainer = styled(Box)({}, systemProps);
 
@@ -105,6 +106,7 @@ export const Radio = forwardRef(function Radio(
   const { selectedValue, radioColor, radioSize, onChange } = useContext(
     SelectedValueContext
   );
+  const componentStyles = useComponentStyles('Radio');
 
   const checked = value === selectedValue;
 
@@ -120,6 +122,7 @@ export const Radio = forwardRef(function Radio(
       as="label"
       aria-label={value}
       ref={ref}
+      {...componentStyles}
       {...props}
     >
       <Box display="inline-flex">
