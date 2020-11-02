@@ -15,7 +15,7 @@ module.exports = {
       }
     ],
     'react/display-name': 1,
-    'react/react-in-jsx-scope': 0
+    'react/react-in-jsx-scope': 0,
   },
   settings: {
     "import/resolver": {
