@@ -296,8 +296,6 @@ const Inspector = React.memo(function Inspector() {
           </>
         )}
         {Object.entries(specialSections).map(([key, fields]) => {
-          // console.log({ key, fields, activeComponent, state });
-
           return (
             <AccordionItem key={key}>
               <FieldHeading as={AccordionButton}>
