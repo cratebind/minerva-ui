@@ -1,10 +1,13 @@
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { DialogContent, DialogOverlay } from '@reach/dialog';
-import { MinervaProps, systemProps } from '../layout';
+import { Box, MinervaProps, systemProps } from '../layout';
+import { X } from 'react-feather';
 
 // import { useComponentStyles } from '../theme';
-import { ModalBody, ModalHeader, ModalFooter } from '../Modal';
+import { ModalFooterProps, ModalBodyProps, ModalHeaderProps } from '../Modal';
+import { useComponentStyles } from '../theme';
+import { Button, Text } from '..';
 
 const OVERLAY_ZINDEX = 500;
 
@@ -42,9 +45,70 @@ export interface DrawerProps extends MinervaProps {
   placement?: 'left' | 'right';
 }
 
-export const DrawerHeader = ModalHeader;
-export const DrawerBody = props => <ModalBody flex="1 1 0%" {...props} />;
-export const DrawerFooter = ModalFooter;
+export const DrawerHeader = forwardRef(function DrawerHeader(
+  { children, onClose, ...props }: ModalHeaderProps,
+  ref
+) {
+  const componentStyles = useComponentStyles('DrawerHeader');
+  return (
+    <Box
+      ref={ref}
+      display="flex"
+      width="100%"
+      justifyContent="space-between"
+      alignItems="center"
+      padding="1.5rem"
+      {...componentStyles}
+      {...props}
+    >
+      <Text fontWeight="bold" fontSize="1.25rem">
+        {children}
+      </Text>
+      <Button
+        border={0}
+        padding="0.25rem"
+        bg="transparent"
+        type="button"
+        aria-label="Close Modal"
+        onClick={onClose}
+      >
+        <X size="26px" />
+      </Button>
+    </Box>
+  );
+});
+
+export const DrawerBody = forwardRef(function ModalBody(
+  { children, ...props }: ModalBodyProps,
+  ref
+) {
+  const componentStyles = useComponentStyles('DrawerBody');
+  return (
+    <Box
+      flex="1 1 0%"
+      color="#374151"
+      ref={ref}
+      px="1.5rem"
+      pt="0.5rem"
+      pb="1rem"
+      {...componentStyles}
+      {...props}
+    >
+      {children}
+    </Box>
+  );
+});
+export const DrawerFooter = forwardRef(function ModalFooter(
+  { children, ...props }: ModalFooterProps,
+  ref
+) {
+  const componentStyles = useComponentStyles('DrawerFooter');
+  return (
+    <Box ref={ref} px={6} py={3} {...componentStyles} {...props}>
+      {children}
+    </Box>
+  );
+});
 
 export const Drawer = forwardRef(function Drawer(
   { children, isOpen, onClose, placement = 'right', ...props }: DrawerProps,

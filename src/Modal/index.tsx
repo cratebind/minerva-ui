@@ -44,6 +44,7 @@ export const ModalHeader = forwardRef(function ModalHeader(
   { children, onClose, ...props }: ModalHeaderProps,
   ref
 ) {
+  const componentStyles = useComponentStyles('ModalHeader');
   return (
     <Box
       ref={ref}
@@ -52,6 +53,7 @@ export const ModalHeader = forwardRef(function ModalHeader(
       justifyContent="space-between"
       alignItems="center"
       padding="1.5rem"
+      {...componentStyles}
       {...props}
     >
       <Text fontWeight="bold" fontSize="1.25rem">
