@@ -174,24 +174,9 @@ export const FormExamples = () => {
   const [passwordError, setPasswordError] = React.useState('');
 
   return (
-    <Flex bg="gray.200" py="40px" justifyContent="center" alignItems="center">
-      <PseudoBox
-        as="form"
-        bg="#fff"
-        p="32px"
-        pt="24px"
-        width="100%"
-        maxWidth="20rem"
-        boxShadow="base"
-        borderRadius="md"
-      >
-        <InputField
-          label="Username"
-          errorText={usernameError}
-          // fontSize="14px"
-          color="gray.700"
-          mb={4}
-        >
+    <Flex>
+      <PseudoBox as="form" bg="#fff" width="100%" maxWidth="20rem">
+        <InputField label="Username" errorText={usernameError}>
           <Input
             placeholder="Username"
             value={username}
@@ -206,13 +191,7 @@ export const FormExamples = () => {
             }
           />
         </InputField>
-        <InputField
-          label="Password"
-          errorText={passwordError}
-          // fontSize="14px"
-          color="gray.700"
-          mb={6}
-        >
+        <InputField label="Password" errorText={passwordError}>
           <Input
             type="password"
             placeholder="Password"
@@ -230,23 +209,8 @@ export const FormExamples = () => {
           />
         </InputField>
         <Flex alignItems="center" justifyContent="space-between">
-          <Button
-            color="#fff"
-            lineHeight="1.7"
-            fontWeight="700"
-            fontSize="16px"
-            onClick={e => e.preventDefault()}
-            backgroundColor="purple.700"
-            borderWidth={0}
-            _hover={{
-              backgroundColor: 'purple.800',
-            }}
-          >
-            Sign In
-          </Button>
-          <Link href="#" color="purple.700" fontWeight="700">
-            Forgot Password?
-          </Link>
+          <Button onClick={e => e.preventDefault()}>Sign In</Button>
+          <Link href="#">Forgot Password?</Link>
         </Flex>
       </PseudoBox>
     </Flex>

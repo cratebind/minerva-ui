@@ -214,7 +214,13 @@ function ThemeBuilder() {
           </Stack>
         </Flex>
         <Flex height={`calc(100vh - ${HEADER_HEIGHT})`}>
-          <Flex flexDirection="column" padding={4} width="15rem" bg="#3b4c67">
+          <Flex
+            overflowY="auto"
+            flexDirection="column"
+            padding={4}
+            width="15rem"
+            bg="#3b4c67"
+          >
             {/* <Heading as="h4" fontSize="16px" mb={2} color="white">
               Theme
             </Heading>

@@ -1,11 +1,10 @@
 import React, { memo } from 'react';
-import { Box, styled } from 'minerva-ui';
+import { Box, Heading, styled } from 'minerva-ui';
 import { useAppContext } from './AppContext';
 import { Components, Examples } from './ThemeBuilder';
 
 const Container = styled(Box)`
   flex: 1;
-  padding: 40px;
   overflow: auto;
 `;
 
@@ -25,9 +24,16 @@ function Editor() {
   const customProps = state[activeComponent]?.customProps || {};
 
   return (
-    <Container>
-      <Component {...customProps} />
-    </Container>
+    <>
+      <Container>
+        <Heading border={0} margin="8px 12px">
+          {activeComponent}
+        </Heading>
+        <Box padding="20px" overflow="auto">
+          <Component {...customProps} />
+        </Box>
+      </Container>
+    </>
   );
 }
 
