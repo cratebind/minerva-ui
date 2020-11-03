@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 import { defaultTheme } from 'minerva-ui';
 
 const initialState = {
@@ -36,10 +36,38 @@ const initialState = {
       children: 'Modal Footer',
     },
   },
+  DrawerHeader: {
+    // ...defaultTheme.DrawerHeader,
+    customProps: {
+      children: 'Drawer Header',
+    },
+  },
+  DrawerBody: {
+    // ...defaultTheme.DrawerBody,
+    customProps: {
+      children: 'Drawer Body',
+    },
+  },
+  DrawerFooter: {
+    // ...defaultTheme.DrawerFooter,
+    customProps: {
+      children: 'Drawer Footer',
+    },
+  },
   Checkbox: { customProps: { children: 'Checkbox', checked: false } },
   Link: { customProps: { children: 'Link' } },
   Select: { customProps: {} },
+  Radio: { customProps: {} },
   Table: { customProps: {} },
+  Tab: {
+    customProps: {
+      children: 'Tab',
+      disabled: false,
+    },
+  },
+  TabPanel: { customProps: {} },
+  TabList: { customProps: {} },
+  TabPanels: { customProps: {} },
   Text: { customProps: { children: 'Text' } },
   Heading: { customProps: { children: 'Heading' } },
   Cards: { customProps: {} },
@@ -74,11 +102,11 @@ const AppProvider = ({ children }) => {
     setState({ ...initialState });
   }
 
-  // const memoState = useMemo(() => ({ state }), [state]);
+  const memoState = useMemo(() => state, [state]);
 
   return (
     <AppContext.Provider
-      value={{ state: state, setContext: setState, resetTheme }}
+      value={{ state: memoState, setContext: setState, resetTheme }}
     >
       {children}
     </AppContext.Provider>

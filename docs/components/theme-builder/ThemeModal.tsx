@@ -29,7 +29,7 @@ export default function ThemeModal(props) {
   const filteredStyles = Object.entries(styles).reduce(
     (result, [key, value]) => {
       // filter out custom props key
-      const { customProps, ...rest } = value;
+      const { customProps, ...rest } = value as any;
       result[key] = { ...rest };
       return result;
     },
@@ -38,6 +38,7 @@ export default function ThemeModal(props) {
 
   const copyStyle = () => {
     if (inputRef && inputRef.current) {
+      // @ts-ignore
       inputRef.current.select();
       document.execCommand('copy');
     }
@@ -92,7 +93,8 @@ export default function ThemeModal(props) {
             ref={inputRef}
             as="textarea"
             value={JSON.stringify(filteredStyles, null, 2)}
-            rows="6"
+            // @ts-ignore
+            rows={6}
           />
         </Box>
         <a
@@ -108,7 +110,7 @@ export default function ThemeModal(props) {
       <Flex px={6} pb={4} justifyContent="flex-end">
         <Button
           onClick={() => {
-            document.querySelector('#download-link').click();
+            document.querySelector<HTMLElement>('#download-link').click();
           }}
           mr={2}
         >

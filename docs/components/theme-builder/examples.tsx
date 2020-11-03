@@ -15,6 +15,11 @@ import {
   PseudoBox,
   InputField,
   Input,
+  Tabs,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
 } from 'minerva-ui';
 
 export const ModalExample = props => {
@@ -121,7 +126,7 @@ export const CardExamples = props => {
             <Block mb={4}>
               <Flex fontSize="sm" color="gray.600" alignItems="center">
                 <Flex mr={2} alignItems="center">
-                  <Icon name="lock" size="12px" />
+                  {/* <Icon name="lock" size="12px" /> */}
                 </Flex>
                 <Text m={0} fontSize="sm" color="gray.600">
                   Members only
@@ -169,25 +174,9 @@ export const FormExamples = () => {
   const [passwordError, setPasswordError] = React.useState('');
 
   return (
-    <Flex bg="gray.200" py="40px" justifyContent="center" alignItems="center">
-      <PseudoBox
-        as="form"
-        bg="#fff"
-        p="32px"
-        pt="24px"
-        width="100%"
-        maxWidth="20rem"
-        boxShadow="base"
-        borderRadius="md"
-      >
-        <InputField
-          label="Username"
-          errorText={usernameError}
-          fontWeight="700"
-          fontSize="14px"
-          color="gray.700"
-          mb={4}
-        >
+    <Flex>
+      <PseudoBox as="form" bg="#fff" width="100%" maxWidth="20rem">
+        <InputField label="Username" errorText={usernameError}>
           <Input
             placeholder="Username"
             value={username}
@@ -202,14 +191,7 @@ export const FormExamples = () => {
             }
           />
         </InputField>
-        <InputField
-          label="Password"
-          errorText={passwordError}
-          fontWeight="700"
-          fontSize="14px"
-          color="gray.700"
-          mb={6}
-        >
+        <InputField label="Password" errorText={passwordError}>
           <Input
             type="password"
             placeholder="Password"
@@ -227,32 +209,35 @@ export const FormExamples = () => {
           />
         </InputField>
         <Flex alignItems="center" justifyContent="space-between">
-          <Button
-            color="#fff"
-            lineHeight="1.7"
-            fontWeight="700"
-            fontSize="16px"
-            onClick={e => e.preventDefault()}
-            backgroundColor="purple.700"
-            borderWidth={0}
-            _hover={{
-              backgroundColor: 'purple.800',
-            }}
-          >
-            Sign In
-          </Button>
-          <Link
-            href="#"
-            color="purple.700"
-            fontWeight="700"
-            _hover={{
-              color: 'purple.800',
-            }}
-          >
-            Forgot Password?
-          </Link>
+          <Button onClick={e => e.preventDefault()}>Sign In</Button>
+          <Link href="#">Forgot Password?</Link>
         </Flex>
       </PseudoBox>
     </Flex>
   );
 };
+
+export const TabsExample = ({ tabProps }) => (
+  <Tabs>
+    <TabList mb="20px" borderBottom="2px solid #d2d6dc">
+      <Tab {...tabProps}>My Account</Tab>
+      <Tab {...tabProps}>Favorites</Tab>
+      <Tab {...tabProps}>Orders</Tab>
+      <Tab {...tabProps}>Billing</Tab>
+    </TabList>
+    <TabPanels>
+      <TabPanel>
+        <p>My Account!</p>
+      </TabPanel>
+      <TabPanel>
+        <p>Favorites!</p>
+      </TabPanel>
+      <TabPanel>
+        <p>Orders!</p>
+      </TabPanel>
+      <TabPanel>
+        <p>Billing!</p>
+      </TabPanel>
+    </TabPanels>
+  </Tabs>
+);

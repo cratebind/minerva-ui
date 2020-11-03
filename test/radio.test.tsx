@@ -29,42 +29,53 @@ describe('RadioGroup', () => {
 
   it('hides colored fill when not checked', () => {
     const size = '20px';
-    const { getByTestId } = render(
+    const { getByLabelText } = render(
       <ThemeProvider>
-        <RadioGroup value="test" radioSize="20px">
-          <Radio value="test1">First Option</Radio>
+        <RadioGroup value="test">
+          <Radio value="test1" height={size} width={size}>
+            First Option
+          </Radio>
         </RadioGroup>
       </ThemeProvider>
     );
-    const radio = getByTestId('control-box');
+    const radio = getByLabelText('First Option');
     expect(radio).toHaveStyleRule('height', size);
     expect(radio).toHaveStyleRule('width', size);
-    expect(radio).toHaveStyleRule('border', '2px solid #ecebed');
-    expect(radio.firstChild).toHaveStyleRule('transform', 'scale(0)');
+    expect(radio).toHaveStyleRule('border-color', 'inherit');
+    expect(radio).toHaveStyleRule('background-color', 'transparent');
+    expect(radio).toHaveStyleRule(
+      'transform',
+      'translate(-50%,-50%) scale(0.5)',
+      {
+        modifier: ':after',
+      }
+    );
   });
 
   it('shows colored fill when checked', () => {
-    const { getByTestId } = render(
+    const { getByLabelText } = render(
       <ThemeProvider>
         <RadioGroup value="test">
           <Radio value="test">First Option</Radio>
         </RadioGroup>
       </ThemeProvider>
     );
-    const radio = getByTestId('control-box');
-    expect(radio.firstChild).toHaveStyleRule('transform', 'scale(1)');
+    const radio = getByLabelText('First Option');
+    expect(radio).toHaveStyleRule('background-color', 'rgb(88,80,236)');
   });
 
   it('shows correct label', () => {
-    const { getByTestId } = render(
+    const { container } = render(
       <ThemeProvider>
         <RadioGroup value="test">
-          <Radio value="test">Label Placeholder</Radio>
+          <Radio value="test" data-testid="radio">
+            Label Placeholder
+          </Radio>
         </RadioGroup>
       </ThemeProvider>
     );
-    const label = getByTestId('label');
-    expect(label).toHaveTextContent('Label Placeholder');
+
+    expect(container).toHaveTextContent('Label Placeholder');
   });
 
   it('should have first option selected if provided', () => {
