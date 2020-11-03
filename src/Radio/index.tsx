@@ -1,44 +1,10 @@
 import React, { useContext, forwardRef } from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { useId } from '@reach/auto-id';
 
-import { MinervaProps, systemProps } from '../layout';
+import { MinervaProps } from '../layout';
 import { Box } from '../layout';
-import VisuallyHidden from '../VisuallyHidden';
 import { useComponentStyles } from '../theme';
-
-const RadioGroupContainer = styled(Box)({}, systemProps);
-
-const RadioContainer = styled(Box)`
-  display: flex;
-  align-items: center;
-  margin: 0 10px 10px 0;
-  cursor: pointer;
-
-  input[type='radio']:focus + [data-minerva='control-box'] {
-    box-shadow: 0 0 0 3px rgba(118, 169, 250, 0.45);
-  }
-  ${systemProps}
-`;
-
-const ControlBox = styled(Box)<ControlBoxProps>((props: ControlBoxProps) => ({
-  display: 'inline-block',
-  width: props.radioSize,
-  height: props.radioSize,
-  padding: '2px',
-  marginRight: '8px',
-  backgroundClip: 'content-box',
-  transition: 'all 120ms ease',
-  // backgroundColor: props.checked ? props.radioColor : '#fff',
-  border: '2px solid #ecebed',
-  // border: props.checked
-  //   ? `${(parseInt(props.radioSize) / 3).toFixed(2)}px solid ${
-  //       props.radioColor
-  //     }`
-  //   : '2px solid #ecebed',
-  borderRadius: '50%',
-}));
+import { PseudoBox } from '..';
 
 export interface RadioGroupProps {
   children?: React.ReactNode;
@@ -58,7 +24,6 @@ export type ControlBoxProps = {
 export interface RadioProps extends BaseProps {
   children?: React.ReactNode;
   value?: string;
-  isDisabled?: boolean;
 }
 
 type ContextValue = {
@@ -86,13 +51,9 @@ export const RadioGroup = ({
     <SelectedValueContext.Provider
       value={{ selectedValue, radioColor, radioSize, onChange }}
     >
-      <RadioGroupContainer
-        data-testid="radio-group"
-        role="radiogroup"
-        {...props}
-      >
+      <Box data-testid="radio-group" role="radiogroup" {...props}>
         {children}
-      </RadioGroupContainer>
+      </Box>
     </SelectedValueContext.Provider>
   );
 };
@@ -100,67 +61,121 @@ export const RadioGroup = ({
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
 
 export const Radio = forwardRef(function Radio(
-  { value, isDisabled, children, ...props }: RadioProps,
+  { value, children, disabled = false, ...props }: RadioProps,
   ref
 ) {
-  const { selectedValue, radioColor, radioSize, onChange } = useContext(
-    SelectedValueContext
-  );
+  const { selectedValue, onChange } = useContext(SelectedValueContext);
   const componentStyles = useComponentStyles('Radio');
 
   const checked = value === selectedValue;
 
-  // only accept defaultChecked if no onChange handler is passed
-  const checkedProps = !onChange ? { defaultChecked: checked } : { checked };
-
-  const id = useId();
-
   return (
-    <RadioContainer
-      data-testid="radio"
-      htmlFor={id}
-      as="label"
-      aria-label={value}
-      ref={ref}
-      {...componentStyles}
-      {...props}
-    >
-      <Box display="inline-flex">
-        <VisuallyHidden
-          as="input"
-          type="radio"
-          aria-label={value}
-          id={id}
-          value={value}
-          onChange={onChange}
-          aria-checked={checked}
-          disabled={isDisabled}
-          {...checkedProps}
-        />
-
-        <ControlBox
-          data-testid="control-box"
-          as="span"
-          aria-hidden
-          data-minerva="control-box"
-          checked={checked}
-          radioColor={radioColor}
-          radioSize={radioSize}
-        >
-          <Box
-            borderRadius="50%"
-            width="100%"
-            height="100%"
-            backgroundColor={radioColor}
-            transition="all 180ms ease"
-            transform={checked ? 'scale(1)' : 'scale(0)'}
-          />
-        </ControlBox>
-      </Box>
-      {children && <Box data-testid="label">{children}</Box>}
-    </RadioContainer>
+    <Box as="label" display="flex" alignItems="center">
+      <PseudoBox
+        ref={ref}
+        as="input"
+        type="radio"
+        onChange={onChange}
+        value={value}
+        checked={checked}
+        appearance="none"
+        height="16px"
+        width="16px"
+        borderRadius="100%"
+        borderWidth="1px"
+        position="relative"
+        transition="all 120ms ease"
+        disabled={disabled}
+        borderColor={checked ? 'rgb(88, 80, 236)' : 'inherit'}
+        bg={checked ? 'rgb(88, 80, 236)' : 'transparent'}
+        cursor="pointer"
+        _focus={{
+          outline: 'none',
+          boxShadow: '0 0 0 3px rgba(164,202,254,.45)',
+        }}
+        _after={{
+          content: `""`,
+          transition: 'transform 180ms ease',
+          height: '6px',
+          width: '6px',
+          backgroundColor: '#fff',
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: `translate(-50%, -50%) ${
+            checked ? 'scale(1)' : 'scale(0.5)'
+          }`,
+          borderRadius: '100%',
+          display: disabled ? 'none' : 'inherit',
+        }}
+        _disabled={{
+          backgroundColor: 'rgba(118, 118, 118, 0.3)',
+          cursor: 'not-allowed',
+          borderColor: 'rgba(118, 118, 118, 0.3)',
+        }}
+        {...componentStyles}
+        {...props}
+      />
+      <Box pl={2}>{children}</Box>
+    </Box>
   );
 });
+
+// export const Radio = forwardRef(function Radio(
+//   { value, isDisabled, children, ...props }: RadioProps,
+//   ref
+// ) {
+//   // only accept defaultChecked if no onChange handler is passed
+//   const checkedProps = !onChange ? { defaultChecked: checked } : { checked };
+
+//   const id = useId();
+
+//   return (
+//     <RadioContainer
+//       data-testid="radio"
+//       htmlFor={id}
+//       as="label"
+//       aria-label={value}
+//       ref={ref}
+//       {...componentStyles}
+//       {...props}
+//     >
+//       <Box display="inline-flex">
+//         <VisuallyHidden
+//           as="input"
+//           type="radio"
+//           aria-label={value}
+//           id={id}
+//           value={value}
+//           onChange={onChange}
+//           aria-checked={checked}
+//           disabled={isDisabled}
+//           {...checkedProps}
+//         />
+
+//         <ControlBox
+//           data-testid="control-box"
+//           as="span"
+//           aria-hidden
+//           data-minerva="control-box"
+//           checked={checked}
+//           radioColor={radioColor}
+//           radioSize={radioSize}
+//         >
+//           <Box
+//             borderRadius="50%"
+//             width="100%"
+//             height="100%"
+//             backgroundColor={radioColor}
+//             transition="all 180ms ease"
+//             transform={checked ? 'scale(1)' : 'scale(0)'}
+//           />
+//         </ControlBox>
+//       </Box>
+//       {children && <Box data-testid="label">{children}</Box>}
+//     </RadioContainer>
+//   );
+// });
 
 export default Radio;
 
@@ -168,7 +183,6 @@ if (__DEV__) {
   Radio.propTypes = {
     children: PropTypes.node,
     value: PropTypes.string,
-    isDisabled: PropTypes.bool,
   };
 
   RadioGroup.propTypes = {
