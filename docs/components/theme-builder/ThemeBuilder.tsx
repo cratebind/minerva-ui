@@ -204,6 +204,7 @@ function ThemeBuilder() {
             <MenuButton
               bg="transparent"
               border={0}
+              // @ts-ignore
               _hover={{ bg: 'transparent' }}
             >
               <Icon name="settings" size="20px" color="#fff" />
