@@ -12,7 +12,7 @@ import {
 } from '@reach/menu-button';
 import { positionDefault, positionRight } from '@reach/popover';
 import styled from 'styled-components';
-import Button from '../Button';
+import Button, { ButtonProps } from '../Button';
 import { Box, MinervaProps } from '../layout';
 // import { useTheme } from '../theme';
 
@@ -26,7 +26,7 @@ export const MenuContainer = (props: MenuContainerProps) => (
   <ReachMenuContainer {...props} />
 );
 
-export const MenuButton = (props: MenuButtonProps & MinervaProps) => (
+export const MenuButton = (props: MenuButtonProps & ButtonProps) => (
   <Button as={ReachMenuButton} {...props} />
 );
 
