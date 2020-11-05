@@ -38,13 +38,6 @@ export const buttonVariants = {
   },
 };
 
-// const StyledButton = styled(PseudoBox)(
-//   variant({
-//     scale: 'buttons',
-//     variants: buttonVariants
-//   })
-// )
-
 export interface ButtonProps extends MinervaProps, PseudoBoxProps {
   children?: React.ReactNode;
   /** Toggles disabled pseudo class */
@@ -130,24 +123,14 @@ export const Button = forwardRef(function Button(
   );
 });
 
-if (process.env.NODE_ENV !== 'production') {
+export default Button;
+
+if (__DEV__) {
   Button.propTypes = exact({
     ...minervaPropTypes,
     children: PropTypes.node,
     disabled: PropTypes.bool,
     isLoading: PropTypes.bool,
     onClick: PropTypes.func,
-    style: PropTypes.object,
   });
-}
-
-export default Button;
-
-if (__DEV__) {
-  Button.propTypes = {
-    children: PropTypes.node,
-    disabled: PropTypes.bool,
-    isLoading: PropTypes.bool,
-    variant: PropTypes.string,
-  };
 }

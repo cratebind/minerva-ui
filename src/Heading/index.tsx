@@ -34,6 +34,5 @@ export default Heading;
 if (__DEV__) {
   Heading.propTypes = {
     children: PropTypes.node,
-    fontSize: PropTypes.string,
   };
 }
