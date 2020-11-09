@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Tooltip as TooltipComponent } from '@reach/tooltip';
 import {
   createShouldForwardProp,
@@ -146,10 +146,10 @@ Tooltip.displayName = 'Tooltip';
 
 export default Tooltip;
 
-if (__DEV__) {
-  Tooltip.propTypes = {
-    children: PropTypes.node,
-    label: PropTypes.string,
-    placement: PropTypes.oneOf(['top', 'bottom', 'right', 'left', 'default']),
-  };
-}
+// if (__DEV__) {
+//   Tooltip.propTypes = {
+//     children: PropTypes.node,
+//     label: PropTypes.string,
+//     placement: PropTypes.oneOf(['top', 'bottom', 'right', 'left', 'default']),
+//   };
+// }
