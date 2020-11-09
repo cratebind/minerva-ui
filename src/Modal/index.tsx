@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { DialogContent, DialogOverlay, DialogProps } from '@reach/dialog';
 import { X } from 'react-feather';
@@ -145,20 +145,20 @@ export const Modal = forwardRef(function Modal(
 
 export default Modal;
 
-if (__DEV__) {
-  Modal.propTypes = {
-    children: PropTypes.node,
-    isOpen: PropTypes.bool.isRequired,
-    onClose: PropTypes.func,
-  };
-  ModalHeader.propTypes = {
-    children: PropTypes.node,
-    onClose: PropTypes.func,
-  };
-  ModalBody.propTypes = {
-    children: PropTypes.node,
-  };
-  ModalFooter.propTypes = {
-    children: PropTypes.node,
-  };
-}
+// if (__DEV__) {
+//   Modal.propTypes = {
+//     children: PropTypes.node,
+//     isOpen: PropTypes.bool.isRequired,
+//     onClose: PropTypes.func,
+//   };
+//   ModalHeader.propTypes = {
+//     children: PropTypes.node,
+//     onClose: PropTypes.func,
+//   };
+//   ModalBody.propTypes = {
+//     children: PropTypes.node,
+//   };
+//   ModalFooter.propTypes = {
+//     children: PropTypes.node,
+//   };
+// }

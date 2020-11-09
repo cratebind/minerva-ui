@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Input, { InputProps } from '../Input';
 import Tag, { TagButton } from '../Tag';
@@ -83,9 +83,9 @@ export const TagsInput = function TagsInput({
 
 export default TagsInput;
 
-if (__DEV__) {
-  TagsInput.propTypes = {
-    tags: PropTypes.arrayOf(PropTypes.string),
-    onClickIcon: PropTypes.func,
-  };
-}
+// if (__DEV__) {
+//   TagsInput.propTypes = {
+//     tags: PropTypes.arrayOf(PropTypes.string),
+//     onClickIcon: PropTypes.func,
+//   };
+// }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import StyledSystem, {
   background,
   border,
@@ -19,8 +19,8 @@ import {
   createShouldForwardProp,
   props,
 } from '@styled-system/should-forward-prop';
+// import systemPropTypes from '@styled-system/prop-types';
 
-import systemPropTypes from '@styled-system/prop-types';
 import extraConfig from './utils';
 
 const customProps = system({
@@ -70,26 +70,26 @@ const customProps = system({
   },
 });
 
-export const minervaPropTypes = {
-  ...systemPropTypes.space,
-  ...systemPropTypes.color,
-  ...systemPropTypes.layout,
-  ...systemPropTypes.typography,
-  ...systemPropTypes.flexbox,
-  ...systemPropTypes.border,
-  ...systemPropTypes.background,
-  ...systemPropTypes.position,
-  ...systemPropTypes.grid,
-  textDecoration: PropTypes.any,
-  textTransform: PropTypes.any,
-  transform: PropTypes.any,
-  lineHeight: PropTypes.any,
-  transition: PropTypes.any,
-  radiusLeft: PropTypes.any,
-  radiusRight: PropTypes.any,
-  radiusTop: PropTypes.any,
-  radiusBottom: PropTypes.any,
-};
+// export const minervaPropTypes = {
+//   ...systemPropTypes.space,
+//   ...systemPropTypes.color,
+//   ...systemPropTypes.layout,
+//   ...systemPropTypes.typography,
+//   ...systemPropTypes.flexbox,
+//   ...systemPropTypes.border,
+//   ...systemPropTypes.background,
+//   ...systemPropTypes.position,
+//   ...systemPropTypes.grid,
+//   textDecoration: PropTypes.any,
+//   textTransform: PropTypes.any,
+//   transform: PropTypes.any,
+//   lineHeight: PropTypes.any,
+//   transition: PropTypes.any,
+//   radiusLeft: PropTypes.any,
+//   radiusRight: PropTypes.any,
+//   radiusTop: PropTypes.any,
+//   radiusBottom: PropTypes.any,
+// };
 
 export const systemProps = compose(
   // customProps,

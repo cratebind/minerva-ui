@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 // import styled from 'styled-components';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import { systemProps } from '../layout';
 import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';
@@ -46,10 +46,10 @@ export const Link = forwardRef(function Link(
 
 export default Link;
 
-if (__DEV__) {
-  Link.propTypes = {
-    children: PropTypes.node,
-    href: PropTypes.string,
-    isExternal: PropTypes.bool,
-  };
-}
+// if (__DEV__) {
+//   Link.propTypes = {
+//     children: PropTypes.node,
+//     href: PropTypes.string,
+//     isExternal: PropTypes.bool,
+//   };
+// }

@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Box, MinervaProps, systemProps } from '../layout';
 
@@ -115,8 +115,8 @@ Table.displayName = 'Table';
 
 export default Table;
 
-if (__DEV__) {
-  Table.propTypes = {
-    children: PropTypes.node,
-  };
-}
+// if (__DEV__) {
+//   Table.propTypes = {
+//     children: PropTypes.node,
+//   };
+// }
