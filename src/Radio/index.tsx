@@ -1,5 +1,5 @@
 import React, { useContext, forwardRef } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import { MinervaProps } from '../layout';
 import { Box } from '../layout';
@@ -111,15 +111,15 @@ export const Radio = forwardRef(function Radio(
 
 export default Radio;
 
-if (__DEV__) {
-  Radio.propTypes = {
-    children: PropTypes.node,
-    value: PropTypes.string,
-  };
+// if (__DEV__) {
+//   Radio.propTypes = {
+//     children: PropTypes.node,
+//     value: PropTypes.string,
+//   };
 
-  RadioGroup.propTypes = {
-    children: PropTypes.node,
-    value: PropTypes.string,
-    onChange: PropTypes.func,
-  };
-}
+//   RadioGroup.propTypes = {
+//     children: PropTypes.node,
+//     value: PropTypes.string,
+//     onChange: PropTypes.func,
+//   };
+// }

@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { systemProps, Flex, MinervaProps } from '../layout';
 
@@ -40,10 +40,10 @@ export const Stack = forwardRef(function Stack(
 
 export default Stack;
 
-if (__DEV__) {
-  Stack.propTypes = {
-    children: PropTypes.node,
-    gap: PropTypes.string,
-    horizontal: PropTypes.bool,
-  };
-}
+// if (__DEV__) {
+//   Stack.propTypes = {
+//     children: PropTypes.node,
+//     gap: PropTypes.string,
+//     horizontal: PropTypes.bool,
+//   };
+// }

@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
 import { useComponentStyles } from '../theme';
 
@@ -31,8 +31,8 @@ export const Heading = forwardRef(function Heading(
 
 export default Heading;
 
-if (__DEV__) {
-  Heading.propTypes = {
-    children: PropTypes.node,
-  };
-}
+// if (__DEV__) {
+//   Heading.propTypes = {
+//     children: PropTypes.node,
+//   };
+// }

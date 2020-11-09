@@ -3,11 +3,11 @@ import warning from 'tiny-warning';
 import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 import { useTheme } from '../theme';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import { variant } from 'styled-system';
 // import styled from 'styled-components';
-import exact from 'prop-types-exact';
-import { MinervaProps, minervaPropTypes } from '../layout';
+// import exact from 'prop-types-exact';
+import { MinervaProps } from '../layout';
 
 export const buttonVariants = {
   primary: {
@@ -125,12 +125,12 @@ export const Button = forwardRef(function Button(
 
 export default Button;
 
-if (__DEV__) {
-  Button.propTypes = exact({
-    ...minervaPropTypes,
-    children: PropTypes.node,
-    disabled: PropTypes.bool,
-    isLoading: PropTypes.bool,
-    onClick: PropTypes.func,
-  });
-}
+// if (__DEV__) {
+//   Button.propTypes = exact({
+//     ...minervaPropTypes,
+//     children: PropTypes.node,
+//     disabled: PropTypes.bool,
+//     isLoading: PropTypes.bool,
+//     onClick: PropTypes.func,
+//   });
+// }

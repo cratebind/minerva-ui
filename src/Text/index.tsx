@@ -1,5 +1,5 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
 import { useComponentStyles } from '../theme';
 
@@ -31,8 +31,8 @@ Text.displayName = 'Text';
 
 export default Text;
 
-if (__DEV__) {
-  Text.propTypes = {
-    children: PropTypes.node,
-  };
-}
+// if (__DEV__) {
+//   Text.propTypes = {
+//     children: PropTypes.node,
+//   };
+// }
