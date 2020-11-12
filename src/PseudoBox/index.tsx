@@ -145,7 +145,7 @@ const even = '&:nth-of-type(even)';
 const odd = '&:nth-of-type(odd)';
 const disabled =
   '&:disabled, &:disabled:focus, &:disabled:hover, &[aria-disabled=true], &[aria-disabled=true]:focus, &[aria-disabled=true]:hover';
-const checked = '&[aria-checked=true]';
+const checked = '&[aria-checked=true],&[data-state="checked"]';
 const mixed = '&[aria-checked=mixed]';
 const selected =
   '&[aria-selected=true], &[data-selected=true], &[data-selected]';
