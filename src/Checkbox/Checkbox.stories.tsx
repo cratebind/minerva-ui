@@ -20,7 +20,7 @@ const meta: Meta = {
 export default meta;
 
 const Template: Story<CheckboxProps> = args => {
-  const [checked, setChecked] = React.useState(false);
+  const [checked, setChecked] = React.useState(true);
   return (
     <Checkbox
       checked={checked}

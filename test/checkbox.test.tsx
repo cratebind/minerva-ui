@@ -2,19 +2,7 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import 'jest-styled-components';
 import * as ReactDOM from 'react-dom';
-import { Checkbox, ThemeProvider } from '../src';
-
-// const ToggleCheckbox = ({ children }) => {
-//   const [checked, setChecked] = useState(false);
-//   return (
-//     <Checkbox
-//       checked={checked}
-//       onChange={() => setChecked(!checked)}
-//     >
-//       {children}
-//     </Checkbox>
-//   )
-// }
+import { Checkbox, ThemeProvider, defaultTheme } from '../src';
 
 describe('Checkbox', () => {
   it('renders without crashing', () => {
@@ -30,79 +18,72 @@ describe('Checkbox', () => {
 
   it('shows white background when not checked', () => {
     const labelText = 'Checked Checkbox';
-    const { getByTestId } = render(
+    const { getByLabelText } = render(
       <ThemeProvider>
         <Checkbox>{labelText}</Checkbox>
       </ThemeProvider>
     );
-    const checkbox = getByTestId('control-box');
+    const checkbox = getByLabelText(labelText);
 
     expect(checkbox).toHaveStyleRule('background-color', '#fff');
   });
 
   it('shows checkbox when checked', () => {
     const labelText = 'Checked Checkbox';
-    const { getByTestId } = render(
+    const { getByLabelText } = render(
       <ThemeProvider>
-        <Checkbox checked>{labelText}</Checkbox>
+        <Checkbox>{labelText}</Checkbox>
       </ThemeProvider>
     );
-    const checkbox = getByTestId('control-box');
+    const checkbox = getByLabelText(labelText);
 
-    expect(checkbox).toHaveStyleRule('background-color', '#5850ec');
+    expect(checkbox).toMatchSnapshot('Unchecked Checkbox');
+
+    expect(checkbox).toHaveStyleRule('background-color', '#fff');
+
+    fireEvent.click(checkbox);
+
+    expect(checkbox).toMatchSnapshot('Checked Checkbox');
+
+    expect(checkbox).toHaveStyleRule('background-color', '#5850ec', {
+      modifier: '[aria-checked=true]',
+    });
   });
 
-  // it('changes styles when checked', () => {
-  //   const labelText = 'Checked Checkbox';
-  //   const { getByTestId, getByLabelText } = render(
-  //     <ThemeProvider>
-  //       <ToggleCheckbox>{labelText}</ToggleCheckbox>
-  //     </ThemeProvider>
-  //   );
-  //   const input = getByLabelText(labelText);
-  //   const checkbox = getByTestId('control-box');
-  //   expect(checkbox).toHaveStyleRule('background-color', '#fff');
-
-  //   fireEvent.change(input, { target: { checked: true } });
-  //   fireEvent.change(getByTestId('checkbox-container'), { target: { checked: true } });
-  //   fireEvent.change(checkbox, { target: { checked: true } });
-
-  //   expect(getByTestId('control-box')).toHaveStyleRule('background-color', '#5850ec');
-  // });
-
-  it('is accessible via the keyboard', () => {
+  it('can have checked state changed by theme', () => {
     const labelText = 'Checked Checkbox';
-    const handleChange = jest.fn();
 
-    const { getByTestId } = render(
-      <ThemeProvider>
-        <Checkbox onChange={handleChange}>{labelText}</Checkbox>
+    const backgroundColor = '#333';
+    const checkedColor = '#c33333';
+
+    const customTheme = {
+      ...defaultTheme,
+      Checkbox: {
+        backgroundColor: backgroundColor,
+        _checked: {
+          backgroundColor: checkedColor,
+        },
+      },
+    };
+
+    const { getByLabelText } = render(
+      <ThemeProvider theme={customTheme}>
+        <Checkbox>{labelText}</Checkbox>
       </ThemeProvider>
     );
-    const checkbox = getByTestId('control-box');
 
-    fireEvent.keyDown(checkbox, { key: ' ' });
+    const checkbox = getByLabelText(labelText);
 
-    expect(handleChange).toHaveBeenCalled();
-  });
+    expect(checkbox).toMatchSnapshot('Unchecked Checkbox');
 
-  it('can trigger onKeyDown if provided', () => {
-    const labelText = 'Checked Checkbox';
-    const handleChange = jest.fn();
-    const handleKeyDown = jest.fn();
+    expect(checkbox).toHaveStyleRule('background-color', backgroundColor);
 
-    const { getByTestId } = render(
-      <ThemeProvider>
-        <Checkbox onChange={handleChange} onKeyDown={handleKeyDown}>
-          {labelText}
-        </Checkbox>
-      </ThemeProvider>
-    );
-    const checkbox = getByTestId('control-box');
+    fireEvent.click(checkbox);
 
-    fireEvent.keyDown(checkbox, { key: ' ' });
+    expect(checkbox).toMatchSnapshot('Checked Checkbox');
 
-    expect(handleChange).not.toHaveBeenCalled();
-    expect(handleKeyDown).toHaveBeenCalled();
+    expect(checkbox).toHaveStyleRule('background-color', checkedColor, {
+      modifier: '[aria-checked=true]',
+    });
   });
 });
