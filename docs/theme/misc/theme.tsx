@@ -174,6 +174,7 @@ export const Code = ({ children, className, highlight, live, ...props }) => {
             bg="white"
             margin="-16px -16px 16px -16px"
             borderWidth="1px"
+            fontFamily="body"
             borderBottomWidth={0}
             radiusTop="8px"
           >

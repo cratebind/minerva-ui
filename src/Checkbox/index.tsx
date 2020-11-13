@@ -67,6 +67,12 @@ export const Checkbox = forwardRef(function Checkbox(
             boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
             outline: 0,
           }}
+          _disabled={{
+            backgroundColor: '#EAEAEA',
+            color: '#8F8F8F',
+            cursor: 'not-allowed',
+            backgroundImage: 'none',
+          }}
           {...componentStyles}
           {...props}
         />
