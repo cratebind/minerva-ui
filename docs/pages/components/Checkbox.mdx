@@ -19,6 +19,23 @@ import { Checkbox } from 'minerva-ui';
 };
 ```
 
+## Disabled Checkbox
+
+```jsx live
+<Checkbox disabled>Stay Logged In</Checkbox>
+```
+
+## Customize Checkbox
+
+```jsx live
+<Stack horizontal>
+  <Checkbox _checked={{ bg: 'red.700' }}>Checked Background Color</Checkbox>
+  <Checkbox bg="#0076ff" checkColor="#0076ff" _checked={{ bg: '#fff' }}>
+    Change Check Color
+  </Checkbox>
+</Stack>
+```
+
 ## Props
 
 Props related to the Checkbox component.

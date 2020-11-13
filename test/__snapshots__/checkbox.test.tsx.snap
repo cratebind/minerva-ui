@@ -3,7 +3,7 @@
 exports[`Checkbox can have checked state changed by theme: Checked Checkbox 1`] = `
 <input
   aria-checked="true"
-  class="sc-AxjAm sc-AxhUy kZhFvc"
+  class="sc-AxjAm sc-AxhUy cHTuUi"
   data-reach-custom-checkbox-input=""
   type="checkbox"
 />
@@ -39,6 +39,18 @@ exports[`Checkbox can have checked state changed by theme: Unchecked Checkbox 1`
   outline: 0;
 }
 
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover,
+.c0[aria-disabled=true],
+.c0[aria-disabled=true]:focus,
+.c0[aria-disabled=true]:hover {
+  background-color: #EAEAEA;
+  color: #8F8F8F;
+  cursor: not-allowed;
+  background-image: none;
+}
+
 .c0[aria-checked=true],
 .c0[data-state="checked"] {
   background-color: #c33333;
@@ -55,7 +67,7 @@ exports[`Checkbox can have checked state changed by theme: Unchecked Checkbox 1`
 exports[`Checkbox shows checkbox when checked: Checked Checkbox 1`] = `
 <input
   aria-checked="true"
-  class="sc-AxjAm sc-AxhUy gFWAqT"
+  class="sc-AxjAm sc-AxhUy ldMoAZ"
   data-reach-custom-checkbox-input=""
   type="checkbox"
 />
@@ -89,6 +101,18 @@ exports[`Checkbox shows checkbox when checked: Unchecked Checkbox 1`] = `
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover,
+.c0[aria-disabled=true],
+.c0[aria-disabled=true]:focus,
+.c0[aria-disabled=true]:hover {
+  background-color: #EAEAEA;
+  color: #8F8F8F;
+  cursor: not-allowed;
+  background-image: none;
 }
 
 .c0[aria-checked=true],
