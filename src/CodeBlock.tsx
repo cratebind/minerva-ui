@@ -1,4 +1,5 @@
-/* tslint:disable */
+/** @jsxRuntime classic */
+/** @jsx jsx */
 
 import React, { useState } from 'react';
 // import lightTheme from 'prism-react-renderer/themes/nightOwlLight';

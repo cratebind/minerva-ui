@@ -43,6 +43,8 @@
       ]
     },
     "jsx": "react",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo"
   }
 }
