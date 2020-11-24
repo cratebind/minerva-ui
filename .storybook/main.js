@@ -16,4 +16,8 @@ module.exports = {
 
     return config;
   },
+  reactOptions: {
+    fastRefresh: true,
+    strictMode: true,
+  },
 }
