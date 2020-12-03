@@ -2,12 +2,12 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { DialogContent, DialogOverlay } from '@reach/dialog';
 import { Box, MinervaProps, systemProps } from '../layout';
-import { X } from 'react-feather';
 
 // import { useComponentStyles } from '../theme';
 import { ModalFooterProps, ModalBodyProps, ModalHeaderProps } from '../Modal';
 import { useComponentStyles } from '../theme';
 import { Button, Text } from '..';
+import { Close } from '../Icon/baseIcons';
 
 const OVERLAY_ZINDEX = 500;
 
@@ -72,7 +72,7 @@ export const DrawerHeader = forwardRef(function DrawerHeader(
         aria-label="Close Modal"
         onClick={onClose}
       >
-        <X size="26px" />
+        <Close />
       </Button>
     </Box>
   );

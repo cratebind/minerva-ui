@@ -17,7 +17,6 @@ import {
 import Input from '../Input';
 import { OverlayBox } from '../Menu';
 import { Box, MinervaProps } from '../layout';
-// import { Box } from 'react-feather';
 
 export const Combobox = (props: ComboboxProps) => <ReachCombobox {...props} />;
 

@@ -53,19 +53,19 @@ export interface AlertProps extends MinervaProps {
 const alertTypes = {
   error: {
     statusColor: '#f8b4b4',
-    statusIcon: 'alert-circle',
+    statusIcon: null,
   },
   success: {
     statusColor: '#bcf0da',
-    statusIcon: 'check-circle',
+    statusIcon: null,
   },
   warning: {
     statusColor: '#fdf6b2',
-    statusIcon: 'alert-triangle',
+    statusIcon: null,
   },
   info: {
     statusColor: '#c3ddfd',
-    statusIcon: 'info',
+    statusIcon: null,
   },
 };
 
