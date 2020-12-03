@@ -1,4 +1,6 @@
 {
   "experimentalComponentTesting": true,
-  "componentFolder": "cypress/components"
+  "componentFolder": "cypress/components",
+  "video": false,
+  "screenshotOnRunFailure": false
 }

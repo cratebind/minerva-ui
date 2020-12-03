@@ -12,4 +12,5 @@ jobs:
     - name: Install and Run Tests
       run: |
         yarn install
+        yarn build
         yarn test

@@ -16,14 +16,15 @@
     "start": "tsdx watch --format esm",
     "dev:docs": "lerna run --parallel start",
     "build": "tsdx build",
-    "test": "tsdx test --env=jsdom",
+    "test": "tsdx test --env=jsdom && yarn e2e",
     "lint": "yarn tsdx lint src test 'docs/**/*.{ts,tsx,js,jsx,mdx}' --ext js,tsx,ts,mdx --fix --cache --quiet",
     "bootstrap": "lerna bootstrap",
     "release": "np",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "sb": "yarn storybook",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "e2e": "yarn cypress run"
   },
   "peerDependencies": {
     "react": "16.x || 17.x",
@@ -137,6 +138,7 @@
       "(.d.ts)$",
       ".stories.tsx$"
     ],
+    "testPathIgnorePatterns": ["/node_modules/", "cypress"],
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
     },
