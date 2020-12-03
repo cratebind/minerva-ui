@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default Icons should render 1`] = `
+<div>
+  <svg
+    color="currentColor"
+    fill="currentColor"
+    height="24"
+    viewBox="0 0 256 256"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      fill="none"
+      height="256"
+      width="256"
+    />
+    <line
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+      x1="200"
+      x2="56"
+      y1="56"
+      y2="200"
+    />
+    <line
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+      x1="200"
+      x2="56"
+      y1="200"
+      y2="56"
+    />
+  </svg>
+  <svg
+    height="24"
+    viewBox="0 0 256 256"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      fill="none"
+      height="256"
+      width="256"
+    />
+    <polyline
+      fill="none"
+      points="208 96 128 176 48 96"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    />
+  </svg>
+</div>
+`;
