@@ -1,7 +1,16 @@
 import React from 'react';
 // import { Box } from '../layout';
 
-export const Close = ({ color = 'currentColor', size = 24, ...props }) => (
+type BaseIconProps = {
+  color?: string;
+  size?: number | string;
+};
+
+export const Close = ({
+  color = 'currentColor',
+  size = 24,
+  ...props
+}: BaseIconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
@@ -39,7 +48,7 @@ export const ChevronDown = ({
   color = 'currentColor',
   size = 24,
   ...props
-}) => (
+}: BaseIconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
