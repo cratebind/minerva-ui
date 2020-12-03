@@ -2,11 +2,7 @@ import React, { forwardRef } from 'react';
 import warning from 'tiny-warning';
 import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
-import { useTheme } from '../theme';
-// import PropTypes from 'prop-types';
-// import { variant } from 'styled-system';
-// import styled from 'styled-components';
-// import exact from 'prop-types-exact';
+import { useComponentStyles, useTheme } from '../theme';
 import { MinervaProps } from '../layout';
 
 export const buttonVariants = {
@@ -85,6 +81,8 @@ export const Button = forwardRef(function Button(
   const variantStyles =
     variant && theme?.variants?.Button ? theme.variants.Button[variant] : {};
 
+  const componentStyles = useComponentStyles('Button');
+
   return (
     <PseudoBox
       ref={ref}
@@ -114,7 +112,7 @@ export const Button = forwardRef(function Button(
       }}
       aria-busy={isLoading}
       name={name}
-      {...theme.Button}
+      {...componentStyles}
       {...variantStyles}
       {...props}
     >

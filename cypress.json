@@ -1,0 +1,4 @@
+{
+  "experimentalComponentTesting": true,
+  "componentFolder": "cypress/components"
+}
