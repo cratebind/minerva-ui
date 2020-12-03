@@ -2,11 +2,11 @@ import React, { forwardRef } from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { DialogContent, DialogOverlay, DialogProps } from '@reach/dialog';
-import { X } from 'react-feather';
 import { MinervaProps, systemProps, Box } from '../layout';
 import Button from '../Button';
 import Text from '../Text';
 import { useComponentStyles } from '../theme';
+import { Close } from '../Icon/baseIcons';
 
 type OverlayProps = DialogProps & MinervaProps;
 export const ModalOverlay = styled(DialogOverlay)<OverlayProps>(
@@ -67,7 +67,8 @@ export const ModalHeader = forwardRef(function ModalHeader(
         aria-label="Close Modal"
         onClick={onClose}
       >
-        <X size="26px" />
+        <Close />
+        {/* <X size="26px" /> */}
       </Button>
     </Box>
   );

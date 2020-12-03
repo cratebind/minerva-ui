@@ -106,7 +106,6 @@
     "json2mq": "^0.2.0",
     "parse-numeric-range": "^1.2.0",
     "react-color": "^2.18.1",
-    "react-feather": "^2.0.8",
     "styled-components": "^5.0.0",
     "styled-system": "^5.1.5",
     "tiny-warning": "^1.0.3"

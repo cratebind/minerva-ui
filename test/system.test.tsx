@@ -224,7 +224,7 @@ describe(`<Icon />`, () => {
     const testId = `component-icon`;
     const { getByTestId } = render(
       <ThemeProvider theme={themeWithIcons}>
-        <Icon name="plus" data-testid={testId} />
+        <Icon name="close" data-testid={testId} />
       </ThemeProvider>
     );
     expect(getByTestId(testId)).toBeInTheDocument();
@@ -234,7 +234,7 @@ describe(`<Icon />`, () => {
     const color = '#e3e3e3';
     const { getByTestId } = render(
       <ThemeProvider theme={themeWithIcons}>
-        <Icon name="plus" data-testid="icon" size="36px" color={color} />
+        <Icon name="close" data-testid="icon" size="36px" color={color} />
       </ThemeProvider>
     );
 
@@ -264,7 +264,7 @@ describe(`<Icon />`, () => {
     const backgroundColor = '#e3e3e3';
     const { getByTestId } = render(
       <ThemeProvider theme={themeWithIcons}>
-        <Icon name="plus" data-testid="icon" bg={backgroundColor} />
+        <Icon name="close" data-testid="icon" bg={backgroundColor} />
       </ThemeProvider>
     );
 

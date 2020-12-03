@@ -1,7 +1,8 @@
 import React from 'react';
 import { Alert } from '../Alert';
 import Button from '../Button';
-import { X } from 'react-feather';
+import { Close } from '../Icon/baseIcons';
+
 import { defaultIcons, defaultTheme, ThemeProvider } from '..';
 import { filteredArgs } from '../utils';
 
@@ -56,7 +57,7 @@ export const Hidden = () => {
             marginLeft="auto"
             onClick={() => setOpen(false)}
           >
-            <X size="20px" />
+            <Close size="20px" />
           </Button>
         </Alert>
       )}
@@ -66,10 +67,8 @@ export const Hidden = () => {
 
 export const Custom = () => (
   <Provider>
-    <Alert icon="arrow-right-circle" bg="orange.200" title="Alert!!!" />
+    <Alert bg="orange.200" title="Alert!" />
     <br />
-    <Alert icon="info" bg="green.100">
-      Here is some information.
-    </Alert>
+    <Alert bg="green.100">Here is some information.</Alert>
   </Provider>
 );
