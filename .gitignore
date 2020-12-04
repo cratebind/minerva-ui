@@ -24,3 +24,7 @@ docs/node_modules
 .cache-loader
 
 .tsbuildinfo
+
+# cypress
+cypress/videos
+cypress/screenshots

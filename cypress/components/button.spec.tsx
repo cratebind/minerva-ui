@@ -44,7 +44,7 @@ describe('<Button />', () => {
       <>
         <GlobalStyles />
         <StandardizeFont />
-        <Button>{text}</Button>
+        <Button fontFamily="Helvetica">{text}</Button>
       </>
     );
 
