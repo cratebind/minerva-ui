@@ -19,8 +19,8 @@ const defaultFont = 'Open Sans';
 // but this font is different on macOS, Linux and Windows
 // to make sure our screenshots are consistent, we force them all to use the same font family
 const StandardizeFont = createGlobalStyle`
-  html {
-    font-family: Helvetica;
+  html, * {
+    font-family: defaultFont;
   }
 `;
 
@@ -41,6 +41,7 @@ const MinervaProvider = ({ children, theme = customTheme }) => (
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans"
+        // href="https://fonts.googleapis.com/css2?family=Open+Sans&display=block"
         rel="stylesheet"
       />
     </div>
