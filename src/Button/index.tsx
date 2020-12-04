@@ -89,25 +89,8 @@ export const Button = forwardRef(function Button(
       as={Comp}
       disabled={disabled || isLoading}
       role="button"
-      transition="all 150ms ease 0s"
-      outline="none"
       cursor="pointer"
-      fontFamily="body"
-      _hover={{
-        backgroundColor: '#f9fafb',
-      }}
-      _focus={{
-        borderColor: '#a4cafe',
-        boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
-        outline: 0,
-      }}
-      _active={{
-        borderColor: '#a4cafe',
-        boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
-        outline: 0,
-      }}
       _disabled={{
-        opacity: 0.4,
         cursor: 'not-allowed',
       }}
       aria-busy={isLoading}

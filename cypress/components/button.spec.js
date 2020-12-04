@@ -8,6 +8,7 @@ import {
   GlobalStyles,
   defaultTheme,
 } from '../../dist/minerva-ui.esm';
+
 import { createGlobalStyle } from 'styled-components';
 
 const text = 'Button';
@@ -39,9 +40,30 @@ const MinervaProvider = ({ children, theme = customTheme }) => (
 );
 
 describe('<Button />', () => {
-  it('renders with a theme provider', () => {
+  it('renders with default theme provider', () => {
     mount(
       <MinervaProvider>
+        <Button>{text}</Button>
+      </MinervaProvider>
+    );
+
+    cy.contains(text).should('be.visible');
+    cy.get('button').toMatchImageSnapshot();
+
+    cy.get('button')
+      .trigger('mouseenter')
+      .toMatchImageSnapshot({ name: 'Themed Button (Click)' });
+
+    // cy.get('button')
+    //   .focus()
+    //   .toMatchImageSnapshot({ name: 'Themed Button (Focus)' });
+  });
+
+  it('renders without default theme', () => {
+    mount(
+      <MinervaProvider
+        theme={{ fonts: { body: 'Helvetica', heading: 'Helvetica' } }}
+      >
         <Button>{text}</Button>
       </MinervaProvider>
     );
