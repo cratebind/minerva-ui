@@ -62,7 +62,15 @@ describe('<Button />', () => {
     it('renders without default theme', () => {
       mount(
         <MinervaProvider
-          theme={{ fonts: { body: 'Helvetica', heading: 'Helvetica' } }}
+          theme={{
+            fonts: {
+              body: 'Helvetica',
+              heading: 'Helvetica',
+            },
+            Button: {
+              fontFamily: 'body',
+            },
+          }}
         >
           <Button>{text}</Button>
         </MinervaProvider>
