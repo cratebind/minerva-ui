@@ -25,9 +25,9 @@ export const buttonVariants = {
     },
   },
   tertiary: {
-    bg: 'white',
-    borderColor: 'transparent',
-    color: 'indigo.800',
+    bg: '#333',
+    borderColor: '#333',
+    color: '#333',
     _hover: {
       textDecoration: 'underline',
     },

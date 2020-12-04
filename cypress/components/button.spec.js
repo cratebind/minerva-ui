@@ -13,6 +13,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const text = 'Button';
 
+const defaultFont = 'Open Sans';
+
 // by default, we are using the native font stack
 // but this font is different on macOS, Linux and Windows
 // to make sure our screenshots are consistent, we force them all to use the same font family
@@ -26,8 +28,8 @@ const customTheme = {
   ...defaultTheme,
   fonts: {
     ...defaultTheme.fonts,
-    body: 'Helvetica',
-    heading: 'Helvetica',
+    body: defaultFont,
+    heading: defaultFont,
   },
 };
 
@@ -35,6 +37,13 @@ const MinervaProvider = ({ children, theme = customTheme }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyles />
     <StandardizeFont />
+    <div>
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans"
+        rel="stylesheet"
+      />
+    </div>
     {children}
   </ThemeProvider>
 );
@@ -44,11 +53,11 @@ describe('<Button />', () => {
     it('renders with default theme provider', () => {
       mount(
         <MinervaProvider>
-          <div id="container">
+          <span style={{ display: 'inline-block' }} id="container">
             <Button>{text}</Button>
             <Button variant="secondary">{text}</Button>
             <Button variant="tertiary">{text}</Button>
-          </div>
+          </span>
         </MinervaProvider>
       );
 
@@ -64,8 +73,8 @@ describe('<Button />', () => {
         <MinervaProvider
           theme={{
             fonts: {
-              body: 'Helvetica',
-              heading: 'Helvetica',
+              body: defaultFont,
+              heading: defaultFont,
             },
             Button: {
               fontFamily: 'body',
