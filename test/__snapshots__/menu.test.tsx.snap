@@ -5,11 +5,7 @@ exports[`<Menu /> should render when positioned to Right: Closed Menu 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  -webkit-transition: all 150ms ease 0s;
-  transition: all 150ms ease 0s;
-  outline: none;
   cursor: pointer;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   background-color: #fff;
   border-width: 1px;
   color: #374151;
@@ -42,6 +38,10 @@ exports[`<Menu /> should render when positioned to Right: Closed Menu 1`] = `
   border-radius: 5px;
   border-style: solid;
   border-color: #d2d6dc;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  outline: none;
+  -webkit-transition: all 150 ms ease 0s;
+  transition: all 150 ms ease 0s;
 }
 
 .c0:hover {
@@ -94,7 +94,7 @@ exports[`<Menu /> should render when positioned to Right: Open Menu 1`] = `
     aria-busy="false"
     aria-controls="menu--7"
     aria-haspopup="true"
-    class="sc-AxjAm sc-AxhUy hMoEoa"
+    class="sc-AxjAm sc-AxhUy kTuyVS"
     data-reach-menu-button=""
     data-testid="menu-button"
     id="menu-button--menu--7"
@@ -111,11 +111,7 @@ exports[`<Menu /> should render: Closed Menu 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  -webkit-transition: all 150ms ease 0s;
-  transition: all 150ms ease 0s;
-  outline: none;
   cursor: pointer;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   background-color: #fff;
   border-width: 1px;
   color: #374151;
@@ -148,6 +144,10 @@ exports[`<Menu /> should render: Closed Menu 1`] = `
   border-radius: 5px;
   border-style: solid;
   border-color: #d2d6dc;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  outline: none;
+  -webkit-transition: all 150 ms ease 0s;
+  transition: all 150 ms ease 0s;
 }
 
 .c0:hover {
@@ -200,7 +200,7 @@ exports[`<Menu /> should render: Open Menu 1`] = `
     aria-busy="false"
     aria-controls="menu--1"
     aria-haspopup="true"
-    class="sc-AxjAm sc-AxhUy hMoEoa"
+    class="sc-AxjAm sc-AxhUy kTuyVS"
     data-reach-menu-button=""
     data-testid="menu-button"
     id="menu-button--menu--1"
