@@ -39,20 +39,6 @@ const MinervaProvider = ({ children, theme = customTheme }) => (
 );
 
 describe('<Button />', () => {
-  it('renders and shows inner text without a provider', () => {
-    mount(
-      <>
-        <GlobalStyles />
-        <StandardizeFont />
-        <Button fontFamily="Helvetica">{text}</Button>
-      </>
-    );
-
-    cy.contains(text).should('be.visible');
-
-    cy.get('button').toMatchImageSnapshot();
-  });
-
   it('renders with a theme provider', () => {
     mount(
       <MinervaProvider>
