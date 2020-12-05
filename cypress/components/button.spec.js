@@ -64,6 +64,10 @@ describe('<Button />', () => {
 
       cy.contains(text).should('be.visible');
 
+      cy.document()
+        .its('fonts.status')
+        .should('equal', 'loaded');
+
       cy.get('#container').toMatchImageSnapshot({
         name: `Default Theme: Button with Variants`,
       });
@@ -87,6 +91,10 @@ describe('<Button />', () => {
       );
 
       cy.contains(text).should('be.visible');
+      cy.document()
+        .its('fonts.status')
+        .should('equal', 'loaded');
+
       cy.get('button').toMatchImageSnapshot();
     });
   });
