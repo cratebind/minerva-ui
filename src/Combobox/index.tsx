@@ -46,12 +46,12 @@ export const ComboboxOption = (props: ComboboxOptionProps & MinervaProps) => (
     as={ReachComboboxOption}
     cursor="pointer"
     padding="0.5rem 1rem"
-    css={{
-      '&:hover,&[aria-selected="true"]': {
-        backgroundColor: '#f4f5f7',
-        color: '#161e2e',
-      },
-    }}
+    // css={{
+    //   '&:hover,&[aria-selected="true"]': {
+    //     backgroundColor: '#f4f5f7',
+    //     color: '#161e2e',
+    //   },
+    // }}
     {...props}
   />
 );
