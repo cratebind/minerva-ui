@@ -103,15 +103,15 @@
     "@styled-system/should-forward-prop": "^5.1.5",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^10.0.4",
-    "@types/styled-components": "^5.0.1",
-    "@types/styled-system": "^5.1.9",
+    "@types/styled-components": "^5.1.5",
+    "@types/styled-system": "^5.1.10",
     "copy-to-clipboard": "^3.3.1",
     "eslint-config-cratebind": "^3.0.8",
     "eslint-config-react-app": "^5.2.1",
     "json2mq": "^0.2.0",
     "parse-numeric-range": "^1.2.0",
     "react-color": "^2.18.1",
-    "styled-components": "^5.0.0",
+    "styled-components": "^5.2.1",
     "styled-system": "^5.1.5",
     "tiny-warning": "^1.0.3"
   },
@@ -138,7 +138,10 @@
       "(.d.ts)$",
       ".stories.tsx$"
     ],
-    "testPathIgnorePatterns": ["/node_modules/", "cypress"],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "cypress"
+    ],
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
     },
