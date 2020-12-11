@@ -138,7 +138,10 @@
       "(.d.ts)$",
       ".stories.tsx$"
     ],
-    "testPathIgnorePatterns": ["/node_modules/", "cypress"],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "cypress"
+    ],
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
     },

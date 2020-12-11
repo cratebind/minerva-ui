@@ -5,11 +5,7 @@ exports[`useClipboard should render Clipboard Component 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  -webkit-transition: all 150ms ease 0s;
-  transition: all 150ms ease 0s;
-  outline: none;
   cursor: pointer;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   background-color: #fff;
   border-width: 1px;
   color: #374151;
@@ -42,6 +38,10 @@ exports[`useClipboard should render Clipboard Component 1`] = `
   border-radius: 5px;
   border-style: solid;
   border-color: #d2d6dc;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  outline: none;
+  -webkit-transition: all 150 ms ease 0s;
+  transition: all 150 ms ease 0s;
 }
 
 .c0:hover {
@@ -129,11 +129,7 @@ exports[`useDisclosure should render Disclosure Component 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  -webkit-transition: all 150ms ease 0s;
-  transition: all 150ms ease 0s;
-  outline: none;
   cursor: pointer;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   background-color: #fff;
   border-width: 1px;
   color: #374151;
@@ -166,6 +162,10 @@ exports[`useDisclosure should render Disclosure Component 1`] = `
   border-radius: 5px;
   border-style: solid;
   border-color: #d2d6dc;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  outline: none;
+  -webkit-transition: all 150 ms ease 0s;
+  transition: all 150 ms ease 0s;
 }
 
 .c0:hover {
@@ -220,11 +220,7 @@ exports[`useLocalStorage should render Local Storage Component 1`] = `
   box-sizing: border-box;
   min-width: 0;
   color: #374151;
-  -webkit-transition: all 150ms ease 0s;
-  transition: all 150ms ease 0s;
-  outline: none;
   cursor: pointer;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   background-color: #fff;
   border-width: 1px;
   color: #374151;
@@ -257,6 +253,10 @@ exports[`useLocalStorage should render Local Storage Component 1`] = `
   border-radius: 5px;
   border-style: solid;
   border-color: #d2d6dc;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  outline: none;
+  -webkit-transition: all 150 ms ease 0s;
+  transition: all 150 ms ease 0s;
 }
 
 .c0:hover {

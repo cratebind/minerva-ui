@@ -1,4 +1,10 @@
+import { forwardRef } from 'react';
 import { system } from 'styled-system';
+import {
+  As,
+  ForwardRefExoticComponentWithAs,
+  ForwardRefWithAsRenderFunction,
+} from './types';
 
 // const isNumber = n => typeof n === 'number' && !isNaN(n);
 // const getWidth = (n, scale) =>
@@ -258,3 +264,23 @@ export const filteredArgs = filterProps.reduce((result, propName) => {
   result[propName] = { table: { disable: true } };
   return result;
 }, {});
+
+/**
+ * From: https://github.com/reach/reach-ui/blob/97b32791ce33f822f6bc9f07f6cebfb343d8032d/packages/utils/src/index.tsx#L195
+ * This is a hack for sure. The thing is, getting a component to intelligently
+ * infer props based on a component or JSX string passed into an `as` prop is
+ * kind of a huge pain. Getting it to work and satisfy the constraints of
+ * `forwardRef` seems dang near impossible. To avoid needing to do this awkward
+ * type song-and-dance every time we want to forward a ref into a component
+ * that accepts an `as` prop, we abstract all of that mess to this function for
+ * the time time being.
+ */
+export function forwardRefWithAs<
+  Props,
+  DefaultComponentType extends As = 'div'
+>(render: ForwardRefWithAsRenderFunction<DefaultComponentType, Props>) {
+  return forwardRef(render) as ForwardRefExoticComponentWithAs<
+    DefaultComponentType,
+    Props
+  >;
+}
