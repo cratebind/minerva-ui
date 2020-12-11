@@ -316,27 +316,49 @@ export const shouldForwardProp = createShouldForwardProp([
   'onClose',
 ]);
 
-// export const Box = styled('div').withConfig({
-//   shouldForwardProp: prop => shouldForwardProp(prop),
-// })(
+export const Box = styled('div').withConfig({
+  shouldForwardProp: prop => shouldForwardProp(prop),
+})<MinervaProps>(
+  {
+    boxSizing: 'border-box',
+    minWidth: 0,
+    // @TODO: Change when light / dark themes are added
+    color: '#374151',
+    // fontFamily:
+    //   '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+  },
+  systemProps
+);
+
+// function styledComponentWithProps<T, U extends HTMLElement = HTMLElement>(
+//   styledFunction: StyledFunction<React.HTMLProps<U>>
+// ): StyledFunction<T & React.HTMLProps<U>> {
+//   return styledFunction;
+// }
+
+// const minerva =
+
+// export const Box = styledComponentWithProps<MinervaProps, HTMLDivElement>(
+//   styled.div
+// );
+
+// const div = styledComponentWithProps<MyProps, HTMLDivElement>(styled.div)
+
+// export const Box = styled.div<MinervaProps>(
 //   {
 //     boxSizing: 'border-box',
 //     minWidth: 0,
-//     // @TODO: Change when light / dark themes are added
-//     color: '#374151',
-//     // fontFamily:
-//     //   '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
 //   },
 //   systemProps
 // );
 
-export const Box = styled.div(
-  {
-    boxSizing: 'border-box',
-    minWidth: 0,
-  },
-  systemProps
-);
+// export const Box = styled<MinervaProps>('div')(
+//   {
+//     boxSizing: 'border-box',
+//     minWidth: 0,
+//   },
+//   systemProps
+// );
 
 export const Block = styled(Box)(
   {
