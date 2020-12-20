@@ -136,7 +136,8 @@
       "/node_modules/",
       "<rootDir>/src/CodeBlock.*",
       "(.d.ts)$",
-      ".stories.tsx$"
+      ".stories.tsx$",
+      "<rootDir>/src/type-utilities.tsx"
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
