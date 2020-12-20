@@ -69,7 +69,7 @@ export { default as Stack } from './Stack';
 /**
  * Inputs
  */
-export { default as Button } from './Button';
+export * from './Button';
 export { default as Checkbox } from './Checkbox';
 export { default as Switch } from './Switch';
 export { default as Input } from './Input';

@@ -6,7 +6,6 @@ import {
   AccordionItem as ReachAccordionItem,
   AccordionItemProps as ReachAccordionItemProps,
   AccordionButton as ReachAccordionButton,
-  AccordionButtonProps as ReachAccordionButtonProps,
   AccordionPanel as ReachAccordionPanel,
   AccordionPanelProps as ReachAccordionPanelProps,
 } from '@reach/accordion';
@@ -35,12 +34,12 @@ export const AccordionItem = forwardRef(function AccordionItem(
 });
 
 export const AccordionButton = forwardRef(function AccordionButton(
-  { children, ...props }: ReachAccordionButtonProps & AccordionButtonProps,
+  { children, ...props }: AccordionButtonProps,
   ref
 ) {
   return (
-    <Button
-      as={ReachAccordionButton}
+    <ReachAccordionButton
+      as={Button}
       borderColor="transparent"
       width="100%"
       flexDirection="row"
@@ -58,7 +57,7 @@ export const AccordionButton = forwardRef(function AccordionButton(
       {children}
       {/* TODO Need to figure out how to determine if Item is expanded and rotate icon */}
       {/* <Icon name="chevron-down" ml={2} size="14px" /> */}
-    </Button>
+    </ReachAccordionButton>
   );
 });
 

@@ -1,4 +1,7 @@
-import * as React from "react";
+// @ts-nocheck
+/* eslint-disable */
+
+import * as React from 'react';
 // import fbWarning from "warning";
 import {
   As,
@@ -76,9 +79,9 @@ if (__DEV__) {
   // it to prevent style checks from clogging up user logs while testing.
   // This is a workaround until we can tweak the build a bit to accommodate.
   let { env } =
-    typeof process !== "undefined"
+    typeof process !== 'undefined'
       ? process
-      : { env: { NODE_ENV: "development" } };
+      : { env: { NODE_ENV: 'development' } };
 
   checkStyles = function checkStyles(packageName: string) {
     // only check once per package
@@ -86,7 +89,7 @@ if (__DEV__) {
     checkedPkgs[packageName] = true;
 
     if (
-      env.NODE_ENV !== "test" &&
+      env.NODE_ENV !== 'test' &&
       parseInt(
         window
           .getComputedStyle(document.body)
@@ -118,12 +121,12 @@ export { checkStyles };
  * @link https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
  */
 export const ponyfillGlobal =
-  typeof window != "undefined" && window.Math == Math
+  typeof window != 'undefined' && window.Math == Math
     ? window
-    : typeof self != "undefined" && self.Math == Math
+    : typeof self != 'undefined' && self.Math == Math
     ? self
     : // eslint-disable-next-line no-new-func
-      new Function("return this")();
+      new Function('return this')();
 
 /**
  * Passes or assigns an arbitrary value to a ref function or object.
@@ -152,13 +155,13 @@ export function assignRef<RefValueType = any>(
  *
  * @param value
  */
-export function boolOrBoolString(value: any): value is "true" | true {
-  return value === "true" ? true : isBoolean(value) ? value : false;
+export function boolOrBoolString(value: any): value is 'true' | true {
+  return value === 'true' ? true : isBoolean(value) ? value : false;
 }
 
 export function canUseDOM() {
   return !!(
-    typeof window !== "undefined" &&
+    typeof window !== 'undefined' &&
     window.document &&
     window.document.createElement
   );
@@ -201,7 +204,7 @@ export function createNamedContext<ContextValueType>(
  */
 export function forwardRefWithAs<
   Props,
-  DefaultComponentType extends As = "div"
+  DefaultComponentType extends As = 'div'
 >(render: ForwardRefWithAsRenderFunction<DefaultComponentType, Props>) {
   return React.forwardRef(render) as ForwardRefExoticComponentWithAs<
     DefaultComponentType,
@@ -209,7 +212,7 @@ export function forwardRefWithAs<
   >;
 }
 
-export function memoWithAs<Props, DefaultComponentType extends As = "div">(
+export function memoWithAs<Props, DefaultComponentType extends As = 'div'>(
   Component: FunctionComponentWithAs<DefaultComponentType, Props>,
   propsAreEqual?: (
     prevProps: Readonly<React.PropsWithChildren<Props>>,
@@ -325,7 +328,7 @@ export function getScrollbarOffset() {
  * @param value
  */
 export function isBoolean(value: any): value is boolean {
-  return typeof value === "boolean";
+  return typeof value === 'boolean';
 }
 
 /**
@@ -334,7 +337,7 @@ export function isBoolean(value: any): value is boolean {
  * @param value
  */
 export function isFunction(value: any): value is Function {
-  return !!(value && {}.toString.call(value) == "[object Function]");
+  return !!(value && {}.toString.call(value) == '[object Function]');
 }
 
 /**
@@ -343,7 +346,7 @@ export function isFunction(value: any): value is Function {
  * @param value
  */
 export function isNumber(value: any): value is number {
-  return typeof value === "number" && !isNaN(value);
+  return typeof value === 'number' && !isNaN(value);
 }
 
 /**
@@ -354,9 +357,9 @@ export function isNumber(value: any): value is number {
 export function isRightClick(
   nativeEvent: MouseEvent | PointerEvent | TouchEvent
 ) {
-  return "which" in nativeEvent
+  return 'which' in nativeEvent
     ? nativeEvent.which === 3
-    : "button" in nativeEvent
+    : 'button' in nativeEvent
     ? (nativeEvent as any).button === 2
     : false;
 }
@@ -367,7 +370,7 @@ export function isRightClick(
  * @param value
  */
 export function isString(value: any): value is string {
-  return typeof value === "string";
+  return typeof value === 'string';
 }
 
 /**
@@ -376,7 +379,7 @@ export function isString(value: any): value is string {
  * @param args
  */
 export function makeId(...args: (string | number | null | undefined)[]) {
-  return args.filter((val) => val != null).join("--");
+  return args.filter(val => val != null).join('--');
 }
 
 /**
@@ -392,7 +395,7 @@ export function noop(): void {}
  */
 export function stateToAttributeString(state: any) {
   return String(state)
-    .replace(/([\s_]+)/g, "-")
+    .replace(/([\s_]+)/g, '-')
     .toLowerCase();
 }
 
@@ -410,7 +413,7 @@ export function useControlledState<T = any>(
 ): [T, React.Dispatch<React.SetStateAction<T>>] {
   let controlledRef = React.useRef(controlledValue != null);
   let [valueState, setValue] = React.useState(defaultValue);
-  let set: React.Dispatch<React.SetStateAction<T>> = React.useCallback((n) => {
+  let set: React.Dispatch<React.SetStateAction<T>> = React.useCallback(n => {
     if (!controlledRef.current) {
       setValue(n);
     }
@@ -454,9 +457,9 @@ if (__DEV__) {
       if (wasControlled !== isControlled) {
         console.error(
           `A component is changing an ${
-            wasControlled ? "" : "un"
+            wasControlled ? '' : 'un'
           }controlled \`${controlledPropName}\` state of ${componentName} to be ${
-            wasControlled ? "un" : ""
+            wasControlled ? 'un' : ''
           }controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled ${componentName} element for the lifetime of the component.
 More info: https://fb.me/react-controlled-components`
         );
@@ -545,7 +548,7 @@ export function useEventListener<K extends keyof WindowEventMap>(
     const isSupported = element && element.addEventListener;
     if (!isSupported) {
       if (__DEV__) {
-        console.warn("Event listener not supported on the element provided");
+        console.warn('Event listener not supported on the element provided');
       }
       return;
     }
@@ -574,7 +577,7 @@ export function useFocusChange(
     previousActiveElement: Element | null,
     event?: FocusEvent
   ) => void = console.log,
-  when: "focus" | "blur" = "focus",
+  when: 'focus' | 'blur' = 'focus',
   ownerDocument: Document = document
 ) {
   let lastActiveElement = React.useRef(ownerDocument.activeElement);
@@ -622,11 +625,11 @@ export function useForkedRef<RefValueType = any>(
   ...refs: (AssignableRef<RefValueType> | null | undefined)[]
 ) {
   return React.useMemo(() => {
-    if (refs.every((ref) => ref == null)) {
+    if (refs.every(ref => ref == null)) {
       return null;
     }
     return (node: any) => {
-      refs.forEach((ref) => {
+      refs.forEach(ref => {
         assignRef(ref, node);
       });
     };
@@ -706,10 +709,10 @@ if (__DEV__) {
     }, [DEBUG]);
     React.useEffect(() => {
       if (debugRef.current) {
-        console.group("State Updated");
+        console.group('State Updated');
         console.log(
-          "%c" + state,
-          "font-weight: normal; font-size: 120%; font-style: italic;"
+          '%c' + state,
+          'font-weight: normal; font-size: 120%; font-style: italic;'
         );
         console.groupEnd();
       }
@@ -731,7 +734,7 @@ export function wrapEvent<EventType extends React.SyntheticEvent | Event>(
   theirHandler: ((event: EventType) => any) | undefined,
   ourHandler: (event: EventType) => any
 ): (event: EventType) => any {
-  return (event) => {
+  return event => {
     theirHandler && theirHandler(event);
     if (!event.defaultPrevented) {
       return ourHandler(event);
@@ -740,7 +743,7 @@ export function wrapEvent<EventType extends React.SyntheticEvent | Event>(
 }
 
 // Export types
-export type {
+export {
   As,
   AssignableRef,
   ComponentWithAs,

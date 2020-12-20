@@ -316,19 +316,25 @@ export const shouldForwardProp = createShouldForwardProp([
   'onClose',
 ]);
 
-export const Box = styled('div').withConfig({
-  shouldForwardProp: prop => shouldForwardProp(prop),
-})<MinervaProps>(
+export const Box = styled.div<MinervaProps>(
   {
     boxSizing: 'border-box',
     minWidth: 0,
-    // @TODO: Change when light / dark themes are added
-    color: '#374151',
-    // fontFamily:
-    //   '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
   },
   systemProps
 );
+
+// export const Box = styled('div')<MinervaProps>(
+//   {
+//     boxSizing: 'border-box',
+//     minWidth: 0,
+//     // @TODO: Change when light / dark themes are added
+//     color: '#374151',
+//     // fontFamily:
+//     //   '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
+//   },
+//   systemProps
+// );
 
 // function styledComponentWithProps<T, U extends HTMLElement = HTMLElement>(
 //   styledFunction: StyledFunction<React.HTMLProps<U>>

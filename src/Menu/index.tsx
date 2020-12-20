@@ -27,7 +27,7 @@ export const MenuContainer = (props: MenuContainerProps) => (
 );
 
 export const MenuButton = (props: MenuButtonProps & ButtonProps) => (
-  <Button as={ReachMenuButton} {...props} />
+  <ReachMenuButton as={Button} {...props} />
 );
 
 export interface MenuListProps extends MinervaProps {
