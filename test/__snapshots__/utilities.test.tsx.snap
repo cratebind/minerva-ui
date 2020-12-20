@@ -4,14 +4,17 @@ exports[`Border Radius should render 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   border-radius: 0.125rem;
+}
+
+.c1 {
   display: block;
+  border-radius: 0.125rem;
 }
 
 <div>
   <div
-    class="sc-AxjAm c0"
+    class="c0 c1"
     data-testid="block"
   >
     Default Text
@@ -23,14 +26,17 @@ exports[`Colors should render 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   background-color: #0694a2;
+}
+
+.c1 {
   display: block;
+  background-color: #0694a2;
 }
 
 <div>
   <div
-    class="sc-AxjAm c0"
+    class="c0 c1"
     data-testid="block"
   >
     Default Text

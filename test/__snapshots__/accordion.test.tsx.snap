@@ -4,7 +4,6 @@ exports[`<Accordion /> should render 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   border-bottom-color: #e5e7eb;
   border-bottom-width: 1px;
 }
@@ -12,24 +11,11 @@ exports[`<Accordion /> should render 1`] = `
 .c1 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
-}
-
-.c3 {
-  box-sizing: border-box;
-  min-width: 0;
-  color: #374151;
-  padding-left: 14px;
-  padding-right: 14px;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  width: 95%;
 }
 
 .c2 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
@@ -75,29 +61,39 @@ exports[`<Accordion /> should render 1`] = `
   border-top-width: 1px;
 }
 
-.c2:hover {
+.c4 {
+  box-sizing: border-box;
+  min-width: 0;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  width: 95%;
+}
+
+.c3:hover {
   background-color: #f9fafb;
 }
 
-.c2:focus {
+.c3:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c2:active,
-.c2[data-active=true] {
+.c3:active,
+.c3[data-active=true] {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c2:disabled,
-.c2:disabled:focus,
-.c2:disabled:hover,
-.c2[aria-disabled=true],
-.c2[aria-disabled=true]:focus,
-.c2[aria-disabled=true]:hover {
+.c3:disabled,
+.c3:disabled:focus,
+.c3:disabled:hover,
+.c3[aria-disabled=true],
+.c3[aria-disabled=true]:focus,
+.c3[aria-disabled=true]:hover {
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -116,7 +112,7 @@ exports[`<Accordion /> should render 1`] = `
         aria-busy="false"
         aria-controls="panel--1--0"
         aria-expanded="true"
-        class="c2"
+        class="c2 c3"
         data-reach-accordion-button=""
         id="button--1--0"
         role="button"
@@ -125,7 +121,7 @@ exports[`<Accordion /> should render 1`] = `
       </button>
       <div
         aria-labelledby="button--1--0"
-        class="c3"
+        class="c4"
         data-reach-accordion-panel=""
         data-state="open"
         id="panel--1--0"
@@ -144,7 +140,7 @@ exports[`<Accordion /> should render 1`] = `
         aria-busy="false"
         aria-controls="panel--1--1"
         aria-expanded="false"
-        class="c2"
+        class="c2 c3"
         data-reach-accordion-button=""
         id="button--1--1"
         role="button"
@@ -153,7 +149,7 @@ exports[`<Accordion /> should render 1`] = `
       </button>
       <div
         aria-labelledby="button--1--1"
-        class="c3"
+        class="c4"
         data-reach-accordion-panel=""
         data-state="collapsed"
         hidden=""

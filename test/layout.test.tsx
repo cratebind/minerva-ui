@@ -63,12 +63,11 @@ describe('<Box />', () => {
       .c0 {
         box-sizing: border-box;
         min-width: 0;
-        color: #374151;
         width: 50px;
       }
 
       <button
-        class="sc-AxjAm c0"
+        class="sc-eCssSg c0"
         data-testid="box"
       />
     `);

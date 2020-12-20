@@ -4,7 +4,6 @@ exports[`useClipboard should render Clipboard Component 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
@@ -44,37 +43,9 @@ exports[`useClipboard should render Clipboard Component 1`] = `
   border-color: #d2d6dc;
 }
 
-.c0:hover {
-  background-color: #f9fafb;
-}
-
-.c0:focus {
-  border-color: #a4cafe;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  outline: 0;
-}
-
-.c0:active,
-.c0[data-active=true] {
-  border-color: #a4cafe;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  outline: 0;
-}
-
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover,
-.c0[aria-disabled=true],
-.c0[aria-disabled=true]:focus,
-.c0[aria-disabled=true]:hover {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.c1 {
+.c2 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -93,9 +64,21 @@ exports[`useClipboard should render Clipboard Component 1`] = `
   width: 100%;
 }
 
+.c1:hover {
+  background-color: #f9fafb;
+}
+
 .c1:focus {
   border-color: #a4cafe;
-  box-shadow: 0 0 0 3px rgba(164,202,254,.45);
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
+}
+
+.c1:active,
+.c1[data-active=true] {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
+  outline: 0;
 }
 
 .c1:disabled,
@@ -104,6 +87,21 @@ exports[`useClipboard should render Clipboard Component 1`] = `
 .c1[aria-disabled=true],
 .c1[aria-disabled=true]:focus,
 .c1[aria-disabled=true]:hover {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.c3:focus {
+  border-color: #a4cafe;
+  box-shadow: 0 0 0 3px rgba(164,202,254,.45);
+}
+
+.c3:disabled,
+.c3:disabled:focus,
+.c3:disabled:hover,
+.c3[aria-disabled=true],
+.c3[aria-disabled=true]:focus,
+.c3[aria-disabled=true]:hover {
   background-color: #EAEAEA;
   color: #8F8F8F;
   cursor: not-allowed;
@@ -112,13 +110,13 @@ exports[`useClipboard should render Clipboard Component 1`] = `
 <div>
   <button
     aria-busy="false"
-    class="sc-AxjAm c0"
+    class="c0 c1"
     role="button"
   >
     Copy
   </button>
   <input
-    class="sc-AxjAm c1"
+    class="c2 c3"
     data-testid="paste-field"
   />
 </div>
@@ -128,7 +126,6 @@ exports[`useDisclosure should render Disclosure Component 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
@@ -168,29 +165,29 @@ exports[`useDisclosure should render Disclosure Component 1`] = `
   border-color: #d2d6dc;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #f9fafb;
 }
 
-.c0:focus {
+.c1:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c0:active,
-.c0[data-active=true] {
+.c1:active,
+.c1[data-active=true] {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover,
-.c0[aria-disabled=true],
-.c0[aria-disabled=true]:focus,
-.c0[aria-disabled=true]:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover,
+.c1[aria-disabled=true],
+.c1[aria-disabled=true]:focus,
+.c1[aria-disabled=true]:hover {
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -198,7 +195,7 @@ exports[`useDisclosure should render Disclosure Component 1`] = `
 <div>
   <button
     aria-busy="false"
-    class="sc-AxjAm c0"
+    class="c0 c1"
     role="button"
   >
     Open Drawer
@@ -207,19 +204,9 @@ exports[`useDisclosure should render Disclosure Component 1`] = `
 `;
 
 exports[`useLocalStorage should render Local Storage Component 1`] = `
-.c1 {
-  box-sizing: border-box;
-  min-width: 0;
-  color: #374151;
-  margin: 0;
-  font-size: 16px;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-}
-
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
@@ -259,29 +246,37 @@ exports[`useLocalStorage should render Local Storage Component 1`] = `
   border-color: #d2d6dc;
 }
 
-.c0:hover {
+.c2 {
+  box-sizing: border-box;
+  min-width: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.c1:hover {
   background-color: #f9fafb;
 }
 
-.c0:focus {
+.c1:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c0:active,
-.c0[data-active=true] {
+.c1:active,
+.c1[data-active=true] {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover,
-.c0[aria-disabled=true],
-.c0[aria-disabled=true]:focus,
-.c0[aria-disabled=true]:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover,
+.c1[aria-disabled=true],
+.c1[aria-disabled=true]:focus,
+.c1[aria-disabled=true]:hover {
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -289,13 +284,13 @@ exports[`useLocalStorage should render Local Storage Component 1`] = `
 <div>
   <button
     aria-busy="false"
-    class="c0"
+    class="c0 c1"
     role="button"
   >
     Add To Count
   </button>
   <p
-    class="c1"
+    class="c2"
   >
     You've clicked the button 
     0
@@ -308,7 +303,6 @@ exports[`useMedia should render Media Component 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   height: 100px;
   width: 100px;
 }
@@ -325,7 +319,6 @@ exports[`useNetwork should render Network Component 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   margin: 0;
   font-size: 16px;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";

@@ -316,7 +316,9 @@ export const shouldForwardProp = createShouldForwardProp([
   'onClose',
 ]);
 
-export const Box = styled.div<MinervaProps>(
+export const Box = styled('div').withConfig({
+  shouldForwardProp,
+})<MinervaProps>(
   {
     boxSizing: 'border-box',
     minWidth: 0,
@@ -369,15 +371,15 @@ export const Box = styled.div<MinervaProps>(
 export const Block = styled(Box)(
   {
     display: 'block',
-  }
-  // systemProps
+  },
+  systemProps
 );
 
-// export const Flex = styled(Box)(
-//   {
-//     display: 'flex',
-//   },
-//   systemProps
-// );
+export const Flex = styled(Box)(
+  {
+    display: 'flex',
+  },
+  systemProps
+);
 
-export const Flex = props => <Box display="flex" {...props} />;
+// export const Flex = props => <Box display="flex" {...props} />;

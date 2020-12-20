@@ -1,10 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TagsInput /> should render 1`] = `
-.c2 {
+.c1 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
+}
+
+.c3 {
+  box-sizing: border-box;
+  min-width: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -23,17 +27,17 @@ exports[`<TagsInput /> should render 1`] = `
   width: 100%;
 }
 
-.c2:focus {
+.c4:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(164,202,254,.45);
 }
 
-.c2:disabled,
-.c2:disabled:focus,
-.c2:disabled:hover,
-.c2[aria-disabled=true],
-.c2[aria-disabled=true]:focus,
-.c2[aria-disabled=true]:hover {
+.c4:disabled,
+.c4:disabled:focus,
+.c4:disabled:hover,
+.c4[aria-disabled=true],
+.c4[aria-disabled=true]:focus,
+.c4[aria-disabled=true]:hover {
   background-color: #EAEAEA;
   color: #8F8F8F;
   cursor: not-allowed;
@@ -66,7 +70,7 @@ exports[`<TagsInput /> should render 1`] = `
   margin: 0 2px;
 }
 
-.c3 {
+.c5 {
   display: inline-block;
   width: 100%;
   border: none;
@@ -77,14 +81,11 @@ exports[`<TagsInput /> should render 1`] = `
   min-height: 44px;
 }
 
-.c3:focus {
+.c5:focus {
   box-shadow: none;
 }
 
-.c1 {
-  box-sizing: border-box;
-  min-width: 0;
-  color: #374151;
+.c2 {
   list-style-type: none;
   margin-right: 5px;
 }
@@ -94,10 +95,10 @@ exports[`<TagsInput /> should render 1`] = `
     class="c0"
   >
     <li
-      class="sc-AxjAm c1"
+      class="c1 c2"
     >
       <input
-        class="sc-AxjAm c2 c3"
+        class="c3 c4 c5"
         data-testid="input"
         value=""
       />

@@ -3,7 +3,7 @@
 exports[`<GlobalStyles /> should render 1`] = `
 <div>
   <button
-    class=""
+    class="sc-citwmv"
   >
     Test
   </button>

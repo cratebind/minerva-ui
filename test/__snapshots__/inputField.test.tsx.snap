@@ -4,14 +4,12 @@ exports[`<InputField> should render 1`] = `
 .c1 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   padding-bottom: 0.5rem;
 }
 
 .c2 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -30,17 +28,17 @@ exports[`<InputField> should render 1`] = `
   width: 100%;
 }
 
-.c2:focus {
+.c3:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(164,202,254,.45);
 }
 
-.c2:disabled,
-.c2:disabled:focus,
-.c2:disabled:hover,
-.c2[aria-disabled=true],
-.c2[aria-disabled=true]:focus,
-.c2[aria-disabled=true]:hover {
+.c3:disabled,
+.c3:disabled:focus,
+.c3:disabled:hover,
+.c3[aria-disabled=true],
+.c3[aria-disabled=true]:focus,
+.c3[aria-disabled=true]:hover {
   background-color: #EAEAEA;
   color: #8F8F8F;
   cursor: not-allowed;
@@ -55,7 +53,7 @@ exports[`<InputField> should render 1`] = `
 
 <div>
   <div
-    class=""
+    class="sc-dIUggk"
     role="group"
   >
     <label
@@ -69,7 +67,7 @@ exports[`<InputField> should render 1`] = `
          
       </div>
       <input
-        class="c2"
+        class="c2 c3"
         id="example-input"
         placeholder="Basic Input"
         value=""

@@ -3,7 +3,7 @@
 exports[`Checkbox can have checked state changed by theme: Checked Checkbox 1`] = `
 <input
   aria-checked="true"
-  class="sc-AxjAm sc-AxhUy cHTuUi"
+  class="sc-bdfBwQ sc-eCssSg jQfOhO kSpNXg"
   data-reach-custom-checkbox-input=""
   type="checkbox"
 />
@@ -13,7 +13,6 @@ exports[`Checkbox can have checked state changed by theme: Unchecked Checkbox 1`
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23000000' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/polyline%3E%3C/svg%3E");
   background-size: 100%;
   background-position: center;
@@ -33,32 +32,32 @@ exports[`Checkbox can have checked state changed by theme: Unchecked Checkbox 1`
   transition: background-color,border-color 150ms cubic-bezier(0.4,0,0.2,1);
 }
 
-.c0:focus {
+.c1:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover,
-.c0[aria-disabled=true],
-.c0[aria-disabled=true]:focus,
-.c0[aria-disabled=true]:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover,
+.c1[aria-disabled=true],
+.c1[aria-disabled=true]:focus,
+.c1[aria-disabled=true]:hover {
   background-color: #EAEAEA;
   color: #8F8F8F;
   cursor: not-allowed;
   background-image: none;
 }
 
-.c0[aria-checked=true],
-.c0[data-state="checked"] {
+.c1[aria-checked=true],
+.c1[data-state="checked"] {
   background-color: #c33333;
 }
 
 <input
   aria-checked="false"
-  class="c0"
+  class="c0 c1"
   data-reach-custom-checkbox-input=""
   type="checkbox"
 />
@@ -67,7 +66,7 @@ exports[`Checkbox can have checked state changed by theme: Unchecked Checkbox 1`
 exports[`Checkbox shows checkbox when checked: Checked Checkbox 1`] = `
 <input
   aria-checked="true"
-  class="sc-AxjAm sc-AxhUy ldMoAZ"
+  class="sc-bdfBwQ sc-eCssSg hgWJxL bkxgiK"
   data-reach-custom-checkbox-input=""
   type="checkbox"
 />
@@ -77,7 +76,6 @@ exports[`Checkbox shows checkbox when checked: Unchecked Checkbox 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23000000' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/polyline%3E%3C/svg%3E");
   background-size: 100%;
   background-position: center;
@@ -97,33 +95,33 @@ exports[`Checkbox shows checkbox when checked: Unchecked Checkbox 1`] = `
   transition: background-color,border-color 150ms cubic-bezier(0.4,0,0.2,1);
 }
 
-.c0:focus {
+.c1:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover,
-.c0[aria-disabled=true],
-.c0[aria-disabled=true]:focus,
-.c0[aria-disabled=true]:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover,
+.c1[aria-disabled=true],
+.c1[aria-disabled=true]:focus,
+.c1[aria-disabled=true]:hover {
   background-color: #EAEAEA;
   color: #8F8F8F;
   cursor: not-allowed;
   background-image: none;
 }
 
-.c0[aria-checked=true],
-.c0[data-state="checked"] {
+.c1[aria-checked=true],
+.c1[data-state="checked"] {
   background-color: #5850ec;
   border-color: #5850ec;
 }
 
 <input
   aria-checked="false"
-  class="c0"
+  class="c0 c1"
   data-reach-custom-checkbox-input=""
   type="checkbox"
 />

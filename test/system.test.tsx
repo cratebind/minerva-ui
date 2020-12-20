@@ -119,7 +119,7 @@ describe('Accessibility', () => {
 /**
  * All basic basicComponents should be able to pass down styles properly
  */
-Object.entries(allComponents).forEach(([name, Component]) => {
+Object.entries(allComponents).forEach(([name, Component]: [string, any]) => {
   describe(`<${name} />`, () => {
     it('should render', () => {
       const testId = `component-${name}`;

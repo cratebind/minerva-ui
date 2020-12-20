@@ -4,23 +4,11 @@ exports[`<TabList /> should be theme-able 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
 }
 
 .c1 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
-  background-color: #e9e9e9;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 20px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   background-color: #e9e9e9;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -29,10 +17,9 @@ exports[`<TabList /> should be theme-able 1`] = `
   margin-bottom: 20px;
 }
 
-.c2 {
+.c3 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -59,25 +46,9 @@ exports[`<TabList /> should be theme-able 1`] = `
   margin-right: 15px;
 }
 
-.c2:focus {
-  color: #1a56db;
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  border-width: 2px;
-}
-
-.c2[aria-selected=true],
-.c2[data-selected=true],
-.c2[data-selected] {
-  background-color: #e0e0e0;
-  border-color: #e0e0e0;
-  border-radius: 5px;
-}
-
-.c3 {
+.c5 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -103,16 +74,29 @@ exports[`<TabList /> should be theme-able 1`] = `
   border-bottom: 2px solid transparent;
 }
 
-.c3:focus {
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #e9e9e9;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.c4:focus {
   color: #1a56db;
   outline: 0;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   border-width: 2px;
 }
 
-.c3[aria-selected=true],
-.c3[data-selected=true],
-.c3[data-selected] {
+.c4[aria-selected=true],
+.c4[data-selected=true],
+.c4[data-selected] {
   background-color: #e0e0e0;
   border-color: #e0e0e0;
   border-radius: 5px;
@@ -126,7 +110,7 @@ exports[`<TabList /> should be theme-able 1`] = `
   >
     <div
       aria-orientation="horizontal"
-      class="c1"
+      class="c1 c2"
       data-reach-tab-list=""
       data-testid="TabList"
       role="tablist"
@@ -134,7 +118,7 @@ exports[`<TabList /> should be theme-able 1`] = `
       <button
         aria-controls="tabs--10--panel--0"
         aria-selected="true"
-        class="c2"
+        class="c3 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         data-selected=""
@@ -149,7 +133,7 @@ exports[`<TabList /> should be theme-able 1`] = `
       <button
         aria-controls="tabs--10--panel--1"
         aria-selected="false"
-        class="c2"
+        class="c3 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         id="tabs--10--tab--1"
@@ -162,7 +146,7 @@ exports[`<TabList /> should be theme-able 1`] = `
       <button
         aria-controls="tabs--10--panel--2"
         aria-selected="false"
-        class="c2"
+        class="c3 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         id="tabs--10--tab--2"
@@ -175,7 +159,7 @@ exports[`<TabList /> should be theme-able 1`] = `
       <button
         aria-controls="tabs--10--panel--3"
         aria-selected="false"
-        class="c3"
+        class="c5 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         id="tabs--10--tab--3"
@@ -252,30 +236,11 @@ exports[`<TabPanel /> should be theme-able 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
-}
-
-.c4 {
-  box-sizing: border-box;
-  min-width: 0;
-  color: #374151;
-  background-color: #e9e9e9;
 }
 
 .c1 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
-  background-color: #f5f6fa;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 20px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   background-color: #f5f6fa;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -284,10 +249,9 @@ exports[`<TabPanel /> should be theme-able 1`] = `
   margin-bottom: 20px;
 }
 
-.c2 {
+.c3 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -314,25 +278,9 @@ exports[`<TabPanel /> should be theme-able 1`] = `
   margin-right: 15px;
 }
 
-.c2:focus {
-  color: #1a56db;
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  border-width: 2px;
-}
-
-.c2[aria-selected=true],
-.c2[data-selected=true],
-.c2[data-selected] {
-  background-color: #e0e0e0;
-  border-color: #e0e0e0;
-  border-radius: 5px;
-}
-
-.c3 {
+.c5 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -358,16 +306,35 @@ exports[`<TabPanel /> should be theme-able 1`] = `
   border-bottom: 2px solid transparent;
 }
 
-.c3:focus {
+.c6 {
+  box-sizing: border-box;
+  min-width: 0;
+  background-color: #e9e9e9;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f5f6fa;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.c4:focus {
   color: #1a56db;
   outline: 0;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   border-width: 2px;
 }
 
-.c3[aria-selected=true],
-.c3[data-selected=true],
-.c3[data-selected] {
+.c4[aria-selected=true],
+.c4[data-selected=true],
+.c4[data-selected] {
   background-color: #e0e0e0;
   border-color: #e0e0e0;
   border-radius: 5px;
@@ -381,7 +348,7 @@ exports[`<TabPanel /> should be theme-able 1`] = `
   >
     <div
       aria-orientation="horizontal"
-      class="c1"
+      class="c1 c2"
       data-reach-tab-list=""
       data-testid="TabList"
       role="tablist"
@@ -389,7 +356,7 @@ exports[`<TabPanel /> should be theme-able 1`] = `
       <button
         aria-controls="tabs--18--panel--0"
         aria-selected="true"
-        class="c2"
+        class="c3 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         data-selected=""
@@ -404,7 +371,7 @@ exports[`<TabPanel /> should be theme-able 1`] = `
       <button
         aria-controls="tabs--18--panel--1"
         aria-selected="false"
-        class="c2"
+        class="c3 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         id="tabs--18--tab--1"
@@ -417,7 +384,7 @@ exports[`<TabPanel /> should be theme-able 1`] = `
       <button
         aria-controls="tabs--18--panel--2"
         aria-selected="false"
-        class="c2"
+        class="c3 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         id="tabs--18--tab--2"
@@ -430,7 +397,7 @@ exports[`<TabPanel /> should be theme-able 1`] = `
       <button
         aria-controls="tabs--18--panel--3"
         aria-selected="false"
-        class="c3"
+        class="c5 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         id="tabs--18--tab--3"
@@ -448,7 +415,7 @@ exports[`<TabPanel /> should be theme-able 1`] = `
     >
       <div
         aria-labelledby="tabs--18--tab--0"
-        class="c4"
+        class="c6"
         data-reach-tab-panel=""
         data-testid="TabPanel"
         id="tabs--18--panel--0"
@@ -461,7 +428,7 @@ exports[`<TabPanel /> should be theme-able 1`] = `
       </div>
       <div
         aria-labelledby="tabs--18--tab--1"
-        class="c4"
+        class="c6"
         data-reach-tab-panel=""
         hidden=""
         id="tabs--18--panel--1"
@@ -474,7 +441,7 @@ exports[`<TabPanel /> should be theme-able 1`] = `
       </div>
       <div
         aria-labelledby="tabs--18--tab--2"
-        class="c4"
+        class="c6"
         data-reach-tab-panel=""
         hidden=""
         id="tabs--18--panel--2"
@@ -487,7 +454,7 @@ exports[`<TabPanel /> should be theme-able 1`] = `
       </div>
       <div
         aria-labelledby="tabs--18--tab--3"
-        class="c4"
+        class="c6"
         data-reach-tab-panel=""
         hidden=""
         id="tabs--18--panel--3"
@@ -507,30 +474,11 @@ exports[`<TabPanels /> should be theme-able 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
-}
-
-.c4 {
-  box-sizing: border-box;
-  min-width: 0;
-  color: #374151;
-  background-color: #e9e9e9;
 }
 
 .c1 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
-  background-color: #f5f6fa;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 20px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   background-color: #f5f6fa;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -539,10 +487,9 @@ exports[`<TabPanels /> should be theme-able 1`] = `
   margin-bottom: 20px;
 }
 
-.c2 {
+.c3 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -569,25 +516,9 @@ exports[`<TabPanels /> should be theme-able 1`] = `
   margin-right: 15px;
 }
 
-.c2:focus {
-  color: #1a56db;
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  border-width: 2px;
-}
-
-.c2[aria-selected=true],
-.c2[data-selected=true],
-.c2[data-selected] {
-  background-color: #e0e0e0;
-  border-color: #e0e0e0;
-  border-radius: 5px;
-}
-
-.c3 {
+.c5 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -613,16 +544,35 @@ exports[`<TabPanels /> should be theme-able 1`] = `
   border-bottom: 2px solid transparent;
 }
 
-.c3:focus {
+.c6 {
+  box-sizing: border-box;
+  min-width: 0;
+  background-color: #e9e9e9;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f5f6fa;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.c4:focus {
   color: #1a56db;
   outline: 0;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   border-width: 2px;
 }
 
-.c3[aria-selected=true],
-.c3[data-selected=true],
-.c3[data-selected] {
+.c4[aria-selected=true],
+.c4[data-selected=true],
+.c4[data-selected] {
   background-color: #e0e0e0;
   border-color: #e0e0e0;
   border-radius: 5px;
@@ -636,7 +586,7 @@ exports[`<TabPanels /> should be theme-able 1`] = `
   >
     <div
       aria-orientation="horizontal"
-      class="c1"
+      class="c1 c2"
       data-reach-tab-list=""
       data-testid="TabList"
       role="tablist"
@@ -644,7 +594,7 @@ exports[`<TabPanels /> should be theme-able 1`] = `
       <button
         aria-controls="tabs--14--panel--0"
         aria-selected="true"
-        class="c2"
+        class="c3 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         data-selected=""
@@ -659,7 +609,7 @@ exports[`<TabPanels /> should be theme-able 1`] = `
       <button
         aria-controls="tabs--14--panel--1"
         aria-selected="false"
-        class="c2"
+        class="c3 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         id="tabs--14--tab--1"
@@ -672,7 +622,7 @@ exports[`<TabPanels /> should be theme-able 1`] = `
       <button
         aria-controls="tabs--14--panel--2"
         aria-selected="false"
-        class="c2"
+        class="c3 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         id="tabs--14--tab--2"
@@ -685,7 +635,7 @@ exports[`<TabPanels /> should be theme-able 1`] = `
       <button
         aria-controls="tabs--14--panel--3"
         aria-selected="false"
-        class="c3"
+        class="c5 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         id="tabs--14--tab--3"
@@ -697,7 +647,7 @@ exports[`<TabPanels /> should be theme-able 1`] = `
       </button>
     </div>
     <div
-      class="c4"
+      class="c6"
       data-reach-tab-panels=""
       data-testid="TabPanels"
     >
@@ -762,23 +712,11 @@ exports[`<Tabs /> should change TabList background color 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
 }
 
 .c1 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
-  background-color: #f5f6fa;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 20px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   background-color: #f5f6fa;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -787,10 +725,9 @@ exports[`<Tabs /> should change TabList background color 1`] = `
   margin-bottom: 20px;
 }
 
-.c2 {
+.c3 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -817,25 +754,9 @@ exports[`<Tabs /> should change TabList background color 1`] = `
   margin-right: 15px;
 }
 
-.c2:focus {
-  color: #1a56db;
-  outline: 0;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  border-width: 2px;
-}
-
-.c2[aria-selected=true],
-.c2[data-selected=true],
-.c2[data-selected] {
-  background-color: #e0e0e0;
-  border-color: #e0e0e0;
-  border-radius: 5px;
-}
-
-.c3 {
+.c5 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -861,16 +782,29 @@ exports[`<Tabs /> should change TabList background color 1`] = `
   border-bottom: 2px solid transparent;
 }
 
-.c3:focus {
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f5f6fa;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.c4:focus {
   color: #1a56db;
   outline: 0;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   border-width: 2px;
 }
 
-.c3[aria-selected=true],
-.c3[data-selected=true],
-.c3[data-selected] {
+.c4[aria-selected=true],
+.c4[data-selected=true],
+.c4[data-selected] {
   background-color: #e0e0e0;
   border-color: #e0e0e0;
   border-radius: 5px;
@@ -884,7 +818,7 @@ exports[`<Tabs /> should change TabList background color 1`] = `
   >
     <div
       aria-orientation="horizontal"
-      class="c1"
+      class="c1 c2"
       data-reach-tab-list=""
       data-testid="TabList"
       role="tablist"
@@ -892,7 +826,7 @@ exports[`<Tabs /> should change TabList background color 1`] = `
       <button
         aria-controls="tabs--1--panel--0"
         aria-selected="true"
-        class="c2"
+        class="c3 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         data-selected=""
@@ -907,7 +841,7 @@ exports[`<Tabs /> should change TabList background color 1`] = `
       <button
         aria-controls="tabs--1--panel--1"
         aria-selected="false"
-        class="c2"
+        class="c3 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         id="tabs--1--tab--1"
@@ -920,7 +854,7 @@ exports[`<Tabs /> should change TabList background color 1`] = `
       <button
         aria-controls="tabs--1--panel--2"
         aria-selected="false"
-        class="c2"
+        class="c3 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         id="tabs--1--tab--2"
@@ -933,7 +867,7 @@ exports[`<Tabs /> should change TabList background color 1`] = `
       <button
         aria-controls="tabs--1--panel--3"
         aria-selected="false"
-        class="c3"
+        class="c5 c4"
         data-orientation="horizontal"
         data-reach-tab=""
         id="tabs--1--tab--3"

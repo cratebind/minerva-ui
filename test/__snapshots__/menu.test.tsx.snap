@@ -4,7 +4,6 @@ exports[`<Menu /> should render when positioned to Right: Closed Menu 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
@@ -44,29 +43,29 @@ exports[`<Menu /> should render when positioned to Right: Closed Menu 1`] = `
   border-color: #d2d6dc;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #f9fafb;
 }
 
-.c0:focus {
+.c1:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c0:active,
-.c0[data-active=true] {
+.c1:active,
+.c1[data-active=true] {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover,
-.c0[aria-disabled=true],
-.c0[aria-disabled=true]:focus,
-.c0[aria-disabled=true]:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover,
+.c1[aria-disabled=true],
+.c1[aria-disabled=true]:focus,
+.c1[aria-disabled=true]:hover {
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -76,7 +75,7 @@ exports[`<Menu /> should render when positioned to Right: Closed Menu 1`] = `
     aria-busy="false"
     aria-controls="menu--7"
     aria-haspopup="true"
-    class="c0"
+    class="c0 c1"
     data-reach-menu-button=""
     data-testid="menu-button"
     id="menu-button--menu--7"
@@ -94,7 +93,7 @@ exports[`<Menu /> should render when positioned to Right: Open Menu 1`] = `
     aria-busy="false"
     aria-controls="menu--7"
     aria-haspopup="true"
-    class="sc-AxjAm sc-AxhUy hMoEoa"
+    class="sc-bdfBwQ sc-eCssSg iHwfBM hFHWHG"
     data-reach-menu-button=""
     data-testid="menu-button"
     id="menu-button--menu--7"
@@ -110,7 +109,6 @@ exports[`<Menu /> should render: Closed Menu 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   -webkit-transition: all 150ms ease 0s;
   transition: all 150ms ease 0s;
   outline: none;
@@ -150,29 +148,29 @@ exports[`<Menu /> should render: Closed Menu 1`] = `
   border-color: #d2d6dc;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #f9fafb;
 }
 
-.c0:focus {
+.c1:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c0:active,
-.c0[data-active=true] {
+.c1:active,
+.c1[data-active=true] {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover,
-.c0[aria-disabled=true],
-.c0[aria-disabled=true]:focus,
-.c0[aria-disabled=true]:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover,
+.c1[aria-disabled=true],
+.c1[aria-disabled=true]:focus,
+.c1[aria-disabled=true]:hover {
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -182,7 +180,7 @@ exports[`<Menu /> should render: Closed Menu 1`] = `
     aria-busy="false"
     aria-controls="menu--1"
     aria-haspopup="true"
-    class="c0"
+    class="c0 c1"
     data-reach-menu-button=""
     data-testid="menu-button"
     id="menu-button--menu--1"
@@ -200,7 +198,7 @@ exports[`<Menu /> should render: Open Menu 1`] = `
     aria-busy="false"
     aria-controls="menu--1"
     aria-haspopup="true"
-    class="sc-AxjAm sc-AxhUy hMoEoa"
+    class="sc-bdfBwQ sc-eCssSg iHwfBM hFHWHG"
     data-reach-menu-button=""
     data-testid="menu-button"
     id="menu-button--menu--1"

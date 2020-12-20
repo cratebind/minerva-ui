@@ -61,15 +61,28 @@ describe('<Skeleton />', () => {
       .c0 {
         box-sizing: border-box;
         min-width: 0;
-        color: #374151;
         width: 100%;
         height: 100%;
+      }
+
+      .c3 {
+        box-sizing: border-box;
+        min-width: 0;
+        height: 1rem;
+        width: 100%;
+        border-radius: 9999px;
+      }
+
+      .c1 {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         width: 100%;
         height: 100%;
+      }
+
+      .c2 {
         -webkit-flex-direction: column;
         -ms-flex-direction: column;
         flex-direction: column;
@@ -77,17 +90,11 @@ describe('<Skeleton />', () => {
         height: 100%;
       }
 
-      .c0 > * + * {
+      .c2 > * + * {
         margin-top: 20px;
       }
 
-      .c1 {
-        box-sizing: border-box;
-        min-width: 0;
-        color: #374151;
-        height: 1rem;
-        width: 100%;
-        border-radius: 9999px;
+      .c4 {
         display: inline-block;
         background: linear-gradient(-90deg,#f0f0f0 0%,#f8f8f8 50%,#f0f0f0 100%);
         background-size: 400% 400%;
@@ -97,14 +104,14 @@ describe('<Skeleton />', () => {
 
       <div>
         <div
-          class="sc-AxjAm sc-AxiKw c0"
+          class="c0 c1 c2"
         >
           <div
-            class="sc-AxjAm c1"
+            class="c3 c4"
             data-testid="skeleton"
           />
           <div
-            class="sc-AxjAm c1"
+            class="c3 c4"
             data-testid="skeleton"
           />
         </div>
