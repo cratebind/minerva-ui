@@ -7,7 +7,15 @@ import {
   ThemeProvider,
   GlobalStyles,
   defaultTheme,
+  Box,
 } from '../../dist/minerva-ui.esm';
+// import {
+//   Button,
+//   ThemeProvider,
+//   GlobalStyles,
+//   defaultTheme,
+//   Box,
+// } from '../../src';
 import { createGlobalStyle } from 'styled-components';
 
 const text = 'Button';
@@ -43,6 +51,7 @@ describe('<Button />', () => {
     mount(
       <MinervaProvider>
         <Button>{text}</Button>
+        <Box alignItems="center">Box Test</Box>
       </MinervaProvider>
     );
 

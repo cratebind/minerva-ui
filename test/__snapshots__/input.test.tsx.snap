@@ -4,7 +4,6 @@ exports[`<Input /> should render 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -23,17 +22,17 @@ exports[`<Input /> should render 1`] = `
   width: 100%;
 }
 
-.c0:focus {
+.c1:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(164,202,254,.45);
 }
 
-.c0:disabled,
-.c0:disabled:focus,
-.c0:disabled:hover,
-.c0[aria-disabled=true],
-.c0[aria-disabled=true]:focus,
-.c0[aria-disabled=true]:hover {
+.c1:disabled,
+.c1:disabled:focus,
+.c1:disabled:hover,
+.c1[aria-disabled=true],
+.c1[aria-disabled=true]:focus,
+.c1[aria-disabled=true]:hover {
   background-color: #EAEAEA;
   color: #8F8F8F;
   cursor: not-allowed;
@@ -45,7 +44,7 @@ exports[`<Input /> should render 1`] = `
   >
     Name
     <input
-      class="sc-AxjAm c0"
+      class="c0 c1"
       id="input-field"
       value=""
     />

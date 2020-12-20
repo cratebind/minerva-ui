@@ -4,12 +4,15 @@ exports[`<Select /> should change style if disabled 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   position: relative;
-  display: block;
 }
 
 .c1 {
+  display: block;
+  position: relative;
+}
+
+.c2 {
   -webkit-appearance: none;
   -webkit-box-align: center;
   -webkit-writing-mode: horizontal-tb;
@@ -55,19 +58,19 @@ exports[`<Select /> should change style if disabled 1`] = `
   cursor: pointer;
 }
 
-.c1:focus {
+.c2:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c1:disabled {
+.c2:disabled {
   background-color: #EAEAEA;
   color: #8F8F8F;
   cursor: not-allowed;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -99,10 +102,10 @@ exports[`<Select /> should change style if disabled 1`] = `
     Name
   </label>
   <div
-    class="sc-AxjAm c0"
+    class="c0 c1"
   >
     <select
-      class="c1"
+      class="c2"
       disabled=""
       id="select-input"
     >
@@ -118,7 +121,7 @@ exports[`<Select /> should change style if disabled 1`] = `
       </option>
     </select>
     <div
-      class="c2"
+      class="c3"
     >
       <svg
         fill="none"
@@ -149,12 +152,15 @@ exports[`<Select /> should render 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  color: #374151;
   position: relative;
-  display: block;
 }
 
 .c1 {
+  display: block;
+  position: relative;
+}
+
+.c2 {
   -webkit-appearance: none;
   -webkit-box-align: center;
   -webkit-writing-mode: horizontal-tb;
@@ -200,19 +206,19 @@ exports[`<Select /> should render 1`] = `
   cursor: pointer;
 }
 
-.c1:focus {
+.c2:focus {
   border-color: #a4cafe;
   box-shadow: 0 0 0 3px rgba(118,169,250,.45);
   outline: 0;
 }
 
-.c1:disabled {
+.c2:disabled {
   background-color: #EAEAEA;
   color: #8F8F8F;
   cursor: not-allowed;
 }
 
-.c2 {
+.c3 {
   position: absolute;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -244,10 +250,10 @@ exports[`<Select /> should render 1`] = `
     Name
   </label>
   <div
-    class="sc-AxjAm c0"
+    class="c0 c1"
   >
     <select
-      class="c1"
+      class="c2"
       id="select-input"
     >
       <option
@@ -262,7 +268,7 @@ exports[`<Select /> should render 1`] = `
       </option>
     </select>
     <div
-      class="c2"
+      class="c3"
     >
       <svg
         fill="none"

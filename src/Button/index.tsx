@@ -1,9 +1,10 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import warning from 'tiny-warning';
 import Spinner from '../Spinner';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 import { useComponentStyles, useTheme } from '../theme';
 import { MinervaProps } from '../layout';
+import { forwardRefWithAs } from '../type-utilities';
 
 export const buttonVariants = {
   primary: {
@@ -48,7 +49,32 @@ export interface ButtonProps extends MinervaProps, PseudoBoxProps {
   type?: 'button' | 'reset' | 'submit';
 }
 
-export const Button = forwardRef(function Button(
+// export const Button = forwardRefWithAs<ButtonProps, 'button'>(function Button(
+//   {
+//     children,
+//     disabled = false,
+//     as: Comp = 'button',
+//     isLoading = false,
+//     name,
+//     variant,
+//     ...props
+//   },
+//   forwardedRef
+// ) {
+
+// export const Button = forwardRef(function Button(
+//   {
+//     children,
+//     disabled = false,
+//     as: Comp = 'button',
+//     isLoading = false,
+//     name,
+//     variant,
+//     ...props
+//   }: ButtonProps,
+//   forwardedRef
+// ) {
+export const Button = forwardRefWithAs<ButtonProps, 'button'>(function Button(
   {
     children,
     disabled = false,
@@ -57,8 +83,8 @@ export const Button = forwardRef(function Button(
     name,
     variant,
     ...props
-  }: ButtonProps,
-  ref
+  },
+  forwardedRef
 ) {
   const theme = useTheme();
 
@@ -85,7 +111,7 @@ export const Button = forwardRef(function Button(
 
   return (
     <PseudoBox
-      ref={ref}
+      ref={forwardedRef}
       as={Comp}
       disabled={disabled || isLoading}
       role="button"
