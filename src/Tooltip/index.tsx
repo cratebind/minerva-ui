@@ -85,6 +85,7 @@ const shouldForwardProp = createShouldForwardProp([
   'isOpen',
   'onDismiss',
   'onClose',
+  'portal',
 ]);
 
 // @ts-ignore
