@@ -46,3 +46,17 @@ const Template: Story<any> = () => {
 
 export const Basic = Template.bind({});
 Basic.args = {};
+
+export const NoPortal = () => {
+  return (
+    <Combobox aria-label="choose a fruit">
+      <ComboboxInput />
+      <ComboboxPopover portal={false}>
+        <ComboboxList>
+          <ComboboxOption value="Apple" />
+          <ComboboxOption value="Banana" />
+        </ComboboxList>
+      </ComboboxPopover>
+    </Combobox>
+  );
+};

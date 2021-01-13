@@ -14,13 +14,8 @@ import {
 } from '@reach/combobox';
 import styled from 'styled-components';
 // import css from '@styled-system/css';
-import {
-  createShouldForwardProp,
-  props,
-} from '@styled-system/should-forward-prop';
 
 import Input from '../Input';
-import { OverlayBox } from '../Menu';
 import { Box, MinervaProps, systemProps } from '../layout';
 
 export const Combobox = (props: ComboboxProps) => <ReachCombobox {...props} />;
@@ -29,24 +24,19 @@ export const ComboboxInput = (
   props: ComboboxInputProps & InputHTMLAttributes<HTMLInputElement>
 ) => <Input as={ReachComboboxInput} {...props} />;
 
-export const shouldForwardProp = createShouldForwardProp([
-  ...props,
- 'portal'
-]);
-
-export const OverlayBoxCustom = styled(OverlayBox).withConfig({shouldForwardProp})({}, systemProps);
+const StyledComboboxPopover = styled(ReachComboboxPopover)(
+  {
+    marginTop: '8px',
+    borderRadius: '6px',
+    border: 0,
+    overflow: 'hidden',
+    zIndex: 50,
+  },
+  systemProps
+);
 
 export const ComboboxPopover = (props: ComboboxPopoverProps & MinervaProps) => (
-  <OverlayBoxCustom
-    mt="8px"
-    borderRadius="6px"
-    border={0}
-    overflow="hidden"
-    zIndex="50"
-    as={ReachComboboxPopover}
-    data-testid="combobox-popover"
-    {...props}
-  />
+  <StyledComboboxPopover data-testid="combobox-popover" {...props} />
 );
 
 export const ComboboxList = (
