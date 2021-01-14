@@ -35,9 +35,10 @@ const StyledComboboxPopover = styled(ReachComboboxPopover)(
   systemProps
 );
 
-export const ComboboxPopover = (props: ComboboxPopoverProps & MinervaProps) => (
-  <StyledComboboxPopover data-testid="combobox-popover" {...props} />
-);
+export const ComboboxPopover: any = (
+  props: ComboboxPopoverProps & MinervaProps
+  // @ts-ignore
+): any => <StyledComboboxPopover data-testid="combobox-popover" {...props} />;
 
 export const ComboboxList = (
   props: ComboboxListProps & { children?: ReactNode }
