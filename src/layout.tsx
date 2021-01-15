@@ -314,6 +314,7 @@ export const shouldForwardProp = createShouldForwardProp([
   'isOpen',
   'onDismiss',
   'onClose',
+  'portal',
 ]);
 
 export const Box = styled('div').withConfig({
