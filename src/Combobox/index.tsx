@@ -24,18 +24,24 @@ export const ComboboxInput = (
   props: ComboboxInputProps & InputHTMLAttributes<HTMLInputElement>
 ) => <Input as={ReachComboboxInput} {...props} />;
 
-export const ComboboxPopover = (props: ComboboxPopoverProps & MinervaProps) => (
-  <OverlayBox
-    mt="8px"
-    borderRadius="6px"
-    border={0}
-    overflow="hidden"
-    zIndex="50"
-    as={ReachComboboxPopover}
-    data-testid="combobox-popover"
-    {...props}
-  />
-);
+export const ComboboxPopover = ({
+  portal = true,
+  ...props
+}: ComboboxPopoverProps & MinervaProps) => {
+  const Popover = props => <ReachComboboxPopover portal={portal} {...props} />;
+  return (
+    <OverlayBox
+      mt="8px"
+      borderRadius="6px"
+      border={0}
+      overflow="hidden"
+      zIndex="50"
+      as={Popover}
+      data-testid="combobox-popover"
+      {...props}
+    />
+  );
+};
 
 export const ComboboxList = (
   props: ComboboxListProps & { children?: ReactNode }
