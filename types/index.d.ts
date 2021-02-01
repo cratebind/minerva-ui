@@ -7,3 +7,9 @@ declare global {
     }
   }
 }
+
+declare module 'react' {
+  interface DOMAttributes {
+    css?: any;
+  }
+}
