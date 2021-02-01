@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { MinervaProps, systemProps, Flex } from '../layout';
 import Icon from '../Icon';

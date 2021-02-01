@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import {
   Tabs as ReachTabs,
   TabList as ReachTabList,
@@ -43,7 +43,7 @@ export const TabList = ({ children, ...props }: TabsProps) => {
   );
 };
 
-export const Tab = forwardRefWithAs<TabProps, 'div'>(function Tab(
+export const Tab = forwardRefWithAs<TabsProps, 'div'>(function Tab(
   { children, ...props }: TabsProps,
   ref
 ) {

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import warning from 'tiny-warning';
 import { forwardRefWithAs } from 'type-utilities';
 // import PropTypes from 'prop-types';
