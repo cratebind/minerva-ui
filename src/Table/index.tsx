@@ -19,7 +19,7 @@ export const TableContainer = styled.div`
 //   systemProps
 // );
 
-export const StyledTable = forwardRef(function SyledTable(
+export const StyledTable = forwardRefWithAs<any, 'table'>(function SyledTable(
   props: any,
   ref: any
 ) {

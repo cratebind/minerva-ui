@@ -1,4 +1,5 @@
-import React, { forwardRef, HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
+import { forwardRefWithAs } from 'type-utilities';
 // import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
 import { useComponentStyles } from '../theme';
@@ -7,7 +8,7 @@ export interface TextProps extends MinervaProps {
   children?: React.ReactNode;
 }
 
-export const Text = forwardRef(
+export const Text = forwardRefWithAs<TextProps, 'p'>(
   ({ children, ...props }: TextProps & HTMLAttributes<HTMLElement>, ref) => {
     const componentStyles = useComponentStyles('Text');
 

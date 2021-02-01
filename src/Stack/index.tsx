@@ -1,6 +1,7 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { forwardRefWithAs } from 'type-utilities';
 import { systemProps, Flex, MinervaProps } from '../layout';
 
 export interface StackProps extends MinervaProps {
@@ -27,7 +28,7 @@ const StyledStack = styled(Flex)`
   ${systemProps}
 `;
 
-export const Stack = forwardRef(function Stack(
+export const Stack = forwardRefWithAs<StackProps, 'div'>(function Stack(
   { children, gap = '10px', horizontal = false, ...props }: StackProps,
   ref
 ) {

@@ -7,11 +7,3 @@ declare global {
     }
   }
 }
-
-interface Theme {}
-
-declare module 'react' {
-  interface Attributes {
-    css?: any;
-  }
-}

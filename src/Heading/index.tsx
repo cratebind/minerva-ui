@@ -1,4 +1,5 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
+import { forwardRefWithAs } from '../type-utilities';
 // import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
 import { useComponentStyles } from '../theme';
@@ -7,7 +8,7 @@ export interface HeadingProps extends MinervaProps {
   children?: React.ReactNode;
 }
 
-export const Heading = forwardRef(function Heading(
+export const Heading = forwardRefWithAs<HeadingProps, 'h2'>(function Heading(
   { children, fontSize = '2xl', ...props }: HeadingProps,
   ref
 ) {
