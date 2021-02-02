@@ -5,7 +5,7 @@ import { MinervaProps } from '../layout';
 import { Box } from '../layout';
 import { useComponentStyles } from '../theme';
 import { PseudoBox } from '..';
-import { forwardRefWithAs } from 'type-utilities';
+import { forwardRefWithAs } from '../type-utilities';
 
 export interface RadioGroupProps {
   children?: React.ReactNode;

@@ -12,7 +12,7 @@ import {
 import { MinervaProps, Box, Flex } from '../layout';
 import { useComponentStyles } from '../theme';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
-import { forwardRefWithAs } from 'type-utilities';
+import { forwardRefWithAs } from '../type-utilities';
 
 // export interface TabsProps extends MinervaProps, PseudoBoxProps, ReachTabsProps { }
 

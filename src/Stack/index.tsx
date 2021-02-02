@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { forwardRefWithAs } from 'type-utilities';
+import { forwardRefWithAs } from '../type-utilities';
 import { systemProps, Flex, MinervaProps } from '../layout';
 
 export interface StackProps extends MinervaProps {

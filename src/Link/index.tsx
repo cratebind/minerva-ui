@@ -5,7 +5,7 @@ import React from 'react';
 import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';
 import { MinervaProps } from '../layout';
-import { forwardRefWithAs } from 'type-utilities';
+import { forwardRefWithAs } from '../type-utilities';
 
 type BaseProps = MinervaProps & React.LinkHTMLAttributes<HTMLAnchorElement>;
 
