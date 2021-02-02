@@ -146,6 +146,7 @@
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
     },
+    "moduleDirectories": ["node_modules", "src"],
     "globals": {
       "__DEV__": true
     }
