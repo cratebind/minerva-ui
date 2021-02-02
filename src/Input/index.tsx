@@ -1,5 +1,6 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import warning from 'tiny-warning';
+import { forwardRefWithAs } from '../type-utilities';
 // import PropTypes from 'prop-types';
 import { MinervaProps } from '../layout';
 import PseudoBox from '../PseudoBox';
@@ -14,7 +15,7 @@ export interface InputProps extends BaseProps {
   hiddenLabel?: string;
 }
 
-export const Input = forwardRef(function Input(
+export const Input = forwardRefWithAs<InputProps, 'input'>(function Input(
   { hiddenLabel, ...props }: InputProps,
   ref
 ) {

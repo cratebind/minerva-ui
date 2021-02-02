@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { forwardRefWithAs } from '../type-utilities';
 import { Box, MinervaProps, systemProps } from '../layout';
 
 export const TableContainer = styled.div`
@@ -19,7 +20,7 @@ export const TableContainer = styled.div`
 //   systemProps
 // );
 
-export const StyledTable = forwardRef(function SyledTable(
+export const StyledTable = forwardRefWithAs<any, 'table'>(function SyledTable(
   props: any,
   ref: any
 ) {

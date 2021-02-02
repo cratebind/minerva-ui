@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import {
   Tabs as ReachTabs,
   TabList as ReachTabList,
@@ -12,6 +12,7 @@ import {
 import { MinervaProps, Box, Flex } from '../layout';
 import { useComponentStyles } from '../theme';
 import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
+import { forwardRefWithAs } from '../type-utilities';
 
 // export interface TabsProps extends MinervaProps, PseudoBoxProps, ReachTabsProps { }
 
@@ -42,7 +43,7 @@ export const TabList = ({ children, ...props }: TabsProps) => {
   );
 };
 
-export const Tab = forwardRef(function Tab(
+export const Tab = forwardRefWithAs<TabsProps, 'div'>(function Tab(
   { children, ...props }: TabsProps,
   ref
 ) {

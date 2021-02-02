@@ -207,6 +207,8 @@ export interface ICustomConfig {
   borderBottomWidth?: StyledSystem.ResponsiveValue<CSS['borderBottomWidth']>;
   borderLeftWidth?: StyledSystem.ResponsiveValue<CSS['borderLeftWidth']>;
   borderRightWidth?: StyledSystem.ResponsiveValue<CSS['borderRightWidth']>;
+
+  css?: any;
 }
 
 type FontSize =

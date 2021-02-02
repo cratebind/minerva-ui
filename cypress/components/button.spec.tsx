@@ -56,6 +56,6 @@ describe('<Button />', () => {
     );
 
     cy.contains(text).should('be.visible');
-    cy.get('button').toMatchImageSnapshot();
+    // cy.get('button').toMatchImageSnapshot();
   });
 });

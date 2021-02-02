@@ -1,10 +1,11 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 // import styled from 'styled-components';
 // import PropTypes from 'prop-types';
 // import { systemProps } from '../layout';
 import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';
 import { MinervaProps } from '../layout';
+import { forwardRefWithAs } from '../type-utilities';
 
 type BaseProps = MinervaProps & React.LinkHTMLAttributes<HTMLAnchorElement>;
 
@@ -20,7 +21,7 @@ export interface LinkProps extends BaseProps {
  *
  * @see Docs @TODO
  */
-export const Link = forwardRef(function Link(
+export const Link = forwardRefWithAs<LinkProps, 'a'>(function Link(
   { children, href, isExternal, ...props }: LinkProps,
   ref
 ) {

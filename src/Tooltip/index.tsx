@@ -142,8 +142,6 @@ export const Tooltip = forwardRef(
   }
 );
 
-Tooltip.displayName = 'Tooltip';
-
 export default Tooltip;
 
 // if (__DEV__) {

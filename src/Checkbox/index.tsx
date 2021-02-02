@@ -23,7 +23,7 @@ export const Checkbox = forwardRef(function Checkbox(
     checkColor = '#fff',
     ...props
   }: CheckboxProps,
-  ref: any
+  ref
 ) {
   const componentStyles = useComponentStyles('Checkbox');
   return (

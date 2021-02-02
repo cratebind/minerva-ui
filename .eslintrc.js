@@ -20,8 +20,10 @@ module.exports = {
   settings: {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".mdx"]
-      }
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".mdx"],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+      "typescript": {},
     }
   }
 };
