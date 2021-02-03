@@ -3,7 +3,7 @@ import warning from 'tiny-warning';
 import { forwardRefWithAs } from '../type-utilities';
 // import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
-import { useTheme } from '../theme';
+import { useComponentStyles } from '../theme';
 // import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
 
 // type BaseProps = MinervaProps &
@@ -24,12 +24,19 @@ export const Image = forwardRefWithAs<ImageProps, 'img'>(function Image(
   { src, alt, ...props }: ImageProps,
   ref
 ) {
-  const theme = useTheme();
+  const componentStyles = useComponentStyles('Image');
 
   warning(Boolean(alt), 'Images require an `alt` attribute to be accessible.');
 
   return (
-    <Box as="img" ref={ref} src={src} alt={alt} {...theme.Image} {...props} />
+    <Box
+      as="img"
+      ref={ref}
+      src={src}
+      alt={alt}
+      {...componentStyles}
+      {...props}
+    />
   );
 });
 

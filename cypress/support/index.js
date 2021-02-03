@@ -17,7 +17,7 @@
 import './commands';
 import 'cypress-plugin-snapshots/commands';
 
-require('cypress-react-unit-test/support');
+require('@cypress/react/support');
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
