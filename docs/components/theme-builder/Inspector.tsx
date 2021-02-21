@@ -401,6 +401,7 @@ function InspectorField({ name, value, onChange, type }) {
         </Box>
       )}
       {typeof value === 'boolean' ? (
+        // @ts-ignore
         <Checkbox
           checked={value}
           onChange={() => onChange({ target: { value: !value } })}

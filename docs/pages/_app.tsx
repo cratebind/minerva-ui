@@ -6,9 +6,29 @@ import {
   ReachGlobalStyles,
   ThemeProvider,
 } from 'minerva-ui';
-import { Activity, Envelope, Plus } from 'phosphor-react';
+import {
+  Activity,
+  CaretLeft,
+  CaretRight,
+  Envelope,
+  FloppyDisk,
+  List,
+  Plus,
+} from 'phosphor-react';
 import 'nextra-theme-docs/style.css';
 import '../global.css';
+import { Lock } from 'react-feather';
+
+export const customIcons = {
+  mail: Envelope,
+  activity: Activity,
+  plus: Plus,
+  save: FloppyDisk,
+  'chevron-left': CaretLeft,
+  'chevron-right': CaretRight,
+  lock: Lock,
+  menu: List,
+};
 
 export const CustomThemeProvider = props => (
   <ThemeProvider
@@ -16,9 +36,7 @@ export const CustomThemeProvider = props => (
       ...defaultTheme,
       icons: {
         ...defaultIcons,
-        mail: Envelope,
-        activity: Activity,
-        plus: Plus,
+        ...customIcons,
       },
     }}
     {...props}

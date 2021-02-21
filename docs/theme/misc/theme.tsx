@@ -6,7 +6,7 @@ import Highlight, { defaultProps, PrismTheme } from 'prism-react-renderer';
 import * as Minerva from 'minerva-ui';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import Copy from '../../components/CopyButton';
-import { CustomThemeProvider } from '../../pages/_app';
+import { customIcons, CustomThemeProvider } from '../../pages/_app';
 
 const THEME: PrismTheme = {
   plain: {
@@ -151,7 +151,10 @@ const A = ({ children, ...props }) => {
 
 const scope = {
   ...Minerva,
-  themeWithIcons: { ...Minerva.defaultTheme, icons: Minerva.defaultIcons },
+  themeWithIcons: {
+    ...Minerva.defaultTheme,
+    icons: { ...Minerva.defaultIcons, ...customIcons },
+  },
   useState: React.useState,
   useEffect: React.useEffect,
 };

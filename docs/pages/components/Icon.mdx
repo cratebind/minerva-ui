@@ -14,15 +14,31 @@ import { Icon } from 'minerva-ui';
 
 ## Usage
 
-To use default icons from [Feather Icons](https://feathericons.com/), you have to manually import the default icons and add them to the theme.
+By default, Minerva UI includes minimal icons to keep bundle size low.
+
+To add your own icons, you can install a library add them to your theme, or add SVGs directly:
+
+```bash
+yarn add phosphor-react # you can use most react icon libraries here
+```
 
 ```jsx
-import { defaultIcons } from 'minerva-ui';
-const customTheme = {
-  icons: defaultIcons,
-};
+import { ThemeProvider, defaultTheme, Icon } from 'minerva-ui';
+import { Warning } from 'phosphor-react';
 
-return <ThemeProvider theme={customTheme}>{/* etc */}</ThemeProvider>;
+const customTheme = {
+  ...defaultTheme,
+  icons: {
+    // declare the key and component in your theme, then you can use the key as name in the <Icon /> component
+    warning: Warning,
+  }
+}
+
+const App = () => (
+  <ThemeProvider>
+    <Icon name="warning" /> Warning!
+  </ThemeProvider>
+);
 ```
 
 ## Color
