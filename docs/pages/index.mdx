@@ -50,6 +50,35 @@ And use them:
 };
 ```
 
+## Optional: Add Icons
+
+By default, Minerva UI includes minimal icons to keep bundle size low.
+
+To add your own icons, you can add them to your theme:
+
+```bash
+yarn add phosphor-react # you can use most react icon libraries here
+```
+
+```jsx
+import { ThemeProvider, defaultTheme, Icon } from 'minerva-ui';
+import { Warning } from 'phosphor-react';
+
+const customTheme = {
+  ...defaultTheme,
+  icons: {
+    // declare the key and component in your theme, then you can use the key as name in the <Icon /> component
+    warning: Warning,
+  }
+}
+
+const App = () => (
+  <ThemeProvider>
+    <Icon name="warning" /> Warning!
+  </ThemeProvider>
+);
+```
+
 - [Concepts](/concepts)
 - [Theming](/theming)
 - [Utility Props](/utilities)
