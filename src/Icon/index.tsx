@@ -28,7 +28,9 @@ export const Icon = forwardRef(function Icon(
 
   if (!theme || !theme.icons || !theme.icons[name]) {
     if (process.env.NODE_ENV === 'development') {
-      throw new Error(`Could not find icon in theme with name of ${name}`);
+      // in dev, give a more descriptive error to help debugging
+      console.error(`Could not find icon in theme with name of ${name}`);
+      console.error(`Icons in theme: ${Object.keys(theme.icons).join('\n')}`);
     } else {
       console.warn(`Could not find icon in theme with name of ${name}`);
       return null;
