@@ -6,6 +6,7 @@ import Highlight, { defaultProps, PrismTheme } from 'prism-react-renderer';
 import * as Minerva from 'minerva-ui';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import Copy from '../../components/CopyButton';
+import { CustomThemeProvider } from '../../pages/_app';
 
 const THEME: PrismTheme = {
   plain: {
@@ -167,9 +168,9 @@ export const Code = ({ children, className, highlight, live, ...props }) => {
 
   if (live) {
     return (
-      <LiveProvider code={children} theme={THEME} scope={scope} {...props}>
-        {/* {props.showCopyButton && <Copy content={props.code} />} */}
-        <Minerva.ThemeProvider theme={scope.themeWithIcons}>
+      <CustomThemeProvider>
+        <LiveProvider code={children} theme={THEME} scope={scope} {...props}>
+          {/* {props.showCopyButton && <Copy content={props.code} />} */}
           <Minerva.Box
             bg="white"
             margin="-16px -16px 16px -16px"
@@ -182,24 +183,24 @@ export const Code = ({ children, className, highlight, live, ...props }) => {
               <LivePreview data-name="live-preview" />
             </Minerva.Box>
           </Minerva.Box>
-        </Minerva.ThemeProvider>
-        <LiveEditor
-          data-name="live-editor"
-          style={{
-            paddingTop: 0,
-            paddingBottom: 0,
-            paddingLeft: 0,
-            paddingRight: 0,
-          }}
-        />
-        <LiveError />
-      </LiveProvider>
+          <LiveEditor
+            data-name="live-editor"
+            style={{
+              paddingTop: 0,
+              paddingBottom: 0,
+              paddingLeft: 0,
+              paddingRight: 0,
+            }}
+          />
+          <LiveError />
+        </LiveProvider>
+      </CustomThemeProvider>
     );
   }
 
   return (
     <>
-      <Minerva.ThemeProvider>
+      <CustomThemeProvider>
         <Copy content={children.trim()} />
         <Highlight
           {...defaultProps}
@@ -234,7 +235,7 @@ export const Code = ({ children, className, highlight, live, ...props }) => {
             </code>
           )}
         </Highlight>
-      </Minerva.ThemeProvider>
+      </CustomThemeProvider>
     </>
   );
 };

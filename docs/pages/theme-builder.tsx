@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'minerva-ui';
+import { defaultIcons, defaultTheme, ThemeProvider } from 'minerva-ui';
 import { createGlobalStyle } from 'styled-components';
 import { AppProvider } from '../components/theme-builder/AppContext';
 import ThemeBuilder from '../components/theme-builder/ThemeBuilder';
@@ -13,7 +13,7 @@ const ThemeBuilderStyles = createGlobalStyle`
 
 function ThemeBuilderPage() {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={{ ...defaultTheme, icons: defaultIcons }}>
       <AppProvider>
         <ThemeBuilderStyles />
         <ThemeBuilder />

@@ -12,12 +12,14 @@
   "dependencies": {
     "global": "^4.4.0",
     "markdown-to-jsx": "^7.0.0",
-    "minerva-ui": "^6.0.0",
+    "minerva-ui": "^7.1.6",
     "next": "^10.0.0",
     "nextra": "^0.2.4",
     "nextra-theme-docs": "^0.1.5",
+    "phosphor-react": "^1.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-feather": "^2.0.9",
     "react-live": "^2.2.2",
     "ts-migrate": "^0.1.7"
   }
