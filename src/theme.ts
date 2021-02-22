@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { buttonVariants } from './Button';
 import { PseudoBoxProps } from './PseudoBox';
+import { MinervaProps } from './layout';
 
 const logoColor = '#551A8B';
 
@@ -29,6 +30,8 @@ export interface MinervaTheme extends Theme {
   Tag?: React.CSSProperties;
   Skeleton?: React.CSSProperties;
   Tabs?: React.CSSProperties;
+  ToastTitle?: MinervaProps;
+  ToastItem?: MinervaProps;
   icons: any;
   defaultBorderColor?: string;
   variants?: any;
@@ -106,6 +109,18 @@ const defaultTheme: MinervaTheme = {
   ModalContent: {},
   Tag: {},
   Text: {},
+  ToastTitle: {
+    color: 'gray.900',
+    fontWeight: 500,
+  },
+  ToastItem: {
+    color: 'gray.500',
+    display: 'inline-block',
+    // flexDirection: 'column',
+    px: 5,
+    py: 4,
+    borderRadius: 'lg',
+  },
   Tooltip: {},
   Select: {},
   Skeleton: {},

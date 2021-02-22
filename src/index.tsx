@@ -77,6 +77,7 @@ export { default as InputField } from './InputField';
 export * from './Select';
 export * from './TagsInput';
 export * from './Tabs';
+export * from './Toasts';
 
 /**
  * Elements
