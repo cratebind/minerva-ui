@@ -145,29 +145,27 @@ export const ToastContainer = ({ children }) => {
   }
 
   return (
-    <ToastContainer>
-      <ToastContext.Provider
-        value={{
-          toasts: toasts,
-          toast: toast,
-        }}
-      >
-        {children}
-        <Portal>
-          <Flex
-            flexDirection="column"
-            position="absolute"
-            top="10px"
-            right="10px"
-          >
-            {toasts.map(({ title, body }, index) => (
-              <ToastItem key={`toast-${index}`} title={title} index={index}>
-                {body}
-              </ToastItem>
-            ))}
-          </Flex>
-        </Portal>
-      </ToastContext.Provider>
-    </ToastContainer>
+    <ToastContext.Provider
+      value={{
+        toasts: toasts,
+        toast: toast,
+      }}
+    >
+      {children}
+      <Portal>
+        <Flex
+          flexDirection="column"
+          position="absolute"
+          top="10px"
+          right="10px"
+        >
+          {toasts.map(({ title, body }, index) => (
+            <ToastItem key={`toast-${index}`} title={title} index={index}>
+              {body}
+            </ToastItem>
+          ))}
+        </Flex>
+      </Portal>
+    </ToastContext.Provider>
   );
 };
