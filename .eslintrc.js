@@ -7,6 +7,12 @@ module.exports = {
     "plugin:mdx/recommended"
   ],
   rules: {
+    "import/no-unused-modules": [
+      1,
+      {
+        "unusedExports": true,
+      }
+    ],
     'import/no-unresolved': [2, { ignore: ['minerva-ui', '@docusaurus', '@theme'] }],
     "import/no-unused-modules": 0,
     'react/display-name': 1,
