@@ -3,7 +3,6 @@ import React, {
   ReactNode,
   useContext,
   useEffect,
-  useMemo,
   useState,
 } from 'react';
 import { useComponentStyles } from '../theme';
@@ -11,9 +10,10 @@ import { Box, Flex } from '../layout';
 import { OverlayBox } from '../Menu';
 import Portal from '@reach/portal';
 
-export interface ToastItemProps {
+const ANIMATION_LENGTH = 200;
+
+export interface ToastItemProps extends Omit<Toast, 'id'> {
   children?: ReactNode;
-  title?: string;
   index?: number;
 }
 
@@ -32,19 +32,26 @@ export const ToastItem = ({
   children,
   title,
   index = 0,
+  delay,
+  visible: isVisible,
   ...props
 }: ToastItemProps) => {
   const componentStyles = useComponentStyles('ToastItem');
-  const { toasts } = useToastContext();
   const [visible, setVisible] = useState(false);
 
-  const total = toasts?.length || 0;
-  const translate = useMemo(() => {
-    return `translate(0, calc(${90 * index + 1}px + 10px))`;
-  }, [index, total]);
+  // const total = toasts?.length || 0;
+  // const translate = useMemo(() => {
+  //   return `translate(0, calc(${90 * index + 1}px + 10px))`;
+  // }, [index, total]);
 
   useEffect(() => {
     setVisible(true);
+
+    // 500ms before the toast is removed, fade it out
+    const visibleTimer = window.setTimeout(() => {
+      setVisible(false);
+      clearTimeout(visibleTimer);
+    }, delay - ANIMATION_LENGTH);
   }, []);
 
   return (
@@ -60,16 +67,16 @@ export const ToastItem = ({
         height: '100%',
         pointerEvents: 'none',
       }}
-      transition="transform 400ms ease 0ms, visibility 200ms ease 0ms, opacity 200ms ease 0ms"
-      transform={visible ? translate : 'translate(0, -100%)'}
+      transition={`transform ${ANIMATION_LENGTH}ms ease 0ms, visibility ${ANIMATION_LENGTH}ms ease 0ms, opacity ${ANIMATION_LENGTH}ms ease 0ms`}
+      transform={visible ? 'translate(0, 0)' : 'translate(0, 40%)'}
+      opacity={visible ? 1 : 0}
       width="420px"
       height="75px"
-      position="absolute"
-      top={0}
-      right={0}
+      // position="absolute"
+      // top={0}
+      // right={0}
       marginTop={0}
       marginBottom="10px"
-      // onAnimationEnd={() => console.log('ANIMATION ENDED')}
       {...componentStyles}
       {...props}
     >
@@ -79,16 +86,19 @@ export const ToastItem = ({
   );
 };
 
+type ToastInput = Pick<Toast, 'body' | 'title' | 'delay'>;
+
 export interface ToastContextValue {
-  toasts: any[];
-  toast?: any;
+  toasts: Toast[];
+  toast?: (newToast: ToastInput) => void;
 }
 
 export interface Toast {
   id: string;
   title?: string;
   body?: string;
-  delay?: number;
+  delay: number;
+  visible: boolean;
 }
 
 // const initialContextValue: ToastContextValue = {
@@ -106,9 +116,9 @@ export function useToastContext(): ToastContextValue {
 export function useToasts() {
   const [toasts, setToasts] = useState<Toast[]>([]);
 
-  function updateToast(newToast: Toast) {
+  function updateToast(newToast: ToastInput) {
     const toastId = `toast-${getId()}`;
-    const delay = newToast.delay || 3000;
+    const delay = (newToast.delay || 3000) + ANIMATION_LENGTH;
     // @ts-ignore
     const cancel = (id: string, delay: number) => {
       setToasts((prevToasts: Toast[]) => {
@@ -120,9 +130,11 @@ export function useToasts() {
         ...newToast,
         id: toastId,
         delay: delay,
+        visible: true,
         cancel: () => cancel(toastId, delay),
       };
-      return [createdToast, ...prevToasts];
+      // @ts-ignore
+      return [...prevToasts, createdToast];
     });
     const hideToast = (id: string, delay: number) => {
       const hideTimer = window.setTimeout(() => {
@@ -131,24 +143,19 @@ export function useToasts() {
       }, delay);
     };
     hideToast(toastId, delay);
-    setToasts(prevToasts => [newToast, ...prevToasts]);
   }
 
-  return [toasts, updateToast];
+  return [toasts as Toast[], updateToast] as const;
 }
 
 export const ToastContainer = ({ children }) => {
-  const [toasts, setToasts] = useState<Toast[]>([]);
-
-  function toast(newToast: Toast) {
-    setToasts(prevToasts => [newToast, ...prevToasts]);
-  }
+  const [toasts, updateToast] = useToasts();
 
   return (
     <ToastContext.Provider
       value={{
         toasts: toasts,
-        toast: toast,
+        toast: updateToast,
       }}
     >
       {children}
@@ -159,8 +166,14 @@ export const ToastContainer = ({ children }) => {
           top="10px"
           right="10px"
         >
-          {toasts.map(({ title, body }, index) => (
-            <ToastItem key={`toast-${index}`} title={title} index={index}>
+          {toasts.map(({ title, body, visible, delay }, index) => (
+            <ToastItem
+              key={`toast-${index}`}
+              title={title}
+              delay={delay}
+              visible={visible}
+              index={index}
+            >
               {body}
             </ToastItem>
           ))}
