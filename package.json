@@ -96,6 +96,7 @@
     "@reach/dialog": "^0.11.2",
     "@reach/menu-button": "^0.11.2",
     "@reach/popover": "^0.11.2",
+    "@reach/portal": "0.12.1",
     "@reach/tabs": "^0.11.2",
     "@reach/tooltip": "^0.11.2",
     "@styled-system/css": "^5.1.5",
@@ -134,7 +135,6 @@
     ],
     "coveragePathIgnorePatterns": [
       "/node_modules/",
-      "<rootDir>/src/CodeBlock.*",
       "(.d.ts)$",
       ".stories.tsx$",
       "<rootDir>/src/type-utilities.tsx"
