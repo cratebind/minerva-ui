@@ -14,7 +14,6 @@ module.exports = {
       }
     ],
     'import/no-unresolved': [2, { ignore: ['minerva-ui', '@docusaurus', '@theme'] }],
-    "import/no-unused-modules": 0,
     'react/display-name': 1,
     'react/react-in-jsx-scope': 0,
   },
