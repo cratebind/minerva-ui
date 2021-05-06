@@ -20,7 +20,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<ButtonProps> = args => <Button {...args} />;
+const Template: Story<ButtonProps> = (args: Omit<ButtonProps, 'as'>) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
