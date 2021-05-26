@@ -9,6 +9,7 @@ import {
   AccordionPanel as ReachAccordionPanel,
   AccordionPanelProps as ReachAccordionPanelProps,
 } from '@reach/accordion';
+import { useComponentStyles } from '../theme';
 import { MinervaProps, Box } from '../layout';
 import Button from '../Button';
 
@@ -37,6 +38,8 @@ export const AccordionButton = forwardRef(function AccordionButton(
   { children, ...props }: AccordionButtonProps,
   ref
 ) {
+  const componentStyles = useComponentStyles('AccordionButton');
+
   return (
     <ReachAccordionButton
       as={Button}
@@ -49,9 +52,10 @@ export const AccordionButton = forwardRef(function AccordionButton(
       py="12px"
       fontSize="18px"
       fontWeight="400"
-      borderTopColor="gray.200"
-      borderTopWidth="1px"
-      ref={ref}
+      borderTopColor="gray.300"
+      borderRadius={0}
+      ref={ref}  
+      {...componentStyles}
       {...props}
     >
       {children}
@@ -72,8 +76,11 @@ export const AccordionPanel = forwardRef(function AccordionPanel(
     <Box
       as={ReachAccordionPanel}
       px="14px"
+      pr="23%"
       py="14px"
-      width="95%"
+      width="100%"
+      borderTopWidth="1px"
+      borderTopColor="gray.300"
       ref={ref}
       {...props}
     />
@@ -88,7 +95,7 @@ export const Accordion = forwardRef(function Alert(
   return (
     <Box
       as={ReachAccordion}
-      borderBottomColor="gray.200"
+      borderBottomColor="gray.300"
       borderBottomWidth="1px"
       {...props}
       ref={ref}

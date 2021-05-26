@@ -9,6 +9,7 @@ const logoColor = '#551A8B';
 export interface ThemeComponent extends React.CSSProperties, PseudoBoxProps {}
 
 export interface MinervaTheme extends Theme {
+  AccordionButton?: ThemeComponent;
   Button?: ThemeComponent;
   Drawer?: ThemeComponent;
   Heading?: ThemeComponent;
@@ -43,6 +44,25 @@ breakpoints.lg = breakpoints[2];
 breakpoints.xl = breakpoints[3];
 
 const defaultTheme: MinervaTheme = {
+  AccordionButton: {
+  _hover: {
+    backgroundColor: 'gray.400',
+    borderRadius: '5px',
+  },
+  _focus: {
+    borderWidth: '2px',
+    borderColor: 'purple.100',
+    borderRadius: '5px',
+    backgroundColor: 'gray.400',
+    outlineWidth: 0,
+  },
+  _active: {
+    borderWidth: '2px',
+    borderColor: 'purple.100',
+    borderRadius: '5px',
+    backgroundColor: 'gray.400',
+  }
+  },
   Button: {
     backgroundColor: '#fff',
     borderWidth: '1px',
@@ -128,8 +148,8 @@ const defaultTheme: MinervaTheme = {
       '50': '#f9fafb',
       '100': '#f4f5f7',
       '200': '#e5e7eb',
-      '300': '#d2d6dc',
-      '400': '#9fa6b2',
+      '300': '#E0E0E0',
+      '400': '#EEEEEE',
       '500': '#6b7280',
       '600': '#4b5563',
       '700': '#374151',
@@ -234,7 +254,7 @@ const defaultTheme: MinervaTheme = {
     },
     purple: {
       '50': '#f6f5ff',
-      '100': '#edebfe',
+      '100': '#651FFF',
       '200': '#dcd7fe',
       '300': '#cabffd',
       '400': '#ac94fa',
