@@ -1,4 +1,7 @@
-import React, { forwardRef } from 'react';
+import React, {
+  useState,
+  forwardRef,
+} from 'react';
 // import styled from 'styled-components';
 import {
   Accordion as ReachAccordion,
@@ -12,6 +15,7 @@ import {
 import { useComponentStyles } from '../theme';
 import { MinervaProps, Box } from '../layout';
 import Button from '../Button';
+import { BaseIconProps, ChevronDown } from '../Icon/baseIcons';
 
 export interface AccordionProps extends MinervaProps {
   children?: React.ReactNode;
@@ -21,17 +25,43 @@ export interface AccordionButtonProps extends MinervaProps {
   children?: React.ReactNode;
 }
 
+export interface AccordionIconProps extends BaseIconProps {
+  isActive?: boolean;
+}
+
 export interface AccordionPanelProps extends MinervaProps {
   children?: React.ReactNode;
 }
 
 export type AllAccordionItemProps = ReachAccordionItemProps & MinervaProps;
 
+export function AccordionIcon({ isActive, ...props }: AccordionIconProps) {
+  return (
+    <Box
+      as={ChevronDown}
+      transform={isActive ? 'rotate(-180deg)' : undefined}
+      transition="transform 0.2s"
+      transformOrigin="center"
+      {...props}
+    />
+  );
+}
+
 export const AccordionItem = forwardRef(function AccordionItem(
-  { ...props }: AllAccordionItemProps,
+  { children, ...props }: AllAccordionItemProps,
   ref
 ) {
-  return <Box as={ReachAccordionItem} ref={ref} {...props} />;
+  let clonedChildren = [];
+  if (typeof children === 'object')
+    clonedChildren = children?.map(child =>
+      React.cloneElement(child, { ...props })
+    );
+
+  return (
+    <Box as={ReachAccordionItem} ref={ref} {...props}>
+      {clonedChildren.length > 0 ? clonedChildren : children}
+    </Box>
+  );
 });
 
 export const AccordionButton = forwardRef(function AccordionButton(
@@ -40,6 +70,11 @@ export const AccordionButton = forwardRef(function AccordionButton(
 ) {
   const componentStyles = useComponentStyles('AccordionButton');
 
+  let clonedChildren = [];
+  if (typeof children === 'object')
+    clonedChildren = children?.map(child =>
+      React.cloneElement(child, { ...props })
+    );
   return (
     <ReachAccordionButton
       as={Button}
@@ -47,18 +82,18 @@ export const AccordionButton = forwardRef(function AccordionButton(
       width="100%"
       flexDirection="row"
       justifyContent="space-between"
-      alignItems="flex-start"
+      alignItems="center"
       bg="white"
       py="12px"
       fontSize="18px"
       fontWeight="400"
       borderTopColor="gray.300"
       borderRadius={0}
-      ref={ref}  
+      ref={ref}
       {...componentStyles}
       {...props}
     >
-      {children}
+      {clonedChildren.length > 0 ? clonedChildren : children}
       {/* TODO Need to figure out how to determine if Item is expanded and rotate icon */}
       {/* <Icon name="chevron-down" ml={2} size="14px" /> */}
     </ReachAccordionButton>
@@ -92,15 +127,23 @@ export const Accordion = forwardRef(function Alert(
   { children, ...props }: AllAccordionProps,
   ref
 ) {
+  const [activePanel, setActivePanel] = useState(0);
+console.log('activePanel', activePanel)
+  let clonedChildren = [];
+  if (typeof children === 'object')
+    clonedChildren = children?.map((child, index) =>
+      React.cloneElement(child, { isActive: index === activePanel })
+    );
   return (
     <Box
       as={ReachAccordion}
       borderBottomColor="gray.300"
       borderBottomWidth="1px"
+      onChange={index => setActivePanel(index)}
       {...props}
       ref={ref}
     >
-      {children}
+      {clonedChildren.length > 0 ? clonedChildren : children}
     </Box>
   );
 });

@@ -89,7 +89,7 @@
   },
   "dependencies": {
     "@mdx-js/react": "^1.5.1",
-    "@reach/accordion": "^0.11.2",
+    "@reach/accordion": "^0.15.1",
     "@reach/auto-id": "^0.11.2",
     "@reach/checkbox": "^0.11.2",
     "@reach/combobox": "^0.11.2",
