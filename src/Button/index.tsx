@@ -45,35 +45,38 @@ export interface ButtonProps extends MinervaProps, PseudoBoxProps {
   name?: string;
   /** Button variant styles inherited from theme */
   variant?: string;
+  /** Size variants defined using Styled System variants (https://styled-system.com/variants) */
+  size?: string;
   /** HTML Button Type (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) */
   type?: 'button' | 'reset' | 'submit';
 }
 
-// export const Button = forwardRefWithAs<ButtonProps, 'button'>(function Button(
-//   {
-//     children,
-//     disabled = false,
-//     as: Comp = 'button',
-//     isLoading = false,
-//     name,
-//     variant,
-//     ...props
-//   },
-//   forwardedRef
-// ) {
+export function useVariant(componentName: string, variant?: string) {
+  const theme = useTheme();
 
-// export const Button = forwardRef(function Button(
-//   {
-//     children,
-//     disabled = false,
-//     as: Comp = 'button',
-//     isLoading = false,
-//     name,
-//     variant,
-//     ...props
-//   }: ButtonProps,
-//   forwardedRef
-// ) {
+  const componentVariants = theme?.variants?.[componentName];
+
+  const variantExistsInTheme =
+    variant &&
+    componentVariants &&
+    Object.keys(componentVariants).includes(variant);
+
+  // if a variant is provided and it doesn't exist in the current theme, warn in development
+  warning(
+    !variant || variantExistsInTheme,
+    `Variant "${variant}" not found in theme variants for <Button />:\n\n${theme
+      ?.variants?.Button &&
+      `Expected one of:\n[${Object.keys(theme.variants.Button).join(', ')}]`}`
+  );
+
+  const variantStyles =
+    variant && theme?.variants?.[componentName]
+      ? theme.variants[componentName][variant]
+      : {};
+
+  return variantStyles;
+}
+
 export const Button = forwardRefWithAs<ButtonProps, 'button'>(function Button(
   {
     children,
@@ -86,28 +89,13 @@ export const Button = forwardRefWithAs<ButtonProps, 'button'>(function Button(
   },
   forwardedRef
 ) {
-  const theme = useTheme();
-
-  // if a variant is provided and it doesn't exist in the current theme, warn in development
-  warning(
-    !variant ||
-      (variant &&
-        theme?.variants?.Button &&
-        Object.keys(theme?.variants?.Button).includes(variant)),
-    `Variant "${variant}" not found in theme variants for <Button />:\n\n${theme
-      ?.variants?.Button &&
-      `Expected one of:\n[${Object.keys(theme.variants.Button).join(', ')}]`}`
-  );
+  const componentStyles = useComponentStyles('Button');
+  const variantStyles = useVariant('Button', variant);
 
   warning(
     children || (!children && name),
     'Buttons without children require a `name` attribute to be accessible.'
   );
-
-  const variantStyles =
-    variant && theme?.variants?.Button ? theme.variants.Button[variant] : {};
-
-  const componentStyles = useComponentStyles('Button');
 
   return (
     <PseudoBox

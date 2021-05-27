@@ -14,6 +14,7 @@ import StyledSystem, {
   typography,
   compose,
   system,
+  variant,
 } from 'styled-system';
 import {
   createShouldForwardProp,
@@ -326,7 +327,17 @@ export const Box = styled('div').withConfig({
     boxSizing: 'border-box',
     minWidth: 0,
   },
-  systemProps
+  systemProps,
+  variant({
+    prop: 'size',
+    variants: {
+      sm: {
+        padding: '12px 20px',
+        // paddingLeft: '20px',
+        // paddingRight: '20px',
+      },
+    },
+  })
 );
 
 // export const Box = styled('div')<MinervaProps>(

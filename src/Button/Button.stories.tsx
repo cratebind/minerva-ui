@@ -20,7 +20,9 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<ButtonProps> = (args: Omit<ButtonProps, 'as'>) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args: Omit<ButtonProps, 'as'>) => (
+  <Button {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {
@@ -32,6 +34,13 @@ export const Variants = () => (
     <Button variant="primary">Primary Button</Button>
     <Button variant="secondary">Secondary Button</Button>
     <Button variant="tertiary">Tertiary Button</Button>
+  </Stack>
+);
+
+export const Sizes = () => (
+  <Stack horizontal alignItems="flex-start">
+    <Button size="sm">Small Button</Button>
+    <Button>Button</Button>
   </Stack>
 );
 
