@@ -53,6 +53,7 @@ exports[`<Combobox /> should render 1`] = `
         aria-haspopup="listbox"
         class="c0 c1"
         data-reach-combobox-input=""
+        id="input-field"
         role="combobox"
         value="Hello"
       />
