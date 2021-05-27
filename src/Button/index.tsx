@@ -35,7 +35,9 @@ export const buttonVariants = {
   },
 };
 
-export interface ButtonProps extends MinervaProps, PseudoBoxProps {
+export interface ButtonProps
+  extends Omit<MinervaProps, 'size'>,
+    Omit<PseudoBoxProps, 'size'> {
   children?: React.ReactNode;
   /** Toggles disabled pseudo class */
   disabled?: boolean;
@@ -46,7 +48,7 @@ export interface ButtonProps extends MinervaProps, PseudoBoxProps {
   /** Button variant styles inherited from theme */
   variant?: string;
   /** Size variants defined using Styled System variants (https://styled-system.com/variants) */
-  size?: string;
+  size?: any;
   /** HTML Button Type (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) */
   type?: 'button' | 'reset' | 'submit';
 }
