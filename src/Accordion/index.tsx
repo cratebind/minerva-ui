@@ -1,7 +1,4 @@
-import React, {
-  useState,
-  forwardRef,
-} from 'react';
+import React, { useState, forwardRef } from 'react';
 // import styled from 'styled-components';
 import {
   Accordion as ReachAccordion,
@@ -127,19 +124,34 @@ export const Accordion = forwardRef(function Alert(
   { children, ...props }: AllAccordionProps,
   ref
 ) {
-  const [activePanel, setActivePanel] = useState(0);
-console.log('activePanel', activePanel)
+  const [activePanelIndices, setActivePanelIndicies] = useState<number[]>([0]);
+
   let clonedChildren = [];
   if (typeof children === 'object')
     clonedChildren = children?.map((child, index) =>
-      React.cloneElement(child, { isActive: index === activePanel })
+      React.cloneElement(child, {
+        isActive: activePanelIndices.includes(index),
+      })
     );
+
+  const handleSetActivePanelIndicies = activeIndex => {
+    const { multiple } = props;
+    if (multiple) {
+      setActivePanelIndicies(prev => {
+        if (prev.includes(activeIndex)) {
+          return prev.filter(item => item !== activeIndex);
+        } else return [...prev, activeIndex];
+      });
+    } else {
+      setActivePanelIndicies([activeIndex]);
+    }
+  };
   return (
     <Box
       as={ReachAccordion}
       borderBottomColor="gray.300"
       borderBottomWidth="1px"
-      onChange={index => setActivePanel(index)}
+      onChange={index => handleSetActivePanelIndicies(index)}
       {...props}
       ref={ref}
     >
