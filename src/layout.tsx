@@ -317,6 +317,11 @@ export const shouldForwardProp = createShouldForwardProp([
   'onDismiss',
   'onClose',
   'portal',
+  // 'value',
+  // 'data-testid',
+  // 'testid',
+  // 'test-id',
+  // 'id',
 ]);
 
 export const Box = styled('div').withConfig({

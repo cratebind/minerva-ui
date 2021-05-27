@@ -52,7 +52,7 @@ exports[`<Table /> should render 1`] = `
       class="c1"
     >
       <thead
-        class="sc-iJuUWI"
+        class=""
       >
         <tr
           class="c2"
@@ -80,7 +80,7 @@ exports[`<Table /> should render 1`] = `
         </tr>
       </thead>
       <tbody
-        class="sc-ezrdKe"
+        class=""
       >
         <tr
           class="c2"
@@ -164,7 +164,7 @@ exports[`<Table /> should render 2`] = `
       class="c1"
     >
       <thead
-        class="sc-iJuUWI"
+        class=""
       >
         <tr
           class="c2"
@@ -192,7 +192,7 @@ exports[`<Table /> should render 2`] = `
         </tr>
       </thead>
       <tbody
-        class="sc-ezrdKe"
+        class=""
       >
         <tr
           class="c2"
