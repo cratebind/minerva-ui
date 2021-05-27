@@ -5,14 +5,18 @@ import { forwardRefWithAs } from '../type-utilities';
 import { MinervaProps } from '../layout';
 import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';
+import { FieldErrorMessage } from '../InputField';
 
 type BaseProps = React.InputHTMLAttributes<HTMLInputElement> & MinervaProps;
 
 export interface InputProps extends BaseProps {
   /** Toggles disabled pseudo class */
   disabled?: boolean;
+  /** Toggles invalid pseudo class */
+  invalid?: boolean;
   /** allows input to be labeled for accessibility */
   hiddenLabel?: string;
+  errorText?: string;
 }
 
 export const Input = forwardRefWithAs<InputProps, 'input'>(function Input(
@@ -28,13 +32,21 @@ export const Input = forwardRefWithAs<InputProps, 'input'>(function Input(
   );
 
   return (
-    <PseudoBox
-      as="input"
-      ref={ref}
-      {...componentStyles}
-      {...props}
-      aria-label={hiddenLabel}
-    />
+    <>
+      <PseudoBox
+        as="input"
+        ref={ref}
+        {...componentStyles}
+        {...props}
+        aria-invalid={props.invalid}
+        aria-label={hiddenLabel}
+      />
+      {props.errorText && (
+        <FieldErrorMessage data-testid="error">
+          {props.errorText}
+        </FieldErrorMessage>
+      )}
+    </>
   );
 });
 

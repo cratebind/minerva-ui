@@ -47,7 +47,8 @@ export const RequiredMarker = props => (
 );
 
 export const FieldErrorMessage = styled(Box)`
-  font-size: 12px;
+  margin-top: 0.2rem;
+  font-size: 11px;
   font-weight: 400;
   color: #ff0000;
 `;
