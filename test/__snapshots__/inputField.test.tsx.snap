@@ -53,7 +53,7 @@ exports[`<InputField> should render 1`] = `
 
 <div>
   <div
-    class="sc-dIUggk"
+    class=""
     role="group"
   >
     <label
