@@ -50,15 +50,14 @@ const defaultTheme: MinervaTheme = {
       borderRadius: '5px',
     },
     _focus: {
-      borderWidth: '2px',
-      borderColor: '#651FFF',
+      outlineWidth: '2px',
+      outlineColor: '#651FFF',
       borderRadius: '5px',
       backgroundColor: '#EEEEEE',
-      outlineWidth: 0,
     },
     _active: {
-      borderWidth: '2px',
-      borderColor: '#651FFF',
+      outlineWidth: '2px',
+      outlineColor: '#651FFF',
       borderRadius: '5px',
       backgroundColor: '#EEEEEE',
     }
