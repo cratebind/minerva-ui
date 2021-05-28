@@ -1,5 +1,12 @@
 import React from 'react';
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '.';
+import {
+  Accordion,
+  AccordionButton,
+  AccordionItem,
+  AccordionPanel,
+  AccordionIcon,
+} from '.';
+import { Box } from '../layout';
 
 export default {
   title: 'Accordion',
@@ -8,6 +15,7 @@ export default {
     AccordionButton,
     AccordionItem,
     AccordionPanel,
+    AccordionIcon,
   },
 };
 
@@ -15,7 +23,10 @@ export const Basic = () => {
   return (
     <Accordion>
       <AccordionItem>
-        <AccordionButton>Section 1 title</AccordionButton>
+        <AccordionButton>
+          <Box>Section 1 title</Box>
+          <AccordionIcon />
+        </AccordionButton>
         <AccordionPanel>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -24,7 +35,10 @@ export const Basic = () => {
         </AccordionPanel>
       </AccordionItem>
       <AccordionItem>
-        <AccordionButton>Section 2 title</AccordionButton>
+        <AccordionButton>
+          <Box>Section 2 title</Box>
+          <AccordionIcon />
+        </AccordionButton>
         <AccordionPanel>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -33,7 +47,10 @@ export const Basic = () => {
         </AccordionPanel>
       </AccordionItem>
       <AccordionItem disabled>
-        <AccordionButton>Section 3 (disabled)</AccordionButton>
+        <AccordionButton>
+          <Box>Section 3 (disabled)</Box>
+          <AccordionIcon />
+        </AccordionButton>
         <AccordionPanel>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -48,7 +65,10 @@ export const Basic = () => {
 export const MultipleAndCollapsible = () => (
   <Accordion multiple collapsible>
     <AccordionItem>
-      <AccordionButton>Section 1 title</AccordionButton>
+      <AccordionButton>
+        <Box>Section 1 title</Box>
+        <AccordionIcon />
+      </AccordionButton>
       <AccordionPanel>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -57,7 +77,10 @@ export const MultipleAndCollapsible = () => (
       </AccordionPanel>
     </AccordionItem>
     <AccordionItem>
-      <AccordionButton>Section 2 title</AccordionButton>
+      <AccordionButton>
+        <Box>Section 2 title</Box>
+        <AccordionIcon />
+      </AccordionButton>
       <AccordionPanel>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -66,7 +89,10 @@ export const MultipleAndCollapsible = () => (
       </AccordionPanel>
     </AccordionItem>
     <AccordionItem>
-      <AccordionButton>Section 3 title</AccordionButton>
+      <AccordionButton>
+        <Box>Section 3 title</Box>
+        <AccordionIcon />
+      </AccordionButton>
       <AccordionPanel>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim

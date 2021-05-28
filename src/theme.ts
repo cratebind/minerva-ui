@@ -9,6 +9,7 @@ const logoColor = '#551A8B';
 export interface ThemeComponent extends React.CSSProperties, PseudoBoxProps {}
 
 export interface MinervaTheme extends Theme {
+  AccordionButton?: ThemeComponent;
   Button?: ThemeComponent;
   Drawer?: ThemeComponent;
   Heading?: ThemeComponent;
@@ -43,6 +44,25 @@ breakpoints.lg = breakpoints[2];
 breakpoints.xl = breakpoints[3];
 
 const defaultTheme: MinervaTheme = {
+  AccordionButton: {
+    _hover: {
+      backgroundColor: '#EEEEEE',
+      borderRadius: '5px',
+    },
+    _focus: {
+      borderWidth: '2px',
+      borderColor: '#651FFF',
+      borderRadius: '5px',
+      backgroundColor: '#EEEEEE',
+      outlineWidth: 0,
+    },
+    _active: {
+      borderWidth: '2px',
+      borderColor: '#651FFF',
+      borderRadius: '5px',
+      backgroundColor: '#EEEEEE',
+    }
+    },
   Button: {
     backgroundColor: '#fff',
     borderWidth: '1px',

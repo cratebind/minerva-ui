@@ -320,7 +320,7 @@ export const shouldForwardProp = createShouldForwardProp([
 ]);
 
 export const Box = styled('div').withConfig({
-  shouldForwardProp,
+  // shouldForwardProp,
 })<MinervaProps>(
   {
     boxSizing: 'border-box',
