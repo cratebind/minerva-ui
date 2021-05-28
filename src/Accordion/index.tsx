@@ -30,9 +30,10 @@ export interface AccordionPanelProps extends MinervaProps {
   children?: React.ReactNode;
 }
 
-export type AllAccordionItemProps = ReachAccordionItemProps & MinervaProps & {
-  children?: React.ReactNode | any;
-};
+export type AllAccordionItemProps = ReachAccordionItemProps &
+  MinervaProps & {
+    children?: React.ReactNode | any;
+  };
 
 export function AccordionIcon({ isActive, ...props }: AccordionIconProps) {
   return (
@@ -50,6 +51,7 @@ export const AccordionItem = forwardRef(function AccordionItem(
   { children, ...props }: AllAccordionItemProps,
   ref
 ) {
+  // Clone children to pass down the 'isActive' prop for icon animation
   let clonedChildren = [];
   if (typeof children === 'object')
     clonedChildren = children?.map(child =>
@@ -121,10 +123,10 @@ export const AccordionPanel = forwardRef(function AccordionPanel(
   );
 });
 
-
-export type AllAccordionProps = MinervaProps & ReachAccordionProps & {
-  children: React.ReactNode | any;
-}
+export type AllAccordionProps = MinervaProps &
+  ReachAccordionProps & {
+    children: React.ReactNode | any;
+  };
 
 export const Accordion = forwardRef(function Alert(
   { children, ...props }: AllAccordionProps,
