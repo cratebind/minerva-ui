@@ -124,7 +124,7 @@ export const Accordion = forwardRef(function Alert(
   { children, ...props }: AllAccordionProps,
   ref
 ) {
-  const [activePanelIndices, setActivePanelIndicies] = useState<number[]>([0]);
+  const [activePanelIndices, setActivePanelIndices] = useState<number[]>(props.collapsible ? [] : [0]);
 
   let clonedChildren = [];
   if (typeof children === 'object')
@@ -134,16 +134,16 @@ export const Accordion = forwardRef(function Alert(
       })
     );
 
-  const handleSetActivePanelIndicies = activeIndex => {
+  const handleSetActivePanelIndices = activeIndex => {
     const { multiple } = props;
     if (multiple) {
-      setActivePanelIndicies(prev => {
+      setActivePanelIndices(prev => {
         if (prev.includes(activeIndex)) {
           return prev.filter(item => item !== activeIndex);
         } else return [...prev, activeIndex];
       });
     } else {
-      setActivePanelIndicies([activeIndex]);
+      setActivePanelIndices([activeIndex]);
     }
   };
   return (
@@ -151,7 +151,7 @@ export const Accordion = forwardRef(function Alert(
       as={ReachAccordion}
       borderBottomColor="gray.300"
       borderBottomWidth="1px"
-      onChange={index => handleSetActivePanelIndicies(index)}
+      onChange={index => handleSetActivePanelIndices(index)}
       {...props}
       ref={ref}
     >
