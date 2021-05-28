@@ -73,8 +73,6 @@ export const AccordionButton = forwardRef(function AccordionButton(
       {...props}
     >
       {children}
-      {/* TODO Need to figure out how to determine if Item is expanded and rotate icon */}
-      {/* <Icon name="chevron-down" ml={2} size="14px" /> */}
     </ReachAccordionButton>
   );
 });
