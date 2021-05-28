@@ -19,7 +19,7 @@ export interface AccordionProps extends MinervaProps {
 }
 
 export interface AccordionButtonProps extends MinervaProps {
-  children?: React.ReactNode;
+  children?: React.ReactNode | any;
 }
 
 export interface AccordionIconProps extends BaseIconProps {
@@ -30,7 +30,9 @@ export interface AccordionPanelProps extends MinervaProps {
   children?: React.ReactNode;
 }
 
-export type AllAccordionItemProps = ReachAccordionItemProps & MinervaProps;
+export type AllAccordionItemProps = ReachAccordionItemProps & MinervaProps & {
+  children?: React.ReactNode | any;
+};
 
 export function AccordionIcon({ isActive, ...props }: AccordionIconProps) {
   return (
@@ -119,12 +121,18 @@ export const AccordionPanel = forwardRef(function AccordionPanel(
   );
 });
 
-export type AllAccordionProps = ReachAccordionProps & MinervaProps;
+
+export type AllAccordionProps = MinervaProps & ReachAccordionProps & {
+  children: React.ReactNode | any;
+}
+
 export const Accordion = forwardRef(function Alert(
   { children, ...props }: AllAccordionProps,
   ref
 ) {
-  const [activePanelIndices, setActivePanelIndices] = useState<number[]>(props.collapsible ? [] : [0]);
+  const [activePanelIndices, setActivePanelIndices] = useState<number[]>(
+    props.collapsible ? [] : [0]
+  );
 
   let clonedChildren = [];
   if (typeof children === 'object')
@@ -146,6 +154,7 @@ export const Accordion = forwardRef(function Alert(
       setActivePanelIndices([activeIndex]);
     }
   };
+
   return (
     <Box
       as={ReachAccordion}

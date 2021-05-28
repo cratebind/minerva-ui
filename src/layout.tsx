@@ -320,7 +320,7 @@ export const shouldForwardProp = createShouldForwardProp([
 ]);
 
 export const Box = styled('div').withConfig({
-  // shouldForwardProp, // @TODO: Ask Matt if this is necessary b/c it's what was filtering out collapsible prop in accordion 
+  // shouldForwardProp,
 })<MinervaProps>(
   {
     boxSizing: 'border-box',
