@@ -34,3 +34,9 @@ export const Basic = Template.bind({});
 Basic.args = {
   children: 'Stay Logged In',
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'Stay Logged In',
+  disabled: true,
+};
