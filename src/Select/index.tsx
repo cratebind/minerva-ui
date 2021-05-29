@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {
   background,
@@ -13,20 +12,20 @@ import {
   space,
   typography,
 } from 'styled-system';
-import { Block, MinervaProps } from '../layout';
-import Input from '../Input';
-import { forwardRefWithAs } from '../type-utilities';
-// import Icon from '../Icon';
 
-const StyledSelect = styled(Input)(
+import { Block, MinervaProps } from '../layout';
+import { forwardRefWithAs } from '../type-utilities';
+
+const StyledSelect = styled('select')(
   (props): any => ({
     '-webkit-appearance': 'none',
     '-webkit-box-align': 'center',
     '-webkit-writing-mode': 'horizontal-tb',
     width: '100%',
     backgroundColor: '#fff',
+    borderRadius: '5px',
     borderWidth: '1px',
-    borderColor: '#d2d6dc',
+    borderColor: '#E0E0E0',
     color: '#374151',
     display: 'inline-flex',
     appearance: 'none',
@@ -38,24 +37,24 @@ const StyledSelect = styled(Input)(
     position: 'relative',
     whiteSpace: 'nowrap',
     verticalAlign: 'middle',
-    fontSize: '16px',
+    fontSize: '14px',
     lineHeight: '20px',
-    paddingTop: '8px',
-    paddingBottom: '8px',
-    paddingLeft: '16px',
-    paddingRight: '16px',
-    borderRadius: '5px',
+    paddingTop: '12px',
+    paddingBottom: '12px',
+    paddingLeft: '15px',
+    paddingRight: '15px',
     transition: 'all 150ms ease 0s',
     outline: 'none',
     cursor: 'pointer',
     ':focus': {
-      borderColor: '#a4cafe',
-      boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
+      borderColor: '#CBBEE7',
+      boxShadow: '0 0 0 2px #CBBEE7',
       outline: 0,
     },
     ':disabled': {
-      backgroundColor: '#EAEAEA',
-      color: '#8F8F8F',
+      backgroundColor: '#E0E0E0',
+      color: 'rgba(30, 6, 84, 0.5)',
+      borderColor: '#E0E0E0',
       cursor: 'not-allowed',
     },
     ...props.theme.Select,
@@ -73,7 +72,7 @@ const StyledSelect = styled(Input)(
 );
 
 const IconContainer = styled('div')(
-  () => ({
+  {
     position: 'absolute',
     display: 'inline-flex',
     width: '1.5rem',
@@ -85,7 +84,7 @@ const IconContainer = styled('div')(
     pointerEvents: 'none',
     zIndex: 2,
     transform: 'translateY(-50%)',
-  }),
+  },
   color,
   space,
   flexbox,
@@ -98,12 +97,13 @@ const IconContainer = styled('div')(
   typography
 );
 
-const SelectIcon = () => (
+const SelectIcon = ({ disabled }: any) => (
   <IconContainer>
     <svg
       style={{
         width: 20,
         height: 20,
+        color: disabled ? 'rgba(30, 6, 84, 0.5)' : 'rgba(0, 0, 0, 1)',
       }}
       fill="none"
       height="24"
@@ -138,10 +138,10 @@ export const Select = forwardRefWithAs<SelectProps, 'select'>(function Select(
 ) {
   return (
     <Block position="relative">
-      <StyledSelect as="select" ref={ref} disabled={disabled} {...props}>
+      <StyledSelect ref={ref} disabled={disabled} {...props}>
         {children}
       </StyledSelect>
-      <SelectIcon />
+      <SelectIcon disabled={disabled} />
     </Block>
   );
 });
