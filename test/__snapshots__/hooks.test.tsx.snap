@@ -64,8 +64,17 @@ exports[`useClipboard should render Clipboard Component 1`] = `
   width: 100%;
 }
 
-.c1:hover {
-  background-color: #f9fafb;
+.c1:hover backgroundColor {
+  50: #fdf2f2;
+  100: #fde8e8;
+  200: #fbd5d5;
+  300: #f8b4b4;
+  400: #f98080;
+  500: #f05252;
+  600: #e02424;
+  700: #c81e1e;
+  800: #9b1c1c;
+  900: #771d1d;
 }
 
 .c1:focus {
@@ -165,8 +174,17 @@ exports[`useDisclosure should render Disclosure Component 1`] = `
   border-color: #d2d6dc;
 }
 
-.c1:hover {
-  background-color: #f9fafb;
+.c1:hover backgroundColor {
+  50: #fdf2f2;
+  100: #fde8e8;
+  200: #fbd5d5;
+  300: #f8b4b4;
+  400: #f98080;
+  500: #f05252;
+  600: #e02424;
+  700: #c81e1e;
+  800: #9b1c1c;
+  900: #771d1d;
 }
 
 .c1:focus {
@@ -254,8 +272,17 @@ exports[`useLocalStorage should render Local Storage Component 1`] = `
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
-.c1:hover {
-  background-color: #f9fafb;
+.c1:hover backgroundColor {
+  50: #fdf2f2;
+  100: #fde8e8;
+  200: #fbd5d5;
+  300: #f8b4b4;
+  400: #f98080;
+  500: #f05252;
+  600: #e02424;
+  700: #c81e1e;
+  800: #9b1c1c;
+  900: #771d1d;
 }
 
 .c1:focus {

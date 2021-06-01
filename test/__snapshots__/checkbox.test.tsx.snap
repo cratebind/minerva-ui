@@ -3,7 +3,7 @@
 exports[`Checkbox can have checked state changed by theme: Checked Checkbox 1`] = `
 <input
   aria-checked="true"
-  class="sc-bdfBwQ sc-eCssSg jQfOhO kSpNXg"
+  class="sc-bdnxRM sc-eCApnc hNpHox eAGjQQ"
   data-reach-custom-checkbox-input=""
   type="checkbox"
 />
@@ -66,7 +66,7 @@ exports[`Checkbox can have checked state changed by theme: Unchecked Checkbox 1`
 exports[`Checkbox shows checkbox when checked: Checked Checkbox 1`] = `
 <input
   aria-checked="true"
-  class="sc-bdfBwQ sc-eCssSg hgWJxL bkxgiK"
+  class="sc-bdnxRM sc-eCApnc hvnVQY kaZnNq"
   data-reach-custom-checkbox-input=""
   type="checkbox"
 />
