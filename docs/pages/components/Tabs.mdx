@@ -48,6 +48,83 @@ import {
 </Tabs>
 ```
 
+## Spaced out Tabs with underline
+
+```jsx live
+() => {
+  const tabStyles = {
+    flex: 1,
+    justifyContent: 'center',
+  };
+  return (
+    <Tabs>
+      <TabList mb="20px" borderBottom="2px solid #d2d6dc">
+        <Tab {...tabStyles} justifyContent="center">
+          My Account
+        </Tab>
+        <Tab {...tabStyles}>Favorites</Tab>
+        <Tab {...tabStyles}>Orders</Tab>
+        <Tab {...tabStyles}>Billing</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>My Account!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Favorites!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Orders!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Billing!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
+```
+
+## Tabs with box shadow
+
+```jsx live
+() => {
+  const tabStyles = {
+    flex: 1,
+    justifyContent: 'center',
+    boxShadow: '0 0 0 1px #E0E0E0',
+  };
+  return (
+    <Tabs>
+      <TabList mb="20px">
+        <Tab {...tabStyles} borderRadius="5px 0px 0px 5px">
+          My Account
+        </Tab>
+        <Tab {...tabStyles}>Favorites</Tab>
+        <Tab {...tabStyles}>Orders</Tab>
+        <Tab {...tabStyles} borderRadius="0px 5px 5px 0px">
+          Billing
+        </Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>
+          <p>My Account!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Favorites!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Orders!</p>
+        </TabPanel>
+        <TabPanel>
+          <p>Billing!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+};
+```
+
 ## Vertical Tabs
 
 ```jsx live

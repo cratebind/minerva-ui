@@ -119,7 +119,7 @@ const defaultTheme: MinervaTheme = {
       outline: 0,
       boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
       borderWidth: '2px',
-    }
+    },
   },
   Tag: {},
   Text: {},
