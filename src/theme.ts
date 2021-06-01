@@ -12,6 +12,7 @@ export interface MinervaTheme extends Theme {
   Button?: ThemeComponent;
   Drawer?: ThemeComponent;
   Heading?: ThemeComponent;
+  MenuButton?: ThemeComponent;
   Modal?: ThemeComponent;
   ModalContent?: ThemeComponent;
   ModalBody?: ThemeComponent;
@@ -100,6 +101,22 @@ const defaultTheme: MinervaTheme = {
   InputField: {},
   Link: {},
   Tabs: {},
+  MenuButton: {
+    _hover: {
+      boxShadow: '0 0 0 2px #CBBEE7',
+    },
+    _focus: {
+      outline: 'none',
+      boxShadow: '0 0 0 2px #CBBEE7',
+    },
+    _active: {
+      boxShadow: '0 0 0 2px #CBBEE7',
+    },
+    _disabled: {
+      background: '#E0E0E0',
+      color: 'rgba(30, 6, 84, 0.5)',
+    }
+  },
   Modal: {},
   ModalHeader: {},
   ModalBody: {},

@@ -9,11 +9,14 @@ import {
   MenuProps,
   MenuButtonProps,
   MenuItemsProps,
+  useMenuButtonContext,
 } from '@reach/menu-button';
 import { positionDefault, positionRight } from '@reach/popover';
 import styled from 'styled-components';
 import Button, { ButtonProps } from '../Button';
 import { Box, MinervaProps } from '../layout';
+import { useComponentStyles } from '../theme';
+import { ChevronDown } from '../Icon/baseIcons';
 // import { useTheme } from '../theme';
 
 // import '@reach/menu-button/styles.css';
@@ -26,9 +29,21 @@ export const MenuContainer = (props: MenuContainerProps) => (
   <ReachMenuContainer {...props} />
 );
 
-export const MenuButton = (props: MenuButtonProps & ButtonProps) => (
-  <ReachMenuButton as={Button} {...props} />
-);
+export const MenuButton = (props: MenuButtonProps & ButtonProps) => {
+  const componentStyles = useComponentStyles('MenuButton');
+  const { isExpanded } = useMenuButtonContext();
+  return (
+    <ReachMenuButton
+      as={Button}
+      minWidth='140px'
+      justifyContent='space-between'
+      p='12px 15px'
+      boxShadow={isExpanded ? '0 0 0 2px #CBBEE7' : 'none'}
+      {...componentStyles}
+      {...props}
+    />
+  );
+};
 
 export interface MenuListProps extends MinervaProps {
   children?: React.ReactNode;
@@ -37,15 +52,15 @@ export interface MenuListProps extends MinervaProps {
 
 export const OverlayBox = props => (
   <PseudoBox
-    py={1}
+    py="10px"
     mt="8px"
     bg="white"
     position="relative"
-    borderRadius="6px"
-    boxShadow="0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05)"
+    borderRadius="5px"
+    boxShadow="10px 10px 20px rgba(0, 0, 0, 0.12)"
     _after={{
       content: `''`,
-      boxShadow: '0 0 0 1px rgba(0,0,0,.05)',
+      boxShadow: '0 0 0 1px #E0E0E0',
       borderRadius: '6px',
       position: 'absolute',
       top: 0,
@@ -79,31 +94,45 @@ export const MenuList = ({
   </ReachMenuPopover>
 );
 
+export function MenuIcon() {
+  const { isExpanded } = useMenuButtonContext();
+
+  return (
+    <Box
+      as={ChevronDown}
+      transform={isExpanded ? 'rotate(-180deg)' : undefined}
+      transition="transform 0.2s"
+      transformOrigin="center"
+      w="14px"
+      h="14px"
+      color="#000"
+      aria-hidden="true"
+    />
+  );
+}
+
 export const MenuItem = styled(ReachMenuItem)`
-  color: #374151;
-  padding: 0.5rem 1rem;
+  color: #000;
+  padding: 0.625rem 0.9375rem;
   font-size: 14px;
+  line-height: 112.6%;
   cursor: pointer;
 
-  &[data-selected],
-  &:hover {
-    background-color: #f4f5f7;
-    color: #161e2e;
+  &[data-selected] {
+    background: #F5F5F5;
   }
 `;
 
 export const MenuLink = styled(ReachMenuLink)`
-  color: #374151;
-  padding: 0.5rem 1rem;
+  color: #000;
+  padding: 0.625rem 0.9375rem;
   font-size: 14px;
+  line-height: 112.6%;
   display: block;
   cursor: pointer;
 
-  &[data-selected],
-  &:hover {
-    background-color: #f4f5f7;
-    color: #161e2e;
-    text-decoration: none;
+  &[data-selected] {
+    background: #F5F5F5;
   }
 `;
 
