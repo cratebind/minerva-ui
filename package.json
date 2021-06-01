@@ -147,7 +147,10 @@
       "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
     },
     "globals": {
-      "__DEV__": true
+      "__DEV__": true,
+      "ts-jest": {
+        "diagnostics": false
+      }
     }
   },
   "config": {

@@ -21,6 +21,7 @@ const ExampleCombobox = ({ value }) => {
         {inputLabel}
         <Combobox aria-label="choose a fruit" openOnFocus>
           <ComboboxInput
+            id="input-field"
             value={search}
             onChange={e => setSearch(e.target.value)}
           />

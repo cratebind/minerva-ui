@@ -67,7 +67,7 @@ describe('<Box />', () => {
       }
 
       <button
-        class="sc-eCssSg c0"
+        class="c0"
         data-testid="box"
       />
     `);
