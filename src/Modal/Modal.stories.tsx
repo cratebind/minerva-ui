@@ -45,9 +45,7 @@ const Template: Story<ModalProps> = ({ isOpen = false }) => {
         </ModalBody>
         <ModalFooter bg="gray.50">
           <Flex
-            px={6}
-            py={3}
-            flexDirection={['column', 'row-reverse']}
+            flexDirection={['column', 'row']}
             bg="gray.50"
             radiusBottom="5px"
           >
@@ -55,8 +53,17 @@ const Template: Story<ModalProps> = ({ isOpen = false }) => {
               onClick={() => setOpen(false)}
               boxShadow="base"
               width={['100%', 'auto']}
+              variant="primary"
             >
               Submit
+            </Button>
+            <Button
+              onClick={() => setOpen(false)}
+              boxShadow="base"
+              width={['100%', 'auto']}
+              ml="10px"
+            >
+              Cancel
             </Button>
           </Flex>
         </ModalFooter>

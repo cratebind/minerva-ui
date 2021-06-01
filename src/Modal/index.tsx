@@ -3,10 +3,8 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import { DialogContent, DialogOverlay, DialogProps } from '@reach/dialog';
 import { MinervaProps, systemProps, Box } from '../layout';
-import Button from '../Button';
 import Text from '../Text';
 import { useComponentStyles } from '../theme';
-import { Close } from '../Icon/baseIcons';
 
 type OverlayProps = DialogProps & MinervaProps;
 export const ModalOverlay = styled(DialogOverlay)<OverlayProps>(
@@ -52,24 +50,12 @@ export const ModalHeader = forwardRef(function ModalHeader(
       width="100%"
       justifyContent="space-between"
       alignItems="center"
-      padding="1.5rem"
+      padding="1.375rem"
+      pb={0}
       {...componentStyles}
       {...props}
     >
-      <Text fontWeight="bold" fontSize="1.25rem">
-        {children}
-      </Text>
-      <Button
-        border={0}
-        padding="0.25rem"
-        bg="transparent"
-        type="button"
-        aria-label="Close Modal"
-        onClick={onClose}
-      >
-        <Close />
-        {/* <X size="26px" /> */}
-      </Button>
+      <Text fontSize="1.25rem">{children}</Text>
     </Box>
   );
 });
@@ -83,9 +69,11 @@ export const ModalBody = forwardRef(function ModalBody(
     <Box
       color="#374151"
       ref={ref}
-      px="1.5rem"
-      pt="0.5rem"
-      pb="1rem"
+      px="1.375rem"
+      pt="0.5625rem"
+      pb="1.25rem"
+      fontSize="14px"
+      lineHeight="125%"
       {...componentStyles}
       {...props}
     >
@@ -100,7 +88,7 @@ export const ModalFooter = forwardRef(function ModalFooter(
 ) {
   const componentStyles = useComponentStyles('ModalFooter');
   return (
-    <Box ref={ref} px={6} py={3} {...componentStyles} {...props}>
+    <Box ref={ref} py=".8125rem" px="1.375rem" {...componentStyles} {...props}>
       {children}
     </Box>
   );
@@ -118,13 +106,14 @@ export const ModalContent = forwardRef(function ModalContent(
       ref={ref}
       aria-label="modal"
       padding={0}
-      borderRadius="5px"
+      borderRadius="10px"
       alignItems="center"
       width="100%"
       backgroundColor="white"
       maxWidth="30rem"
       zIndex={3}
       margin="10vh auto"
+      boxShadow="10px 10px 20px rgba(0, 0, 0, 0.12)"
       {...componentStyles}
       {...props}
     />
