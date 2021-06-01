@@ -4,7 +4,7 @@ exports[`<Accordion /> should render 1`] = `
 .c0 {
   box-sizing: border-box;
   min-width: 0;
-  border-bottom-color: #e5e7eb;
+  border-bottom-color: #E0E0E0;
   border-bottom-width: 1px;
 }
 
@@ -29,10 +29,10 @@ exports[`<Accordion /> should render 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -50,42 +50,46 @@ exports[`<Accordion /> should render 1`] = `
   padding-bottom: 12px;
   padding-left: 16px;
   padding-right: 16px;
-  border-radius: 5px;
+  border-radius: 0;
   border-style: solid;
   border-color: transparent;
   width: 100%;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-top-color: #e5e7eb;
-  border-top-width: 1px;
+  border-top-color: #E0E0E0;
 }
 
 .c4 {
   box-sizing: border-box;
   min-width: 0;
   padding-left: 14px;
-  padding-right: 14px;
+  padding-right: 23%;
   padding-top: 14px;
   padding-bottom: 14px;
-  width: 95%;
+  width: 100%;
+  border-top-width: 1px;
+  border-top-color: #E0E0E0;
 }
 
 .c3:hover {
-  background-color: #f9fafb;
+  background-color: #EEEEEE;
+  border-radius: 5px;
 }
 
 .c3:focus {
-  border-color: #a4cafe;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  outline: 0;
+  outline-width: 2px;
+  outline-color: #651FFF;
+  border-radius: 5px;
+  background-color: #EEEEEE;
 }
 
 .c3:active,
 .c3[data-active=true] {
-  border-color: #a4cafe;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  outline: 0;
+  outline-width: 2px;
+  outline-color: #651FFF;
+  border-radius: 5px;
+  background-color: #EEEEEE;
 }
 
 .c3:disabled,

@@ -50,24 +50,19 @@ export const ChevronDown = ({
   ...props
 }: BaseIconProps) => (
   <svg
+    width="10"
+    height="7"
+    viewBox="0 0 10 7"
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 256 256"
     {...props}
   >
-    <rect width="256" height="256" fill="none" />
-    <polyline
-      points="208 96 128 176 48 96"
-      fill="none"
-      stroke={color}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="16"
+    <path
+      d="M4.95174 6.54518L0.70874 2.30218L2.12374 0.888184L4.95174 3.71718L7.77974 0.888184L9.19474 2.30218L4.95174 6.54518Z"
+      fill="black"
     />
   </svg>
 );
-
 // basic UI icons used throughout the component library
 const baseIcons = {
   Close,

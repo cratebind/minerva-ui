@@ -43,8 +43,17 @@ exports[`<Button /> should change style if disabled 1`] = `
   border-color: #d2d6dc;
 }
 
-.c1:hover {
-  background-color: #f9fafb;
+.c1:hover backgroundColor {
+  50: #fdf2f2;
+  100: #fde8e8;
+  200: #fbd5d5;
+  300: #f8b4b4;
+  400: #f98080;
+  500: #f05252;
+  600: #e02424;
+  700: #c81e1e;
+  800: #9b1c1c;
+  900: #771d1d;
 }
 
 .c1:focus {
@@ -159,8 +168,17 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
   animation: cilQsd 0.45s linear infinite;
 }
 
-.c1:hover {
-  background-color: #f9fafb;
+.c1:hover backgroundColor {
+  50: #fdf2f2;
+  100: #fde8e8;
+  200: #fbd5d5;
+  300: #f8b4b4;
+  400: #f98080;
+  500: #f05252;
+  600: #e02424;
+  700: #c81e1e;
+  800: #9b1c1c;
+  900: #771d1d;
 }
 
 .c1:focus {
@@ -243,8 +261,17 @@ exports[`<Button /> should render 1`] = `
   border-color: #d2d6dc;
 }
 
-.c1:hover {
-  background-color: #f9fafb;
+.c1:hover backgroundColor {
+  50: #fdf2f2;
+  100: #fde8e8;
+  200: #fbd5d5;
+  300: #f8b4b4;
+  400: #f98080;
+  500: #f05252;
+  600: #e02424;
+  700: #c81e1e;
+  800: #9b1c1c;
+  900: #771d1d;
 }
 
 .c1:focus {
