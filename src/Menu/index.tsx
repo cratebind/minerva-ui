@@ -7,14 +7,13 @@ import {
   MenuPopover as ReachMenuPopover,
   MenuItems as ReachMenuItems,
   MenuProps,
-  MenuButtonProps,
+  MenuButtonProps as ReachMenuButtonProps,
   MenuItemsProps,
   useMenuButtonContext,
 } from '@reach/menu-button';
 import { positionDefault, positionRight } from '@reach/popover';
 import styled from 'styled-components';
-import Button, { ButtonProps } from '../Button';
-import { Box, MinervaProps } from '../layout';
+import { Box, MinervaProps, shouldForwardProp, systemProps } from '../layout';
 import { useComponentStyles } from '../theme';
 import { ChevronDown } from '../Icon/baseIcons';
 // import { useTheme } from '../theme';
@@ -29,15 +28,17 @@ export const MenuContainer = (props: MenuContainerProps) => (
   <ReachMenuContainer {...props} />
 );
 
-export const MenuButton = (props: MenuButtonProps & ButtonProps) => {
+type MenuButtonProps = ReachMenuButtonProps;
+
+export const MenuButton = (props: MenuButtonProps) => {
   const componentStyles = useComponentStyles('MenuButton');
   const { isExpanded } = useMenuButtonContext();
   return (
     <ReachMenuButton
-      as={Button}
-      minWidth='140px'
-      justifyContent='space-between'
-      p='12px 15px'
+      as={BaseButton}
+      minWidth="140px"
+      justifyContent="space-between"
+      p="12px 15px"
       boxShadow={isExpanded ? '0 0 0 2px #CBBEE7' : 'none'}
       {...componentStyles}
       {...props}
@@ -119,7 +120,7 @@ export const MenuItem = styled(ReachMenuItem)`
   cursor: pointer;
 
   &[data-selected] {
-    background: #F5F5F5;
+    background: #f5f5f5;
   }
 `;
 
@@ -132,7 +133,7 @@ export const MenuLink = styled(ReachMenuLink)`
   cursor: pointer;
 
   &[data-selected] {
-    background: #F5F5F5;
+    background: #f5f5f5;
   }
 `;
 
@@ -147,3 +148,14 @@ export const MenuDivider = props => (
 );
 
 export { useMenuButtonContext } from '@reach/menu-button';
+
+// using our own <Button /> component causes weird TS issues due to the `as` prop
+const BaseButton = styled('button').withConfig({
+  shouldForwardProp: shouldForwardProp,
+})<MinervaProps>(
+  {
+    boxSizing: 'border-box',
+    minWidth: 0,
+  },
+  systemProps
+);

@@ -134,7 +134,7 @@ const defaultTheme: MinervaTheme = {
     _disabled: {
       background: '#E0E0E0',
       color: 'rgba(30, 6, 84, 0.5)',
-    }
+    },
   },
   Modal: {},
   ModalHeader: {},
