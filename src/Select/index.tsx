@@ -122,10 +122,20 @@ const SelectIcon = ({ disabled }: any) => (
   </IconContainer>
 );
 
+interface ObjectTypeOption {
+  title: string | number;
+  value: string | number;
+}
+
+type PrimitiveTypeOption = number | string;
+
+type CustomSelectOption = ObjectTypeOption | PrimitiveTypeOption;
+
 export interface CustomSelectProps {
   children?: React.ReactNode;
   /** Toggles disabled pseudo class */
   disabled?: boolean;
+  options: Array<CustomSelectOption>;
 }
 
 export type SelectProps = CustomSelectProps &
@@ -133,13 +143,24 @@ export type SelectProps = CustomSelectProps &
   React.InputHTMLAttributes<HTMLSelectElement>;
 
 export const Select = forwardRefWithAs<SelectProps, 'select'>(function Select(
-  { children, disabled = false, ...props }: SelectProps,
+  { children, disabled = false, options = [], ...props }: SelectProps,
   ref
 ) {
   return (
     <Block position="relative">
       <StyledSelect ref={ref} disabled={disabled} {...props}>
-        {children}
+        {options.map((option: CustomSelectOption, index: number) => {
+          if (typeof option === 'object') {
+            return (
+              <option
+                key={index}
+                value={option.value}
+                children={option.title}
+              />
+            );
+          }
+          return <option key={index} value={option} children={option} />;
+        })}
       </StyledSelect>
       <SelectIcon disabled={disabled} />
     </Block>

@@ -3,6 +3,14 @@ import { Meta, Story } from '@storybook/react';
 import { filteredArgs } from '../utils';
 import { Select, SelectProps } from '.';
 
+const options = [
+  'Parrot',
+  'Snake',
+  { title: 'Cat', value: 'cat' },
+  { title: 'Dog', value: 'dog' },
+  { title: 'Other', value: 'other' },
+];
+
 const meta: Meta = {
   title: 'Select',
   component: Select,
@@ -20,19 +28,16 @@ const meta: Meta = {
 export default meta;
 
 const Template: Story<SelectProps> = args => {
-  return (
-    <Select {...args}>
-      <option value="cat">Cat</option>
-      <option value="dog">Dog</option>
-      <option value="other">Other</option>
-    </Select>
-  );
+  return <Select {...args} />;
 };
 
 export const Basic = Template.bind({});
-Basic.args = {};
+Basic.args = {
+  options,
+};
 
 export const Disabled = Template.bind({});
 Disabled.args = {
+  options,
   disabled: true,
 };
