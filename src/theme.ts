@@ -60,8 +60,8 @@ const defaultTheme: MinervaTheme = {
       outlineColor: '#651FFF',
       borderRadius: '5px',
       backgroundColor: '#EEEEEE',
-    }
     },
+  },
   Button: {
     backgroundColor: '#fff',
     borderWidth: '1px',

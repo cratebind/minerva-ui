@@ -181,64 +181,66 @@ Recreated from [Tailwind CSS example](https://tailwindcss.com/components/forms)
   return (
     <Stack>
       {items.map(plan => (
-      <Button
-        flexDirection="row"
-        width="100%"
-        borderWidth={0}
-        borderBottomWidth={1}
-        borderBottomStyle="solid"
-        borderBottomColor="gray.300"
-        pr={3}
-        pl={3}
-        overflow="hidden"
-        alignItems="center"
-        onClick={() => setSelected(plan)}
-      >
-        <Flex
-          width={4}
-          height={4}
-          backgroundColor={selected.id === plan.id ? '#5850ec' : 'transparent'}
-          mr={4}
-          borderRadius={100}
-          borderColor="#5850ec"
-          borderWidth={1}
-          borderStyle="solid"
-          justifyContent="center"
+        <Button
+          flexDirection="row"
+          width="100%"
+          borderWidth={0}
+          borderBottomWidth={1}
+          borderBottomStyle="solid"
+          borderBottomColor="gray.300"
+          pr={3}
+          pl={3}
+          overflow="hidden"
           alignItems="center"
+          onClick={() => setSelected(plan)}
         >
-          <Box
-            width={1}
-            height={1}
-            backgroundColor={selected.id === plan.id ? '#fff' : 'transparent'}
-            borderRadius={50}
-            borderColor="#fff"
+          <Flex
+            width={4}
+            height={4}
+            backgroundColor={
+              selected.id === plan.id ? '#5850ec' : 'transparent'
+            }
+            mr={4}
+            borderRadius={100}
+            borderColor="#5850ec"
             borderWidth={1}
             borderStyle="solid"
-          />
-        </Flex>
-        <Flex
-          width="100%"
-          flexDirection="row"
-          justifyContent="space-between"
-          px={1}
-          py={4}
-        >
-          <Flex flexDirection="column" alignItems="flex-start">
-            <Text fontWeight="bold" fontSize="xl" mb={1} color="gray.700">
-              {plan.title}
-            </Text>
-            <Text color="gray.400">{plan.description}</Text>
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Box
+              width={1}
+              height={1}
+              backgroundColor={selected.id === plan.id ? '#fff' : 'transparent'}
+              borderRadius={50}
+              borderColor="#fff"
+              borderWidth={1}
+              borderStyle="solid"
+            />
           </Flex>
-          <Flex>
-            <Text fontSize="2xl" py={2}>
-              {plan.cost}/mo
-            </Text>
+          <Flex
+            width="100%"
+            flexDirection="row"
+            justifyContent="space-between"
+            px={1}
+            py={4}
+          >
+            <Flex flexDirection="column" alignItems="flex-start">
+              <Text fontWeight="bold" fontSize="xl" mb={1} color="gray.700">
+                {plan.title}
+              </Text>
+              <Text color="gray.400">{plan.description}</Text>
+            </Flex>
+            <Flex>
+              <Text fontSize="2xl" py={2}>
+                {plan.cost}/mo
+              </Text>
+            </Flex>
           </Flex>
-        </Flex>
-      </Button>
-    ))}
-  </Stack>
-  )
+        </Button>
+      ))}
+    </Stack>
+  );
 };
 ```
 

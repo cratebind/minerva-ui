@@ -5,7 +5,7 @@ import 'jest-styled-components';
 
 // ignore check styles function since we're inlining them
 jest.mock('@reach/utils', () => ({
-  ...jest.requireActual('@reach/utils'),
+  ...(jest.requireActual('@reach/utils') as any),
   checkStyles: jest.fn(),
 }));
 
