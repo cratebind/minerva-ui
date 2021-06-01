@@ -28,17 +28,16 @@ export const MenuContainer = (props: MenuContainerProps) => (
   <ReachMenuContainer {...props} />
 );
 
-type MenuButtonProps = ReachMenuButtonProps;
+type MenuButtonProps = ReachMenuButtonProps & MinervaProps;
 
 export const MenuButton = (props: MenuButtonProps) => {
   const componentStyles = useComponentStyles('MenuButton');
   const { isExpanded } = useMenuButtonContext();
   return (
-    <ReachMenuButton
-      as={BaseButton}
+    <BaseMenuButton
       minWidth="140px"
       justifyContent="space-between"
-      p="12px 15px"
+      padding="12px 15px"
       boxShadow={isExpanded ? '0 0 0 2px #CBBEE7' : 'none'}
       {...componentStyles}
       {...props}
@@ -150,9 +149,9 @@ export const MenuDivider = props => (
 export { useMenuButtonContext } from '@reach/menu-button';
 
 // using our own <Button /> component causes weird TS issues due to the `as` prop
-const BaseButton = styled('button').withConfig({
+const BaseMenuButton = styled(ReachMenuButton).withConfig({
   shouldForwardProp: shouldForwardProp,
-})<MinervaProps>(
+})<MinervaProps & ReachMenuButtonProps>(
   {
     boxSizing: 'border-box',
     minWidth: 0,
