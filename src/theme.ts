@@ -9,26 +9,27 @@ const logoColor = '#551A8B';
 export interface ThemeComponent extends React.CSSProperties, PseudoBoxProps {}
 
 export interface MinervaTheme extends Theme {
-  Button?: React.CSSProperties;
-  Drawer?: React.CSSProperties;
-  Heading?: React.CSSProperties;
-  Modal?: React.CSSProperties;
-  ModalContent?: React.CSSProperties;
-  ModalBody?: React.CSSProperties;
-  ModalHeader?: React.CSSProperties;
-  ModalFooter?: React.CSSProperties;
-  Text?: React.CSSProperties;
+  AccordionButton?: ThemeComponent;
+  Button?: ThemeComponent;
+  Drawer?: ThemeComponent;
+  Heading?: ThemeComponent;
+  Modal?: ThemeComponent;
+  ModalContent?: ThemeComponent;
+  ModalBody?: ThemeComponent;
+  ModalHeader?: ThemeComponent;
+  ModalFooter?: ThemeComponent;
+  Text?: ThemeComponent;
   Input?: ThemeComponent;
-  Image?: React.CSSProperties;
-  Tooltip?: React.CSSProperties;
-  InputField?: React.CSSProperties;
-  Link?: React.CSSProperties;
-  Checkbox?: React.CSSProperties;
-  Switch?: React.CSSProperties;
-  Select?: React.CSSProperties;
-  Tag?: React.CSSProperties;
-  Skeleton?: React.CSSProperties;
-  Tabs?: React.CSSProperties;
+  Image?: ThemeComponent;
+  Tooltip?: ThemeComponent;
+  InputField?: ThemeComponent;
+  Link?: ThemeComponent;
+  Checkbox?: ThemeComponent;
+  Switch?: ThemeComponent;
+  Select?: ThemeComponent;
+  Tag?: ThemeComponent;
+  Skeleton?: ThemeComponent;
+  Tabs?: ThemeComponent;
   icons: any;
   defaultBorderColor?: string;
   variants?: any;
@@ -43,6 +44,24 @@ breakpoints.lg = breakpoints[2];
 breakpoints.xl = breakpoints[3];
 
 const defaultTheme: MinervaTheme = {
+  AccordionButton: {
+    _hover: {
+      backgroundColor: '#EEEEEE',
+      borderRadius: '5px',
+    },
+    _focus: {
+      outlineWidth: '2px',
+      outlineColor: '#651FFF',
+      borderRadius: '5px',
+      backgroundColor: '#EEEEEE',
+    },
+    _active: {
+      outlineWidth: '2px',
+      outlineColor: '#651FFF',
+      borderRadius: '5px',
+      backgroundColor: '#EEEEEE',
+    },
+  },
   Button: {
     backgroundColor: '#fff',
     borderWidth: '1px',
@@ -59,6 +78,7 @@ const defaultTheme: MinervaTheme = {
     whiteSpace: 'nowrap',
     verticalAlign: 'middle',
     fontSize: '14px',
+    _hover: { backgroundColor: 'red' },
     lineHeight: '20px',
     paddingTop: '8px',
     paddingBottom: '8px',

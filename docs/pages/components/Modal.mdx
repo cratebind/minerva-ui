@@ -14,6 +14,8 @@ import {
 } from 'minerva-ui';
 ```
 
+## Basic Modal
+
 ```jsx live
 () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -22,14 +24,12 @@ import {
     <>
       <Button onClick={onOpen}>Open Modal</Button>
       <Modal isOpen={isOpen} onClose={onClose} overflow="hidden">
-        <ModalHeader onClose={onClose}>Hello World!</ModalHeader>
+        <ModalHeader onClose={onClose}>Modal Title</ModalHeader>
         <ModalBody>
-          Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco
-          deserunt aute id consequat veniam incididunt duis in sint irure nisi.
-          Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor
-          esse quis. Sunt ad dolore quis aute consequat.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id
+          ante vitae eros suscipit pulvinar.
         </ModalBody>
-        <ModalFooter bg="gray.50">
+        <ModalFooter>
           <Flex
             px={6}
             py={3}
@@ -37,6 +37,118 @@ import {
             radiusBottom="5px"
           >
             <Button onClick={onClose} boxShadow="base" width={['100%', 'auto']}>
+              Submit
+            </Button>
+          </Flex>
+        </ModalFooter>
+      </Modal>
+    </>
+  );
+};
+```
+
+## Modal with gray footer
+
+```jsx live
+() => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  return (
+    <>
+      <Button onClick={onOpen}>Open Modal</Button>
+      <Modal isOpen={isOpen} onClose={onClose} overflow="hidden">
+        <ModalHeader onClose={onClose}>Modal Title</ModalHeader>
+        <ModalBody>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id
+          ante vitae eros suscipit pulvinar.
+        </ModalBody>
+        <ModalFooter bg="#F5F5F5">
+          <Flex
+            px={6}
+            py={3}
+            flexDirection={['column', 'row-reverse']}
+            radiusBottom="5px"
+          >
+            <Button onClick={onClose} boxShadow="base" width={['100%', 'auto']}>
+              Submit
+            </Button>
+          </Flex>
+        </ModalFooter>
+      </Modal>
+    </>
+  );
+};
+```
+
+## Modal with centered content
+
+```jsx live
+() => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  return (
+    <>
+      <Button onClick={onOpen}>Open Modal</Button>
+      <Modal isOpen={isOpen} onClose={onClose} overflow="hidden">
+        <ModalHeader justifyContent="center" width="100%" onClose={onClose}>
+          Modal Title
+        </ModalHeader>
+        <ModalBody textAlign="center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id
+          ante vitae eros suscipit pulvinar.
+        </ModalBody>
+        <ModalFooter>
+          <Flex
+            px={6}
+            py={3}
+            flexDirection={['column', 'row']}
+            radiusBottom="5px"
+          >
+            <Button
+              onClick={onClose}
+              variant="primary"
+              width="100%"
+              flex={1}
+              mr="6px"
+            >
+              Submit
+            </Button>
+            <Button onClick={() => setOpen(false)} width="100%" flex={1}>
+              Cancel
+            </Button>
+          </Flex>
+        </ModalFooter>
+      </Modal>
+    </>
+  );
+};
+```
+
+## Modal with full width button
+
+```jsx live
+() => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  return (
+    <>
+      <Button onClick={onOpen}>Open Modal</Button>
+      <Modal isOpen={isOpen} onClose={onClose} overflow="hidden">
+        <ModalHeader justifyContent="center" width="100%" onClose={onClose}>
+          Modal Title
+        </ModalHeader>
+        <ModalBody textAlign="center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id
+          ante vitae eros suscipit pulvinar.
+        </ModalBody>
+        <ModalFooter>
+          <Flex
+            px={6}
+            py={3}
+            flexDirection={['column', 'row']}
+            radiusBottom="5px"
+          >
+            <Button onClick={onClose} variant="primary" width="100%">
               Submit
             </Button>
           </Flex>
@@ -77,12 +189,10 @@ import {
           maxWidth="80vw"
           overflow="hidden"
         >
-          <ModalHeader onClose={onClose}>Hello World!</ModalHeader>
+          <ModalHeader onClose={onClose}>Modal Title</ModalHeader>
           <ModalBody>
-            Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
-            ullamco deserunt aute id consequat veniam incididunt duis in sint
-            irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit
-            officia tempor esse quis. Sunt ad dolore quis aute consequat.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            id ante vitae eros suscipit pulvinar.
           </ModalBody>
           <ModalFooter bg="gray.50">
             <Flex
