@@ -33,8 +33,13 @@ type MenuButtonProps = ReachMenuButtonProps & MinervaProps;
 export const MenuButton = (props: MenuButtonProps) => {
   const componentStyles = useComponentStyles('MenuButton');
   const { isExpanded } = useMenuButtonContext();
+
   return (
     <BaseMenuButton
+      display="flex"
+      alignItems="center"
+      border="1px solid #E0E0E0"
+      borderRadius="5px"
       minWidth="140px"
       justifyContent="space-between"
       padding="12px 15px"
