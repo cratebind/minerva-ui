@@ -2,15 +2,47 @@
 
 exports[`<Menu /> should render when positioned to Right: Closed Menu 1`] = `
 .c0 {
-  box-sizing: border-box;
-  min-width: 0;
-  min-width: 140px;
+  box-shadow: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  border: 1px solid #E0E0E0;
+  border-radius: 5px;
+  min-width: 140px;
   padding: 12px 15px;
-  box-shadow: none;
+}
+
+.c0:hover {
+  box-shadow: 0 0 0 2px #CBBEE7;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #CBBEE7;
+}
+
+.c0:active,
+.c0[data-active=true] {
+  box-shadow: 0 0 0 2px #CBBEE7;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover,
+.c0[aria-disabled=true],
+.c0[aria-disabled=true]:focus,
+.c0[aria-disabled=true]:hover {
+  background: #E0E0E0;
+  color: rgba(30,6,84,0.5);
 }
 
 <div>
@@ -33,7 +65,7 @@ exports[`<Menu /> should render when positioned to Right: Open Menu 1`] = `
   <button
     aria-controls="menu--7"
     aria-haspopup="true"
-    class="sc-dIvrsQ jSOwKS"
+    class="sc-bkbkJK bjgAvd"
     data-reach-menu-button=""
     data-testid="menu-button"
     id="menu-button--menu--7"
@@ -46,15 +78,47 @@ exports[`<Menu /> should render when positioned to Right: Open Menu 1`] = `
 
 exports[`<Menu /> should render: Closed Menu 1`] = `
 .c0 {
-  box-sizing: border-box;
-  min-width: 0;
-  min-width: 140px;
+  box-shadow: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  border: 1px solid #E0E0E0;
+  border-radius: 5px;
+  min-width: 140px;
   padding: 12px 15px;
-  box-shadow: none;
+}
+
+.c0:hover {
+  box-shadow: 0 0 0 2px #CBBEE7;
+}
+
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #CBBEE7;
+}
+
+.c0:active,
+.c0[data-active=true] {
+  box-shadow: 0 0 0 2px #CBBEE7;
+}
+
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover,
+.c0[aria-disabled=true],
+.c0[aria-disabled=true]:focus,
+.c0[aria-disabled=true]:hover {
+  background: #E0E0E0;
+  color: rgba(30,6,84,0.5);
 }
 
 <div>
@@ -77,7 +141,7 @@ exports[`<Menu /> should render: Open Menu 1`] = `
   <button
     aria-controls="menu--1"
     aria-haspopup="true"
-    class="sc-dIvrsQ jSOwKS"
+    class="sc-bkbkJK bjgAvd"
     data-reach-menu-button=""
     data-testid="menu-button"
     id="menu-button--menu--1"
