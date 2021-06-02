@@ -21,12 +21,22 @@ const ExampleMenu = (props: MenuListProps) => (
       Actions <Icon name="chevron-down" ml={2} size="14px" />
     </MenuButton>
     <MenuList data-testid="menu-list" {...props}>
-      <MenuItem onSelect={() => alert('Download')}>Download</MenuItem>
+      <MenuItem
+        color="#ff0000"
+        data-testid="menu-item"
+        onSelect={() => alert('Download')}
+      >
+        Download
+      </MenuItem>
       <MenuItem onSelect={() => alert('Copy')}>Create a Copy</MenuItem>
       <MenuItem onSelect={() => alert('Mark as Draft')}>Mark as Draft</MenuItem>
       <MenuItem onSelect={() => alert('Delete')}>Delete</MenuItem>
       <MenuDivider />
-      <MenuLink href="https://minerva-ui-docs.vercel.app">
+      <MenuLink
+        color="#800080"
+        data-testid="menu-link"
+        href="https://minerva-ui-docs.vercel.app"
+      >
         Open Documentation
       </MenuLink>
     </MenuList>
@@ -49,6 +59,19 @@ describe('<Menu />', () => {
     fireEvent.click(screen.getByTestId('menu-button'));
 
     expect(container).toMatchSnapshot('Open Menu');
+  });
+
+  it('should pass basic style props', () => {
+    const color = '#ff0000';
+    const color2 = '#800080';
+    const { queryByTestId } = render(
+      <ThemeProvider>
+        <ExampleMenu menuPosition="right" />
+      </ThemeProvider>
+    );
+
+    expect(queryByTestId('menu-item')).toHaveStyleRule('color', color);
+    expect(queryByTestId('menu-link')).toHaveStyleRule('color', color2);
   });
 
   it('should render when positioned to Right', () => {
