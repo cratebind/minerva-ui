@@ -19,7 +19,7 @@ import { ChevronDown } from '../Icon/baseIcons';
 // import { useTheme } from '../theme';
 
 // import '@reach/menu-button/styles.css';
-import PseudoBox from '../PseudoBox';
+import PseudoBox, { createPseudoStyles, PseudoBoxProps } from '../PseudoBox';
 
 export type MenuContainerProps = MenuProps;
 
@@ -151,10 +151,7 @@ export { useMenuButtonContext } from '@reach/menu-button';
 // using our own <Button /> component causes weird TS issues due to the `as` prop
 const BaseMenuButton = styled(ReachMenuButton).withConfig({
   shouldForwardProp: shouldForwardProp,
-})<MinervaProps & ReachMenuButtonProps>(
-  {
-    boxSizing: 'border-box',
-    minWidth: 0,
-  },
+})<MinervaProps & PseudoBoxProps & ReachMenuButtonProps>(
+  createPseudoStyles,
   systemProps
 );
