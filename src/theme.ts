@@ -121,6 +121,10 @@ const defaultTheme: MinervaTheme = {
   Link: {},
   Tabs: {},
   MenuButton: {
+    display: 'flex',
+    alignItems: 'center',
+    border: '1px solid #E0E0E0',
+    borderRadius: '5px',
     _hover: {
       boxShadow: '0 0 0 2px #CBBEE7',
     },
