@@ -1,10 +1,18 @@
 import React from 'react';
-import { Alert } from '../Alert';
+import { Alert, AlertButton } from '../Alert';
 import Button from '../Button';
-import { Close } from '../Icon/baseIcons';
 
 import { defaultIcons, defaultTheme, ThemeProvider } from '..';
 import { filteredArgs } from '../utils';
+
+const EXAMPLE_BUTTONS: Array<AlertButton> = [
+  {
+    buttonText: 'View Status',
+  },
+  {
+    buttonText: 'Dismiss',
+  },
+];
 
 export default {
   title: 'Alert',
@@ -21,21 +29,41 @@ const Provider = props => (
 export const Statuses = () => {
   return (
     <Provider>
-      <Alert status="error" title="Whoa!">
-        Something not great is happening.
-      </Alert>
+      <Alert
+        status="error"
+        title="Whoa!"
+        description="Something not great is happening."
+      />
       <br />
-      <Alert status="success" title="Congrats!">
-        Something great is happening!
-      </Alert>
+      <Alert
+        status="success"
+        title="Congrats!"
+        description="Something great is happening!"
+      />
       <br />
-      <Alert status="warning">
-        Something is happening that isn't bad yet, but might be soon.
-      </Alert>
+      <Alert
+        status="warning"
+        description={`Something is happening that isn't bad yet, but might be soon.`}
+      />
       <br />
-      <Alert status="info" title="Attention:">
-        Something is happening and you should know about it.
-      </Alert>
+      <Alert
+        status="info"
+        title="Attention:"
+        description="Something is happening and you should know about it."
+      />
+    </Provider>
+  );
+};
+
+export const Buttons = () => {
+  return (
+    <Provider>
+      <Alert
+        status="error"
+        title="Whoa!"
+        description="Something not great is happening."
+        actions={EXAMPLE_BUTTONS}
+      />
     </Provider>
   );
 };
@@ -47,19 +75,33 @@ export const Hidden = () => {
     <Provider>
       <Button onClick={() => setOpen(true)}>Open Alert</Button>
       {open && (
-        <Alert status="error" title="Whoa!">
-          Something not great is happening!
-          <Button
-            bg="transparent"
-            padding={2}
-            border={0}
-            name="Close Alert"
-            marginLeft="auto"
-            onClick={() => setOpen(false)}
-          >
-            <Close size="20px" />
-          </Button>
-        </Alert>
+        <Alert
+          status="error"
+          title="Whoa!"
+          description="Something not great is happening!"
+          close
+          buttonAction={() => setOpen(false)}
+        />
+      )}
+    </Provider>
+  );
+};
+
+export const HiddenWithTextButton = () => {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <Provider>
+      <Button onClick={() => setOpen(true)}>Open Alert</Button>
+      {open && (
+        <Alert
+          status="error"
+          title="Whoa!"
+          description="Something not great is happening!"
+          close
+          buttonAction={() => setOpen(false)}
+          buttonText="Dismiss"
+        />
       )}
     </Provider>
   );
