@@ -5197,6 +5197,13 @@
   dependencies:
     csstype "^3.0.2"
 
+"@types/styled-system__css@^5.0.15":
+  version "5.0.15"
+  resolved "https://registry.yarnpkg.com/@types/styled-system__css/-/styled-system__css-5.0.15.tgz#f6f896e33393f8b3763f275afaa84261dae77a54"
+  integrity sha512-bbFlY2ATFEaWEMOllEqMktSzq4yGPAiZSrjGUQ124LSStm9QPhKErOuTxXfJi8VuymaQ+g1uC8AbC2o3BpgQyA==
+  dependencies:
+    csstype "^3.0.2"
+
 "@types/tapable@^1", "@types/tapable@^1.0.5":
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.7.tgz#545158342f949e8fd3bfd813224971ecddc3fac4"

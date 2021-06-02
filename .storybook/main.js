@@ -5,6 +5,7 @@ module.exports = {
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
   typescript: {
     check: false, // type-check stories during Storybook build
+    reactDocgen: false,
   },
   webpackFinal: async (config) => {
     // allow __DEV__ macro to be used
