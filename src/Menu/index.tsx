@@ -9,6 +9,8 @@ import {
   MenuProps,
   MenuButtonProps as ReachMenuButtonProps,
   MenuItemsProps,
+  MenuItemProps as ReachMenuItemProps,
+  MenuLinkProps as ReachMenuLinkProps,
   useMenuButtonContext,
 } from '@reach/menu-button';
 import { positionDefault, positionRight } from '@reach/popover';
@@ -36,13 +38,6 @@ export const MenuButton = (props: MenuButtonProps) => {
 
   return (
     <BaseMenuButton
-      display="flex"
-      alignItems="center"
-      border="1px solid #E0E0E0"
-      borderRadius="5px"
-      minWidth="140px"
-      justifyContent="space-between"
-      padding="12px 15px"
       boxShadow={isExpanded ? '0 0 0 2px #CBBEE7' : 'none'}
       {...componentStyles}
       {...props}
@@ -116,30 +111,37 @@ export function MenuIcon() {
   );
 }
 
-export const MenuItem = styled(ReachMenuItem)`
-  color: #000;
-  padding: 0.625rem 0.9375rem;
-  font-size: 14px;
-  line-height: 112.6%;
-  cursor: pointer;
+type MenuItemProps = ReachMenuItemProps & MinervaProps;
 
-  &[data-selected] {
-    background: #f5f5f5;
-  }
-`;
+export const MenuItem = (props: MenuItemProps) => {
+  const componentStyles = useComponentStyles('MenuItem');
 
-export const MenuLink = styled(ReachMenuLink)`
-  color: #000;
-  padding: 0.625rem 0.9375rem;
-  font-size: 14px;
-  line-height: 112.6%;
-  display: block;
-  cursor: pointer;
+  return (
+    <PseudoBox
+      as={ReachMenuItem}
+      cursor="pointer"
+      {...componentStyles}
+      {...props}
+    />
+  );
+};
 
-  &[data-selected] {
-    background: #f5f5f5;
-  }
-`;
+type MenuLinkProps = ReachMenuLinkProps &
+  MinervaProps &
+  React.LinkHTMLAttributes<HTMLAnchorElement>;
+
+export const MenuLink = (props: MenuLinkProps) => {
+  const componentStyles = useComponentStyles('MenuLink');
+
+  return (
+    <PseudoBox
+      as={ReachMenuLink}
+      cursor="pointer"
+      {...componentStyles}
+      {...props}
+    />
+  );
+};
 
 export const MenuDivider = props => (
   <Box

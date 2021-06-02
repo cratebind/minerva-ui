@@ -42,7 +42,7 @@ const Template: Story<MenuContainerProps> = ({}) => {
           <MenuIcon />
         </MenuButton>
         <MenuList>
-          <MenuItem>Download</MenuItem>
+          <MenuItem onSelect={() => {}}>Download</MenuItem>
           <MenuItem onSelect={() => alert('Copy')}>Create a Copy</MenuItem>
           <MenuItem onSelect={() => alert('Mark as Draft')}>
             Mark as Draft

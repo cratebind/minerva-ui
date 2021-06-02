@@ -14,6 +14,8 @@ export interface MinervaTheme extends Theme {
   Drawer?: ThemeComponent;
   Heading?: ThemeComponent;
   MenuButton?: ThemeComponent;
+  MenuItem?: ThemeComponent;
+  MenuLink?: ThemeComponent;
   Modal?: ThemeComponent;
   ModalContent?: ThemeComponent;
   ModalBody?: ThemeComponent;
@@ -123,8 +125,11 @@ const defaultTheme: MinervaTheme = {
   MenuButton: {
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'space-between',
     border: '1px solid #E0E0E0',
     borderRadius: '5px',
+    minWidth: '140px',
+    padding: '12px 15px',
     _hover: {
       boxShadow: '0 0 0 2px #CBBEE7',
     },
@@ -138,6 +143,24 @@ const defaultTheme: MinervaTheme = {
     _disabled: {
       background: '#E0E0E0',
       color: 'rgba(30, 6, 84, 0.5)',
+    },
+  },
+  MenuItem: {
+    color: '#000',
+    padding: '0.625rem 0.9375rem',
+    fontSize: '14px',
+    lineHeight: '112.6%',
+    _hover: {
+      background: '#f5f5f5',
+    },
+  },
+  MenuLink: {
+    color: '#000',
+    padding: ' 0.625rem 0.9375rem',
+    fontSize: '14px',
+    lineHeight: '112.6%',
+    _hover: {
+      background: '#f5f5f5',
     },
   },
   Modal: {},
