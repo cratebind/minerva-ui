@@ -1,8 +1,15 @@
 import React, { forwardRef } from 'react';
+import styled from 'styled-components';
 import { CustomCheckboxContainer, CustomCheckboxInput } from '@reach/checkbox';
+
 import { MinervaProps, Box } from '../layout';
 import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';
+
+export const StyledBox = styled(Box)`
+  font-weight: 400;
+  font-size: 14px;
+`;
 
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
 
@@ -28,7 +35,7 @@ export const Checkbox = forwardRef(function Checkbox(
   const componentStyles = useComponentStyles('Checkbox');
   return (
     <label>
-      <Box
+      <StyledBox
         as={CustomCheckboxContainer}
         display="flex"
         alignItems="center"
@@ -52,7 +59,7 @@ export const Checkbox = forwardRef(function Checkbox(
           {...props}
         />
         {children}
-      </Box>
+      </StyledBox>
     </label>
   );
 });
