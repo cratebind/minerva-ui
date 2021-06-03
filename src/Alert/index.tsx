@@ -33,6 +33,12 @@ export const StyledAlert = styled(Flex)(
   systemProps
 );
 
+export const StyledAlertInnerContainer = styled(Flex)`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -12px;
+`;
+
 export const StyledAlertTitleContainer = styled(Flex)`
   margin-bottom: 12px;
 `;
@@ -45,37 +51,36 @@ export const StyledAlertTitle = styled(Text)(
   systemProps
 );
 
-export const StyledAlertDescriptionContainer = styled(Flex)`
+export const StyledAlertContentContainer = styled(Flex)`
   display: flex;
   flex-direction: column;
   justify-content: 'flex-start';
-  margin-bottom: 12px;
-`;
-
-export const StyledAlertButtonsContainer = styled(Flex)`
-  display: flex;
-  flex-direction: row;
-  justify-content: 'flex-start';
-  margin: 0 -20px;
-`;
-
-export const StyledAlertButton = styled(Flex)`
-  margin: 0 20px;
-`;
-
-export const StyledAlertDescription = styled(Text)`
   font-weigth: 400;
   font-size: 10px;
   line-height: 12.5px;
+  margin-bottom: 12px;
+`;
+
+export const StyledAlertActionsContainer = styled(Flex)`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: 'flex-start';
+  margin: 0px -10px;
+  margin-bottom: 12px;
+`;
+
+export const StyledAlertButton = styled(Flex)`
+  margin: 0 10px;
+`;
+
+export const StyledAlertContent = styled(Flex)`
+  margin-bottom: 12px;
 `;
 
 export const StyledCloseText = styled(Text)`
   text-decoration: underline;
-`;
-
-export const StyledAlertInner = styled(Flex)`
-  display: flex;
-  flex-direction: column;
 `;
 
 export const StyledAlertIconSection = styled(Flex)`
@@ -99,7 +104,6 @@ export interface AlertProps extends MinervaProps, AlertButton {
   children?: React.ReactNode;
   status?: Status;
   title?: string;
-  description?: string;
   actions?: Array<AlertButton>;
   close?: boolean;
   bg?: string;
@@ -111,6 +115,8 @@ export interface AlertProps extends MinervaProps, AlertButton {
   // closeText?: string;
   props?: any;
 }
+
+export type AlertActions = [AlertButton, AlertButton];
 // @TODO: Move these to the theme so they can be customized
 
 const alertTypes: Record<Status, StatusInfo> = {
@@ -147,6 +153,7 @@ const AlertButtonComponent = ({
         bg="transparent"
         border={0}
         padding={0}
+        color="#000"
         name={buttonText || 'Close Alert'}
         onClick={onClickButton}
       >
@@ -160,7 +167,6 @@ const AlertButtonComponent = ({
 export const Alert = forwardRefWithAs<AlertProps, 'div'>(function Alert(
   {
     title,
-    description,
     children,
     actions,
     buttonText,
@@ -182,7 +188,6 @@ export const Alert = forwardRefWithAs<AlertProps, 'div'>(function Alert(
         };
 
   const alertIcon = icon || statusIcon;
-
   return (
     <StyledAlert
       ref={ref}
@@ -195,22 +200,17 @@ export const Alert = forwardRefWithAs<AlertProps, 'div'>(function Alert(
       {...props}
     >
       {alertIcon && <Icon name={alertIcon} size="8px" mr={2} />}
-      <StyledAlertInner>
+      <StyledAlertInnerContainer>
         {title && (
           <StyledAlertTitleContainer>
             <StyledAlertTitle>{title}</StyledAlertTitle>
           </StyledAlertTitleContainer>
         )}
-        <StyledAlertDescriptionContainer>
-          {description && (
-            <StyledAlertDescription>{description}</StyledAlertDescription>
-          )}
-          {children && (
-            <StyledAlertDescription>{children}</StyledAlertDescription>
-          )}
-        </StyledAlertDescriptionContainer>
+        {children && (
+          <StyledAlertContentContainer>{children}</StyledAlertContentContainer>
+        )}
         {actions && (
-          <StyledAlertButtonsContainer>
+          <StyledAlertActionsContainer>
             {actions.map(
               ({ buttonAction, buttonText }: AlertButton, index: number) => (
                 <StyledAlertButton key={index}>
@@ -218,9 +218,9 @@ export const Alert = forwardRefWithAs<AlertProps, 'div'>(function Alert(
                 </StyledAlertButton>
               )
             )}
-          </StyledAlertButtonsContainer>
+          </StyledAlertActionsContainer>
         )}
-      </StyledAlertInner>
+      </StyledAlertInnerContainer>
       {close && (
         <AlertButtonComponent
           buttonAction={buttonAction}

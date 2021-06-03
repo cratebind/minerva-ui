@@ -1,16 +1,39 @@
 import React from 'react';
-import { Alert, AlertButton } from '../Alert';
+import { Alert, AlertActions, AlertProps } from '../Alert';
 import Button from '../Button';
 
 import { defaultIcons, defaultTheme, ThemeProvider } from '..';
 import { filteredArgs } from '../utils';
 
-const EXAMPLE_BUTTONS: Array<AlertButton> = [
+const ALERT_BUTTONS_EXAMPLE: AlertActions = [
   {
     buttonText: 'View Status',
   },
   {
     buttonText: 'Dismiss',
+  },
+];
+
+const ALERT_EXAMPLE: Array<AlertProps> = [
+  {
+    status: 'error',
+    title: 'Error',
+    children: 'Something not great is happening.',
+  },
+  {
+    status: 'success',
+    title: 'Success',
+    children: 'Something great is happening!',
+  },
+  {
+    status: 'warning',
+    title: 'Warning',
+    children: `Something is happening that isn't bad yet, but might be soon.`,
+  },
+  {
+    status: 'info',
+    title: 'Info',
+    children: 'Something is happening and you should know about it.',
   },
 ];
 
@@ -29,40 +52,24 @@ const Provider = props => (
 export const Statuses = () => {
   return (
     <Provider>
-      <Alert
-        status="error"
-        title="Whoa!"
-        description="Something not great is happening."
-      />
-      <br />
-      <Alert
-        status="success"
-        title="Congrats!"
-        description="Something great is happening!"
-      />
-      <br />
-      <Alert
-        status="warning"
-        description={`Something is happening that isn't bad yet, but might be soon.`}
-      />
-      <br />
-      <Alert
-        status="info"
-        title="Attention:"
-        description="Something is happening and you should know about it."
-      />
+      {ALERT_EXAMPLE.map((alert, index, array) => (
+        <>
+          <Alert key={index} {...alert} />
+          {index + 1 < array.length && <br />}
+        </>
+      ))}
     </Provider>
   );
 };
 
-export const Buttons = () => {
+export const WithActionButtons = () => {
   return (
     <Provider>
       <Alert
         status="error"
         title="Whoa!"
-        description="Something not great is happening."
-        actions={EXAMPLE_BUTTONS}
+        children="Something not great is happening."
+        actions={ALERT_BUTTONS_EXAMPLE}
       />
     </Provider>
   );
@@ -78,7 +85,7 @@ export const Hidden = () => {
         <Alert
           status="error"
           title="Whoa!"
-          description="Something not great is happening!"
+          children="Something not great is happening!"
           close
           buttonAction={() => setOpen(false)}
         />
@@ -97,7 +104,7 @@ export const HiddenWithTextButton = () => {
         <Alert
           status="error"
           title="Whoa!"
-          description="Something not great is happening!"
+          children="Something not great is happening!"
           close
           buttonAction={() => setOpen(false)}
           buttonText="Dismiss"
@@ -111,6 +118,9 @@ export const Custom = () => (
   <Provider>
     <Alert bg="orange.200" title="Alert!" />
     <br />
-    <Alert bg="green.100">Here is some information.</Alert>
+    <Alert
+      bg="green.100"
+      children="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ante vitae eros suscipit pulvinar. "
+    />
   </Provider>
 );
