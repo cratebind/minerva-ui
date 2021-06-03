@@ -30,6 +30,7 @@ export interface MinervaTheme extends Theme {
   Tag?: ThemeComponent;
   Skeleton?: ThemeComponent;
   Tabs?: ThemeComponent;
+  Tab?: ThemeComponent;
   icons: any;
   defaultBorderColor?: string;
   variants?: any;
@@ -118,12 +119,26 @@ const defaultTheme: MinervaTheme = {
   },
   InputField: {},
   Link: {},
-  Tabs: {},
   Modal: {},
   ModalHeader: {},
   ModalBody: {},
   ModalFooter: {},
   ModalContent: {},
+  Tabs: {},
+  Tab: {
+    _selected: {
+      color: '#651FFF',
+      fontWeight: 500,
+      outline: 0,
+      borderBottom: '2px solid currentColor',
+    },
+    _focus: {
+      color: '#651FFF',
+      outline: 0,
+      boxShadow: '0 0 0 3px #CBBEE7',
+      borderRadius: '5px',
+    },
+  },
   Tag: {},
   Text: {},
   Tooltip: {},
