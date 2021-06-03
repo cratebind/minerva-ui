@@ -5,7 +5,6 @@ import { forwardRefWithAs } from '../type-utilities';
 import { MinervaProps } from '../layout';
 import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';
-import { FieldErrorMessage } from '../InputField';
 
 type BaseProps = React.InputHTMLAttributes<HTMLInputElement> & MinervaProps;
 
@@ -16,11 +15,10 @@ export interface InputProps extends BaseProps {
   invalid?: boolean;
   /** allows input to be labeled for accessibility */
   hiddenLabel?: string;
-  errorText?: string;
 }
 
 export const Input = forwardRefWithAs<InputProps, 'input'>(function Input(
-  { hiddenLabel, ...props }: InputProps,
+  { hiddenLabel, invalid, ...props }: InputProps,
   ref
 ) {
   // return <StyledInput ref={ref} {...props} />;
@@ -38,14 +36,9 @@ export const Input = forwardRefWithAs<InputProps, 'input'>(function Input(
         ref={ref}
         {...componentStyles}
         {...props}
-        aria-invalid={props.invalid}
+        aria-invalid={invalid}
         aria-label={hiddenLabel}
       />
-      {props.errorText && (
-        <FieldErrorMessage data-testid="error">
-          {props.errorText}
-        </FieldErrorMessage>
-      )}
     </>
   );
 });

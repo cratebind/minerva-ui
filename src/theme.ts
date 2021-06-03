@@ -96,7 +96,7 @@ const defaultTheme: MinervaTheme = {
     appearance: 'none',
     fontSize: '14px',
     backgroundColor: '#F5F5F5',
-    border: 'solid 1.5px #F5F5F5',
+    border: 'solid 2px #F5F5F5',
     color: '#000000',
     paddingTop: '8px',
     paddingBottom: '8px',
@@ -107,7 +107,7 @@ const defaultTheme: MinervaTheme = {
     outline: 'none',
     width: '100%',
     _placeholder: {
-      color: 'rgba(0,0,0,0.75)',
+      color: 'rgba(0,0,0,0.50)',
     },
     _focus: {
       borderColor: '#E0E0E0',
