@@ -12,15 +12,15 @@ exports[`<TagsInput /> should render 1`] = `
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  font-size: 16px;
-  border-style: solid;
-  border-color: #d2d6dc;
+  font-size: 14px;
+  background-color: #F5F5F5;
+  border: solid 2px #F5F5F5;
+  color: #000000;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 12px;
   padding-right: 32px;
-  border-width: 1px;
-  border-radius: 4px;
+  border-radius: 5px;
   -webkit-transition: all 250ms ease 0s;
   transition: all 250ms ease 0s;
   outline: none;
@@ -28,8 +28,8 @@ exports[`<TagsInput /> should render 1`] = `
 }
 
 .c4:focus {
-  border-color: #a4cafe;
-  box-shadow: 0 0 0 3px rgba(164,202,254,.45);
+  border-color: #E0E0E0;
+  background-color: #FFFFFF;
 }
 
 .c4:disabled,
@@ -38,9 +38,28 @@ exports[`<TagsInput /> should render 1`] = `
 .c4[aria-disabled=true],
 .c4[aria-disabled=true]:focus,
 .c4[aria-disabled=true]:hover {
-  background-color: #EAEAEA;
-  color: #8F8F8F;
+  background-color: #E0E0E0;
   cursor: not-allowed;
+}
+
+.c4[aria-invalid=true] {
+  border: solid 2px #F34335;
+}
+
+.c4::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.50);
+}
+
+.c4::-moz-placeholder {
+  color: rgba(0,0,0,0.50);
+}
+
+.c4:-ms-input-placeholder {
+  color: rgba(0,0,0,0.50);
+}
+
+.c4::placeholder {
+  color: rgba(0,0,0,0.50);
 }
 
 .c0 {
