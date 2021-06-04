@@ -31,6 +31,11 @@ export interface PseudoBoxProps {
    */
   _focus?: string | number | CSSObject | undefined;
   /**
+   * Styles for CSS selector `&:focus-visible`
+   *
+   */
+  _focusVisible?: string | number | CSSObject | undefined;
+  /**
    * Styles for CSS selector `&:hover`
    */
   _hover?: string | number | CSSObject | undefined;
@@ -169,6 +174,7 @@ const PseudoBox = styled(Box).withConfig({
     _after,
     _focus,
     _selected,
+    _focusVisible,
     _focusWithin,
     _hover,
     _invalid,
@@ -216,6 +222,7 @@ const PseudoBox = styled(Box).withConfig({
       '&:after': _after,
       '&:focus-within': _focusWithin,
       '&::placeholder': _placeholder,
+      '&:focus-visible': _focusVisible,
     });
   }
 );

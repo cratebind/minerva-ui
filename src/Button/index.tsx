@@ -8,29 +8,80 @@ import { forwardRefWithAs } from '../type-utilities';
 
 export const buttonVariants = {
   primary: {
-    bg: 'indigo.800',
-    borderColor: 'indigo.800',
+    bg: '#651FFF',
+    borderColor: '#651FFF',
     color: 'white',
+    _active: {
+      bg: '#331080',
+      borderColor: 'white',
+    },
+    _focus: {
+      borderColor: '#331080',
+      outline: 0,
+    },
     _hover: {
-      bg: 'indigo.900',
-      borderColor: 'indigo.900',
+      bg: '#4C17BF',
+      borderColor: '#4C17BF',
     },
   },
   secondary: {
-    bg: 'white',
-    borderColor: 'indigo.800',
-    color: 'indigo.800',
+    bg: 'black',
+    borderColor: 'black',
+    color: 'white',
+    _active: {
+      bg: '#8E82A9',
+      borderColor: 'white',
+    },
+    _focus: {
+      borderColor: '#8E82A9',
+      outline: 0,
+    },
     _hover: {
-      bg: 'indigo.800',
-      color: 'white',
+      bg: '#56447F',
+      borderColor: '#56447F',
     },
   },
   tertiary: {
     bg: 'white',
-    borderColor: 'transparent',
-    color: 'indigo.800',
+    borderColor: '#BDBDBD',
+    color: '#651FFF',
     _hover: {
-      textDecoration: 'underline',
+      color: 'white',
+      bg: '#651FFF',
+      borderColor: '#651FFF',
+    },
+    _focus: {
+      bg: '#651FFF',
+      color: 'white',
+      borderColor: '#331080',
+      borderWidth: '3px',
+      outline: 0,
+    },
+    _active: {
+      borderColor: 'white',
+      bg: '#4C17BF',
+    },
+    _disabled: {
+      color: '#BDBDBD',
+      cursor: 'not-allowed',
+    },
+  },
+  danger: {
+    bg: '#F34335',
+    borderColor: '#F34335',
+    color: 'white',
+    _hover: {
+      bg: '#B63228',
+      borderColor: '#B63228',
+    },
+    _focus: {
+      borderColor: '#7A221B',
+      borderWidth: '3px',
+      outline: 0,
+    },
+    _active: {
+      borderColor: 'white',
+      bg: '#7A221B',
     },
   },
 };
@@ -122,18 +173,25 @@ export const Button = forwardRefWithAs<ButtonProps, 'button'>(function Button(
       _hover={{
         backgroundColor: '#f9fafb',
       }}
-      _focus={{
-        borderColor: '#a4cafe',
-        boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
-        outline: 0,
-      }}
       _active={{
         borderColor: '#a4cafe',
         boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
         outline: 0,
       }}
+      _focus={{
+        borderColor: '#a4cafe',
+        boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
+        outline: 0,
+      }}
+      _focusVisible={{
+        boxShadow: '0 0 0 2px #fff, 0 0 0 6px rgba(118,169,250,1)',
+        borderColor: variantStyles.borderColor,
+        outline: 0,
+      }}
       _disabled={{
-        opacity: 0.4,
+        bg: '#BDBDBD',
+        borderColor: '#BDBDBD',
+        color: 'white',
         cursor: 'not-allowed',
       }}
       aria-busy={isLoading}
