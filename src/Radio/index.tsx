@@ -1,11 +1,16 @@
 import React, { useContext } from 'react';
-// import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import { MinervaProps } from '../layout';
 import { Box } from '../layout';
 import { useComponentStyles } from '../theme';
 import { PseudoBox } from '..';
 import { forwardRefWithAs } from '../type-utilities';
+
+export const StyledBox = styled(Box)`
+  font-weight: 400;
+  font-size: 14px;
+`;
 
 export interface RadioGroupProps {
   children?: React.ReactNode;
@@ -23,29 +28,26 @@ export interface RadioProps extends BaseProps {
   value?: string;
 }
 
-type ContextValue = {
-  selectedValue: string | undefined;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-};
+interface ContextValue extends RadioGroupProps {
+  selected: string | Array<string> | undefined;
+}
 
-const SelectedValueContext = React.createContext<ContextValue>({
-  selectedValue: undefined,
+const SelectedContext = React.createContext<ContextValue>({
+  selected: undefined,
 });
 
 export const RadioGroup = ({
   children,
-  value: selectedValue,
+  value: selected,
   onChange,
   ...props
-}: RadioGroupProps) => {
-  return (
-    <SelectedValueContext.Provider value={{ selectedValue, onChange }}>
-      <Box data-testid="radio-group" role="radiogroup" {...props}>
-        {children}
-      </Box>
-    </SelectedValueContext.Provider>
-  );
-};
+}: RadioGroupProps) => (
+  <SelectedContext.Provider value={{ selected, onChange }}>
+    <Box data-testid="radio-group" role="radiogroup" {...props}>
+      {children}
+    </Box>
+  </SelectedContext.Provider>
+);
 
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
 
@@ -53,13 +55,13 @@ export const Radio = forwardRefWithAs(function Radio(
   { value, children, disabled = false, ...props }: RadioProps,
   ref
 ) {
-  const { selectedValue, onChange } = useContext(SelectedValueContext);
+  const { selected, onChange, multiple } = useContext(SelectedContext);
   const componentStyles = useComponentStyles('Radio');
 
-  const checked = value === selectedValue;
+  const checked = value === selected;
 
   return (
-    <Box as="label" display="flex" alignItems="center">
+    <StyledBox as="label" display="flex" alignItems="center">
       <PseudoBox
         ref={ref}
         as="input"
@@ -67,46 +69,46 @@ export const Radio = forwardRefWithAs(function Radio(
         onChange={onChange}
         value={value}
         checked={checked}
+        disabled={disabled}
         appearance="none"
-        height="16px"
-        width="16px"
+        height="15px"
+        width="15px"
         borderRadius="100%"
-        borderWidth="1px"
+        borderWidth="1.5px"
         position="relative"
         transition="all 120ms ease"
-        disabled={disabled}
-        borderColor={checked ? 'rgb(88, 80, 236)' : 'inherit'}
-        bg={checked ? 'rgb(88, 80, 236)' : 'transparent'}
+        borderColor="#000"
+        bg={checked ? '#fff' : 'transparent'}
         cursor="pointer"
         _focus={{
           outline: 'none',
-          boxShadow: '0 0 0 3px rgba(164,202,254,.45)',
+          boxShadow: '0 0 0 1.5px #651FFF',
         }}
         _after={{
           content: `""`,
           transition: 'transform 180ms ease',
-          height: '6px',
-          width: '6px',
-          backgroundColor: '#fff',
+          height: '7.31px',
+          width: '7.31px',
+          backgroundColor: '#000',
           position: 'absolute',
           top: '50%',
           left: '50%',
           transform: `translate(-50%, -50%) ${
-            checked ? 'scale(1)' : 'scale(0.5)'
+            checked ? 'scale(1)' : 'scale(0)'
           }`,
           borderRadius: '100%',
           display: disabled ? 'none' : 'inherit',
         }}
         _disabled={{
-          backgroundColor: 'rgba(118, 118, 118, 0.3)',
+          backgroundColor: '#BDBDBD',
           cursor: 'not-allowed',
-          borderColor: 'rgba(118, 118, 118, 0.3)',
+          borderColor: '#BDBDBD',
         }}
         {...componentStyles}
         {...props}
       />
       <Box pl={2}>{children}</Box>
-    </Box>
+    </StyledBox>
   );
 });
 

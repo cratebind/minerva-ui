@@ -3,11 +3,18 @@ import { Meta, Story } from '@storybook/react';
 import { filteredArgs } from '../utils';
 import { Radio, RadioGroup, RadioProps } from '.';
 
+const RADIO_BUTTONS_EXAMPLE = [
+  { title: 'Radio button label 1', value: 'radio1' },
+  { title: 'Radio button label 2', value: 'radio2' },
+  { title: 'Radio button label 3', value: 'radio3' },
+];
+
 const meta: Meta = {
   title: 'Radio',
   component: RadioGroup,
   argTypes: {
     disabled: {
+      defaultValue: false,
       control: 'boolean',
     },
     ...filteredArgs,
@@ -23,14 +30,14 @@ const meta: Meta = {
 export default meta;
 
 const Template: Story<RadioProps> = args => {
-  const [value, setValue] = React.useState('test');
+  const [value, setValue] = React.useState('radio1');
   return (
     <RadioGroup onChange={e => setValue(e.target.value)} value={value}>
-      <Radio value="test" {...args}>
-        Meat
-      </Radio>
-      <Radio value="test1">Vegetarian</Radio>
-      <Radio value="test2">Supreme</Radio>
+      {RADIO_BUTTONS_EXAMPLE.map(({ value, title }) => (
+        <Radio key={value} value={value} {...args}>
+          {title}
+        </Radio>
+      ))}
     </RadioGroup>
   );
 };
