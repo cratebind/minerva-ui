@@ -6,6 +6,7 @@ import { Select, SelectProps } from '.';
 const options = [
   'Parrot',
   'Snake',
+  ['Chicken'],
   { title: 'Cat', value: 'cat' },
   { title: 'Dog', value: 'dog' },
   { title: 'Other', value: 'other' },
@@ -15,6 +16,10 @@ const meta: Meta = {
   title: 'Select',
   component: Select,
   argTypes: {
+    options: {
+      defaultValue: options,
+      control: 'array',
+    },
     disabled: {
       control: 'boolean',
     },
@@ -27,17 +32,12 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<SelectProps> = args => {
-  return <Select {...args} />;
-};
+const Template: Story<SelectProps> = args => <Select {...args} />;
 
 export const Basic = Template.bind({});
-Basic.args = {
-  options,
-};
+Basic.args = {};
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  options,
   disabled: true,
 };

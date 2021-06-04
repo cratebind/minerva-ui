@@ -38,7 +38,7 @@ const StyledSelect = styled('select')(
     whiteSpace: 'nowrap',
     verticalAlign: 'middle',
     fontSize: '14px',
-    lineHeight: '20px',
+    lineHeight: '16px',
     paddingTop: '12px',
     paddingBottom: '12px',
     paddingLeft: '15px',
@@ -101,17 +101,13 @@ const SelectIcon = ({ disabled }: any) => (
   <IconContainer>
     <svg
       style={{
-        width: 20,
-        height: 20,
         color: disabled ? 'rgba(30, 6, 84, 0.5)' : 'rgba(0, 0, 0, 1)',
       }}
       fill="none"
-      height="24"
+      height="16"
       role="presentation"
       stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
+      strokeWidth="1"
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +117,6 @@ const SelectIcon = ({ disabled }: any) => (
     </svg>
   </IconContainer>
 );
-
 interface ObjectTypeOption {
   title: string | number;
   value: string | number;
@@ -129,7 +124,9 @@ interface ObjectTypeOption {
 
 type PrimitiveTypeOption = number | string;
 
-type CustomSelectOption = ObjectTypeOption | PrimitiveTypeOption;
+type ComplexTypeOption = ObjectTypeOption | [string, string];
+
+type CustomSelectOption = ComplexTypeOption | PrimitiveTypeOption;
 
 export interface CustomSelectProps {
   children?: React.ReactNode;
@@ -149,13 +146,13 @@ export const Select = forwardRefWithAs<SelectProps, 'select'>(function Select(
   return (
     <Block position="relative">
       <StyledSelect ref={ref} disabled={disabled} {...props}>
-        {options.map((option: CustomSelectOption, index: number) => {
+        {options.map((option, index) => {
           if (typeof option === 'object') {
             return (
               <option
                 key={index}
-                value={option.value}
-                children={option.title}
+                value={option['value'] || option[1]}
+                children={option['title'] || option[0]}
               />
             );
           }
