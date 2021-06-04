@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Menu /> should render when positioned to Right: Closed Menu 1`] = `
+.c1 {
+  box-sizing: border-box;
+  min-width: 0;
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  width: 14px;
+  height: 14px;
+  color: #000;
+}
+
 .c0 {
   box-shadow: none;
   display: -webkit-box;
@@ -56,6 +70,21 @@ exports[`<Menu /> should render when positioned to Right: Closed Menu 1`] = `
     type="button"
   >
     Actions 
+    <svg
+      aria-hidden="true"
+      class="c1"
+      data-testid="menu-icon"
+      fill="none"
+      height="7"
+      viewBox="0 0 10 7"
+      width="10"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.95174 6.54518L0.70874 2.30218L2.12374 0.888184L4.95174 3.71718L7.77974 0.888184L9.19474 2.30218L4.95174 6.54518Z"
+        fill="black"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -72,11 +101,40 @@ exports[`<Menu /> should render when positioned to Right: Open Menu 1`] = `
     type="button"
   >
     Actions 
+    <svg
+      aria-hidden="true"
+      class="sc-bdnxRM dZCMJF"
+      data-testid="menu-icon"
+      fill="none"
+      height="7"
+      viewBox="0 0 10 7"
+      width="10"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.95174 6.54518L0.70874 2.30218L2.12374 0.888184L4.95174 3.71718L7.77974 0.888184L9.19474 2.30218L4.95174 6.54518Z"
+        fill="black"
+      />
+    </svg>
   </button>
 </div>
 `;
 
 exports[`<Menu /> should render: Closed Menu 1`] = `
+.c1 {
+  box-sizing: border-box;
+  min-width: 0;
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  width: 14px;
+  height: 14px;
+  color: #000;
+}
+
 .c0 {
   box-shadow: none;
   display: -webkit-box;
@@ -132,6 +190,21 @@ exports[`<Menu /> should render: Closed Menu 1`] = `
     type="button"
   >
     Actions 
+    <svg
+      aria-hidden="true"
+      class="c1"
+      data-testid="menu-icon"
+      fill="none"
+      height="7"
+      viewBox="0 0 10 7"
+      width="10"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.95174 6.54518L0.70874 2.30218L2.12374 0.888184L4.95174 3.71718L7.77974 0.888184L9.19474 2.30218L4.95174 6.54518Z"
+        fill="black"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -148,6 +221,21 @@ exports[`<Menu /> should render: Open Menu 1`] = `
     type="button"
   >
     Actions 
+    <svg
+      aria-hidden="true"
+      class="sc-bdnxRM dZCMJF"
+      data-testid="menu-icon"
+      fill="none"
+      height="7"
+      viewBox="0 0 10 7"
+      width="10"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.95174 6.54518L0.70874 2.30218L2.12374 0.888184L4.95174 3.71718L7.77974 0.888184L9.19474 2.30218L4.95174 6.54518Z"
+        fill="black"
+      />
+    </svg>
   </button>
 </div>
 `;

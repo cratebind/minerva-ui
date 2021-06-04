@@ -11,6 +11,7 @@ import {
   ThemeProvider,
   MenuListProps,
   MenuDivider,
+  MenuIcon,
 } from '../src';
 // import { axe, toHaveNoViolations } from 'jest-axe';
 // expect.extend(toHaveNoViolations);
@@ -18,7 +19,7 @@ import {
 const ExampleMenu = (props: MenuListProps) => (
   <MenuContainer data-testid="menu-container">
     <MenuButton data-testid="menu-button">
-      Actions <Icon name="chevron-down" ml={2} size="14px" />
+      Actions <MenuIcon data-testid="menu-icon" />
     </MenuButton>
     <MenuList data-testid="menu-list" {...props}>
       <MenuItem
@@ -82,6 +83,8 @@ describe('<Menu />', () => {
     );
 
     expect(queryByTestId('menu-button')).toBeInTheDocument();
+
+    expect(queryByTestId('menu-icon')).toBeInTheDocument();
 
     expect(container).toMatchSnapshot('Closed Menu');
 

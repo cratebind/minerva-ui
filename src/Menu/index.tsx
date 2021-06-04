@@ -94,7 +94,7 @@ export const MenuList = ({
   </ReachMenuPopover>
 );
 
-export function MenuIcon() {
+export function MenuIcon(props: MinervaProps) {
   const { isExpanded } = useMenuButtonContext();
 
   return (
@@ -107,6 +107,7 @@ export function MenuIcon() {
       h="14px"
       color="#000"
       aria-hidden="true"
+      {...props}
     />
   );
 }
