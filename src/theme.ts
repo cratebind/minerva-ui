@@ -89,7 +89,44 @@ const defaultTheme: MinervaTheme = {
     borderStyle: 'solid',
     borderColor: '#d2d6dc',
   },
-  Checkbox: {},
+  Checkbox: {
+    width: '15px',
+    height: '15px',
+    marginRight: '8px',
+    borderRadius: '3px',
+    borderWidth: '1.5px',
+    borderColor: '#000',
+    borderStyle: 'solid',
+    padding: '2px',
+    appearance: 'none',
+    transition:
+      'background-color, border-color 150ms cubic-bezier(0.4, 0, 0.2, 1)',
+    backgroundColor: '#fff',
+    _active: {
+      borderColor: '#000',
+    },
+    _checked: {
+      backgroundColor: '#000',
+    },
+    _focus: {
+      boxShadow: '0 0 0 1.5px #651FFF',
+    },
+    _disabled: {
+      '&[aria-checked=true]': {
+        backgroundColor: '#BDBDBD',
+      },
+      '&[aria-checked=false]': {
+        backgroundColor: '#transparent',
+        borderColor: '#000',
+      },
+      borderColor: '#BDBDBD',
+      cursor: 'not-allowed',
+      backgroundImage: 'none',
+    },
+    _hover: {
+      backgroundColor: 'transparent',
+    },
+  },
   Drawer: {},
   Heading: { fontWeight: 'bold' },
   Image: {},
