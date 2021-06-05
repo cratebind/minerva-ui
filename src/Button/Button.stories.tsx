@@ -37,6 +37,13 @@ export const Variants = () => (
   </Stack>
 );
 
+export const Sizes = () => (
+  <Stack horizontal alignItems="flex-start">
+    <Button size="sm">Small Button</Button>
+    <Button>Button</Button>
+  </Stack>
+);
+
 export const LoadingButton = Template.bind({});
 LoadingButton.args = {
   children: 'Basic Button',

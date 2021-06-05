@@ -8,7 +8,13 @@ module.exports = {
   ],
   rules: {
     'import/no-unresolved': [2, { ignore: ['minerva-ui', '@docusaurus', '@theme'] }],
-    "import/no-unused-modules": 0,
+    'import/no-unused-modules': 0,
+    // "import/no-unused-modules": [
+    //   1,
+    //   {
+    //     "unusedExports": true,
+    //   }
+    // ],
     'react/display-name': 1,
     'react/react-in-jsx-scope': 0,
   },
