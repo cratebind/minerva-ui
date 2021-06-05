@@ -1,45 +1,111 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import styled from 'styled-components';
-import { MinervaProps, systemProps, Flex } from '../layout';
+
 import Icon from '../Icon';
-// import Button from '../Button';
 import Text from '../Text';
+import Button from '../Button';
 import { forwardRefWithAs } from '../type-utilities';
+import { MinervaProps, systemProps, Flex } from '../layout';
+
+const CloseIcon = () => (
+  <svg
+    width="8"
+    height="8"
+    viewBox="0 0 8 8"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M8 1.002L7.19429 0.196289L4 3.39057L0.805714 0.196289L0 1.002L3.19429 4.19629L0 7.39058L0.805714 8.19629L4 5.002L7.19429 8.19629L8 7.39058L4.80571 4.19629L8 1.002Z"
+      fill="black"
+    />
+  </svg>
+);
 
 export const StyledAlert = styled(Flex)(
   {
-    padding: '16px',
+    padding: '20px',
     borderRadius: '5px',
     alignItems: 'center',
-    // justifyContent: 'space-between',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
   },
   systemProps
 );
+
+export const StyledAlertInnerContainer = styled(Flex)`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -12px;
+`;
+
+export const StyledAlertTitleContainer = styled(Flex)`
+  margin-bottom: 12px;
+`;
 
 export const StyledAlertTitle = styled(Text)(
   {
-    fontWeight: 'bold',
-    marginRight: '5px',
+    fontWeight: '700',
+    lineHeight: '17.5px',
   },
   systemProps
 );
 
-export const StyledAlertDescription = styled(Text)``;
+export const StyledAlertContentContainer = styled(Flex)`
+  display: flex;
+  flex-direction: column;
+  justify-content: 'flex-start';
+  font-weigth: 400;
+  font-size: 10px;
+  line-height: 12.5px;
+  margin-bottom: 12px;
+`;
+
+export const StyledAlertActionsContainer = styled(Flex)`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: 'flex-start';
+  margin: 0px -10px;
+  margin-bottom: 12px;
+`;
+
+export const StyledAlertButton = styled(Flex)`
+  margin: 0 10px;
+`;
+
+export const StyledAlertContent = styled(Flex)`
+  margin-bottom: 12px;
+`;
 
 export const StyledCloseText = styled(Text)`
   text-decoration: underline;
 `;
 
-export const StyledAlertInner = styled(Flex)``;
-
 export const StyledAlertIconSection = styled(Flex)`
   justify-content: flex-start;
 `;
 
-export interface AlertProps extends MinervaProps {
+type Status = 'error' | 'success' | 'warning' | 'info';
+
+export interface AlertButton {
+  buttonAction?: Function;
+  buttonText?: string;
   children?: React.ReactNode;
-  status?: 'error' | 'success' | 'warning' | 'info';
+}
+
+export interface StatusInfo {
+  statusColor: string;
+  statusIcon: string | null;
+}
+
+export interface AlertProps extends MinervaProps, AlertButton {
+  children?: React.ReactNode;
+  status?: Status;
   title?: string;
+  actions?: Array<AlertButton>;
+  close?: boolean;
   bg?: string;
   icon?: string;
   // isOpen?: boolean;
@@ -50,28 +116,66 @@ export interface AlertProps extends MinervaProps {
   props?: any;
 }
 
+export type AlertActions = [AlertButton, AlertButton];
 // @TODO: Move these to the theme so they can be customized
-const alertTypes = {
+
+const alertTypes: Record<Status, StatusInfo> = {
   error: {
-    statusColor: '#f8b4b4',
+    statusColor: 'rgba(255, 205, 210, 0.25)',
     statusIcon: null,
   },
   success: {
-    statusColor: '#bcf0da',
+    statusColor: 'rgba(200, 230, 201, 0.25)',
     statusIcon: null,
   },
   warning: {
-    statusColor: '#fdf6b2',
+    statusColor: 'rgba(255, 236, 179, 0.25)',
     statusIcon: null,
   },
   info: {
-    statusColor: '#c3ddfd',
+    statusColor: 'rgba(187, 222, 251, 0.25)',
     statusIcon: null,
   },
 };
 
+const AlertButtonComponent = ({
+  buttonAction = () => null,
+  buttonText,
+  children,
+}: AlertButton) => {
+  const onClickButton = useCallback((event: any) => buttonAction(event), [
+    buttonAction,
+  ]);
+
+  return useMemo(
+    () => (
+      <Button
+        bg="transparent"
+        border={0}
+        padding={0}
+        color="#000"
+        name={buttonText || 'Close Alert'}
+        onClick={onClickButton}
+      >
+        <StyledAlertTitle>{buttonText || children}</StyledAlertTitle>
+      </Button>
+    ),
+    [buttonText, onClickButton, children]
+  );
+};
+
 export const Alert = forwardRefWithAs<AlertProps, 'div'>(function Alert(
-  { title, children, status, icon, ...props }: AlertProps,
+  {
+    title,
+    children,
+    actions,
+    buttonText,
+    buttonAction,
+    close = false,
+    status,
+    icon,
+    ...props
+  }: AlertProps,
   ref
 ) {
   const { statusColor, statusIcon } =
@@ -84,7 +188,6 @@ export const Alert = forwardRefWithAs<AlertProps, 'div'>(function Alert(
         };
 
   const alertIcon = icon || statusIcon;
-
   return (
     <StyledAlert
       ref={ref}
@@ -96,9 +199,36 @@ export const Alert = forwardRefWithAs<AlertProps, 'div'>(function Alert(
       fontFamily="body"
       {...props}
     >
-      {alertIcon && <Icon name={alertIcon} size="20px" mr={2} />}
-      <StyledAlertTitle>{title}</StyledAlertTitle>
-      {children}
+      {alertIcon && <Icon name={alertIcon} size="8px" mr={2} />}
+      <StyledAlertInnerContainer>
+        {title && (
+          <StyledAlertTitleContainer>
+            <StyledAlertTitle>{title}</StyledAlertTitle>
+          </StyledAlertTitleContainer>
+        )}
+        {children && (
+          <StyledAlertContentContainer>{children}</StyledAlertContentContainer>
+        )}
+        {actions && (
+          <StyledAlertActionsContainer>
+            {actions.map(
+              ({ buttonAction, buttonText }: AlertButton, index: number) => (
+                <StyledAlertButton key={index}>
+                  <AlertButtonComponent {...{ buttonAction, buttonText }} />
+                </StyledAlertButton>
+              )
+            )}
+          </StyledAlertActionsContainer>
+        )}
+      </StyledAlertInnerContainer>
+      {close && (
+        <AlertButtonComponent
+          buttonAction={buttonAction}
+          buttonText={buttonText}
+        >
+          <CloseIcon />
+        </AlertButtonComponent>
+      )}
     </StyledAlert>
   );
 });
