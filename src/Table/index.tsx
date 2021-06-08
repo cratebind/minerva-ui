@@ -1,14 +1,20 @@
 import React, { forwardRef } from 'react';
-// import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import { forwardRefWithAs } from '../type-utilities';
 import { Box, MinervaProps, systemProps } from '../layout';
 
-export const TableContainer = styled.div`
-  border-radius: 8px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  overflow: auto;
-`;
+export const TableContainer = styled('div')({
+  'border-radius': '5px',
+  overflow: 'auto',
+  border: '1.5px solid #E0E0E0',
+  // 'tr:nth-child(odd)': {
+  //   background: props.alternateRowsBackground === 'odd' ? '#FAFAFA' : '#FFF',
+  // },
+  // 'tr:nth-child(even)': {
+  //   background: props.alternateRowsBackground === 'even' ? '#FAFAFA' : '#FFF',
+  // },
+});
 
 // export const StyledTable = styled(Box)(
 //   {
@@ -61,15 +67,16 @@ export const TableBody = styled('tbody')(
 export const TableHeaderCell = styled('th')(
   {
     padding: '12px 24px',
-    color: '#6b7280',
-    backgroundColor: '#f9fafb',
+    color: '#000',
+    backgroundColor: '#F5F5F5',
     textTransform: 'uppercase',
     fontWeight: 500,
-    fontSize: '12px',
+    fontSize: '10px',
+    lineHeight: '11.26px',
     letterSpacing: '0.6px',
     textAlign: 'left',
     border: 0,
-    borderBottom: '1px solid #e5e7eb',
+    // borderBottom: '1.5px solid #E0E0E0',
   },
   systemProps
 );
@@ -77,21 +84,16 @@ export const TableHeaderCell = styled('th')(
 export const TableCell = styled('td')(
   {
     padding: '16px 24px',
-    color: '#161e2e',
-    backgroundColor: '#fff',
-    fontSize: '14px',
+    color: '#000',
+    fontSize: '12px',
+    lineHeight: '13.51px',
     border: 0,
-    borderBottom: '1px solid #e5e7eb',
+    borderTop: '1.5px solid #E0E0E0',
   },
   systemProps
 );
 
-export const TableRow = styled('tr')(
-  {
-    border: 0,
-  },
-  systemProps
-);
+export const TableRow = styled('tr')({}, systemProps);
 
 export interface CustomTableProps
   extends React.HTMLAttributes<HTMLTableElement> {

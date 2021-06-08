@@ -11,6 +11,63 @@ import Table, {
 import { Link } from '..';
 import { filteredArgs } from '../utils';
 
+type tableHeader = string | null;
+type tableData = any;
+
+interface TableDataExample {
+  name?: tableData;
+  job?: tableData;
+  status?: tableData;
+  role?: tableData;
+  options?: tableData;
+}
+
+const TABLE_HEADER_EXAMPLE: Array<tableHeader> = [
+  'NAME',
+  'JOB',
+  'STATUS',
+  'ROLE',
+  '',
+];
+
+const TABLE_DATA_EXAMPLE: Array<TableDataExample> = [
+  {
+    name: 'Tim Apple',
+    job: 'Chief Executive Officer',
+    status: 'Active',
+    role: 'Admin',
+    options: 'Edit',
+  },
+  {
+    name: 'Tim Apple',
+    job: 'Chief Executive Officer',
+    status: 'Active',
+    role: 'Admin',
+    options: 'Edit',
+  },
+  {
+    name: 'Tim Apple',
+    job: 'Chief Executive Officer',
+    status: 'Active',
+    role: 'Admin',
+    options: 'Edit',
+  },
+  {
+    name: 'Tim Apple',
+    job: 'Chief Executive Officer',
+    status: 'Active',
+    role: 'Admin',
+    options: 'Edit',
+  },
+  {
+    name: 'Tim Apple',
+    job: 'Chief Executive Officer',
+    status: 'Active',
+    role: 'Admin',
+    options: 'Edit',
+  },
+];
+
 const meta: Meta = {
   title: 'Table',
   component: Table,
@@ -32,38 +89,30 @@ const meta: Meta = {
 
 export default meta;
 
+const Header = () =>
+  TABLE_HEADER_EXAMPLE.map((header, index) => (
+    <TableHeaderCell key={index}>{header}</TableHeaderCell>
+  ));
+
 const Template: Story<CustomTableProps> = ({}) => {
   return (
     <>
       <Table>
         <TableHeader>
-          <TableRow>
-            <TableHeaderCell>Name</TableHeaderCell>
-            <TableHeaderCell>Job</TableHeaderCell>
-            <TableHeaderCell>Status</TableHeaderCell>
-            <TableHeaderCell>Role</TableHeaderCell>
-            <TableHeaderCell />
-          </TableRow>
+          <TableRow>{Header()}</TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableCell>Test</TableCell>
-            <TableCell>Tester</TableCell>
-            <TableCell>Testing</TableCell>
-            <TableCell>Test Master</TableCell>
-            <TableCell>
-              <Link>Edit</Link>
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Test</TableCell>
-            <TableCell>Tester</TableCell>
-            <TableCell>Testing</TableCell>
-            <TableCell>Test Master</TableCell>
-            <TableCell>
-              <Link>Edit</Link>
-            </TableCell>
-          </TableRow>
+          {TABLE_DATA_EXAMPLE.map((item, index) => (
+            <TableRow key={index}>
+              <TableCell>{item.name}</TableCell>
+              <TableCell>{item.job}</TableCell>
+              <TableCell>{item.status}</TableCell>
+              <TableCell>{item.role}</TableCell>
+              <TableCell>
+                <Link>{item.options}</Link>
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </>
