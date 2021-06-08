@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react';
-// import PropTypes from 'prop-types';
 import { Tooltip as TooltipComponent } from '@reach/tooltip';
+import styled from 'styled-components';
 import {
   createShouldForwardProp,
   props,
 } from '@styled-system/should-forward-prop';
+
 import { MinervaProps, systemProps } from '../layout';
-import styled from 'styled-components';
 import { useComponentStyles } from '../theme';
 
 export interface TooltipProps extends MinervaProps {
@@ -93,12 +93,13 @@ export const TooltipCustom = styled(TooltipComponent).withConfig({
   shouldForwardProp: prop => prop === 'position' || shouldForwardProp(prop),
 })(
   {
-    backgroundColor: 'gray.700',
+    backgroundColor: '#EEEEEE',
     border: 0,
-    borderRadius: 'md',
-    padding: '0.5rem 1rem',
-    fontSize: 'sm',
-    color: 'white',
+    borderRadius: '5px',
+    padding: '5px 10px',
+    fontSize: '12px',
+    lineHeight: '13.51px',
+    color: '#000',
   },
   systemProps
 );
@@ -127,12 +128,8 @@ export const Tooltip = forwardRef(
         ref={ref}
         position={setPlacement}
         label={label}
-        backgroundColor="gray.700"
         border="none"
-        borderRadius="md"
-        padding="0.5em 1em"
-        fontSize="xs"
-        color="white"
+        borderRadius="5px"
         {...props}
         {...componentStyles}
       >
