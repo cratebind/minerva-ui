@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Callout from '../../components/callout';
 
 The `<Menu />` component is an accessibility-focused dropdown menu.
@@ -20,6 +21,7 @@ import {
   MenuList,
   MenuItem,
   MenuLink,
+  MenuDivider,
 } from 'minerva-ui';
 ```
 
@@ -37,6 +39,38 @@ import {
     <MenuLink href="https://minerva-ui-docs.vercel.app/">Sign Out</MenuLink>
   </MenuList>
 </MenuContainer>
+```
+
+## With Custom Colored Selected Menu Item
+
+```jsx live
+() => {
+  const [selectedItem, setSelectedItem] = useState('');
+
+  return (
+    <MenuContainer>
+      <MenuButton>
+        Actions <Icon name="chevron-down" ml={2} size="14px" />
+      </MenuButton>
+      <MenuList menuPosition="right">
+        <MenuItem
+          color={selectedItem === 'edit_profile' ? '#651FFF' : '#000'}
+          fontWeight={selectedItem === 'edit_profile' ? 'bold' : 'normal'}
+          onSelect={item => setSelectedItem('edit_profile')}
+        >
+          Edit Profile
+        </MenuItem>
+        <MenuItem
+          color={selectedItem === 'settings' ? '#651FFF' : '#000'}
+          fontWeight={selectedItem === 'settings' ? 'bold' : 'normal'}
+          onSelect={item => setSelectedItem('settings')}
+        >
+          Settings
+        </MenuItem>
+      </MenuList>
+    </MenuContainer>
+  );
+};
 ```
 
 ## Positioned To Right

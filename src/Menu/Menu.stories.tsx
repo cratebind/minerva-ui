@@ -8,10 +8,10 @@ import {
   MenuItem,
   MenuLink,
   MenuDivider,
+  MenuIcon,
 } from '.';
-import { Icon } from '..';
 import { filteredArgs } from '../utils';
-import { Flex } from '../layout';
+import { Flex, Box } from '../layout';
 
 const meta: Meta = {
   title: 'Menu',
@@ -38,10 +38,11 @@ const Template: Story<MenuContainerProps> = ({}) => {
     <>
       <MenuContainer>
         <MenuButton>
-          Actions <Icon name="chevron-down" ml={2} size="14px" />
+          <Box>Actions</Box>
+          <MenuIcon />
         </MenuButton>
         <MenuList>
-          <MenuItem onSelect={() => alert('Download')}>Download</MenuItem>
+          <MenuItem onSelect={() => {}}>Download</MenuItem>
           <MenuItem onSelect={() => alert('Copy')}>Create a Copy</MenuItem>
           <MenuItem onSelect={() => alert('Mark as Draft')}>
             Mark as Draft
@@ -63,7 +64,8 @@ export const PositionedRight = () => (
   <Flex justifyContent="flex-end">
     <MenuContainer>
       <MenuButton>
-        Actions <Icon name="chevron-down" ml={2} size="14px" />
+        <Box>Actions</Box>
+        <MenuIcon />
       </MenuButton>
       <MenuList menuPosition="right">
         <MenuItem onSelect={() => alert('Edit Profile')}>Edit Profile</MenuItem>
@@ -76,7 +78,8 @@ export const PositionedRight = () => (
 export const DisabledItems = () => (
   <MenuContainer>
     <MenuButton>
-      Actions <Icon name="chevron-down" ml={2} size="14px" />
+      <Box>Actions</Box>
+      <MenuIcon />
     </MenuButton>
     <MenuList>
       <MenuItem onSelect={() => alert('Edit Profile')}>Edit Profile</MenuItem>

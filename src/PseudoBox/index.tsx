@@ -1,8 +1,10 @@
 // import React from 'react';
 import styled, { CSSObject } from 'styled-components';
-import css from '@styled-system/css';
+import css, { SystemStyleObject } from '@styled-system/css';
 import { MinervaProps, Box, shouldForwardProp } from '../layout';
 // import { transformAliasProps } from '../utils';
+
+type PseudoBoxValue = string | number | CSSObject | undefined;
 
 export interface PseudoBoxProps {
   /**
@@ -14,7 +16,7 @@ export interface PseudoBoxProps {
    * <PseudoBox _after={{content:`""` }}/>
    * ```
    */
-  _after?: string | number | CSSObject | undefined;
+  _after?: PseudoBoxValue;
   /**
    * Styles for CSS selector `&:before`
    *
@@ -24,41 +26,41 @@ export interface PseudoBoxProps {
    * <PseudoBox _before={{content:`""` }}/>
    * ```
    */
-  _before?: string | number | CSSObject | undefined;
+  _before?: PseudoBoxValue;
   /**
    * Styles for CSS selector `&:focus`
    *
    */
-  _focus?: string | number | CSSObject | undefined;
+  _focus?: PseudoBoxValue;
   /**
    * Styles for CSS selector `&:hover`
    */
-  _hover?: string | number | CSSObject | undefined;
+  _hover?: PseudoBoxValue;
   /**
    * Styles for CSS Selector `&:active`
    */
-  _active?: string | number | CSSObject | undefined;
+  _active?: PseudoBoxValue;
   /**
    * Styles for CSS Selector `&[aria-pressed=true]`
    * Typically used to style the current "pressed" state of toggle buttons
    */
-  _pressed?: string | number | CSSObject | undefined;
+  _pressed?: PseudoBoxValue;
   /**
    * Styles to apply when the ARIA attribute `aria-selected` is `true`
    * - CSS selector `&[aria-selected=true]`
    */
-  _selected?: string | number | CSSObject | undefined;
+  _selected?: PseudoBoxValue;
   /**
    * Styles to apply when a child of this element has received focus
    * - CSS Selector `&:focus-within`
    */
-  _focusWithin?: string | number | CSSObject | undefined;
+  _focusWithin?: PseudoBoxValue;
 
   /**
    * Styles to apply when the ARIA attribute `aria-invalid` is `true`
    * - CSS selector `&[aria-invalid=true]`
    */
-  _invalid?: string | number | CSSObject | undefined;
+  _invalid?: PseudoBoxValue;
   /**
    * Styles to apply when this element is disabled. The passed styles are applied to these CSS selectors:
    * - `&[aria-disabled=true]`
@@ -68,68 +70,68 @@ export interface PseudoBoxProps {
    * - `&:focus[aria-disabled=true]`
    * - `&:hover[aria-disabled=true]`
    */
-  _disabled?: string | number | CSSObject | undefined;
+  _disabled?: PseudoBoxValue;
   /**
    * Styles to apply when the ARIA attribute `aria-grabbed` is `true`
    * - CSS selector `&[aria-grabbed=true]`
    */
-  _grabbed?: string | number | CSSObject | undefined;
+  _grabbed?: PseudoBoxValue;
   /**
    * Styles to apply when the ARIA attribute `aria-expanded` is `true`
    * - CSS selector `&[aria-expanded=true]`
    */
-  _expanded?: string | number | CSSObject | undefined;
+  _expanded?: PseudoBoxValue;
   /**
    * Styles to apply when the ARIA attribute `aria-checked` is `true`
    * - CSS selector `&[aria-checked=true]`
    */
-  _checked?: string | number | CSSObject | undefined;
+  _checked?: PseudoBoxValue;
   /**
    * Styles to apply when the ARIA attribute `aria-checked` is `mixed`
    * - CSS selector `&[aria-checked=mixed]`
    */
-  _mixed?: string | number | CSSObject | undefined;
+  _mixed?: PseudoBoxValue;
   /**
    * Styles for CSS Selector `&:nth-child(odd)`
    */
-  _odd?: string | number | CSSObject | undefined;
+  _odd?: PseudoBoxValue;
   /**
    * Styles for CSS Selector `&:nth-child(even)`
    */
-  _even?: string | number | CSSObject | undefined;
+  _even?: PseudoBoxValue;
   /**
    * Styles for CSS Selector `&:visited`
    */
-  _visited?: string | number | CSSObject | undefined;
+  _visited?: PseudoBoxValue;
   /**
    * Styles for CSS Selector `&:readonly`
    */
-  _readOnly?: string | number | CSSObject | undefined;
+  _readOnly?: PseudoBoxValue;
   /**
    * Styles for CSS Selector `&:first-of-type`
    */
-  _first?: string | number | CSSObject | undefined;
+  _first?: PseudoBoxValue;
   /**
    * Styles for CSS Selector `&:last-of-type`
    */
-  _last?: string | number | CSSObject | undefined;
+  _last?: PseudoBoxValue;
   /**
    * Styles to apply when you hover on a parent that has `role=group`.
    */
-  _groupHover?: string | number | CSSObject | undefined;
+  _groupHover?: PseudoBoxValue;
   /**
    * Styles for CSS Selector `&:not(:first-of-type)`
    */
-  _notFirst?: string | number | CSSObject | undefined;
+  _notFirst?: PseudoBoxValue;
   /**
    * Styles for CSS Selector `&:not(:last-of-type)`
    */
-  _notLast?: string | number | CSSObject | undefined;
+  _notLast?: PseudoBoxValue;
   /**
    * Styles for CSS Selector `&::placeholder`.
    * Useful for inputs
    */
-  _placeholder?: string | number | CSSObject | undefined;
+  _placeholder?: PseudoBoxValue;
 }
 
 // export interface PseudoBoxProps = IPseudoBoxProps & MinervaProps;
@@ -162,62 +164,62 @@ const groupHover = '[role=group]:hover &';
 
 export type PseudoProps = MinervaProps & PseudoBoxProps;
 
+export function createPseudoStyles({
+  _after,
+  _focus,
+  _selected,
+  _focusWithin,
+  _hover,
+  _invalid,
+  _active,
+  _disabled,
+  _grabbed,
+  _pressed,
+  _expanded,
+  _visited,
+  _before,
+  _readOnly,
+  _first,
+  _notFirst,
+  _notLast,
+  _last,
+  _placeholder,
+  _checked,
+  _groupHover,
+  _mixed,
+  _odd,
+  _even,
+}: PseudoBoxProps) {
+  return css({
+    [hover]: _hover,
+    [focus]: _focus,
+    [active]: _active,
+    [visited]: _visited,
+    [disabled]: _disabled,
+    [selected]: _selected,
+    [invalid]: _invalid,
+    [expanded]: _expanded,
+    [grabbed]: _grabbed,
+    [readOnly]: _readOnly,
+    [first]: _first,
+    [notFirst]: _notFirst,
+    [notLast]: _notLast,
+    [last]: _last,
+    [odd]: _odd,
+    [even]: _even,
+    [mixed]: _mixed,
+    [checked]: _checked,
+    [pressed]: _pressed,
+    [groupHover]: _groupHover,
+    '&:before': _before,
+    '&:after': _after,
+    '&:focus-within': _focusWithin,
+    '&::placeholder': _placeholder,
+  } as SystemStyleObject);
+}
+
 const PseudoBox = styled(Box).withConfig({
   shouldForwardProp,
-})<PseudoProps>(
-  ({
-    _after,
-    _focus,
-    _selected,
-    _focusWithin,
-    _hover,
-    _invalid,
-    _active,
-    _disabled,
-    _grabbed,
-    _pressed,
-    _expanded,
-    _visited,
-    _before,
-    _readOnly,
-    _first,
-    _notFirst,
-    _notLast,
-    _last,
-    _placeholder,
-    _checked,
-    _groupHover,
-    _mixed,
-    _odd,
-    _even,
-  }: PseudoBoxProps) => {
-    return css({
-      [hover]: _hover,
-      [focus]: _focus,
-      [active]: _active,
-      [visited]: _visited,
-      [disabled]: _disabled,
-      [selected]: _selected,
-      [invalid]: _invalid,
-      [expanded]: _expanded,
-      [grabbed]: _grabbed,
-      [readOnly]: _readOnly,
-      [first]: _first,
-      [notFirst]: _notFirst,
-      [notLast]: _notLast,
-      [last]: _last,
-      [odd]: _odd,
-      [even]: _even,
-      [mixed]: _mixed,
-      [checked]: _checked,
-      [pressed]: _pressed,
-      [groupHover]: _groupHover,
-      '&:before': _before,
-      '&:after': _after,
-      '&:focus-within': _focusWithin,
-      '&::placeholder': _placeholder,
-    });
-  }
-);
+})<PseudoProps>(createPseudoStyles);
 
 export default PseudoBox;

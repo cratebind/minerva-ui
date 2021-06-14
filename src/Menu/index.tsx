@@ -7,17 +7,21 @@ import {
   MenuPopover as ReachMenuPopover,
   MenuItems as ReachMenuItems,
   MenuProps,
-  MenuButtonProps,
+  MenuButtonProps as ReachMenuButtonProps,
   MenuItemsProps,
+  MenuItemProps as ReachMenuItemProps,
+  MenuLinkProps as ReachMenuLinkProps,
+  useMenuButtonContext,
 } from '@reach/menu-button';
 import { positionDefault, positionRight } from '@reach/popover';
 import styled from 'styled-components';
-import Button, { ButtonProps } from '../Button';
-import { Box, MinervaProps } from '../layout';
+import { Box, MinervaProps, shouldForwardProp, systemProps } from '../layout';
+import { useComponentStyles } from '../theme';
+import { ChevronDown } from '../Icon/baseIcons';
 // import { useTheme } from '../theme';
 
 // import '@reach/menu-button/styles.css';
-import PseudoBox from '../PseudoBox';
+import PseudoBox, { createPseudoStyles, PseudoBoxProps } from '../PseudoBox';
 
 export type MenuContainerProps = MenuProps;
 
@@ -26,9 +30,20 @@ export const MenuContainer = (props: MenuContainerProps) => (
   <ReachMenuContainer {...props} />
 );
 
-export const MenuButton = (props: MenuButtonProps & ButtonProps) => (
-  <ReachMenuButton as={Button} {...props} />
-);
+type MenuButtonProps = ReachMenuButtonProps & MinervaProps;
+
+export const MenuButton = (props: MenuButtonProps) => {
+  const componentStyles = useComponentStyles('MenuButton');
+  const { isExpanded } = useMenuButtonContext();
+
+  return (
+    <BaseMenuButton
+      boxShadow={isExpanded ? '0 0 0 2px #CBBEE7' : 'none'}
+      {...componentStyles}
+      {...props}
+    />
+  );
+};
 
 export interface MenuListProps extends MinervaProps {
   children?: React.ReactNode;
@@ -37,15 +52,15 @@ export interface MenuListProps extends MinervaProps {
 
 export const OverlayBox = props => (
   <PseudoBox
-    py={1}
+    py="10px"
     mt="8px"
     bg="white"
     position="relative"
-    borderRadius="6px"
-    boxShadow="0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05)"
+    borderRadius="5px"
+    boxShadow="10px 10px 20px rgba(0, 0, 0, 0.12)"
     _after={{
       content: `''`,
-      boxShadow: '0 0 0 1px rgba(0,0,0,.05)',
+      boxShadow: '0 0 0 1px #E0E0E0',
       borderRadius: '6px',
       position: 'absolute',
       top: 0,
@@ -79,33 +94,55 @@ export const MenuList = ({
   </ReachMenuPopover>
 );
 
-export const MenuItem = styled(ReachMenuItem)`
-  color: #374151;
-  padding: 0.5rem 1rem;
-  font-size: 14px;
-  cursor: pointer;
+export function MenuIcon(props: MinervaProps) {
+  const { isExpanded } = useMenuButtonContext();
 
-  &[data-selected],
-  &:hover {
-    background-color: #f4f5f7;
-    color: #161e2e;
-  }
-`;
+  return (
+    <Box
+      as={ChevronDown}
+      transform={isExpanded ? 'rotate(-180deg)' : undefined}
+      transition="transform 0.2s"
+      transformOrigin="center"
+      w="14px"
+      h="14px"
+      color="#000"
+      aria-hidden="true"
+      {...props}
+    />
+  );
+}
 
-export const MenuLink = styled(ReachMenuLink)`
-  color: #374151;
-  padding: 0.5rem 1rem;
-  font-size: 14px;
-  display: block;
-  cursor: pointer;
+type MenuItemProps = ReachMenuItemProps & MinervaProps;
 
-  &[data-selected],
-  &:hover {
-    background-color: #f4f5f7;
-    color: #161e2e;
-    text-decoration: none;
-  }
-`;
+export const MenuItem = (props: MenuItemProps) => {
+  const componentStyles = useComponentStyles('MenuItem');
+
+  return (
+    <PseudoBox
+      as={ReachMenuItem}
+      cursor="pointer"
+      {...componentStyles}
+      {...props}
+    />
+  );
+};
+
+type MenuLinkProps = ReachMenuLinkProps &
+  MinervaProps &
+  React.LinkHTMLAttributes<HTMLAnchorElement>;
+
+export const MenuLink = (props: MenuLinkProps) => {
+  const componentStyles = useComponentStyles('MenuLink');
+
+  return (
+    <PseudoBox
+      as={ReachMenuLink}
+      cursor="pointer"
+      {...componentStyles}
+      {...props}
+    />
+  );
+};
 
 export const MenuDivider = props => (
   <Box
@@ -118,3 +155,11 @@ export const MenuDivider = props => (
 );
 
 export { useMenuButtonContext } from '@reach/menu-button';
+
+// using our own <Button /> component causes weird TS issues due to the `as` prop
+const BaseMenuButton = styled(ReachMenuButton).withConfig({
+  shouldForwardProp: shouldForwardProp,
+})<MinervaProps & PseudoBoxProps & ReachMenuButtonProps>(
+  createPseudoStyles,
+  systemProps
+);

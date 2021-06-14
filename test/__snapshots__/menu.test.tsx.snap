@@ -1,97 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Menu /> should render when positioned to Right: Closed Menu 1`] = `
-.c0 {
+.c1 {
   box-sizing: border-box;
   min-width: 0;
-  -webkit-transition: all 150ms ease 0s;
-  transition: all 150ms ease 0s;
-  outline: none;
-  cursor: pointer;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  background-color: #fff;
-  border-width: 1px;
-  color: #374151;
-  font-weight: 500;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  width: 14px;
+  height: 14px;
+  color: #000;
+}
+
+.c0 {
+  box-shadow: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: relative;
-  white-space: nowrap;
-  vertical-align: middle;
-  font-size: 14px;
-  line-height: 20px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border: 1px solid #E0E0E0;
   border-radius: 5px;
-  border-style: solid;
-  border-color: #d2d6dc;
+  min-width: 140px;
+  padding: 12px 15px;
 }
 
-.c1:hover backgroundColor {
-  50: #fdf2f2;
-  100: #fde8e8;
-  200: #fbd5d5;
-  300: #f8b4b4;
-  400: #f98080;
-  500: #f05252;
-  600: #e02424;
-  700: #c81e1e;
-  800: #9b1c1c;
-  900: #771d1d;
+.c0:hover {
+  box-shadow: 0 0 0 2px #CBBEE7;
 }
 
-.c1:focus {
-  border-color: #a4cafe;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  outline: 0;
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #CBBEE7;
 }
 
-.c1:active,
-.c1[data-active=true] {
-  border-color: #a4cafe;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  outline: 0;
+.c0:active,
+.c0[data-active=true] {
+  box-shadow: 0 0 0 2px #CBBEE7;
 }
 
-.c1:disabled,
-.c1:disabled:focus,
-.c1:disabled:hover,
-.c1[aria-disabled=true],
-.c1[aria-disabled=true]:focus,
-.c1[aria-disabled=true]:hover {
-  opacity: 0.4;
-  cursor: not-allowed;
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover,
+.c0[aria-disabled=true],
+.c0[aria-disabled=true]:focus,
+.c0[aria-disabled=true]:hover {
+  background: #E0E0E0;
+  color: rgba(30,6,84,0.5);
 }
 
 <div>
   <button
-    aria-busy="false"
-    aria-controls="menu--7"
+    aria-controls="menu--12"
     aria-haspopup="true"
-    class="c0 c1"
+    class="c0"
     data-reach-menu-button=""
     data-testid="menu-button"
-    id="menu-button--menu--7"
-    role="button"
+    id="menu-button--menu--12"
     type="button"
   >
     Actions 
+    <svg
+      aria-hidden="true"
+      class="c1"
+      data-testid="menu-icon"
+      fill="none"
+      height="7"
+      viewBox="0 0 10 7"
+      width="10"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.95174 6.54518L0.70874 2.30218L2.12374 0.888184L4.95174 3.71718L7.77974 0.888184L9.19474 2.30218L4.95174 6.54518Z"
+        fill="black"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -99,113 +92,119 @@ exports[`<Menu /> should render when positioned to Right: Closed Menu 1`] = `
 exports[`<Menu /> should render when positioned to Right: Open Menu 1`] = `
 <div>
   <button
-    aria-busy="false"
-    aria-controls="menu--7"
+    aria-controls="menu--12"
     aria-haspopup="true"
-    class="sc-bdnxRM sc-eCApnc eJeGwH vEjHx"
+    class="sc-bkbkJK bjgAvd"
     data-reach-menu-button=""
     data-testid="menu-button"
-    id="menu-button--menu--7"
-    role="button"
+    id="menu-button--menu--12"
     type="button"
   >
     Actions 
+    <svg
+      aria-hidden="true"
+      class="sc-bdnxRM dZCMJF"
+      data-testid="menu-icon"
+      fill="none"
+      height="7"
+      viewBox="0 0 10 7"
+      width="10"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.95174 6.54518L0.70874 2.30218L2.12374 0.888184L4.95174 3.71718L7.77974 0.888184L9.19474 2.30218L4.95174 6.54518Z"
+        fill="black"
+      />
+    </svg>
   </button>
 </div>
 `;
 
 exports[`<Menu /> should render: Closed Menu 1`] = `
-.c0 {
+.c1 {
   box-sizing: border-box;
   min-width: 0;
-  -webkit-transition: all 150ms ease 0s;
-  transition: all 150ms ease 0s;
-  outline: none;
-  cursor: pointer;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  background-color: #fff;
-  border-width: 1px;
-  color: #374151;
-  font-weight: 500;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  -webkit-transition: -webkit-transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  transition: transform 0.2s;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  width: 14px;
+  height: 14px;
+  color: #000;
+}
+
+.c0 {
+  box-shadow: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: relative;
-  white-space: nowrap;
-  vertical-align: middle;
-  font-size: 14px;
-  line-height: 20px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border: 1px solid #E0E0E0;
   border-radius: 5px;
-  border-style: solid;
-  border-color: #d2d6dc;
+  min-width: 140px;
+  padding: 12px 15px;
 }
 
-.c1:hover backgroundColor {
-  50: #fdf2f2;
-  100: #fde8e8;
-  200: #fbd5d5;
-  300: #f8b4b4;
-  400: #f98080;
-  500: #f05252;
-  600: #e02424;
-  700: #c81e1e;
-  800: #9b1c1c;
-  900: #771d1d;
+.c0:hover {
+  box-shadow: 0 0 0 2px #CBBEE7;
 }
 
-.c1:focus {
-  border-color: #a4cafe;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  outline: 0;
+.c0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #CBBEE7;
 }
 
-.c1:active,
-.c1[data-active=true] {
-  border-color: #a4cafe;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  outline: 0;
+.c0:active,
+.c0[data-active=true] {
+  box-shadow: 0 0 0 2px #CBBEE7;
 }
 
-.c1:disabled,
-.c1:disabled:focus,
-.c1:disabled:hover,
-.c1[aria-disabled=true],
-.c1[aria-disabled=true]:focus,
-.c1[aria-disabled=true]:hover {
-  opacity: 0.4;
-  cursor: not-allowed;
+.c0:disabled,
+.c0:disabled:focus,
+.c0:disabled:hover,
+.c0[aria-disabled=true],
+.c0[aria-disabled=true]:focus,
+.c0[aria-disabled=true]:hover {
+  background: #E0E0E0;
+  color: rgba(30,6,84,0.5);
 }
 
 <div>
   <button
-    aria-busy="false"
     aria-controls="menu--1"
     aria-haspopup="true"
-    class="c0 c1"
+    class="c0"
     data-reach-menu-button=""
     data-testid="menu-button"
     id="menu-button--menu--1"
-    role="button"
     type="button"
   >
     Actions 
+    <svg
+      aria-hidden="true"
+      class="c1"
+      data-testid="menu-icon"
+      fill="none"
+      height="7"
+      viewBox="0 0 10 7"
+      width="10"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.95174 6.54518L0.70874 2.30218L2.12374 0.888184L4.95174 3.71718L7.77974 0.888184L9.19474 2.30218L4.95174 6.54518Z"
+        fill="black"
+      />
+    </svg>
   </button>
 </div>
 `;
@@ -213,17 +212,30 @@ exports[`<Menu /> should render: Closed Menu 1`] = `
 exports[`<Menu /> should render: Open Menu 1`] = `
 <div>
   <button
-    aria-busy="false"
     aria-controls="menu--1"
     aria-haspopup="true"
-    class="sc-bdnxRM sc-eCApnc eJeGwH vEjHx"
+    class="sc-bkbkJK bjgAvd"
     data-reach-menu-button=""
     data-testid="menu-button"
     id="menu-button--menu--1"
-    role="button"
     type="button"
   >
     Actions 
+    <svg
+      aria-hidden="true"
+      class="sc-bdnxRM dZCMJF"
+      data-testid="menu-icon"
+      fill="none"
+      height="7"
+      viewBox="0 0 10 7"
+      width="10"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.95174 6.54518L0.70874 2.30218L2.12374 0.888184L4.95174 3.71718L7.77974 0.888184L9.19474 2.30218L4.95174 6.54518Z"
+        fill="black"
+      />
+    </svg>
   </button>
 </div>
 `;

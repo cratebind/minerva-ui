@@ -11,6 +11,7 @@ import {
   ThemeProvider,
   MenuListProps,
   MenuDivider,
+  MenuIcon,
 } from '../src';
 // import { axe, toHaveNoViolations } from 'jest-axe';
 // expect.extend(toHaveNoViolations);
@@ -18,15 +19,25 @@ import {
 const ExampleMenu = (props: MenuListProps) => (
   <MenuContainer data-testid="menu-container">
     <MenuButton data-testid="menu-button">
-      Actions <Icon name="chevron-down" ml={2} size="14px" />
+      Actions <MenuIcon data-testid="menu-icon" />
     </MenuButton>
     <MenuList data-testid="menu-list" {...props}>
-      <MenuItem onSelect={() => alert('Download')}>Download</MenuItem>
+      <MenuItem
+        color="#ff0000"
+        data-testid="menu-item"
+        onSelect={() => alert('Download')}
+      >
+        Download
+      </MenuItem>
       <MenuItem onSelect={() => alert('Copy')}>Create a Copy</MenuItem>
       <MenuItem onSelect={() => alert('Mark as Draft')}>Mark as Draft</MenuItem>
       <MenuItem onSelect={() => alert('Delete')}>Delete</MenuItem>
       <MenuDivider />
-      <MenuLink href="https://minerva-ui-docs.vercel.app">
+      <MenuLink
+        color="#800080"
+        data-testid="menu-link"
+        href="https://minerva-ui-docs.vercel.app"
+      >
         Open Documentation
       </MenuLink>
     </MenuList>
@@ -51,6 +62,19 @@ describe('<Menu />', () => {
     expect(container).toMatchSnapshot('Open Menu');
   });
 
+  it('should pass basic style props', () => {
+    const color = '#ff0000';
+    const color2 = '#800080';
+    const { queryByTestId } = render(
+      <ThemeProvider>
+        <ExampleMenu menuPosition="right" />
+      </ThemeProvider>
+    );
+
+    expect(queryByTestId('menu-item')).toHaveStyleRule('color', color);
+    expect(queryByTestId('menu-link')).toHaveStyleRule('color', color2);
+  });
+
   it('should render when positioned to Right', () => {
     const { container, queryByTestId } = render(
       <ThemeProvider>
@@ -59,6 +83,8 @@ describe('<Menu />', () => {
     );
 
     expect(queryByTestId('menu-button')).toBeInTheDocument();
+
+    expect(queryByTestId('menu-icon')).toBeInTheDocument();
 
     expect(container).toMatchSnapshot('Closed Menu');
 
