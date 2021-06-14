@@ -36,11 +36,12 @@ exports[`<TabList /> should be theme-able 1`] = `
   padding-bottom: 0.75rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  font-weight: 500;
+  color: #616161;
+  font-size: 12px;
+  font-weight: 400;
   border-width: 2px;
   margin-bottom: -2px;
   border: 0;
-  font-size: 16px;
   background-color: transparent;
   border-bottom: 2px solid transparent;
   margin-right: 15px;
@@ -65,11 +66,12 @@ exports[`<TabList /> should be theme-able 1`] = `
   padding-bottom: 0.75rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  font-weight: 500;
+  color: #616161;
+  font-size: 12px;
+  font-weight: 400;
   border-width: 2px;
   margin-bottom: -2px;
   border: 0;
-  font-size: 16px;
   background-color: transparent;
   border-bottom: 2px solid transparent;
 }
@@ -88,10 +90,10 @@ exports[`<TabList /> should be theme-able 1`] = `
 }
 
 .c4:focus {
-  color: #1a56db;
+  color: #651FFF;
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  border-width: 2px;
+  box-shadow: 0 0 0 3px #CBBEE7;
+  border-radius: 5px;
 }
 
 .c4[aria-selected=true],
@@ -268,11 +270,12 @@ exports[`<TabPanel /> should be theme-able 1`] = `
   padding-bottom: 0.75rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  font-weight: 500;
+  color: #616161;
+  font-size: 12px;
+  font-weight: 400;
   border-width: 2px;
   margin-bottom: -2px;
   border: 0;
-  font-size: 16px;
   background-color: transparent;
   border-bottom: 2px solid transparent;
   margin-right: 15px;
@@ -297,11 +300,12 @@ exports[`<TabPanel /> should be theme-able 1`] = `
   padding-bottom: 0.75rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  font-weight: 500;
+  color: #616161;
+  font-size: 12px;
+  font-weight: 400;
   border-width: 2px;
   margin-bottom: -2px;
   border: 0;
-  font-size: 16px;
   background-color: transparent;
   border-bottom: 2px solid transparent;
 }
@@ -326,10 +330,10 @@ exports[`<TabPanel /> should be theme-able 1`] = `
 }
 
 .c4:focus {
-  color: #1a56db;
+  color: #651FFF;
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  border-width: 2px;
+  box-shadow: 0 0 0 3px #CBBEE7;
+  border-radius: 5px;
 }
 
 .c4[aria-selected=true],
@@ -506,11 +510,12 @@ exports[`<TabPanels /> should be theme-able 1`] = `
   padding-bottom: 0.75rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  font-weight: 500;
+  color: #616161;
+  font-size: 12px;
+  font-weight: 400;
   border-width: 2px;
   margin-bottom: -2px;
   border: 0;
-  font-size: 16px;
   background-color: transparent;
   border-bottom: 2px solid transparent;
   margin-right: 15px;
@@ -535,11 +540,12 @@ exports[`<TabPanels /> should be theme-able 1`] = `
   padding-bottom: 0.75rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  font-weight: 500;
+  color: #616161;
+  font-size: 12px;
+  font-weight: 400;
   border-width: 2px;
   margin-bottom: -2px;
   border: 0;
-  font-size: 16px;
   background-color: transparent;
   border-bottom: 2px solid transparent;
 }
@@ -564,10 +570,10 @@ exports[`<TabPanels /> should be theme-able 1`] = `
 }
 
 .c4:focus {
-  color: #1a56db;
+  color: #651FFF;
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  border-width: 2px;
+  box-shadow: 0 0 0 3px #CBBEE7;
+  border-radius: 5px;
 }
 
 .c4[aria-selected=true],
@@ -744,11 +750,12 @@ exports[`<Tabs /> should change TabList background color 1`] = `
   padding-bottom: 0.75rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  font-weight: 500;
+  color: #616161;
+  font-size: 12px;
+  font-weight: 400;
   border-width: 2px;
   margin-bottom: -2px;
   border: 0;
-  font-size: 16px;
   background-color: transparent;
   border-bottom: 2px solid transparent;
   margin-right: 15px;
@@ -773,11 +780,12 @@ exports[`<Tabs /> should change TabList background color 1`] = `
   padding-bottom: 0.75rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  font-weight: 500;
+  color: #616161;
+  font-size: 12px;
+  font-weight: 400;
   border-width: 2px;
   margin-bottom: -2px;
   border: 0;
-  font-size: 16px;
   background-color: transparent;
   border-bottom: 2px solid transparent;
 }
@@ -796,10 +804,10 @@ exports[`<Tabs /> should change TabList background color 1`] = `
 }
 
 .c4:focus {
-  color: #1a56db;
+  color: #651FFF;
   outline: 0;
-  box-shadow: 0 0 0 3px rgba(118,169,250,.45);
-  border-width: 2px;
+  box-shadow: 0 0 0 3px #CBBEE7;
+  border-radius: 5px;
 }
 
 .c4[aria-selected=true],

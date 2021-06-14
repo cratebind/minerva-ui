@@ -33,6 +33,7 @@ export interface MinervaTheme extends Theme {
   Tag?: ThemeComponent;
   Skeleton?: ThemeComponent;
   Tabs?: ThemeComponent;
+  Tab?: ThemeComponent;
   icons: any;
   defaultBorderColor?: string;
   variants?: any;
@@ -97,26 +98,31 @@ const defaultTheme: MinervaTheme = {
   Image: {},
   Input: {
     appearance: 'none',
-    fontSize: '16px',
-    borderStyle: 'solid',
-    borderColor: '#d2d6dc',
+    fontSize: '14px',
+    backgroundColor: '#F5F5F5',
+    border: 'solid 2px #F5F5F5',
+    color: '#000000',
     paddingTop: '8px',
     paddingBottom: '8px',
     paddingLeft: '12px',
     paddingRight: '32px',
-    borderWidth: '1px',
-    borderRadius: '4px',
+    borderRadius: '5px',
     transition: 'all 250ms ease 0s',
     outline: 'none',
     width: '100%',
+    _placeholder: {
+      color: 'rgba(0,0,0,0.50)',
+    },
     _focus: {
-      borderColor: '#a4cafe',
-      boxShadow: '0 0 0 3px rgba(164,202,254,.45)',
+      borderColor: '#E0E0E0',
+      backgroundColor: '#FFFFFF',
     },
     _disabled: {
-      backgroundColor: '#EAEAEA',
-      color: '#8F8F8F',
+      backgroundColor: '#E0E0E0',
       cursor: 'not-allowed',
+    },
+    _invalid: {
+      border: 'solid 2px #F34335',
     },
   },
   InputField: {},
@@ -168,6 +174,21 @@ const defaultTheme: MinervaTheme = {
   ModalBody: {},
   ModalFooter: {},
   ModalContent: {},
+  Tabs: {},
+  Tab: {
+    _selected: {
+      color: '#651FFF',
+      fontWeight: 500,
+      outline: 0,
+      borderBottom: '2px solid currentColor',
+    },
+    _focus: {
+      color: '#651FFF',
+      outline: 0,
+      boxShadow: '0 0 0 3px #CBBEE7',
+      borderRadius: '5px',
+    },
+  },
   Tag: {},
   Text: {},
   Tooltip: {},

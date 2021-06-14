@@ -11,12 +11,14 @@ type BaseProps = React.InputHTMLAttributes<HTMLInputElement> & MinervaProps;
 export interface InputProps extends BaseProps {
   /** Toggles disabled pseudo class */
   disabled?: boolean;
+  /** Toggles invalid pseudo class */
+  invalid?: boolean;
   /** allows input to be labeled for accessibility */
   hiddenLabel?: string;
 }
 
 export const Input = forwardRefWithAs<InputProps, 'input'>(function Input(
-  { hiddenLabel, ...props }: InputProps,
+  { hiddenLabel, invalid, ...props }: InputProps,
   ref
 ) {
   // return <StyledInput ref={ref} {...props} />;
@@ -28,13 +30,16 @@ export const Input = forwardRefWithAs<InputProps, 'input'>(function Input(
   );
 
   return (
-    <PseudoBox
-      as="input"
-      ref={ref}
-      {...componentStyles}
-      {...props}
-      aria-label={hiddenLabel}
-    />
+    <>
+      <PseudoBox
+        as="input"
+        ref={ref}
+        {...componentStyles}
+        {...props}
+        aria-invalid={invalid}
+        aria-label={hiddenLabel}
+      />
+    </>
   );
 });
 

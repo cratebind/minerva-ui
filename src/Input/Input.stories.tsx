@@ -10,6 +10,9 @@ const meta: Meta = {
     disabled: {
       control: 'boolean',
     },
+    invalid: {
+      control: 'boolean',
+    },
     ...filteredArgs,
   },
   parameters: {

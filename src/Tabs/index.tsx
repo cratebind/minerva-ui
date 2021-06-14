@@ -57,26 +57,15 @@ export const Tab = forwardRefWithAs<TabsProps, 'div'>(function Tab(
       justifyContent="space-between"
       py={3}
       px={2}
-      fontWeight={500}
+      color="#616161"
+      fontSize="12px"
+      fontWeight={400}
       borderWidth="2px"
       // borderColor="transparent"
       marginBottom="-2px"
       border={0}
-      fontSize="16px"
       bg="transparent"
       borderBottom="2px solid transparent"
-      _focus={{
-        color: 'blue.700',
-        outline: 0,
-        boxShadow: '0 0 0 3px rgba(118,169,250,.45)',
-        borderWidth: '2px',
-      }}
-      _selected={{
-        color: 'blue.700',
-        outline: 0,
-        borderWidth: '2px',
-        borderBottom: '2px solid currentColor',
-      }}
       {...componentStyles}
       {...props}
     >
