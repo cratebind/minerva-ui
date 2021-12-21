@@ -232,6 +232,7 @@ const Layout = ({ filename, config: _config, pageMap, children }) => {
               className="text-current p-2 -mr-2"
               href={config.github}
               target="_blank"
+              rel="noreferrer"
             >
               <GitHubIcon height={28} />
             </a>
@@ -304,6 +305,7 @@ const Layout = ({ filename, config: _config, pageMap, children }) => {
                           filepathWithName
                         }
                         target="_blank"
+                        rel="noreferrer"
                       >
                         Edit this page on GitHub
                       </a>
