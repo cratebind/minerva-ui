@@ -1,6 +1,8 @@
 {
-  "experimentalComponentTesting": true,
-  "componentFolder": "cypress/components",
+  "component": {
+    "componentFolder": "cypress/components",
+    "testFiles": "**/*spec.{js,jsx,ts,tsx}"
+  },
   "ignoreTestFiles": [
     "**/__snapshots__/*",
     "**/__image_snapshots__/*"
