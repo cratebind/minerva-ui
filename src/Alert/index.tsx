@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { MinervaProps, systemProps, Flex } from '../layout';
 import Icon from '../Icon';
 // import Button from '../Button';
-import Text from '../Text';
+import { Text } from '../Text';
 import { forwardRefWithAs } from '../type-utilities';
 
 export const StyledAlert = styled(Flex)(

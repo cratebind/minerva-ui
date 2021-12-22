@@ -5,7 +5,6 @@ import { MinervaProps } from '../layout';
 import { Box } from '../layout';
 import { useComponentStyles } from '../theme';
 import { PseudoBox } from '..';
-import { forwardRefWithAs } from '../type-utilities';
 
 export interface RadioGroupProps {
   children?: React.ReactNode;
@@ -49,7 +48,7 @@ export const RadioGroup = ({
 
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
 
-export const Radio = forwardRefWithAs(function Radio(
+export const Radio = React.forwardRef(function Radio(
   { value, children, disabled = false, ...props }: RadioProps,
   ref
 ) {

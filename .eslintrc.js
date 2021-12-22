@@ -7,8 +7,8 @@ module.exports = {
     "import/no-unused-modules": [1, {
       "unusedExports": true
     }],
-    'react/display-name': 1,
-    'react/react-in-jsx-scope': 0
+    'react/display-name': 0,
+    'react/react-in-jsx-scope': 0,
   },
   settings: {
     "import/resolver": {

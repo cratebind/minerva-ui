@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 // import PropTypes from 'prop-types';
-import Text from '../Text';
+import { Text } from '../Text';
 import { systemProps, Box } from '../layout';
 
 export const InputFieldGroup = styled('div')(
