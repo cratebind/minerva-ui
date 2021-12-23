@@ -359,11 +359,11 @@ const notFirst = '&:not(:first-of-type)';
 const notLast = '&:not(:last-of-type)';
 const groupHover = '[role=group]:hover &';
 
-export type PseudoProps = MinervaProps & PseudoBoxProps;
+export type BoxProps = MinervaProps & PseudoBoxProps;
 
 export const Box = styled(BaseBox).withConfig({
   shouldForwardProp,
-})<PseudoProps>(
+})<BoxProps>(
   ({
     _after,
     _focus,
