@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import css from '@styled-system/css';
 // import PropTypes from 'prop-types';
 import StyledSystem, {
   background,
@@ -22,6 +23,7 @@ import {
 // import systemPropTypes from '@styled-system/prop-types';
 
 import extraConfig from './utils';
+import { PseudoBoxProps } from '.';
 
 const customProps = system({
   textDecoration: true,
@@ -324,7 +326,7 @@ export const shouldForwardProp = createShouldForwardProp([
   // 'id',
 ]);
 
-export const Box = styled('div').withConfig({
+export const BaseBox = styled('div').withConfig({
   shouldForwardProp,
 })<MinervaProps>(
   {
@@ -332,6 +334,89 @@ export const Box = styled('div').withConfig({
     minWidth: 0,
   },
   systemProps
+);
+
+const hover = '&:hover';
+const active = '&:active, &[data-active=true]';
+const focus = '&:focus';
+const visited = '&:visited';
+const even = '&:nth-of-type(even)';
+const odd = '&:nth-of-type(odd)';
+const disabled =
+  '&:disabled, &:disabled:focus, &:disabled:hover, &[aria-disabled=true], &[aria-disabled=true]:focus, &[aria-disabled=true]:hover';
+const checked = '&[aria-checked=true],&[data-state="checked"]';
+const mixed = '&[aria-checked=mixed]';
+const selected =
+  '&[aria-selected=true], &[data-selected=true], &[data-selected]';
+const invalid = '&[aria-invalid=true]';
+const pressed = '&[aria-pressed=true]';
+const readOnly = '&[aria-readonly=true], &[readonly]';
+const first = '&:first-of-type';
+const last = '&:last-of-type';
+const expanded = '&[aria-expanded=true]';
+const grabbed = '&[aria-grabbed=true]';
+const notFirst = '&:not(:first-of-type)';
+const notLast = '&:not(:last-of-type)';
+const groupHover = '[role=group]:hover &';
+
+export type BoxProps = MinervaProps & PseudoBoxProps;
+
+export const Box = styled(BaseBox).withConfig({
+  shouldForwardProp,
+})<BoxProps>(
+  ({
+    _after,
+    _focus,
+    _selected,
+    _focusWithin,
+    _hover,
+    _invalid,
+    _active,
+    _disabled,
+    _grabbed,
+    _pressed,
+    _expanded,
+    _visited,
+    _before,
+    _readOnly,
+    _first,
+    _notFirst,
+    _notLast,
+    _last,
+    _placeholder,
+    _checked,
+    _groupHover,
+    _mixed,
+    _odd,
+    _even,
+  }: PseudoBoxProps) => {
+    return css({
+      [hover]: _hover,
+      [focus]: _focus,
+      [active]: _active,
+      [visited]: _visited,
+      [disabled]: _disabled,
+      [selected]: _selected,
+      [invalid]: _invalid,
+      [expanded]: _expanded,
+      [grabbed]: _grabbed,
+      [readOnly]: _readOnly,
+      [first]: _first,
+      [notFirst]: _notFirst,
+      [notLast]: _notLast,
+      [last]: _last,
+      [odd]: _odd,
+      [even]: _even,
+      [mixed]: _mixed,
+      [checked]: _checked,
+      [pressed]: _pressed,
+      [groupHover]: _groupHover,
+      '&:before': _before,
+      '&:after': _after,
+      '&:focus-within': _focusWithin,
+      '&::placeholder': _placeholder,
+    });
+  }
 );
 
 // export const Box = styled('div')<MinervaProps>(

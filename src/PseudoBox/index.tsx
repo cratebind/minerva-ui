@@ -1,7 +1,7 @@
 // import React from 'react';
 import styled, { CSSObject } from 'styled-components';
 import css from '@styled-system/css';
-import { MinervaProps, Box, shouldForwardProp } from '../layout';
+import { MinervaProps, shouldForwardProp, BaseBox } from '../layout';
 // import { transformAliasProps } from '../utils';
 
 export interface PseudoBoxProps {
@@ -162,7 +162,7 @@ const groupHover = '[role=group]:hover &';
 
 export type PseudoProps = MinervaProps & PseudoBoxProps;
 
-const PseudoBox = styled(Box).withConfig({
+const PseudoBox = styled(BaseBox).withConfig({
   shouldForwardProp,
 })<PseudoProps>(
   ({
