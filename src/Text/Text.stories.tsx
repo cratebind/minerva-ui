@@ -21,12 +21,18 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<TextProps> = args => <Text {...args} />;
+const Template: Story<TextProps> = (args: TextProps) => <Text {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
   children: 'Basic Text',
 };
+
+export const Heading1 = () => (
+  <Text as="h1" fontSize={32}>
+    Heading 1
+  </Text>
+);
 
 export const Heading2 = Template.bind({});
 Heading2.args = {

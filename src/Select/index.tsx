@@ -15,7 +15,7 @@ import {
 } from 'styled-system';
 import { Block, MinervaProps } from '../layout';
 import Input from '../Input';
-import { forwardRefWithAs } from '../type-utilities';
+// import { forwardRefWithAs } from '../type-utilities';
 // import Icon from '../Icon';
 
 const StyledSelect = styled(Input)(
@@ -132,7 +132,7 @@ export type SelectProps = CustomSelectProps &
   MinervaProps &
   React.InputHTMLAttributes<HTMLSelectElement>;
 
-export const Select = forwardRefWithAs<SelectProps, 'select'>(function Select(
+export const Select = React.forwardRef(function Select(
   { children, disabled = false, ...props }: SelectProps,
   ref
 ) {

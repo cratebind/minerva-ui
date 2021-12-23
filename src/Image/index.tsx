@@ -1,6 +1,5 @@
 import React from 'react';
 import warning from 'tiny-warning';
-import { forwardRefWithAs } from '../type-utilities';
 // import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
 import { useComponentStyles } from '../theme';
@@ -20,7 +19,7 @@ export interface ImageProps extends MinervaProps {
   alt?: string;
 }
 
-export const Image = forwardRefWithAs<ImageProps, 'img'>(function Image(
+export const Image = React.forwardRef(function Image(
   { src, alt, ...props }: ImageProps,
   ref
 ) {
