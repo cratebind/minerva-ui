@@ -24,7 +24,7 @@
     "build-storybook": "build-storybook",
     "sb": "yarn storybook",
     "semantic-release": "semantic-release",
-    "e2e": "yarn cypress run-ct --record --key $CYPRESS_RECORD_KEY"
+    "e2e": "yarn cypress run --record --key $CYPRESS_RECORD_KEY"
   },
   "peerDependencies": {
     "react": "16.x || 17.x",
