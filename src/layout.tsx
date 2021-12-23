@@ -23,7 +23,7 @@ import {
 // import systemPropTypes from '@styled-system/prop-types';
 
 import extraConfig from './utils';
-import { PseudoBox, PseudoBoxProps } from '.';
+import { PseudoBoxProps } from '.';
 
 const customProps = system({
   textDecoration: true,
