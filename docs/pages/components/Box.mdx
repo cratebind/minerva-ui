@@ -1,13 +1,24 @@
----
-title: 'PseudoBox'
----
+# Box
 
-Renders a `<Box />` component with additional props for CSS pseudo selectors.
+The base component in Minerva UI, can be used to replace a `<div>` or any other element by using the `as` prop.
 
-Highly influenced by the excellent `<PseudoBox />` from [Chakra UI](https://chakra-ui.com/pseudobox).
+```js
+import { Box } from 'minera-ui';
+```
 
 ```jsx live
-<PseudoBox
+<Box>
+  <Box>Box Component</Box>
+  <Box as="span">Span Component</Box>
+</Box>
+```
+
+## Pseudo Props
+
+Pseudo selectors (prefaced by `_`) can also be used to style the component.
+
+```jsx live
+<Box
   as={Input}
   placeholder="Focus me"
   py={2}
@@ -18,13 +29,11 @@ Highly influenced by the excellent `<PseudoBox />` from [Chakra UI](https://chak
   borderWidth="2px"
   rounded="md"
   outline="none"
-  _focus={{ backgroundColor: '#fff', borderColor: 'purple' }}
+  _focus={{ background: '#fff', borderColor: 'purple' }}
 />
 ```
 
-## Props
-
-These are props related to the Pseudo Box component.
+These are pseudo class props for the Box component.
 
 | Prop           | Selector                                                                                                                                   |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
