@@ -1,9 +1,9 @@
 import React from 'react';
 import warning from 'tiny-warning';
 import Spinner from '../Spinner';
-import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
+import { PseudoBoxProps } from '../PseudoBox';
 import { useComponentStyles, useTheme } from '../theme';
-import { MinervaProps } from '../layout';
+import { Box, MinervaProps } from '../layout';
 import { forwardRefWithAs } from '../type-utilities';
 
 export const buttonVariants = {
@@ -110,7 +110,7 @@ export const Button = forwardRefWithAs<ButtonProps, 'button'>(function Button(
   const componentStyles = useComponentStyles('Button');
 
   return (
-    <PseudoBox
+    <Box
       ref={forwardedRef}
       as={Comp}
       disabled={disabled || isLoading}
@@ -143,7 +143,7 @@ export const Button = forwardRefWithAs<ButtonProps, 'button'>(function Button(
       {...props}
     >
       {isLoading ? <Spinner /> : children}
-    </PseudoBox>
+    </Box>
   );
 });
 

@@ -49,7 +49,7 @@ export const Tab = forwardRefWithAs<TabsProps, 'div'>(function Tab(
 ) {
   const componentStyles = useComponentStyles('Tab');
   return (
-    <PseudoBox
+    <Box
       as={ReachTab}
       ref={ref}
       display="flex"
@@ -81,7 +81,7 @@ export const Tab = forwardRefWithAs<TabsProps, 'div'>(function Tab(
       {...props}
     >
       {children}
-    </PseudoBox>
+    </Box>
   );
 });
 

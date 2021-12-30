@@ -59,7 +59,7 @@ export const Radio = React.forwardRef(function Radio(
 
   return (
     <Box as="label" display="flex" alignItems="center">
-      <PseudoBox
+      <Box
         ref={ref}
         as="input"
         type="radio"

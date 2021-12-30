@@ -36,7 +36,7 @@ export interface MenuListProps extends MinervaProps {
 }
 
 export const OverlayBox = props => (
-  <PseudoBox
+  <Box
     py={1}
     mt="8px"
     bg="white"

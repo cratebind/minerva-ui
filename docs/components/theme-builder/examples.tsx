@@ -20,6 +20,7 @@ import {
   TabList,
   TabPanel,
   TabPanels,
+  Box,
 } from 'minerva-ui';
 
 export const ModalExample = props => {
@@ -175,7 +176,7 @@ export const FormExamples = () => {
 
   return (
     <Flex>
-      <PseudoBox as="form" bg="#fff" width="100%" maxWidth="20rem">
+      <Box as="form" bg="#fff" width="100%" maxWidth="20rem">
         <InputField label="Username" errorText={usernameError}>
           <Input
             placeholder="Username"
@@ -212,7 +213,7 @@ export const FormExamples = () => {
           <Button onClick={e => e.preventDefault()}>Sign In</Button>
           <Link href="#">Forgot Password?</Link>
         </Flex>
-      </PseudoBox>
+      </Box>
     </Flex>
   );
 };
