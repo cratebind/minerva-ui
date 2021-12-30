@@ -1,7 +1,6 @@
 import React, { forwardRef } from 'react';
 import { CustomCheckboxContainer, CustomCheckboxInput } from '@reach/checkbox';
 import { MinervaProps, Box } from '../layout';
-import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';
 
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;

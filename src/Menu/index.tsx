@@ -17,7 +17,6 @@ import { Box, MinervaProps } from '../layout';
 // import { useTheme } from '../theme';
 
 // import '@reach/menu-button/styles.css';
-import PseudoBox from '../PseudoBox';
 
 export type MenuContainerProps = MenuProps;
 
