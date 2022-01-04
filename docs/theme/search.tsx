@@ -40,14 +40,14 @@ const Search = ({ directories }) => {
   const input = useRef(null);
 
   useEffect(() => {
-    const inputs = ['input', 'select', 'button', 'textarea'];
+    const inputs = ['body', 'input', 'select', 'button', 'textarea'];
 
     const down = e => {
       if (
         document.activeElement &&
         inputs.includes(document.activeElement.tagName.toLowerCase())
       ) {
-        if (e.key === '/') {
+        if (e.metaKey && e.key === 'k') {
           e.preventDefault();
           input.current.focus();
         } else if (e.key === 'Escape') {
@@ -78,7 +78,7 @@ const Search = ({ directories }) => {
         className="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
         id={SEARCH_ID}
         type="search"
-        placeholder='Search ("/" to focus)'
+        placeholder="Search (⌘ + k)"
         ref={input}
       />
     </div>
