@@ -1,3 +1,5 @@
+import { userEvent, within } from '@storybook/testing-library';
+// import { expect } from '@storybook/jest';
 import React from 'react';
 import { Accordion, AccordionButton, AccordionItem, AccordionPanel } from '.';
 
@@ -11,7 +13,7 @@ export default {
   },
 };
 
-export const Basic = () => {
+const BasicTemplate = () => {
   return (
     <Accordion>
       <AccordionItem>
@@ -45,7 +47,22 @@ export const Basic = () => {
   );
 };
 
-export const MultipleAndCollapsible = () => (
+export const Basic = BasicTemplate.bind({});
+Basic.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  await userEvent.click(canvas.getByText('Section 1 title'));
+  await canvas.findAllByText(
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  )[0];
+  await userEvent.click(canvas.getByText('Section 2 title'));
+  await canvas.findAllByText(
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  )[1];
+  await userEvent.click(canvas.getByText('Section 3 (disabled)'));
+};
+
+const MultipleAndCollapsibleTemplate = () => (
   <Accordion multiple collapsible>
     <AccordionItem>
       <AccordionButton>Section 1 title</AccordionButton>
@@ -76,3 +93,21 @@ export const MultipleAndCollapsible = () => (
     </AccordionItem>
   </Accordion>
 );
+
+export const MultipleAndCollapsible = MultipleAndCollapsibleTemplate.bind({});
+MultipleAndCollapsible.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  await userEvent.click(canvas.getByText('Section 1 title'));
+  await canvas.findAllByText(
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  )[0];
+  await userEvent.click(canvas.getByText('Section 2 title'));
+  await canvas.findAllByText(
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  )[1];
+  await userEvent.click(canvas.getByText('Section 3 title'));
+  await canvas.findAllByText(
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+  )[2];
+};

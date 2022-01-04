@@ -2,7 +2,7 @@ const webpack = require('webpack');
 
 module.exports = {
   stories: ['../src/**/*.stories.@(ts|tsx|js|jsx)', '../stories/**/*.stories.@(ts|tsx|js|jsx)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-interactions'],
   typescript: {
     check: false, // type-check stories during Storybook build
   },
@@ -19,5 +19,8 @@ module.exports = {
   reactOptions: {
     // fastRefresh: true,
     strictMode: true,
+  },
+  features: {
+    interactionsDebugger: true,
   },
 }
