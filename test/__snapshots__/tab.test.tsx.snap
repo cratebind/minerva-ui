@@ -74,19 +74,6 @@ exports[`<TabList /> should be theme-able 1`] = `
   border-bottom: 2px solid transparent;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #e9e9e9;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
 .c4:focus {
   color: #1a56db;
   outline: 0;
@@ -100,6 +87,19 @@ exports[`<TabList /> should be theme-able 1`] = `
   background-color: #e0e0e0;
   border-color: #e0e0e0;
   border-radius: 5px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #e9e9e9;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 <div>
@@ -312,19 +312,6 @@ exports[`<TabPanel /> should be theme-able 1`] = `
   background-color: #e9e9e9;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #f5f6fa;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
 .c4:focus {
   color: #1a56db;
   outline: 0;
@@ -338,6 +325,19 @@ exports[`<TabPanel /> should be theme-able 1`] = `
   background-color: #e0e0e0;
   border-color: #e0e0e0;
   border-radius: 5px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f5f6fa;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 <div>
@@ -550,19 +550,6 @@ exports[`<TabPanels /> should be theme-able 1`] = `
   background-color: #e9e9e9;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #f5f6fa;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
 .c4:focus {
   color: #1a56db;
   outline: 0;
@@ -576,6 +563,19 @@ exports[`<TabPanels /> should be theme-able 1`] = `
   background-color: #e0e0e0;
   border-color: #e0e0e0;
   border-radius: 5px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f5f6fa;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 <div>
@@ -782,19 +782,6 @@ exports[`<Tabs /> should change TabList background color 1`] = `
   border-bottom: 2px solid transparent;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #f5f6fa;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
 .c4:focus {
   color: #1a56db;
   outline: 0;
@@ -808,6 +795,19 @@ exports[`<Tabs /> should change TabList background color 1`] = `
   background-color: #e0e0e0;
   border-color: #e0e0e0;
   border-radius: 5px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f5f6fa;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 <div>
