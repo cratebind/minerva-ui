@@ -17,7 +17,6 @@ import { Box, MinervaProps } from '../layout';
 // import { useTheme } from '../theme';
 
 // import '@reach/menu-button/styles.css';
-import PseudoBox from '../PseudoBox';
 
 export type MenuContainerProps = MenuProps;
 
@@ -36,7 +35,7 @@ export interface MenuListProps extends MinervaProps {
 }
 
 export const OverlayBox = props => (
-  <PseudoBox
+  <Box
     py={1}
     mt="8px"
     bg="white"

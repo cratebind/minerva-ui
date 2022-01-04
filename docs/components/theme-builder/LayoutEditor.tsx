@@ -79,7 +79,6 @@ export default function LayoutEditor({
   handleChange,
   values,
 }: LayoutEditorProps) {
-  // console.log({ values });
   const outerEditorSize = 300;
   const innerEditorSize = 185;
 

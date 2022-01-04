@@ -11,7 +11,7 @@ import {
 
 import { MinervaProps, Box, Flex } from '../layout';
 import { useComponentStyles } from '../theme';
-import PseudoBox, { PseudoBoxProps } from '../PseudoBox';
+import { PseudoBoxProps } from '../PseudoBox';
 import { forwardRefWithAs } from '../type-utilities';
 
 // export interface TabsProps extends MinervaProps, PseudoBoxProps, ReachTabsProps { }
@@ -49,7 +49,7 @@ export const Tab = forwardRefWithAs<TabsProps, 'div'>(function Tab(
 ) {
   const componentStyles = useComponentStyles('Tab');
   return (
-    <PseudoBox
+    <Box
       as={ReachTab}
       ref={ref}
       display="flex"
@@ -81,7 +81,7 @@ export const Tab = forwardRefWithAs<TabsProps, 'div'>(function Tab(
       {...props}
     >
       {children}
-    </PseudoBox>
+    </Box>
   );
 });
 

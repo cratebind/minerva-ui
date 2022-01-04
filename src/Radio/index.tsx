@@ -4,7 +4,6 @@ import React, { useContext } from 'react';
 import { MinervaProps } from '../layout';
 import { Box } from '../layout';
 import { useComponentStyles } from '../theme';
-import { PseudoBox } from '..';
 
 export interface RadioGroupProps {
   children?: React.ReactNode;
@@ -59,7 +58,7 @@ export const Radio = React.forwardRef(function Radio(
 
   return (
     <Box as="label" display="flex" alignItems="center">
-      <PseudoBox
+      <Box
         ref={ref}
         as="input"
         type="radio"

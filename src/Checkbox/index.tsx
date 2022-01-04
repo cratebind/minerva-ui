@@ -1,7 +1,6 @@
 import React, { forwardRef } from 'react';
 import { CustomCheckboxContainer, CustomCheckboxInput } from '@reach/checkbox';
 import { MinervaProps, Box } from '../layout';
-import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';
 
 type BaseProps = MinervaProps & React.InputHTMLAttributes<HTMLInputElement>;
@@ -37,7 +36,7 @@ export const Checkbox = forwardRef(function Checkbox(
         disabled={disabled}
         defaultChecked={defaultChecked}
       >
-        <PseudoBox
+        <Box
           as={CustomCheckboxInput}
           backgroundImage={`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23000000' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='${checkColor.replace(
             '#',

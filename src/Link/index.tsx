@@ -2,9 +2,9 @@ import React from 'react';
 // import styled from 'styled-components';
 // import PropTypes from 'prop-types';
 // import { systemProps } from '../layout';
-import PseudoBox from '../PseudoBox';
+// import PseudoBox from '../PseudoBox';
 import { useComponentStyles } from '../theme';
-import { MinervaProps } from '../layout';
+import { Box, MinervaProps } from '../layout';
 // import { forwardRefWithAs } from '../type-utilities';
 
 type BaseProps = MinervaProps & React.LinkHTMLAttributes<HTMLAnchorElement>;
@@ -31,7 +31,7 @@ export const Link = React.forwardRef(function Link(
     : null;
 
   return (
-    <PseudoBox
+    <Box
       as="a"
       href={href}
       ref={ref}
@@ -41,7 +41,7 @@ export const Link = React.forwardRef(function Link(
       {...props}
     >
       {children}
-    </PseudoBox>
+    </Box>
   );
 });
 

@@ -2,8 +2,7 @@ import React from 'react';
 import warning from 'tiny-warning';
 // import { forwardRefWithAs } from '../type-utilities';
 // import PropTypes from 'prop-types';
-import { MinervaProps } from '../layout';
-import PseudoBox from '../PseudoBox';
+import { Box, MinervaProps } from '../layout';
 import { useComponentStyles } from '../theme';
 
 type BaseProps = React.InputHTMLAttributes<HTMLInputElement> & MinervaProps;
@@ -28,7 +27,7 @@ export const Input = React.forwardRef(function Input(
   );
 
   return (
-    <PseudoBox
+    <Box
       as="input"
       ref={ref}
       {...componentStyles}

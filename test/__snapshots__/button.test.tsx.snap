@@ -134,31 +134,6 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
   color: #777;
 }
 
-.c3 {
-  display: block;
-  height: 20px;
-  border-width: 2px;
-  width: 20px;
-  color: #777;
-}
-
-.c4 {
-  display: inline-block;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-  border-right-color: currentColor;
-  border-top-color: currentColor;
-  border-radius: 9999px;
-  color: currentColor;
-  border-style: solid;
-  height: 20px;
-  width: 20px;
-  border-width: 2px;
-  margin: 2px;
-  -webkit-animation: cilQsd 0.45s linear infinite;
-  animation: cilQsd 0.45s linear infinite;
-}
-
 .c1:hover {
   background-color: #f9fafb;
 }
@@ -184,6 +159,31 @@ exports[`<Button /> should contain spinner with \`isLoading\` prop 1`] = `
 .c1[aria-disabled=true]:hover {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+.c3 {
+  display: block;
+  height: 20px;
+  border-width: 2px;
+  width: 20px;
+  color: #777;
+}
+
+.c4 {
+  display: inline-block;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: currentColor;
+  border-top-color: currentColor;
+  border-radius: 9999px;
+  color: currentColor;
+  border-style: solid;
+  height: 20px;
+  width: 20px;
+  border-width: 2px;
+  margin: 2px;
+  -webkit-animation: cilQsd 0.45s linear infinite;
+  animation: cilQsd 0.45s linear infinite;
 }
 
 <div>
