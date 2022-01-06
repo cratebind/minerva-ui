@@ -34,3 +34,15 @@ input[type='color']::-webkit-color-swatch {
 .callout p {
   margin: 0;
 }
+
+.DocSearch.DocSearch-Button {
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  height: auto;
+}
+
+.DocSearch-Search-Icon {
+  color: #bab9bd !important;
+}

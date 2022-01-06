@@ -34,7 +34,10 @@ const Item = ({ title, active, href, onMouseOver, search }) => {
 
 const SEARCH_ID = 'search-input';
 
-const Search = ({ directories }) => {
+export const DOC_SEARCH_API_KEY = '968f29d09b1213475a35c6fa56d7a55d';
+export const DOC_SEARCH_INDEX_NAME = 'minerva-ui-vercel';
+
+const Search = () => {
   const router = useRouter();
   const [show, setShow] = useState(false);
   const input = useRef(null);
@@ -65,8 +68,8 @@ const Search = ({ directories }) => {
     if (window?.docsearch) {
       // @ts-ignore
       window.docsearch({
-        apiKey: '968f29d09b1213475a35c6fa56d7a55d',
-        indexName: 'minerva-ui-vercel',
+        apiKey: DOC_SEARCH_API_KEY,
+        indexName: DOC_SEARCH_INDEX_NAME,
         inputSelector: `input#${SEARCH_ID}`,
       });
     }

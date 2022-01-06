@@ -10,6 +10,7 @@
   "author": "Cratebind",
   "license": "MIT",
   "dependencies": {
+    "@docsearch/react": "^3.0.0-alpha.42",
     "global": "^4.4.0",
     "markdown-to-jsx": "^7.0.0",
     "minerva-ui": "^7.2.1",

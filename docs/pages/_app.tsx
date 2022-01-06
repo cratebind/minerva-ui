@@ -48,6 +48,11 @@ export default function CustomApp({ Component, pageProps }) {
     <CustomThemeProvider>
       <ReachGlobalStyles />
       <AnimationStyles />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" />
       <Component {...pageProps} />
     </CustomThemeProvider>
   );
