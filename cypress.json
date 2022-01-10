@@ -1,3 +1,8 @@
 {
-  "componentFolder": "cypress/components"
+  "componentFolder": "cypress/components",
+  "ignoreTestFiles": [
+    "**/__snapshots__/*",
+    "**/__image_snapshots__/*"
+  ],
+  "projectId": "rbewju"
 }
