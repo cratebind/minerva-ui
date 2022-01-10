@@ -12,24 +12,20 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
-const browserify = require('@cypress/browserify-preprocessor');
-
-const { initPlugin } = require('cypress-plugin-snapshots/plugin');
+const path = require('path');
+const { startDevServer } = require('@cypress/vite-dev-server');
 
 /**
  * @type {Cypress.PluginConfig}
  */
+// eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
-  on(
-    'file:preprocessor',
-    browserify({
-      typescript: require.resolve('typescript'),
-    })
-  );
-
-  initPlugin(on, config);
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-
-  return config;
+  on('dev-server:start', options => {
+    return startDevServer({
+      options,
+      viteConfig: {
+        configFile: path.resolve(__dirname, '..', '..', 'vite.config.js'),
+      },
+    });
+  });
 };

@@ -14,10 +14,11 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+// @ts-ignore
+// eslint-disable-next-line import/no-unresolved
+import 'cypress-real-events/support';
+// @ts-ignore
 import './commands';
-import 'cypress-plugin-snapshots/commands';
-
-require('@cypress/react/support');
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
