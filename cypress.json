@@ -1,9 +1,3 @@
 {
-  "experimentalComponentTesting": true,
-  "componentFolder": "cypress/components",
-  "ignoreTestFiles": [
-    "**/__snapshots__/*",
-    "**/__image_snapshots__/*"
-  ],
-  "projectId": "rbewju"
+  "componentFolder": "cypress/components"
 }

@@ -4,7 +4,8 @@ import Spinner from '../Spinner';
 import { PseudoBoxProps } from '../PseudoBox';
 import { useComponentStyles, useTheme } from '../theme';
 import { Box, MinervaProps } from '../layout';
-import { forwardRefWithAs } from '../type-utilities';
+// import { forwardRefWithAs } from '../type-utilities';
+import { ForwardRefComponent } from '../utilities/polymorphic';
 
 export const buttonVariants = {
   primary: {
@@ -74,7 +75,7 @@ export interface ButtonProps extends MinervaProps, PseudoBoxProps {
 //   }: ButtonProps,
 //   forwardedRef
 // ) {
-export const Button = forwardRefWithAs<ButtonProps, 'button'>(function Button(
+export const Button = function Button(
   {
     children,
     disabled = false,
@@ -145,7 +146,7 @@ export const Button = forwardRefWithAs<ButtonProps, 'button'>(function Button(
       {isLoading ? <Spinner /> : children}
     </Box>
   );
-});
+} as ForwardRefComponent<'button', ButtonProps>;
 
 export default Button;
 
