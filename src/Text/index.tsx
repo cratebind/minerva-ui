@@ -1,10 +1,11 @@
 import React from 'react';
+import { PseudoBoxProps } from '..';
 // import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
 import { useComponentStyles } from '../theme';
 // import { ForwardRefComponent } from '../utilities/polymorphic';
 
-export interface TextProps extends MinervaProps {
+export interface TextProps extends MinervaProps, PseudoBoxProps {
   children?: React.ReactNode;
 }
 

@@ -25,3 +25,15 @@ it('renders different elements with "as" prop', () => {
 
   cy.get('h1').contains('Text');
 });
+
+it('allows styling through pseudo class prop _focus', () => {
+  mount(
+    <Text color="#fff" _hover={{ color: 'rgb(255, 0, 0)' }}>
+      Text
+    </Text>
+  );
+
+  cy.get('p')
+    .realHover()
+    .should('have.css', 'color', 'rgb(255, 0, 0)');
+});

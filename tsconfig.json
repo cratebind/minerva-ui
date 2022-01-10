@@ -3,12 +3,15 @@
     "src",
     "types",
     "stories",
-    "utils/SectionLink.tsx"
+    "utils/SectionLink.tsx",
+    "cypress",
+    "cypress-real-events"
   ],
   "exclude": [
     "node_modules",
     "theme-builder",
-    "docs"
+    "docs",
+    "cypress"
   ],
   "compilerOptions": {
     "target": "es5",
