@@ -75,7 +75,7 @@ export interface ButtonProps extends MinervaProps, PseudoBoxProps {
 //   }: ButtonProps,
 //   forwardedRef
 // ) {
-export const Button = function Button(
+export const Button = React.forwardRef(function Button(
   {
     children,
     disabled = false,
@@ -146,7 +146,7 @@ export const Button = function Button(
       {isLoading ? <Spinner /> : children}
     </Box>
   );
-} as ForwardRefComponent<'button', ButtonProps>;
+}) as ForwardRefComponent<'button', ButtonProps>;
 
 export default Button;
 
