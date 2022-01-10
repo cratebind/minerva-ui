@@ -14,8 +14,9 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+// @ts-ignore
 // eslint-disable-next-line import/no-unresolved
-import 'cypress-real-events/index';
+import 'cypress-real-events/support';
 // @ts-ignore
 import './commands';
 
