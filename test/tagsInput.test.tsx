@@ -38,7 +38,7 @@ const ExampleTagInput = () => {
   );
 };
 
-describe('<TagsInput />', () => {
+describe.skip('<TagsInput />', () => {
   it('should render', () => {
     const { container } = render(<ExampleTagInput />);
     expect(container).toMatchSnapshot();
