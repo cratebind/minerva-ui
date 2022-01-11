@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { forwardRefWithAs } from '../type-utilities';
 import { Box, MinervaProps, systemProps } from '../layout';
+import { ForwardRefComponent } from '../utilities/polymorphic';
 
 export const TableContainer = styled.div`
   border-radius: 8px;
@@ -20,7 +20,7 @@ export const TableContainer = styled.div`
 //   systemProps
 // );
 
-export const StyledTable = forwardRefWithAs<any, 'table'>(function SyledTable(
+export const StyledTable = React.forwardRef(function StyledTable(
   props: any,
   ref: any
 ) {
@@ -35,7 +35,7 @@ export const StyledTable = forwardRefWithAs<any, 'table'>(function SyledTable(
       {...props}
     />
   );
-});
+}) as ForwardRefComponent<any, 'table'>;
 
 export const TableHeader = styled('thead')(
   {
@@ -104,9 +104,17 @@ export const Table = forwardRef<Ref, CustomTableProps & MinervaProps>(
   ({ children, ...props }, ref) => {
     return (
       <TableContainer>
-        <StyledTable as="table" ref={ref} {...props}>
+        <Box
+          as="table"
+          ref={ref}
+          margin={0}
+          minWidth="100%"
+          borderCollapse="collapse"
+          display="table"
+          {...props}
+        >
           {children}
-        </StyledTable>
+        </Box>
       </TableContainer>
     );
   }

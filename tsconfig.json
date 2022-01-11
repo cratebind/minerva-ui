@@ -3,9 +3,9 @@
     "src",
     "types",
     "stories",
-    "utils/SectionLink.tsx",
     "cypress",
-    "cypress-real-events"
+    "cypress-real-events",
+    "dist"
   ],
   "exclude": [
     "node_modules",

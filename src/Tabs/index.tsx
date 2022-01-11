@@ -12,7 +12,7 @@ import {
 import { MinervaProps, Box, Flex } from '../layout';
 import { useComponentStyles } from '../theme';
 import { PseudoBoxProps } from '../PseudoBox';
-import { forwardRefWithAs } from '../type-utilities';
+import { ForwardRefComponent } from '../utilities/polymorphic';
 
 // export interface TabsProps extends MinervaProps, PseudoBoxProps, ReachTabsProps { }
 
@@ -43,7 +43,7 @@ export const TabList = ({ children, ...props }: TabsProps) => {
   );
 };
 
-export const Tab = forwardRefWithAs<TabsProps, 'div'>(function Tab(
+export const Tab = React.forwardRef(function Tab(
   { children, ...props }: TabsProps,
   ref
 ) {
@@ -83,7 +83,7 @@ export const Tab = forwardRefWithAs<TabsProps, 'div'>(function Tab(
       {children}
     </Box>
   );
-});
+}) as ForwardRefComponent<TabsProps, 'div'>;
 
 export const TabPanels = (props: TabsProps) => {
   const componentStyles = useComponentStyles('TabPanels');
