@@ -4,6 +4,7 @@ declare global {
   namespace Cypress {
     interface Chainable {
       toMatchImageSnapshot: any;
+      realHover(): Chainable<Element>;
     }
   }
 }

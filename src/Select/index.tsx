@@ -15,7 +15,6 @@ import {
 } from 'styled-system';
 import { Block, MinervaProps } from '../layout';
 import Input from '../Input';
-// import { forwardRefWithAs } from '../type-utilities';
 // import Icon from '../Icon';
 
 const StyledSelect = styled(Input)(

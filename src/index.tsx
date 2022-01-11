@@ -30,16 +30,21 @@ export const defaultIcons = {
 
 export { default as ThemeProvider } from './ThemeProvider';
 export { default as VisuallyHidden } from './VisuallyHidden';
+
 export {
   default as GlobalStyles,
+  /* istanbul ignore next */
   AnimationStyles,
+  /* istanbul ignore next */
   ReachGlobalStyles,
+  /* istanbul ignore next */
   CSSReset,
 } from './GlobalStyles';
 // export { useTheme, useComponentStyles } from './theme';
 export { default as baseTheme } from './theme';
 export { default as defaultTheme } from './theme';
 export * from './theme';
+/* istanbul ignore next */
 export { default as styled } from 'styled-components';
 
 /**
@@ -75,7 +80,7 @@ export * from './Radio';
 export * from './InputField';
 export { default as InputField } from './InputField';
 export * from './Select';
-export * from './TagsInput';
+// export * from './TagsInput';
 export * from './Tabs';
 
 /**

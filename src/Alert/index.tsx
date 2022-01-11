@@ -4,7 +4,7 @@ import { MinervaProps, systemProps, Flex } from '../layout';
 import Icon from '../Icon';
 // import Button from '../Button';
 import { Text } from '../Text';
-import { forwardRefWithAs } from '../type-utilities';
+import { ForwardRefComponent } from '../utilities/polymorphic';
 
 export const StyledAlert = styled(Flex)(
   {
@@ -70,7 +70,7 @@ const alertTypes = {
   },
 };
 
-export const Alert = forwardRefWithAs<AlertProps, 'div'>(function Alert(
+export const Alert = React.forwardRef(function Alert(
   { title, children, status, icon, ...props }: AlertProps,
   ref
 ) {
@@ -101,6 +101,6 @@ export const Alert = forwardRefWithAs<AlertProps, 'div'>(function Alert(
       {children}
     </StyledAlert>
   );
-});
+}) as ForwardRefComponent<AlertProps, 'div'>;
 
 export default Alert;

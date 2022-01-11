@@ -1,5 +1,4 @@
 {
-  "experimentalComponentTesting": true,
   "componentFolder": "cypress/components",
   "ignoreTestFiles": [
     "**/__snapshots__/*",

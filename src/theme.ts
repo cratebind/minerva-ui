@@ -104,7 +104,9 @@ const defaultTheme: MinervaTheme = {
   ModalBody: {},
   ModalFooter: {},
   ModalContent: {},
-  Tag: {},
+  Tag: {
+    backgroundColor: '#EDF2F7',
+  },
   Text: {},
   Tooltip: {},
   Select: {},
