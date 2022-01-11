@@ -75,7 +75,7 @@ export * from './Radio';
 export * from './InputField';
 export { default as InputField } from './InputField';
 export * from './Select';
-export * from './TagsInput';
+// export * from './TagsInput';
 export * from './Tabs';
 
 /**

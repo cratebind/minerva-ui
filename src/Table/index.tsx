@@ -20,7 +20,7 @@ export const TableContainer = styled.div`
 //   systemProps
 // );
 
-export const StyledTable = React.forwardRef(function SyledTable(
+export const StyledTable = React.forwardRef(function StyledTable(
   props: any,
   ref: any
 ) {
@@ -104,9 +104,17 @@ export const Table = forwardRef<Ref, CustomTableProps & MinervaProps>(
   ({ children, ...props }, ref) => {
     return (
       <TableContainer>
-        <StyledTable as="table" ref={ref} {...props}>
+        <Box
+          as="table"
+          ref={ref}
+          margin={0}
+          minWidth="100%"
+          borderCollapse="collapse"
+          display="table"
+          {...props}
+        >
           {children}
-        </StyledTable>
+        </Box>
       </TableContainer>
     );
   }

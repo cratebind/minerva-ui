@@ -37,7 +37,7 @@ export const Stack = React.forwardRef(function Stack(
       {children}
     </StyledStack>
   );
-}) as ForwardRefComponent<StackProps, 'div'>;
+}) as ForwardRefComponent<'div', StackProps>;
 
 export default Stack;
 
