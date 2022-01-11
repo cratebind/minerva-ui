@@ -1,6 +1,4 @@
 import React from 'react';
-// import { forwardRefWithAs } from '../type-utilities';
-// import PropTypes from 'prop-types';
 import { MinervaProps, Box } from '../layout';
 import { useComponentStyles } from '../theme';
 

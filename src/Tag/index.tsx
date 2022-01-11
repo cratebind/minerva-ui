@@ -7,7 +7,7 @@ import { MinervaProps, systemProps, Box } from '../layout';
 // import { Icon } from '../Icon';
 import { useComponentStyles } from '../theme';
 import Button from '../Button';
-import { forwardRefWithAs } from '../type-utilities';
+import { ForwardRefComponent } from '../utilities/polymorphic';
 
 export const TagIcon = styled(Button)`
   margin-left: 5px;
@@ -38,38 +38,36 @@ export interface TagButtonProps extends MinervaProps {
   iconName?: string;
 }
 
-export const TagButton = forwardRefWithAs<TagButtonProps, 'button'>(
-  function TagButton({ iconName, ...props }, ref) {
-    return (
-      <Button
-        ref={ref}
-        data-testid="input-tag-icon"
-        marginLeft="5px"
-        marginTop="1px"
-        p={0}
-        bg="transparent"
-        border={0}
-        borderRadius="full"
-        _hover={{ cursor: 'pointer' }}
-        {...props}
-      >
-        <Close size="14px" />
-      </Button>
-    );
-  }
-);
-
-export const Tag = forwardRefWithAs<TagProps, 'div'>(function Tag(
-  { children, ...props },
+export const TagButton = React.forwardRef(function TagButton(
+  { iconName, ...props },
   ref
 ) {
+  return (
+    <Button
+      ref={ref}
+      data-testid="input-tag-icon"
+      marginLeft="5px"
+      marginTop="1px"
+      p={0}
+      bg="transparent"
+      border={0}
+      borderRadius="full"
+      _hover={{ cursor: 'pointer' }}
+      {...props}
+    >
+      <Close size="14px" />
+    </Button>
+  );
+}) as ForwardRefComponent<TagButtonProps, 'button'>;
+
+export const Tag = React.forwardRef(function Tag({ children, ...props }, ref) {
   const componentStyles = useComponentStyles('Tag');
   return (
     <StyledTag ref={ref} {...componentStyles} {...props}>
       {children}
     </StyledTag>
   );
-});
+}) as ForwardRefComponent<TagProps, 'div'>;
 
 export default Tag;
 

@@ -1,7 +1,5 @@
 import React from 'react';
 import warning from 'tiny-warning';
-// import { forwardRefWithAs } from '../type-utilities';
-// import PropTypes from 'prop-types';
 import { Box, MinervaProps } from '../layout';
 import { useComponentStyles } from '../theme';
 
