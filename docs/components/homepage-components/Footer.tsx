@@ -1,15 +1,11 @@
-import { Flex, Box, Heading, Text, Link, styled } from 'minerva-ui';
+import { Flex, Box, Text, Link, styled } from 'minerva-ui';
 import DocSearch from './DocSearch';
 
 const StyledFooter = styled(Flex)`
   flex-direction: column;
   background: linear-gradient(180deg, #1e0654 36.3%, rgba(30, 6, 84, 0) 200%),
-    url(unsplash_sky.jpeg);
+    50% / cover no-repeat url(wood_sky.jpeg);
   opacity: 0.85;
-`;
-
-const FooterTitle = styled(Text)`
-  color: #fff;
 `;
 
 const SubLink = styled(Link)`
@@ -54,14 +50,24 @@ const FOOTER_LINKS: LinkType[] = [
 export default function Footer() {
   return (
     <StyledFooter as="footer" p="12" pb="4">
-      <Flex justifyContent="space-between" alignItems="flex-start" mb="20">
-        <DocSearch />
-        <Flex>
+      <Flex
+        mb="20"
+        className="flex-col justify-between items-start lg:flex-row"
+      >
+        <DocSearch type="footer" />
+        <Flex className="mt-16 flex-col lg:mt-0 sm:flex-row">
           {FOOTER_LINKS.map(({ title, links }) => (
-            <Flex key={title} flexDirection="column" mr="12">
-              <FooterTitle>{title}</FooterTitle>
+            <Flex
+              key={title}
+              flexDirection="column"
+              mr="12"
+              className="mb-5 sm:mb-0"
+            >
+              <Text fontSize="md" color="white" mb="2">
+                {title}
+              </Text>
               {links.map(({ name, href }) => (
-                <SubLink key="name" my="2">
+                <SubLink key={name} my="2" href={href}>
                   {name}
                 </SubLink>
               ))}
@@ -69,8 +75,10 @@ export default function Footer() {
           ))}
         </Flex>
       </Flex>
-      <Box textAlign="center" color="#fff">
-        © {new Date().getFullYear()} CrateBind. All rights reserved.
+      <Box color="#8E82A9" fontSize="xs">
+        <Text width="max-content" m="auto">
+          © {new Date().getFullYear()} CrateBind. All rights reserved.
+        </Text>
       </Box>
     </StyledFooter>
   );

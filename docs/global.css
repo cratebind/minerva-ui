@@ -12,6 +12,7 @@ h3 code {
 
 content pre {
   position: relative;
+  background-color: rgba(101, 31, 255, 0.05);
 }
 
 input[type='color'] {

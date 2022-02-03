@@ -24,16 +24,14 @@ function Editor() {
   const customProps = state[activeComponent]?.customProps || {};
 
   return (
-    <>
-      <Container>
-        <Heading border={0} margin="8px 12px">
-          {activeComponent}
-        </Heading>
-        <Box padding="20px" overflow="auto">
-          <Component {...customProps} />
-        </Box>
-      </Container>
-    </>
+    <Container>
+      <Heading border={0} margin="8px 12px">
+        {activeComponent}
+      </Heading>
+      <Box padding="20px" overflow="auto">
+        <Component {...customProps} />
+      </Box>
+    </Container>
   );
 }
 

@@ -43,6 +43,18 @@ const customVariants = {
     fontSize: '16px',
     lineHeight: '24px',
   },
+  Text: {
+    ...defaultTheme.Text,
+    fontFamily: "'Roboto Condensed', sans-serif",
+    fontSize: '14px',
+    lineHeight: '24px',
+  },
+  Tag: {
+    ...defaultTheme.Tag,
+    fontFamily: "'Roboto Condensed', sans-serif",
+    fontSize: '14px',
+    lineHeight: '24px',
+  },
   variants: {
     Button: {
       ...defaultTheme.variants.Button,
