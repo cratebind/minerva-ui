@@ -47,3 +47,9 @@ input[type='color']::-webkit-color-swatch {
 .DocSearch-Search-Icon {
   color: #bab9bd !important;
 }
+
+@font-face {
+  font-family: 'Tiempos-Headline';
+  font-style: normal;
+  src: url('/fonts/TiemposHeadline-Regular.otf') format('opentype');
+}

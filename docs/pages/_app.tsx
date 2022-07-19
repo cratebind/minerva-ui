@@ -45,7 +45,7 @@ const customVariants = {
   },
   Text: {
     ...defaultTheme.Text,
-    fontFamily: "'Roboto Condensed', sans-serif",
+    fontFamily: "'Roboto', sans-serif",
     fontSize: '14px',
     lineHeight: '24px',
   },

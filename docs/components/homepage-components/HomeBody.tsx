@@ -47,7 +47,7 @@ const SubContainer = styled(Flex)`
 `;
 
 const SubHeading = styled(Heading)`
-  font-family: tiempos;
+  font-family: Tiempos-Headline;
   font-size: 38px;
   font-weight: 400;
   color: #fff;
@@ -100,14 +100,14 @@ export default function HomeBody() {
           <Box className="mx-12 mt-8 sm:mt-32 mb-24 lg:m-24">
             <Heading
               as="h3"
-              fontFamily="tiempos"
+              fontFamily="Tiempos-Headline"
               fontSize="46px"
               fontWeight="400"
               lineHeight="1"
             >
               Your new favorite React component library
             </Heading>
-            <div className="my-8 sm:my-16">
+            <div className="my-8 sm:mt-6 sm:mb-16">
               <Text color="secondary" fontSize="lg" lineHeight="26px">
                 Professionally designed and built by a team of React developers
                 and product designers—Minerva gives you the components needed to
@@ -192,9 +192,9 @@ export default function HomeBody() {
           <Heading
             as="h4"
             fontSize="46px"
-            mb="2"
+            mb="4"
             fontWeight="400"
-            fontFamily="tiempos"
+            fontFamily="Tiempos-Headline"
           >
             Accessibility for all
           </Heading>
@@ -255,9 +255,9 @@ export default function HomeBody() {
           <Heading
             as="h4"
             fontSize="46px"
-            mb="2"
+            mb="6"
             fontWeight="400"
-            fontFamily="tiempos"
+            fontFamily="Tiempos-Headline"
             lineHeight="1"
           >
             Built by developers, for developers
@@ -271,7 +271,7 @@ export default function HomeBody() {
           <Button variant="tertiary" mb="8" mt="6" minWidth="140px">
             Learn more
           </Button>
-          <Flex width="100%" mt="8" className="flex-col-reverse md:flex-row">
+          <Flex width="100%" mt="8" className="flex-col-reverse md:flex-row md:flex-row-reverse lg:flex-row">
             <SnippetContainer width="100%" mr="8">
               <CodeSnippet
                 snippetBackground="#1F1B29"
@@ -281,7 +281,7 @@ export default function HomeBody() {
               </CodeSnippet>
             </SnippetContainer>
 
-            <Box width="100%" className="ml-0 mb-4 md:ml-12 md:mt-0">
+            <Box width="100%" className="ml-0 mb-4 lg:ml-12 md:mt-0">
               <Box shadow="lg" borderRadius="md" p="2" maxWidth="264px">
                 <Image
                   src="mountain_sky.png"
@@ -323,9 +323,9 @@ export default function HomeBody() {
           <Heading
             as="h4"
             fontSize="46px"
-            mb="2"
+            mb="6"
             fontWeight="400"
-            fontFamily="tiempos"
+            fontFamily="Tiempos-Headline"
             lineHeight="1"
           >
             Delightfully designed
@@ -339,10 +339,10 @@ export default function HomeBody() {
           <Button variant="tertiary" mb="8" mt="6" minWidth="140px">
             Check out the Figma components
           </Button>
-          <Flex width="100%" mt="8" className="flex-col md:flex-row">
+          <Flex width="100%" mt="8" className="flex-col lg:flex-row">
             <TableExample />
 
-            <SnippetContainer width="100%" className="ml-0 mt-4 md:ml-8 mt-0">
+            <SnippetContainer width="100%" className="ml-0 mt-4 lg:ml-8 mt-0">
               <CodeSnippet
                 snippetBackground="#F7F4FF"
                 style={{ fontSize: '12px' }}
@@ -366,7 +366,7 @@ export default function HomeBody() {
             fontSize="46px"
             mb="2"
             fontWeight="400"
-            fontFamily="tiempos"
+            fontFamily="Tiempos-Headline"
           >
             Globally themed
           </Heading>
@@ -439,7 +439,7 @@ export default function HomeBody() {
             fontSize="46px"
             mb="2"
             fontWeight="400"
-            fontFamily="tiempos"
+            fontFamily="Tiempos-Headline"
           >
             Fully customizable
           </Heading>
@@ -451,15 +451,15 @@ export default function HomeBody() {
           <Button variant="tertiary" mb="8" mt="6" minWidth="140px">
             Learn more
           </Button>
-          <Flex width="100%" mt="8" className="flex-col md:flex-row">
+          <Flex width="100%" mt="8" className="flex-col lg:flex-row">
             <TableExample />
             <SnippetContainer
               width="100%"
-              className="ml-0 mt-4 md:ml-8 md:mt-0"
+              className="ml-0 mt-4 lg:ml-8 lg:mt-0"
             >
               <CodeSnippet
                 snippetBackground="#F7F4FF"
-                style={{ fontSize: '12px' }}
+                style={{ fontSize: '12px', fontFamily: 'Roboto Mono' }}
               >
                 {snippetText}
               </CodeSnippet>

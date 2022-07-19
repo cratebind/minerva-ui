@@ -61,6 +61,16 @@ const TableRowSection = () => (
         Tag Label
       </Tag>
     </TableCell>
+    <TableCell style={{ paddingLeft: '8px' }}>
+      <Text fontSize="xs" lineHeight="20px">
+        Admin
+      </Text>
+    </TableCell>
+    <TableCell style={{ paddingLeft: '8px' }}>
+      <Text fontSize="xs" lineHeight="20px" color="#651FFF" fontWeight="bold">
+        Edit
+      </Text>
+    </TableCell>
   </TableRow>
 );
 
@@ -74,6 +84,9 @@ export default function TableExample() {
             <TableHeaderCell style={{ minWidth: '160px' }}>Job</TableHeaderCell>
             <TableHeaderCell style={{ paddingLeft: '8px' }}>
               Status
+            </TableHeaderCell>
+            <TableHeaderCell style={{ paddingLeft: '8px' }}>
+              Role
             </TableHeaderCell>
           </TableRow>
         </TableHeader>
