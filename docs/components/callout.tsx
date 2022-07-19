@@ -2,9 +2,9 @@
 
 const Callout = ({ children, background = 'bg-orange-100', emoji = '💡' }) => {
   return (
-    <p className={`${background} flex rounded-lg`}>
+    <p className={`${background} flex rounded-lg items-center callout`}>
       <span className="pl-3 pr-2 py-2 select-none text-xl">{emoji}</span>
-      <span className="pr-4 py-2">{children}</span>
+      <span className="pr-4 py-2 mt-0">{children}</span>
       {/* <style jsx>{`
         span > :global(p) {
           margin-top: 0;

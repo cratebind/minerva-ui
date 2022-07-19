@@ -34,20 +34,23 @@ const Item = ({ title, active, href, onMouseOver, search }) => {
 
 const SEARCH_ID = 'search-input';
 
-const Search = ({ directories }) => {
+export const DOC_SEARCH_API_KEY = '968f29d09b1213475a35c6fa56d7a55d';
+export const DOC_SEARCH_INDEX_NAME = 'minerva-ui-vercel';
+
+const Search = () => {
   const router = useRouter();
   const [show, setShow] = useState(false);
   const input = useRef(null);
 
   useEffect(() => {
-    const inputs = ['input', 'select', 'button', 'textarea'];
+    const inputs = ['body', 'input', 'select', 'button', 'textarea'];
 
     const down = e => {
       if (
         document.activeElement &&
         inputs.includes(document.activeElement.tagName.toLowerCase())
       ) {
-        if (e.key === '/') {
+        if (e.metaKey && e.key === 'k') {
           e.preventDefault();
           input.current.focus();
         } else if (e.key === 'Escape') {
@@ -65,8 +68,8 @@ const Search = ({ directories }) => {
     if (window?.docsearch) {
       // @ts-ignore
       window.docsearch({
-        apiKey: '968f29d09b1213475a35c6fa56d7a55d',
-        indexName: 'minerva-ui-vercel',
+        apiKey: DOC_SEARCH_API_KEY,
+        indexName: DOC_SEARCH_INDEX_NAME,
         inputSelector: `input#${SEARCH_ID}`,
       });
     }
@@ -78,7 +81,7 @@ const Search = ({ directories }) => {
         className="appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
         id={SEARCH_ID}
         type="search"
-        placeholder='Search ("/" to focus)'
+        placeholder="Search (⌘ + k)"
         ref={input}
       />
     </div>

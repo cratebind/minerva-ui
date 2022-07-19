@@ -202,44 +202,42 @@ export const Code = ({ children, className, highlight, live, ...props }) => {
   }
 
   return (
-    <>
-      <CustomThemeProvider>
-        <Copy content={children.trim()} />
-        <Highlight
-          {...defaultProps}
-          code={children.trim()}
-          language={language}
-          theme={THEME}
-        >
-          {({ className, style, tokens, getLineProps, getTokenProps }) => (
-            <code
-              className={className}
-              style={{ ...style, position: 'relative' }}
-            >
-              {tokens.map((line, i) => (
-                <div
-                  key={i}
-                  {...getLineProps({ line, key: i })}
-                  style={
-                    highlightedLines.includes(i + 1)
-                      ? {
-                          background: '#cce0f5',
-                          margin: '0 -1rem',
-                          padding: '0 1rem',
-                        }
-                      : null
-                  }
-                >
-                  {line.map((token, key) => (
-                    <span key={key} {...getTokenProps({ token, key })} />
-                  ))}
-                </div>
-              ))}
-            </code>
-          )}
-        </Highlight>
-      </CustomThemeProvider>
-    </>
+    <CustomThemeProvider>
+      <Copy content={children.trim()} />
+      <Highlight
+        {...defaultProps}
+        code={children.trim()}
+        language={language}
+        theme={THEME}
+      >
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <code
+            className={className}
+            style={{ ...style, position: 'relative' }}
+          >
+            {tokens.map((line, i) => (
+              <div
+                key={i}
+                {...getLineProps({ line, key: i })}
+                style={
+                  highlightedLines.includes(i + 1)
+                    ? {
+                        background: '#cce0f5',
+                        margin: '0 -1rem',
+                        padding: '0 1rem',
+                      }
+                    : null
+                }
+              >
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </code>
+        )}
+      </Highlight>
+    </CustomThemeProvider>
   );
 };
 
