@@ -45,7 +45,7 @@ const customVariants = {
   },
   Text: {
     ...defaultTheme.Text,
-    fontFamily: "'Roboto', sans-serif",
+    fontFamily: "'Roboto Condensed', sans-serif",
     fontSize: '14px',
     lineHeight: '24px',
   },
@@ -98,6 +98,10 @@ export default function CustomApp({ Component, pageProps }) {
       />
       <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
         rel="stylesheet"
       />
       <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" />

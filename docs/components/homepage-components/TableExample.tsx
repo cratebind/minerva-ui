@@ -80,12 +80,22 @@ export default function TableExample() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHeaderCell>Name</TableHeaderCell>
-            <TableHeaderCell style={{ minWidth: '160px' }}>Job</TableHeaderCell>
-            <TableHeaderCell style={{ paddingLeft: '8px' }}>
+            <TableHeaderCell style={{ fontFamily: 'Roboto Condensed' }}>
+              Name
+            </TableHeaderCell>
+            <TableHeaderCell
+              style={{ minWidth: '160px', fontFamily: 'Roboto Condensed' }}
+            >
+              Job
+            </TableHeaderCell>
+            <TableHeaderCell
+              style={{ paddingLeft: '8px', fontFamily: 'Roboto Condensed' }}
+            >
               Status
             </TableHeaderCell>
-            <TableHeaderCell style={{ paddingLeft: '8px' }}>
+            <TableHeaderCell
+              style={{ paddingLeft: '8px', fontFamily: 'Roboto Condensed' }}
+            >
               Role
             </TableHeaderCell>
           </TableRow>

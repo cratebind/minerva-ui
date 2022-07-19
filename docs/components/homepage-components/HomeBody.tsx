@@ -108,7 +108,12 @@ export default function HomeBody() {
               Your new favorite React component library
             </Heading>
             <div className="my-8 sm:mt-6 sm:mb-16">
-              <Text color="secondary" fontSize="lg" lineHeight="26px">
+              <Text
+                color="secondary"
+                fontSize="lg"
+                lineHeight="26px"
+                fontFamily="Roboto"
+              >
                 Professionally designed and built by a team of React developers
                 and product designers—Minerva gives you the components needed to
                 start building your React app stat.{' '}
@@ -198,7 +203,7 @@ export default function HomeBody() {
           >
             Accessibility for all
           </Heading>
-          <Text color="secondary" fontSize="lg">
+          <Text color="secondary" fontSize="lg" fontFamily="Roboto">
             We believe that accessible apps should be the standard. In this
             library, we try to leverage the great work in Reach UI as a
             foundation for making our components as WAI-ARIA compliant as
@@ -262,7 +267,7 @@ export default function HomeBody() {
           >
             Built by developers, for developers
           </Heading>
-          <Text color="secondary" fontSize="lg">
+          <Text color="secondary" fontSize="lg" fontFamily="Roboto">
             Whether you’re working on a solo project and need components with
             solid design, or you’re building an app for a client and need to
             move faster using a reliable component foundation—Minerva UI was
@@ -271,7 +276,11 @@ export default function HomeBody() {
           <Button variant="tertiary" mb="8" mt="6" minWidth="140px">
             Learn more
           </Button>
-          <Flex width="100%" mt="8" className="flex-col-reverse md:flex-row md:flex-row-reverse lg:flex-row">
+          <Flex
+            width="100%"
+            mt="8"
+            className="flex-col-reverse md:flex-row md:flex-row-reverse lg:flex-row"
+          >
             <SnippetContainer width="100%" mr="8">
               <CodeSnippet
                 snippetBackground="#1F1B29"
@@ -330,7 +339,7 @@ export default function HomeBody() {
           >
             Delightfully designed
           </Heading>
-          <Text color="secondary" fontSize="lg">
+          <Text color="secondary" fontSize="lg" fontFamily="Roboto">
             Backed by simple, clean code, each component has a corresponding
             element in our Figma design system allowing product designers and
             developers to make product magic happen with the tiniest margin of
@@ -342,7 +351,7 @@ export default function HomeBody() {
           <Flex width="100%" mt="8" className="flex-col lg:flex-row">
             <TableExample />
 
-            <SnippetContainer width="100%" className="ml-0 mt-4 lg:ml-8 mt-0">
+            <SnippetContainer width="100%" className="ml-0 mt-4 lg:ml-8 lg:mt-0">
               <CodeSnippet
                 snippetBackground="#F7F4FF"
                 style={{ fontSize: '12px' }}
@@ -373,6 +382,7 @@ export default function HomeBody() {
           <Text
             color="secondary"
             fontSize="lg"
+            fontFamily="Roboto"
           >{`Each component is styled, giving you the opportunity to start your project quickly. Using our >defaultTheme<, you’re able to overwrite and manually style each component in the library as needed.`}</Text>
           <Button variant="tertiary" mb="8" mt="6" minWidth="140px">
             Learn more
@@ -405,17 +415,31 @@ export default function HomeBody() {
                   <Heading as="h4" fontSize="sm" fontWeight="500" mt="2">
                     Can Coffee Make You a Better Developer?
                   </Heading>
-                  <Text fontSize="sm" my="4" lineHeight="20px" fontWeight="300">
+                  <Text
+                    fontSize="sm"
+                    my="4"
+                    lineHeight="20px"
+                    fontWeight="300"
+                    fontFamily="Roboto Condensed"
+                  >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Vestibulum id ante vitae eros suscipit pulvinar.
                   </Text>
                   <Flex alignItems="center">
                     <Image src="jonathan_profile.png" alt="Jonathan avatar" />
                     <Box ml="4">
-                      <Text fontSize="xs" lineHeight="20px">
+                      <Text
+                        fontSize="xs"
+                        lineHeight="20px"
+                        fontFamily="Roboto Condensed"
+                      >
                         Jonathan Reinink
                       </Text>
-                      <Text fontSize="xs" lineHeight="20px">
+                      <Text
+                        fontSize="xs"
+                        lineHeight="20px"
+                        fontFamily="Roboto Condensed"
+                      >
                         Aug 18
                       </Text>
                     </Box>
@@ -443,7 +467,7 @@ export default function HomeBody() {
           >
             Fully customizable
           </Heading>
-          <Text color="secondary" fontSize="lg">
+          <Text color="secondary" fontSize="lg" fontFamily="Roboto">
             Minerva UI is built to give the developers flexibility and speed.
             Our components are unopinionated, allowing you to build custom
             designs without excess CSS.
