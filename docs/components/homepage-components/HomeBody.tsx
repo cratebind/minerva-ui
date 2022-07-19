@@ -27,16 +27,17 @@ const SubContainer = styled(Flex)`
   width: 30%;
   height: 250px;
   background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   border-radius: 5px;
   text-align: center;
-  padding: 24px;
+  padding: 32px;
   border: 1px solid #fff;
   margin: 0 0.5rem;
 
   @media (max-width: 640px) {
     width: 100%;
     max-width: 100%;
-    margin: 0.5rem 0;
+    margin: 0.75rem 0;
     height: 100%;
     padding: 1.5rem 2rem;
     p {
@@ -94,7 +95,7 @@ const snippetText = `() => {
 export default function HomeBody() {
   return (
     <Box>
-      <Flex className="flex-col sm:flex-row">
+      <Flex className="flex-col sm:flex-row pt-6">
         <Box className="flex-1 mb-4 sm:mb-0">
           <Box className="mx-12 mt-8 sm:mt-32 mb-24 lg:m-24">
             <Heading
@@ -121,7 +122,7 @@ export default function HomeBody() {
             >
               Get started
             </StyledButton>
-            <StyledButton variant="primary" minWidth="140px">
+            <StyledButton variant="primary" minWidth="140px" bg="#651FFF">
               Examples
             </StyledButton>
           </Box>
@@ -138,7 +139,7 @@ export default function HomeBody() {
 
       <Flex
         background="linear-gradient(180deg, #651fff 36.3%, rgba(30, 6, 84, 0) 200%), center / cover no-repeat url(starry_sky.jpeg)"
-        className="relative flex-col items-center px-8 py-8 sm:px-4"
+        className="relative flex-col items-center px-6 py-16 sm:pt-20 sm:pb-16 lg:py-24 sm:px-4"
       >
         <Flex
           justifyContent="space-between"
@@ -175,13 +176,13 @@ export default function HomeBody() {
             </Text>
           </SubContainer>
         </Flex>
-        <StyledButton variant="tertiary" mt="8" mb="4" minWidth="140px">
+        <StyledButton variant="tertiary" mt="8" minWidth="140px">
           Get Started
         </StyledButton>
       </Flex>
 
       {/* Could possibly map over each of these containers */}
-      <Box background="#fff" px="8">
+      <Box background="#fff" className="px-6 sm:px-8">
         <Flex
           maxWidth="900px"
           mx="auto"
@@ -218,7 +219,7 @@ export default function HomeBody() {
                     Vestibulum id ante vitae eros suscipit pulvinar.
                   </Text>
                   <Flex my="4" width="100%">
-                    <Button variant="primary" flex="1" mr="1">
+                    <Button variant="primary" flex="1" mr="1" bg="#651FFF">
                       Button
                     </Button>
                     <Button flex="1" ml="1">
@@ -244,7 +245,7 @@ export default function HomeBody() {
         </Flex>
       </Box>
 
-      <Box background="#f5f5f5" px="8">
+      <Box background="#f5f5f5" className="px-6 sm:px-8">
         <Flex
           maxWidth="900px"
           mx="auto"
@@ -312,7 +313,7 @@ export default function HomeBody() {
         </Flex>
       </Box>
 
-      <Box background="#fff" px="8">
+      <Box background="#fff" className="px-6 sm:px-8">
         <Flex
           maxWidth="900px"
           mx="auto"
@@ -353,7 +354,7 @@ export default function HomeBody() {
         </Flex>
       </Box>
 
-      <Box background="#f5f5f5" px="8">
+      <Box background="#f5f5f5" className="px-6 sm:px-8">
         <Flex
           maxWidth="900px"
           mx="auto"
@@ -387,7 +388,13 @@ export default function HomeBody() {
             </SnippetContainer>
 
             <Box width="100%" className="ml-0 mb-4 md:ml-12">
-              <Flex shadow="lg" borderRadius="md" p="2" height="202px">
+              <Flex
+                shadow="lg"
+                borderRadius="md"
+                p="2"
+                maxHeight="242px"
+                maxWidth="432px"
+              >
                 <Image
                   src="coffee.png"
                   width="100%"
@@ -395,10 +402,10 @@ export default function HomeBody() {
                   alt="coffee"
                 />
                 <Box ml="4">
-                  <Heading as="h4" fontSize="sm" fontWeight="500" mt="4">
+                  <Heading as="h4" fontSize="sm" fontWeight="500" mt="2">
                     Can Coffee Make You a Better Developer?
                   </Heading>
-                  <Text fontSize="sm" my="3" lineHeight="20px" fontWeight="300">
+                  <Text fontSize="sm" my="4" lineHeight="20px" fontWeight="300">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Vestibulum id ante vitae eros suscipit pulvinar.
                   </Text>
@@ -420,7 +427,7 @@ export default function HomeBody() {
         </Flex>
       </Box>
 
-      <Box background="#fff" px="8">
+      <Box background="#fff" className="px-6 sm:px-8">
         <Flex
           maxWidth="900px"
           mx="auto"

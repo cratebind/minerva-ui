@@ -6,6 +6,9 @@ const StyledFooter = styled(Flex)`
   background: linear-gradient(180deg, #1e0654 36.3%, rgba(30, 6, 84, 0) 200%),
     50% / cover no-repeat url(wood_sky.jpeg);
   opacity: 0.85;
+  @media (max-width: 640px) {
+    padding: 80px 24px 25px 24px;
+  }
 `;
 
 const SubLink = styled(Link)`
