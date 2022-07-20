@@ -100,6 +100,10 @@ export default function CustomApp({ Component, pageProps }) {
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
         rel="stylesheet"
       />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet"
+      />
       <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" />
       <Component {...pageProps} />
     </CustomThemeProvider>
