@@ -54,6 +54,29 @@ const SubHeading = styled(Heading)`
   margin-top: 0;
 `;
 
+const MainHeading = styled(Heading)`
+  margin-top: 0px;
+  font-family: 'Tiempos-Headline';
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  @media (max-width: 640px) {
+    font-size: 36px;
+    line-height: 44px;
+  }
+`;
+
+const MainText = styled(Text)`
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 25px;
+  @media (max-width: 640px) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+`;
+
 const StyledModalHeader = styled(ModalHeader)`
   p {
     width: 100%;
@@ -97,18 +120,12 @@ export default function HomeBody() {
     <Box>
       <Flex className="flex-col sm:flex-row pt-6">
         <Box className="flex-1 mb-4 sm:mb-0">
-          <Box className="mx-12 mt-8 sm:mt-32 mb-24 lg:m-24">
-            <Heading
-              as="h3"
-              fontFamily="Tiempos-Headline"
-              fontSize="46px"
-              fontWeight="400"
-              lineHeight="1"
-            >
+          <Box className="mx-6 sm:mx-12 mt-8 sm:mt-32 mb-24 lg:m-24">
+            <MainHeading as="h3">
               Your new favorite React component library
-            </Heading>
+            </MainHeading>
             <div className="my-8 sm:mt-6 sm:mb-16">
-              <Text
+              <MainText
                 color="secondary"
                 fontSize="lg"
                 lineHeight="26px"
@@ -117,17 +134,17 @@ export default function HomeBody() {
                 Professionally designed and built by a team of React developers
                 and product designers—Minerva gives you the components needed to
                 start building your React app stat.{' '}
-              </Text>
+              </MainText>
             </div>
             <StyledButton
               variant="tertiary"
               mr="2"
-              minWidth="140px"
+              minWidth="168px"
               className="mb-4 sm:mb-0"
             >
               Get started
             </StyledButton>
-            <StyledButton variant="primary" minWidth="140px" bg="#651FFF">
+            <StyledButton variant="primary" minWidth="168px" bg="#651FFF">
               Examples
             </StyledButton>
           </Box>
@@ -181,7 +198,7 @@ export default function HomeBody() {
             </Text>
           </SubContainer>
         </Flex>
-        <StyledButton variant="tertiary" mt="8" minWidth="140px">
+        <StyledButton variant="tertiary" mt="8" minWidth="168px">
           Get Started
         </StyledButton>
       </Flex>
@@ -191,25 +208,17 @@ export default function HomeBody() {
         <Flex
           maxWidth="900px"
           mx="auto"
-          py="16"
+          py="20"
           className="flex-col items-start"
         >
-          <Heading
-            as="h4"
-            fontSize="46px"
-            mb="4"
-            fontWeight="400"
-            fontFamily="Tiempos-Headline"
-          >
-            Accessibility for all
-          </Heading>
-          <Text color="secondary" fontSize="lg" fontFamily="Roboto">
+          <MainHeading as="h4">Accessibility for all</MainHeading>
+          <MainText color="secondary" fontSize="lg" fontFamily="Roboto">
             We believe that accessible apps should be the standard. In this
             library, we try to leverage the great work in Reach UI as a
             foundation for making our components as WAI-ARIA compliant as
             possible.
-          </Text>
-          <Button variant="tertiary" mb="8" mt="6" minWidth="140px">
+          </MainText>
+          <Button variant="tertiary" mb="8" mt="6" minWidth="168px">
             Learn more
           </Button>
           <Flex width="100%" mt="8" className="flex-col md:flex-row">
@@ -254,26 +263,17 @@ export default function HomeBody() {
         <Flex
           maxWidth="900px"
           mx="auto"
-          py="16"
+          py="20"
           className="flex-col items-start"
         >
-          <Heading
-            as="h4"
-            fontSize="46px"
-            mb="6"
-            fontWeight="400"
-            fontFamily="Tiempos-Headline"
-            lineHeight="1"
-          >
-            Built by developers, for developers
-          </Heading>
-          <Text color="secondary" fontSize="lg" fontFamily="Roboto">
+          <MainHeading as="h4">Built by developers, for developers</MainHeading>
+          <MainText color="secondary" fontSize="lg" fontFamily="Roboto">
             Whether you’re working on a solo project and need components with
             solid design, or you’re building an app for a client and need to
             move faster using a reliable component foundation—Minerva UI was
             built to make your life as a developer easier.
-          </Text>
-          <Button variant="tertiary" mb="8" mt="6" minWidth="140px">
+          </MainText>
+          <Button variant="tertiary" mb="8" mt="6" minWidth="168px">
             Learn more
           </Button>
           <Flex
@@ -326,32 +326,26 @@ export default function HomeBody() {
         <Flex
           maxWidth="900px"
           mx="auto"
-          py="16"
+          py="20"
           className="flex-col items-start"
         >
-          <Heading
-            as="h4"
-            fontSize="46px"
-            mb="6"
-            fontWeight="400"
-            fontFamily="Tiempos-Headline"
-            lineHeight="1"
-          >
-            Delightfully designed
-          </Heading>
-          <Text color="secondary" fontSize="lg" fontFamily="Roboto">
+          <MainHeading as="h4">Delightfully designed</MainHeading>
+          <MainText color="secondary" fontSize="lg" fontFamily="Roboto">
             Backed by simple, clean code, each component has a corresponding
             element in our Figma design system allowing product designers and
             developers to make product magic happen with the tiniest margin of
             error possible.
-          </Text>
-          <Button variant="tertiary" mb="8" mt="6" minWidth="140px">
+          </MainText>
+          <Button variant="tertiary" mb="8" mt="6" minWidth="168px">
             Check out the Figma components
           </Button>
           <Flex width="100%" mt="8" className="flex-col lg:flex-row">
             <TableExample />
 
-            <SnippetContainer width="100%" className="ml-0 mt-4 lg:ml-8 lg:mt-0">
+            <SnippetContainer
+              width="100%"
+              className="ml-0 mt-4 lg:ml-8 lg:mt-0"
+            >
               <CodeSnippet
                 snippetBackground="#F7F4FF"
                 style={{ fontSize: '12px' }}
@@ -367,24 +361,16 @@ export default function HomeBody() {
         <Flex
           maxWidth="900px"
           mx="auto"
-          py="16"
+          py="20"
           className="flex-col items-start"
         >
-          <Heading
-            as="h4"
-            fontSize="46px"
-            mb="2"
-            fontWeight="400"
-            fontFamily="Tiempos-Headline"
-          >
-            Globally themed
-          </Heading>
-          <Text
+          <MainHeading as="h4">Globally themed</MainHeading>
+          <MainText
             color="secondary"
             fontSize="lg"
             fontFamily="Roboto"
-          >{`Each component is styled, giving you the opportunity to start your project quickly. Using our >defaultTheme<, you’re able to overwrite and manually style each component in the library as needed.`}</Text>
-          <Button variant="tertiary" mb="8" mt="6" minWidth="140px">
+          >{`Each component is styled, giving you the opportunity to start your project quickly. Using our >defaultTheme<, you’re able to overwrite and manually style each component in the library as needed.`}</MainText>
+          <Button variant="tertiary" mb="8" mt="6" minWidth="168px">
             Learn more
           </Button>
           <Flex width="100%" mt="8" className="flex-col-reverse md:flex-row">
@@ -455,24 +441,16 @@ export default function HomeBody() {
         <Flex
           maxWidth="900px"
           mx="auto"
-          py="16"
+          py="20"
           className="flex-col items-start"
         >
-          <Heading
-            as="h4"
-            fontSize="46px"
-            mb="2"
-            fontWeight="400"
-            fontFamily="Tiempos-Headline"
-          >
-            Fully customizable
-          </Heading>
-          <Text color="secondary" fontSize="lg" fontFamily="Roboto">
+          <MainHeading as="h4">Fully customizable</MainHeading>
+          <MainText color="secondary" fontSize="lg" fontFamily="Roboto">
             Minerva UI is built to give the developers flexibility and speed.
             Our components are unopinionated, allowing you to build custom
             designs without excess CSS.
-          </Text>
-          <Button variant="tertiary" mb="8" mt="6" minWidth="140px">
+          </MainText>
+          <Button variant="tertiary" mb="8" mt="6" minWidth="168px">
             Learn more
           </Button>
           <Flex width="100%" mt="8" className="flex-col lg:flex-row">

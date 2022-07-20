@@ -33,29 +33,43 @@ const SubContainer = styled(Flex)`
   }
 `;
 
+const MainHeading = styled(Heading)`
+  margin-top: 69px;
+  font-family: 'Tiempos-Headline';
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 56px;
+  color: #fff;
+  @media (min-width: 640px) {
+    margin-top: 90px;
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: 155px;
+  }
+`;
+
 export default function About() {
   return (
     <Layout>
       <Flex
+        // className="lg:align-items-center"
         flexDirection="column"
-        justifyContent="center"
+        // justifyContent="center"
         alignItems="center"
         minHeight="700px"
         background="linear-gradient(180deg, #651fff 36.3%, rgba(30, 6, 84, 0) 200%), center / cover no-repeat url(unsplash.jpeg)"
       >
-        <Box maxWidth="820px" textAlign="center" mx="16">
-          <Heading
-            as="h3"
-            fontFamily="tiempos"
-            fontSize="46px"
-            fontWeight="400"
-            lineHeight="1"
-            color="#fff"
-          >
+        <Box
+          maxWidth="820px"
+          textAlign="center"
+          className="px-6 sm:px-24 lg:px-0"
+        >
+          <MainHeading as="h3">
             We’re a team of product people passionate about building apps that
             work seamlessly and look amazing
-          </Heading>
-          <Text my="8" color="#eee" fontSize="lg">
+          </MainHeading>
+          <Text my="8" color="#eee" fontSize="lg" fontFamily="Roboto">
             Working at an agency, we have the opportunity to work with a host of
             different types of clients and products. Though the majority of what
             we build is custom, we appreciate component libraries for their
@@ -85,29 +99,29 @@ export default function About() {
             <Icon name="chevron-right" color="#651FFF" size="20px" />
           </Link>
         </Flex>
-        <Box py="24" className="relative overflow-hidden">
+        <Box pb="88px" pt="166px" className="relative overflow-hidden">
           <Flex maxWidth="1500px" m="auto" className="flex-col md:flex-row">
             <Box
-              ml="16"
+              ml="117px"
               mr="8"
               my="8"
               className="flex-1 max-w-large md:max-w-full"
             >
               <Heading
                 as="h3"
-                fontFamily="tiempos"
-                fontSize="46px"
+                fontFamily="Tiempos-Headline"
+                fontSize="38px"
                 fontWeight="400"
                 lineHeight="1"
               >
                 Minerva is built, and maintained by a core team of React
                 developers and product designers...
               </Heading>
-              <Text my="7" color="secondary" fontSize="lg">
+              <Text my="7" color="secondary" fontSize="lg" fontFamily="Roboto">
                 who get jazzed about things like customizable themes, the latest
                 release of FigJam reactions and accessibility for all.
               </Text>
-              <Text my="7" color="secondary" fontSize="lg">
+              <Text my="7" color="secondary" fontSize="lg" fontFamily="Roboto">
                 Their full-time gig is at an agency named{' '}
                 <Link
                   textDecoration="none"
@@ -140,19 +154,20 @@ export default function About() {
           flexDirection="column"
           alignItems="center"
           p="16"
+          py="86px"
           className="text-center"
         >
           <Heading
             as="h3"
-            fontFamily="tiempos"
-            fontSize="46px"
+            fontFamily="Tiempos-Headline"
+            fontSize="38px"
             fontWeight="400"
             lineHeight="1"
             color="#651FFF"
           >
             Minerva UI offers a 1-1 Figma component library
           </Heading>
-          <Text my="4" color="secondary" fontSize="lg">
+          <Text my="4" color="secondary" fontSize="lg" fontFamily="Roboto">
             Clean code meets delightful design so that you can build quickly
             without compromising a pixel.
           </Text>
@@ -175,10 +190,16 @@ export default function About() {
       >
         <SubContainer
           borderRadius="md"
-          p="6"
+          p="8"
           className="m-3 max-w-full md:mr-6 sm:max-w-sm"
         >
-          <Text color="white" fontSize="2xl" mb="4" className="w-full">
+          <Text
+            color="white"
+            fontSize="2xl"
+            mb="4"
+            className="w-full"
+            fontFamily="Roboto"
+          >
             Have feedback or questions for the team?
           </Text>
           <Text
@@ -194,10 +215,16 @@ export default function About() {
         </SubContainer>
         <SubContainer
           borderRadius="md"
-          p="6"
+          p="8"
           className="m-3 max-w-full md:ml-6 sm:max-w-sm"
         >
-          <Text color="white" fontSize="2xl" mb="4" className="w-full">
+          <Text
+            color="white"
+            fontSize="2xl"
+            mb="4"
+            className="w-full"
+            fontFamily="Roboto"
+          >
             Ready to build your React app? We've got you.
           </Text>
           <Text
