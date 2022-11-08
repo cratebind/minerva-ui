@@ -2,6 +2,7 @@ import { Flex, Image, styled } from 'minerva-ui';
 import { DocSearch } from '@docsearch/react';
 
 import { DOC_SEARCH_API_KEY, DOC_SEARCH_INDEX_NAME } from '../../theme/search';
+import Link from 'next/link';
 
 interface Props {
   secondary: number;
@@ -30,9 +31,16 @@ export default function DocSearchComponent({ type }: { type?: string }) {
         isFooter ? 'flex-col' : 'flex-row'
       } w-full sm:items-center sm:flex-row w-max`}
     >
-      <Image
-        src={isFooter ? 'minerva_logo_white.png' : 'minerva_logo_purple.png'}
-      />
+      <Link href="/">
+        <a>
+          <Image
+            alt="Minerva UI Logo - with a purple owl"
+            src={
+              isFooter ? 'minerva_logo_white.png' : 'minerva_logo_purple.png'
+            }
+          />
+        </a>
+      </Link>
       <DocContainer secondary={isFooter ? 1 : 0}>
         <DocSearch
           apiKey={DOC_SEARCH_API_KEY}
