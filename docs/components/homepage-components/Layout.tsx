@@ -6,7 +6,7 @@ import '@docsearch/css';
 
 export default function Layout({ children }) {
   return (
-    <Box bg="#fafafa" minHeight="100vh">
+    <Box bg="#fafafa" minHeight="100vh" className="main-layout">
       <Nav />
       {children}
       <Footer />

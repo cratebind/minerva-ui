@@ -10,10 +10,110 @@ h3 code {
   font-size: inherit;
 }
 
+code {
+  background-color: transparent;
+  color: #130F1C;
+}
+
+
 content pre {
   position: relative;
   background-color: rgba(101, 31, 255, 0.05);
 }
+
+.token {
+  color: #000000 !important;
+  /* font-family: 'Roboto Mono'; */
+  font-weight: normal !important;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+}
+
+.comment {
+  color: #8E82A9 !important;
+}
+
+
+pre code .token-line .function {
+  color: #651FFF !important;
+}
+
+pre code .token-line .function-variable {
+  color: #000000 !important;
+}
+
+
+main p {
+ font-family: 'Roboto Condensed';
+ color: #56447F;
+ font-weight: 400;
+}
+
+main li {
+  list-style: none;
+}
+
+main ul {
+  margin-left: 0px;
+}
+
+main a {
+  color: #651FFF;
+}
+
+main li {
+  font-family: 'Roboto Condensed';
+}
+
+main h1 {
+  font-family: 'Roboto';
+  color: #130F1C;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+main h2 {
+  font-family: 'Roboto';
+  font-size: 24px;
+  color: #130F1C;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+main h3 {
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: #130F1C;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    margin: 32px 0 32px 0;
+}
+
+main ol li {
+  color: #56447F;
+}
+
+
+/* .noblur *{
+  z-index: 200;
+  filter: blur(5px);
+} */
+
+.sidebar-blur {
+  backdrop-filter: blur(5px);
+  background-color: rgba(30, 6, 84, 0.33);
+  width: 25%;
+  height: 100vh;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 10;
+  opacity: 1;
+}
+
 
 input[type='color'] {
   width: 40px;
@@ -42,6 +142,10 @@ input[type='color']::-webkit-color-swatch {
   border-radius: 5px;
   display: flex;
   height: auto;
+}
+
+.DocSearch-Button-Keys {
+  visibility: hidden;
 }
 
 .DocSearch-Search-Icon {
