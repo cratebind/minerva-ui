@@ -88,7 +88,7 @@ export default function About() {
           name="og:description"
           content="We’re a team of product people passionate about building apps that work seamlessly and look amazing"
         />
-        {/* <meta name="og:image" content="../public/minerva_logo_purple.png" /> */}
+        <meta name="og:image" content="../public/minerva_logo_purple.png" />
       </Head>
       <Flex
         // className="lg:align-items-center"
