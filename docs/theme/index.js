@@ -225,6 +225,8 @@ const Layout = ({ filename, config: _config, pageMap, children }) => {
   const titles = React.Children.toArray(children).filter((child) =>
     titleType.includes(child.props.mdxType)
   );
+  console.log(filepath.replaceAll('/',''));
+  const filePathString = filepath.replaceAll('/','');
   const titleEl = titles.find((child) => child.props.mdxType === 'h1');
   const title = titleEl ? titleEl.props.children : filename.split('.')[0];
   // const title = titleEl ? titleEl.props.children : 'Untitled'
@@ -260,23 +262,44 @@ const Layout = ({ filename, config: _config, pageMap, children }) => {
 
           </div> */}
           <div className="flex flex-1 h-full border-t border-dark-gray mb-16">
-              <MenuContext.Provider value={{ setMenu }}>
-                <Sidebar
-                  setMenu={setMenu}
-                  show={menu}
-                  anchors={anchors}
-                  directories={directories}
-                />
-              </MenuContext.Provider>
+            <MenuContext.Provider value={{ setMenu }}>
+              <Sidebar
+                setMenu={setMenu}
+                show={menu}
+                anchors={anchors}
+                directories={directories}
+              />
+            </MenuContext.Provider>
             <content className="relative pt-3 py-6 px-6 sm:py-4 sm:pt-8 lg:p-8 w-full max-w-full overflow-x-hidden">
               <div
                 className="sm:hidden pb-3 px-6 border-b border-dark-gray -mx-6 mb-3 flex gap-4 pointer"
                 onClick={() => setMenu(true)}
               >
                 <Hamburger />
-                <p className="mt-0" style={{ fontFamily: 'Roboto Condensed' }}>
-                  {title}
-                </p>
+                <div className="flex items-center">
+                  {
+                    !!filePathString && 
+                    <div className="flex items-center">
+                      <p
+                        className="mt-0"
+                        style={{
+                          fontFamily: 'Roboto Condensed',
+                          color: '#8E82A9',
+                          fontWeight: '400'
+                        }}
+                      >
+                        {filePathString[0].toUpperCase() + filePathString.slice(1)}
+                      </p>
+                      <ArrowRight />
+                    </div>
+                  }
+                  <p
+                    className="mt-0"
+                    style={{ fontFamily: 'Roboto Condensed' }}
+                  >
+                    {title}
+                  </p>
+                </div>
               </div>
               <main className="max-w-screen-md">
                 {/* {!titleEl ? } */}
