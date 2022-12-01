@@ -11,6 +11,8 @@ import {
 } from 'minerva-ui';
 import Layout from '../components/homepage-components/Layout';
 
+import Head from 'next/head';
+
 const MidSection = styled(Box)`
   margin-top: -8rem;
 `;
@@ -76,6 +78,18 @@ const MainText = styled(Text)`
 export default function About() {
   return (
     <Layout>
+      <Head>
+        <title>About - Minerva UI</title>
+        <meta
+          name="description"
+          content="We’re a team of product people passionate about building apps that work seamlessly and look amazing"
+        />
+        <meta
+          name="og:description"
+          content="We’re a team of product people passionate about building apps that work seamlessly and look amazing"
+        />
+        <meta name="og:image" content="../public/minerva_logo_purple.png" />
+      </Head>
       <Flex
         // className="lg:align-items-center"
         flexDirection="column"

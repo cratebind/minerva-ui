@@ -87,6 +87,7 @@ figure figcaption {
 .sidebar {
   @apply select-none;
 }
+
 .sidebar ul ul {
   @apply ml-5;
 }
